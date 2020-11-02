@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
   name='cwapi3d',
-  version='0.11',
+  version='1.0',
   author='Cadwork Montreal',
   author_email='it@cadwork.ca',
   description='Python bindings for CwAPI3D',
@@ -31,7 +31,7 @@ setuptools.setup(
     'visualization_controller'
   ],
   classifiers=[
-    'Development Status :: 4 - Beta',
+    'Development Status :: 5 - Production/Stable',
     'Environment :: Plugins',
     'Intended Audience :: Developers',
     'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)',
