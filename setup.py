@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
   name='cwapi3d',
-  version='1.0',
+  version='1.1',
   author='Cadwork Montreal',
   author_email='it@cadwork.ca',
   description='Python bindings for CwAPI3D',
