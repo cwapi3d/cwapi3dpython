@@ -1,2 +1,25 @@
-site_name: CwAPI3D Python Documentation
-theme: readthedocs
+site_name: Cadwork Python Documentation
+site_url: https://python.cadwork.dev/
+theme: windmill
+nav:
+    - Home: index.md
+    - Legacy Documentation:
+      - attribute_controller: attribute_controller.md
+      - bim_controller: bim_controller.md
+      - connector_axis_controller: connector_axis_controller.md
+      - element_controller: element_controller.md
+      - endtype_controller: endtype_controller.md
+      - file_controller: file_controller.md
+      - geometry_controller: geometry_controller.md
+      - list_controller: list_controller.md
+      - machine_controller: machine_controller.md
+      - material_controller: material_controller.md
+      - menu_controller: menu_controller.md
+      - roof_controller: roof_controller.md
+      - scene_controller: scene_controller.md
+      - shop_drawing_controller: shop_drawing_controller.md
+      - utility_controller: utility_controller.md
+      - visualization_controller: visualization_controller.md
+extra: 
+    logo: cwapi3d_logo_small.png
+    version: v28

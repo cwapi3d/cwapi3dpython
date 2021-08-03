@@ -1,16 +1,37 @@
-# CwAPI3D
+# Cadwork Python Interface
 
-[![PyPI - License](https://img.shields.io/pypi/l/cwapi3d)](https://pypi.python.org/pypi/cwapi3d/)
 [![PyPI](https://img.shields.io/pypi/v/cwapi3d)](https://pypi.python.org/pypi/cwapi3d/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/cwapi3d)](https://pypi.python.org/pypi/cwapi3d/)
-[![Documentation Status](https://readthedocs.org/projects/cwapi3d/badge/?version=latest)](https://cwapi3d.readthedocs.io/en/latest/?badge=latest)
+[![RTD](https://img.shields.io/readthedocs/cwapi3dpython)](https://python.cadwork.dev)
+[![Issues](https://img.shields.io/github/issues/cwapi3d/cwapi3dpython)](https://github.com/cwapi3d/cwapi3dpython/issues)
+[![Pulls](https://img.shields.io/github/issues-pr/cwapi3d/cwapi3dpython)](https://github.com/cwapi3d/cwapi3dpython/pulls)
+[![GitHub](https://img.shields.io/github/license/cwapi3d/cwapi3dpython)](https://choosealicense.com/licenses/mit/)
 
-Python binding for CwAPI3D plugins in Cadwork 3D.
+This is the Cadwork 3D CwAPI3D plugin architecture in Python.
 
 ## Installation
 
-On Windows the usual
+Install with pip:
 
-    pip install cwapi3d
+```bash
+  pip install cwapi3d
+```
+    
+## Contributing
 
-should suffice.
+Contributions are always welcome!
+  
+## Roadmap
+
+- Guides
+- Examples
+- API Documentation
+  
+## Authors
+
+- [@jspaquet](https://github.com/jspaquet)
+- [@Brunner246](https://github.com/Brunner246)
+  
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)

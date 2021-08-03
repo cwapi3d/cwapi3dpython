@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "cwapi3dpython"
+version = "1.1.1"
+description = ""
+authors = ["Jean-Sebastien Paquet <paquet@cadwork.ca>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+mkdocs = "^1.2.2"
+mkdocs-windmill = "^1.0.4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
