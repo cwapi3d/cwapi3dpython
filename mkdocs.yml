@@ -20,6 +20,12 @@ nav:
       - shop_drawing_controller: shop_drawing_controller.md
       - utility_controller: utility_controller.md
       - visualization_controller: visualization_controller.md
+    - Python Guide: guide.md
 extra: 
     logo: cwapi3d_logo_small.png
     version: v28
+markdown_extensions:
+  - attr_list  
+  - footnotes:
+      SEPARATOR: _footnote_
+ 

@@ -18,5 +18,4 @@ Guido van Rossum began working on Python in the late 1980s, as a successor to th
 ```python
 if ready:
     print("Alright, let's get started!")
-    print("Hello cadwork")
 ```
