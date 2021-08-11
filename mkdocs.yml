@@ -1,8 +1,11 @@
 site_name: Cadwork Python Documentation
 site_url: https://python.cadwork.dev/
-theme: windmill
+theme:
+    name: material
+    nav_style: dark
+    logo: cwapi3d_logo_small.png
+    version: v28
 nav:
-    - Home: index.md
     - Legacy Documentation:
       - attribute_controller: attribute_controller.md
       - bim_controller: bim_controller.md
@@ -20,12 +23,25 @@ nav:
       - shop_drawing_controller: shop_drawing_controller.md
       - utility_controller: utility_controller.md
       - visualization_controller: visualization_controller.md
-    - Python Guide: guide.md
-extra: 
-    logo: cwapi3d_logo_small.png
-    version: v28
+    - Python Guide:
+      - Python cadwork: index.md
+      - examples: example.md
+    - About:
+      - About Guide: about.md
 markdown_extensions:
   - attr_list  
+  - admonition
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.highlight:
+      linenums: true
+      linenums_style: pymdownx-inline
+  - pymdownx.superfences
   - footnotes:
       SEPARATOR: _footnote_
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+
  
