@@ -45,9 +45,9 @@ Python provides some built-in data types, in particular, [dict](https://docs.pyt
 
 If you are unfamiliar with Python and still want to write helper scripts, I recommend doing a tutorial and then come back to cadwork. :woman_student: <br>
 
-* [The Python Tutorial](https://docs.python.org/3.4/tutorial/)
-* [LearnPython](https://www.learnpython.org/)
-* [RealPython](https://realpython.com/)
+* [The Python Tutorial](https://docs.python.org/3.4/tutorial/){target=_blank}
+* [LearnPython](https://www.learnpython.org/){target=_blank}
+* [RealPython](https://realpython.com/){target=_blank}
 
 
 ## Python in cadwork :bulb:  <br>
