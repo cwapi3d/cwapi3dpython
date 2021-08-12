@@ -1,4 +1,4 @@
-## Package cadwork
+## Module cadwork
 
 ### create a cadwork point
 
@@ -19,21 +19,21 @@ distance = 1500.0                               # moving distance
 moved_point = point + (vector_x * distance)    
 ```
 
-## Package element_controller
+## Module element_controller
 
 ### create_node
 
 ```python 
 import  cadwork                                 # import package
-import  element_controller
+import  element_controller as ec
 
 point = cadwork.point_3d(100, 200, 300)         # create a cadwork Point   
-node = element_controller.create_node(point)
+node = ec.create_node(point)
 ```
 ### create_square_beam_vectors
 ```python 
 import  cadwork                                 # import package
-import  element_controller
+import  element_controller  as ec
 
 point      = cadwork.point_3d(100, 200, 300)         # create a cadwork Point   
 vector_x   = cadwork.point_3d(1., 0., 0.)            # x vector length direction
@@ -41,14 +41,14 @@ vector_z   = cadwork.point_3d(0., 0., 1.)            # z vecotr height orientati
 width      = 200.                                    # width/heigth of beam section
 length     = 2600.                                   # beam length
 
-beam       = element_controller.create_square_beam_vectors(width, length, point, vector_x, vector_z)
+beam       = ec.create_square_beam_vectors(width, length, point, vector_x, vector_z)
 ```
-## Package attribute_controller
+## Module attribute_controller
 ### assign attributes to beam
 ```python 
 import  cadwork                                 # import package
-import  element_controller
-import  attribute_controller
+import  element_controller    as ec
+import  attribute_controller  as ac
 
 point      = cadwork.point_3d(100, 200, 300)         # create a cadwork Point   
 vector_x   = cadwork.point_3d(1., 0., 0.)            # x vector length direction
@@ -58,18 +58,18 @@ length     = 2600.                                   # beam length
 name       = 'My first beam :)'                      # name as a string
 colour     = 3                                       # colour number as an int
 
-beam            = element_controller.create_square_beam_vectors(width, length, point,
+beam            = ec.create_square_beam_vectors(width, length, point,
                      vector_x, vector_z) # returns element_id
 
-add_beam_name   = attribute_controller.set_name([beam], name) # input beam id (list), name (string)
+add_beam_name   = ac.set_name([beam], name) # input beam id (list), name (string)
 
 ```
-## Package visualization_controller
+## Module visualization_controller
 ### assign color to beam
 ```python 
 import  cadwork                                 # import package
-import  element_controller
-import  visualization_controller
+import  element_controller        as ec
+import  visualization_controller  as vc
 
 point      = cadwork.point_3d(100, 200, 300)         # create a cadwork Point   
 vector_x   = cadwork.point_3d(1., 0., 0.)            # x vector length direction
@@ -78,28 +78,28 @@ width      = 200.                                    # width/heigth of beam sect
 length     = 2600.                                   # beam length
 colour     = 3                                       # colour number as an int
 
-beam            = element_controller.create_square_beam_vectors(width, length, point,
+beam            = ec.create_square_beam_vectors(width, length, point,
                      vector_x, vector_z) # returns element_id
-add_beam_colour = visualization_controller.set_color([beam], colour) # input beam id (list), colour (int)
+add_beam_colour = vc.set_color([beam], colour) # input beam id (list), colour (int)
 ```
-## Package geometry_controller
+## Module geometry_controller
 ### get beam points and vetors
 
 ```python 
 import  cadwork                                 # import package
-import  element_controller
-import  geometry_controller
+import  element_controller    as ec
+import  geometry_controller   as gc
 
 # get active element_ids
-element_ids = element_controller.get_active_identifiable_element_ids()
+element_ids = ec.get_active_identifiable_element_ids()
 
 for element_id in element_ids:
-    vector_x = geometry_controller.get_xl(element_id) # returns local vector
-    vector_y = geometry_controller.get_yl(element_id) # returns local vector
-    vector_z = geometry_controller.get_zl(element_id) # returns local vector
-    get_p1   = geometry_controller.get_p1(element_id) # returns cartesian point
-    get_p2   = geometry_controller.get_p2(element_id) # returns cartesian point
-    get_p3   = geometry_controller.get_p3(element_id) # returns cartesian point
+    vector_x = gc.get_xl(element_id) # returns local vector
+    vector_y = gc.get_yl(element_id) # returns local vector
+    vector_z = gc.get_zl(element_id) # returns local vector
+    get_p1   = gc.get_p1(element_id) # returns cartesian point
+    get_p2   = gc.get_p2(element_id) # returns cartesian point
+    get_p3   = gc.get_p3(element_id) # returns cartesian point
 
     print(f' the elements local vecotr z is: {vector_z} \n'
             f'the coordinates of the point_3 are {get_p3}')
