@@ -72,6 +72,23 @@ If you use the IDLE as described above in cadwork, then the IDE can be started d
 
 ![Backup Text](img/idle_script.png "Example  using IDLE"){: style="width:700px"}
 
+
+
+```python
+import  cadwork
+import  element_controller
+import  attribute_controller
+
+# get active element_ids
+element_ids = element_controller.get_active_identifiable_element_ids()
+
+for element_id in element_ids:
+    # get subgroup name of active element_ids
+    subgroup = attribute_controller.get_subgroup(element_id)
+    print(subgroup) # print the subgroup names
+```
+
+
 **File storage Plguins :file_folder:**  <br>
 
 Of course, you can also use any other Python IDE. 
@@ -88,21 +105,6 @@ The script cannot be run in the IDE. The script call must be made in cadwork.
             * MyFirstScript.py (Python File)
             * Icon.png (Plugin Icon, size ~30x30 pixel)
 
-
-
-```python
-import  cadwork
-import  element_controller
-import  attribute_controller
-
-# get active element_ids
-element_ids = element_controller.get_active_identifiable_element_ids()
-
-for element_id in element_ids:
-    # get subgroup name of active element_ids
-    subgroup = attribute_controller.get_subgroup(element_id)
-    print(subgroup) # print the subgroup names
-```
 
 
 **Debugging python script in cadwork**<br>
