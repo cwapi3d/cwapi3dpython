@@ -5,7 +5,24 @@ theme:
     nav_style: dark
     logo: cwapi3d_logo_small.png
     version: v28
+    palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode 
+    features:
+    - search.suggest
+    - search.highlight
+    - navigation.tabs
+    - navigation.instant
 nav:
+    - Python Guide:
+      - Python cadwork: index.md
+      - examples: example.md
     - Legacy Documentation:
       - attribute_controller: attribute_controller.md
       - bim_controller: bim_controller.md
@@ -23,9 +40,6 @@ nav:
       - shop_drawing_controller: shop_drawing_controller.md
       - utility_controller: utility_controller.md
       - visualization_controller: visualization_controller.md
-    - Python Guide:
-      - Python cadwork: index.md
-      - examples: example.md
     - About:
       - About Guide: about.md
 markdown_extensions:
@@ -42,6 +56,22 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-
-
- 
+extra_css:
+  - stylesheets/extra.css
+plugins:
+  - search:
+      separator: '[\s\-\.\_]+'     
+  - git-revision-date-localized:
+      type: datetime
+  #- mkdocs-versioning:
+      #version: 0.3.0                 
+extra:
+  generator: false
+  copyright: Copyright &copy; 2021 cadwork
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/cwapi3d
+      name: CWAPI3D
+  version:
+    provider: mike
+      
