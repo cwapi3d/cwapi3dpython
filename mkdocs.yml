@@ -61,8 +61,8 @@ extra_css:
 plugins:
   - search:
       separator: '[\s\-\.\_]+'     
-  - git-revision-date-localized:
-      type: datetime
+  #git-revision-date-localized:
+      #type: datetime
   #- mkdocs-versioning:
       #version: 0.3.0                 
 extra:
