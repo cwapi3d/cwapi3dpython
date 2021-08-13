@@ -107,7 +107,6 @@ for element_id in element_ids:
 
 ```
 
-
 ## Videos
 
 <figure class="video_container">
