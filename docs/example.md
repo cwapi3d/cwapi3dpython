@@ -1,3 +1,9 @@
+## Install CWAPI3D
+```python
+pip install cwapi3d
+```
+[Github - cwapi3d python](https://github.com/cwapi3d/cwapi3dpython){target=_blank}
+
 ## Module cadwork
 
 ### create a cadwork point

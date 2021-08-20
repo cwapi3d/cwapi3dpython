@@ -6,14 +6,16 @@ theme:
     logo: cwapi3d_logo_small.png
     version: v28
     palette:
-    - scheme: default
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to dark mode
-    - scheme: slate
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode 
+      - media: "(prefers-color-scheme: light)"
+        scheme: default
+        toggle:
+          name: Switch to light mode
+          icon: material/weather-sunny
+      - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        toggle:
+          name: Switch to dark mode
+          icon: material/weather-night 
     features:
     - search.suggest
     - search.highlight
