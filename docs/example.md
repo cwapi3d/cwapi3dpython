@@ -9,7 +9,7 @@ pip install cwapi3d
 ### create a cadwork point
 
 ```python
-import  cadwork                                 # import package
+import  cadwork                                 # import module
 
 point = cadwork.point_3d(100, 200, 300)         # create a cadwork Point
 ```
@@ -17,9 +17,9 @@ point = cadwork.point_3d(100, 200, 300)         # create a cadwork Point
 ### move a cadwork point 
 
 ```python 
-import  cadwork                                 # import package
+import  cadwork                                 # import module
 
-vector_x = cadwork.point_3d(1, 0, 0)            # define vector
+vector_x = cadwork.point_3d(1., 0., 0.)            # define vector
 distance = 1500.0                               # moving distance
 
 moved_point = point + (vector_x * distance)    
@@ -30,7 +30,7 @@ moved_point = point + (vector_x * distance)
 ### create_node
 
 ```python 
-import  cadwork                                 # import package
+import  cadwork                                 # import module
 import  element_controller as ec
 
 point = cadwork.point_3d(100, 200, 300)         # create a cadwork Point   
@@ -38,7 +38,7 @@ node = ec.create_node(point)
 ```
 ### create_square_beam_vectors
 ```python 
-import  cadwork                                 # import package
+import  cadwork                                 # import module
 import  element_controller  as ec
 
 point      = cadwork.point_3d(100, 200, 300)         # create a cadwork Point   
@@ -52,7 +52,7 @@ beam       = ec.create_square_beam_vectors(width, length, point, vector_x, vecto
 ## Module attribute_controller
 ### assign attributes to beam
 ```python 
-import  cadwork                                 # import package
+import  cadwork                                 # import module
 import  element_controller    as ec
 import  attribute_controller  as ac
 
@@ -70,10 +70,25 @@ beam            = ec.create_square_beam_vectors(width, length, point,
 add_beam_name   = ac.set_name([beam], name) # input beam id (list), name (string)
 
 ```
+### Conditions 
+
+```python
+import  element_controller    as ec   # import module
+import  attribute_controller  as ac
+
+# get active element_ids
+element_ids = ec.get_active_identifiable_element_ids()
+
+for element in element_ids:
+    if ac.is_panel(element): # returns boolean
+        print (True)
+    else:
+        print (False)
+```
 ## Module visualization_controller
 ### assign color to beam
 ```python 
-import  cadwork                                 # import package
+import  cadwork                                 # import module
 import  element_controller        as ec
 import  visualization_controller  as vc
 
@@ -92,7 +107,7 @@ add_beam_colour = vc.set_color([beam], colour) # input beam id (list), colour (i
 ### get beam points and vetors
 
 ```python 
-import  cadwork                                 # import package
+import  cadwork                                 # import module
 import  element_controller    as ec
 import  geometry_controller   as gc
 
@@ -112,6 +127,64 @@ for element_id in element_ids:
 
 
 ```
+
+## tkinter - GUI toolkit
+
+### A Simple Hello World Program
+
+```python
+import tkinter as tk
+
+class Application(tk.Frame):
+    def __init__(self, master=None):
+        super().__init__(master)
+        self.master = master
+        self.pack()
+        self.create_widgets()
+
+    def create_widgets(self):
+        self.hi_there = tk.Button(self)
+        self.hi_there["text"] = "Hello cadwork World\n(click me)"
+        self.hi_there["command"] = self.say_hi
+        self.hi_there.pack(side="top")
+
+        self.quit = tk.Button(self, text="QUIT", fg="blue",
+                              command=self.master.destroy)
+        self.quit.pack(side="bottom")
+
+    def say_hi(self):
+        print("hi there, everyone!")
+
+root = tk.Tk()
+app = Application(master=root)
+app.mainloop()
+```
+
+### Button
+
+```python
+import tkinter as tk
+
+class MyApp(tk.Frame):
+    def __init__(self, master=None):
+        super().__init__(master)
+        self.pack()
+        
+        self.ok = tk.Button(self)
+        self.ok["text"] = "cadwork"
+        self.ok["command"] = self.handler
+        self.ok.pack()
+        
+    def handler(self):
+        print("Button clicked")
+
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    root.geometry("500x300")
+    app = MyApp(root)
+    app.mainloop()
+``` 
 
 ## Videos
 

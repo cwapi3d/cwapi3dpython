@@ -1,3 +1,12 @@
+
+# Repository
+repo_name: cwapi3d/cwapi3dpython
+repo_url: https://github.com/cwapi3d/cwapi3dpython
+edit_uri: ""
+
+# Copyright
+copyright: Copyright &copy; 2021 cadwork 
+
 site_name: Cadwork Python Documentation
 site_url: https://python.cadwork.dev/
 theme:
@@ -58,6 +67,10 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: cwapi3d
+      repo: cwapi3dpython
 extra_css:
   - stylesheets/extra.css
 plugins:
