@@ -75,16 +75,16 @@ If you use the IDLE as described above in cadwork, then the IDE can be started d
 
 
 ```python
-import  cadwork
-import  element_controller
-import  attribute_controller
+# import modules
+import  cadwork   
+import  element_controller      as ec
+import  attribute_controller    as ac
 
 # get active element_ids
-element_ids = element_controller.get_active_identifiable_element_ids()
+element_ids = ec.get_active_identifiable_element_ids()
 
 for element_id in element_ids:
-    # get subgroup name of active element_ids
-    subgroup = attribute_controller.get_subgroup(element_id)
+    subgroup = ac.get_subgroup(element_id) # get subgroup name of active element_ids
     print(subgroup) # print the subgroup names
 ```
 
@@ -135,7 +135,8 @@ The orientation of the axis is defined by the vectors x,y,z.
 As CPython is used in cadwork, it is possible to work with external modules. The modules included in Python as standard can be integrated normally by loading the modules. 
 
 ```python
-import  cadwork                                 # import package
+# import modules
+import  cadwork  
 import  math
 import  csv
 import  tkinter
@@ -145,10 +146,11 @@ import  tkinter
 
 **Import external packages** <br>
 ```python
-import  sys                                 # import packages
-import  utility_controller
+# import modules
+import  sys                                 
+import  utility_controller as uc
 
-USERPROFIL = utility_controller.get_3d_userprofil_path()    # get userprofil path
+USERPROFIL = uc.get_3d_userprofil_path()   # get userprofil path
 
 paths = [(USERPROFIL + '\\api.x64\\FolderName\\PackageFolder'),
         ("C:\\Program Files\\cadwork.dir\\EXE_28\\Pclib.x64\\python38\\site-packages")
@@ -158,7 +160,8 @@ for path in paths:
     if path not in sys.path:
         sys.path.append(path)
 
-import external_package1                    # import external package
+# import external modules
+import external_package1                    
 import external_package2
 import external_package3
 
