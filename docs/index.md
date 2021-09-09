@@ -127,7 +127,7 @@ Spread the first three fingers of your right hand, as seen below. By virtue of t
 
 **Base of cadwork elements** <br>
 All basic elements in cadwork have an axis system. Except for the auxiliary element, room and surfaces, the elements are defined by an axis. The axis spans between point 1 and point 2. 
-The orientation of the axis is defined by the vectors x,y,z. 
+The orientation of the axis is defined by the vectors x, y, z. 
 
 ![Backup Text](img/points.png "cadwork axis"){: style="width:700px"}
 
