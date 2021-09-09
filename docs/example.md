@@ -31,9 +31,9 @@ print(point[2])                                 # prints z coordinate
 The coordinates of a cadwork point_3d can also be accessed by its .x, .y and .z attributes.
 
 ```python hl_lines="5 6 7"
-import  cadwork                                 # import module
+import  cadwork                                # import module
 
-point = cadwork.point_3d(100, 200, 300)         # create a cadwork Point
+point = cadwork.point_3d(100, 200, 300)        # create a cadwork Point
 
 print(point.x)                                 # prints x coordinate
 print(point.y)                                 # prints y coordinate
@@ -67,20 +67,22 @@ node = ec.create_node(point)
 import  cadwork                                 # import module
 import  element_controller  as ec
 
-point      = cadwork.point_3d(100, 200, 300)         # create a cadwork Point   
-vector_x   = cadwork.point_3d(1., 0., 0.)            # x vector length direction
-vector_z   = cadwork.point_3d(0., 0., 1.)            # z vecotr height orientation 
-width      = 200.                                    # width/heigth of beam section
-length     = 2600.                                   # beam length
+point      = cadwork.point_3d(100, 200, 300)    # create a cadwork Point   
+vector_x   = cadwork.point_3d(1., 0., 0.)       # x vector length direction
+vector_z   = cadwork.point_3d(0., 0., 1.)       # z vecotr height orientation 
+width      = 200.                               # width/heigth of beam section
+length     = 2600.                              # beam length
 
-beam       = ec.create_square_beam_vectors(width, length, point, vector_x, vector_z)
+beam       = ec.create_square_beam_vectors(width, length, 
+                                            point, vector_x, 
+                                            vector_z) # returns element_id
 ```
 ## Module attribute_controller
 ### assign attributes to beam
 ```python 
 import  cadwork                                 # import module
-import  element_controller    as ec
 import  attribute_controller  as ac
+import  element_controller    as ec
 
 point      = cadwork.point_3d(100, 200, 300)         # create a cadwork Point   
 vector_x   = cadwork.point_3d(1., 0., 0.)            # x vector length direction
@@ -90,8 +92,9 @@ length     = 2600.                                   # beam length
 name       = 'My first beam :)'                      # name as a string
 colour     = 3                                       # colour number as an int
 
-beam            = ec.create_square_beam_vectors(width, length, point,
-                     vector_x, vector_z) # returns element_id
+beam            = ec.create_square_beam_vectors(width, length, 
+                                                point, vector_x,
+                                                vector_z) # returns element_id
 
 add_beam_name   = ac.set_name([beam], name) # input beam id (list), name (string)
 
@@ -99,8 +102,9 @@ add_beam_name   = ac.set_name([beam], name) # input beam id (list), name (string
 ### Conditions 
 
 ```python
-import  element_controller    as ec   # import module
-import  attribute_controller  as ac
+import  attribute_controller  as ac     # import module
+import  element_controller    as ec   
+
 
 # get active element_ids
 element_ids = ec.get_active_identifiable_element_ids()
@@ -125,8 +129,10 @@ width      = 200.                                    # width/heigth of beam sect
 length     = 2600.                                   # beam length
 colour     = 3                                       # colour number as an int
 
-beam            = ec.create_square_beam_vectors(width, length, point,
-                     vector_x, vector_z) # returns element_id
+beam            = ec.create_square_beam_vectors(width, length, 
+                                                point, vector_x,
+                                                vector_z) # returns element_id
+
 add_beam_colour = vc.set_color([beam], colour) # input beam id (list), colour (int)
 ```
 ## Module geometry_controller
