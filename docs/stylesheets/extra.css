@@ -23,6 +23,9 @@
     --md-footer-fg-color: hsla(0, 0%, 100%, 1);
     --md-footer-fg-color--light: hsla(0, 0%, 100%, 0.7);
     --md-footer-fg-color--lighter: hsla(0, 0%, 100%, 0.3);
+    --md-code-hl-function-color: #b91cac;
+    --md-code-hl-comment-color: #2c7e0c;
+    --md-code-hl-string-color: #ce5a2c;
   }
 
   [data-md-color-scheme="slate"] {

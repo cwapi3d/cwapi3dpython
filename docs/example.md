@@ -28,7 +28,7 @@ print(point[1])                                 # prints y coordinate
 print(point[2])                                 # prints z coordinate
 ```
 
-The coordinates of a cadwork point_3d can also be accessed by its .x, .y and .z attributes.
+The coordinates of a cadwork point_3d object can also be accessed by its .x, .y and .z attributes.
 
 ```python hl_lines="5 6 7"
 import  cadwork                                # import module
@@ -223,7 +223,7 @@ if __name__ == "__main__":
 ![Backup Text](img/framed_slab.png "cadwork framed slab"){: style="width:700px"}
 
 ```python
-"""framedSlab.py: create a simple framed slab in cadwork...."""
+"""creates a simple framed slab in cadwork...."""
 
 # import modules
 import      cadwork
@@ -233,7 +233,7 @@ import      geometry_controller        as gc
 import      utility_controller         as uc
 import      visualization_controller   as vc
 
-
+# global variables
 WIDTH           = 60.           # beam width
 HEIGHT          = 240.          # beam height
 ORIGIN          = 0., 0., 0.    # start/origin point
@@ -243,7 +243,7 @@ MEMBER_LENGTH   = 5000.         # length (member)
 
 
 def main():
-    """ main function that creates a simple framed slab"""
+    """ main function that creates a simple frame"""
     
     global ORIGIN
     global BEAM_LENGTH
