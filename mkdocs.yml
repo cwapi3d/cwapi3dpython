@@ -12,7 +12,7 @@ site_url: https://python.cadwork.dev/
 theme:
     name: material
     nav_style: dark
-    logo: cwapi3d_logo_small.png
+    logo: cwapi3d_logo_small.png # cwapi3d_logo_small.png #cwapi3d_logo.svg 
     version: v28
     palette:
       - media: "(prefers-color-scheme: light)"
