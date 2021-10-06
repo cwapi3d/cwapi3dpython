@@ -90,7 +90,6 @@ vector_z   = cadwork.point_3d(0., 0., 1.)            # z vecotr height orientati
 width      = 200.                                    # width/heigth of beam section
 length     = 2600.                                   # beam length
 name       = 'My first beam :)'                      # name as a string
-colour     = 3                                       # colour number as an int
 
 beam            = ec.create_square_beam_vectors(width, length, 
                                                 point, vector_x,
@@ -127,13 +126,13 @@ vector_x   = cadwork.point_3d(1., 0., 0.)            # x vector length direction
 vector_z   = cadwork.point_3d(0., 0., 1.)            # z vecotr height orientation 
 width      = 200.                                    # width/heigth of beam section
 length     = 2600.                                   # beam length
-colour     = 3                                       # colour number as an int
+color     = 3                                       # color number as an int
 
 beam            = ec.create_square_beam_vectors(width, length, 
                                                 point, vector_x,
                                                 vector_z) # returns element_id
 
-add_beam_colour = vc.set_color([beam], colour) # input beam id (list), colour (int)
+add_beam_color = vc.set_color([beam], color) # input beam id (list), color (int)
 ```
 ## Module geometry_controller
 ### get beam points and vetors

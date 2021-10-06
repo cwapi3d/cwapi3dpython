@@ -12,7 +12,7 @@ site_url: https://python.cadwork.dev/
 theme:
     name: material
     nav_style: dark
-    logo: cwapi3d_logo_small.png # cwapi3d_logo_small.png #cwapi3d_logo.svg 
+    logo: cw_logo.svg  # cwapi3d_logo2.svg # cwapi3d_logo_small.png #cwapi3d_logo.svg 
     version: v28
     palette:
       - media: "(prefers-color-scheme: light)"
@@ -35,7 +35,6 @@ theme:
 nav:
     - Python Guide:
       - Python cadwork: index.md
-      - examples: example.md
     - Documentation:
       - attribute_controller: attribute_controller.md
       - bim_controller: bim_controller.md
@@ -53,6 +52,9 @@ nav:
       - shop_drawing_controller: shop_drawing_controller.md
       - utility_controller: utility_controller.md
       - visualization_controller: visualization_controller.md
+    - Examples:
+      - geometry examples: geometry.md
+      - general examples: example.md
     - About:
       - About Guide: about.md
 markdown_extensions:
