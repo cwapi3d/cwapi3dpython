@@ -12,7 +12,7 @@ site_url: https://python.cadwork.dev/
 theme:
     name: material
     nav_style: dark
-    logo: cwapi3d_logo_small.png
+    logo: cwapi3d_logo_small.png # cwapi3d_logo_small.png #cwapi3d_logo.svg 
     version: v28
     palette:
       - media: "(prefers-color-scheme: light)"
@@ -22,6 +22,8 @@ theme:
           icon: material/weather-sunny
       - media: "(prefers-color-scheme: dark)"
         scheme: slate
+        primary: grey
+        accent: blue
         toggle:
           name: Switch to dark mode
           icon: material/weather-night 
@@ -34,7 +36,7 @@ nav:
     - Python Guide:
       - Python cadwork: index.md
       - examples: example.md
-    - Legacy Documentation:
+    - Documentation:
       - attribute_controller: attribute_controller.md
       - bim_controller: bim_controller.md
       - connector_axis_controller: connector_axis_controller.md

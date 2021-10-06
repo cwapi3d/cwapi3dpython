@@ -1,9 +1,9 @@
 :root {
 
     /* Primary color shades */
-    --md-primary-fg-color: #0000f5;
-    --md-primary-fg-color--light: #0000f5;
-    --md-primary-fg-color--dark: #0000f5;
+    --md-primary-fg-color: #10069f;
+    --md-primary-fg-color--light: #10069f;
+    --md-primary-fg-color--dark: #10069f;
     --md-primary-bg-color: hsla(0, 0%, 100%, 1);
     --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
     --md-text-link-color: rgb(21, 47, 196);
@@ -17,18 +17,23 @@
   
   :root > * {
   
-    /* Code block color shades */
-    --md-code-bg-color: hsla(0, 0%, 96%, 1);
-    --md-code-fg-color: rgb(3, 8, 10);
-
     /* Footer */
-    --md-footer-bg-color: #0000f5;
+    --md-footer-bg-color: #10069f;
     --md-footer-bg-color--dark: hsla(0, 0%, 0%, 0.32);
     --md-footer-fg-color: hsla(0, 0%, 100%, 1);
     --md-footer-fg-color--light: hsla(0, 0%, 100%, 0.7);
     --md-footer-fg-color--lighter: hsla(0, 0%, 100%, 0.3);
+    --md-code-hl-function-color: #b91cac;
+    --md-code-hl-comment-color: #2c7e0c;
+    --md-code-hl-string-color: #ce5a2c;
   }
 
   [data-md-color-scheme="slate"] {
     --md-hue: 190; /* [0, 20] */
   }
+
+  
+  
+    /* Code block color shades */
+    /* --md-code-bg-color: hsla(0, 0%, 96%, 1);
+    /* --md-code-fg-color: rgb(3, 8, 10);
