@@ -153,8 +153,8 @@ for element_id in element_ids:
     get_p2   = gc.get_p2(element_id) # returns cartesian point
     get_p3   = gc.get_p3(element_id) # returns cartesian point
 
-    print(f' the elements local vecotr z is: {vector_z} \n'
-            f'the coordinates of the point_3 are {get_p3}')
+    print(f"""the elements local vecotr z is: {vector_z} \n'
+            the coordinates of the point_3 are {get_p3}""")
 
 
 ```

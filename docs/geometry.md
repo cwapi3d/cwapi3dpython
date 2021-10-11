@@ -25,7 +25,7 @@ A vector defines a direction and length. A point defines a location.
 
 ![Backup Text](img/vector.png "vector - point"){: style="width:700px"}
 
-### vector geometry
+### cadwork point & vector 
 
 ```python 
 point_3d + point_3d
@@ -63,6 +63,8 @@ point_3d.distance(point_3d)
 
 
 ### move a cadwork point 
+
+![Backup Text](img/move_pt.png "vector - point"){: style="width:500px"}
 
 ```python 
 import  cadwork                                 # import module
