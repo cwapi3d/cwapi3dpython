@@ -64,7 +64,7 @@ point_3d.distance(point_3d)
 
 ### move a cadwork point 
 
-![Backup Text](img/move_pt.png "vector - point"){: style="width:500px"}
+![Backup Text](img/move_pt.png "move a cadwork point"){: style="width:500px"}
 
 ```python 
 import  cadwork                                 # import module
