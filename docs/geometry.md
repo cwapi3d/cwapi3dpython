@@ -27,6 +27,44 @@ A vector defines a direction and length. A point defines a location.
 
 ### cadwork point & vector 
 
+![](https://mermaid.ink/img/eyJjb2RlIjoiZmxvd2NoYXJ0IFREXG4gICAgcG9pbnRfM2QtLSBjb29yZGlhbnRlIC0tLVhcbiAgICBwb2ludF8zZC0tIGNvb3JkaW5hdGUgLS0tWVxuICAgIHBvaW50XzNkLS0gY29vcmRpbmF0ZSAtLS1aXG4gICAgICAgICAgICAiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlLCJhdXRvU3luYyI6dHJ1ZSwidXBkYXRlRGlhZ3JhbSI6ZmFsc2V9)
+
+
+a point --> point_3d(100,400,250)
+
+![](https://mermaid.ink/img/eyJjb2RlIjoiZmxvd2NoYXJ0IFREXG4gICAgcG9pbnRfM2QtLSBYY29vcmRpYW50ZSAtLS0xMDBcbiAgICBwb2ludF8zZC0tIFljb29yZGluYXRlIC0tLTQwMFxuICAgIHBvaW50XzNkLS0gWmNvb3JkaW5hdGUgLS0tMjUwIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifSwidXBkYXRlRWRpdG9yIjpmYWxzZSwiYXV0b1N5bmMiOnRydWUsInVwZGF0ZURpYWdyYW0iOmZhbHNlfQ)
+
+a vector --> point_3d(1., 0., 0.)
+
+![](https://mermaid.ink/img/eyJjb2RlIjoiZmxvd2NoYXJ0IFREXG4gICAgcG9pbnRfM2QtLSBYY29vcmRpYW50ZSAtLS0xLjBcbiAgICBwb2ludF8zZC0tIFljb29yZGluYXRlIC0tLTAuMFxuICAgIHBvaW50XzNkLS0gWmNvb3JkaW5hdGUgLS0tLjAiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlLCJhdXRvU3luYyI6dHJ1ZSwidXBkYXRlRGlhZ3JhbSI6ZmFsc2V9)
+
+A cadwork point_3d list can be accessed like a simple python list.
+
+```python hl_lines="5 6 7"
+import  cadwork                                 # import module
+
+point = cadwork.point_3d(100, 200, 300)         # create a cadwork Point
+
+print(point[0])                                 # prints x coordinate
+print(point[1])                                 # prints y coordinate
+print(point[2])                                 # prints z coordinate
+```
+
+The coordinates of a cadwork point_3d object can also be accessed by its .x, .y and .z attributes.
+
+```python hl_lines="5 6 7"
+import  cadwork                                # import module
+
+point = cadwork.point_3d(100, 200, 300)        # create a cadwork Point
+
+print(point.x)                                 # prints x coordinate
+print(point.y)                                 # prints y coordinate
+print(point.z)                                 # prints z coordinate
+```
+
+### Point_3d methods
+
+
 ```python 
 point_3d + point_3d
 

@@ -6,14 +6,74 @@ from cwapi3d import point_3d, element_module_properties
 def get_last_error(code: int) -> str: ...
 def get_all_identifiable_element_ids() -> List[int]: ...
 def get_visible_identifiable_element_ids() -> List[int]: ...
-def get_invisible_identifiable_element_ids() -> List[int]: ...
-def get_active_identifiable_element_ids() -> List[int]: ...
+def get_invisible_identifiable_element_ids() -> List[int]:
+    """Get invisible cadwork element ids
+
+    Returns
+    -------
+        List[int]: List of element id's
+    
+    Example
+    -------
+    >>> get_invisible_identifiable_element_ids()
+    [61747532, 61747507, 61747514, 61747510, 61747506]
+    """
+def get_active_identifiable_element_ids() -> List[int]:
+    """Activate elements in cadwork. 
+    Function returns the element id's of active elements.
+
+    Returns
+    -------
+    List : List of int (element id's)
+
+    Example
+    --------
+    >>> get_active_identifiable_element_ids()
+    [61747532, 61747507, 61747514, 61747510, 61747506]
+    """
+    pass
+
 def get_inactive_all_identifiable_element_ids() -> List[int]: ...
 def get_inactive_visible_identifiable_element_ids() -> List[int]: ...
 def delete_elements(elements: List[int]) -> None: ...
-def join_elements(elements: List[int]) -> None: ...
-def join_top_level_elements(elements: List[int]) -> None: ...
-def create_rectangular_beam_points(width: float, height: float, p1: point_3d, p2: point_3d, p3: point_3d) -> int: ...
+def join_elements(elements: List[int]) -> None:
+    """[summary]
+
+    Args
+    -----
+        elements (List[int]): [description]
+    """
+def join_top_level_elements(elements: List[int]) -> None:
+    """[summary]
+
+    Args
+    ----------
+    elements (List[int]): 
+    
+    Example
+    -------
+    join_top_level_elements([61747514, 61747510, 61747506])
+    """
+def create_rectangular_beam_points(width: float, height: float, p1: point_3d, p2: point_3d, p3: point_3d) -> int:
+    """Returns element id's of active elements.
+
+    Args
+    ----------
+    width: float
+    height: float
+    p1: point_3d
+    p2: point_3d
+    p3: point_3d
+
+    Returns
+    -------
+    int : element id
+
+    Example
+    --------
+    >>> create_rectangular_beam_points(100., 200., point_3d(1. ,0., 0.), 
+                                        point_3d(0. ,1., 0.), point_3d(0. ,0., 1.))"""
+    pass
 def create_circular_beam_points(diameter: float, p1: point_3d, p2: point_3d, p3: point_3d) -> int: ...
 def create_square_beam_points(width: float, p1: point_3d, p2: point_3d, p3: point_3d) -> int: ...
 def create_rectangular_beam_vectors(length: float, width: float, height: float, p1: point_3d, p2: point_3d, p3: point_3d) -> int: ...
@@ -25,7 +85,22 @@ def create_drilling_points(diameter: float, p1: point_3d, p2: point_3d) -> int: 
 def create_drilling_vectors() -> int: ...
 def create_line_points(p1: point_3d, p2: point_3d) -> int: ...
 def create_line_vectors(length: float, xl: point_3d, yl: point_3d) -> int: ...
-def create_node(p1: point_3d) -> int: ...
+def create_node(p1: point_3d) -> int:
+    """[summary]
+
+    Args
+    ----
+        p1 (point_3d): [description]
+
+    Returns
+    -------
+        int: element_id
+    
+    Example
+    -------
+    >>> point = point_3d(100,200,300)
+    >>> create_node(point)
+    """
 def solder_elements(elements: List[int]) -> List[int]: ...
 def convert_beam_to_panel(elements: List[int]) -> None: ...
 def convert_panel_to_beam(elements: List[int]) -> None: ...
