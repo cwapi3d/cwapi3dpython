@@ -1,43 +1,14 @@
-## Install CWAPI3D
-```python
-pip install cwapi3d
-```
-[Github - cwapi3d python](https://github.com/cwapi3d/cwapi3dpython){target=_blank}
-
 ## Module cadwork
 
 ### create a cadwork point
 
 In Python, a cadwork point_3d is represented as a 3D Point structure -> represented by the x, y and z coordinate values of the point. 
+Find more information in tab geometry examples.
 
 ```python
 import  cadwork                                 # import module
 
 point = cadwork.point_3d(100, 200, 300)         # create a cadwork Point
-```
-
-A cadwork point_3d list can be accessed like a simple python list.
-
-```python hl_lines="5 6 7"
-import  cadwork                                 # import module
-
-point = cadwork.point_3d(100, 200, 300)         # create a cadwork Point
-
-print(point[0])                                 # prints x coordinate
-print(point[1])                                 # prints y coordinate
-print(point[2])                                 # prints z coordinate
-```
-
-The coordinates of a cadwork point_3d object can also be accessed by its .x, .y and .z attributes.
-
-```python hl_lines="5 6 7"
-import  cadwork                                # import module
-
-point = cadwork.point_3d(100, 200, 300)        # create a cadwork Point
-
-print(point.x)                                 # prints x coordinate
-print(point.y)                                 # prints y coordinate
-print(point.z)                                 # prints z coordinate
 ```
 
 ### move a cadwork point 
@@ -49,6 +20,17 @@ vector_x = cadwork.point_3d(1., 0., 0.)         # define vector
 distance = 1500.0                               # moving distance
 
 moved_point = point + (vector_x * distance)    
+```
+
+### distance between two 3D points
+
+```python 
+import  cadwork                                 # import module
+
+point1 = cadwork.point_3d(100, 200, 300) 
+point2 = cadwork.point_3d(300, 100, 200)                            
+
+distance = point1.distance(point2)  
 ```
 
 ## Module element_controller
@@ -381,9 +363,3 @@ if __name__ == '__main__':
     
 
 ```
-
-## Videos
-
-<figure class="video_container">
-  <iframe src="https://www.youtube.com/embed/hn3AtHPqEqE" frameborder="0" width="960" height="569"  allowfullscreen="true"> </iframe>
-</figure>

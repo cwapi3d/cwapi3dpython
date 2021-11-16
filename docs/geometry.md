@@ -27,6 +27,62 @@ A vector defines a direction and length. A point defines a location.
 
 ### cadwork point & vector 
 
+
+```mermaid
+%%{init: {'theme': 'forest', "flowchart" : { "curve" : "basis" } } }%%
+flowchart TD
+    point_3d-- coordiante ---X
+    point_3d-- coordinate ---Y
+    point_3d-- coordinate ---Z
+```
+
+a point --> point_3d(100,400,250)
+
+```mermaid
+%%{init: {'theme': 'forest', "flowchart" : { "curve" : "basis" } } }%%
+flowchart TD
+    point_3d-- Xcoordiante ---100
+    point_3d-- Ycoordinate ---400
+    point_3d-- Zcoordinate ---250
+```
+
+a vector --> point_3d(1., 0., 0.)
+
+```mermaid
+%%{init: {'theme': 'forest', "flowchart" : { "curve" : "basis" } } }%%
+flowchart TD
+    point_3d-- Xcoordiante ---1.0
+    point_3d-- Ycoordinate ---0.0
+    point_3d-- Zcoordinate ---.0
+```
+
+A cadwork point_3d list can be accessed like a simple python list.
+
+```python hl_lines="5 6 7"
+import  cadwork                                 # import module
+
+point = cadwork.point_3d(100, 200, 300)         # create a cadwork Point
+
+print(point[0])                                 # prints x coordinate
+print(point[1])                                 # prints y coordinate
+print(point[2])                                 # prints z coordinate
+```
+
+The coordinates of a cadwork point_3d object can also be accessed by its .x, .y and .z attributes.
+
+```python hl_lines="5 6 7"
+import  cadwork                                # import module
+
+point = cadwork.point_3d(100, 200, 300)        # create a cadwork Point
+
+print(point.x)                                 # prints x coordinate
+print(point.y)                                 # prints y coordinate
+print(point.z)                                 # prints z coordinate
+```
+
+### Point_3d methods
+
+
 ```python 
 point_3d + point_3d
 
