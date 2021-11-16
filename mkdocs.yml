@@ -69,10 +69,10 @@ markdown_extensions:
       linenums: true
       linenums_style: pymdownx-inline
   - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:mermaid2.fence_mermaid
+      #custom_fences:
+        #- name: mermaid
+          #class: mermaid
+          #format: !!python/name:mermaid2.fence_mermaid
   - footnotes:
       SEPARATOR: _footnote_
   - pymdownx.emoji:
@@ -85,7 +85,7 @@ markdown_extensions:
 extra_css:
   - stylesheets/extra.css
 plugins:
-  - mermaid2
+  # - mermaid2
   - search:
       separator: '[\s\-\.\_]+'     
   #git-revision-date-localized:

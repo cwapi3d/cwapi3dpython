@@ -27,34 +27,16 @@ A vector defines a direction and length. A point defines a location.
 
 ### cadwork point & vector 
 
+![](https://mermaid.ink/img/eyJjb2RlIjoiZmxvd2NoYXJ0IFREXG4gICAgcG9pbnRfM2QtLSBjb29yZGlhbnRlIC0tLVhcbiAgICBwb2ludF8zZC0tIGNvb3JkaW5hdGUgLS0tWVxuICAgIHBvaW50XzNkLS0gY29vcmRpbmF0ZSAtLS1aXG4gICAgICAgICAgICAiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlLCJhdXRvU3luYyI6dHJ1ZSwidXBkYXRlRGlhZ3JhbSI6ZmFsc2V9)
 
-```mermaid
-%%{init: {'theme': 'forest', "flowchart" : { "curve" : "basis" } } }%%
-flowchart TD
-    point_3d-- coordiante ---X
-    point_3d-- coordinate ---Y
-    point_3d-- coordinate ---Z
-```
 
 a point --> point_3d(100,400,250)
 
-```mermaid
-%%{init: {'theme': 'forest', "flowchart" : { "curve" : "basis" } } }%%
-flowchart TD
-    point_3d-- Xcoordiante ---100
-    point_3d-- Ycoordinate ---400
-    point_3d-- Zcoordinate ---250
-```
+![](https://mermaid.ink/img/eyJjb2RlIjoiZmxvd2NoYXJ0IFREXG4gICAgcG9pbnRfM2QtLSBYY29vcmRpYW50ZSAtLS0xMDBcbiAgICBwb2ludF8zZC0tIFljb29yZGluYXRlIC0tLTQwMFxuICAgIHBvaW50XzNkLS0gWmNvb3JkaW5hdGUgLS0tMjUwIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifSwidXBkYXRlRWRpdG9yIjpmYWxzZSwiYXV0b1N5bmMiOnRydWUsInVwZGF0ZURpYWdyYW0iOmZhbHNlfQ)
 
 a vector --> point_3d(1., 0., 0.)
 
-```mermaid
-%%{init: {'theme': 'forest', "flowchart" : { "curve" : "basis" } } }%%
-flowchart TD
-    point_3d-- Xcoordiante ---1.0
-    point_3d-- Ycoordinate ---0.0
-    point_3d-- Zcoordinate ---.0
-```
+![](https://mermaid.ink/img/eyJjb2RlIjoiZmxvd2NoYXJ0IFREXG4gICAgcG9pbnRfM2QtLSBYY29vcmRpYW50ZSAtLS0xLjBcbiAgICBwb2ludF8zZC0tIFljb29yZGluYXRlIC0tLTAuMFxuICAgIHBvaW50XzNkLS0gWmNvb3JkaW5hdGUgLS0tLjAiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlLCJhdXRvU3luYyI6dHJ1ZSwidXBkYXRlRGlhZ3JhbSI6ZmFsc2V9)
 
 A cadwork point_3d list can be accessed like a simple python list.
 
