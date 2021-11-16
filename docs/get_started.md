@@ -53,6 +53,8 @@ Go to [Github - cadwork](https://github.com/CadworkMontreal/PythonConsole) -> cl
 You can add an icon into the directory c:\users\public\documents\cadwork\userprofil_27\API.x64\PythonConsole'. The file must have the following name **Icon.png** . The icon should be scaled down to 30x30 pixels.
 
 ### run Code
+Open cadwork 3D and open the Python Console (IDLE) from the plugin bar. 
+
 Save your .py script an hit key F5 oder go via Menu -> Run -> Run Module
 ![Screenshot](img/run.png){: style="width:800px"}
 
