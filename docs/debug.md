@@ -7,3 +7,15 @@ User Test -> Userprofile -> Test Options... -> Console
 
 
 ![GIF](img/console.gif){: style="width:900px"}
+
+## Console
+
+Bugs present in the script can be detected in the console. 
+
+Any print statements are also visible in the console. 
+
+```python
+print("hello world")
+```
+
+![Screenshot](img/console_cw.png){: style="width:800px"}
