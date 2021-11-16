@@ -85,6 +85,7 @@ markdown_extensions:
 extra_css:
   - stylesheets/extra.css
 plugins:
+  - mermaid2
   - search:
       separator: '[\s\-\.\_]+'     
   #git-revision-date-localized:
