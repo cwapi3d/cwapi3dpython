@@ -33,7 +33,7 @@
 - **_out_** `string`
 - **_in_** `element` _id_
 
-## `get_endtype_name_fac`
+## `get_endtype_name_facet`
 - **_out_** `string`
 - **_in_** `element` _id_
 - **_in_** `uint32` _face_number_
@@ -48,7 +48,7 @@
 - **_in_** `element` _id_
 - **_in_** `string` _name_
 
-## `set_endtype_name_fac`
+## `set_endtype_name_facet`
 - **_out_** `none`
 - **_in_** `element` _element_id_
 - **_in_** `string` _name_

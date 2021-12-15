@@ -18,6 +18,7 @@ setuptools.setup(
     'cadwork',
     'connector_axis_controller',
     'element_controller',
+    'endtype_controller',
     'file_controller',
     'geometry_controller',
     'list_controller',

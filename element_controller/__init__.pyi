@@ -44,7 +44,7 @@ def join_elements(elements: List[int]) -> None:
         elements (List[int]): [description]
     """
 def join_top_level_elements(elements: List[int]) -> None:
-    """[summary]
+    """[löscht gruppierung und macht neue ]
 
     Args
     ----------
@@ -52,7 +52,7 @@ def join_top_level_elements(elements: List[int]) -> None:
     
     Example
     -------
-    join_top_level_elements([61747514, 61747510, 61747506])
+    >>> join_top_level_elements([61747514, 61747510, 61747506])
     """
 def create_rectangular_beam_points(width: float, height: float, p1: point_3d, p2: point_3d, p3: point_3d) -> int:
     """Returns element id's of active elements.

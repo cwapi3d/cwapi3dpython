@@ -18,4 +18,11 @@ Any print statements are also visible in the console.
 print("hello world")
 ```
 
+Print output in console:
+
+![Screenshot](img/hello.png){: style="width:300px"}
+
+
+Displayed Bug in console:
+
 ![Screenshot](img/console_cw.png){: style="width:800px"}
