@@ -1,5 +1,5 @@
 # visualization_controller
-### assign color to beam
+## assign color to beam
 ```python 
 import  cadwork                                 # import module
 import  element_controller        as ec
@@ -17,4 +17,19 @@ beam            = ec.create_square_beam_vectors(width, length,
                                                 vector_z) # returns element_id
 
 add_beam_color = vc.set_color([beam], color) # input beam id (list), color (int)
+```
+
+## mutable - immutable
+```python 
+import cadwork
+import element_controller as ec
+import visualization_controller as vc
+
+element_ids = ec.get_active_identifiable_element_ids()
+
+immutable = uc.get_user_bool("Do you want to set the elements to immutable ?", True)
+
+if immutable:
+    vc.set_immutable(element_ids)
+
 ```

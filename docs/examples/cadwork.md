@@ -32,3 +32,15 @@ point2 = cadwork.point_3d(300, 100, 200)
 
 distance = point1.distance(point2)  
 ```
+
+## add 3D points
+
+```python 
+import  cadwork                                 # import module
+
+pt1 = cadwork.point_3d(100, 200, 300)
+
+pt1 += cadwork.point_3d(800, 700, 600)
+
+print(pt1)
+```

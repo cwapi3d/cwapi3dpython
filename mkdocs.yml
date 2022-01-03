@@ -36,6 +36,7 @@ nav:
   - Python API: 
     - Cadwork API: index.md
     - Get Started: get_started.md
+    - Packages and Modules: modules.md
     - Debugging: debug.md
   - Documentation:
     - attribute_controller: documentation/attribute_controller.md
@@ -56,7 +57,7 @@ nav:
     - visualization_controller: documentation/visualization_controller.md
   - Examples:
     - geometry examples: examples/geometry.md
-    - controller examples: 
+    - modules examples: 
       - attribute_controller: examples/attribute_example.md
       - bim_controller: examples/bim_example.md
       - cadwork: examples/cadwork.md
@@ -110,6 +111,24 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/cwapi3d
       name: CWAPI3D
+  analytics:
+    provider: google
+    property: G-2JQB7N0WLY
+    #feedback:
+     # title: Was this page helpful?
+      #ratings:
+        #- icon: material/emoticon-happy-outline
+          #name: This page was helpful
+          #data: 1
+          #note: >-
+            #Thanks for your feedback!
+        #- icon: material/emoticon-sad-outline
+          #name: This page could be improved
+          #data: 0
+          #note: >- 
+            #Thanks for your feedback! Help us improve this page by
+            #using our <a href="..." target=_blank>feedback form</a>.
+
 
 extra_javascript:
     - https://unpkg.com/mermaid/dist/mermaid.min.js
