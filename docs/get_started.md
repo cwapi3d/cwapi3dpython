@@ -2,6 +2,10 @@
 
 To use Python scripts in cadwork, they must be located in the userprofile in the folder api.x64. 
 
+Click in a 3D file on **Help** --> **Info** and open the folder named **Userprofile** which brings you to the api.x64 directory.
+
+![Screenshot](img/info.png){: style="width:600px"}
+
 A folder must be created in the api.x64 directory for each script. The Python script must have the same name as the folder so that it can be executed.  
 
 ![Screenshot](img/directory.png){: style="width:600px"}
@@ -50,12 +54,13 @@ Go to [Github - cadwork](https://github.com/CadworkMontreal/PythonConsole) -> cl
 ![Screenshot](img/clone.png){: style="width:800px"}
 
 ### add an icon
-You can add an icon into the directory c:\users\public\documents\cadwork\userprofil_27\API.x64\PythonConsole'. The file must have the following name **Icon.png** . The icon should be scaled down to 30x30 pixels.
+You can add an icon, which will be displayed in the plugin bar.
+Just add an PNG or SVG File into the API directory c:\users\public\documents\cadwork\userprofil_27\API.x64\PythonConsole. The file must have the following name **Icon.png or Icon.svg** . The icon should be scaled down to 30x30 pixels.
 
 ### run Code
 Open cadwork 3D and open the Python Console (IDLE) from the plugin bar. 
 
-Save your .py script an hit key F5 oder go via Menu -> Run -> Run Module
+Save your .py script an hit key F5 or go via Menu -> Run -> Run Module
 ![Screenshot](img/run.png){: style="width:800px"}
 
 Example Code:
@@ -94,46 +99,8 @@ pip install cwapi3d
 
 The script cannot be run from the IDE (PyCharm, VS Code, ...). The script call must be made in cadwork (Plugin Bar). 
 
-[Example Video - How to Python in cadwork](example.md#Videos) :tv: <br>
+[Example Video - How to Python in cadwork](videos.md#Videos) :tv: <br>
 
-
-## Import Packages and Modules
-
-**Import packages** <br>
-As CPython is used in cadwork, it is possible to work with external modules. The modules included in Python as standard can be integrated normally by loading the modules. 
-
-```python
-# import modules
-import  cadwork  
-import  math
-import  csv
-import  tkinter
-...
-...
-```
-
-**Import external packages** <br>
-```python
-# import modules
-import  sys                                 
-import  utility_controller as uc
-
-USERPROFIL = uc.get_3d_userprofil_path()   # get userprofil path
-
-paths = [(USERPROFIL + '\\api.x64\\FolderName\\PackageFolder'),
-        ("C:\\Program Files\\cadwork.dir\\EXE_28\\Pclib.x64\\python38\\site-packages")
-          ]
-
-for path in paths:
-    if path not in sys.path:
-        sys.path.append(path)
-
-# import external modules
-import external_package1                    
-import external_package2
-import external_package3
-
-```
 
 
 

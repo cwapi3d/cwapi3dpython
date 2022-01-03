@@ -4,14 +4,14 @@
 To be able to determine the directions of the axes and the order of the x, y and z axes, the right-hand rule is applied:
 Spread the first three fingers of your right hand, as seen below. By virtue of the right-hand rule, your thumb becomes the positive x axis, the index finger, which is at a right angle from the thumb, becomes the positive y axis and the middle finger becomes the z axis. The position of the middle finger is of decisive importance. It points in the positive z direction. No matter how you rotate your right hand, the positive direction of the z axis is determined by the right-hand rule.
 
-![Backup Text](img/coordinate.png "https://de-manual.elcovision.com/koordinatensystem-definieren.html"){: style="width:300px"}
+![Backup Text](../img/coordinate.png "https://de-manual.elcovision.com/koordinatensystem-definieren.html"){: style="width:300px"}
 
 
 **Base of cadwork elements** <br>
 All basic elements in cadwork have an axis system. Except for the auxiliary element, room and surfaces, the elements are defined by an axis. The axis spans between point 1 and point 2. 
 The orientation of the axis is defined by the vectors x, y, z. 
 
-![Backup Text](img/points.png "cadwork axis"){: style="width:700px"}
+![Backup Text](../img/points.png "cadwork axis"){: style="width:700px"}
 
 ## Vector Geometry
 
@@ -23,7 +23,7 @@ then the vector we obtain at the end of this process is the same vector we had i
 **Vector or point**<br>
 A vector defines a direction and length. A point defines a location.
 
-![Backup Text](img/vector.png "vector - point"){: style="width:700px"}
+![Backup Text](../img/vector.png "vector - point"){: style="width:700px"}
 
 ### cadwork point & vector 
 
@@ -102,7 +102,7 @@ point_3d.distance(point_3d)
 
 ### move a cadwork point 
 
-![Backup Text](img/move_pt.png "move a cadwork point"){: style="width:500px"}
+![Backup Text](../img/move_pt.png "move a cadwork point"){: style="width:500px"}
 
 ```python 
 import  cadwork                                 # import module
@@ -115,7 +115,7 @@ moved_point = point + (vector_x * distance)
 
 ### cross product
 
-![Backup Text](img/cross.png "https://de.wikipedia.org/wiki/Kreuzprodukt#/media/Datei:RHR.svg"){: style="width:300px"}
+![Backup Text](../img/cross.png "https://de.wikipedia.org/wiki/Kreuzprodukt#/media/Datei:RHR.svg"){: style="width:300px"}
 
 ```python
 import cadwork
@@ -129,7 +129,7 @@ ab = a.cross(b)
 
 ### angle between two 3D vectors
 
-![Backup Text](img/angle.png "vector angle"){: style="width:300px"}
+![Backup Text](../img/angle.png "vector angle"){: style="width:300px"}
 
 ```python
 import math     as m                                 # import module 

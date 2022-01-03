@@ -36,27 +36,47 @@ nav:
   - Python API: 
     - Cadwork API: index.md
     - Get Started: get_started.md
+    - Packages and Modules: modules.md
     - Debugging: debug.md
   - Documentation:
-    - attribute_controller: attribute_controller.md
-    - bim_controller: bim_controller.md
-    - connector_axis_controller: connector_axis_controller.md
-    - element_controller: element_controller.md
-    - endtype_controller: endtype_controller.md
-    - file_controller: file_controller.md
-    - geometry_controller: geometry_controller.md
-    - list_controller: list_controller.md
-    - machine_controller: machine_controller.md
-    - material_controller: material_controller.md
-    - menu_controller: menu_controller.md
-    - roof_controller: roof_controller.md
-    - scene_controller: scene_controller.md
-    - shop_drawing_controller: shop_drawing_controller.md
-    - utility_controller: utility_controller.md
-    - visualization_controller: visualization_controller.md
+    - attribute_controller: documentation/attribute_controller.md
+    - bim_controller: documentation/bim_controller.md
+    - connector_axis_controller: documentation/connector_axis_controller.md
+    - element_controller: documentation/element_controller.md
+    - endtype_controller: documentation/endtype_controller.md
+    - file_controller: documentation/file_controller.md
+    - geometry_controller: documentation/geometry_controller.md
+    - list_controller: documentation/list_controller.md
+    - machine_controller: documentation/machine_controller.md
+    - material_controller: documentation/material_controller.md
+    - menu_controller: documentation/menu_controller.md
+    - roof_controller: documentation/roof_controller.md
+    - scene_controller: documentation/scene_controller.md
+    - shop_drawing_controller: documentation/shop_drawing_controller.md
+    - utility_controller: documentation/utility_controller.md
+    - visualization_controller: documentation/visualization_controller.md
   - Examples:
-    - geometry examples: geometry.md
-    - general examples: example.md
+    - geometry examples: examples/geometry.md
+    - modules examples: 
+      - attribute_controller: examples/attribute_example.md
+      - bim_controller: examples/bim_example.md
+      - cadwork: examples/cadwork.md
+      - connector_axis_controller: examples/connector_example.md
+      - element_controller: examples/element_example.md
+      - endtype_controller: examples/endtype_example.md
+      - file_controller: examples/file_example.md
+      - geometry_controller: examples/geometry_example.md
+      - list_controller: examples/list_example.md
+      - machine_controller: examples/machine_example.md
+      - material_controller: examples/material_example.md
+      - menu_controller: examples/menu_example.md
+      - roof_controller: examples/roof_example.md
+      - scene_controller: examples/scene_example.md
+      - shop_drawing_controller: examples/shop_drawing_example.md
+      - utility_controller: examples/utility_example.md
+      - visualization_controller: examples/visualization_example.md
+    - slab-frame: examples/frame.md
+    - tkinter-gui: examples/tk_gui.md
   - Videos: videos.md
   - About:
     - About Guide: about.md
@@ -69,10 +89,6 @@ markdown_extensions:
       linenums: true
       linenums_style: pymdownx-inline
   - pymdownx.superfences:
-      #custom_fences:
-        #- name: mermaid
-          #class: mermaid
-          #format: !!python/name:mermaid2.fence_mermaid
   - footnotes:
       SEPARATOR: _footnote_
   - pymdownx.emoji:
@@ -85,13 +101,9 @@ markdown_extensions:
 extra_css:
   - stylesheets/extra.css
 plugins:
-  # - mermaid2
   - search:
       separator: '[\s\-\.\_]+'     
-  #git-revision-date-localized:
-      #type: datetime
-  #- mkdocs-versioning:
-      #version: 0.3.0                 
+             
 extra:
   generator: false
   copyright: Copyright &copy; 2021 cadwork
@@ -99,8 +111,25 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/cwapi3d
       name: CWAPI3D
-  #version:
-    #provider: mike
+  analytics:
+    provider: google
+    property: G-2JQB7N0WLY
+    #feedback:
+     # title: Was this page helpful?
+      #ratings:
+        #- icon: material/emoticon-happy-outline
+          #name: This page was helpful
+          #data: 1
+          #note: >-
+            #Thanks for your feedback!
+        #- icon: material/emoticon-sad-outline
+          #name: This page could be improved
+          #data: 0
+          #note: >- 
+            #Thanks for your feedback! Help us improve this page by
+            #using our <a href="..." target=_blank>feedback form</a>.
+
+
 extra_javascript:
     - https://unpkg.com/mermaid/dist/mermaid.min.js
       
