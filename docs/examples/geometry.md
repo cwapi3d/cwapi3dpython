@@ -15,7 +15,7 @@ The orientation of the axis is defined by the vectors x, y, z.
 
 ## Vector Geometry
 
-A ​vector​ indicates a quantity, such as velocity or force, that has ​direction​ and ​length​.Vectors in 3D coordinate systems are represented with an ordered set of three realnumbers.
+A vector indicates a quantity, such as velocity or force, that has direction and length.Vectors in 3D coordinate systems are represented with an ordered set of three realnumbers.
 
 Two vectors are the same if they have the same magnitude and direction. This means that if we take a vector and translate it to a new position (without rotating it), 
 then the vector we obtain at the end of this process is the same vector we had in the beginning.
@@ -88,14 +88,20 @@ point_3d == point_3d
 
 point_3d != point_3d
 
+# dot product or scalar product
 point_3d.dot(point_3d)    
 
+# cross product or vector product 
+# operation on two vectors in a three-dimensional oriented Euclidean vector space 
 point_3d.cross(point_3d) 
 
+# vector magnitude or length
 point_3d.magnitude()
 
+# A normalized vector maintains its direction but its Length becomes 1
 point_3d.normalized()
 
+# distance between two points
 point_3d.distance(point_3d)
 ```
 
@@ -138,3 +144,8 @@ import cadwork  as cw
 def angle_between_vectors(v1:cw.point_3d, v2:cw.point_3d) -> float:
     return m.acos(v1.dot(v2) / (v1.magnitude() * v2.magnitude())) * (180 /m.pi)
 ``` 
+
+<noscript>
+    <img src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/pixel.gif">
+</noscript>
+<script defer src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/script.js"></script>
