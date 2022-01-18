@@ -25,6 +25,23 @@ beam       = ec.create_square_beam_vectors(width, length,
                                             vector_z) # returns element_id
 ```
 
+## stretch facet
+```python 
+import element_controller as ec                 # import module
+import cadwork
+import geometry_controller as gc
+
+
+element_ids = ec.get_active_identifiable_element_ids()
+
+distance = 75.
+
+for element_id in element_ids:
+    xl = gc.get_xl(element_id) * distance
+    ec.stretch_end_facet([element_id], xl)
+```
+
+
 <noscript>
     <img src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/pixel.gif">
 </noscript>
