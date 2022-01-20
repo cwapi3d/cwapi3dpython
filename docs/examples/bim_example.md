@@ -80,7 +80,7 @@ for element_id in element_ids:
     
 ```
 
-## IfcType - getter/setter
+## IfcType - condition & setter
 
 ```
 is_ifc_beam
