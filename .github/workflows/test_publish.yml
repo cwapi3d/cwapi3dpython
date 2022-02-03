@@ -15,14 +15,12 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.9
-      - name: Install
-        run: >-
+      - run: >-
           python -m
           pip install
           build
           --user
-      - name: Build
-        run: >-
+      - run: >-
           python -m
           build
           --sdist
