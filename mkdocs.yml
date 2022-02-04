@@ -55,6 +55,7 @@ nav:
     - shop_drawing_controller: documentation/shop_drawing_controller.md
     - utility_controller: documentation/utility_controller.md
     - visualization_controller: documentation/visualization_controller.md
+    - HELP: documentation/test.md
   - Examples:
     - geometry examples: examples/geometry.md
     - modules examples: 
@@ -102,7 +103,12 @@ extra_css:
   - stylesheets/extra.css
 plugins:
   - search:
-      separator: '[\s\-\.\_]+'     
+      separator: '[\s\-\.\_]+'    
+  - gen-files:
+      scripts:
+      - docs/gen_ref_nav.py 
+  - mkdocstrings
+    
              
 extra:
   generator: false
