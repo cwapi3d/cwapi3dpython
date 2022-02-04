@@ -102,10 +102,7 @@ extra_css:
   - stylesheets/extra.css
 plugins:
   - search:
-      separator: '[\s\-\.\_]+'    
-  - gen-files:
-      scripts:
-      - docs/gen_ref_nav.py 
+      separator: '[\s\-\.\_]+'     
   - mkdocstrings
     
              
