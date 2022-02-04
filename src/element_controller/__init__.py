@@ -66,8 +66,7 @@ def delete_elements(elements: List[int]) -> None:
 def join_elements(elements: List[int]) -> None:
     """join elements (group)
 
-    Args
-    -----
+    Args:
         elements (List[int]): element ids
     """
     
