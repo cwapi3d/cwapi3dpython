@@ -1,52 +1,70 @@
 # BIM Controller
 
-## `get_last_error`
-- **_out_** `string`
-- **_in_** `int32` _error_code_
+::: src.bim_controller.__init__
+    rendering:
+      show_root_heading: false
+      show_source: true
 
-## `get_ifc_guid`
-- **_out_** `string`
-- **_in_** `element` _id_
+## IfcType - condition & setter
 
-## `set_building_and_storey`
-- **_out_** `none`
-- **_in_** `element_list` _element_id_list_
-- **_in_** `string` _building_
-- **_in_** `string` _storey_
+```
+is_ifc_beam
+is_ifc_building_element_part
+is_ifc_building_element_proxy
+is_ifc_chimney
+is_ifc_column
+is_ifc_covering
+is_ifc_curtain_wall
+is_ifc_discrete_accessory
+is_ifc_door
+is_ifc_fastener
+is_ifc_flow_segment
+is_ifc_footing
+is_ifc_furnishing_element
+is_ifc_mechanical_fastener
+is_ifc_member
+is_ifc_opening_element
+is_ifc_plate
+is_ifc_railing
+is_ifc_ramp
+is_ifc_ramp_flight
+is_ifc_roof
+is_ifc_slab
+is_ifc_space
+is_ifc_stair
+is_ifc_stair_flight
+is_ifc_wall
+is_ifc_wall_standard_case
+is_ifc_window
+is_none
 
-## `get_building`
-- **_out_** `string`
-- **_in_** `element` _element_
-
-## `get_storey`
-- **_out_** `string`
-- **_in_** `element` _element_
-
-## `clear_errors`
-- **_out_** `none`
-
-## `get_ifc2x3_element_type`
-- **_out_** `ifc_2x3_element_type`
-- **_in_** `element` _element_id_
-
-## `set_ifc2x3_element_type`
-- **_out_** `none`
-- **_in_** `element_list` _element_ids_
-- **_in_** `ifc_2x3_element_type` _element_type_
-
-## `import_ifc_as_graphical_object`
-- **_out_** `boolean`
-- **_in_** `string` _file_path_
-
-## `import_bcf`
-- **_out_** `boolean`
-- **_in_** `string` _file_path_
-
-## `export_bcf`
-- **_out_** `boolean`
-- **_in_** `string` _file_path_
-
-## `export_ifc`
-- **_out_** `boolean`
-- **_in_** `element_list` _element_ids_
-- **_in_** `string` _file_path_
+set_ifc_beam
+set_ifc_building_element_part
+set_ifc_building_element_proxy
+set_ifc_chimney
+set_ifc_column
+set_ifc_covering
+set_ifc_curtain_wall
+set_ifc_discrete_accessory
+set_ifc_door
+set_ifc_fastener
+set_ifc_flow_segment
+set_ifc_footing
+set_ifc_furnishing_element
+set_ifc_mechanical_fastener
+set_ifc_member
+set_ifc_opening_element
+set_ifc_plate
+set_ifc_railing
+set_ifc_ramp
+set_ifc_ramp_flight
+set_ifc_roof
+set_ifc_slab
+set_ifc_space
+set_ifc_stair
+set_ifc_stair_flight
+set_ifc_wall
+set_ifc_wall_standard_case
+set_ifc_window
+set_none
+```

@@ -1,6 +1,6 @@
 from typing import List
 
-from cwapi3d import point_3d
+from cadwork import point_3d
 
 
 def get_last_error(code: int) -> str: ...

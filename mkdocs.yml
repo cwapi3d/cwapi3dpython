@@ -41,6 +41,7 @@ nav:
   - Documentation:
     - attribute_controller: documentation/attribute_controller.md
     - bim_controller: documentation/bim_controller.md
+    - cadwork: documentation/cadwork.md
     - connector_axis_controller: documentation/connector_axis_controller.md
     - element_controller: documentation/element_controller.md
     - endtype_controller: documentation/endtype_controller.md
@@ -80,6 +81,7 @@ nav:
   - Videos: videos.md
   - About:
     - About Guide: about.md
+  - Auto Attributes: auto_attributes.md
 markdown_extensions:
   - attr_list  
   - admonition

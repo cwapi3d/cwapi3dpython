@@ -118,7 +118,7 @@ def get_beam_vectors(element_id):
     Parameters
     ----------
     element_id : int
-        cadwork element id
+        cadwork element ID
         
     Returns
     -------
@@ -138,7 +138,7 @@ def beam_spacing(beam, subdivisions):
     Parameters
     ----------
     element_id : int
-        cadwork element id
+        cadwork element ID
     
     subdivisions: int
         number of divisions

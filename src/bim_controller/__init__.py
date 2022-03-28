@@ -1,17 +1,141 @@
+from tkinter.messagebox import NO
 from typing import List
 
-from cwapi3d import ifc_2x3_element_type
+class ifc_2x3_element_type():
+    def __init__(self) -> None:
+        pass
 
 
-def get_last_error(code: int) -> str: ...
-def get_ifc_guid(element: int) -> str: ...
-def set_building_and_storey(elements: List[int], building: str, storey: str) -> None: ...
-def get_building(element: int) -> str: ...
-def get_storey(element: int) -> str: ...
-def clear_errors() -> None: ...
-def get_ifc2x3_element_type(element: int) -> ifc_2x3_element_type: ...
-def set_ifc2x3_element_type(elements: List[int], ifc_2x3_element_type: ifc_2x3_element_type) -> None: ...
-def import_ifc_as_graphical_object(file: str) -> None: ...
-def import_bcf(file: str) -> None: ...
-def export_bcf(file: str) -> None: ...
-def export_ifc(elements: List[int], file: str) -> None: ...
+def get_ifc_guid(element: int) -> str: 
+    """Get readable ifc guid. Convert readable guid to IfcGuid, see -> https://github.com/IfcOpenShell/IfcOpenShell/blob/master/src/ifcopenshell-python/ifcopenshell/guid.py
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        str: readable guid
+    """
+def set_building_and_storey(elements: List[int], building: str, storey: str) -> None: 
+    """Set bulding and storey 
+
+    Args:
+        elements (List[int]): element IDs
+        building (str): building name
+        storey (str): storey name
+    """
+def get_building(element: int) -> str: 
+    """Get building name
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        str: building name
+    """
+def get_storey(element: int) -> str: 
+    """Get Storey
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        str: storey name
+    """
+
+def get_ifc2x3_element_type(element: int) -> ifc_2x3_element_type: 
+    """Get IFC element type. 
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        ifc_2x3_element_type: ifc type 
+    """
+def set_ifc2x3_element_type(elements: List[int], ifc_2x3_element_type: ifc_2x3_element_type) -> None: 
+    """Set IFC element type.
+
+    Args:
+        elements (List[int]): element IDs
+        ifc_2x3_element_type (ifc_2x3_element_type): cadwork ifc element type
+    """
+def import_ifc_as_graphical_object(file: str) -> None: 
+    """Import ifc as graphical object
+
+    Args:
+        file (str): path to ifc file
+    """
+def import_bcf(file: str) -> None: 
+    """Import bcf file.
+
+    Args:
+        file (str): path to bcf file
+    """
+def export_bcf(file: str) -> None: 
+    """Export bcf file. 
+
+    Args:
+        file (str): Destination path 
+    """
+def export_ifc(elements: List[int], file: str) -> None: 
+    """Export an ifc file. 
+
+    Args:
+        elements (List[int]): element IDs
+        file (str): Destination path 
+    """
+
+def convert_exchange_objects(elements: List[int]) -> List[int]:
+    """Convert exchange objects to cadwork elements 
+
+    Args:
+        elements (List[int]): element IDs
+
+    Returns:
+        List[int]: converted elements 
+    """
+
+def get_all_buildings() -> List[str]:
+    """Get all, in 3D, existing buildings 
+
+    Returns:
+        List[str]: building names 
+    """
+
+def get_all_storeys(building_name:str) -> List[str]:
+    """Get all Storeys from a building.
+
+    Args:
+        building_name (str): building name
+
+    Returns:
+        List[str]: storey names 
+    """
+
+
+def get_storey_height(building_name:str, storey_name:str) -> float:
+    """Get the storey height. 
+
+    Args:
+        building_name (str): building name
+        storey_name (str): storey name
+
+    Returns:
+        float: storey elevation height
+    """
+
+
+def import_ifc_return_exchange_objects(file_path:str) -> None:
+    """Import ifc as exchange objects
+
+    Args:
+        file_path (str): file path
+    """
+
+def set_storey_height(building_name:str, storey_name:str, height:float) -> None:
+    """Set the storey elevation. 
+
+    Args:
+        building_name (str): building name
+        storey_name (str): storey name
+        height (float): storey elevation 
+    """
