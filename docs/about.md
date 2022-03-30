@@ -1,6 +1,6 @@
 ## Version
 Cadwork Python Guide Version 1.0
-Copyright 2021 cadwork
+Copyright 2022 Cadwork
 
 ## Authors
 [Cadwork Montreal](https://www.cadwork.com/cwen/Ourcompany/Company/cadwork/Montreal.html){target=_blank} :information_source: <br>

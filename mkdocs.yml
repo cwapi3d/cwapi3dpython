@@ -103,6 +103,8 @@ extra_css:
 plugins:
   - search:
       separator: '[\s\-\.\_]+'     
+  - mkdocstrings
+    
              
 extra:
   generator: false

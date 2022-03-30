@@ -67,7 +67,7 @@ for element_id in element_ids:
 
 ```
 
-### Process Type - getter/setter
+### Process Type condition & setter
 ```
 
 is_hip_valley

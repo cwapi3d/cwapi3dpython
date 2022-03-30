@@ -8,6 +8,11 @@ User Test -> Userprofile -> Test Options... -> Console
 
 ![GIF](img/console.gif){: style="width:900px"}
 
+
+or use the debugger from Python IDLE.
+
+![Screenshot](img/debug.jpg)
+
 ## Console
 
 Bugs present in the script can be detected in the console. 

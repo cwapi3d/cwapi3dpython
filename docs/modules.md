@@ -43,9 +43,6 @@ import  utility_controller as uc
 
 USERPROFIL = uc.get_3d_userprofil_path()   # get userprofil path
 
-# importing module
-import sys
-
 # appending a path
 sys.path.append(USERPROFIL + '\\api.x64\\FolderName\\PackageFolder')
 
