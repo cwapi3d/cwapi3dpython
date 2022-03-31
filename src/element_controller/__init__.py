@@ -1,12 +1,12 @@
-from tokenize import Double
 from typing import List
 
-# from cwapi3d import point_3d, element_module_properties
-
-from cadwork import point_3d, element_module_properties
-
-def get_last_error(code: int) -> str:
-    pass
+class point_3d:
+    def __init__(self) -> None:
+        pass
+    
+class element_module_properties:
+    def __init__(self) -> None:
+        pass
     
 def get_all_identifiable_element_ids() -> List[int]:
     """get all identifiable element IDs (visible and unvisible)
@@ -814,4 +814,26 @@ def mirror_copy_elements(elements: List[int], plane_definition: point_3d, plane_
 
     Returns:
         List[int]: element IDs
+    """
+
+def check_if_point_is_on_element(point:point_3d, element:int) -> bool:
+    """Checks if a point is on a element
+
+    Args:
+        point (point_3d): a cadwork point
+        element (int): element ID
+
+    Returns:
+        bool: if point 
+    """
+
+def check_if_point_is_in_element(point:point_3d, element:int) -> bool:
+    """Check if point is in element
+
+    Args:
+        point (point_3d): a cadwork point
+        element (int): element ID
+
+    Returns:
+        bool: if point 
     """
