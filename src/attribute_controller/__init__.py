@@ -1,3 +1,4 @@
+from tkinter.messagebox import NO
 from typing import List
 
 class layer_settings():
@@ -15,15 +16,19 @@ class output_type():
 class process_type():
     def __init__(self) -> None:
         pass
-    
-class point_3d():
-    def __init__(self) -> None:
-        pass
-    
+
 class element_type():
     def __init__(self) -> None:
         pass
 
+class element_module_properties():
+    def __init__(self) -> None:
+        pass
+
+class point_3d:
+    def __init__(self)->None:
+        pass
+    
 def get_name(element: int) -> str:
     """get element name
 
@@ -813,4 +818,32 @@ def get_auto_attribute_name(element: int) -> str:
 
     Returns:
         str: auto attribute name
+    """
+    
+def get_steel_shape_name(element : int) -> str:
+    """Get steel profile name
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        str: steel profile name
+    """
+
+def get_standard_element_name(element : int) -> str:
+    """Get standard element name
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        str: standard element name
+    """
+    
+def enable_attribute_display() -> None:
+    """enable attribute display
+    """
+
+def disable_attribute_display() -> None:
+    """disable attribute display
     """
