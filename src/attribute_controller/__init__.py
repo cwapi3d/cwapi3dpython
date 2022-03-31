@@ -1,213 +1,849 @@
+from tkinter.messagebox import NO
 from typing import List
 
-from cwapi3d import process_type, extended_settings, output_type, element_type, layer_settings
+class layer_settings():
+    def __init__(self) -> None:
+        pass
 
+class extended_settings():
+    def __init__(self) -> None:
+        pass
+    
+class output_type():
+    def __init__(self) -> None:
+        pass
+    
+class process_type():
+    def __init__(self) -> None:
+        pass
 
-def get_last_error(code: int) -> str: ...
+class element_type():
+    def __init__(self) -> None:
+        pass
 
+class element_module_properties():
+    def __init__(self) -> None:
+        pass
 
-def get_name(element: int) -> str: ...
+class point_3d:
+    def __init__(self)->None:
+        pass
+    
+def get_name(element: int) -> str:
+    """get element name
 
+    Args:
+        element (int): elmement id
 
-def set_name(elements: List[int], name: str) -> None: ...
+    Returns:
+        str: element name
+    """
 
 
-def get_group(element: int) -> str: ...
+def set_name(elements: List[int], name: str) -> None: 
+    """
 
+    Args:
+        elements (List[int]): element IDs
+        name (str): name
+    """
 
-def set_group(elements: List[int], group: str) -> None: ...
 
+def get_group(element: int) -> str: 
+    """
 
-def get_subgroup(element: int) -> str: ...
+    Args:
+        element (int): element ID
 
+    Returns:
+        str: group name
+    """
 
-def set_subgroup(elements: List[int], subgroup: str) -> None: ...
 
+def set_group(elements: List[int], group: str) -> None: 
+    """_summary_
 
-def get_comment(element: int) -> str: ...
+    Args:
+        elements (List[int]): element IDs
+        group (str): group name
+    """
 
 
-def set_comment(elements: List[int], comment: str) -> None: ...
+def get_subgroup(element: int) -> str: 
+    """_summary_
 
+    Args:
+        element (int): element ID
 
-def get_user_attribute(element: int, number: int) -> str: ...
+    Returns:
+        str: subgroup name
+    """
 
 
-def set_user_attribute(elements: List[int], number: int, value: str) -> None: ...
+def set_subgroup(elements: List[int], subgroup: str) -> None: 
+    """
 
+    Args:
+        elements (List[int]): element IDs
+        subgroup (str): subgroup name
+    """
 
-def get_sku(element: int) -> str: ...
 
+def get_comment(element: int) -> str: 
+    """
 
-def set_sku(elements: List[int], sku: str) -> None: ...
+    Args:
+        element (int): element ID
 
+    Returns:
+        str: comment
+    """
 
-def get_production_number(element: int) -> int: ...
 
+def set_comment(elements: List[int], comment: str) -> None: 
+    """_summary_
 
-def set_production_number(elements: List[int], number: int) -> None: ...
+    Args:
+        elements (List[int]): element IDs
+        comment (str): comment
+    """
 
 
-def get_part_number(element: int) -> int: ...
+def get_user_attribute(element: int, number: int) -> str: 
+    """
 
+    Args:
+        element (int): element ID
+        number (int): number user attribute
 
-def set_part_number(elements: List[int], number: int) -> None: ...
+    Returns:
+        str: user attribute name (key)
+    """
 
 
-def get_additional_data(element: int, code: str) -> str: ...
+def set_user_attribute(elements: List[int], number: int, value: str) -> None: 
+    """
 
+    Args:
+        elements (List[int]): element IDs
+        number (int): user attribute (key)
+        value (str): user attribute name (value)
+    """
 
-def set_additional_data(elements: List[int], code: str, data: str) -> None: ...
 
+def get_sku(element: int) -> str: 
+    """
 
-def delete_additional_data(elements: List[int], code: str) -> None: ...
+    Args:
+        element (int): element ID
 
+    Returns:
+        str: sku code
+    """
 
-def get_user_attribute_name(number: int) -> str: ...
 
+def set_sku(elements: List[int], sku: str) -> None: 
+    """_summary_
 
-def set_user_attribute_name(number: int, name: str) -> None: ...
+    Args:
+        elements (List[int]): element IDs
+        sku (str): sku code
+    """
 
 
-def get_wall_situation(element: int) -> str: ...
+def get_production_number(element: int) -> int: 
+    """
 
+    Args:
+        element (int): element ID
 
-def is_beam(element: int) -> bool: ...
+    Returns:
+        int: number
+    """
 
 
-def is_panel(element: int) -> bool: ...
+def set_production_number(elements: List[int], number: int) -> None: 
+    """
 
+    Args:
+        elements (List[int]): element IDs
+        number (int): production number
+    """
 
-def is_opening(element: int) -> bool: ...
 
+def get_part_number(element: int) -> int: 
+    """
 
-def is_wall(element: int) -> bool: ...
+    Args:
+        element (int): element ID
 
+    Returns:
+        int: part number
+    """
 
-def is_floor(element: int) -> bool: ...
 
+def set_part_number(elements: List[int], number: int) -> None: 
+    """
 
-def is_roof(element: int) -> bool: ...
+    Args:
+        elements (List[int]): element IDs
+        number (int): part number
+    """
 
 
-def is_metal(element: int) -> bool: ...
+def get_additional_data(element: int, code: str) -> str: 
+    """Gets the element additional data
 
+    Args:
+        element (int): element ID
+        code (str): data id 
 
-def is_export_solid(element: int) -> bool: ...
+    Returns:
+        str: additional data
+    """
 
 
-def is_container(element: int) -> bool: ...
+def set_additional_data(elements: List[int], code: str, data_text: str) -> None: 
+    """
 
+    Args:
+        elements (List[int]): element IDs
+        code (str): data id
+        data_text (str): additional data text
+    """
 
-def is_connector_axis(element: int) -> bool: ...
 
+def delete_additional_data(elements: List[int], code: str) -> None: 
+    """Deletes the element additional data
 
-def is_drilling(element: int) -> bool: ...
+    Args:
+        elements (List[int]): element IDs
+        code (str): data ID
+    """
 
 
-def is_node(element: int) -> bool: ...
+def get_user_attribute_name(number: int) -> str: 
+    """Gets the user attribute name
 
+    Args:
+        number (int): Number user attribute number
 
-def is_auxiliary(element: int) -> bool: ...
+    Returns:
+        str: user attribute name
+    """
 
 
-def get_element_material_name(element: int) -> str: ...
+def set_user_attribute_name(number: int, name: str) -> None: 
+    """Sets the user attribute name
 
+    Args:
+        number (int): Number user attribute number
+        name (str): User attribute name user attribute name
+    """
 
-def get_prefab_layer(element: int) -> str: ...
 
+def get_wall_situation(element: int) -> str: 
+    """Gets the element wall situation
 
-def get_machine_calculation_set(element: int) -> str: ...
+    Args:
+        element (int): element ID
 
+    Returns:
+        str: element wall situation
+    """
 
-def get_cutting_set(element: int) -> str: ...
 
+def is_beam(element: int) -> bool: 
+    """Tests if element is beam
 
-def set_process_type_and_extended_settings_from_name(elements: List[int]) -> None: ...
+    Args:
+        element (int): element ID
 
+    Returns:
+        bool: is element beam
+    """
 
-def set_name_process_type(name: str, process_type: process_type) -> None: ...
 
+def is_panel(element: int) -> bool: 
+    """Tests if element is panel
 
-def get_name_process_type(name: int) -> process_type: ...
+    Args:
+        element (int): element ID
 
+    Returns:
+        bool: is element panel
+    """
 
-def set_name_extended_settings(name: str, extended_settings: extended_settings) -> None: ...
 
+def is_opening(element: int) -> bool: 
+    """Tests if element is opening
 
-def get_name_extended_settings(name: str) -> extended_settings: ...
+    Args:
+        element (int): element ID
 
+    Returns:
+        bool: is element opening
+    """
 
-def get_output_type(element: int) -> output_type: ...
 
+def is_wall(element: int) -> bool: 
+    """Tests if element is wall
 
-def set_output_type(elements: List[int], output_type: output_type) -> None: ...
+    Args:
+        element (int): element ID
 
+    Returns:
+        bool: is element wall
+    """
 
-def get_extended_settings(element: int) -> extended_settings: ...
 
+def is_floor(element: int) -> bool: 
+    """Tests if element is floor
 
-def set_extended_settings(elements: List[int], extended_settings: extended_settings) -> None: ...
+    Args:
+        element (int): element ID
 
+    Returns:
+        bool: is element floor
+    """
 
-def get_element_type(element: int) -> element_type: ...
 
+def is_roof(element: int) -> bool: 
+    """Tests if element is roof
 
-def set_wall(elements: List[int]) -> None: ...
+    Args:
+        element (int): element ID
 
+    Returns:
+        bool: is element roof
+    """
 
-def set_floor(elements: List[int]) -> None: ...
 
+def is_metal(element: int) -> bool: 
+    """Tests if element is metal
 
-def set_opening(elements: List[int]) -> None: ...
+    Args:
+        element (int): element ID
 
+    Returns:
+        bool: is element metal
+    """
 
-def get_fastening_attribute(element: int) -> str: ...
 
+def is_export_solid(element: int) -> bool: 
+    """Tests if element is export solid
 
-def set_fastening_attribute(elements: List[int], value: str) -> None: ...
+    Args:
+        element (int): element ID
 
+    Returns:
+        bool: is element export solid
+    """
 
-def is_roof_surface(element: int) -> bool: ...
 
+def is_container(element: int) -> bool: 
+    """Tests if element is container
 
-def is_caddy_object(element: int) -> bool: ...
+    Args:
+        element (int): element ID
 
+    Returns:
+        bool: is element container
+    """
 
-def set_element_material(elements: List[int], material_id: int) -> None: ...
 
+def is_connector_axis(element: int) -> bool: 
+    """Tests if element is connector axis
 
-def get_assembly_number(element: int) -> str: ...
+    Args:
+        element (int): element ID
 
+    Returns:
+        bool: is element connector axis
+    """
 
-def set_assembly_number(elements: List[int], number: str) -> None: ...
 
+def is_drilling(element: int) -> bool: 
+    """Tests if element is drilling
 
-def get_list_quantity(element: int) -> int: ...
+    Args:
+        element (int): element ID
 
+    Returns:
+        bool: is element drilling
+    """
 
-def set_list_quantity(elements: List[int], quantity: int) -> None: ...
 
+def is_node(element: int) -> bool: 
+    """Tests if element is node
 
-def is_envelope(element: int) -> bool: ...
+    Args:
+        element (int): element ID
 
+    Returns:
+        bool: is element node
+    """
 
-def set_layer_settings(elements: List[int], layer_settings: layer_settings) -> None: ...
 
+def is_auxiliary(element: int) -> bool: 
+    """Tests if element is auxiliary
 
-def set_ignore_in_vba_calculation(elements: List[int], value: bool) -> None: ...
+    Args:
+        element (int): element ID
 
+    Returns:
+        bool: is element auxiliary
+    """
 
-def get_ignore_in_vba_calculation(element: int) -> bool: ...
+def is_line(element: int) -> bool: 
+    """Tests if element is line
 
+    Args:
+        element (int): element ID
 
-def clear_errors() -> None: ...
+    Returns:
+        bool: is element line
+    """
+    
+def is_surface(element: int) -> bool: 
+    """Tests if element is surface
 
+    Args:
+        element (int): element ID
 
-def is_architecture_wall_2dc(element: int) -> bool: ...
+    Returns:
+        bool: is element surface
+    """
 
 
-def is_architecture_wall_xml(element: int) -> bool: ...
+def get_element_material_name(element: int) -> str: 
+    """Gets the element material name
 
+    Args:
+        element (int): element ID
 
-def set_reference_wall_2dc(elements: List[int], wall: str) -> None: ...
+    Returns:
+        bool: element material name
+    """
+
+
+def get_prefab_layer(element: int) -> str: 
+    """Gets the element prefab layer
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        bool: element prefab layer
+    """
+
+
+def get_machine_calculation_set(element: int) -> str: 
+    """Gets the element machine calculation set
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        str: element machine calculation set
+    """
+
+
+def get_cutting_set(element: int) -> str: 
+    """Gets the element cutting set
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        str: element cutting set
+    """
+
+
+def set_process_type_and_extended_settings_from_name(elements: List[int]) -> None: 
+    """ Sets the element process type and extended settings from the element name
+
+    Args:
+        elements (List[int]): ElementIDs
+    """
+
+
+def set_name_process_type(name: str, process_type: process_type) -> None: 
+    """Sets the process type for an element name
+
+    Args:
+        name (str): element name
+        process_type (process_type): process type
+    """
+
+
+def get_name_process_type(name: int) -> process_type: 
+    """Gets the process type for an element name
+
+    Args:
+        name (int): element name
+
+    Returns:
+        process_type: process type
+    """
+
+
+def set_name_extended_settings(name: str, extended_settings: extended_settings) -> None: 
+    """Sets the extended settings for an element name
+
+    Args:
+        name (str): element name
+        extended_settings (extended_settings): extended settings
+    """
+
+
+def get_name_extended_settings(name: str) -> extended_settings: 
+    """Gets the extended settings for an element name
+
+    Args:
+        name (str): element name
+
+    Returns:
+        extended_settings: extended settings
+    """
+
+
+def get_output_type(element: int) -> output_type: 
+    """Gets the element output type
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        output_type: output type
+    """
+
+
+def set_output_type(elements: List[int], output_type: output_type) -> None: 
+    """Sets the element output type
+
+    Args:
+        elements (List[int]):  element IDs
+        output_type (output_type): element output type
+    """
+
+
+def get_extended_settings(element: int) -> extended_settings: 
+    """Gets the element extended settings
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        extended_settings: extended settings
+    """
+
+
+def set_extended_settings(elements: List[int], extended_settings: extended_settings) -> None: 
+    """Sets the element extended settings
+
+    Args:
+        elements (List[int]): element IDs
+        extended_settings (extended_settings): element extended settings
+    """
+
+
+def get_element_type(element: int) -> element_type: 
+    """Gets the element type
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        element_type: type
+    """
+
+
+def set_wall(elements: List[int]) -> None: 
+    """Sets the element to wall
+
+    Args:
+        elements (List[int]): element IDs
+    """
+    
+def set_log_wall(elements: List[int]) -> None: 
+    """Sets the element to log wall
+
+    Args:
+        elements (List[int]): element IDs
+    """
+
+
+def set_floor(elements: List[int]) -> None: 
+    """Sets the element to floor
+
+    Args:
+        elements (List[int]): element IDs
+    """
+
+
+def set_opening(elements: List[int]) -> None: 
+    """Sets the element to opening
+
+    Args:
+        elements (List[int]): element IDs
+    """
+
+
+def get_fastening_attribute(element: int) -> str: 
+    """Get the element fastening attribute
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        str: element fastening attribute
+    """
+
+
+def set_fastening_attribute(elements: List[int], value: str) -> None: 
+    """Sets the element fastening attribute
+
+    Args:
+        elements (List[int]): element IDs
+        value (str): Value element fastening attribute
+    """
+
+
+def is_roof_surface(element: int) -> bool: 
+    """Tests if the element is caddy object
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        bool: is element caddy object
+    """
+
+
+def is_caddy_object(element: int) -> bool: 
+    """Tests if the element is caddy object
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        bool: is element caddy object
+    """
+
+
+def set_element_material(elements: List[int], material_id: int) -> None: 
+    """Sets the element material
+
+    Args:
+        elements (List[int]): element IDs
+        material_id (int): material ID
+    """
+
+
+def get_assembly_number(element: int) -> str: 
+    """Get the elmement assembly number
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        str: assembly number
+    """
+
+
+def set_assembly_number(elements: List[int], number: str) -> None: 
+    """Set the elmement assembly number
+
+    Args:
+        elements (List[int]): element IDs
+        number (str): assembly number
+    """
+
+
+def get_list_quantity(element: int) -> int: 
+    """Get element quantity
+
+    Args:
+        element (int): elmement ID
+
+    Returns:
+        int: elmement quantity 
+    """
+
+
+def set_list_quantity(elements: List[int], quantity: int) -> None: 
+    """Set element quantity
+
+    Args:
+        elements (List[int]): element IDs
+        quantity (int): elmement quantity 
+    """
+
+
+def is_envelope(element: int) -> bool: 
+    """Tests if the element is envelope
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        bool: is element envelope
+    """
+
+
+def set_layer_settings(elements: List[int], layer_settings: layer_settings) -> None: 
+    """Sets element layer settings
+
+    Args:
+        elements (List[int]): element IDs
+        layer_settings (layer_settings): layer setting
+    """
+
+
+def set_ignore_in_vba_calculation(elements: List[int], value: bool) -> None: 
+    """Sets if the element should be ignored in VBA Calculation
+
+    Args:
+        elements (List[int]): element IDs
+        value (bool): Ignore
+    """
+
+
+def get_ignore_in_vba_calculation(element: int) -> bool: 
+    """
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        bool: Ignore
+    """
+
+
+def is_architecture_wall_2dc(element: int) -> bool: 
+    """Tests if the element has a 2dc reference wall
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        bool: is architecturewall 2dc
+    """
+
+
+def is_architecture_wall_xml(element: int) -> bool: 
+    """Tests if the element has a xml reference wall
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        bool: is architecturewall xml
+    """
+
+
+def set_reference_wall_2dc(elements: List[int], wall: str) -> None: 
+    """Applies a new 2dc reference wall to an element
+
+    Args:
+        elements (List[int]): element IDs
+        wall (str): 2dc file path
+    """
+
+def set_node_symbol(elements: List[int], node_symbol: int) -> None: 
+    """Set a node symbol.
+    ChessSquare, Circle, Cross, CrossSquare, FilledCircle, FilledSquare, HalfFilledSquare ,SmallSquare, Square
+
+    Args:
+        elements (List[int]): element IDs
+        node_symbol (int): node symbol number
+    """
+
+def set_solid_floor(elements: List[int]) -> None:
+    """_summary_
+
+    Args:
+        elements (List[int]): _description_
+    """
+
+def set_solid_roof(elements: List[int]) -> None:
+    """_summary_
+
+    Args:
+        elements (List[int]): _description_
+    """
+
+def set_solid_wall(elements: List[int]) -> None:
+    """_summary_
+
+    Args:
+        elements (List[int]): _description_
+    """
+    
+def set_wall(elements: List[int]) -> None:
+    """_summary_
+
+    Args:
+        elements (List[int]): _description_
+    """
+    
+def set_standard_part(elements: List[int]) -> None:
+    """_summary_
+
+    Args:
+        elements (List[int]): _description_
+    """
+
+def update_auto_attribute() ->None:
+    """Start update auto attribute
+    """
+    
+def get_auto_attribute(element: int, number: int) -> str:
+    """Get auto attribute
+
+    Args:
+        element (int): element ID
+        number (int): auto attribute number
+
+    Returns:
+        str: name (value)
+    """
+
+def get_auto_attribute_name(element: int) -> str:
+    """Get auto attribute name
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        str: auto attribute name
+    """
+    
+def get_steel_shape_name(element : int) -> str:
+    """Get steel profile name
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        str: steel profile name
+    """
+
+def get_standard_element_name(element : int) -> str:
+    """Get standard element name
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        str: standard element name
+    """
+    
+def enable_attribute_display() -> None:
+    """enable attribute display
+    """
+
+def disable_attribute_display() -> None:
+    """disable attribute display
+    """
