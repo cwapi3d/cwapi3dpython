@@ -1,20 +1,11 @@
 # Roof Controller
 
-## `get_profile_length`
-- **_out_** `double`
-- **_in_** `element` _id_
+::: src.roof_controller.__init__
+    rendering:
+      show_root_heading: false
+      show_source: true
 
-## `get_edge_length`
-- **_out_** `double`
-- **_in_** `element` _id_
-- **_in_** `string` _edge_type_
-
-## `get_all_caddy_element_ids`
-- **_out_** `element_list`
-
-## `get_last_error`
-- **_out_** `string`
-- **_in_** `int32` _error_code_
-
-## `clear_errors`
-- **_out_** `none`
+<noscript>
+    <img src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/pixel.gif">
+</noscript>
+<script defer src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/script.js"></script>

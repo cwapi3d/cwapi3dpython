@@ -1,7 +1,8 @@
-from tkinter.messagebox import NO
 from typing import List
 
-from cadwork import point_3d
+class point_3d:
+    def __init__(self)->None:
+        pass
 
 def export_stl_file(elements: List[int], file: str) -> None:
     """ Exports an STL file

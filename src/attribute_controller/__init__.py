@@ -846,4 +846,40 @@ def enable_attribute_display() -> None:
 
 def disable_attribute_display() -> None:
     """disable attribute display
+    """   
+def get_prefab_layer_all_assigned(element : int) -> List[int]:
+    """Get all layer to which the element is assigned
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        List[int]: Layer
+    """
+def get_prefab_layer_with_dimensions(element : int) -> List[int]:
+    """Check if element is exported with prefab layer with dimensions
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        List[int]: layer number
+    """
+def get_prefab_layer_without_dimensions(element : int) -> List[int]:
+    """Check if element is exported with prefab layer without dimensions
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        List[int]: layer number
+    """
+def get_prefab_layer(element : int) -> str:
+    """Get prefab layer. Returns layer values for "With dimensions", "Without dimensions", "Show Attributes".
+
+    Args:
+        element (int): element id
+
+    Returns:
+        str: value 
     """
