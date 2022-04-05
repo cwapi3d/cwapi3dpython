@@ -837,3 +837,25 @@ def check_if_point_is_in_element(point:point_3d, element:int) -> bool:
     Returns:
         bool: if point 
     """
+def create_bounding_box_local(element:int, elements:List[int]) -> int:
+    """create a bounding box that is aligned to a reference element. 
+    The bounding box includes all elements contained in the list.
+
+    Args:
+        element (int): element ID reference element
+        elements (List[int]): element IDs
+
+    Returns:
+        int: element ID bounding box
+    """
+
+
+def create_bounding_box_global(elements: List[int]) -> int:
+    """create a bounding box that is aligned to the global coordinate system.
+
+    Args:
+        elements (List[int]): element IDs
+
+    Returns:
+        int: element ID bounding box
+    """
