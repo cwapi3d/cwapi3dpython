@@ -2,8 +2,6 @@
 
 !!! important "The module cadwork is to be loaded into the namespace at any time. This module is needed for many processes.<br> ```import cadwork``` "
 
-
-
 **Import packages** <br>
 As CPython is used in cadwork, it is possible to work with external modules. The modules included in Python as standard can be integrated normally by loading the modules. 
 
@@ -41,7 +39,8 @@ DEFAULT- By default, the interpreter looks for a module within the current direc
 import  sys                                 
 import  utility_controller as uc
 
-USERPROFIL = uc.get_3d_userprofil_path()   # get userprofil path
+# get userprofil path
+USERPROFIL = uc.get_3d_userprofil_path()   
 
 # appending a path
 sys.path.append(USERPROFIL + '\\api.x64\\FolderName\\PackageFolder')

@@ -1,26 +1,11 @@
 # Machine Controller
 
-## `get_last_error`
-- **_out_** `string`
-- **_in_** `int32` _error_code_
+::: src.machine_controller.__init__
+    rendering:
+      show_root_heading: false
+      show_source: true
 
-## `export_btl`
-- **_out_** `none`
-- **_in_** `uint32` _btl_version_
-- **_in_** `string` _file_path_
-
-## `export_weinmann_mfb`
-- **_out_** `none`
-- **_in_** `uint32` _mfb_version_
-
-## `export_hundegger`
-- **_out_** `none`
-- **_in_** `uint32` _hundegger_type_
-
-## `clear_errors`
-- **_out_** `none`
-
-## `export_hundegger_with_file_path`
-- **_out_** `none`
-- **_in_** `uint32` _hundegger_type_
-- **_in_** `string` _file_path_
+<noscript>
+    <img src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/pixel.gif">
+</noscript>
+<script defer src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/script.js"></script>

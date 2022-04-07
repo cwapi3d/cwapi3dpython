@@ -23,6 +23,18 @@ class element_module_properties():
     def __init__(self) -> None:
         pass
 
+class rgb_color():
+    def __init__(self) -> None:
+        pass
+
+class visibility_state():
+    def __init__(self) -> None:
+        pass
+    
+class activation_state():
+    def __init__(self) -> None:
+        pass
+
 class point_3d:
     def __init__(self)->None:
         pass

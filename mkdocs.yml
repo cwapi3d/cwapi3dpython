@@ -58,24 +58,23 @@ nav:
     - visualization_controller: documentation/visualization_controller.md
   - Examples:
     - geometry examples: examples/geometry.md
-    - modules examples: 
-      - attribute_controller: examples/attribute_example.md
-      - bim_controller: examples/bim_example.md
-      - cadwork: examples/cadwork.md
-      - connector_axis_controller: examples/connector_example.md
-      - element_controller: examples/element_example.md
-      - endtype_controller: examples/endtype_example.md
-      - file_controller: examples/file_example.md
-      - geometry_controller: examples/geometry_example.md
-      - list_controller: examples/list_example.md
-      - machine_controller: examples/machine_example.md
-      - material_controller: examples/material_example.md
-      - menu_controller: examples/menu_example.md
-      - roof_controller: examples/roof_example.md
-      - scene_controller: examples/scene_example.md
-      - shop_drawing_controller: examples/shop_drawing_example.md
-      - utility_controller: examples/utility_example.md
-      - visualization_controller: examples/visualization_example.md
+    - attribute_controller: examples/attribute_example.md
+    - bim_controller: examples/bim_example.md
+    - cadwork: examples/cadwork.md
+    - connector_axis_controller: examples/connector_example.md
+    - element_controller: examples/element_example.md
+    - endtype_controller: examples/endtype_example.md
+    - file_controller: examples/file_example.md
+    - geometry_controller: examples/geometry_example.md
+    - list_controller: examples/list_example.md
+    - machine_controller: examples/machine_example.md
+    - material_controller: examples/material_example.md
+    - menu_controller: examples/menu_example.md
+    - roof_controller: examples/roof_example.md
+    - scene_controller: examples/scene_example.md
+    - shop_drawing_controller: examples/shop_drawing_example.md
+    - utility_controller: examples/utility_example.md
+    - visualization_controller: examples/visualization_example.md
     - slab-frame: examples/frame.md
     - tkinter-gui: examples/tk_gui.md
   - Videos: videos.md
