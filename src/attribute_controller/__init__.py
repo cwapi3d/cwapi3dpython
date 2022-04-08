@@ -761,38 +761,38 @@ def set_node_symbol(elements: List[int], node_symbol: int) -> None:
     """
 
 def set_solid_floor(elements: List[int]) -> None:
-    """_summary_
+    """set property for element type to solid floor 
 
     Args:
-        elements (List[int]): _description_
+        elements (List[int]): element IDs
     """
 
 def set_solid_roof(elements: List[int]) -> None:
-    """_summary_
+    """set property for element type to solid roof 
 
     Args:
-        elements (List[int]): _description_
+        elements (List[int]): element IDs
     """
 
 def set_solid_wall(elements: List[int]) -> None:
-    """_summary_
+    """set property for element type to solid wall 
 
     Args:
-        elements (List[int]): _description_
+        elements (List[int]): element IDs
     """
     
 def set_wall(elements: List[int]) -> None:
-    """_summary_
+    """set element to type wall
 
     Args:
-        elements (List[int]): _description_
+        elements (List[int]): element IDs
     """
     
 def set_standard_part(elements: List[int]) -> None:
-    """_summary_
+    """Sets covers (wall, opening or floor) to standard part
 
     Args:
-        elements (List[int]): _description_
+        elements (List[int]): element IDs
     """
 
 def update_auto_attribute() ->None:
