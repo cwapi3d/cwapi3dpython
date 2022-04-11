@@ -105,6 +105,8 @@ plugins:
   - search:
       separator: '[\s\-\.\_]+'     
   - mkdocstrings
+  - mkdocs-versioning:
+      version: "version 1.2.5" 
     
              
 extra:
