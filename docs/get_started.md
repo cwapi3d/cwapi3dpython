@@ -84,7 +84,8 @@ for element_id in element_ids:
 ## Use your prefered IDE (advanced user)
 Of course, you can also use any other Python IDE. 
 For this purpose e.g. PyCharm is recommended. 
-Install the CWAPI3D package into your environment via ```pip install cwapi3d```. Open your IDE and start with your script.
+Install the CWAPI3D package into your environment via ```pip install cwapi3d```. Open your IDE and start with your script. 
+Install a specific version ```pip install <PACKAGE>==<VERSION>```
 
 
 ### Python version used in cadwork :bulb:  <br>

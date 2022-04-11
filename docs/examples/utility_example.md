@@ -23,6 +23,7 @@ for p in points_range:
 vc.set_color(drillings, 5)
 
 uc.enable_auto_display_refresh()
+# ec.ec.recreate_elements(element_ids)
 
 end = timer()
 print(timedelta(seconds=end-start))
