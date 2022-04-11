@@ -7,7 +7,7 @@ edit_uri: ""
 # Copyright
 copyright: Copyright &copy; 2021 cadwork 
 
-site_name: Cadwork Python Documentation
+site_name: Cadwork Python Documentation version 1.2.5
 site_url: https://python.cadwork.dev/
 theme:
     name: material
@@ -105,8 +105,8 @@ plugins:
   - search:
       separator: '[\s\-\.\_]+'     
   - mkdocstrings
-  - mkdocs-versioning:
-      version: "version 1.2.5" 
+  #- mkdocs-versioning:
+      #version: "version 1.2.5" 
     
              
 extra:
