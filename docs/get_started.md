@@ -53,9 +53,75 @@ Go to [Github - cadwork](https://github.com/CadworkMontreal/PythonConsole) -> cl
 
 ![Screenshot](img/clone.png){: style="width:800px"}
 
-### add an icon
+### add a plugin icon
 You can add an icon, which will be displayed in the plugin bar.
 Just add an PNG or SVG File into the API directory c:\users\public\documents\cadwork\userprofil_27\API.x64\PythonConsole. The file must have the following name **Icon.png or Icon.svg** . The icon should be scaled down to 30x30 pixels.
+
+### Plugin Info
+
+For the plugins you can add a description. To do this, you can use the following xml file and customize and extend it according to your needs. 
+Save the XML file under the name plugin_info.xml in the directory of your plugin.
+The plugin info is then displayed as soon as the mouse pointer is hovered over the icon.
+
+<br>
+![Screenshot](img/info_xml.png)
+<br>
+
+#### plugin_info.xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<PluginInfo>
+    <Version>1.0.0.0</Version>
+    <Date>2022-04-12</Date>
+    <Author>your Name</Author>
+    <Name>
+      <Text language="German">Plugin Title - foo bar baz</Text>
+      <Text language="English">Plugin Title - foo bar baz</Text>
+      <Text language="French"> Plugin Title - foo bar baz</Text>
+      <Text language="Italian"/>
+      <Text language="Spanish"/>
+      <Text language="Czech"/>
+      <Text language="Finnish"/>
+      <Text language="Russian"/>
+      <Text language="Polish"/>
+      <Text language="Romanian"/>
+      <Text language="Norwegian"/>
+      <Text language="Chinese"/>
+      <Text language="Portuguese"/>
+      <Text language="Estonian"/>
+      <Text language="Japanese"/>
+    </Name>
+    <Description>
+      <Text language="German">
+<![CDATA[
+Hallo Welt... Plugin Beschreibung
+]]>
+      </Text>
+      <Text language="English">
+<![CDATA[
+Hello World... Plugin Description
+]]>
+      </Text>
+      <Text language="French">
+<![CDATA[
+Bonjour le monde... Description du plugin
+]]>
+      </Text>
+      <Text language="Italian"/>
+      <Text language="Spanish"/>
+      <Text language="Czech"/>
+      <Text language="Finnish"/>
+      <Text language="Russian"/>
+      <Text language="Polish"/>
+      <Text language="Romanian"/>
+      <Text language="Norwegian"/>
+      <Text language="Chinese"/>
+      <Text language="Portuguese"/>
+      <Text language="Estonian"/>
+      <Text language="Japanese"/>
+    </Description>
+</PluginInfo>
+```
 
 ### run Code
 Open cadwork 3D and open the Python Console (IDLE) from the plugin bar. 
