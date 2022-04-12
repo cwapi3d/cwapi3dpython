@@ -35,7 +35,6 @@ content via a Python script.
 ## Creation of script-filled attributes
 These attributes are created similar to the user-defined attributes in the Attributes dialog
 (User profile -> Wood... -> Attributes) in the new Script Filled -> Configuration tab.
-tab.
 
 ![Backup Text](img/auto.jpg "script-filled attributes"){: style="width:700px"}
 
