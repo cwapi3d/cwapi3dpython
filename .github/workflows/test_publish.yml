@@ -6,6 +6,7 @@ on:
       - develop
     paths:
       - 'src/**'
+      - 'setup.py'
 
 jobs:
   build-and-publish:
