@@ -848,8 +848,6 @@ def create_bounding_box_local(element:int, elements:List[int]) -> int:
     Returns:
         int: element ID bounding box
     """
-
-
 def create_bounding_box_global(elements: List[int]) -> int:
     """create a bounding box that is aligned to the global coordinate system.
 
@@ -858,4 +856,34 @@ def create_bounding_box_global(elements: List[int]) -> int:
 
     Returns:
         int: element ID bounding box
+    """
+def extrude_surface_to_auxiliary_vector(element:int, vector:point_3d) -> int:
+    """Extrude a surface to a auxiliary element. 
+
+    Args:
+        element (int): element ID
+        vector (point_3d): vector e.g. point_3d(0,0,1200)
+
+    Returns:
+        int: element ID
+    """
+def extrude_surface_to_beam_vector(element:int, vector:point_3d) -> int:
+    """Extrude a surface to a beam. 
+
+    Args:
+        element (int): element ID
+        vector (point_3d): vector e.g. point_3d(0,0,1200)
+
+    Returns:
+        int: element ID
+    """
+def extrude_surface_to_panel_vector(element:int, vector:point_3d) -> int:
+    """Extrude a surface to a panel.
+
+    Args:
+        element (int): element ID
+        vector (point_3d): vector e.g. point_3d(0,0,1200)
+
+    Returns:
+        int: element ID
     """
