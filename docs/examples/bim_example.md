@@ -95,6 +95,23 @@ for element_id in element_ids:
     print(f'Ifc{ifc_type}')
 ```
 
+## IfcType getter
+
+```python
+import      element_controller      as ec
+import      bim_controller          as bc
+import      cadwork
+
+
+element_ids = ec.get_active_identifiable_element_ids()
+
+
+for element in element_ids:
+    ifc_type = bc.get_ifc2x3_element_type(element)
+    if cadwork.ifc_2x3_element_type.is_ifc_member(ifc_type):
+        # do something
+```
+
 <noscript>
     <img src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/pixel.gif">
 </noscript>

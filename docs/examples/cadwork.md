@@ -45,7 +45,7 @@ pt1 += cadwork.point_3d(800, 700, 600)
 print(pt1)
 ```
 
-## process types - ifc2x3 element_type
+## process type - ifc2x3 element_type
 
 ```python 
 import  cadwork                                 # import module
@@ -67,6 +67,35 @@ for element_id in element_ids:
 
 ```
 
+## output type
+```python
+import      element_controller      as ec
+import      attribute_controller    as ac
+import      cadwork
+
+
+element_ids = ec.get_active_identifiable_element_ids()
+
+for element in element_ids:
+    if ac.is_panel(element):
+        get_output_tpye = ac.get_output_type(element)
+        get_output_tpye.set_panel_2()
+        ac.set_output_type([element], get_output_tpye)
+```
+
+```python
+import      element_controller      as ec
+import      attribute_controller    as ac
+import      cadwork
+
+
+element_ids = ec.get_active_identifiable_element_ids()
+
+
+for element in element_ids:
+    element_type = ac.get_element_type(element)
+    print(cadwork.element_type.isWall(element_type))
+```
 
 <noscript>
     <img src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/pixel.gif">
