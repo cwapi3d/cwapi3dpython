@@ -1,3 +1,6 @@
+from tokenize import Double
+from typing import List
+
 class point_3d:
     def __init__(self)->None:
         pass
@@ -485,4 +488,95 @@ def change_check_and_query_data_to_no_queries() -> None:
     """
 def change_check_and_query_data_to_queries() -> None: 
     """
+    """
+def load_attribute_display_settings(file_path:str) -> None:
+    """
+
+    Args:
+        file_path (str): a file path
+    """
+def load_element_attribute_display_settings(file_path:str, elements: List[int]) -> None:
+    """
+
+    Args:
+        file_path (str): a file path
+        elements (List[int]): element IDs
+    """
+def get_global_x_offset() -> float:
+    """
+
+    Returns:
+        float: global x offset
+    """
+def set_global_x_offset(offset:float) -> None:
+    """
+
+    Args:
+        offset (float): a offset value
+    """
+def get_global_y_offset() -> float:
+    """
+
+    Returns:
+        float: global y offset
+    """
+def set_global_y_offset(offset:float) -> None:
+    """
+
+    Args:
+        offset (float): a offset value
+    """
+def get_global_z_offset() -> float:
+    """
+
+    Returns:
+        float: global z offset
+    """
+def set_global_z_offset(offset:float) -> None:
+    """
+
+    Args:
+        offset (float): a offset value
+    """
+def show_north_arrow() -> None:
+    """
+    """
+def hide_north_arrow() -> None:
+    """
+    """
+def is_north_arrow_visible() -> bool:
+    """checks if north arrow is visible
+
+    Returns:
+        bool: is visible
+    """
+def get_north_angle() -> float:
+    """
+
+    Returns:
+        float: angle
+    """
+def set_north_angle(north_angle:float) -> None:
+    """
+
+    Args:
+        north_angle (float): a angle value
+    """
+def get_millimetre_from_imperial_string(value:str) -> float:
+    """
+
+    Args:
+        value (str): imperial string
+
+    Returns:
+        float: millimetre value
+    """
+def get_imperial_string_from_millimetre(value:float) -> str:
+    """
+
+    Args:
+        value (float): millimetre value
+
+    Returns:
+        str: imperial string
     """

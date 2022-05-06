@@ -45,7 +45,7 @@ pt1 += cadwork.point_3d(800, 700, 600)
 print(pt1)
 ```
 
-## process types - ifc2x3 element_type
+## process type - ifc2x3 element_type
 
 ```python 
 import  cadwork                                 # import module
@@ -67,54 +67,34 @@ for element_id in element_ids:
 
 ```
 
-### Process Type condition & setter
+## output type
+```python
+import      element_controller      as ec
+import      attribute_controller    as ac
+import      cadwork
+
+
+element_ids = ec.get_active_identifiable_element_ids()
+
+for element in element_ids:
+    if ac.is_panel(element):
+        get_output_tpye = ac.get_output_type(element)
+        get_output_tpye.set_panel_2()
+        ac.set_output_type([element], get_output_tpye)
 ```
 
-is_hip_valley
-is_jack_rafter
-is_log
-is_none
-is_panel_1
-is_panel_2
-is_panel_3
-is_panel_4
-is_panel_5
-is_purlin
-is_rafter
-is_rough_volume_framed_wall
-is_rough_volume_log_home
-is_rough_volume_solid_wood_wall
-is_stud
-is_tread
-is_truss
-is_user_1
-is_user_2
-is_user_3
-is_user_4
-is_user_5
+```python
+import      element_controller      as ec
+import      attribute_controller    as ac
+import      cadwork
 
-set_hip_valley
-set_jack_rafter
-set_log
-set_none
-set_panel_1
-set_panel_2
-set_panel_3
-set_panel_4
-set_panel_5
-set_purlin
-set_rafter
-set_rough_volume_framed_wall
-set_rough_volume_log_home
-set_rough_volume_solid_wood_wall
-set_stud
-set_tread
-set_truss
-set_user_1
-set_user_2
-set_user_3
-set_user_4
-set_user_5
+
+element_ids = ec.get_active_identifiable_element_ids()
+
+
+for element in element_ids:
+    element_type = ac.get_element_type(element)
+    print(cadwork.element_type.isWall(element_type))
 ```
 
 <noscript>

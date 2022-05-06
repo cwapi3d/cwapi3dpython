@@ -26,33 +26,6 @@ Instead of this name you can place an icon in the api.x64 folder under the plugi
             * MyFirstScript.py (Python File)
             * Icon.png (Plugin Icon, size ~30x30 pixel)
 
-## easy start with Python IDLE :bulb:
-IDLE is Python’s Integrated Development and Learning Environment.
-
-The IDLE allows you to run Python scripts directly in cadwork. 
-
-
-IDLE has the following features:
-
-* coded in 100% pure Python, using the tkinter GUI toolkit
-* cross-platform: works mostly the same on Windows, Unix, and macOS
-* Python shell window (interactive interpreter) with colorizing of code input, output, and error messages
-* multi-window text editor with multiple undo, Python colorizing, smart indent, call tips, auto completion, and other features
-* search within any window, replace within editor windows, and search through multiple files (grep)
-* debugger with persistent breakpoints, stepping, and viewing of global and local namespaces
-configuration, browsers, and other dialogs
-
-Menus
-IDLE has two main window types, the Shell window and the Editor window. It is possible to have multiple editor windows simultaneously. On Windows and Linux, each has its own top menu. Each menu documented below indicates which window type it is associated with.
-Output windows, such as used for Edit => Find in Files, are a subtype of editor window. They currently have the same top menu but a different default title and context menu.
-On macOS, there is one application menu. It dynamically changes according to the window currently selected. It has an IDLE menu, and some entries described below are moved around to conform to Apple guidelines.
-
-### download / clone IDLE in cadwork userprofile
-
-Go to [Github - cadwork](https://github.com/CadworkMontreal/PythonConsole) -> click on Button **Code** and clone or Download ZIP into your directory -> c:\users\public\documents\cadwork\userprofil_28\API.x64\PythonConsole'. 
-
-![Screenshot](img/clone.png){: style="width:800px"}
-
 ### add a plugin icon
 You can add an icon, which will be displayed in the plugin bar.
 Just add an PNG or SVG File into the API directory c:\users\public\documents\cadwork\userprofil_27\API.x64\PythonConsole. The file must have the following name **Icon.png or Icon.svg** . The icon should be scaled down to 30x30 pixels.
@@ -123,6 +96,34 @@ Bonjour le monde... Description du plugin
 </PluginInfo>
 ```
 
+## easy start with Python IDLE :bulb:
+IDLE is Python’s Integrated Development and Learning Environment.
+
+The IDLE allows you to run Python scripts directly in cadwork. 
+
+
+IDLE has the following features:
+
+* coded in 100% pure Python, using the tkinter GUI toolkit
+* cross-platform: works mostly the same on Windows, Unix, and macOS
+* Python shell window (interactive interpreter) with colorizing of code input, output, and error messages
+* multi-window text editor with multiple undo, Python colorizing, smart indent, call tips, auto completion, and other features
+* search within any window, replace within editor windows, and search through multiple files (grep)
+* debugger with persistent breakpoints, stepping, and viewing of global and local namespaces
+configuration, browsers, and other dialogs
+
+Menus
+IDLE has two main window types, the Shell window and the Editor window. It is possible to have multiple editor windows simultaneously. On Windows and Linux, each has its own top menu. Each menu documented below indicates which window type it is associated with.
+Output windows, such as used for Edit => Find in Files, are a subtype of editor window. They currently have the same top menu but a different default title and context menu.
+On macOS, there is one application menu. It dynamically changes according to the window currently selected. It has an IDLE menu, and some entries described below are moved around to conform to Apple guidelines.
+
+### download / clone IDLE in cadwork userprofile
+
+Go to [Github - cadwork](https://github.com/CadworkMontreal/PythonConsole) -> click on Button **Code** and clone or Download ZIP into your directory -> c:\users\public\documents\cadwork\userprofil_28\API.x64\PythonConsole'. 
+
+![Screenshot](img/clone.png){: style="width:800px"}
+
+
 ### run Code
 Open cadwork 3D and open the Python Console (IDLE) from the plugin bar. 
 
@@ -163,6 +164,8 @@ Cadwork uses CPython version 3.8.6
 pip install cwapi3d
 ```
 [Github - cwapi3d python](https://github.com/cwapi3d/cwapi3dpython){target=_blank}
+
+[PyPi Python Package](https://pypi.org/project/cwapi3d/){target=_blank}
 
 The script cannot be run from the IDE (PyCharm, VS Code, ...). The script call must be made in cadwork (Plugin Bar). 
 

@@ -41,6 +41,19 @@ for element_id in element_ids:
     ec.stretch_end_facet([element_id], xl)
 ```
 
+## create surface - element boundary
+
+```python
+import cadwork
+import geometry_controller as gc
+import element_controller as ec
+
+element_ids = ec.get_active_identifiable_element_ids()
+for element_id in element_ids:
+    facets = gc.get_element_facets(element_id)
+    for facet in facets:
+        ec.create_surface(facet) # create surface
+```
 
 <noscript>
     <img src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/pixel.gif">

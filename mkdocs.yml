@@ -7,7 +7,7 @@ edit_uri: ""
 # Copyright
 copyright: Copyright &copy; 2021 cadwork 
 
-site_name: Cadwork Python Documentation version 1.2.9
+site_name: Cadwork 29 - Python Documentation version 1.3.0
 site_url: https://python.cadwork.dev/
 theme:
     name: material
@@ -41,7 +41,12 @@ nav:
   - Documentation:
     - attribute_controller: documentation/attribute_controller.md
     - bim_controller: documentation/bim_controller.md
-    - cadwork: documentation/cadwork.md
+    - cadwork: 
+      - element_module_properties: documentation/element_module_properties.md
+      - element_type: documentation/element_type.md
+      - ifc_2x3_element_type: documentation/ifc_2x3_element_type.md
+      - process_type: documentation/process_type.md
+      - point_3d: documentation/point_3d.md
     - connector_axis_controller: documentation/connector_axis_controller.md
     - element_controller: documentation/element_controller.md
     - endtype_controller: documentation/endtype_controller.md
