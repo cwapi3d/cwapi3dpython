@@ -903,411 +903,411 @@ class element_module_properties():
     def __init__(self) -> None:
         pass
     def get_cutting_element_priority(self)->int:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def get_distribute_in_axis_direction_distance(self)->int:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def get_distribute_in_axis_direction_number(self)->int:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def get_distribute_perpendicular_to_axis_direction_distance(self)->int:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def get_distribute_perpendicular_to_axis_direction_number(self)->int:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def get_keep_in_center_Of_layer_current_wall(self)->str:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def get_keep_in_center_Of_layer_neighbour_wall(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def get_unique_layername(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_auxiliary(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_bottom_plate(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_cutting_element(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_distribute_in_axis_direction(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_distribute_in_axis_direction_use_max_distance(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_distribute_in_axis_direction_use_number(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_distribute_perpendicular_to_axis_direction(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_distribute_perpendicular_to_axis_direction_use_max_distance(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_distribute_perpendicular_to_axis_direction_use_number(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_element_from_detail(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_keep_in_center_Of_layer_current_wall(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_keep_in_center_Of_layer_neighbour_wall(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_main_element(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_move_according_length_axis(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_move_according_thickness_axis(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_move_with_top_of_wall(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_no_collision_control(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_no_inside_cover_control(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_not_cut_with_cutting_element(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_not_placed_at_end_of_wall(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_not_placed_at_start_of_wall(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_opening_lintel(self, active:bool):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_opening_sill(self, active:bool):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_solder_in_axis_direction(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_stop_in_axis_direction(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_stop_perpendicular_to_axis_direction(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_strecht_according_length_axis(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_strecht_according_thickness_axis(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_stretch_with_opening_lintel(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_stretch_with_opening_sill(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_stretch_with_top_of_wall(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_top_plate(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_unique_layername(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_use_for_detail_coordinate_system(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_auxiliary(self, active:bool):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_bottom_plate(self, active:bool):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_cutting_element(self, active:bool, priority:int):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_distribute_in_axis_direction_use_max_distance(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_distribute_in_axis_direction_use_number(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_distribute_in_axis_direction(self, active:bool, distance:int):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_distribute_perpendicular_to_axis_direction_use_max_distance(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_distribute_perpendicular_to_axis_direction_use_number(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_distribute_perpendicular_to_axis_direction(self, active:bool, distance:int):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_element_from_detail(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_keep_in_center_Of_layer_current_wall(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_keep_in_center_Of_layer_neighbour_wall(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_keep_in_center_Of_rough_volume(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_main_element(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_move_according_length_axis(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_move_according_thickness_axis(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_move_with_top_of_wall(self, aActive:bool):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_no_collision_control(self, active:bool):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_no_inside_cover_control(self, active:bool):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_not_cut_with_cutting_element(self, active:bool):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_not_placed_at_end_of_wall(self, active:bool):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_not_placed_at_start_of_wall(self, active:bool):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_opening_lintel(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_opening_sill(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_solder_in_axis_direction(self, active:bool):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_stop_in_axis_direction(self, active:bool):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_stop_perpendicular_to_axis_direction(self, active:bool):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_strecht_according_length_axis(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_strecht_according_thickness_axis(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_stretch_with_opening_lintel(self, active:bool):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_stretch_with_opening_sill(self, active:bool):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_stretch_with_top_of_wall(self, aActive:bool):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_top_plate(self, active:bool):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_unique_layername(self):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_use_for_detail_coordinate_system(self, active:bool):
-        """#ToDo Documentation
+        """ToDo Documentation
         """
 
 class ifc_2x3_element_type():
     def __init__(self) -> None:
         pass
     def is_ifc_beam(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_building_element_part(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_building_element_proxy(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_chimney(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_column(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_covering(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_curtain_wall(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_discrete_accessory(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_door(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_fastener(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_flow_segment(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_footing(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_furnishing_element(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_mechanical_fastener(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_member(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_opening_element(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_plate(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_railing(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_ramp(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_ramp_flight(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_roof(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_slab(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_space(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_stair(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_stair_flight(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_wall(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_wall_standard_case(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_ifc_window(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def is_none(self, ifc_type)->bool:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_beam(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_building_element_part(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_building_element_proxy(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_chimney(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_column(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_covering(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_curtain_wall(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_discrete_accessory(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_door(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_fastener(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_flow_segment(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_footing(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_furnishing_element(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_mechanical_fastener(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_member(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_opening_element(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_plate(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_railing(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_ramp(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_ramp_flight(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_roof(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_slab(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_space(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_stair(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_stair_flight(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_wall(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_wall_standard_case(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_ifc_window(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """
     def set_none(self, element_ids:List[int], ifc_type)->None:
-        """#ToDo Documentation
+        """ToDo Documentation
         """

@@ -41,7 +41,12 @@ nav:
   - Documentation:
     - attribute_controller: documentation/attribute_controller.md
     - bim_controller: documentation/bim_controller.md
-    - cadwork: documentation/cadwork.md
+    - cadwork: 
+      - element_module_properties: documentation/element_module_properties.md
+      - element_type: documentation/element_type.md
+      - ifc_2x3_element_type: documentation/ifc_2x3_element_type.md
+      - process_type: documentation/process_type.md
+      - point_3d: documentation/point_3d.md
     - connector_axis_controller: documentation/connector_axis_controller.md
     - element_controller: documentation/element_controller.md
     - endtype_controller: documentation/endtype_controller.md
