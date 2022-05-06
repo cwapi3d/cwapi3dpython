@@ -32,7 +32,7 @@ source: [GeeksforGeeks](https://www.geeksforgeeks.org/sys-path-in-python/)
 
 Initializing sys.path 
 
-DEFAULT- By default, the interpreter looks for a module within the current directory. To make the interpreter search in some other directory **you just simply have to change the current directory**. The following example depicts a default path taken by the interpreter:
+By default, the interpreter looks for a module within the current directory. To make the interpreter search in some other directory **you just simply have to change the current directory**. The following example depicts a default path taken by the interpreter:
 
 ```python
 # import modules
