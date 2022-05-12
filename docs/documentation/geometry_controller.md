@@ -1,6 +1,6 @@
 # Geometry Controller
 
-::: src.geometry_controller.__init__
+::: src.geometry_controller
     rendering:
       show_root_heading: false
       show_source: true
