@@ -1,12 +1,9 @@
 from typing import List
+from src.cadwork import (element_module_properties, 
+                         point_3d)
 
-class point_3d:
-    def __init__(self) -> None:
-        pass
-    
-class element_module_properties:
-    def __init__(self) -> None:
-        pass
+
+
     
 def get_all_identifiable_element_ids() -> List[int]:
     """get all identifiable element IDs (visible and unvisible)
@@ -887,3 +884,4 @@ def extrude_surface_to_panel_vector(element:int, vector:point_3d) -> int:
     Returns:
         int: element ID
     """
+

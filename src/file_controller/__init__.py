@@ -1,8 +1,6 @@
 from typing import List
 
-class point_3d:
-    def __init__(self)->None:
-        pass
+from src.cadwork import point_3d
 
 def export_stl_file(elements: List[int], file: str) -> None:
     """ Exports an STL file

@@ -1,8 +1,5 @@
 from typing import List
-
-class point_3d:
-    def __init__(self)->None:
-        pass
+from src.cadwork import point_3d
 
 
 def get_width(element: int) -> float: 
