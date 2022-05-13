@@ -1,6 +1,5 @@
 
 from typing import List
-import deprecation
 
 
 class layer_settings():
@@ -303,11 +302,8 @@ class element_type():
         Returns:
             bool: condition
         """
-    @deprecation.deprecated(deprecated_in="1.0", removed_in="2.0",
-                        current_version="1.3.1",
-                        details="Function is not necessary anymore")
     def isCadwork(self, element_type)->bool:
-        """
+        """Function is deprecated.
         Args:
             element_type (element type): element type 
 
@@ -570,11 +566,8 @@ class element_type():
         Returns:
             bool: condition
         """
-    @deprecation.deprecated(deprecated_in="1.0", removed_in="2.0",
-                    current_version="1.3.1",
-                    details="Function is not necessary anymore")
     def is_cadwork(self, element_type)->bool:
-        """
+        """Function is deprecated.
         Args:
             element_type (element type): element type 
 
