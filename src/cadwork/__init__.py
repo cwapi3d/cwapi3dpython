@@ -303,17 +303,17 @@ class element_type():
         Returns:
             bool: condition
         """
-    @deprecation.deprecated(deprecated_in="1.0", removed_in="2.0",
-                        current_version="1.3.1",
-                        details="Function is not necessary anymore")
-    def isCadwork(self, element_type)->bool:
-        """
-        Args:
-            element_type (element type): element type 
+    # @deprecation.deprecated(deprecated_in="1.0", removed_in="2.0",
+    #                     current_version="1.3.1",
+    #                     details="Function is not necessary anymore")
+    # def isCadwork(self, element_type)->bool:
+    #     """
+    #     Args:
+    #         element_type (element type): element type 
 
-        Returns:
-            bool: condition
-        """
+    #     Returns:
+    #         bool: condition
+    #     """
     def isCircularAxis(self, element_type)->bool:
         """
         Args:
@@ -570,17 +570,17 @@ class element_type():
         Returns:
             bool: condition
         """
-    @deprecation.deprecated(deprecated_in="1.0", removed_in="2.0",
-                    current_version="1.3.1",
-                    details="Function is not necessary anymore")
-    def is_cadwork(self, element_type)->bool:
-        """
-        Args:
-            element_type (element type): element type 
+    # @deprecation.deprecated(deprecated_in="1.0", removed_in="2.0",
+    #                 current_version="1.3.1",
+    #                 details="Function is not necessary anymore")
+    # def is_cadwork(self, element_type)->bool:
+    #     """
+    #     Args:
+    #         element_type (element type): element type 
 
-        Returns:
-            bool: condition
-        """
+    #     Returns:
+    #         bool: condition
+    #     """
     def is_circular_axis(self, element_type)->bool:
         """
         Args:

@@ -4,8 +4,7 @@ from src.cadwork import (layer_settings,
                          output_type, 
                          process_type, 
                          element_type, 
-                         element_module_properties, 
-                         point_3d)
+                         )
                             
 def get_name(element: int) -> str:
     """get element name

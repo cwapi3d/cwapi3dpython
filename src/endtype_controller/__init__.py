@@ -10,7 +10,7 @@ def create_new_endtype(endtype_name: str, endtype_id: int, folder_name: str) -> 
         folder_name (str): folder name
 
     Returns:
-        int: [description]
+        int: endtype id
     """
     
 def get_endtype_id(name: str) -> int:
@@ -103,7 +103,6 @@ def set_endtype_id_facet(element: int, endtype_id: int, face_number: int) -> Non
         endtype_id (int): endtype ID
         face_number (int): face number
     """
-    
 def set_endtype_id_start(element: int, endtype_id: int) -> None:
     """Sets the endtype to start face by endtypeID
 
@@ -111,12 +110,12 @@ def set_endtype_id_start(element: int, endtype_id: int) -> None:
         element (int): element ID
         endtype_id (int): endtype ID
     """
-def set_endtype_name_end(arg0: int, arg1: str) -> None:
-    """[summary]
+def set_endtype_name_end(element: int, face_number: str) -> None:
+    """Sets the endtype to end face by endtypename
 
     Args:
-        arg0 (int): [description]
-        arg1 (str): [description]
+        element (int): element ID
+        face_number (str): face number
     """
 def set_endtype_name_facet(element: int, name: str, face_number: int) -> None:
     """Sets the endtype to a face by endtypename
