@@ -109,7 +109,14 @@ extra_css:
 plugins:
   - search:
       separator: '[\s\-\.\_]+'     
-  - mkdocstrings
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          rendering:
+            show_source: false
+            
+        
   #- mkdocs-versioning:
       #version: "version 1.2.5" 
     
