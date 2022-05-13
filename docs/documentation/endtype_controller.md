@@ -1,6 +1,6 @@
 # End-Type Controller
 
-::: src.endtype_controller.__init__
+::: endtype_controller.__init__
     rendering:
       show_root_heading: false
       show_source: true

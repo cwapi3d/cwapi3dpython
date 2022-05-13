@@ -1,34 +1,14 @@
-from tkinter.messagebox import NO
 from typing import List
+from cadwork import (layer_settings, 
+                         extended_settings, 
+                         output_type, 
+                         process_type, 
+                         element_type, 
+                         )
 
-class layer_settings():
-    def __init__(self) -> None:
-        pass
 
-class extended_settings():
-    def __init__(self) -> None:
-        pass
-    
-class output_type():
-    def __init__(self) -> None:
-        pass
-    
-class process_type():
-    def __init__(self) -> None:
-        pass
 
-class element_type():
-    def __init__(self) -> None:
-        pass
-
-class element_module_properties():
-    def __init__(self) -> None:
-        pass
-
-class point_3d:
-    def __init__(self)->None:
-        pass
-    
+                            
 def get_name(element: int) -> str:
     """get element name
 

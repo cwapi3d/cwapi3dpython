@@ -1,6 +1,6 @@
 # Roof Controller
 
-::: src.roof_controller.__init__
+::: roof_controller.__init__
     rendering:
       show_root_heading: false
       show_source: true

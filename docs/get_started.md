@@ -156,7 +156,7 @@ Install a specific version ```pip install <PACKAGE>==<VERSION>```
 
 
 ### Python version used in cadwork :bulb:  <br>
-Cadwork uses CPython version 3.8.6 
+Cadwork uses CPython version 3.9.10
 
 ### Install CWAPI3D package on your device
 

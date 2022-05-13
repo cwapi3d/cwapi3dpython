@@ -7,13 +7,13 @@ edit_uri: ""
 # Copyright
 copyright: Copyright &copy; 2021 cadwork 
 
-site_name: Cadwork 29 - Python Documentation version 1.3.1
+site_name: Cadwork 29 - Python Documentation version 1.3.7
 site_url: https://python.cadwork.dev/
 theme:
     name: material
     nav_style: dark
     logo: cw_logo.svg  # cwapi3d_logo2.svg # cwapi3d_logo_small.png #cwapi3d_logo.svg 
-    version: v28
+    version: v29
     palette:
       - media: "(prefers-color-scheme: light)"
         scheme: default
@@ -109,7 +109,17 @@ extra_css:
 plugins:
   - search:
       separator: '[\s\-\.\_]+'     
-  - mkdocstrings
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          setup_commands:
+                      - import sys
+                      - sys.path.append('src/')
+          rendering:
+            show_source: false
+            
+        
   #- mkdocs-versioning:
       #version: "version 1.2.5" 
     

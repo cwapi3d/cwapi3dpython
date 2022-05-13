@@ -1,9 +1,5 @@
-from tkinter.messagebox import NO
 from typing import List
-
-class ifc_2x3_element_type():
-    def __init__(self) -> None:
-        pass
+from cadwork import ifc_2x3_element_type
 
 
 def get_ifc_guid(element: int) -> str: 

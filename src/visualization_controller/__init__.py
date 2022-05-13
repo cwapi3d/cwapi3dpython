@@ -1,16 +1,8 @@
 from typing import List
+from cadwork import (rgb_color,
+                     visibility_state,
+                     activation_state)
 
-class rgb_color():
-    def __init__(self) -> None:
-        pass
-
-class visibility_state():
-    def __init__(self) -> None:
-        pass
-    
-class activation_state():
-    def __init__(self) -> None:
-        pass
 
 def get_color(element: int) -> int: 
     """

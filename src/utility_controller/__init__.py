@@ -1,9 +1,5 @@
-from tokenize import Double
 from typing import List
-
-class point_3d:
-    def __init__(self)->None:
-        pass
+from cadwork import point_3d
 
 def get_3d_version() -> int: 
     """

@@ -282,6 +282,7 @@ class process_type():
         """setter method - usage see https://docs.cadwork.com/projects/cwapi3dpython/en/latest/examples/cadwork/#output-type
         """
 
+
 class element_type():
     def __init__(self) -> None:
         pass
@@ -302,7 +303,7 @@ class element_type():
             bool: condition
         """
     def isCadwork(self, element_type)->bool:
-        """
+        """Function is deprecated.
         Args:
             element_type (element type): element type 
 
@@ -566,7 +567,7 @@ class element_type():
             bool: condition
         """
     def is_cadwork(self, element_type)->bool:
-        """
+        """Function is deprecated.
         Args:
             element_type (element type): element type 
 

@@ -1,6 +1,6 @@
 # Menu Controller
 
-::: src.menu_controller.__init__
+::: menu_controller.__init__
     rendering:
       show_root_heading: false
       show_source: true

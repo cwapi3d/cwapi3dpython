@@ -1,6 +1,6 @@
 # Connector Axis Controller
 
-::: src.connector_axis_controller.__init__
+::: connector_axis_controller.__init__
     rendering:
       show_root_heading: false
       show_source: true
