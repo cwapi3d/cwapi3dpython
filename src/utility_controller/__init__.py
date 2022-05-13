@@ -1,5 +1,5 @@
 from typing import List
-from src.cadwork import point_3d
+from cadwork import point_3d
 
 def get_3d_version() -> int: 
     """

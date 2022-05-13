@@ -1,5 +1,5 @@
 from typing import List
-from src.cadwork import point_3d
+from cadwork import point_3d
 
 def export_2d_wireframe_with_clipboard(clipboard: int, with_layout: bool) -> None: 
     """

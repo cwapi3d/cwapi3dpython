@@ -1,6 +1,6 @@
 # Machine Controller
 
-::: src.machine_controller
+::: machine_controller.__init__
     rendering:
       show_root_heading: false
       show_source: true

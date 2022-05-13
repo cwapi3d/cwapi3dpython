@@ -1,5 +1,5 @@
 from typing import List
-from src.cadwork import ifc_2x3_element_type
+from cadwork import ifc_2x3_element_type
 
 
 def get_ifc_guid(element: int) -> str: 

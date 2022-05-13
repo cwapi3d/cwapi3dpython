@@ -1,10 +1,11 @@
 from typing import List
-from src.cadwork import (layer_settings, 
+from cadwork import (layer_settings, 
                          extended_settings, 
                          output_type, 
                          process_type, 
                          element_type, 
                          )
+
 
 
                             

@@ -1,6 +1,6 @@
 # Scene Controller
 
-::: src.scene_controller
+::: scene_controller.__init__
     rendering:
       show_root_heading: false
       show_source: true

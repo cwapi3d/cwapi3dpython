@@ -1,6 +1,6 @@
 # Shop Drawing Controller
 
-::: src.shop_drawing_controller
+::: shop_drawing_controller.__init__
     rendering:
       show_root_heading: false
       show_source: true

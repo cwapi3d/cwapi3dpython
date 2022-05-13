@@ -1,6 +1,6 @@
 from typing import List
 
-from src.cadwork import (point_3d)
+from cadwork import (point_3d)
 
 def create_standard_connector(name: str, start: point_3d, end: point_3d) -> int: 
     """Creates a standard connector axis between two points.

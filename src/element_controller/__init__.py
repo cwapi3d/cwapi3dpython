@@ -1,5 +1,5 @@
 from typing import List
-from src.cadwork import (element_module_properties, 
+from cadwork import (element_module_properties, 
                          point_3d)
 
 
