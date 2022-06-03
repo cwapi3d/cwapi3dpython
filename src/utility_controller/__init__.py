@@ -54,6 +54,12 @@ def print_message(text: str) -> None:
     Args:
         text (str): message/text
     """
+def print_error(text: str) -> None:
+    """prints a message. 'locks' 3d GUI until user confirms with a right-click.
+
+    Args:
+        text (str): message/text
+    """
 def get_user_int(text: str) -> int: 
     """Prompts the user for an integer
 

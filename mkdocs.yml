@@ -38,6 +38,7 @@ nav:
     - Get Started: get_started.md
     - Packages and Modules: modules.md
     - Debugging: debug.md
+    - Community: community.md
   - Documentation:
     - attribute_controller: documentation/attribute_controller.md
     - bim_controller: documentation/bim_controller.md
