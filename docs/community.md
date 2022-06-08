@@ -1,6 +1,8 @@
 **Questions, bugs, requests for extensions, etc..** can be posted on our GitHub repository. 
 The posts are publicly viewable and therefore help the entire cadwork python community. 
 
+let's grow the community :rocket:
+
 ![Screenshot](img/issues.png)
 
 <div class="GitHub Issues" markdown>

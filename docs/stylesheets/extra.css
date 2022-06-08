@@ -26,6 +26,9 @@
     --md-code-hl-function-color: #b91cac;
     --md-code-hl-comment-color: #2c7e0c;
     --md-code-hl-string-color: #ce5a2c;
+    --md-code-hl-keyword-color: #2c55ce;
+    --md-code-hl-operator-color: #9fa3ae;
+    --md-code-hl-variable-color: #5375d3;
   }
 
   [data-md-color-scheme="slate"] {

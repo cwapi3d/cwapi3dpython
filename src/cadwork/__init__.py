@@ -918,115 +918,118 @@ class element_module_properties():
     def get_distribute_perpendicular_to_axis_direction_number(self)->int:
         """ToDo Documentation
         """
-    def get_keep_in_center_Of_layer_current_wall(self)->str:
+    def get_keep_in_center_of_layer_current_wall(self)->str:
         """ToDo Documentation
         """
-    def get_keep_in_center_Of_layer_neighbour_wall(self):
+    def get_keep_in_center_of_layer_neighbour_wall(self):
         """ToDo Documentation
         """
     def get_unique_layername(self):
         """ToDo Documentation
         """
-    def is_auxiliary(self):
+    def is_auxiliary(self)-> bool:
         """ToDo Documentation
         """
-    def is_bottom_plate(self):
+    def is_bottom_plate(self)-> bool:
         """ToDo Documentation
         """
-    def is_cutting_element(self):
+    def is_cutting_element(self)-> bool:
         """ToDo Documentation
         """
-    def is_distribute_in_axis_direction(self):
+    def is_distribute_in_axis_direction(self)-> bool:
         """ToDo Documentation
         """
-    def is_distribute_in_axis_direction_use_max_distance(self):
+    def is_distribute_in_axis_direction_use_max_distance(self)-> bool:
         """ToDo Documentation
         """
-    def is_distribute_in_axis_direction_use_number(self):
+    def is_distribute_in_axis_direction_use_number(self)-> bool:
         """ToDo Documentation
         """
-    def is_distribute_perpendicular_to_axis_direction(self):
+    def is_distribute_perpendicular_to_axis_direction(self)-> bool:
         """ToDo Documentation
         """
-    def is_distribute_perpendicular_to_axis_direction_use_max_distance(self):
+    def is_distribute_perpendicular_to_axis_direction_use_max_distance(self)-> bool:
         """ToDo Documentation
         """
-    def is_distribute_perpendicular_to_axis_direction_use_number(self):
+    def is_distribute_perpendicular_to_axis_direction_use_number(self)-> bool:
         """ToDo Documentation
         """
-    def is_element_from_detail(self):
+    def is_element_from_detail(self)-> bool:
         """ToDo Documentation
         """
-    def is_keep_in_center_Of_layer_current_wall(self):
+    def is_keep_in_center_of_layer_current_wall(self)-> bool:
         """ToDo Documentation
         """
-    def is_keep_in_center_Of_layer_neighbour_wall(self):
+    def is_keep_in_center_of_layer_neighbour_wall(self)-> bool:
         """ToDo Documentation
         """
-    def is_main_element(self):
+    def is_main_element(self)-> bool:
         """ToDo Documentation
         """
-    def is_move_according_length_axis(self):
+    def is_move_according_length_axis(self)-> bool:
         """ToDo Documentation
         """
-    def is_move_according_thickness_axis(self):
+    def is_move_according_thickness_axis(self)-> bool:
         """ToDo Documentation
         """
-    def is_move_with_top_of_wall(self):
+    def is_move_with_top_of_wall(self)-> bool:
         """ToDo Documentation
         """
-    def is_no_collision_control(self):
+    def is_no_collision_control(self)-> bool:
         """ToDo Documentation
         """
-    def is_no_inside_cover_control(self):
+    def is_no_inside_cover_control(self)-> bool:
         """ToDo Documentation
         """
-    def is_not_cut_with_cutting_element(self):
+    def is_not_cut_with_cutting_element(self)-> bool:
         """ToDo Documentation
         """
-    def is_not_placed_at_end_of_wall(self):
+    def is_not_placed_at_end_of_wall(self)-> bool:
         """ToDo Documentation
         """
-    def is_not_placed_at_start_of_wall(self):
+    def is_not_placed_at_start_of_wall(self)-> bool:
         """ToDo Documentation
         """
-    def is_opening_lintel(self, active:bool):
+    def is_opening_lintel(self)-> bool:
         """ToDo Documentation
         """
-    def is_opening_sill(self, active:bool):
+    def is_opening_sill(self)-> bool:
         """ToDo Documentation
         """
-    def is_solder_in_axis_direction(self):
+    def is_solder_in_axis_direction(self)-> bool:
         """ToDo Documentation
         """
-    def is_stop_in_axis_direction(self):
+    def is_stop_in_axis_direction(self)-> bool:
         """ToDo Documentation
         """
-    def is_stop_perpendicular_to_axis_direction(self):
+    def is_stop_perpendicular_to_axis_direction(self)-> bool:
         """ToDo Documentation
         """
-    def is_strecht_according_length_axis(self):
+    def is_strecht_according_length_axis(self)-> bool:
         """ToDo Documentation
         """
-    def is_strecht_according_thickness_axis(self):
+    def is_strecht_according_thickness_axis(self)-> bool:
         """ToDo Documentation
         """
-    def is_stretch_with_opening_lintel(self):
+    def is_stretch_with_opening_lintel(self)-> bool:
         """ToDo Documentation
         """
-    def is_stretch_with_opening_sill(self):
+    def is_stretch_with_opening_sill(self)-> bool:
         """ToDo Documentation
         """
-    def is_stretch_with_top_of_wall(self):
+    def is_stretch_in_opening_width(self)-> bool:
         """ToDo Documentation
         """
-    def is_top_plate(self):
+    def is_stretch_with_top_of_wall(self)-> bool:
         """ToDo Documentation
         """
-    def is_unique_layername(self):
+    def is_top_plate(self)-> bool:
         """ToDo Documentation
         """
-    def is_use_for_detail_coordinate_system(self):
+    def is_unique_layername(self)-> bool:
+        """ToDo Documentation
+        """
+    def is_use_for_detail_coordinate_system(self)-> bool:
         """ToDo Documentation
         """
     def set_auxiliary(self, active:bool):
@@ -1059,13 +1062,13 @@ class element_module_properties():
     def set_element_from_detail(self):
         """ToDo Documentation
         """
-    def set_keep_in_center_Of_layer_current_wall(self):
+    def set_keep_in_center_of_layer_current_wall(self):
         """ToDo Documentation
         """
-    def set_keep_in_center_Of_layer_neighbour_wall(self):
+    def set_keep_in_center_of_layer_neighbour_wall(self):
         """ToDo Documentation
         """
-    def set_keep_in_center_Of_rough_volume(self):
+    def set_keep_in_center_of_rough_volume(self):
         """ToDo Documentation
         """
     def set_main_element(self):
@@ -1077,7 +1080,7 @@ class element_module_properties():
     def set_move_according_thickness_axis(self):
         """ToDo Documentation
         """
-    def set_move_with_top_of_wall(self, aActive:bool):
+    def set_move_with_top_of_wall(self, active:bool):
         """ToDo Documentation
         """
     def set_no_collision_control(self, active:bool):
@@ -1122,7 +1125,10 @@ class element_module_properties():
     def set_stretch_with_opening_sill(self, active:bool):
         """ToDo Documentation
         """
-    def set_stretch_with_top_of_wall(self, aActive:bool):
+    def set_stretch_with_top_of_wall(self, active:bool):
+        """ToDo Documentation
+        """
+    def set_stretch_in_opening_width(self, active:bool):
         """ToDo Documentation
         """
     def set_top_plate(self, active:bool):
