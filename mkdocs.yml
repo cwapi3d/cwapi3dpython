@@ -7,7 +7,7 @@ edit_uri: ""
 # Copyright
 copyright: Copyright &copy; 2021 cadwork 
 
-site_name: Cadwork 29 - Python Documentation version 1.3.7
+site_name: Cadwork 29 - Python Documentation version 1.3.8
 site_url: https://python.cadwork.dev/
 theme:
     name: material
@@ -38,6 +38,7 @@ nav:
     - Get Started: get_started.md
     - Packages and Modules: modules.md
     - Debugging: debug.md
+    - Community: community.md
   - Documentation:
     - attribute_controller: documentation/attribute_controller.md
     - bim_controller: documentation/bim_controller.md

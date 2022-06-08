@@ -59,18 +59,85 @@ The icon for configuring the script-filled attributes is visualized in the Windo
 ![Backup Text](img/auto_button.jpg "script-filled attributes settings"){: style="width:700px"}
 
 ## example code
-```python
+
+### group and length
+
+In this example, the group as well as the component length is concatenated. The length is rounded to 4 decimal digits.
+
+```python title="group_length.py"
 import cadwork
 import attribute_controller
 import geometry_controller
 
-elements = cadwork.get_auto_attribute_elements()#gets the specified element
+element_ids = cadwork.get_auto_attribute_elements()#gets the specified element
 
-for element in elements:
-    length = geometry_controller.get_length(element)
-    group = attribute_controller.get_group(element)
+for element_id in element_ids:
+    length = geometry_controller.get_length(element_id)
+    group = attribute_controller.get_group(element_id)
     result = ' Group:' + group + 'Length:' + str(length)
-    cadwork.set_auto_attribute([element], result)#sets the attribute
+    cadwork.set_auto_attribute([element_id], result)#sets the attribute
+```
+
+### dimension check
+
+This script checks whether the cross-sections are standard dimensions or not.
+
+```python title="dimension_check.py"
+import cadwork
+import element_controller as ec
+import attribute_controller as ac
+import geometry_controller as gc
+
+element_ids = cadwork.get_auto_attribute_elements()
+
+for element_id in element_ids:
+    height = round(gc.get_height(element_id),3)
+    width = round(gc.get_width(element_id),3)
+    if height % 20 == 0 and width % 20 == 0:
+        cadwork.set_auto_attribute([element_id], 'Standard cross-section')
+    else:
+        cadwork.set_auto_attribute([element_id], 'Special cross-section')
+```
+
+### concatenate attributes and round dimension
+
+In this example, the attributes name and material are concatenated with the geometric properties width and height. 
+The width and height are rounded to the nearest 10.
+
+```python title="attributes_dimension.py"
+import cadwork
+import element_controller as ec
+import attribute_controller as ac
+import geometry_controller as gc
+
+
+element_ids = cadwork.get_auto_attribute_elements()
+
+for element_id in element_ids:
+    name = ac.get_name(element_id)
+    material = ac.get_element_material_name(element_id)
+    width = round(gc.get_width(element_id), -1)
+    height = round(gc.get_height(element_id), -1)
+
+    cadwork.set_auto_attribute([element_id], f'{name};{material};{width};{height}')
+```
+
+### material and storey
+
+Concatenation of the Building Storey with the material. 
+
+```python title="material_storey.py"
+import cadwork
+import attribute_controller as ac
+import bim_controller as bc
+
+element_ids = cadwork.get_auto_attribute_elements()
+
+for element_id in element_ids:
+    storey = bc.get_storey(element_id)
+    material = ac.get_element_material_name(element_id)
+
+    cadwork.set_auto_attribute([element_id], f'{material} - {storey}')
 ```
 
 <noscript>

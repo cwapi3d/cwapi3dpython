@@ -884,4 +884,44 @@ def extrude_surface_to_panel_vector(element:int, vector:point_3d) -> int:
     Returns:
         int: element ID
     """
+def activate_parts_without_situation()->List[int]:
+    """
+
+    Returns:
+        List[int]: element IDs
+    """
+def activate_rv_without_situation()->List[int]:
+    """
+
+    Returns:
+        List[int]: element IDs
+    """
+def parts_situation_manual(element: int, addChilds: List[int], removeChilds: List[int])->None:
+    """
+
+    Args:
+        element (int): element ID
+        addChilds (List[int]): add childs
+        removeChilds (List[int]): remove childs
+    """
+def auto_set_parts_situation(elements: List[int]) -> None:
+    """
+
+    Args:
+        elementIDs (List[int]): element IDs
+    """
+def auto_set_rough_volume_situation(elements: List[int]) -> None:
+    """
+
+    Args:
+        elements (List[int]): element IDs
+    """
+def rough_volume_situation_manual(element: int, addPartner: List[int], removePartner: List[int]) -> None:
+    """
+
+    Args:
+        element (int): element ID
+        addPartner (List[int]): add partner
+        removePartner (List[int]): remove partner
+    """
 

@@ -622,3 +622,23 @@ def get_center_of_gravity_for_list(elements: List[int]) -> point_3d:
     Returns:
         point_3d: point_3d (x,y,z)
     """
+def are_facets_coplanar(vertices_first_plane:List[point_3d], vertices_second_plane:List[point_3d]) -> bool:
+    """checks if points of facet/plane are coplanar. 
+
+    Args:
+        vertices_first_plane (List[point_3d]): a first point list
+        vertices_second_plane (List[point_3d]): a second point list
+
+    Returns:
+        bool: are facets/vertices coplanar
+    """
+def get_actual_physical_volume(element: int) -> float:
+    """get the real/physical volume of an element.
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        float: volume
+    """
+
