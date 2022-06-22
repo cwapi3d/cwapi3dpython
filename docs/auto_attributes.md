@@ -50,6 +50,9 @@ The icon for configuring the script-filled attributes is visualized in the Windo
 
 ![Backup Text](img/auto_button.jpg "script-filled attributes settings"){: style="width:700px"}
 
+## available functions
+The available functions are marked in the documentation with an info description. 
+
 ## example code
 
 ### group and length
