@@ -1,5 +1,7 @@
 
+from platform import node
 from typing import List
+from enum import Enum, unique
 
 
 class layer_settings():
@@ -303,7 +305,11 @@ class element_type():
             bool: condition
         """
     def isCadwork(self, element_type)->bool:
-        """Function is deprecated.
+        """
+        
+        !!! Warning
+            Function deprecated.
+            
         Args:
             element_type (element type): element type 
 
@@ -567,7 +573,9 @@ class element_type():
             bool: condition
         """
     def is_cadwork(self, element_type)->bool:
-        """Function is deprecated.
+        """
+        !!! Warning
+            Function deprecated.
         Args:
             element_type (element type): element type 
 
@@ -826,8 +834,9 @@ class visibility_state():
 class activation_state():
     def __init__(self) -> None:
         pass
-
+  
 class point_3d():
+   
     def __init__(self, x:float, y:float, z:float)->None:
         self.x = x
         self.y = y
@@ -899,7 +908,7 @@ def set_auto_attribute(elements: List[int], value:str) -> None:
         elements (List[int]): element IDs 
         value (str): attribute 
     """
-
+    
 class element_module_properties():
     def __init__(self) -> None:
         pass
@@ -1318,3 +1327,45 @@ class ifc_2x3_element_type():
     def set_none(self, element_ids:List[int], ifc_type)->None:
         """ToDo Documentation
         """
+# Node Symbols
+@unique
+class node_symbol(Enum):
+    """Change node symbol. 
+
+    Args:
+        Enum (int): symbol type
+    """
+    SmallSquare         = 1
+    Square              = 2
+    Cross               = 3
+    Circle              = 4
+    FilledCircle        = 5
+    ChessSquare         = 6
+    HalfFilledSquare    = 7
+    CrossSquare         = 8
+    FilledSquare        = 9
+
+
+@unique
+class element_module_detail(Enum):
+    """Add element situation to detail. 
+
+    Args:
+        Enum (int): detail situation
+    """
+    no_detail          = 0
+    angle_detail       = 1
+    area_detail        = 2
+    cross_detail       = 3
+    edge_detail        = 4
+    end_detail         = 5
+    line_detail        = 6
+    open_detail        = 7
+    t_detail           = 8
+    floor_area_detail  = 10
+    floor_end_detail   = 11
+    floor_line_detail  = 12
+    floor_open_detail  = 13
+
+
+

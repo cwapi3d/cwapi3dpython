@@ -15,6 +15,9 @@ def get_3d_build() -> int:
     """
 def get_3d_file_name() -> str: 
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         str: file name
@@ -34,6 +37,9 @@ def set_project_data(data_id: str, value: str) -> None:
     """
 def get_project_data(data_id: str) -> str: 
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         data_id (str): project data ID
@@ -48,11 +54,13 @@ def get_language() -> str:
     Returns:
         str: language
     """
-def print_message(text: str) -> None: 
+def print_message(text: str, row: int, column: int) -> None: 
     """Prints a message
 
     Args:
         text (str): message/text
+        row (int): a row
+        column (int): a column
     """
 def print_error(text: str) -> None:
     """prints a message. 'locks' 3d GUI until user confirms with a right-click.
@@ -99,6 +107,9 @@ def get_user_string(text: str) -> str:
     """
 def get_project_name() -> str: 
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         str: project name
@@ -111,6 +122,9 @@ def set_project_name(value: str) -> None:
     """
 def get_project_number() -> str: 
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         str: project number
@@ -123,6 +137,9 @@ def set_project_number(value: str) -> None:
     """
 def get_project_part() -> str: 
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         str: project part
@@ -135,6 +152,9 @@ def set_project_part(value: str) -> None:
     """
 def get_project_architect() -> str: 
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         str: project architect
@@ -146,7 +166,10 @@ def set_project_architect(value: str) -> None:
         value (str): project architect
     """
 def get_project_customer() -> str: 
-    """_summary_
+    """
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         str: value
@@ -159,6 +182,9 @@ def set_project_customer(value: str) -> None:
     """
 def get_project_designer() -> str: 
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         str: value
@@ -171,6 +197,9 @@ def set_project_designer(value: str) -> None:
     """
 def get_project_deadline() -> str: 
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         str: value
@@ -183,6 +212,9 @@ def set_project_deadline(value: str) -> None:
     """
 def get_project_user_attribute(number: int) -> str: 
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         number (int): user attribute number
@@ -199,6 +231,9 @@ def set_project_user_attribute(number: int, value: str) -> None:
     """
 def get_project_user_attribute_name(number: int) -> str: 
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         number (int): user attribute number
@@ -215,12 +250,18 @@ def set_project_user_attribute_name(number: int, value: str) -> None:
     """
 def get_project_latitude() -> float: 
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         float: latitude
     """
 def get_project_longitude(value: float) -> None: 
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         value (float): longitude
@@ -239,6 +280,9 @@ def set_project_longitude(value: float) -> None:
     """
 def get_project_address() -> str: 
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         str: value
@@ -251,6 +295,9 @@ def set_project_address(value: float) -> None:
     """
 def get_project_postal_code() -> str: 
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         str: value
@@ -263,6 +310,9 @@ def set_project_postal_code(value: float) -> None:
     """
 def get_project_city() -> str: 
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         str: value
@@ -275,6 +325,9 @@ def set_project_city(value: float) -> None:
     """
 def get_project_country() -> str: 
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         str: value
@@ -287,12 +340,18 @@ def set_project_country(value: float) -> None:
     """
 def get_3d_userprofil_path() -> str: 
     """Get 3D userprofile path
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         str: path
     """
 def get_plugin_path() -> str:
     """Get 3D plugin path
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         str: path
@@ -566,6 +625,9 @@ def set_north_angle(north_angle:float) -> None:
     """
 def get_millimetre_from_imperial_string(value:str) -> float:
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         value (str): imperial string
@@ -575,6 +637,9 @@ def get_millimetre_from_imperial_string(value:str) -> float:
     """
 def get_imperial_string_from_millimetre(value:float) -> str:
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         value (float): millimetre value

@@ -15,6 +15,9 @@ def create_standard_connector(name: str, start: point_3d, end: point_3d) -> int:
     """
 def get_item_guid_by_name(name: str, number: int) -> str: 
     """Get CA guid item by element name
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         name (str): CA name
@@ -25,6 +28,9 @@ def get_item_guid_by_name(name: str, number: int) -> str:
     """
 def get_bolt_length(number: int) -> float: 
     """Gets the Bolt Length
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         number (int): element ID
@@ -34,6 +40,9 @@ def get_bolt_length(number: int) -> float:
     """
 def set_bolt_length(number: int, value: float) -> None: 
     """Sets the Bolt Length
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         number (int): element ID
@@ -41,6 +50,9 @@ def set_bolt_length(number: int, value: float) -> None:
     """
 def get_bolt_over_length(number: int) -> float: 
     """Gets the Bolt OverLength
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         number (int): element ID
@@ -57,6 +69,9 @@ def set_bolt_over_length(number: int, value: float) -> None:
     """
 def get_bolt_length_automatic(number: int) -> bool: 
     """Returns if Bolt Length Automatic is set
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         number (int): element ID
@@ -73,6 +88,9 @@ def set_bolt_length_automatic(number: int, value: bool) -> None:
     """
 def get_bolt_item_guid(number: int) -> str: 
     """Gets the Guid of the Bolt Item
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         number (int): _description_
@@ -104,6 +122,9 @@ def set_section_diameter(number: int, section_nr: int, value: float) -> None:
     """
 def get_section_diameter(number: int, section_nr: int) -> float: 
     """Gets the Drilling Diameter of a specific Sections
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         number (int): element ID
@@ -112,8 +133,39 @@ def get_section_diameter(number: int, section_nr: int) -> float:
     Returns:
         float: diameter
     """
+
+def get_section_count(element: int) -> int:
+    """Return the number of section
+    
+    !!! Info
+            Available in script filled attributes
+
+    Args:
+        element (int): axis ID
+
+    Returns:
+        int: number of section
+    """
+
+def get_section_material_name(element: int, section_nr:int) -> str:
+    """Returns material of a section contact element
+    
+    !!! Info
+            Available in script filled attributes
+
+    Args:
+        element (int): axis ID
+        section_nr (int): section nr
+
+    Returns:
+        str: material name
+    """
+
 def get_axis_items_guids(number: int) -> List[str]: 
     """Returns a list of GUIDs of all axis items.
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         number (int): element ID
@@ -123,6 +175,9 @@ def get_axis_items_guids(number: int) -> List[str]:
     """
 def get_axis_item_name(guid: str) -> str: 
     """Returns the name of an axis item.
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         name (str): guid
@@ -132,6 +187,9 @@ def get_axis_item_name(guid: str) -> str:
     """
 def get_axis_item_material(name: str) -> str: 
     """Returns the material of an axis item.
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         name (str): guid
@@ -141,6 +199,9 @@ def get_axis_item_material(name: str) -> str:
     """
 def get_axis_item_norm(name: str) -> str: 
     """Returns the norm of an axis item.
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         name (str): guid
@@ -150,6 +211,9 @@ def get_axis_item_norm(name: str) -> str:
     """
 def get_axis_item_strength_category(name: str) -> str: 
     """Returns the strength category of an axis item.
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         name (str): guid
@@ -159,6 +223,9 @@ def get_axis_item_strength_category(name: str) -> str:
     """
 def get_axis_item_user_field(name: str, number: int) -> str: 
     """Returns an userfield value of an axis item.
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         name (str): guid
@@ -169,6 +236,9 @@ def get_axis_item_user_field(name: str, number: int) -> str:
     """
 def get_axis_item_order_number(name: str) -> str: 
     """Returns the strength category of an axis item.
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         name (str): guid
@@ -178,6 +248,9 @@ def get_axis_item_order_number(name: str) -> str:
     """
 def get_bolt_order_number(number: int) -> str: 
     """Returns the ordernumber of a bolt item.
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         number (int): element ID

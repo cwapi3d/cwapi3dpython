@@ -6,6 +6,9 @@ from cadwork import (rgb_color,
 
 def get_color(element: int) -> int: 
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         number (int): element ID
@@ -22,6 +25,9 @@ def set_color(element: int, color: int) -> None:
     """
 def get_opengl_color(element: int) -> rgb_color: 
     """
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         element (int): element ID
@@ -123,6 +129,9 @@ def set_material(elements: List[int], element: int) -> None:
     """
 def get_material(element: int) -> int: 
     """Gets the element material
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         element (int): element ID
