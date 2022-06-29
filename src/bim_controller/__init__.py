@@ -13,6 +13,9 @@ def get_ifc_guid(element: int) -> str:
     """
 def set_building_and_storey(elements: List[int], building: str, storey: str) -> None: 
     """Set bulding and storey 
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         elements (List[int]): element IDs
@@ -21,6 +24,9 @@ def set_building_and_storey(elements: List[int], building: str, storey: str) -> 
     """
 def get_building(element: int) -> str: 
     """Get building name
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         element (int): element ID
@@ -30,6 +36,9 @@ def get_building(element: int) -> str:
     """
 def get_storey(element: int) -> str: 
     """Get Storey
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         element (int): element ID
@@ -92,6 +101,9 @@ def convert_exchange_objects(elements: List[int]) -> List[int]:
 
 def get_all_buildings() -> List[str]:
     """Get all, in 3D, existing buildings 
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         List[str]: building names 
@@ -99,6 +111,9 @@ def get_all_buildings() -> List[str]:
 
 def get_all_storeys(building_name:str) -> List[str]:
     """Get all Storeys from a building.
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         building_name (str): building name
@@ -110,6 +125,9 @@ def get_all_storeys(building_name:str) -> List[str]:
 
 def get_storey_height(building_name:str, storey_name:str) -> float:
     """Get the storey height. 
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         building_name (str): building name
@@ -134,4 +152,29 @@ def set_storey_height(building_name:str, storey_name:str, height:float) -> None:
         building_name (str): building name
         storey_name (str): storey name
         height (float): storey elevation 
+    """
+
+def get_ifc2x3_element_type_string(ifc_2x3_element_type: ifc_2x3_element_type) -> str:
+    """Get ifc tpye as a string
+    
+    !!! Info
+            Available in script filled attributes
+
+    Args:
+        ifc_2x3_element_type (ifc_2x3_element_type): cadwork ifc element type
+
+    Returns:
+        str: entity name
+    """
+def get_ifc2x3_element_type_display_string(ifc_2x3_element_type: ifc_2x3_element_type) -> str:
+    """Get ifc tpye display string
+
+    !!! Info
+            Available in script filled attributes
+            
+    Args:
+        ifc_2x3_element_type (ifc_2x3_element_type): cadwork ifc element type
+
+    Returns:
+        str: entity name
     """

@@ -1,12 +1,16 @@
 from typing import List
 from cadwork import (element_module_properties, 
-                         point_3d)
+                         point_3d,
+                         element_module_detail)
 
 
 
     
 def get_all_identifiable_element_ids() -> List[int]:
     """get all identifiable element IDs (visible and unvisible)
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         List[int]: element_id list
@@ -14,6 +18,9 @@ def get_all_identifiable_element_ids() -> List[int]:
     
 def get_visible_identifiable_element_ids() -> List[int]:
     """get all visible identifiable elemnt ids
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         List[int]: element_id list
@@ -21,6 +28,9 @@ def get_visible_identifiable_element_ids() -> List[int]:
     
 def get_invisible_identifiable_element_ids() -> List[int]:
     """Get invisible cadwork element IDs
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         List[int]: element_id list
@@ -28,6 +38,9 @@ def get_invisible_identifiable_element_ids() -> List[int]:
     
 def get_active_identifiable_element_ids() -> List[int]:
     """Get active cadwork element IDs
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         List[int]: element_id list
@@ -35,6 +48,9 @@ def get_active_identifiable_element_ids() -> List[int]:
 
 def get_inactive_all_identifiable_element_ids() -> List[int]:
     """Get inactive cadwork element IDs
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         List[int]: element_id list
@@ -42,6 +58,9 @@ def get_inactive_all_identifiable_element_ids() -> List[int]:
     
 def get_inactive_visible_identifiable_element_ids() -> List[int]:
     """Get inactive visible cadwork element IDs
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         List[int]: element_id list
@@ -365,12 +384,18 @@ def set_element_detail_path(path: str) -> None:
     """
 def get_element_detail_path() -> str:
     """get the path from active elmeentmodule
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         str: path
     """
 def get_element_cadwork_guid(element: int) -> str:
     """get cadwork element guid
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         element (int): element ID
@@ -431,6 +456,18 @@ def create_auto_export_solid_from_standard(elements: List[int], name:str, standa
     """
 def set_element_module_properties_for_elements(elements: List[int], properties: element_module_properties) -> None:
     """set element module properties for elements
+    
+    Examples:
+        >>> import cadwork as cw
+        >>> import element_controller as ec
+        >>> element_properties = ec.get_element_module_properties_for_element(540915) # 540915 = some element ID
+        >>> cw.element_module_properties.set_bottom_plate(element_properties, True)
+        >>> cw.element_module_properties.set_solder_in_axis_direction(element_properties, True)
+        >>> cw.element_module_properties.set_main_element(element_properties, True)
+        >>> cw.element_module_properties.set_strecht_according_thickness_axis(element_properties, True)
+        >>> ec.set_element_module_properties_for_elements([540915],element_properties)
+        None
+        
 
     Args:
         elements (List[int]): element IDs
@@ -438,6 +475,9 @@ def set_element_module_properties_for_elements(elements: List[int], properties: 
     """
 def get_element_module_properties_for_element(element: int) -> element_module_properties:
     """get element module properties for element
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         element (int): element ID
@@ -447,6 +487,9 @@ def get_element_module_properties_for_element(element: int) -> element_module_pr
     """
 def get_element_type_description(element: int) -> str:
     """get the description of the cadwork element type
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         element (int): element ID
@@ -470,6 +513,9 @@ def create_text_object_with_font(text: str, position: point_3d, xl: point_3d, zl
     """
 def get_opening_variant_ids(elements: List[int], opening_type: int) -> List[int]:
     """get opening variant ids
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         elements (List[int]): element IDs
@@ -480,6 +526,9 @@ def get_opening_variant_ids(elements: List[int], opening_type: int) -> List[int]
     """
 def get_parent_container_id(element: int) -> int:
     """get parent container id
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         element (int): element ID
@@ -489,6 +538,9 @@ def get_parent_container_id(element: int) -> int:
     """
 def get_export_solid_content_elements(element: int) -> List[int]:
     """get export solid content elements
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         element (int): element ID
@@ -497,6 +549,9 @@ def get_export_solid_content_elements(element: int) -> List[int]:
     """
 def get_container_content_elements(element: int) -> List[int]:
     """get container content elements
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         element (int): element ID
@@ -541,6 +596,9 @@ def recreate_elements(elements: List[int]) -> None:
     """
 def check_if_elements_are_in_collision(first_element:int, second_element:int) -> bool:
     """collision detection
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         element (int): first element ID
@@ -551,6 +609,9 @@ def check_if_elements_are_in_collision(first_element:int, second_element:int) ->
     """
 def check_if_elements_are_in_contact(first_element:int, second_element:int) -> bool:
     """check if element faces are in contact
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         element (int): first element ID
@@ -573,6 +634,9 @@ def get_user_element_ids() -> List[int]:
     """
 def get_element_contact_vertices(first_element:int, second_element:int) -> List[point_3d]:
     """get element contact vertices
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         element (int): first element ID
@@ -583,6 +647,9 @@ def get_element_contact_vertices(first_element:int, second_element:int) -> List[
     """
 def get_nesting_parent_id(element:int) -> int:
     """get nesting parent id
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         element (int): element ID
@@ -605,6 +672,9 @@ def glide_elements(elements: List[int], glide_point: point_3d) -> None:
     """
 def get_element_contact_facets(first_element:int, second_element:int) -> List[List[point_3d]]:
     """get element contact faces
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         element (int): element ID
@@ -615,6 +685,9 @@ def get_element_contact_facets(first_element:int, second_element:int) -> List[Li
     """
 def get_element_raw_interface_vertices(first_element:int, second_element:int) -> List[point_3d]:
     """get element raw interface vertices
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         element (int): element ID
@@ -739,12 +812,18 @@ def convert_circular_beam_to_drilling(elements: List[int]) -> None:
     """
 def get_standard_export_solid_list() -> List[str]:
     """get list of standard export solid names
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         List[str]: names
     """
 def get_standard_container_list() -> List[str]:
     """get list of standard container names
+    
+    !!! Info
+            Available in script filled attributes
 
     Returns:
         List[str]: names
@@ -765,6 +844,9 @@ def stretch_end_facet(elements: List[int], stretch_vector: point_3d) -> None:
     """
 def get_variant_sibling_element_ids(element: int) -> List[int]:
     """get variant sibling element IDs
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         element (int): element ID
@@ -815,6 +897,9 @@ def mirror_copy_elements(elements: List[int], plane_definition: point_3d, plane_
 
 def check_if_point_is_on_element(point:point_3d, element:int) -> bool:
     """Checks if a point is on a element
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         point (point_3d): a cadwork point
@@ -826,6 +911,9 @@ def check_if_point_is_on_element(point:point_3d, element:int) -> bool:
 
 def check_if_point_is_in_element(point:point_3d, element:int) -> bool:
     """Check if point is in element
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         point (point_3d): a cadwork point
@@ -833,6 +921,32 @@ def check_if_point_is_in_element(point:point_3d, element:int) -> bool:
 
     Returns:
         bool: if point 
+    """
+def get_bounding_box_vertices_local(element:int, elements:List[int]) -> List[point_3d]:
+    """create a bounding box that is aligned to a reference element. 
+    The bounding box includes all elements contained in the list.
+    
+    !!! Info
+            Available in script filled attributes
+
+    Args:
+        element (int): element ID reference element
+        elements (List[int]): element IDs
+
+    Returns:
+        List[point_3d]: bbx vertices
+    """
+def get_bounding_box_vertices_global(elements:List[int]) -> List[point_3d]:
+    """create a bounding box that is aligned to the global coordinate system.
+    
+    !!! Info
+            Available in script filled attributes
+
+    Args:
+        elements (List[int]): element IDs
+
+    Returns:
+        List[point_3d]: bbx vertices
     """
 def create_bounding_box_local(element:int, elements:List[int]) -> int:
     """create a bounding box that is aligned to a reference element. 
@@ -924,4 +1038,49 @@ def rough_volume_situation_manual(element: int, addPartner: List[int], removePar
         addPartner (List[int]): add partner
         removePartner (List[int]): remove partner
     """
+def add_elements_to_detail(detail_group:element_module_detail, elements:List[int])->None:
+    """
 
+    Args:
+        detail_group (element_module_detail): detail type
+        elements (List[int]): element IDs
+    """
+def get_all_nesting_raw_parts() -> List[int]:
+    """Get all nesting raw parts.
+    
+    !!! Info
+            Available in script filled attributes
+
+    Returns:
+        List[int]: element IDs
+    """
+def get_standard_beam_list() -> List[str]:
+    """Get standard beam list
+    
+    !!! Info
+            Available in script filled attributes
+
+    Returns:
+        List[str]: standard beam names
+    """
+def get_standard_panel_list() -> List[str]:
+    """Get standard panel list
+    
+    !!! Info
+            Available in script filled attributes
+
+    Returns:
+        List[str]: standard panel names
+    """
+def get_reference_element(element: int) -> int:
+    """Get reference element
+    
+    !!! Info
+            Available in script filled attributes
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        int: element ID
+    """

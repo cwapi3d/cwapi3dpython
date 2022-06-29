@@ -52,6 +52,9 @@ def get_endtype_id_start(element: int) -> int:
     """
 def get_endtype_name(endtype_id: int) -> str:
     """Get endtype name
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         endtype_id (int): endtype ID
@@ -61,6 +64,9 @@ def get_endtype_name(endtype_id: int) -> str:
     """
 def get_endtype_name_end(element: int) -> str:
     """Get endtype name end
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         endtype_id (int): endtype ID
@@ -70,6 +76,9 @@ def get_endtype_name_end(element: int) -> str:
     """
 def get_endtype_name_facet(element: int, face_number: int) -> str:
     """Gets the endtypename of the face with a number
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         element (int): element ID
@@ -80,6 +89,9 @@ def get_endtype_name_facet(element: int, face_number: int) -> str:
     """
 def get_endtype_name_start(element: int) -> str:
     """Gets the endtypename of the start face
+    
+    !!! Info
+            Available in script filled attributes
 
     Args:
         element (int): element ID

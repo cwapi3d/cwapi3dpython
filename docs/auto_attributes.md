@@ -39,24 +39,19 @@ These attributes are created similar to the user-defined attributes in the Attri
 ![Backup Text](img/auto.jpg "script-filled attributes"){: style="width:700px"}
 
 
-A created script-filled attribute is available for any 
-for each element type in the 
-cadwork. In the tab Type 
-script-filled tab the evaluation of the 
-script can be limited to single element types. 
-element types. The 
-can be useful if, for example 
-different evaluations are required for plates 
-and members are required. If the 
-evaluation is intended only for elements of the type member, the content of this 
-attribute remains empty for all other element types. If the element type is subsequently changed 
-element type, a recalculation of the attributes is triggered.
+A created script-filled attribute is available for each element type in cadwork. In the tab "Type 
+script populated" the evaluation of the script can be limited to single element types. Tjis can be useful if, for example 
+different evaluations are required for plates and beams. If the evaluation is intended only for elements of the type beam, the content of this 
+attribute remains empty for all other element types. If the element type is subsequently changed, a recalculation of the attributes is triggered.
 
 ## execution status
 The execution status of the scripts can be controlled.
 The icon for configuring the script-filled attributes is visualized in the Windows menu bar to the left of the message center icon. This display hides a button that can be used to subsequently change the selected status. 
 
 ![Backup Text](img/auto_button.jpg "script-filled attributes settings"){: style="width:700px"}
+
+## available functions
+The available functions are marked in the documentation with an info description. 
 
 ## example code
 
