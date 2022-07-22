@@ -1,6 +1,6 @@
 # Visualization Controller
 
-::: visualization_controller.__init__
+::: visualization_controller
     rendering:
       show_root_heading: false
       show_source: true
