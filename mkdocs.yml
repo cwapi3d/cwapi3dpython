@@ -1,38 +1,23 @@
+site_name: Cadwork Python Documentation
 
-# Repository
 repo_name: cwapi3d/cwapi3dpython
 repo_url: https://github.com/cwapi3d/cwapi3dpython
 edit_uri: ""
 
-# Copyright
-copyright: Copyright &copy; 2021 cadwork 
+copyright: Copyright &copy; 2022 Cadwork
 
-site_name: Cadwork 29 - Python Documentation version 1.3.9
 site_url: https://python.cadwork.dev/
+
 theme:
-    name: material
-    nav_style: dark
-    logo: cw_logo.svg  # cwapi3d_logo2.svg # cwapi3d_logo_small.png #cwapi3d_logo.svg 
-    favicon: cw_logo.svg
-    version: v29
-    palette:
-      - media: "(prefers-color-scheme: light)"
-        scheme: default
-        toggle:
-          name: Switch to light mode
-          icon: material/weather-sunny
-      - media: "(prefers-color-scheme: dark)"
-        scheme: slate
-        primary: grey
-        accent: blue
-        toggle:
-          name: Switch to dark mode
-          icon: material/weather-night 
-    features:
+  name: material
+  logo: cw_logo.svg
+  favicon: cw_logo.svg
+  version: V29
+  features:
     - search.suggest
     - search.highlight
-    # - navigation.tabs
     - navigation.instant
+
 nav:
   - Python API: 
     - Cadwork API: index.md
@@ -88,6 +73,7 @@ nav:
   - About:
     - About Guide: about.md
   - Auto Attributes: auto_attributes.md
+
 markdown_extensions:
   - attr_list  
   - admonition
@@ -106,34 +92,26 @@ markdown_extensions:
       repo_url_shorthand: true
       user: cwapi3d
       repo: cwapi3dpython
+
 extra_css:
   - stylesheets/extra.css
+
 plugins:
   - search:
       separator: '[\s\-\.]'     # \s\-\.\_
   - mkdocstrings:
-      default_handler: python
       handlers:
         python:
-          setup_commands:
-                      - import sys
-                      - sys.path.append('src/')
-          rendering:
+          paths: [src]
+          options:
             show_source: false
-            
-        
-  #- mkdocs-versioning:
-      #version: "version 1.2.5" 
-    
-             
+
 extra:
-  generator: false
-  copyright: Copyright &copy; 2021 cadwork
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/cwapi3d
       name: CWAPI3D
 
-extra_javascript:
-    - https://unpkg.com/mermaid/dist/mermaid.min.js
+# extra_javascript:
+#     - https://unpkg.com/mermaid/dist/mermaid.min.js
       
