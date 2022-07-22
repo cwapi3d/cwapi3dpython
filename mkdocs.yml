@@ -13,6 +13,19 @@ theme:
   logo: cw_logo.svg
   favicon: cw_logo.svg
   version: V29
+  palette:
+      - media: "(prefers-color-scheme: light)"
+        scheme: default
+        toggle:
+          name: Switch to light mode
+          icon: material/weather-sunny
+      - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        primary: grey
+        accent: blue
+        toggle:
+          name: Switch to dark mode
+          icon: material/weather-night
   features:
     - search.suggest
     - search.highlight

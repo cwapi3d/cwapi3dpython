@@ -1,3 +1,25 @@
-:root > * {
-  --md-primary-fg-color: #10069F;
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #10069f;
+  --md-footer-bg-color:  #10069f;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #10069f;
+  --md-footer-bg-color:  #10069f;
+}
+
+
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: rgb(105, 98, 98);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
