@@ -277,3 +277,44 @@
   box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
   color: #FFFFFF;
 }
+
+.mark-text { 
+  font-family: "wand-sparkles"; /*, sans-serif*/
+  font-size: 18px;
+  font-weight: 500;
+  content: "";
+  cursor: none;
+  color: #9f0606;
+  /* height: 1rem;
+  -webkit-mask-image: var(--md-admontion-icon--note);
+  mask-image: var(--md-admonition-icon--note); */
+  /*background-color: #868594;*/
+  /* color: #10069f; */
+}
+
+.mark-text:hover{
+  /*background-color: #10069f;*/
+  color: "white";
+  transition: 1s;
+  outline: 0;
+  cursor: none;
+  /*box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;*/
+}
+
+/* @media (min-width: 768px) {
+  .mark-text {
+    font-size: 24px;
+    min-width: 196px;
+  }
+} */
+
+.par{
+  color: white;
+  border: 1px solid black;
+  width: 400px;	
+}
+.par:hover {
+  background-color: skyblue;
+  transition: 1s;
+  cursor: pointer;
+}

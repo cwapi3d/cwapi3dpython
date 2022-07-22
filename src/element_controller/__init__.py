@@ -468,7 +468,6 @@ def set_element_module_properties_for_elements(elements: List[int], properties: 
         >>> ec.set_element_module_properties_for_elements([540915],element_properties)
         None
         
-
     Args:
         elements (List[int]): element IDs
         properties (element_module_properties): elment module properties
@@ -543,7 +542,7 @@ def get_export_solid_content_elements(element: int) -> List[int]:
             Available in script filled attributes
 
     Args:
-        element (int): element ID
+        element (int): element ID of export solid
     Returns:
         List[int]: element IDs
     """
@@ -858,8 +857,8 @@ def set_export_solid_contents(solid_id: int, elements: List[int]) -> None:
     """set export solid contents
 
     Args:
-        solid_id (int): element ID
-        elements (List[int]): element IDs
+        solid_id (int): element ID of export solid
+        elements (List[int]): element IDs to assign
     """
 def set_container_contents(container_id: int, elements: List[int]) -> None:
     """set container contents

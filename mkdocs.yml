@@ -110,7 +110,7 @@ extra_css:
   - stylesheets/extra.css
 plugins:
   - search:
-      separator: '[\s\-\.\_]+'     
+      separator: '[\s\-\.]'     # \s\-\.\_
   - mkdocstrings:
       default_handler: python
       handlers:
