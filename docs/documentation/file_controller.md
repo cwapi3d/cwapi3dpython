@@ -1,6 +1,6 @@
 # File Controller
 
-::: file_controller.__init__
+::: file_controller
     rendering:
       show_root_heading: false
       show_source: true

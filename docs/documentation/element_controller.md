@@ -1,6 +1,6 @@
 # Element Controller
 
-::: element_controller.__init__
+::: element_controller
     rendering:
       show_root_heading: false
       show_source: true

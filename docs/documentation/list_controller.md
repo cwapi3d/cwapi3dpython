@@ -1,6 +1,6 @@
 # List Controller
 
-::: list_controller.__init__
+::: list_controller
     rendering:
       show_root_heading: false
       show_source: true
