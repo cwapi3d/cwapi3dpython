@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # machine_controller
 ## check production list discrepancies
 

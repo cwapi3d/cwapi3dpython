@@ -1,3 +1,8 @@
+---
+hide:
+    - toc
+---
+
 # Cadwork Python Documentation
 
 In front of you, you see the first version of the Cadwork Python Guide. This document is written in cooperation of the cadwork branches. Since version 27 cadwork offers an API connection to the script language Python. By scripting in cadwork with Python you can automate and customize your operations. 

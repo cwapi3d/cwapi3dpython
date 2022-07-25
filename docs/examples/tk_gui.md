@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # tkinter - GUI toolkit
 
 The tkinter package (“Tk interface”) is the standard Python interface to the Tcl/Tk GUI toolkit. Both Tk and tkinter are available on most Unix platforms, including macOS, as well as on Windows systems.
@@ -98,6 +103,31 @@ class App(tk.Frame):
 root = tk.Tk()
 myapp = App(root)
 myapp.mainloop()
+```
+
+# PyQt 5
+```python
+from PyQt5.QtWidgets import (QWidget, QToolTip,
+                             QPushButton, QApplication,
+                             QLabel)
+
+class MyWindow(QWidget):
+
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        btn = QPushButton('Button', self)
+        btn.resize(btn.sizeHint())
+        btn.move(50, 50)
+
+        self.setGeometry(300, 300, 300, 200)
+        self.setWindowTitle('Qt5 Button')
+
+if __name__ == '__main__':
+    window = MyWindow()
+    window.show()
 ```
 
 <noscript>

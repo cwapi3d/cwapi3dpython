@@ -1,8 +1,14 @@
-## Building DualExport
+---
+hide:
+  - navigation
+  - toc
+---
+
+# Building DualExport
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hn3AtHPqEqE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Auto Populate (Attributes)
+# Auto Populate (Attributes)
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aO-vPemaKo8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <noscript>

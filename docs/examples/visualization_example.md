@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # visualization_controller
 ## assign color to beam
 ```python 

@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # geometry_controller
 ## get beam points and vetors
 

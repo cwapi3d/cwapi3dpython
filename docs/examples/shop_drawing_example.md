@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # shop_drawing_controller
 ## export 2d wireframe drawing from current view
 

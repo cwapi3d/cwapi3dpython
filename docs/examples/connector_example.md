@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # connector_axis_controller
 
 ## check if axis are valid

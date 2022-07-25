@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # list_controller
 ## check production list discrepancies
 

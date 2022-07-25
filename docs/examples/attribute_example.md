@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # attribute_controller
 
 ## Conditions 

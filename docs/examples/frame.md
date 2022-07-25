@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 ## Create a frame (construction)
 
 ![Backup Text](../img/framed_slab.png "cadwork framed slab"){: style="width:700px"}

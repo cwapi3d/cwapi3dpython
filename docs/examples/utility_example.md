@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # utility_controller
 ## display refresh
 

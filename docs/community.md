@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Community
 
 **Questions, bugs, requests for extensions, etc..** can be posted on our GitHub repository. 
