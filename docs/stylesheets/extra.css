@@ -1,11 +1,25 @@
-[data-md-color-scheme="default"] {
-  --md-primary-fg-color: #10069f;
-  --md-footer-bg-color:  #10069f;
-}
-
 [data-md-color-scheme="slate"] {
   --md-primary-fg-color: #10069f;
-  --md-footer-bg-color:  #10069f;
+}
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #10069f;
+}
+
+.md-tabs {
+  background-color: #10069f;
+}
+
+.md-typeset {
+  font-size: 0.7rem;
+}
+
+.md-footer__link--prev {
+  display: none;
+}
+
+.md-footer__link--next {
+  display: none;
 }
 
 .mark-text { 

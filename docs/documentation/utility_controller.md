@@ -1,6 +1,6 @@
 # Utility Controller
 
-::: utility_controller.__init__
+::: utility_controller
     rendering:
       show_root_heading: false
       show_source: true
