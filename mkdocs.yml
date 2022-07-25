@@ -111,11 +111,14 @@ extra_css:
 
 plugins:
   - search:
-      separator: '[\s\-\.]'     # \s\-\.\_
+      separator: '[\s\-/\\]+'  # \s\-\.\_
   - mkdocstrings:
+      default_handler: python
       handlers:
         python:
-          paths: [src]
+          setup_commands:
+                      - import sys
+                      - sys.path.append('src/')
           options:
             show_source: false
 
@@ -124,7 +127,3 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/cwapi3d
       name: CWAPI3D
-
-# extra_javascript:
-#     - https://unpkg.com/mermaid/dist/mermaid.min.js
-      

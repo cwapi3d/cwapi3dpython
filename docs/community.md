@@ -5,7 +5,7 @@ The posts are publicly viewable and therefore help the entire cadwork python com
 
 let's grow the community :rocket:
 
-[GitHub Issues](https://github.com/cwapi3d/cwapi3dpython/issues){.button-63} 
+[GitHub Issues](https://github.com/cwapi3d/cwapi3dpython/issues)
 
 ![Screenshot](img/issues.png)
 
@@ -17,4 +17,4 @@ Together we develop a package in which mathematical functions are made available
 
 Help us to grow the package.
 
-[GitHub cwmath](https://github.com/cwapi3d/cwmath){.button-63} 
+[GitHub cwmath](https://github.com/cwapi3d/cwmath)
