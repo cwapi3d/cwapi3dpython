@@ -6,7 +6,7 @@ from cadwork import (rgb_color,
 
 def get_color(element: int) -> int: 
     """
-    [:information_source: Script filled Attributes](#){.mark-text}
+    [:information_source: Available for script filled attributes](#){.mark-text}
     
 
     Args:
@@ -25,7 +25,7 @@ def set_color(element: int, color: int) -> None:
 def get_opengl_color(element: int) -> rgb_color: 
     """
     
-    !!! Script-filled-Attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -128,8 +128,7 @@ def set_material(elements: List[int], element: int) -> None:
 def get_material(element: int) -> int: 
     """Gets the element material
     
-    [bla bla](){.button-85} <p 
-    style="font-family:wand-sparkles">This is a paragraph.{.mark}</p>
+    [:information_source: Available for script filled attributes](#){.mark-text}
     
     Args:
         element (int): element ID

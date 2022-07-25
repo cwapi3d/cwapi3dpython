@@ -5,8 +5,7 @@ from cadwork import point_3d
 def get_width(element: int) -> float: 
     """Get element width. 
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -17,8 +16,7 @@ def get_width(element: int) -> float:
 def get_height(element: int) -> float: 
     """Get element height. 
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -29,8 +27,7 @@ def get_height(element: int) -> float:
 def get_length(element: int) -> float: 
     """Get element length. 
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -41,8 +38,7 @@ def get_length(element: int) -> float:
 def get_p1(element: int) -> point_3d: 
     """Get start Point of element. 
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -53,8 +49,7 @@ def get_p1(element: int) -> point_3d:
 def get_p2(element: int) -> point_3d: 
     """Get end Point of element. 
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -65,8 +60,7 @@ def get_p2(element: int) -> point_3d:
 def get_p3(element: int) -> point_3d: 
     """Point for orientation of the Z axis of the element. This point is on the same plane as point 1.
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -77,8 +71,7 @@ def get_p3(element: int) -> point_3d:
 def get_start_height_cut_angle(element: int) -> float: 
     """get start height cut angle
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID 
@@ -89,8 +82,7 @@ def get_start_height_cut_angle(element: int) -> float:
 def get_start_width_cut_angle(element: int) -> float: 
     """get start width cut angle
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -101,8 +93,7 @@ def get_start_width_cut_angle(element: int) -> float:
 def get_end_height_cut_angle(element: int) -> float: 
     """get end height cut angle
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -113,8 +104,7 @@ def get_end_height_cut_angle(element: int) -> float:
 def get_end_width_cut_angle(element: int) -> float: 
     """get end width cut angle
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -137,8 +127,7 @@ def rotate_height_axis_180(elements: List[int]) -> None:
 def get_over_width(element: int) -> float: 
     """get over widht
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -156,8 +145,7 @@ def set_over_width(element: int, value: float) -> None:
 def get_over_height(element: int) -> float: 
     """get over height
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -175,8 +163,7 @@ def set_over_height(element: int, value: float) -> None:
 def get_over_length(element: int) -> float: 
     """get over length
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -194,8 +181,7 @@ def set_over_length(element: int, value: float) -> None:
 def get_rounding_width(element: int) -> float: 
     """get rounding width
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -213,8 +199,7 @@ def set_rounding_width(element: int, value: float) -> None:
 def get_rounding_height(element: int) -> float: 
     """get rounding height
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -232,8 +217,7 @@ def set_rounding_height(element: int, value: float) -> None:
 def get_rounding_length(element: int) -> float: 
     """get rounding length
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -251,8 +235,7 @@ def set_rounding_length(element: int, value: float) -> None:
 def get_cross_correction_negative_width(element: int) -> float: 
     """get cross correction negative width
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -270,8 +253,7 @@ def set_cross_correction_negative_width(element: int, value: float) -> None:
 def get_cross_correction_positive_width(element: int) -> float: 
     """get cross correction positive width
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -289,8 +271,7 @@ def set_cross_correction_positive_width(element: int, value: float) -> None:
 def get_cross_correction_negative_height(element: int) -> float: 
     """set cross correction negative height
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -308,8 +289,7 @@ def set_cross_correction_negative_height(element: int, value: float) -> None:
 def get_cross_correction_positive_height(element: int) -> float: 
     """get cross correction positive height
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -327,8 +307,7 @@ def set_cross_correction_positive_height(element: int, value: float) -> None:
 def get_cross_correction_negative_length(element: int) -> float: 
     """get cross correction negative length
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -346,8 +325,7 @@ def set_cross_correction_negative_length(element: int, value: float) -> None:
 def get_cross_correction_positive_length(element: int) -> float: 
     """get cross correction positive length
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -365,8 +343,7 @@ def set_cross_correction_positive_length(element: int, value: float) -> None:
 def get_weight(element: int) -> float: 
     """get element weight
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -377,8 +354,7 @@ def get_weight(element: int) -> float:
 def get_list_weight(element: int) -> float: 
     """get element list weight 
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -389,8 +365,7 @@ def get_list_weight(element: int) -> float:
 def get_volume(element: int) -> float: 
     """get element volume
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -401,8 +376,7 @@ def get_volume(element: int) -> float:
 def get_list_volume(element: int) -> float: 
     """get element list volume
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -413,8 +387,7 @@ def get_list_volume(element: int) -> float:
 def get_xl(element: int) -> point_3d: 
     """get local X vector
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -425,8 +398,7 @@ def get_xl(element: int) -> point_3d:
 def get_yl(element: int) -> point_3d: 
     """get local Y vector
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -437,8 +409,7 @@ def get_yl(element: int) -> point_3d:
 def get_zl(element: int) -> point_3d: 
     """get local Z vector
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -449,8 +420,7 @@ def get_zl(element: int) -> point_3d:
 def get_center_of_gravity(element: int) -> point_3d: 
     """get center of gravity geometrical 
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -461,8 +431,7 @@ def get_center_of_gravity(element: int) -> point_3d:
 def get_center_of_gravity_for_list_considering_materials(elements: List[int]) -> point_3d: 
     """get center of gravity considering material weights 
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         elements (List[int]):  element IDs
@@ -473,8 +442,7 @@ def get_center_of_gravity_for_list_considering_materials(elements: List[int]) ->
 def get_reference_side(element: int) -> int: 
     """get element reference side
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -485,8 +453,7 @@ def get_reference_side(element: int) -> int:
 def get_element_vertices(element: int) -> List[point_3d]: 
     """get BREP vertices of element
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -538,8 +505,7 @@ def get_element_facets(element: int) -> List[List[point_3d]]:
 def get_list_width(element: int) -> float: 
     """get list width
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -550,8 +516,7 @@ def get_list_width(element: int) -> float:
 def get_list_height(element: int) -> float: 
     """get list height
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -562,8 +527,7 @@ def get_list_height(element: int) -> float:
 def get_list_length(element: int) -> float: 
     """get list length
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -603,8 +567,7 @@ def rotate_height_axis_2_points(elements: List[int], start: point_3d, end: point
 def get_minimum_distance_between_elements(first_element: int, second_element: int) -> float: 
     """get the minimum distance between two elements
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         first_element (int): element ID
@@ -616,8 +579,7 @@ def get_minimum_distance_between_elements(first_element: int, second_element: in
 def get_total_area_of_all_faces(element: int) -> float: 
     """get total area fo all element faces
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -628,8 +590,7 @@ def get_total_area_of_all_faces(element: int) -> float:
 def get_area_of_front_face(element: int) -> float: 
     """get area of reference face
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -640,8 +601,7 @@ def get_area_of_front_face(element: int) -> float:
 def get_door_surface(elements: List[int]) -> float: 
     """get door surface
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         elements (List[int]):  element IDs
@@ -652,8 +612,7 @@ def get_door_surface(elements: List[int]) -> float:
 def get_window_surface(elements: List[int]) -> float: 
     """get window surface
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         elements (List[int]):  element IDs
@@ -664,8 +623,7 @@ def get_window_surface(elements: List[int]) -> float:
 def get_local_x() -> point_3d: 
     """X vector of the coordinate system in 3D
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -676,8 +634,7 @@ def get_local_x() -> point_3d:
 def get_local_z() -> point_3d: 
     """Z vector of the coordinate system in 3D
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -688,8 +645,7 @@ def get_local_z() -> point_3d:
 def get_local_y(element: int) -> point_3d: 
     """Y vector of the coordinate system in 3D
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -707,8 +663,7 @@ def set_drilling_tolerance(elements: List[int], value: float) -> None:
 def get_drilling_tolerance(element: int) -> float: 
     """get drilling tolerance
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -719,8 +674,7 @@ def get_drilling_tolerance(element: int) -> float:
 def get_element_reference_face_vertices(element: int) -> List[point_3d]: 
     """get element reference face vertices
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -731,8 +685,7 @@ def get_element_reference_face_vertices(element: int) -> List[point_3d]:
 def get_element_reference_face_area(element: int) -> float: 
     """get element reference face area
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -757,8 +710,7 @@ def rotate_length_axis_2_points(elements: List[int], start: point_3d, end: point
 def get_center_of_gravity_for_list(elements: List[int]) -> point_3d: 
     """get geometrical center of gravity for elements
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         elements (List[int]):  element IDs
@@ -769,8 +721,7 @@ def get_center_of_gravity_for_list(elements: List[int]) -> point_3d:
 def are_facets_coplanar(vertices_first_plane:List[point_3d], vertices_second_plane:List[point_3d]) -> bool:
     """checks if points of facet/plane are coplanar
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         vertices_first_plane (List[point_3d]): a first point list
@@ -782,8 +733,7 @@ def are_facets_coplanar(vertices_first_plane:List[point_3d], vertices_second_pla
 def get_actual_physical_volume(element: int) -> float:
     """get the real/physical volume of an element
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -794,8 +744,7 @@ def get_actual_physical_volume(element: int) -> float:
 def get_element_facet_count(element: int) -> int:
     """Get element facet count
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -806,8 +755,7 @@ def get_element_facet_count(element: int) -> int:
 def get_weight_real(element:int) -> float:
     """Get weight real
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
