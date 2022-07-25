@@ -30,7 +30,7 @@ theme:
     - search.suggest
     - search.highlight
     - navigation.tabs
-    - toc.integrate
+    # - toc.integrate
 
 nav:
   - Home: 
