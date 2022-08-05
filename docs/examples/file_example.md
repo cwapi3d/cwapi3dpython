@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # File_controller
 
 ## Export Rhino File

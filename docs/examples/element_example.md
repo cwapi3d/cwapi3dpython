@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # element_controller
 
 ## create_node

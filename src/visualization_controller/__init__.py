@@ -6,9 +6,8 @@ from cadwork import (rgb_color,
 
 def get_color(element: int) -> int: 
     """
+    [:information_source: Available for script filled attributes](#){.mark-text}
     
-    !!! Info
-            Available in script filled attributes
 
     Args:
         number (int): element ID
@@ -26,8 +25,7 @@ def set_color(element: int, color: int) -> None:
 def get_opengl_color(element: int) -> rgb_color: 
     """
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -130,9 +128,8 @@ def set_material(elements: List[int], element: int) -> None:
 def get_material(element: int) -> int: 
     """Gets the element material
     
-    !!! Info
-            Available in script filled attributes
-
+    [:information_source: Available for script filled attributes](#){.mark-text}
+    
     Args:
         element (int): element ID
 
@@ -220,4 +217,21 @@ def set_selectable(elements: List[int]) -> None:
     Args:
         elements (List[int]): element IDs
     """
+def get_rgb_from_cadwork_color_id(color:int) -> rgb_color:
+    """Returns RGB color object
+    
+    Examples:
+        >>> color = get_rgb_from_cadwork_color_id(5)
+        >>> color.r
+        0
+        >>> color.g
+        255
+        >>> color.b
+        0
 
+    Args:
+        color (int): color nr
+
+    Returns:
+        rgb_color: rgb obj
+    """

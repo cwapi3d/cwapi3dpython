@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Set upt Python in cadwork - Step by Step
 
 To use Python scripts in cadwork, they must be located in the userprofile in the folder api.x64. 

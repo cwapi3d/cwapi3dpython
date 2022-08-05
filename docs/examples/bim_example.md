@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # bim_controller
 
 ## get GlobalId (IfcGuid)

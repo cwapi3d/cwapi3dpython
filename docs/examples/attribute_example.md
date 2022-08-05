@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # attribute_controller
 
 ## Conditions 
@@ -15,6 +20,21 @@ for element_id in element_ids:
         print (True)
     else:
         print (False)
+```
+
+```python
+import  attribute_controller  as ac     # import module
+import  element_controller    as ec   
+import  cadwork
+
+
+# get active element_ids
+element_ids = ec.get_active_identifiable_element_ids()
+
+for element_id in element_ids:
+    element_type = ac.get_element_type(element_id)
+    if element_type.is_rectangular_beam():
+        # do something
 ```
 
 ## set attributes

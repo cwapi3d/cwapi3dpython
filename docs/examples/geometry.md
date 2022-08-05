@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Geometry
 
 **Coordinates in cadwork** <br>

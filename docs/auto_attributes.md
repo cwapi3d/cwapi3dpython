@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Auto Attributes
 
 ## Script filled attributes

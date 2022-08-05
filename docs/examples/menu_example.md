@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # menu_controller
 ## create a simple cadwork menu 
 

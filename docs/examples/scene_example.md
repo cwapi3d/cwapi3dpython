@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # scene_controller
 ## create and add elements to scene
 

@@ -36,12 +36,12 @@ def export_wall_with_clipboard(clipboard: int, elements: List[int]) -> None:
         clipboard (int): clipboard element
         elements (List[int]): element IDs
     """
-def export_export_solid_with_clipboard(clipboard: int, elements: List[int]) -> None: 
+def export_export_solid_with_clipboard(clipboard: int, export_solid_ids: List[int]) -> None: 
     """
 
     Args:
         clipboard (int): clipboard element
-        elements (List[int]): element IDs
+        export_solid_ids (List[int]): element IDs
     """
 def export_piece_by_piece_with_clipboard(clipboard: int, elements: List[int]) -> None: 
     """
@@ -50,12 +50,12 @@ def export_piece_by_piece_with_clipboard(clipboard: int, elements: List[int]) ->
         clipboard (int): clipboard element
         elements (List[int]): element IDs
     """
-def assign_export_solid(elements: List[int], other_elements: List[int]) -> None: 
+def assign_export_solid(a_export_solid_element: List[int], elements_to_assign: List[int]) -> None: 
     """Assigns elements to an export solid
 
     Args:
-        elements (List[int]): element IDs
-        other_elements (List[int]): element IDs
+        a_export_solid_element (List[int]): element ID export solid
+        other_elements (List[int]): element IDs to assign
     """
 def export_container_with_clipboard(clipboard: int, elements: List[int]) -> None: 
     """

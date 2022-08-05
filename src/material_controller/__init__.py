@@ -13,8 +13,7 @@ def create_material(name: str) -> int:
 def get_name(number: int) -> str: 
     """Get material name
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -32,8 +31,7 @@ def set_name(number: int, value: str) -> None:
 def get_group(number: int) -> str: 
     """get material group
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -51,8 +49,7 @@ def set_group(number: int, value: str) -> None:
 def get_code(number: int) -> str: 
     """get material code
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -70,8 +67,7 @@ def set_code(number: int, value: str) -> None:
 def get_modulus_elasticity_1(number: int) -> float: 
     """
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -89,8 +85,7 @@ def set_modulus_elasticity_1(number: int, value: float) -> None:
 def get_modulus_elasticity_2(number: int) -> float: 
     """
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -108,8 +103,7 @@ def set_modulus_elasticity_2(number: int, value: float) -> None:
 def get_modulus_elasticity_3(number: int) -> float: 
     """
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -127,8 +121,7 @@ def set_modulus_elasticity_3(number: int, value: float) -> None:
 def get_shear_modulus_1(number: int) -> float: 
     """
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -146,8 +139,7 @@ def set_shear_modulus_1(number: int, value: float) -> None:
 def get_shear_modulus_2(number: int) -> float: 
     """
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -165,8 +157,7 @@ def set_shear_modulus_2(number: int, value: float) -> None:
 def get_price(number: int) -> float: 
     """
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -183,8 +174,7 @@ def set_price(number: int, value: float) -> None:
     """
 def get_price_type(number: int) -> str: 
     """
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -202,8 +192,7 @@ def set_price_type(number: int, value: str) -> None:
 def get_thermal_conductivity(number: int) -> float: 
     """
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -221,8 +210,7 @@ def set_thermal_conductivity(number: int, value: float) -> None:
 def get_heat_capacity(number: int) -> float: 
     """
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -240,8 +228,7 @@ def set_heat_capacity(number: int, value: float) -> None:
 def get_u_min(number: int) -> float: 
     """
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -259,8 +246,7 @@ def set_u_min(number: int, value: float) -> None:
 def get_u_max(number: int) -> float: 
     """
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -277,8 +263,7 @@ def set_u_max(number: int, value: float) -> None:
     """
 def get_fire_resistance_class(number: int) -> str: 
     """
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -296,8 +281,7 @@ def set_fire_resistance_class(number: int, value: str) -> None:
 def get_smoke_class(number: int) -> str: 
     """
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -315,8 +299,7 @@ def set_smoke_class(number: int, value: str) -> None:
 def get_drop_forming_class(number: int) -> str: 
     """
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -334,8 +317,7 @@ def set_drop_forming_class(number: int, value: str) -> None:
 def get_burn_off_rate(number: int) -> float: 
     """
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -353,8 +335,7 @@ def set_burn_off_rate(number: int, value: float) -> None:
 def get_weight(number: int) -> float: 
     """get material weight
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -372,8 +353,7 @@ def set_weight(number: int, value: float) -> None:
 def get_weight_type(number: int) -> str: 
     """gets the material weight type
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         number (int): element ID
@@ -390,8 +370,7 @@ def set_weight_type(number: int, value: str) -> None:
     """
 def get_material_id(name: str) -> None: 
     """
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         name (str): material name
@@ -399,8 +378,7 @@ def get_material_id(name: str) -> None:
 def get_all_materials() -> List[int]: 
     """
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Returns:
         List[int]: all materials

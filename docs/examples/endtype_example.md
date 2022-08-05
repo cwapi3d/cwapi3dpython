@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # endtype_controller
 
 ## get endtype name at start point of the element

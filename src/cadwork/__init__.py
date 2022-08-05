@@ -824,8 +824,10 @@ class element_type():
         """
 
 class rgb_color():
-    def __init__(self) -> None:
-        pass
+    def __init__(self, r:int, b:int, g:int) -> None:
+        self.r = r
+        self.b = b
+        self.g = g
 
 class visibility_state():
     def __init__(self) -> None:

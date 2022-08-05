@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # material_controller
 ## get material ids and names 
 

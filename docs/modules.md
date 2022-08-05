@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Import Packages and Modules
 
 !!! important "The module cadwork is to be loaded into the namespace at any time. This module is needed for many processes.<br> ```import cadwork``` "

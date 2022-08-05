@@ -9,8 +9,7 @@ from cadwork import (element_module_properties,
 def get_all_identifiable_element_ids() -> List[int]:
     """get all identifiable element IDs (visible and unvisible)
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Returns:
         List[int]: element_id list
@@ -19,8 +18,7 @@ def get_all_identifiable_element_ids() -> List[int]:
 def get_visible_identifiable_element_ids() -> List[int]:
     """get all visible identifiable elemnt ids
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Returns:
         List[int]: element_id list
@@ -29,8 +27,7 @@ def get_visible_identifiable_element_ids() -> List[int]:
 def get_invisible_identifiable_element_ids() -> List[int]:
     """Get invisible cadwork element IDs
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Returns:
         List[int]: element_id list
@@ -39,8 +36,7 @@ def get_invisible_identifiable_element_ids() -> List[int]:
 def get_active_identifiable_element_ids() -> List[int]:
     """Get active cadwork element IDs
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Returns:
         List[int]: element_id list
@@ -49,8 +45,7 @@ def get_active_identifiable_element_ids() -> List[int]:
 def get_inactive_all_identifiable_element_ids() -> List[int]:
     """Get inactive cadwork element IDs
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Returns:
         List[int]: element_id list
@@ -59,8 +54,7 @@ def get_inactive_all_identifiable_element_ids() -> List[int]:
 def get_inactive_visible_identifiable_element_ids() -> List[int]:
     """Get inactive visible cadwork element IDs
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Returns:
         List[int]: element_id list
@@ -385,8 +379,7 @@ def set_element_detail_path(path: str) -> None:
 def get_element_detail_path() -> str:
     """get the path from active elmeentmodule
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Returns:
         str: path
@@ -394,8 +387,7 @@ def get_element_detail_path() -> str:
 def get_element_cadwork_guid(element: int) -> str:
     """get cadwork element guid
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -468,7 +460,6 @@ def set_element_module_properties_for_elements(elements: List[int], properties: 
         >>> ec.set_element_module_properties_for_elements([540915],element_properties)
         None
         
-
     Args:
         elements (List[int]): element IDs
         properties (element_module_properties): elment module properties
@@ -476,8 +467,7 @@ def set_element_module_properties_for_elements(elements: List[int], properties: 
 def get_element_module_properties_for_element(element: int) -> element_module_properties:
     """get element module properties for element
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -488,8 +478,7 @@ def get_element_module_properties_for_element(element: int) -> element_module_pr
 def get_element_type_description(element: int) -> str:
     """get the description of the cadwork element type
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -514,8 +503,7 @@ def create_text_object_with_font(text: str, position: point_3d, xl: point_3d, zl
 def get_opening_variant_ids(elements: List[int], opening_type: int) -> List[int]:
     """get opening variant ids
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         elements (List[int]): element IDs
@@ -527,8 +515,7 @@ def get_opening_variant_ids(elements: List[int], opening_type: int) -> List[int]
 def get_parent_container_id(element: int) -> int:
     """get parent container id
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -539,19 +526,17 @@ def get_parent_container_id(element: int) -> int:
 def get_export_solid_content_elements(element: int) -> List[int]:
     """get export solid content elements
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
-        element (int): element ID
+        element (int): element ID of export solid
     Returns:
         List[int]: element IDs
     """
 def get_container_content_elements(element: int) -> List[int]:
     """get container content elements
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -597,8 +582,7 @@ def recreate_elements(elements: List[int]) -> None:
 def check_if_elements_are_in_collision(first_element:int, second_element:int) -> bool:
     """collision detection
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): first element ID
@@ -610,8 +594,7 @@ def check_if_elements_are_in_collision(first_element:int, second_element:int) ->
 def check_if_elements_are_in_contact(first_element:int, second_element:int) -> bool:
     """check if element faces are in contact
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): first element ID
@@ -635,8 +618,7 @@ def get_user_element_ids() -> List[int]:
 def get_element_contact_vertices(first_element:int, second_element:int) -> List[point_3d]:
     """get element contact vertices
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): first element ID
@@ -648,8 +630,7 @@ def get_element_contact_vertices(first_element:int, second_element:int) -> List[
 def get_nesting_parent_id(element:int) -> int:
     """get nesting parent id
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -673,8 +654,7 @@ def glide_elements(elements: List[int], glide_point: point_3d) -> None:
 def get_element_contact_facets(first_element:int, second_element:int) -> List[List[point_3d]]:
     """get element contact faces
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -686,8 +666,7 @@ def get_element_contact_facets(first_element:int, second_element:int) -> List[Li
 def get_element_raw_interface_vertices(first_element:int, second_element:int) -> List[point_3d]:
     """get element raw interface vertices
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -813,8 +792,7 @@ def convert_circular_beam_to_drilling(elements: List[int]) -> None:
 def get_standard_export_solid_list() -> List[str]:
     """get list of standard export solid names
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Returns:
         List[str]: names
@@ -822,8 +800,7 @@ def get_standard_export_solid_list() -> List[str]:
 def get_standard_container_list() -> List[str]:
     """get list of standard container names
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Returns:
         List[str]: names
@@ -845,8 +822,7 @@ def stretch_end_facet(elements: List[int], stretch_vector: point_3d) -> None:
 def get_variant_sibling_element_ids(element: int) -> List[int]:
     """get variant sibling element IDs
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID
@@ -858,8 +834,8 @@ def set_export_solid_contents(solid_id: int, elements: List[int]) -> None:
     """set export solid contents
 
     Args:
-        solid_id (int): element ID
-        elements (List[int]): element IDs
+        solid_id (int): element ID of export solid
+        elements (List[int]): element IDs to assign
     """
 def set_container_contents(container_id: int, elements: List[int]) -> None:
     """set container contents
@@ -898,8 +874,7 @@ def mirror_copy_elements(elements: List[int], plane_definition: point_3d, plane_
 def check_if_point_is_on_element(point:point_3d, element:int) -> bool:
     """Checks if a point is on a element
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         point (point_3d): a cadwork point
@@ -912,8 +887,7 @@ def check_if_point_is_on_element(point:point_3d, element:int) -> bool:
 def check_if_point_is_in_element(point:point_3d, element:int) -> bool:
     """Check if point is in element
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         point (point_3d): a cadwork point
@@ -926,8 +900,7 @@ def get_bounding_box_vertices_local(element:int, elements:List[int]) -> List[poi
     """create a bounding box that is aligned to a reference element. 
     The bounding box includes all elements contained in the list.
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID reference element
@@ -939,8 +912,7 @@ def get_bounding_box_vertices_local(element:int, elements:List[int]) -> List[poi
 def get_bounding_box_vertices_global(elements:List[int]) -> List[point_3d]:
     """create a bounding box that is aligned to the global coordinate system.
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         elements (List[int]): element IDs
@@ -1048,8 +1020,7 @@ def add_elements_to_detail(detail_group:element_module_detail, elements:List[int
 def get_all_nesting_raw_parts() -> List[int]:
     """Get all nesting raw parts.
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Returns:
         List[int]: element IDs
@@ -1057,8 +1028,7 @@ def get_all_nesting_raw_parts() -> List[int]:
 def get_standard_beam_list() -> List[str]:
     """Get standard beam list
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Returns:
         List[str]: standard beam names
@@ -1066,8 +1036,7 @@ def get_standard_beam_list() -> List[str]:
 def get_standard_panel_list() -> List[str]:
     """Get standard panel list
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Returns:
         List[str]: standard panel names
@@ -1075,8 +1044,7 @@ def get_standard_panel_list() -> List[str]:
 def get_reference_element(element: int) -> int:
     """Get reference element
     
-    !!! Info
-            Available in script filled attributes
+    [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
         element (int): element ID

@@ -1,5 +1,9 @@
-.md-header {
-  background-color: #10069f;
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #10069f;
+}
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #10069f;
 }
 
 .md-tabs {
@@ -16,4 +20,12 @@
 
 .md-footer__link--next {
   display: none;
+}
+
+.mark-text { 
+  font-family: "wand-sparkles"; 
+  font-size: 18px;
+  font-weight: 500;
+  content: "";
+  cursor: none;
 }
