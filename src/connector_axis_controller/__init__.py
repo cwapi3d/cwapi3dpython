@@ -257,3 +257,19 @@ def update_axis_cutting_ability(elements:List[int]) -> None:
     Args:
         elements (List[int]): element IDs
     """
+
+def get_section_contact_element(element: int, section_nr:int) -> int:
+    """Get section contact element.
+    
+    Examples:
+        >>> element_ids = [610415]
+        >>> ac.get_section_contact_element(*element_ids, 0)
+        >>> 545121
+
+    Args:
+        element (int): a axis ID
+        section_nr (int): a section number
+
+    Returns:
+        int: element ID
+    """

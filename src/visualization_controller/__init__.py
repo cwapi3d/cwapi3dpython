@@ -15,11 +15,13 @@ def get_color(element: int) -> int:
     Returns:
         int: color number
     """
-def set_color(element: int, color: int) -> None: 
+def set_color(elements: List[int], color: int) -> None: 
     """
+    Examples:
+        >>> set_color([123456, 234567], 5)
 
     Args:
-        element (int): element ID
+        elements (List[int]): element IDs
         color (int): color number
     """
 def get_opengl_color(element: int) -> rgb_color: 

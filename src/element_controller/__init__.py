@@ -124,10 +124,13 @@ def create_square_beam_points(width: float, p1: point_3d, p2: point_3d, p3: poin
         int: element ID
     """
     
-def create_rectangular_beam_vectors(length: float, width: float, height: float, p1: point_3d, xl: point_3d, zl: point_3d) -> int:
+def create_rectangular_beam_vectors(width: float, height: float, length: float, p1: point_3d, xl: point_3d, zl: point_3d) -> int:
     """create a rectangular beam from vectors. The start point of the element is defined by p1. Then the direction (local x axis) is definied by p2 (e.g. point_3d(1.,0.,0.)).
     The local z vector is defined via p3 (e.g. point_3d(0.,1.,0.)). 
 
+    Examples:
+        >>> beam = ec.create_rectangular_beam_vectors(120.0, 240.0, 2800.0, cadwork.point_3d(0.,0.,0.), cadwork.point_3d(1.,0.,0.), cadwork.point_3d(0.,0.,1.))
+        
     Args:
         length (float): length of beam axis
         width (float): beam width
@@ -351,6 +354,17 @@ def subtract_elements(hard_elements: List[int], soft_elements: List[int]) -> Lis
     Args:
         hard_elements (List[int]): subtract with
         soft_elements (List[int]): subtract from
+
+    Returns:
+        List[int]: element IDs
+    """
+def subtract_elements_with_undo(hard_elements: List[int], soft_elements: List[int], with_undo: bool) -> List[int]:
+    """Subtract elements with undo. The first element is hard, the second soft.
+
+    Args:
+        hard_elements (List[int]): subtract with
+        soft_elements (List[int]): subtract from
+        with_undo (bool): with undo
 
     Returns:
         List[int]: element IDs
@@ -1048,6 +1062,23 @@ def get_reference_element(element: int) -> int:
 
     Args:
         element (int): element ID
+
+    Returns:
+        int: element ID
+    """
+def create_linear_optimization(elements: List[int], optimization_number: int, 
+                               total_length: float, start_cut: float, 
+                               end_cut: float, saw_kerf: float, is_production_list: bool) -> int:
+    """create linear optimization
+
+    Args:
+        elements (List[int]): element IDs
+        optimization_number (int): number of nesting volume
+        total_length (float): total length nesting volume
+        start_cut (float): start cut
+        end_cut (float): end cut
+        saw_kerf (float): saw kerf
+        is_production_list (bool): measurements
 
     Returns:
         int: element ID
