@@ -124,10 +124,13 @@ def create_square_beam_points(width: float, p1: point_3d, p2: point_3d, p3: poin
         int: element ID
     """
     
-def create_rectangular_beam_vectors(length: float, width: float, height: float, p1: point_3d, xl: point_3d, zl: point_3d) -> int:
+def create_rectangular_beam_vectors(width: float, height: float, length: float, p1: point_3d, xl: point_3d, zl: point_3d) -> int:
     """create a rectangular beam from vectors. The start point of the element is defined by p1. Then the direction (local x axis) is definied by p2 (e.g. point_3d(1.,0.,0.)).
     The local z vector is defined via p3 (e.g. point_3d(0.,1.,0.)). 
 
+    Examples:
+        >>> beam = ec.create_rectangular_beam_vectors(120.0, 240.0, 2800.0, cadwork.point_3d(0.,0.,0.), cadwork.point_3d(1.,0.,0.), cadwork.point_3d(0.,0.,1.))
+        
     Args:
         length (float): length of beam axis
         width (float): beam width

@@ -89,6 +89,7 @@ nav:
     - auto_attributes.md
   - About:
     - About Guide: about.md
+  - Release Notes: release.md
 
 markdown_extensions:
   - attr_list  

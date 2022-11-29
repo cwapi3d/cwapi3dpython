@@ -4,12 +4,20 @@ from typing import List
 def export_production_list(elements: List[int], file: str) -> None: 
     """Exports a production list
 
+    Examples:
+        >>> list_controller.export_production_list(elements, "C:\\Users\\John\\my_list.csv")
+        >>> list_controller.export_production_list(elements, "C:\\Users\\John\\my_list.cwle")
+
     Args:
         elements (List[int]): element IDs
         file (str): file path
     """
 def export_part_list(elements: List[int], file: str) -> None: 
     """Exports a part list
+    
+    Examples:
+        >>> list_controller.export_part_list(elements, "C:\\Users\\John\\my_list.csv")
+        >>> list_controller.export_part_list(elements, "C:\\Users\\John\\my_list.cwle")
 
     Args:
         elements (List[int]): element IDs
@@ -28,7 +36,11 @@ def check_position_numbers_part_list() -> List[int]:
         List[int]: element IDs with discrepancies
     """
 def export_production_list_with_settings(elements: List[int], file: str, settings: str) -> None: 
-    """
+    """export production list with settings. Available file formats are .cwle and .csv
+    
+    Examples:
+        >>> list_controller.export_production_list_with_settings(elements, "C:\\Users\\John\\my_list.csv", settings_file_path)
+        >>> list_controller.export_production_list_with_settings(elements, "C:\\Users\\John\\my_list.cwle", settings_file_path)
 
     Args:
         elements (List[int]): element IDs
@@ -36,8 +48,12 @@ def export_production_list_with_settings(elements: List[int], file: str, setting
         settings (str): settings file path
     """
 def export_part_list_with_settings(elements: List[int], file: str, settings: str) -> None: 
-    """
-
+    """export part list with settings. Available file formats are .cwle and .csv
+    
+    Examples:
+        >>> list_controller.export_part_list_with_settings(elements, "C:\\Users\\John\\my_list.csv", settings_file_path)
+        >>> list_controller.export_part_list_with_settings(elements, "C:\\Users\\John\\my_list.cwle", settings_file_path)
+   
     Args:
         elements (List[int]): element IDs
         file (str): file path
