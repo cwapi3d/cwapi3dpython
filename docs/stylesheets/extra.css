@@ -22,16 +22,16 @@
   display: none;
 }
 
-.mark-text { 
-  font-family: "wand-sparkles"; 
-  font-size: 18px;
+.mark-text {
+  /* font-family: "wand-sparkles";  */
+  font-size: 14px;
   font-weight: 500;
   content: "";
   cursor: none;
 }
 
 .table {
-  color:#10069f;
+  color: #10069f;
   display: grid;
   grid-template-columns: 1fr;
   column-gap: 10%;
