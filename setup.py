@@ -7,11 +7,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
     name='cwapi3d',
-<<<<<<< HEAD
     version='1.3.14',
-=======
-    version='1.3.13',
->>>>>>> d3e1f0760e1fbcfad88c1da5d32e86c80e5c4986
     author='Cadwork',
     author_email='it@cadwork.ca',
     description='Python bindings for CwAPI3D',
