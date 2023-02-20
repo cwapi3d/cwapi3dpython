@@ -2109,15 +2109,15 @@ class ifc_2x3_element_type():
     def is_ifc_beam(self, ifc_type) -> bool:
         """
         Examples:
-        >>> import      element_controller      as ec
-        >>> import      bim_controller          as bc
-        >>> import      cadwork
+            >>> import      element_controller      as ec
+            >>> import      bim_controller          as bc
+            >>> import      cadwork
 
-        >>> element_ids = ec.get_active_identifiable_element_ids()
-        >>> for element in element_ids:
-            >>> ifc_type = bc.get_ifc2x3_element_type(element)
-            >>> if cadwork.ifc_2x3_element_type.is_ifc_member(ifc_type):
-                >>>   # do something
+            >>> element_ids = ec.get_active_identifiable_element_ids()
+            >>> for element in element_ids:
+                >>> ifc_type = bc.get_ifc2x3_element_type(element)
+                >>> if cadwork.ifc_2x3_element_type.is_ifc_member(ifc_type):
+                    >>>   # do something
         Args:
             ifc_type (_type_): ifc element type
 
