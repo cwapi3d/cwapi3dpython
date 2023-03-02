@@ -3,7 +3,7 @@ name: Test Publish CwAPI3D Package
 on:
   push:
     branches:
-      - develop
+      - '!main'
     paths:
       - 'src/**'
       - 'setup.py'
@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
-          python-version: 3.9
+          python-version: 3.10
       - run: mv src/attribute_controller/__init__.py src/attribute_controller/__init__.pyi
       - run: mv src/bim_controller/__init__.py src/bim_controller/__init__.pyi
       - run: mv src/cadwork/__init__.py src/cadwork/__init__.pyi
