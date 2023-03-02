@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - '!main'
-    paths:
-      - 'src/**'
-      - 'setup.py'
 
 jobs:
   build-and-publish:

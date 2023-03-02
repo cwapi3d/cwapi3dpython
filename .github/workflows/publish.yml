@@ -3,10 +3,7 @@ name: Publish CwAPI3D Package
 on:
   push:
     branches:
-      - main
-    paths:
-      - 'src/**'
-      - 'setup.py'
+      - 'main'
 
 jobs:
   build-and-publish:
