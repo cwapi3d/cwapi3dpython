@@ -2,8 +2,8 @@ name: Test Publish CwAPI3D Package
 
 on:
   push:
-    branches:
-      - '!main'
+    branches-ignore:
+      - main
 
 jobs:
   build-and-publish:
