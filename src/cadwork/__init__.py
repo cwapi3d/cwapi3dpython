@@ -2397,3 +2397,49 @@ class element_module_detail(Enum):
     floor_end_detail = 11
     floor_line_detail = 12
     floor_open_detail = 13
+
+
+@unique
+class division_zone_direction(Enum):
+    """ Add division zone direction.
+
+    Args:
+        Enum (int): direction
+    """
+    positive = 1
+    negative = -1
+    none = 0
+
+
+@unique
+class shortcut_key(Enum):
+    """Shortcut key.
+
+    Args:
+        Enum (int): key
+    """
+    F1 = 1
+    F2 = 2
+    F3 = 3
+    F4 = 4
+    F5 = 5
+    F6 = 6
+    F7 = 7
+    F8 = 8
+    F9 = 9
+    F10 = 10
+    F11 = 11
+    F12 = 12
+
+
+@unique
+class shortcut_key_modifier(Enum):
+    """Shortcut key.
+
+    Args:
+        Enum (int): key
+    """
+    none = 0
+    shift = 1
+    ctrl = 2
+    alt = 3

@@ -910,3 +910,34 @@ def get_weight_real(element: int) -> float:
     Returns:
         float: weight real
     """
+
+
+def create_division_zone(element: int, point: point_3d, direction: int) -> None:
+    """ create division zone
+        positive direction = 1
+        negative direction = -1
+
+    Args:
+        element (int): element ID
+        point (point_3d): positon
+        direction (point_3d): direction vector
+    """
+
+
+def delete_division_zone(element: int) -> None:
+    """ delete division zone
+
+    Args:
+        element (int): element ID
+    """
+
+
+def get_division_zone_points(element: int) -> List[point_3d]:
+    """ get division zone points
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        List[point_3d]: list of points
+    """
