@@ -3,21 +3,18 @@ name: Publish CwAPI3D Package
 on:
   push:
     branches:
-      - main
-    paths:
-      - 'src/**'
-      - 'setup.py'
+      - 'main'
 
 jobs:
   build-and-publish:
     name: Build and Publish
-    runs-on: ubuntu-20.04
+    runs-on: 'ubuntu-22.04'
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
         with:
-          python-version: 3.9
+          python-version: '3.10'
       - run: mv src/attribute_controller/__init__.py src/attribute_controller/__init__.pyi
       - run: mv src/bim_controller/__init__.py src/bim_controller/__init__.pyi
       - run: mv src/cadwork/__init__.py src/cadwork/__init__.pyi
