@@ -1120,7 +1120,7 @@ def is_nesting_raw_part(element: int) -> bool:
     """
 
 
-def is_circular_mep(self, element_type) -> bool:
+def is_circular_mep(element_type) -> bool:
     """
 
     Args:
@@ -1131,7 +1131,7 @@ def is_circular_mep(self, element_type) -> bool:
     """
 
 
-def is_rectangular_mep(self, element_type) -> bool:
+def is_rectangular_mep(element_type) -> bool:
     """
 
     Args:
@@ -1139,4 +1139,20 @@ def is_rectangular_mep(self, element_type) -> bool:
 
     Returns:
         bool: condition
+    """
+
+
+def get_name_list_items() -> List[str]:
+    """Get name list items
+
+    Returns:
+        List[str]: name list items
+    """
+
+
+def add_item_to_name_list(item: str) -> None:
+    """Add item to name list
+
+    Args:
+        item (str): item
     """

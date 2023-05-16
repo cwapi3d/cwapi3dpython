@@ -1,5 +1,5 @@
 from typing import List
-from cadwork import point_3d
+from cadwork import (point_3d, shortcut_key, shortcut_key_modifier)
 
 
 def get_3d_version() -> int:
@@ -839,4 +839,26 @@ def get_user_points_with_count(count: int) -> List[point_3d]:
 
     Returns:
         List[point_3d]: selected points
+    """
+
+
+def execute_shortcut(shortcut_key_modifier: shortcut_key_modifier, shortcut_key: shortcut_key) -> None:
+    """Executes a shortcut
+    key modifiers: 0 = None, 1 = Ctrl, 2 = Shift, 4 = Alt
+    shortcut key: F1 = 1, F2 = 2, F3 = 3, ...
+
+    Args:
+        shortcut_key_modifier (int): shortcut key modifier
+        shortcut_key (int): shortcut key
+    """
+
+
+def get_user_path_from_dialog_in_path(path: str) -> str:
+    """Prompt user to select a path. 
+
+    Args:
+        path (str): initial path
+
+    Returns:
+        str: selected path
     """
