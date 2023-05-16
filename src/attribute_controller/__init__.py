@@ -1,14 +1,15 @@
 from typing import List
-from cadwork import (layer_settings, 
-                         extended_settings, 
-                         output_type, 
-                         process_type, 
-                         element_type, 
-                         )
-                            
+from cadwork import (layer_settings,
+                     extended_settings,
+                     output_type,
+                     process_type,
+                     element_type,
+                     )
+
+
 def get_name(element: int) -> str:
     """get element name
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -19,7 +20,7 @@ def get_name(element: int) -> str:
     """
 
 
-def set_name(elements: List[int], name: str) -> None: 
+def set_name(elements: List[int], name: str) -> None:
     """
 
     Args:
@@ -28,7 +29,7 @@ def set_name(elements: List[int], name: str) -> None:
     """
 
 
-def get_group(element: int) -> str: 
+def get_group(element: int) -> str:
     """
     [:information_source: Available for script filled attributes](#){.mark-text}
 
@@ -40,7 +41,7 @@ def get_group(element: int) -> str:
     """
 
 
-def set_group(elements: List[int], group: str) -> None: 
+def set_group(elements: List[int], group: str) -> None:
     """set group
 
     Args:
@@ -49,9 +50,9 @@ def set_group(elements: List[int], group: str) -> None:
     """
 
 
-def get_subgroup(element: int) -> str: 
+def get_subgroup(element: int) -> str:
     """get subgroup
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -62,7 +63,7 @@ def get_subgroup(element: int) -> str:
     """
 
 
-def set_subgroup(elements: List[int], subgroup: str) -> None: 
+def set_subgroup(elements: List[int], subgroup: str) -> None:
     """
 
     Args:
@@ -71,10 +72,10 @@ def set_subgroup(elements: List[int], subgroup: str) -> None:
     """
 
 
-def get_comment(element: int) -> str: 
+def get_comment(element: int) -> str:
     """
     [:information_source: Available for script filled attributes](#){.mark-text}
-            
+
     Args:
         element (int): element ID
 
@@ -83,7 +84,7 @@ def get_comment(element: int) -> str:
     """
 
 
-def set_comment(elements: List[int], comment: str) -> None: 
+def set_comment(elements: List[int], comment: str) -> None:
     """_summary_
 
     Args:
@@ -92,10 +93,10 @@ def set_comment(elements: List[int], comment: str) -> None:
     """
 
 
-def get_user_attribute(element: int, number: int) -> str: 
+def get_user_attribute(element: int, number: int) -> str:
     """
     [:information_source: Available for script filled attributes](#){.mark-text}
-            
+
     Args:
         element (int): element ID
         number (int): number user attribute
@@ -105,7 +106,7 @@ def get_user_attribute(element: int, number: int) -> str:
     """
 
 
-def set_user_attribute(elements: List[int], number: int, value: str) -> None: 
+def set_user_attribute(elements: List[int], number: int, value: str) -> None:
     """
 
     Args:
@@ -115,11 +116,11 @@ def set_user_attribute(elements: List[int], number: int, value: str) -> None:
     """
 
 
-def get_sku(element: int) -> str: 
+def get_sku(element: int) -> str:
     """
 
     [:information_source: Available for script filled attributes](#){.mark-text}
-            
+
     Args:
         element (int): element ID
 
@@ -128,7 +129,7 @@ def get_sku(element: int) -> str:
     """
 
 
-def set_sku(elements: List[int], sku: str) -> None: 
+def set_sku(elements: List[int], sku: str) -> None:
     """_summary_
 
     Args:
@@ -137,10 +138,10 @@ def set_sku(elements: List[int], sku: str) -> None:
     """
 
 
-def get_production_number(element: int) -> int: 
+def get_production_number(element: int) -> int:
     """
     [:information_source: Available for script filled attributes](#){.mark-text}
-            
+
     Args:
         element (int): element ID
 
@@ -149,7 +150,7 @@ def get_production_number(element: int) -> int:
     """
 
 
-def set_production_number(elements: List[int], number: int) -> None: 
+def set_production_number(elements: List[int], number: int) -> None:
     """
 
     Args:
@@ -158,10 +159,10 @@ def set_production_number(elements: List[int], number: int) -> None:
     """
 
 
-def get_part_number(element: int) -> int: 
+def get_part_number(element: int) -> int:
     """
     [:information_source: Available for script filled attributes](#){.mark-text}
-            
+
     Args:
         element (int): element ID
 
@@ -170,7 +171,7 @@ def get_part_number(element: int) -> int:
     """
 
 
-def set_part_number(elements: List[int], number: int) -> None: 
+def set_part_number(elements: List[int], number: int) -> None:
     """
 
     Args:
@@ -178,9 +179,10 @@ def set_part_number(elements: List[int], number: int) -> None:
         number (int): part number
     """
 
+
 def get_additional_guid(element: int, data_id: str) -> str:
     """get additional guid
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -190,7 +192,9 @@ def get_additional_guid(element: int, data_id: str) -> str:
     Returns:
         str: data
     """
-def set_additional_guid(elements: List[int], data_id:str, guid:str) -> None:
+
+
+def set_additional_guid(elements: List[int], data_id: str, guid: str) -> None:
     """set additional guid
 
     Args:
@@ -198,10 +202,11 @@ def set_additional_guid(elements: List[int], data_id:str, guid:str) -> None:
         data_id (str): data iD
         guid (str): a guid
     """
-    
-def get_additional_data(element: int, data_id: str) -> str: 
+
+
+def get_additional_data(element: int, data_id: str) -> str:
     """Gets the element additional data
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -212,7 +217,8 @@ def get_additional_data(element: int, data_id: str) -> str:
         str: additional data
     """
 
-def set_additional_data(elements: List[int], data_id: str, data_text: str) -> None: 
+
+def set_additional_data(elements: List[int], data_id: str, data_text: str) -> None:
     """
 
     Args:
@@ -222,7 +228,7 @@ def set_additional_data(elements: List[int], data_id: str, data_text: str) -> No
     """
 
 
-def delete_additional_data(elements: List[int], data_id: str) -> None: 
+def delete_additional_data(elements: List[int], data_id: str) -> None:
     """Deletes the element additional data
 
     Args:
@@ -231,9 +237,9 @@ def delete_additional_data(elements: List[int], data_id: str) -> None:
     """
 
 
-def get_user_attribute_name(number: int) -> str: 
+def get_user_attribute_name(number: int) -> str:
     """Gets the user attribute name
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -244,7 +250,7 @@ def get_user_attribute_name(number: int) -> str:
     """
 
 
-def set_user_attribute_name(number: int, name: str) -> None: 
+def set_user_attribute_name(number: int, name: str) -> None:
     """Sets the user attribute name
 
     Args:
@@ -253,9 +259,9 @@ def set_user_attribute_name(number: int, name: str) -> None:
     """
 
 
-def get_wall_situation(element: int) -> str: 
+def get_wall_situation(element: int) -> str:
     """Gets the element wall situation
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -266,9 +272,9 @@ def get_wall_situation(element: int) -> str:
     """
 
 
-def is_beam(element: int) -> bool: 
+def is_beam(element: int) -> bool:
     """Tests if element is beam
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -279,9 +285,9 @@ def is_beam(element: int) -> bool:
     """
 
 
-def is_panel(element: int) -> bool: 
+def is_panel(element: int) -> bool:
     """Tests if element is panel
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -292,9 +298,9 @@ def is_panel(element: int) -> bool:
     """
 
 
-def is_opening(element: int) -> bool: 
+def is_opening(element: int) -> bool:
     """Tests if element is opening
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -305,9 +311,9 @@ def is_opening(element: int) -> bool:
     """
 
 
-def is_wall(element: int) -> bool: 
+def is_wall(element: int) -> bool:
     """Tests if element is wall
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -317,9 +323,10 @@ def is_wall(element: int) -> bool:
         bool: is element wall
     """
 
+
 def is_framed_wall(element: int) -> bool:
     """Tests if element is a framed wall
-    
+
     !!! Info
             Available in script filled attribut
 
@@ -329,10 +336,11 @@ def is_framed_wall(element: int) -> bool:
     Returns:
         bool: is element a framed wall
     """
-    
+
+
 def is_solid_wall(element: int) -> bool:
     """Tests if element is a solid wall
-    
+
     !!! Info
             Available in script filled attribut
 
@@ -342,10 +350,11 @@ def is_solid_wall(element: int) -> bool:
     Returns:
         bool: is element a solid wall
     """
-    
+
+
 def is_log_wall(element: int) -> bool:
     """Tests if element is a log wall
-    
+
     !!! Info
             Available in script filled attribut
 
@@ -355,10 +364,11 @@ def is_log_wall(element: int) -> bool:
     Returns:
         bool: is element a log wall
     """
-    
+
+
 def is_framed_floor(element: int) -> bool:
     """Tests if element is a framed floor
-    
+
     !!! Info
             Available in script filled attribut
 
@@ -369,9 +379,10 @@ def is_framed_floor(element: int) -> bool:
         bool: is element a framed floor
     """
 
+
 def is_solid_floor(element: int) -> bool:
     """Tests if element is a solid floor
-    
+
     !!! Info
             Available in script filled attribut
 
@@ -382,9 +393,10 @@ def is_solid_floor(element: int) -> bool:
         bool: is element a solid floor
     """
 
-def is_floor(element: int) -> bool: 
+
+def is_floor(element: int) -> bool:
     """Tests if element is floor
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -394,9 +406,10 @@ def is_floor(element: int) -> bool:
         bool: is element floor
     """
 
-def is_roof(element: int) -> bool: 
+
+def is_roof(element: int) -> bool:
     """Tests if element is roof
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -406,9 +419,10 @@ def is_roof(element: int) -> bool:
         bool: is element roof
     """
 
+
 def is_framed_roof(element: int) -> bool:
     """Tests if element is a framed roof
-    
+
     !!! Info
             Available in script filled attribut
 
@@ -419,9 +433,10 @@ def is_framed_roof(element: int) -> bool:
         bool: is element a framed roof
     """
 
+
 def is_solid_roof(element: int) -> bool:
     """Tests if element is a solid roof
-    
+
     !!! Info
             Available in script filled attribut
 
@@ -433,9 +448,9 @@ def is_solid_roof(element: int) -> bool:
     """
 
 
-def is_metal(element: int) -> bool: 
+def is_metal(element: int) -> bool:
     """Tests if element is metal
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -446,9 +461,9 @@ def is_metal(element: int) -> bool:
     """
 
 
-def is_export_solid(element: int) -> bool: 
+def is_export_solid(element: int) -> bool:
     """Tests if element is export solid
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -459,9 +474,9 @@ def is_export_solid(element: int) -> bool:
     """
 
 
-def is_container(element: int) -> bool: 
+def is_container(element: int) -> bool:
     """Tests if element is container
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -472,9 +487,9 @@ def is_container(element: int) -> bool:
     """
 
 
-def is_connector_axis(element: int) -> bool: 
+def is_connector_axis(element: int) -> bool:
     """Tests if element is connector axis
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -485,9 +500,9 @@ def is_connector_axis(element: int) -> bool:
     """
 
 
-def is_drilling(element: int) -> bool: 
+def is_drilling(element: int) -> bool:
     """Tests if element is drilling
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -498,9 +513,9 @@ def is_drilling(element: int) -> bool:
     """
 
 
-def is_node(element: int) -> bool: 
+def is_node(element: int) -> bool:
     """Tests if element is node
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -511,9 +526,9 @@ def is_node(element: int) -> bool:
     """
 
 
-def is_auxiliary(element: int) -> bool: 
+def is_auxiliary(element: int) -> bool:
     """Tests if element is auxiliary
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -523,9 +538,10 @@ def is_auxiliary(element: int) -> bool:
         bool: is element auxiliary
     """
 
-def is_line(element: int) -> bool: 
+
+def is_line(element: int) -> bool:
     """Tests if element is line
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -534,10 +550,11 @@ def is_line(element: int) -> bool:
     Returns:
         bool: is element line
     """
-    
-def is_surface(element: int) -> bool: 
+
+
+def is_surface(element: int) -> bool:
     """Tests if element is surface
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -548,9 +565,9 @@ def is_surface(element: int) -> bool:
     """
 
 
-def get_element_material_name(element: int) -> str: 
+def get_element_material_name(element: int) -> str:
     """Gets the element material name
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -561,9 +578,9 @@ def get_element_material_name(element: int) -> str:
     """
 
 
-def get_prefab_layer(element: int) -> str: 
+def get_prefab_layer(element: int) -> str:
     """Gets the element prefab layer
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -574,9 +591,9 @@ def get_prefab_layer(element: int) -> str:
     """
 
 
-def get_machine_calculation_set(element: int) -> str: 
+def get_machine_calculation_set(element: int) -> str:
     """Gets the element machine calculation set
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -587,9 +604,9 @@ def get_machine_calculation_set(element: int) -> str:
     """
 
 
-def get_cutting_set(element: int) -> str: 
+def get_cutting_set(element: int) -> str:
     """Gets the element cutting set
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -600,7 +617,7 @@ def get_cutting_set(element: int) -> str:
     """
 
 
-def set_process_type_and_extended_settings_from_name(elements: List[int]) -> None: 
+def set_process_type_and_extended_settings_from_name(elements: List[int]) -> None:
     """ Sets the element process type and extended settings from the element name
 
     Args:
@@ -608,7 +625,7 @@ def set_process_type_and_extended_settings_from_name(elements: List[int]) -> Non
     """
 
 
-def set_name_process_type(name: str, process_type: process_type) -> None: 
+def set_name_process_type(name: str, process_type: process_type) -> None:
     """Sets the process type for an element name
 
     Args:
@@ -617,9 +634,9 @@ def set_name_process_type(name: str, process_type: process_type) -> None:
     """
 
 
-def get_name_process_type(name: int) -> process_type: 
+def get_name_process_type(name: int) -> process_type:
     """Gets the process type for an element name
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -630,7 +647,7 @@ def get_name_process_type(name: int) -> process_type:
     """
 
 
-def set_name_extended_settings(name: str, extended_settings: extended_settings) -> None: 
+def set_name_extended_settings(name: str, extended_settings: extended_settings) -> None:
     """Sets the extended settings for an element name
 
     Args:
@@ -639,9 +656,9 @@ def set_name_extended_settings(name: str, extended_settings: extended_settings) 
     """
 
 
-def get_name_extended_settings(name: str) -> extended_settings: 
+def get_name_extended_settings(name: str) -> extended_settings:
     """Gets the extended settings for an element name
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -652,9 +669,9 @@ def get_name_extended_settings(name: str) -> extended_settings:
     """
 
 
-def get_output_type(element: int) -> output_type: 
+def get_output_type(element: int) -> output_type:
     """Gets the element output type
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -665,7 +682,7 @@ def get_output_type(element: int) -> output_type:
     """
 
 
-def set_output_type(elements: List[int], output_type: output_type) -> None: 
+def set_output_type(elements: List[int], output_type: output_type) -> None:
     """Sets the element output type
 
     Args:
@@ -674,9 +691,9 @@ def set_output_type(elements: List[int], output_type: output_type) -> None:
     """
 
 
-def get_extended_settings(element: int) -> extended_settings: 
+def get_extended_settings(element: int) -> extended_settings:
     """Gets the element extended settings
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -687,7 +704,7 @@ def get_extended_settings(element: int) -> extended_settings:
     """
 
 
-def set_extended_settings(elements: List[int], extended_settings: extended_settings) -> None: 
+def set_extended_settings(elements: List[int], extended_settings: extended_settings) -> None:
     """Sets the element extended settings
 
     Args:
@@ -696,9 +713,9 @@ def set_extended_settings(elements: List[int], extended_settings: extended_setti
     """
 
 
-def get_element_type(element: int) -> element_type: 
+def get_element_type(element: int) -> element_type:
     """Gets the element type
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -709,14 +726,15 @@ def get_element_type(element: int) -> element_type:
     """
 
 
-def set_wall(elements: List[int]) -> None: 
+def set_wall(elements: List[int]) -> None:
     """Sets the element to wall
 
     Args:
         elements (List[int]): element IDs
     """
-    
-def set_log_wall(elements: List[int]) -> None: 
+
+
+def set_log_wall(elements: List[int]) -> None:
     """Sets the element to log wall
 
     Args:
@@ -724,7 +742,7 @@ def set_log_wall(elements: List[int]) -> None:
     """
 
 
-def set_floor(elements: List[int]) -> None: 
+def set_floor(elements: List[int]) -> None:
     """Sets the element to floor
 
     Args:
@@ -732,7 +750,7 @@ def set_floor(elements: List[int]) -> None:
     """
 
 
-def set_opening(elements: List[int]) -> None: 
+def set_opening(elements: List[int]) -> None:
     """Sets the element to opening
 
     Args:
@@ -740,9 +758,9 @@ def set_opening(elements: List[int]) -> None:
     """
 
 
-def get_fastening_attribute(element: int) -> str: 
+def get_fastening_attribute(element: int) -> str:
     """Get the element fastening attribute
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -753,7 +771,7 @@ def get_fastening_attribute(element: int) -> str:
     """
 
 
-def set_fastening_attribute(elements: List[int], value: str) -> None: 
+def set_fastening_attribute(elements: List[int], value: str) -> None:
     """Sets the element fastening attribute
 
     Args:
@@ -762,7 +780,7 @@ def set_fastening_attribute(elements: List[int], value: str) -> None:
     """
 
 
-def is_roof_surface(element: int) -> bool: 
+def is_roof_surface(element: int) -> bool:
     """Tests if the element is caddy object
 
     Args:
@@ -773,7 +791,7 @@ def is_roof_surface(element: int) -> bool:
     """
 
 
-def is_caddy_object(element: int) -> bool: 
+def is_caddy_object(element: int) -> bool:
     """Tests if the element is caddy object
 
     Args:
@@ -784,7 +802,7 @@ def is_caddy_object(element: int) -> bool:
     """
 
 
-def set_element_material(elements: List[int], material_id: int) -> None: 
+def set_element_material(elements: List[int], material_id: int) -> None:
     """Sets the element material
 
     Args:
@@ -793,9 +811,9 @@ def set_element_material(elements: List[int], material_id: int) -> None:
     """
 
 
-def get_assembly_number(element: int) -> str: 
+def get_assembly_number(element: int) -> str:
     """Get the elmement assembly number
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -806,7 +824,7 @@ def get_assembly_number(element: int) -> str:
     """
 
 
-def set_assembly_number(elements: List[int], number: str) -> None: 
+def set_assembly_number(elements: List[int], number: str) -> None:
     """Set the elmement assembly number
 
     Args:
@@ -815,9 +833,9 @@ def set_assembly_number(elements: List[int], number: str) -> None:
     """
 
 
-def get_list_quantity(element: int) -> int: 
+def get_list_quantity(element: int) -> int:
     """Get element quantity
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -828,7 +846,7 @@ def get_list_quantity(element: int) -> int:
     """
 
 
-def set_list_quantity(elements: List[int], quantity: int) -> None: 
+def set_list_quantity(elements: List[int], quantity: int) -> None:
     """Set element quantity
 
     Args:
@@ -837,7 +855,7 @@ def set_list_quantity(elements: List[int], quantity: int) -> None:
     """
 
 
-def is_envelope(element: int) -> bool: 
+def is_envelope(element: int) -> bool:
     """Tests if the element is envelope
 
     Args:
@@ -848,7 +866,7 @@ def is_envelope(element: int) -> bool:
     """
 
 
-def set_layer_settings(elements: List[int], layer_settings: layer_settings) -> None: 
+def set_layer_settings(elements: List[int], layer_settings: layer_settings) -> None:
     """Sets element layer settings
 
     Args:
@@ -857,7 +875,7 @@ def set_layer_settings(elements: List[int], layer_settings: layer_settings) -> N
     """
 
 
-def set_ignore_in_vba_calculation(elements: List[int], value: bool) -> None: 
+def set_ignore_in_vba_calculation(elements: List[int], value: bool) -> None:
     """Sets if the element should be ignored in VBA Calculation
 
     Args:
@@ -866,7 +884,7 @@ def set_ignore_in_vba_calculation(elements: List[int], value: bool) -> None:
     """
 
 
-def get_ignore_in_vba_calculation(element: int) -> bool: 
+def get_ignore_in_vba_calculation(element: int) -> bool:
     """
     [:information_source: Available for script filled attributes](#){.mark-text}
 
@@ -878,7 +896,7 @@ def get_ignore_in_vba_calculation(element: int) -> bool:
     """
 
 
-def is_architecture_wall_2dc(element: int) -> bool: 
+def is_architecture_wall_2dc(element: int) -> bool:
     """Tests if the element has a 2dc reference wall
 
     Args:
@@ -889,7 +907,7 @@ def is_architecture_wall_2dc(element: int) -> bool:
     """
 
 
-def is_architecture_wall_xml(element: int) -> bool: 
+def is_architecture_wall_xml(element: int) -> bool:
     """Tests if the element has a xml reference wall
 
     Args:
@@ -900,7 +918,7 @@ def is_architecture_wall_xml(element: int) -> bool:
     """
 
 
-def set_reference_wall_2dc(elements: List[int], wall: str) -> None: 
+def set_reference_wall_2dc(elements: List[int], wall: str) -> None:
     """Applies a new 2dc reference wall to an element
 
     Args:
@@ -908,7 +926,8 @@ def set_reference_wall_2dc(elements: List[int], wall: str) -> None:
         wall (str): 2dc file path
     """
 
-def set_node_symbol(elements: List[int], node_symbol: int) -> None: 
+
+def set_node_symbol(elements: List[int], node_symbol: int) -> None:
     """Set a node symbol.
     ChessSquare, Circle, Cross, CrossSquare, FilledCircle, FilledSquare, HalfFilledSquare ,SmallSquare, Square
 
@@ -917,12 +936,14 @@ def set_node_symbol(elements: List[int], node_symbol: int) -> None:
         node_symbol (int): node symbol number
     """
 
+
 def set_solid_floor(elements: List[int]) -> None:
     """set property for element type to solid floor 
 
     Args:
         elements (List[int]): element IDs
     """
+
 
 def set_solid_roof(elements: List[int]) -> None:
     """set property for element type to solid roof 
@@ -931,20 +952,23 @@ def set_solid_roof(elements: List[int]) -> None:
         elements (List[int]): element IDs
     """
 
+
 def set_solid_wall(elements: List[int]) -> None:
     """set property for element type to solid wall 
 
     Args:
         elements (List[int]): element IDs
     """
-    
+
+
 def set_wall(elements: List[int]) -> None:
     """set element to type wall
 
     Args:
         elements (List[int]): element IDs
     """
-    
+
+
 def set_standard_part(elements: List[int]) -> None:
     """Sets covers (wall, opening or floor) to standard part
 
@@ -952,13 +976,15 @@ def set_standard_part(elements: List[int]) -> None:
         elements (List[int]): element IDs
     """
 
-def update_auto_attribute() ->None:
+
+def update_auto_attribute() -> None:
     """Start update auto attribute
     """
-    
+
+
 def get_auto_attribute(element: int, number: int) -> str:
     """Get auto attribute
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -969,9 +995,10 @@ def get_auto_attribute(element: int, number: int) -> str:
         str: name (value)
     """
 
+
 def get_auto_attribute_name(element: int) -> str:
     """Get auto attribute name
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -980,8 +1007,9 @@ def get_auto_attribute_name(element: int) -> str:
     Returns:
         str: auto attribute name
     """
-    
-def get_steel_shape_name(element : int) -> str:
+
+
+def get_steel_shape_name(element: int) -> str:
     """Get steel profile name
     [:information_source: Available for script filled attributes](#){.mark-text}
 
@@ -992,9 +1020,10 @@ def get_steel_shape_name(element : int) -> str:
         str: steel profile name
     """
 
-def get_standard_element_name(element : int) -> str:
+
+def get_standard_element_name(element: int) -> str:
     """Get standard element name
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -1003,17 +1032,21 @@ def get_standard_element_name(element : int) -> str:
     Returns:
         str: standard element name
     """
-    
+
+
 def enable_attribute_display() -> None:
     """enable attribute display
     """
 
+
 def disable_attribute_display() -> None:
     """disable attribute display
-    """   
-def get_prefab_layer_all_assigned(element : int) -> List[int]:
+    """
+
+
+def get_prefab_layer_all_assigned(element: int) -> List[int]:
     """Get all layer to which the element is assigned
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -1022,29 +1055,35 @@ def get_prefab_layer_all_assigned(element : int) -> List[int]:
     Returns:
         List[int]: Layer
     """
-def get_prefab_layer_with_dimensions(element : int) -> List[int]:
+
+
+def get_prefab_layer_with_dimensions(element: int) -> List[int]:
     """Check if element is exported with prefab layer with dimensions
 
     [:information_source: Available for script filled attributes](#){.mark-text}
-            
+
     Args:
         element (int): element ID
 
     Returns:
         List[int]: layer number
     """
-def get_prefab_layer_without_dimensions(element : int) -> List[int]:
+
+
+def get_prefab_layer_without_dimensions(element: int) -> List[int]:
     """Check if element is exported with prefab layer without dimensions
 
     [:information_source: Available for script filled attributes](#){.mark-text}
-            
+
     Args:
         element (int): element ID
 
     Returns:
         List[int]: layer number
     """
-def get_prefab_layer(element : int) -> str:
+
+
+def get_prefab_layer(element: int) -> str:
     """Get prefab layer. Returns layer values for "With dimensions", "Without dimensions", "Show Attributes".
 
     Args:
@@ -1053,9 +1092,11 @@ def get_prefab_layer(element : int) -> str:
     Returns:
         str: value 
     """
+
+
 def is_nesting_parent(element: int) -> bool:
     """check if element is a nesting parent.
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -1064,9 +1105,11 @@ def is_nesting_parent(element: int) -> bool:
     Returns:
         bool: is nesting parent
     """
+
+
 def is_nesting_raw_part(element: int) -> bool:
     """check if element is a nesting raw part.
-    
+
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
@@ -1074,4 +1117,42 @@ def is_nesting_raw_part(element: int) -> bool:
 
     Returns:
         bool: is nesting raw part
+    """
+
+
+def is_circular_mep(element_type) -> bool:
+    """
+
+    Args:
+        element_type (_type_): element type 
+
+    Returns:
+        bool: condition
+    """
+
+
+def is_rectangular_mep(element_type) -> bool:
+    """
+
+    Args:
+        element_type (_type_): element type 
+
+    Returns:
+        bool: condition
+    """
+
+
+def get_name_list_items() -> List[str]:
+    """Get name list items
+
+    Returns:
+        List[str]: name list items
+    """
+
+
+def add_item_to_name_list(item: str) -> None:
+    """Add item to name list
+
+    Args:
+        item (str): item
     """
