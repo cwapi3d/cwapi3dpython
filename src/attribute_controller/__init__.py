@@ -574,7 +574,7 @@ def get_element_material_name(element: int) -> str:
         element (int): element ID
 
     Returns:
-        bool: element material name
+            str: element material name
     """
 
 
@@ -587,7 +587,8 @@ def get_prefab_layer(element: int) -> str:
         element (int): element ID
 
     Returns:
-        bool: element prefab layer
+            str: element prefab layer
+
     """
 
 
