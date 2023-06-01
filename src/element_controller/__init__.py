@@ -1,7 +1,20 @@
+"""Provide several sample math calculations.
+
+This module allows the user to make mathematical calculations.
+
+The module contains the following functions:
+
+- `add(a, b)` - Returns the sum of two numbers.
+- `subtract(a, b)` - Returns the difference of two numbers.
+- `multiply(a, b)` - Returns the product of two numbers.
+- `divide(a, b)` - Returns the quotient of two numbers.
+"""
+
+
 from typing import List
 from cadwork import (element_module_properties,
                      point_3d,
-                     element_module_detail)
+                     )
 
 
 def get_all_identifiable_element_ids() -> List[int]:
@@ -1299,4 +1312,41 @@ def move_element_with_undo(elements: List[int], aVector: point_3d) -> None:
     Args:
         elements (List[int]): element IDs
         aVector (point_3d): a Target
+    """
+
+
+def create_normal_axis_points(p1: point_3d, p2: point_3d) -> int:
+    """create normal axis points
+
+    Args:
+        p1 (point_3d): point 1
+        p2 (point_3d): point 2
+
+    Returns:
+        int: element ID
+    """
+
+
+def create_normal_axis_vectors(length: float, p1: point_3d, direction: point_3d) -> int:
+    """create normal axis vectors
+
+    Args:
+        length (float): length
+        p1 (point_3d): point 1
+        direction (point_3d): direction
+
+    Returns:
+        int: element ID
+    """
+
+
+def convert_bolt_to_standardconnector(elements: List[int], standard_connector_axis_name: str) -> int:
+    """convert bolt to standard connector
+
+    Args:
+        elements (List[int]): element IDs
+        standard_connector_axis_name (str): standard connector axis name
+
+    Returns:
+        int: element ID
     """

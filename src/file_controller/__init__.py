@@ -241,3 +241,28 @@ def get_blum_export_path() -> str:
     Returns:
         str: file path
     """
+
+
+def import_element_light(file_path: str, insert_position: point_3d) -> int:
+    """Imports an element light
+        allowed formats are OBJ, SKP
+
+    Examples:
+    >>> import_element_light("C:\\UserXY\\Files\\example.obj", point_3d(0,0,0))
+
+    Args:
+        file_path (str): file path
+        insert_position (point_3d): insert position
+
+    Returns:
+        int: element ID
+    """
+
+
+def export_glb_file(elements: List[int], file: str) -> None:
+    """Exports a GLB file
+
+    Args:
+        elements (List[int]): element IDs
+        file (str): file path
+    """

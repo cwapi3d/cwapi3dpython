@@ -2363,60 +2363,118 @@ class ifc_2x3_element_type():
 class node_symbol(Enum):
     """Change node symbol. 
 
+    Examples:
+        >>> point = cadwork.point_3d(0, 0, 0)
+        >>> node = element_controller.create_node(point)
+        >>> node.set_node_symbol(node, node_symbol.circle)
+
     Args:
-        Enum (int): symbol type
+        small_circle (int): 1
+        square (int): 2
+        cross (int): 3
+        circle (int): 4
+        filled_circle (int): 5
+        chess_square (int): 6
+        half_filled_square (int): 7
+        cross_square (int): 8
+        filled_square (int): 9       
     """
-    SmallSquare = 1
-    Square = 2
-    Cross = 3
-    Circle = 4
-    FilledCircle = 5
-    ChessSquare = 6
-    HalfFilledSquare = 7
-    CrossSquare = 8
-    FilledSquare = 9
+    small_circle = 1
+    square = 2
+    cross = 3
+    circle = 4
+    filled_circle = 5
+    chess_square = 6
+    half_filled_square = 7
+    cross_square = 8
+    filled_square = 9
+
+    def __int__(self) -> None:
+        return self.value
 
 
 @unique
 class element_module_detail(Enum):
     """Add element situation to detail. 
 
+    Examples:
+        >>> element_controller.add_elements_to_detail(element_ids, element_module_detail.cross)
+
     Args:
-        Enum (int): detail situation
+        none (int): 0
+        angle (int): 1
+        area (int): 2
+        cross (int): 3
+        edge (int): 4
+        end (int): 5
+        line (int): 6
+        open (int): 7
+        t_connection (int): 8
+        floor_area (int): 9
+        floor_end (int): 10
+        floor_line (int): 11
+        floor_open (int): 12
+
     """
-    no_detail = 0
-    angle_detail = 1
-    area_detail = 2
-    cross_detail = 3
-    edge_detail = 4
-    end_detail = 5
-    line_detail = 6
-    open_detail = 7
-    t_detail = 8
-    floor_area_detail = 10
-    floor_end_detail = 11
-    floor_line_detail = 12
-    floor_open_detail = 13
+    none_ = 0,
+    angle = 1,
+    area = 2,
+    cross = 3,
+    edge = 4,
+    end = 5,
+    line = 6,
+    open = 7,
+    t_connection = 8,
+    floor_area = 9,
+    floor_end = 10,
+    floor_line = 11,
+    floor_open = 12
+
+    def __int__(self) -> None:
+        return self.value
 
 
 @unique
 class division_zone_direction(Enum):
     """ Add division zone direction.
 
+    Examples:
+        >>> point = cadwork.point_3d(0, 0, 0)
+        >>> geometry_controller.create_division_zone(123456, point, division_zone_direction.positive)
+
     Args:
-        Enum (int): direction
+        positive (int): 1
+        negative (int): -1
+        none (int): 0
     """
     positive = 1
     negative = -1
     none = 0
+
+    def __int__(self) -> None:
+        return self.value
 
 
 @unique
 class shortcut_key(Enum):
     """Shortcut key.
 
+    Examples:
+        >>> utility_controller.execute_shortcut(shortcut_key.F1, shortcut_key_modifier.shift)
+
     Args:
-        Enum (int): key
+        F1 (int): 1
+        F2 (int): 2
+        F3 (int): 3
+        F4 (int): 4
+        F5 (int): 5
+        F6 (int): 6
+        F7 (int): 7
+        F8 (int): 8
+        F9 (int): 9
+        F10 (int): 10
+        F11 (int): 11
+        F12 (int): 12
     """
     F1 = 1
     F2 = 2
@@ -2431,15 +2489,126 @@ class shortcut_key(Enum):
     F11 = 11
     F12 = 12
 
+    def __int__(self) -> None:
+        return self.value
+
 
 @unique
 class shortcut_key_modifier(Enum):
     """Shortcut key.
 
+    Examples:
+        >>> utility_controller.execute_shortcut(shortcut_key.F1, shortcut_key_modifier.shift)
+
     Args:
-        Enum (int): key
+        none (int): 0
+        shift (int): 1
+        ctrl (int): 2
+        alt (int): 3
     """
     none = 0
     shift = 1
     ctrl = 2
     alt = 3
+
+    def __int__(self) -> None:
+        return self.value
+
+
+@unique
+class btl_version(Enum):
+    """BTL version.
+
+    Examples:
+        >>> machine_controller.export_btl(btl_version.btl_1_6, "C:\\temp\\test.btl")
+
+    Args:
+        btl_1_0 (int): 110
+        btl_1_1 (int): 111
+        btl_1_2 (int): 112
+        btl_1_3 (int): 113
+        btl_1_4 (int): 114
+        btl_1_5 (int): 115
+        btl_1_6 (int): 116
+
+    """
+    btl_1_0 = 110
+    btl_1_1 = 111
+    btl_1_2 = 112
+    btl_1_3 = 113
+    btl_1_4 = 114
+    btl_1_5 = 115
+    btl_1_6 = 116
+
+    def __int__(self) -> None:
+        return self.value
+
+
+@unique
+class hundegger_machine_type(Enum):
+    """Hundegger machine type.
+
+    Examples:
+        >>> machine_controller.export_hundegger(hundegger_machine_type.k2)
+
+    Args:
+        p8_10 (int): 1
+        k1 (int): 2
+        k2 (int): 3
+        k2_cambium (int): 4
+        k2_uf_5 (int): 5
+        k2_uf_5_cambium (int): 6
+        speedcut (int): 7
+        pba (int): 8
+        pba_bvx (int): 9
+        pba_bvx_cambium (int): 10
+        spm (int): 12
+        spm_cambium (int): 13
+        robot_drive (int): 14
+        turbo_drive (int): 15
+
+    """
+
+    p8_10 = 1
+    k1 = 2
+    k2 = 3
+    k2_cambium = 4
+    k2_uf_5 = 5
+    k2_uf_5_cambium = 6
+    speedcut = 7
+    pba = 8
+    pba_bvx = 9
+    pba_bvx_cambium = 10
+    spm = 12
+    spm_cambium = 13
+    robot_drive = 14
+    turbo_drive = 15
+
+    def __int__(self) -> None:
+        return self.value
+
+
+@unique
+class weinmann_mfb_version(Enum):
+    """Weinmann MFB version.
+
+    Examples:
+        >>> machine_controller.export_weinmann_mfb(weinmann_mfb_version.wup_2_0)
+
+    Args:
+        wup_2_0 (int): 20
+        wup_3_1 (int): 31
+        wup_3_2 (int): 32
+        wup_3_3 (int): 33
+        wup_3_4 (int): 34
+
+    """
+
+    wup_2_0 = 20
+    wup_3_1 = 31
+    wup_3_2 = 32
+    wup_3_3 = 33
+    wup_3_4 = 34
+
+    def __int__(self) -> None:
+        return self.value
