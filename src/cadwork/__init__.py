@@ -2369,25 +2369,25 @@ class node_symbol(Enum):
         >>> node.set_node_symbol(node, node_symbol.circle)
 
     Args:
-        small_circle (int): 1
-        square (int): 2
-        cross (int): 3
-        circle (int): 4
-        filled_circle (int): 5
-        chess_square (int): 6
-        half_filled_square (int): 7
-        cross_square (int): 8
-        filled_square (int): 9       
+        SmallCircle (int): 1
+        Square (int): 2
+        Cross (int): 3
+        Circle (int): 4
+        FilledCircle (int): 5
+        ChessSquare (int): 6
+        HalfFilledSquare (int): 7
+        CrossSquare (int): 8
+        FilledSquare (int): 9  
     """
-    small_circle = 1
-    square = 2
-    cross = 3
-    circle = 4
-    filled_circle = 5
-    chess_square = 6
-    half_filled_square = 7
-    cross_square = 8
-    filled_square = 9
+    SmallSquare = 1
+    Square = 2
+    Cross = 3
+    Circle = 4
+    FilledCircle = 5
+    ChessSquare = 6
+    HalfFilledSquare = 7
+    CrossSquare = 8
+    FilledSquare = 9
 
     def __int__(self) -> None:
         return self.value
@@ -2401,34 +2401,34 @@ class element_module_detail(Enum):
         >>> element_controller.add_elements_to_detail(element_ids, element_module_detail.cross)
 
     Args:
-        none (int): 0
-        angle (int): 1
-        area (int): 2
-        cross (int): 3
-        edge (int): 4
-        end (int): 5
-        line (int): 6
-        open (int): 7
-        t_connection (int): 8
-        floor_area (int): 9
-        floor_end (int): 10
-        floor_line (int): 11
-        floor_open (int): 12
+        no_detail (int): 0
+        angle_detail (int): 1
+        area_detail (int): 2
+        cross_detail (int): 3
+        edge_detail (int): 4
+        end_detail (int): 5
+        line_detail (int): 6
+        open_detail (int): 7
+        t_detail (int): 8
+        floor_area_detail (int): 9
+        floor_end_detail (int): 10
+        floor_line_detail (int): 11
+        floor_open_detail (int): 12
 
     """
-    none_ = 0,
-    angle = 1,
-    area = 2,
-    cross = 3,
-    edge = 4,
-    end = 5,
-    line = 6,
-    open = 7,
-    t_connection = 8,
-    floor_area = 9,
-    floor_end = 10,
-    floor_line = 11,
-    floor_open = 12
+    no_detail = 0,
+    angle_detail = 1,
+    area_detail = 2,
+    cross_detail = 3,
+    edge_detail = 4,
+    end_detail = 5,
+    line_detail = 6,
+    open_detail = 7,
+    t_detail = 8,
+    floor_area_detail = 9,
+    floor_end_detail = 10,
+    floor_line_detail = 11,
+    floor_open_detail = 12
 
     def __int__(self) -> None:
         return self.value
