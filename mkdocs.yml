@@ -48,6 +48,7 @@ nav:
           - IFC2x3 Element Type: documentation/ifc_2x3_element_type.md
           - Process Type: documentation/process_type.md
           - Point 3D: documentation/point_3d.md
+          - Enumerations: documentation/enums.md
       - Connector Axis Controller: documentation/connector_axis_controller.md
       - Element Controller: documentation/element_controller.md
       - End-Type Controller: documentation/endtype_controller.md
@@ -120,6 +121,7 @@ plugins:
   - search:
       separator: '[\s\-/\\]+' # \s\-\.\_
   - mkdocstrings:
+      enabled: !ENV [ENABLE_MKDOCSTRINGS, true]
       default_handler: python
       handlers:
         python:
@@ -127,7 +129,8 @@ plugins:
             - import sys
             - sys.path.append('src/')
           options:
-            show_source: false
+            show_root_heading: true
+            show_source: true
 
 extra:
   social:
