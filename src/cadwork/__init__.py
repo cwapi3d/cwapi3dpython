@@ -2410,25 +2410,25 @@ class element_module_detail(Enum):
         line (int): 6
         open (int): 7
         t_connection (int): 8
-        floor_area (int): 10
-        floor_end (int): 11
-        floor_line (int): 12
-        floor_open (int): 13
+        floor_area (int): 9
+        floor_end (int): 10
+        floor_line (int): 11
+        floor_open (int): 12
 
     """
-    none = 0
-    angle = 1
-    area = 2
-    cross = 3
-    edge = 4
-    end = 5
-    line = 6
-    open = 7
-    t_connection = 8
-    floor_area = 10
-    floor_end = 11
-    floor_line = 12
-    floor_open = 13
+    none_ = 0,
+    angle = 1,
+    area = 2,
+    cross = 3,
+    edge = 4,
+    end = 5,
+    line = 6,
+    open = 7,
+    t_connection = 8,
+    floor_area = 9,
+    floor_end = 10,
+    floor_line = 11,
+    floor_open = 12
 
     def __int__(self) -> None:
         return self.value
