@@ -1,7 +1,7 @@
 
 from platform import node
 from typing import List
-from enum import Enum, unique
+from enum import IntEnum, unique
 
 
 class layer_settings():
@@ -2356,11 +2356,10 @@ class ifc_2x3_element_type():
             element_ids (List[int]): _description_
             ifc_type (_type_): _description_
         """
-# Node Symbols
 
 
 @unique
-class node_symbol(Enum):
+class node_symbol(IntEnum):
     """Change node symbol. 
 
     Examples:
@@ -2394,7 +2393,7 @@ class node_symbol(Enum):
 
 
 @unique
-class element_module_detail(Enum):
+class element_module_detail(IntEnum):
     """Add element situation to detail. 
 
     Examples:
@@ -2435,7 +2434,7 @@ class element_module_detail(Enum):
 
 
 @unique
-class division_zone_direction(Enum):
+class division_zone_direction(IntEnum):
     """ Add division zone direction.
 
     Examples:
@@ -2449,14 +2448,14 @@ class division_zone_direction(Enum):
     """
     positive = 1
     negative = -1
-    none = 0
+    no_direction = 0
 
     def __int__(self) -> None:
         return self.value
 
 
 @unique
-class shortcut_key(Enum):
+class shortcut_key(IntEnum):
     """Shortcut key.
 
     Examples:
@@ -2494,19 +2493,19 @@ class shortcut_key(Enum):
 
 
 @unique
-class shortcut_key_modifier(Enum):
+class shortcut_key_modifier(IntEnum):
     """Shortcut key.
 
     Examples:
         >>> utility_controller.execute_shortcut(shortcut_key.F1, shortcut_key_modifier.shift)
 
     Args:
-        none (int): 0
+        no_modifier (int): 0
         shift (int): 1
         ctrl (int): 2
         alt (int): 3
     """
-    none = 0
+    no_modifier = 0
     shift = 1
     ctrl = 2
     alt = 3
@@ -2516,7 +2515,7 @@ class shortcut_key_modifier(Enum):
 
 
 @unique
-class btl_version(Enum):
+class btl_version(IntEnum):
     """BTL version.
 
     Examples:
@@ -2545,7 +2544,7 @@ class btl_version(Enum):
 
 
 @unique
-class hundegger_machine_type(Enum):
+class hundegger_machine_type(IntEnum):
     """Hundegger machine type.
 
     Examples:
@@ -2589,7 +2588,7 @@ class hundegger_machine_type(Enum):
 
 
 @unique
-class weinmann_mfb_version(Enum):
+class weinmann_mfb_version(IntEnum):
     """Weinmann MFB version.
 
     Examples:
