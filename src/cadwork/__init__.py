@@ -1,5 +1,4 @@
 
-from platform import node
 from typing import List
 from enum import IntEnum, unique
 
@@ -703,6 +702,81 @@ class point_3d():
         self.x = x
         self.y = y
         self.z = z
+
+    def __add__(self, another_point_3d):
+        """adds two points
+
+        Args:
+            point_3d (point_3d): a second point
+
+        Returns:
+            point_3d: a third point
+        """
+
+    def __sub__(self, another_point_3d):
+        """subtracts two points
+
+        Args:
+            point_3d (point_3d): a second point
+
+        Returns:
+            point_3d: a third point
+        """
+
+    def __mul__(self, another_point_3d):
+        """multiplies two points
+
+        Args:
+            point_3d (point_3d): a second point
+
+        Returns:
+            point_3d: a third point
+        """
+
+    def __div__(self, another_point_3d):
+        """divides two points
+
+        Args:
+            point_3d (point_3d): a second point
+
+        Returns:
+            point_3d: a third point
+        """
+
+    def __eq__(self, another_point_3d):
+        """checks if two points are equal
+
+        Args:
+            point_3d (point_3d): a second point
+
+        Returns:
+            bool: condition
+        """
+
+    def __ne__(self, another_point_3d):
+        """checks if two points are not equal
+
+        Args:
+            point_3d (point_3d): a second point
+        """
+
+    def __getitem__(self, index: int):
+        """gets the value of a point at a given index
+
+        Args:
+            index (int): index
+
+        Returns:
+            float: value
+        """
+
+    def __setitem__(self, index: int, value: float):
+        """sets the value of a point at a given index
+
+        Args:
+            index (int): index
+            value (float): value
+        """
 
     def cross(self, another_point_3d):
         """cross product takes two vectors and produces a third vector that is orthogonal to both

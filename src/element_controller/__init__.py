@@ -1350,3 +1350,20 @@ def convert_bolt_to_standardconnector(elements: List[int], standard_connector_ax
     Returns:
         int: element ID
     """
+
+def get_joined_elements(elmement: int) -> List[int]:
+    """Get joined elements
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        List[int]: element IDs
+    """
+
+def start_element_module_calculation_silently(elements: List[int]) -> None:
+    """Start element module calculation silently
+
+    Args:
+        elements (List[int]): element IDs
+    """

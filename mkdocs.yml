@@ -50,6 +50,7 @@ nav:
           - Point 3D: documentation/point_3d.md
           - Enumerations: documentation/enums.md
       - Connector Axis Controller: documentation/connector_axis_controller.md
+      - Dimension Controller: documentation/dimension_controller.md
       - Element Controller: documentation/element_controller.md
       - End-Type Controller: documentation/endtype_controller.md
       - File Controller: documentation/file_controller.md

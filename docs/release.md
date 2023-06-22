@@ -35,4 +35,7 @@ hide:
 | 16.05.2023 | :material-check: Add        | add_item_to_name_list                                            | attribute     | 30.218           | 2.0.0   |
 | 16.05.2023 | :material-check: Add        | get_user_path_from_dialog_in_path                                | utility       | 30.218           | 2.0.0   |
 | 16.05.2023 | :material-check: Add        | import_element_light                                             | file          | 30.218           | 2.0.0   |
-| 01.06.2023 | :material-check: Add        | enumeration types                                                | cadwork       | 30.219           | 2.0.5   |
+| 01.06.2023 | :material-check: Add        | enumeration types                                                | cadwork       | 30.240           | 2.0.9   |
+| 12.06.2023 | :material-check: Add        | get_joined_elements                                              | element       | 30.240           | 2.0.9   |
+| 12.06.2023 | :material-check: Add        | start_element_module_calculation_silently                        | element       | 30.240           | 2.0.9   |
+| 12.06.2023 | :material-check: Add        | add dimension controller                                         | dimension     | 30.240           | 2.0.9   |
