@@ -157,7 +157,7 @@ def refresh() -> None:
     """
 
 
-def set_material(elements: List[int], element: int) -> None:
+def set_material(elements: List[int], material_id: int) -> None:
     """Sets the element material
 
     Args:

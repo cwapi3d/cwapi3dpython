@@ -7,7 +7,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
     name='cwapi3d',
-    version='2.0.8',
+    version='2.0.10',
     author='Cadwork',
     author_email='it@cadwork.ca',
     description='Python bindings for CwAPI3D',
@@ -30,6 +30,7 @@ setup(
         'bim_controller',
         'cadwork',
         'connector_axis_controller',
+        'dimension_controller',
         'element_controller',
         'endtype_controller',
         'file_controller',
