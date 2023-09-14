@@ -712,7 +712,7 @@ def get_total_area_of_all_faces(element: int) -> float:
 
 
 def get_area_of_front_face(element: int) -> float:
-    """get area of reference face
+    """accumulates area of all faces that are perpendicular to the length (Xl) axis. 
 
     [:information_source: Available for script filled attributes](#){.mark-text}
 

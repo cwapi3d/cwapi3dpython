@@ -1367,3 +1367,15 @@ def start_element_module_calculation_silently(elements: List[int]) -> None:
     Args:
         elements (List[int]): element IDs
     """
+
+def replace_physical_drillings_with_drilling_axes(elements: List[int], minimum_diameter: float, maximum_diameter: float) ->  List[int]:
+    """Replace physical drillings with drilling axes that are in the range of the given diameters.
+
+    Args:
+        elements (List[int]): element IDs
+        minimum_diameter (float): minimum diameter
+        maximum_diameter (float): maximum diameter
+
+    Returns:
+        List[int]: element IDs
+    """

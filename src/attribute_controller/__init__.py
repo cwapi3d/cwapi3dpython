@@ -4,6 +4,7 @@ from cadwork import (layer_settings,
                      output_type,
                      process_type,
                      element_type,
+                     element_grouping_type,
                      )
 
 
@@ -1156,4 +1157,51 @@ def add_item_to_name_list(item: str) -> None:
 
     Args:
         item (str): item
+    """
+
+
+def set_element_grouping_type(grouping_type: element_grouping_type) -> None:
+    """Set element grouping type
+
+    Args:
+        grouping_type (element_grouping_type): grouping type
+    """
+
+
+def get_element_grouping_type() -> element_grouping_type:
+    """Get element grouping type
+
+    Returns:
+        element_grouping_type: grouping type
+    """
+
+
+def is_btl_processing_group(element: int) -> bool:
+    """Check if element is a btl processing group
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        bool: is btl processing group
+    """
+
+
+def is_hundegger_processing_group(element: int) -> bool:
+    """Check if element is a hundegger processing group
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        bool: is hundegger processing group
+    """
+
+
+def cut_element_with_processing_group(element: int, processing_id: int) -> None:
+    """Cut element with processing group
+
+    Args:
+        element (int): element ID
+        processing_id (int): processing ID
     """
