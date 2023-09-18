@@ -83,8 +83,8 @@ nav:
       - Shop Drawing Controller: examples/shop_drawing_example.md
       - Utility Controller: examples/utility_example.md
       - Visualization Controller: examples/visualization_example.md
-      - Slab Frame: examples/frame.md
       - GUI: examples/tk_gui.md
+      - Compare: examples/compare.md
   - Videos:
       - videos.md
   - Auto Attributes:

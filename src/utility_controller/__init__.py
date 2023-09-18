@@ -862,3 +862,11 @@ def get_user_path_from_dialog_in_path(path: str) -> str:
     Returns:
         str: selected path
     """
+
+
+def get_3d_hwnd() -> int:
+    """Gets the 3D window handle
+
+    Returns:
+        int: window handle
+    """

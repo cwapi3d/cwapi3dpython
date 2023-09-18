@@ -191,14 +191,14 @@ def export_btl_file_for_nesting(file: str) -> None:
     """
 
 
-def export_rhino_file(elements: List[int], file: str, version: int, user_efault_assignment: bool, write_standard_attributes: bool) -> None:
+def export_rhino_file(elements: List[int], file: str, version: int, user_default_assignment: bool, write_standard_attributes: bool) -> None:
     """Exports a 3dm rhino file
 
     Args:
         elements (List[int]): element IDs
         file (str): file path
         version (int): Rhino version V5.0 = 5, V6.0 = 6, V7.0 = 7
-        user_efault_assignment (bool): true: default assignment is used; false: no attributes are exported
+        user_default_assignment (bool): true: default assignment is used; false: no attributes are exported
         write_standard_attributes (bool): see checkbox in assignment dialog
     """
 
