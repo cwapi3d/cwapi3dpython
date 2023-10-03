@@ -1,5 +1,5 @@
 from typing import List
-from cadwork import ifc_2x3_element_type
+from cadwork import (ifc_2x3_element_type, ifc_options)
 
 
 def get_ifc_guid(element: int) -> str:
@@ -216,6 +216,97 @@ def export_ifc4_silently(elements: List[int], file: str) -> bool:
     Args:
         elements (List[int]): element IDs
         file (str): Destination path 
+
+    Returns:
+        bool: True if export was successful
+    """
+
+
+def get_element_id_from_base64_ifc_guid(base64_ifc_guid: str) -> int:
+    """Get element id from base64 ifc guid
+    IFC-GUID must be a fixed 22 character length string
+
+    Examples:
+     >>> get_element_id_from_base64_ifc_guid("28kif20KPEuBjk2m1N3ep$")
+        546169
+
+    Args:
+        base64_ifc_guid (str): base64 ifc guid
+
+    Returns:
+        int: element id
+    """
+
+
+def get_ifc_base64_guid(element: int) -> str:
+    """Get ifc base64 guid from element id
+
+    Examples:
+     >>> get_ifc_base64_guid(546169)
+        "28kif20KPEuBjk2m1N3ep$"
+
+    Args:
+        element (int): element id
+
+    Returns:
+        str: base64 ifc guid
+    """
+
+
+def export_ifc2x3_silently_with_options(elements: List[int], file: str, options: ifc_options) -> bool:
+    """Export an ifc file. Elements without an IfcType get a matching IfcType assigned.
+    Elements without a building or storey get the default building and storey assigned. 
+    Create an ifc_options object and set the desired options.
+
+    Examples:
+        >>> import cadwork
+        >>> import bim_controller
+        >>> import element_controller
+        >>> ifc_options = cadwork.ifc_options()
+        >>> ifc_options_level_of_detail = ifc_options.get_ifc_options_level_of_detail()
+        >>> ifc_options_level_of_detail.get_cut_drillings()
+        >>> ifc_options_level_of_detail.set_cut_drillings(True)
+        >>> ifc_options_level_of_detail.get_cut_drillings()
+        >>> ifc_options_level_of_detail.set_export_vba_drillings(True)
+        >>> ifc_options_level_of_detail.set_export_vba_components(True)
+        >>> element_ids = element_controller.get_active_identifiable_element_ids()
+        >>> bim_controller.export_ifc2x3_silently_with_options(element_ids, "C:\\some_path\\test.ifc", ifc_options)
+
+    Args:
+        elements (List[int]): element IDs
+        file (str): Destination path 
+        options (ifc_options): ifc options
+
+
+    Returns:
+        bool: True if export was successful
+    """
+
+
+def export_ifc4_silently_with_options(elements: List[int], file: str, options: ifc_options) -> bool:
+    """Export an ifc file. Elements without an IfcType get a matching IfcType assigned.
+    Elements without a building or storey get the default building and storey assigned. 
+    Create an ifc_options object and set the desired options.
+
+    Examples:
+        >>> import cadwork
+        >>> import bim_controller
+        >>> import element_controller
+        >>> ifc_options = cadwork.ifc_options()
+        >>> ifc_options_level_of_detail = ifc_options.get_ifc_options_level_of_detail()
+        >>> ifc_options_level_of_detail.get_cut_drillings()
+        >>> ifc_options_level_of_detail.set_cut_drillings(True)
+        >>> ifc_options_level_of_detail.get_cut_drillings()
+        >>> ifc_options_level_of_detail.set_export_vba_drillings(True)
+        >>> ifc_options_level_of_detail.set_export_vba_components(True)
+        >>> element_ids = element_controller.get_active_identifiable_element_ids()
+        >>> bim_controller.export_ifc4_silently_with_options(element_ids, "C:\\some_path\\test.ifc", ifc_options)
+
+    Args:
+        elements (List[int]): element IDs
+        file (str): Destination path 
+        options (ifc_options): ifc options
+
 
     Returns:
         bool: True if export was successful

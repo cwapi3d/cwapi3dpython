@@ -1351,6 +1351,7 @@ def convert_bolt_to_standardconnector(elements: List[int], standard_connector_ax
         int: element ID
     """
 
+
 def get_joined_elements(elmement: int) -> List[int]:
     """Get joined elements
 
@@ -1361,6 +1362,7 @@ def get_joined_elements(elmement: int) -> List[int]:
         List[int]: element IDs
     """
 
+
 def start_element_module_calculation_silently(elements: List[int]) -> None:
     """Start element module calculation silently
 
@@ -1368,7 +1370,8 @@ def start_element_module_calculation_silently(elements: List[int]) -> None:
         elements (List[int]): element IDs
     """
 
-def replace_physical_drillings_with_drilling_axes(elements: List[int], minimum_diameter: float, maximum_diameter: float) ->  List[int]:
+
+def replace_physical_drillings_with_drilling_axes(elements: List[int], minimum_diameter: float, maximum_diameter: float) -> List[int]:
     """Replace physical drillings with drilling axes that are in the range of the given diameters.
 
     Args:

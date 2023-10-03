@@ -45,7 +45,9 @@ nav:
       - Cadwork:
           - Element Module Properties: documentation/element_module_properties.md
           - Element Type: documentation/element_type.md
-          - IFC2x3 Element Type: documentation/ifc_2x3_element_type.md
+          - IFC:
+            - IFC2x3 Element Type: documentation/ifc_2x3_element_type.md
+            - IFC Export Options: documentation/ifc_export_options.md
           - Process Type: documentation/process_type.md
           - Point 3D: documentation/point_3d.md
           - Enumerations: documentation/enums.md
