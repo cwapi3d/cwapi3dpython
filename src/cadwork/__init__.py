@@ -16,6 +16,13 @@ from .shortcut_key import shortcut_key, shortcut_key_modifier
 from .btl_version import btl_version
 from .weinmann_mfb_version import weinmann_mfb_version
 from .hundegger_machine_type import hundegger_machine_type
+from .rhino_options import rhino_options
+from .edge_list import edge_list
+from .facet_list import facet_list
+from .polygon_list import polygon_list
+from .vertex_list import vertex_list
+from .element_grouping_type import element_grouping_type
+from .element_type import element_type
 
 
 class layer_settings():

@@ -1,5 +1,5 @@
 from typing import List
-from cadwork import point_3d
+from cadwork import facet_list, point_3d
 
 
 def get_width(element: int) -> float:
@@ -940,4 +940,23 @@ def get_division_zone_points(element: int) -> List[point_3d]:
 
     Returns:
         List[point_3d]: list of points
+    """
+
+
+def get_element_facets(element: int) -> facet_list:
+    """get element facets
+
+    Examples:
+        >>> import cadwork
+        >>> import geometry_controller
+        >>> facets = geometry_controller.get_element_facets(element_id)
+        >>> for index in facets.count():
+                normal = facets.get_normal_vector(index)
+
+
+    Args:
+        element (int): element ID
+
+    Returns:
+        facet_list: list of facets
     """

@@ -47,3 +47,12 @@ hide:
 | 12.06.2023 | :material-check: Add        | delete_division_zone                                             | geometry      | 30.317           | 30.317.0 |
 | 12.06.2023 | :material-check: Add        | get_division_zone_points                                         | geometry      | 30.317           | 30.317.0 |
 | 12.06.2023 | :material-check: Add        | get_3d_hwnd                                                      | utility       | 30.317           | 30.317.0 |
+| 05.10.2023 | :material-check: Add        | export_ifc2x3_silently                                           | bim           | 30.334           | 30.334.0 |
+| 05.10.2023 | :material-check: Add        | export_ifc4_silently                                             | bim           | 30.334           | 30.334.0 |
+| 05.10.2023 | :material-check: Add        | get_element_id_from_base64_ifc_guid                              | bim           | 30.334           | 30.334.0 |
+| 05.10.2023 | :material-check: Add        | get_ifc_base64_guid                                              | bim           | 30.334           | 30.334.0 |
+| 05.10.2023 | :material-check: Add        | export_ifc2x3_silently_with_options                              | bim           | 30.334           | 30.334.0 |
+| 05.10.2023 | :material-check: Add        | export_ifc4_silently_with_options                                | bim           | 30.334           | 30.334.0 |
+| 05.10.2023 | :material-check: Add        | ifc_options                                                      | cadwork       | 30.334           | 30.334.0 |
+| 05.10.2023 | :material-check: Add        | rhino_options                                                    | cadwork       | 30.334           | 30.334.0 |
+| 05.10.2023 | :material-check: Add        | export_rhino_file_with_options                                   | file          | 30.334           | 30.334.0 |

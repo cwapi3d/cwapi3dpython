@@ -844,8 +844,9 @@ def get_user_points_with_count(count: int) -> List[point_3d]:
 
 def execute_shortcut(shortcut_key_modifier: shortcut_key_modifier, shortcut_key: shortcut_key) -> None:
     """Executes a shortcut
-    key modifiers: 0 = None, 1 = Ctrl, 2 = Shift, 4 = Alt
-    shortcut key: F1 = 1, F2 = 2, F3 = 3, ...
+
+    Examples:
+        >>> utility_controller.execute_shortcut(cadwork.shortcut_key_modifier.shift, cadwork.shortcut_key.F1)
 
     Args:
         shortcut_key_modifier (int): shortcut key modifier
