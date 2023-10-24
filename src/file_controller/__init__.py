@@ -1,6 +1,6 @@
 from typing import List
 
-from cadwork import point_3d
+from cadwork import point_3d, rhino_options
 
 
 def export_stl_file(elements: List[int], file: str) -> None:
@@ -265,4 +265,23 @@ def export_glb_file(elements: List[int], file: str) -> None:
     Args:
         elements (List[int]): element IDs
         file (str): file path
+    """
+
+
+def export_rhino_file_with_options(elements: List[int], file: str, version: int, user_default_assignment: bool, write_standard_attributes: bool, rhino_options: rhino_options) -> None:
+    """export rh9ino file with options
+
+    Examples:
+        >>> rhino_options = rhino_options()
+        >>> rhino_options.set_cut_drillings(True)
+        >>> rhino_options.set_cut_end_types_counterparts(True)
+        >>> file_controller.export_rhino_file_with_options(elements, "yourFile.3dm", 7, True, True, rhino_options)
+
+    Args:
+        elements (List[int]): element IDs
+        file (str): file path
+        version (int): Rhino Version V5.0 = 5, V6.0 = 6, V7.0 = 7
+        user_default_assignment (bool): true: default assignment is used; false: no attributes are exported
+        write_standard_attributes (bool): see checkbox in assignment dialog
+        rhino_options (rhino_options): rhino export options
     """
