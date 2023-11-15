@@ -1,0 +1,16 @@
+name: Close Stale Issues
+
+on:
+  schedule:
+    - '30 1 * * *'
+
+jobs:
+  stale:
+    name: Close Stale Issues
+
+    steps:
+      - uses: actions/stale@v8
+        with:
+          stale-issue-message: 'This issue is stale because it has been open 60 days with no activity. Remove stale label or comment or this will be closed in 3 days.'
+          days-before-stale: 60
+          days-before-close: 3
