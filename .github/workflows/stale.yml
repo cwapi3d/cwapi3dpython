@@ -7,7 +7,8 @@ on:
 jobs:
   stale:
     name: Close Stale Issues
-
+    runs-on: "ubuntu-22.04"
+    
     steps:
       - uses: actions/stale@v8
         with:
