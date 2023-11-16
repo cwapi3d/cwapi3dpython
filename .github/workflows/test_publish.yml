@@ -3,7 +3,9 @@ name: Test Publish CwAPI3D Package
 on:
   push:
     branches-ignore:
-      - main
+      - 'main'
+    paths-ignore:
+      - '.github/workflows/**'
 
 jobs:
   build-and-publish:
