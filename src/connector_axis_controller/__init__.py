@@ -161,7 +161,7 @@ def get_axis_items_guids(number: int) -> List[str]:
         number (int): element ID
 
     Returns:
-        List[str]: elemnt IDs
+        List[str]: element IDs
     """
 def get_axis_item_name(guid: str) -> str: 
     """Returns the name of an axis item.

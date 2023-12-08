@@ -15,7 +15,7 @@ def get_name(element: int) -> str:
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
-        element (int): elmement id
+        element (int): element id
 
     Returns:
         str: element name
@@ -815,7 +815,7 @@ def set_element_material(elements: List[int], material_id: int) -> None:
 
 
 def get_assembly_number(element: int) -> str:
-    """Get the elmement assembly number
+    """Get the element assembly number
 
     [:information_source: Available for script filled attributes](#){.mark-text}
 
@@ -828,7 +828,7 @@ def get_assembly_number(element: int) -> str:
 
 
 def set_assembly_number(elements: List[int], number: str) -> None:
-    """Set the elmement assembly number
+    """Set the element assembly number
 
     Args:
         elements (List[int]): element IDs
@@ -842,10 +842,10 @@ def get_list_quantity(element: int) -> int:
     [:information_source: Available for script filled attributes](#){.mark-text}
 
     Args:
-        element (int): elmement ID
+        element (int): element ID
 
     Returns:
-        int: elmement quantity 
+        int: element quantity 
     """
 
 
@@ -854,7 +854,7 @@ def set_list_quantity(elements: List[int], quantity: int) -> None:
 
     Args:
         elements (List[int]): element IDs
-        quantity (int): elmement quantity 
+        quantity (int): element quantity 
     """
 
 

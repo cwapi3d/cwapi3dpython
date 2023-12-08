@@ -18,7 +18,7 @@ from cadwork import (element_module_properties,
 
 
 def get_all_identifiable_element_ids() -> List[int]:
-    """get all identifiable element IDs (visible and unvisible)
+    """get all identifiable element IDs (visible and invisible)
 
     [:information_source: Available for script filled attributes](#){.mark-text}
 
@@ -28,7 +28,7 @@ def get_all_identifiable_element_ids() -> List[int]:
 
 
 def get_visible_identifiable_element_ids() -> List[int]:
-    """get all visible identifiable elemnt ids
+    """get all visible identifiable element ids
 
     [:information_source: Available for script filled attributes](#){.mark-text}
 
@@ -280,7 +280,7 @@ def create_line_vectors(length: float, p1: point_3d, xl: point_3d) -> int:
         xl (point_3d): vector direction
 
     Returns:
-        int: elmement id
+        int: element id
     """
 
 
@@ -505,7 +505,7 @@ def make_redo() -> None:
 
 
 def split_elements(elements: List[int]) -> None:
-    """split joined elmements
+    """split joined elements
 
     Args:
         elements (List[int]): element IDs
@@ -570,7 +570,7 @@ def get_element_module_properties_for_element(element: int) -> element_module_pr
         element (int): element ID
 
     Returns:
-        element_module_properties: elmement module properties
+        element_module_properties: element module properties
     """
 
 
@@ -740,7 +740,7 @@ def get_user_element_ids() -> List[int]:
     """prompt that user select element IDs in 3D
 
     Returns:
-        List[int]: elmement ids from selection
+        List[int]: element ids from selection
     """
 
 
@@ -1352,7 +1352,7 @@ def convert_bolt_to_standardconnector(elements: List[int], standard_connector_ax
     """
 
 
-def get_joined_elements(elmement: int) -> List[int]:
+def get_joined_elements(element: int) -> List[int]:
     """Get joined elements
 
     Args:

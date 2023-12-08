@@ -16,10 +16,10 @@ import visualization_controller as vc
 checked_element_ids = lc.check_position_numbers_production_list()
 
 if not checked_element_ids:
-    uc.print_error("No discrepancies in proudction list")
+    uc.print_error("No discrepancies in production list")
 else:
     vc.set_active(checked_element_ids)
-    uc.print_error("Acitve elements have dscrepancies in the production list !")
+    uc.print_error("Active elements have discrepancies in the production list !")
 
 ```
 

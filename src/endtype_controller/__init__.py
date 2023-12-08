@@ -26,7 +26,7 @@ def get_endtype_id_end(element_id: int) -> int:
     """Gets the endtypeID of the end face
 
     Args:
-        arg0 (int): elmement ID
+        element_id (int): element ID
 
     Returns:
         int: endtype id
