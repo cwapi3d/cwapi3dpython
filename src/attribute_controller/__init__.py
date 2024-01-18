@@ -819,16 +819,6 @@ def get_subgroup(id: int) -> str:
     """
 
 
-def get_subgroup(id: int) -> str:
-    """get subgroup
-    Args:
-        id ( int): id
-
-    Returns:
-        strelement subgroup
-    """
-
-
 def get_comment(id: int) -> str:
     """get comment
     Args:

@@ -56,16 +56,6 @@ def set_active(element_id_list: List[int]) -> None:
     """
 
 
-def set_active(element_id_list: List[int]) -> None:
-    """set active
-    Args:
-        element_id_list ( List[int]): element_id_list
-
-    Returns:
-        None
-    """
-
-
 def set_inactive(element_id_list: List[int]) -> None:
     """set inactive
     Args:

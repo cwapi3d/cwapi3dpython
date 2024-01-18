@@ -126,16 +126,6 @@ def set_storey_height(building: str, storey: str, height: float) -> None:
     """
 
 
-def convert_exchange_objects(exchange_objects: List[int]) -> List[int]:
-    """convert exchange objects
-    Args:
-        exchange_objects ( List[int]): exchange_objects
-
-    Returns:
-        List[int]
-    """
-
-
 def set_building_and_storey(element_id_list: List[int], building: str, storey: str) -> None:
     """set building and storey
     Args:
