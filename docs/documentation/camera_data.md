@@ -1,6 +1,11 @@
-# Attribute Controller
+# Camera Data
 
-::: attribute_controller
+::: cadwork.camera_data
+::: cadwork.projection_type
+rendering:
+show_root_heading: false
+show_source: true
+
 rendering:
 show_root_heading: false
 show_source: true

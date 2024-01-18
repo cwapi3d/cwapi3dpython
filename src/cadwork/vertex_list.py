@@ -1,30 +1,29 @@
-from .point_3d import point_3d
+from cadwork import point_3d
 
 
 class vertex_list:
-    def __init__(self) -> None:
-        pass
+    def count(self) -> int:
+        """count
+        Args:
+
+        Returns:
+            int
+        """
 
     def at(self, index: int) -> point_3d:
-        """
+        """at
         Args:
-            index (int): index
+            index ( int): index
 
         Returns:
-            point_3d: point
+            point_3d
         """
-        pass
 
-    def append(self, point: point_3d) -> None:
-        """
+    def append(self, vertex: point_3d) -> None:
+        """append
         Args:
-            point (point_3d): point
-        """
-        pass
+            vertex ( point_3d): vertex
 
-    def count(self) -> int:
-        """
         Returns:
-            int: count
+            None
         """
-        pass

@@ -1,23 +1,20 @@
-from .vertex_list import vertex_list
+from cadwork import point_3d
 
 
 class edge_list:
-    def __init__(self) -> None:
-        pass
-
     def count(self) -> int:
-        """
-        Returns:
-            int: count
-        """
-        pass
-
-    def at(self, index: int) -> vertex_list:
-        """
+        """count
         Args:
-            index (int): index
 
         Returns:
-            vertex_list: vertex list
+            int
         """
-        pass
+
+    def at(self, index: int) -> point_3d:
+        """at
+        Args:
+            index ( int): index
+
+        Returns:
+            point_3d
+        """

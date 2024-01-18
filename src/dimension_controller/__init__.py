@@ -1,106 +1,106 @@
 from typing import List
 from cadwork import point_3d
 
-
-def create_dimension(direction: point_3d, plane_normal: point_3d, distance_from_origin: point_3d, dimension_points: List[point_3d]) -> int:
-    """ Creates a 3d dimension
-
-
-    Examples:
-        >>> dimension = create_dimension(point_3d(0,0,1), point_3d(1,0,0), point_3d(0,0,0), [point_3d(0,0,0), point_3d(0,0,1000)])
-
+def create_dimension(a0: point_3d, a1: point_3d, a2: point_3d, a3: List[point_3d]) -> int:
+    """create dimension
     Args:
-        direction (point_3d): a dimension direction
-        plane_normal (point_3d): plane normal
-        distance_from_origin (point_3d): distance from origin (0,0,0)
-        dimension_points (List[point_3d]): dimension points
+        a0 ( point_3d): a0
+        a1 ( point_3d): a1
+        a2 ( point_3d): a2
+        a3 ( List[point_3d]): a3
 
     Returns:
-        int: element ID
+        int
     """
 
-
-def set_orientation(element_ids: List[int], view_direction: point_3d, view_up_direction: point_3d) -> None:
-    """ Sets the orientation of a dimension
-
-    Examples:
-        >>> dimension = create_dimension(point_3d(0,0,1), point_3d(1,0,0), point_3d(0,0,0), point_3d(0,0,0), [point_3d(0,0,0), point_3d(0,0,1000)])
-        >>> set_orientation([dimension], point_3d(1,0,0).invert(), point_3d(0,0,1))
-
+def set_orientation(a0: List[int], a1: point_3d, a2: point_3d) -> None:
+    """set orientation
     Args:
-        element_ids (List[int]): dimension element IDs
-        view_direction (point_3d): view direction
-        view_up_direction (point_3d): view up direction
+        a0 ( List[int]): a0
+        a1 ( point_3d): a1
+        a2 ( point_3d): a2
+
+    Returns:
+        None
     """
 
-
-def add_segment(element: int, point: point_3d) -> None:
-    """ Adds a segment to a dimension
-
+def add_segment(a0: int, a1: point_3d) -> None:
+    """add segment
     Args:
-        element (int): element ID
-        point (point_3d): point
+        a0 ( int): a0
+        a1 ( point_3d): a1
+
+    Returns:
+        None
     """
 
-
-def set_precision(element_ids: List[int], precision: int) -> None:
-    """ Sets the precision of a dimension
-
+def set_precision(a0: List[int], a1: int) -> None:
+    """set precision
     Args:
-        element_ids (List[int]): dimension element IDs
-        precision (int): precision
+        a0 ( List[int]): a0
+        a1 ( int): a1
+
+    Returns:
+        None
     """
 
-
-def set_text_size(element_ids: List[int], size: float) -> None:
-    """ Sets the text size of a dimension
-
+def set_text_size(a0: List[int], a1: float) -> None:
+    """set text size
     Args:
-        element_ids (List[int]): dimension element IDs
-        size (float): text size
+        a0 ( List[int]): a0
+        a1 ( float): a1
+
+    Returns:
+        None
     """
 
-
-def set_line_thickness(element_ids: List[int], thickness: float) -> None:
-    """ Sets the line thickness of a dimension
-
+def set_line_thickness(a0: List[int], a1: float) -> None:
+    """set line thickness
     Args:
-        element_ids (List[int]): dimension element IDs
-        thickness (float): line thickness
+        a0 ( List[int]): a0
+        a1 ( float): a1
+
+    Returns:
+        None
     """
 
-
-def set_total_dimension(element_ids: List[int], total_dimension: bool) -> None:
-    """ Sets the total dimension of a dimension
-
+def set_total_dimension(a0: List[int], a1: bool) -> None:
+    """set total dimension
     Args:
-        element_ids (List[int]): dimension element IDs
-        total_dimension (bool): total dimension
+        a0 ( List[int]): a0
+        a1 ( bool): a1
+
+    Returns:
+        None
     """
 
-
-def set_text_color(element_ids: List[int], color: int) -> None:
-    """ Sets the text color of a dimension
-
+def set_text_color(a0: List[int], a1: int) -> None:
+    """set text color
     Args:
-        element_ids (List[int]): dimension element IDs
-        color (int): color number
+        a0 ( List[int]): a0
+        a1 ( int): a1
+
+    Returns:
+        None
     """
 
-
-def set_line_color(element_ids: List[int], color: int) -> None:
-    """ Sets the line color of a dimension
-
+def set_line_color(a0: List[int], a1: int) -> None:
+    """set line color
     Args:
-        element_ids (List[int]): dimension element IDs
-        color (int): color number
+        a0 ( List[int]): a0
+        a1 ( int): a1
+
+    Returns:
+        None
     """
 
-
-def set_default_anchor_length(element_ids: List[int], length: float) -> None:
-    """ Sets the default anchor length of a dimension
-
+def set_default_anchor_length(a0: List[int], a1: float) -> None:
+    """set default anchor length
     Args:
-        element_ids (List[int]): dimension element IDs
-        length (float): anchor length
+        a0 ( List[int]): a0
+        a1 ( float): a1
+
+    Returns:
+        None
     """
+

@@ -1,12 +1,11 @@
 from typing import List
 
 
-def display_simple_menu(items: List[str]) -> str: 
-    """display a simple menu
-
+def display_simple_menu(menu_items: List[str]) -> str:
+    """display simple menu
     Args:
-        items (List[str]): menu items
+        menu_items ( List[str]): menu_items
 
     Returns:
-        str: item name
+        str
     """

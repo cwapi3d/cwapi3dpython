@@ -1,6 +1,7 @@
-# Attribute Controller
+# Layer Settings
 
-::: attribute_controller
+::: cadwork.layer_settings
+
 rendering:
 show_root_heading: false
 show_source: true

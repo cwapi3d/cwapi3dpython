@@ -1,95 +1,86 @@
-
 class rhino_options:
-    """
-    Rhino options
-
-    Examples:
-        >>> rhino_options = rhino_options()
-        >>> rhino_options.set_cut_drillings(True)
-        >>> rhino_options.set_cut_end_types_counterparts(True)
-        >>> file_controller.export_rhino_file_with_options(elements, "yourFile.3dm", 7, user_default_assignment=True, write_standard_attributes=True, rhino_options)
-
-    """
-
-    def __init__(self) -> None:
-        pass
-
-    def get_cut_drillings(self) -> bool:
-        """Get cut drillings option.
+    def get_materialize_end_types(self) -> bool:
+        """get materialize end types
+        Args:
 
         Returns:
-            bool: True if cut drillings are exported
+            bool
         """
-        pass
+
+    def set_materialize_end_types(self, flag: bool) -> None:
+        """set materialize end types
+        Args:
+            flag ( bool): flag
+
+        Returns:
+            None
+        """
 
     def get_cut_end_types_counterparts(self) -> bool:
-        """Get cut end types counterparts option.
+        """get cut end types counterparts
+        Args:
 
         Returns:
-            bool: True if cut end types counterparts are exported
+            bool
         """
-        pass
+
+    def set_cut_end_types_counterparts(self, flag: bool) -> None:
+        """set cut end types counterparts
+        Args:
+            flag ( bool): flag
+
+        Returns:
+            None
+        """
+
+    def get_cut_drillings(self) -> bool:
+        """get cut drillings
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def set_cut_drillings(self, flag: bool) -> None:
+        """set cut drillings
+        Args:
+            flag ( bool): flag
+
+        Returns:
+            None
+        """
 
     def get_cut_mep(self) -> bool:
-        """Get cut mep option.
+        """get cut mep
+        Args:
 
         Returns:
-            bool: True if cut mep is exported
+            bool
         """
-        pass
+
+    def set_cut_mep(self, flag: bool) -> None:
+        """set cut mep
+        Args:
+            flag ( bool): flag
+
+        Returns:
+            None
+        """
 
     def get_cut_openings(self) -> bool:
-        """Get cut openings option.
+        """get cut openings
+        Args:
 
         Returns:
-            bool: True if cut openings are exported
+            bool
         """
-        pass
 
-    def get_materialize_end_types(self) -> bool:
-        """Get materialize end types option.
+    def set_cut_openings(self, flag: bool) -> None:
+        """set cut openings
+        Args:
+            flag ( bool): flag
 
         Returns:
-            bool: True if materialize end types are exported
+            None
         """
-        pass
 
-    def set_cut_drillings(self, value: bool) -> None:
-        """Set cut drillings option.
-
-        Args:
-            value (bool): True if cut drillings are exported
-        """
-        pass
-
-    def set_cut_end_types_counterparts(self, value: bool) -> None:
-        """Set cut end types counterparts option.
-
-        Args:
-            value (bool): True if cut end types counterparts are exported
-        """
-        pass
-
-    def set_cut_mep(self, value: bool) -> None:
-        """Set cut mep option.
-
-        Args:
-            value (bool): True if cut mep is exported
-        """
-        pass
-
-    def set_cut_openings(self, value: bool) -> None:
-        """Set cut openings option.
-
-        Args:
-            value (bool): True if cut openings are exported
-        """
-        pass
-
-    def set_materialize_end_types(self, value: bool) -> None:
-        """Set materialize end types option.
-
-        Args:
-            value (bool): True if materialize end types are exported
-        """
-        pass

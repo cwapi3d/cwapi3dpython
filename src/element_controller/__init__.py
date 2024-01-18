@@ -1,1384 +1,1526 @@
-"""Provide several sample math calculations.
-
-This module allows the user to make mathematical calculations.
-
-The module contains the following functions:
-
-- `add(a, b)` - Returns the sum of two numbers.
-- `subtract(a, b)` - Returns the difference of two numbers.
-- `multiply(a, b)` - Returns the product of two numbers.
-- `divide(a, b)` - Returns the quotient of two numbers.
-"""
-
-
 from typing import List
-from cadwork import (element_module_properties,
-                     point_3d,
-                     )
+from cadwork import edge_list
+from cadwork import element_module_properties
+from cadwork import facet_list
+from cadwork import point_3d
+from cadwork import text_object_options
 
-
-def get_all_identifiable_element_ids() -> List[int]:
-    """get all identifiable element IDs (visible and unvisible)
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Returns:
-        List[int]: element_id list
-    """
-
-
-def get_visible_identifiable_element_ids() -> List[int]:
-    """get all visible identifiable elemnt ids
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Returns:
-        List[int]: element_id list
-    """
-
-
-def get_invisible_identifiable_element_ids() -> List[int]:
-    """Get invisible cadwork element IDs
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Returns:
-        List[int]: element_id list
-    """
-
-
-def get_active_identifiable_element_ids() -> List[int]:
-    """Get active cadwork element IDs
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Returns:
-        List[int]: element_id list
-    """
-
-
-def get_inactive_all_identifiable_element_ids() -> List[int]:
-    """Get inactive cadwork element IDs
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Returns:
-        List[int]: element_id list
-    """
-
-
-def get_inactive_visible_identifiable_element_ids() -> List[int]:
-    """Get inactive visible cadwork element IDs
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Returns:
-        List[int]: element_id list
-    """
-
-
-def delete_elements(elements: List[int]) -> None:
-    """Delete elements 
-
+def get_last_error(error_code: int) -> str:
+    """get last error
     Args:
-        elements (List[int]): element IDs
+        error_code ( int): error_code
+
+    Returns:
+        strerror string
     """
 
-
-def join_elements(elements: List[int]) -> None:
-    """join elements (group)
-
+def delete_elements(element_id_list: List[int]) -> None:
+    """delete elements
     Args:
-        elements (List[int]): element IDs
+        element_id_list ( List[int]): element_id_list
+
+    Returns:
+        None
     """
 
-
-def join_top_level_elements(elements: List[int]) -> None:
-    """join elements on highest leve. Previously joined elements are dissolved and joined at the top level.
-
+def join_elements(element_id_list: List[int]) -> None:
+    """join elements
     Args:
-        elements (List[int]): element IDs
+        element_id_list ( List[int]): element_id_list
+
+    Returns:
+        None
     """
 
+def join_top_level_elements(element_id_list: List[int]) -> None:
+    """join top level elements
+    Args:
+        element_id_list ( List[int]): element_id_list
+
+    Returns:
+        None
+    """
 
 def create_rectangular_beam_points(width: float, height: float, p1: point_3d, p2: point_3d, p3: point_3d) -> int:
-    """create a rectangular beam. The direction (local x axis) and length of the beam is defined via p1 and p2. 
-    The parameter p3 is used to set the local z vector (height) of the beams coordinate system. 
-
+    """create rectangular beam points
     Args:
-        width (float): beam width
-        height (float): beam height
-        p1 (point_3d): start point
-        p2 (point_3d): end point
-        p3 (point_3d): height point
+        width ( float): width
+        height ( float): height
+        p1 ( point_3d): p1
+        p2 ( point_3d): p2
+        p3 ( point_3d): p3
 
     Returns:
-        int: element ID
+        int
     """
-
 
 def create_circular_beam_points(diameter: float, p1: point_3d, p2: point_3d, p3: point_3d) -> int:
-    """create a circular beam. The direction (local x axis) and length of the beam is defined via p1 and p2. 
-   The parameter p3 is used to set the local z vector (height) of the beams coordinate system. 
-
+    """create circular beam points
     Args:
-        diameter (float): circle diameter
-        p1 (point_3d): start point
-        p2 (point_3d): end point
-        p3 (point_3d): height point
+        diameter ( float): diameter
+        p1 ( point_3d): p1
+        p2 ( point_3d): p2
+        p3 ( point_3d): p3
 
     Returns:
-        int: element ID
+        int
     """
-
 
 def create_square_beam_points(width: float, p1: point_3d, p2: point_3d, p3: point_3d) -> int:
-    """create a square beam. The direction (local x axis) and length of the beam is defined via p1 and p2. 
-    The parameter p3 is used to set the local z vector (height) of the beams coordinate system. 
-
+    """create square beam points
     Args:
-        width (float): beam width
-        p1 (point_3d): start point
-        p2 (point_3d): end point
-        p3 (point_3d): height point
+        width ( float): width
+        p1 ( point_3d): p1
+        p2 ( point_3d): p2
+        p3 ( point_3d): p3
 
     Returns:
-        int: element ID
+        int
     """
-
 
 def create_rectangular_beam_vectors(width: float, height: float, length: float, p1: point_3d, xl: point_3d, zl: point_3d) -> int:
-    """create a rectangular beam from vectors. The start point of the element is defined by p1. Then the direction (local x axis) is definied by p2 (e.g. point_3d(1.,0.,0.)).
-    The local z vector is defined via p3 (e.g. point_3d(0.,1.,0.)). 
-
-    Examples:
-        >>> beam = ec.create_rectangular_beam_vectors(120.0, 240.0, 2800.0, cadwork.point_3d(0.,0.,0.), cadwork.point_3d(1.,0.,0.), cadwork.point_3d(0.,0.,1.))
-
+    """create rectangular beam vectors
     Args:
-        length (float): length of beam axis
-        width (float): beam width
-        height (float): beam height
-        p1 (point_3d): start point 
-        xl (point_3d): local x vector
-        zl (point_3d): local z vector
+        width ( float): width
+        height ( float): height
+        length ( float): length
+        p1 ( point_3d): p1
+        xl ( point_3d): xl
+        zl ( point_3d): zl
 
     Returns:
-        int: element ID
+        int
     """
-
 
 def create_circular_beam_vectors(diameter: float, length: float, p1: point_3d, xl: point_3d, zl: point_3d) -> int:
-    """create a circular beam from vectors. The start point of the element is defined by p1. Then the direction (local x axis) is definied by xl (e.g. point_3d(1.,0.,0.)).
-    The local z vector is defined via zl (e.g. point_3d(0.,1.,0.)).
-
+    """create circular beam vectors
     Args:
-        diameter (float): circle diameter
-        length (float): beam/axis length
-        p1 (point_3d): start point
-        xl (point_3d): local x vector
-        zl (point_3d): local z vector
+        diameter ( float): diameter
+        length ( float): length
+        p1 ( point_3d): p1
+        xl ( point_3d): xl
+        zl ( point_3d): zl
 
     Returns:
-        int: element ID
+        int
     """
-
 
 def create_square_beam_vectors(width: float, length: float, p1: point_3d, xl: point_3d, zl: point_3d) -> int:
-    """create a square beam from vectors. The start point of the element is defined by p1. Then the direction (local x axis) is definied by xl (e.g. point_3d(1.,0.,0.)).
-    The local z vector is defined via zl (e.g. point_3d(0.,1.,0.)).
-
+    """create square beam vectors
     Args:
-        width (float): beam width
-        length (float): beam/axis length
-        p1 (point_3d): start point
-        xl (point_3d): local x vector
-        zl (point_3d): local z vector
+        width ( float): width
+        length ( float): length
+        p1 ( point_3d): p1
+        xl ( point_3d): xl
+        zl ( point_3d): zl
 
     Returns:
-        int: element ID
+        int
     """
-
 
 def create_rectangular_panel_points(width: float, thickness: float, p1: point_3d, p2: point_3d, p3: point_3d) -> int:
-    """create a rectangular panel. The direction (local x axis) and length of the panel is defined via p1 and p2. 
-    The parameter (p3) is used to set the local z vector (thickness) of the beams coordinate system.
-
+    """create rectangular panel points
     Args:
-        width (float): beam width
-        thickness (float): beam thickness
-        p1 (point_3d): start point
-        p2 (point_3d): end point
-        p3 (point_3d): height point
+        width ( float): width
+        thickness ( float): thickness
+        p1 ( point_3d): p1
+        p2 ( point_3d): p2
+        p3 ( point_3d): p3
 
     Returns:
-        int: element ID
+        int
     """
-
 
 def create_rectangular_panel_vectors(width: float, thickness: float, length: float, p1: point_3d, xl: point_3d, zl: point_3d) -> int:
-    """create a rectangular panel from vectors. The start point of the element is defined by p1. Then the direction (local x axis) is definied by p2 (e.g. point_3d(1.,0.,0.)).
-    The local z vector is defined via p3 (e.g. point_3d(0.,1.,0.)). 
-
+    """create rectangular panel vectors
     Args:
-        width (float): panel width
-        thickness (float): panel thickness
-        length (float):  panel/axis length
-        p1 (point_3d): start point
-        xl (point_3d): local x vector
-        zl (point_3d): local z vector
+        width ( float): width
+        thickness ( float): thickness
+        length ( float): length
+        p1 ( point_3d): p1
+        xl ( point_3d): xl
+        zl ( point_3d): zl
 
     Returns:
-        int: element ID
+        int
     """
-
 
 def create_drilling_points(diameter: float, p1: point_3d, p2: point_3d) -> int:
-    """Create a drilling from two points. 
-
+    """create drilling points
     Args:
-        diameter (float): drilling diameter
-        p1 (point_3d): start point
-        p2 (point_3d): end point
+        diameter ( float): diameter
+        p1 ( point_3d): p1
+        p2 ( point_3d): p2
 
     Returns:
-        int: element ID
+        int
     """
-
 
 def create_drilling_vectors(diameter: float, length: float, p1: point_3d, xl: point_3d) -> int:
-    """Create a drilling from a point and a direction vector. 
-
+    """create drilling vectors
     Args:
-        diameter (float): drilling diameter
-        length (float): drilling length
-        p1 (point_3d): start point
-        xl (point_3d): vector direction
+        diameter ( float): diameter
+        length ( float): length
+        p1 ( point_3d): p1
+        xl ( point_3d): xl
 
     Returns:
-        int: [description]
+        int
     """
-
 
 def create_line_points(p1: point_3d, p2: point_3d) -> int:
-    """crete a line
-
+    """create line points
     Args:
-        p1 (point_3d): start point
-        p2 (point_3d): end point
+        p1 ( point_3d): p1
+        p2 ( point_3d): p2
 
     Returns:
-        int: element ID
+        int
     """
-
 
 def create_line_vectors(length: float, p1: point_3d, xl: point_3d) -> int:
-    """crete a line
-
+    """create line vectors
     Args:
-        length (float): line length
-        p1 (point_3d): start point
-        xl (point_3d): vector direction
+        length ( float): length
+        p1 ( point_3d): p1
+        xl ( point_3d): xl
 
     Returns:
-        int: elmement id
+        int
     """
-
 
 def create_node(p1: point_3d) -> int:
-    """create a node
-
+    """create node
     Args:
-        p1 (point_3d): point
+        p1 ( point_3d): p1
 
     Returns:
-        int: element ID
+        int
     """
 
-
-def solder_elements(elements: List[int]) -> List[int]:
-    """solder elements, if they are in contact. 
-
+def solder_elements(element_id_list: List[int]) -> List[int]:
+    """solder elements
     Args:
-        elements (List[int]): element IDs
+        element_id_list ( List[int]): element_id_list
 
     Returns:
-        List[int]: element ID
+        List[int]
     """
 
-
-def convert_beam_to_panel(elements: List[int]) -> None:
-    """convert beam(s) to panel(s)
-
+def convert_beam_to_panel(element_id_list: List[int]) -> None:
+    """convert beam to panel
     Args:
-        elements (List[int]): element IDs
-    """
-
-
-def convert_panel_to_beam(elements: List[int]) -> None:
-    """convert panel(s) to beam(s)
-
-    Args:
-        elements (List[int]): element IDs
-    """
-
-
-def delete_all_element_end_types(elements: List[int]) -> None:
-    """delete end types
-
-    Args:
-        elements (List[int]): element IDs
-    """
-
-
-def delete_all_element_processes(elements: List[int]) -> None:
-    """delete element processes
-
-    Args:
-        elements (List[int]): element IDs
-    """
-
-
-def move_element(elements: List[int], vector: point_3d) -> None:
-    """move element by a vector
-
-    Args:
-        elements (List[int]): element IDs
-        vector (point_3d): vector
-    """
-
-
-def create_polygon_beam(points: List[point_3d], thickness: float, xl: point_3d, zl: point_3d) -> int:
-    """create a polygon beam. Define the polygon outline in a vertex list.  
-
-    Args:
-        points (List[point_3d]): vertex list
-        thickness (float): beam thickness
-        xl (point_3d): vector (length dir)
-        zl (point_3d): vector (height dir)
+        element_id_list ( List[int]): element_id_list
 
     Returns:
-        int: element ID
+        None
     """
 
+def convert_panel_to_beam(element_id_list: List[int]) -> None:
+    """convert panel to beam
+    Args:
+        element_id_list ( List[int]): element_id_list
+
+    Returns:
+        None
+    """
+
+def delete_all_element_end_types(element_id_list: List[int]) -> None:
+    """delete all element end types
+    Args:
+        element_id_list ( List[int]): element_id_list
+
+    Returns:
+        None
+    """
+
+def delete_all_element_processes(element_id_list: List[int]) -> None:
+    """delete all element processes
+    Args:
+        element_id_list ( List[int]): element_id_list
+
+    Returns:
+        None
+    """
+
+def move_element(element_id_list: List[int], vector: point_3d) -> None:
+    """move element
+    Args:
+        element_id_list ( List[int]): element_id_list
+        vector ( point_3d): vector
+
+    Returns:
+        None
+    """
+
+def create_polygon_beam(polygon_vertices: List[point_3d], thickness: float, xl: point_3d, zl: point_3d) -> int:
+    """create polygon beam
+    Args:
+        polygon_vertices ( List[point_3d]): polygon_vertices
+        thickness ( float): thickness
+        xl ( point_3d): xl
+        zl ( point_3d): zl
+
+    Returns:
+        int
+    """
 
 def create_text_object(text: str, position: point_3d, xl: point_3d, zl: point_3d, size: float) -> int:
     """create text object
-
     Args:
-        text (str): your text
-        position (point_3d): location
-        xl (point_3d): length dir
-        zl (point_3d): height dir
-        size (float): font size
+        text ( str): text
+        position ( point_3d): position
+        xl ( point_3d): xl
+        zl ( point_3d): zl
+        size ( float): size
 
     Returns:
-        int: element ID
+        int
     """
 
-
-def copy_elements(elements: List[int], vector: point_3d) -> List[int]:
+def copy_elements(element_id_list: List[int], copy_vector: point_3d) -> List[int]:
     """copy elements
-
     Args:
-        elements (List[int]): element IDs
-        vector (point_3d): copy vector
+        element_id_list ( List[int]): element_id_list
+        copy_vector ( point_3d): copy_vector
 
     Returns:
-        List[int]: element IDs
+        List[int]
     """
 
-
-def rotate_elements(elements: List[int], origin: point_3d, rotation_axis: point_3d, rotation_angle: float) -> None:
+def rotate_elements(element_id_list: List[int], origin: point_3d, rotation_axis: point_3d, rotation_angle: float) -> None:
     """rotate elements
-
     Args:
-        elements (List[int]): element IDs
-        origin (point_3d): element origin (p1)
-        rotation_axis (point_3d): vector axis
-        rotation_angle (float): radians
-    """
+        element_id_list ( List[int]): element_id_list
+        origin ( point_3d): origin
+        rotation_axis ( point_3d): rotation_axis
+        rotation_angle ( float): rotation_angle
 
+    Returns:
+        None
+    """
 
 def subtract_elements(hard_elements: List[int], soft_elements: List[int]) -> List[int]:
-    """Subtract elements. The first element is hard, the second soft.
-
+    """subtract elements
     Args:
-        hard_elements (List[int]): subtract with
-        soft_elements (List[int]): subtract from
+        hard_elements ( List[int]): hard_elements
+        soft_elements ( List[int]): soft_elements
 
     Returns:
-        List[int]: element IDs
+        List[int]
     """
 
-
-def subtract_elements_with_undo(hard_elements: List[int], soft_elements: List[int], with_undo: bool) -> List[int]:
-    """Subtract elements with undo. The first element is hard, the second soft.
-
+def check_element_id(id: int) -> bool:
+    """check element id
     Args:
-        hard_elements (List[int]): subtract with
-        soft_elements (List[int]): subtract from
-        with_undo (bool): with undo
+        id ( int): id
 
     Returns:
-        List[int]: element IDs
+        bool
     """
 
-
-def check_element_id(element: int) -> bool:
-    """check element ID
-
+def start_element_module_calculation(covers: List[int]) -> None:
+    """start element module calculation
     Args:
-        element (int): element ID
+        covers ( List[int]): covers
 
     Returns:
-        bool: True/False
+        None
     """
-
-
-def start_element_module_calculation(elements: List[int]) -> None:
-    """start the elemend module calculation. Inputarguments are cover elements. 
-
-    Args:
-        elements (List[int]): element IDs (cover(s) architectural elementtypes)
-    """
-
 
 def set_element_detail_path(path: str) -> None:
     """set element detail path
-
     Args:
-        path (str): path to elementmodule directory
-    """
-
-
-def get_element_detail_path() -> str:
-    """get the path from active elmeentmodule
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
+        path ( str): path
 
     Returns:
-        str: path
+        None
     """
 
-
-def get_element_cadwork_guid(element: int) -> str:
-    """get cadwork element guid
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        str: guid
-    """
-
-
-def get_element_from_cadwork_guid(guid: str) -> int:
+def get_element_from_cadwork_guid(cadwork_guid: str) -> int:
     """get element from cadwork guid
-
     Args:
-        guid (str): cadwork guid
+        cadwork_guid ( str): cadwork_guid
 
     Returns:
-        int: element ID
+        int
     """
 
-
-def add_elements_to_undo(elements: List[int], number: int) -> None:
+def add_elements_to_undo(elements: List[int], cmd: int) -> None:
     """add elements to undo
-
     Args:
-        elements (List[int]): element IDs
-        number (int): enum(1:add, 2:modify)
-    """
+        elements ( List[int]): elements
+        cmd ( int): cmd
 
+    Returns:
+        None
+    """
 
 def make_undo() -> None:
     """make undo
-    """
+    Args:
 
+    Returns:
+        None
+    """
 
 def make_redo() -> None:
     """make redo
-    """
+    Args:
 
+    Returns:
+        None
+    """
 
 def split_elements(elements: List[int]) -> None:
-    """split joined elmements
-
+    """split elements
     Args:
-        elements (List[int]): element IDs
-    """
+        elements ( List[int]): elements
 
+    Returns:
+        None
+    """
 
 def set_line_to_marking_line(elements: List[int]) -> None:
-    """modify a line to a marking line
-
+    """set line to marking line
     Args:
-        elements (List[int]): element IDs
-    """
+        elements ( List[int]): elements
 
+    Returns:
+        None
+    """
 
 def set_line_to_normal_line(elements: List[int]) -> None:
     """set line to normal line
-
     Args:
-        elements (List[int]): element IDs
-    """
-
-
-def create_auto_export_solid_from_standard(elements: List[int], name: str, standard_element_name: str) -> int:
-    """create automatic export solid from a standard export solid
-
-    Args:
-        elements (List[int]): element IDs
-        name (str): new name for export solid
-        standard_element_name (str): name of standard export solid
+        elements ( List[int]): elements
 
     Returns:
-        int: element ID
-    """
-
-
-def set_element_module_properties_for_elements(elements: List[int], properties: element_module_properties) -> None:
-    """set element module properties for elements
-
-    Examples:
-        >>> import cadwork as cw
-        >>> import element_controller as ec
-        >>> element_properties = ec.get_element_module_properties_for_element(540915) # 540915 = some element ID
-        >>> cw.element_module_properties.set_bottom_plate(element_properties, True)
-        >>> cw.element_module_properties.set_solder_in_axis_direction(element_properties, True)
-        >>> cw.element_module_properties.set_main_element(element_properties, True)
-        >>> cw.element_module_properties.set_strecht_according_thickness_axis(element_properties, True)
-        >>> ec.set_element_module_properties_for_elements([540915],element_properties)
         None
-
-    Args:
-        elements (List[int]): element IDs
-        properties (element_module_properties): elment module properties
     """
 
-
-def get_element_module_properties_for_element(element: int) -> element_module_properties:
-    """get element module properties for element
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def create_auto_export_solid_from_standard(elements: List[int], output_name: str, standard_element_name: str) -> int:
+    """create auto export solid from standard
     Args:
-        element (int): element ID
+        elements ( List[int]): elements
+        output_name ( str): output_name
+        standard_element_name ( str): standard_element_name
 
     Returns:
-        element_module_properties: elmement module properties
+        int
     """
 
-
-def get_element_type_description(element: int) -> str:
-    """get the description of the cadwork element type
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def set_element_module_properties_for_elements(elements: List[int], properties: None) -> None:
+    """set element module properties for elements
     Args:
-        element (int): element ID
+        elements ( List[int]): elements
+        properties ( None): properties
 
     Returns:
-        str: element type (e.g. beam)
+        None
     """
 
-
-def create_text_object_with_font(text: str, position: point_3d, xl: point_3d, zl: point_3d, size: float, font: str) -> int:
+def create_text_object_with_font(text: str, position: point_3d, xl: point_3d, zl: point_3d, size: float, font_name: str) -> int:
     """create text object with font
-
     Args:
-        text (str): your text
-        position (point_3d): location
-        xl (point_3d): length dir
-        zl (point_3d): height dir
-        size (float): font size
-        font (str): font type (e.g. , "Times New Roman")
+        text ( str): text
+        position ( point_3d): position
+        xl ( point_3d): xl
+        zl ( point_3d): zl
+        size ( float): size
+        font_name ( str): font_name
 
     Returns:
-        int: element ID
+        int
     """
 
-
-def get_opening_variant_ids(elements: List[int], opening_type: int) -> List[int]:
-    """get opening variant ids
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def apply_transformation_coordinate(elements: List[int], old_point: point_3d, old_xl: point_3d, old_yl: point_3d, new_point: point_3d, new_xl: point_3d, new_yl: point_3d) -> None:
+    """apply transformation coordinate
     Args:
-        elements (List[int]): element IDs
-        opening_type (int): number of opening type (enum)
+        elements ( List[int]): elements
+        old_point ( point_3d): old_point
+        old_xl ( point_3d): old_xl
+        old_yl ( point_3d): old_yl
+        new_point ( point_3d): new_point
+        new_xl ( point_3d): new_xl
+        new_yl ( point_3d): new_yl
 
     Returns:
-        List[int]: element IDs
+        None
     """
-
-
-def get_parent_container_id(element: int) -> int:
-    """get parent container id
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        int: element ID
-    """
-
-
-def get_export_solid_content_elements(element: int) -> List[int]:
-    """get export solid content elements
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID of export solid
-    Returns:
-        List[int]: element IDs
-    """
-
-
-def get_container_content_elements(element: int) -> List[int]:
-    """get container content elements
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-    Returns:
-        List[int]: element IDs
-    """
-
-
-def apply_transformation_coordinate(elments: List[int], old_point: point_3d, old_xl: point_3d, old_yl: point_3d, new_point: point_3d, new_xl: point_3d, new_yl: point_3d) -> None:
-    """apply transformation coordinate to transform elements in 3D space
-
-    Args:
-        elments (List[int]): element IDs to transform
-        old_point (point_3d): location origin
-        old_xl (point_3d): origin x dir (vector)
-        old_yl (point_3d): origin y dir (vector)
-        new_point (point_3d): new location
-        new_xl (point_3d): new x dir (vector)
-        new_yl (point_3d): new y dir (vector)
-    """
-
 
 def delete_elements_with_undo(elements: List[int]) -> None:
-    """delete elements and store the in undo
-
+    """delete elements with undo
     Args:
-        elements (List[int]): element IDs
-    """
+        elements ( List[int]): elements
 
+    Returns:
+        None
+    """
 
 def add_created_elements_to_undo(elements: List[int]) -> None:
-    """add created elementes to undo storeage
-
+    """add created elements to undo
     Args:
-        elements (List[int]): element IDs
-    """
+        elements ( List[int]): elements
 
+    Returns:
+        None
+    """
 
 def add_modified_elements_to_undo(elements: List[int]) -> None:
-    """add modified elementes to undo storeage
-
+    """add modified elements to undo
     Args:
-        elements (List[int]): element IDs
-    """
+        elements ( List[int]): elements
 
+    Returns:
+        None
+    """
 
 def recreate_elements(elements: List[int]) -> None:
     """recreate elements
-
     Args:
-        elements (List[int]): element IDs
-    """
-
-
-def check_if_elements_are_in_collision(first_element: int, second_element: int) -> bool:
-    """collision detection
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): first element ID
-        element (int): second element ID
+        elements ( List[int]): elements
 
     Returns:
-        bool: true/false
+        None
     """
-
-
-def check_if_elements_are_in_contact(first_element: int, second_element: int) -> bool:
-    """check if element faces are in contact
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): first element ID
-        element (int): second element ID
-
-    Returns:
-        bool: true/false
-    """
-
 
 def create_multi_wall(elements: List[int]) -> None:
     """create multi wall
-
     Args:
-        elements (List[int]): element IDs
-    """
+        elements ( List[int]): elements
 
+    Returns:
+        None
+    """
 
 def get_user_element_ids() -> List[int]:
-    """prompt that user select element IDs in 3D
-
-    Returns:
-        List[int]: elmement ids from selection
-    """
-
-
-def get_element_contact_vertices(first_element: int, second_element: int) -> List[point_3d]:
-    """get element contact vertices
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get user element ids
     Args:
-        element (int): first element ID
-        element (int): second element ID
 
     Returns:
-        List[point_3d]: vertices list
+        List[int]
     """
-
-
-def get_nesting_parent_id(element: int) -> int:
-    """get nesting parent id
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        int: element ID
-    """
-
 
 def get_user_element_ids_with_existing(elements: List[int]) -> List[int]:
-    """
-    """
+    """get user element ids with existing
+    Args:
+        elements ( List[int]): elements
 
+    Returns:
+        List[int]
+    """
 
 def clear_errors() -> None:
-    """
+    """clear errors
+    Args:
+
+    Returns:
+        None
     """
 
-
-def glide_elements(elements: List[int], glide_point: point_3d) -> None:
+def glide_elements(element_i_ds: List[int], glide_point: point_3d) -> None:
     """glide elements
-
     Args:
-        elements (List[int]): element IDs
-        glide_point (point_3d): a glide point
-    """
-
-
-def get_element_contact_facets(first_element: int, second_element: int) -> List[List[point_3d]]:
-    """get element contact faces
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-        element (int): element ID
+        element_i_ds ( List[int]): element_i_ds
+        glide_point ( point_3d): glide_point
 
     Returns:
-        List[List[point_3d]]: contact face vertice list
+        None
     """
 
-
-def get_element_raw_interface_vertices(first_element: int, second_element: int) -> List[point_3d]:
-    """get element raw interface vertices
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def cut_elements_with_miter(first_id: int, second_id: int) -> bool:
+    """cut elements with miter
     Args:
-        element (int): element ID
-        element (int): element ID
+        first_id ( int): first_id
+        second_id ( int): second_id
 
     Returns:
-        List[point_3d]: vertice list
+        bool
     """
 
-
-def cut_elements_with_miter(first_element: int, second_element: int) -> bool:
-    """cut elements with miter. The miter is "cut" on loxal x-axis. 
-
+def cut_element_with_plane(id: int, cut_plane_normal_vector: point_3d, distance_from_global_origin: float) -> bool:
+    """cut element with plane
     Args:
-        element (int): element ID
-        element (int): element ID
+        id ( int): id
+        cut_plane_normal_vector ( point_3d): cut_plane_normal_vector
+        distance_from_global_origin ( float): distance_from_global_origin
 
     Returns:
-        bool: true/false
+        bool
     """
-
-
-def cut_element_with_plane(element: int, cut_plane_normal_vector: point_3d, distance_from_global_origin: float) -> bool:
-    """cut an elment with a plane
-
-    Args:
-        element (int): element ID
-        cut_plane_normal_vector (point_3d): plane normal vector
-        distance_from_global_origin (float): distance from origin to plane
-
-    Returns:
-        bool: true/false
-    """
-
 
 def create_circular_mep(diameter: float, points: List[point_3d]) -> int:
-    """create a circular mep
-
+    """create circular mep
     Args:
-        diameter (float): diameter
-        points (List[point_3d]): vertice list
+        diameter ( float): diameter
+        points ( List[point_3d]): points
 
     Returns:
-        int: element ID
+        int
     """
-
 
 def create_rectangular_mep(width: float, depth: float, points: List[point_3d]) -> int:
-    """create rectangular mep. The mep is orientied by an active element face.
-
+    """create rectangular mep
     Args:
-        width (float): mep width
-        depth (float): mep depth
-        points (List[point_3d]): vertice list
+        width ( float): width
+        depth ( float): depth
+        points ( List[point_3d]): points
 
     Returns:
-        int: element ID
+        int
     """
 
-
-def slice_element_with_plane(element: int, cut_plane_normal_vector: point_3d, distance_from_global_origin: float) -> bool:
-    """slice an elment with a plane
-
+def slice_element_with_plane(id: int, cut_plane_normal_vector: point_3d, distance_from_global_origin: float) -> bool:
+    """slice element with plane
     Args:
-        element (int): element ID
-        cut_plane_normal_vector (point_3d): plane normal vector
-        distance_from_global_origin (float): distance from origin to plane
+        id ( int): id
+        cut_plane_normal_vector ( point_3d): cut_plane_normal_vector
+        distance_from_global_origin ( float): distance_from_global_origin
 
     Returns:
-        bool: true/false
+        bool
     """
-
 
 def create_auto_container_from_standard(elements: List[int], output_name: str, standard_element_name: str) -> int:
-    """create an automatic container from a standard container
-
+    """create auto container from standard
     Args:
-        elements (List[int]): element ID
-        output_name (str): container name
-        standard_element_name (str): default container name
+        elements ( List[int]): elements
+        output_name ( str): output_name
+        standard_element_name ( str): standard_element_name
 
     Returns:
-        int: element ID
+        int
     """
-
 
 def create_auto_export_solid_from_standard_with_reference(elements: List[int], output_name: str, standard_element_name: str, reference_id: int) -> int:
-    """create auto export solid from standard. The orientation is determined according to an element. 
-
+    """create auto export solid from standard with reference
     Args:
-        elements (List[int]): element IDs
-        output_name (str): export solid name
-        standard_element_name (str): standard element name
-        reference_id (int): element ID (reference - orientation)
+        elements ( List[int]): elements
+        output_name ( str): output_name
+        standard_element_name ( str): standard_element_name
+        reference_id ( int): reference_id
 
     Returns:
-        int: element ID
+        int
     """
-
 
 def create_auto_container_from_standard_with_reference(elements: List[int], output_name: str, standard_element_name: str, reference_id: int) -> int:
-    """create auto container from standard. The orientation is determined according to an element. 
-
+    """create auto container from standard with reference
     Args:
-        elements (List[int]): element IDs
-        output_name (str): export solid name
-        standard_element_name (str): standard element name
-        reference_id (int): element ID (reference - orientation)
+        elements ( List[int]): elements
+        output_name ( str): output_name
+        standard_element_name ( str): standard_element_name
+        reference_id ( int): reference_id
 
     Returns:
-        int: element ID
+        int
     """
 
-
-def slice_elements_with_plane_and_get_new_elements(element: int, cut_plane_normal_vector: point_3d, distance_from_global_origin: point_3d) -> List[int]:
-    """slice elments in two with a cutting plane.
-
+def slice_elements_with_plane_and_get_new_elements(a0: int, a1: point_3d, a2: float) -> List[int]:
+    """slice elements with plane and get new elements
     Args:
-        element (int): element ID
-        cut_plane_normal_vector (point_3d): plane normal vector
-        distance_from_global_origin (float): distance from origin to plane
+        a0 ( int): a0
+        a1 ( point_3d): a1
+        a2 ( float): a2
 
     Returns:
-        bool: true/false
+        List[int]
     """
 
-
-def create_surface(points: List[point_3d]) -> int:
-    """create a surface
-
+def create_surface(surface_vertices: List[point_3d]) -> int:
+    """create surface
     Args:
-        points (List[point_3d]): vertex list
+        surface_vertices ( List[point_3d]): surface_vertices
 
     Returns:
-        int: element ID
+        int
     """
-
 
 def convert_circular_beam_to_drilling(elements: List[int]) -> None:
-    """convert circular beam to drilling 
-
+    """convert circular beam to drilling
     Args:
-        elements (List[int]): element ID
-    """
-
-
-def get_standard_export_solid_list() -> List[str]:
-    """get list of standard export solid names
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
+        elements ( List[int]): elements
 
     Returns:
-        List[str]: names
+        None
     """
 
-
-def get_standard_container_list() -> List[str]:
-    """get list of standard container names
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
+def stretch_start_facet(a0: List[int], a1: point_3d) -> None:
+    """stretch start facet
+    Args:
+        a0 ( List[int]): a0
+        a1 ( point_3d): a1
 
     Returns:
-        List[str]: names
+        None
     """
 
-
-def stretch_start_facet(elements: List[int], stretch_vector: point_3d) -> None:
-    """stretch start facet of element(s)
-
+def stretch_end_facet(a0: List[int], a1: point_3d) -> None:
+    """stretch end facet
     Args:
-        elements (List[int]): element ID
-        stretch_vector (point_3d): vector
-    """
-
-
-def stretch_end_facet(elements: List[int], stretch_vector: point_3d) -> None:
-    """stretch end facet of element(s)
-
-    Args:
-        elements (List[int]): element ID
-        stretch_vector (point_3d): vector
-    """
-
-
-def get_variant_sibling_element_ids(element: int) -> List[int]:
-    """get variant sibling element IDs
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
+        a0 ( List[int]): a0
+        a1 ( point_3d): a1
 
     Returns:
-        List[int]: element IDs
+        None
     """
 
-
-def set_export_solid_contents(solid_id: int, elements: List[int]) -> None:
+def set_export_solid_contents(a0: int, a1: List[int]) -> None:
     """set export solid contents
-
     Args:
-        solid_id (int): element ID of export solid
-        elements (List[int]): element IDs to assign
+        a0 ( int): a0
+        a1 ( List[int]): a1
+
+    Returns:
+        None
     """
 
-
-def set_container_contents(container_id: int, elements: List[int]) -> None:
+def set_container_contents(a0: int, a1: List[int]) -> None:
     """set container contents
-
     Args:
-        solid_id (int): element ID
-        elements (List[int]): element IDs
+        a0 ( int): a0
+        a1 ( List[int]): a1
+
+    Returns:
+        None
     """
 
-
-def set_parent_opening_variants_opening_angle(elements: List[int], angle: float) -> None:
+def set_parent_opening_variants_opening_angle(a0: List[int], a1: float) -> None:
     """set parent opening variants opening angle
-
     Args:
-        elements (List[int]): element IDs
-        angle (float): radians
-    """
-
-
-def mirror_move_elements(elements: List[int], plane_definition: point_3d, plane_distance: float) -> None:
-    """mirror elements (no copy)
-
-    Args:
-        elements (List[int]): element IDs
-        plane_definition (point_3d): mirror plane
-        plane_distance (float): perp. distance from origin to plane
-    """
-
-
-def mirror_copy_elements(elements: List[int], plane_definition: point_3d, plane_distance: float) -> List[int]:
-    """mirror elements (copy)
-
-    Args:
-        elements (List[int]): element IDs
-        plane_definition (point_3d): mirror plane
-        plane_distance (float): perp. distance from origin to plane
+        a0 ( List[int]): a0
+        a1 ( float): a1
 
     Returns:
-        List[int]: element IDs
+        None
     """
 
-
-def check_if_point_is_on_element(point: point_3d, element: int) -> bool:
-    """Checks if a point is on a element
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def mirror_move_elements(elements: List[int], plane: point_3d, plane_distance: float) -> None:
+    """mirror move elements
     Args:
-        point (point_3d): a cadwork point
-        element (int): element ID
+        elements ( List[int]): elements
+        plane ( point_3d): plane
+        plane_distance ( float): plane_distance
 
     Returns:
-        bool: if point 
+        None
     """
 
-
-def check_if_point_is_in_element(point: point_3d, element: int) -> bool:
-    """Check if point is in element
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def mirror_copy_elements(elements: List[int], plane: point_3d, plane_distance: float) -> List[int]:
+    """mirror copy elements
     Args:
-        point (point_3d): a cadwork point
-        element (int): element ID
+        elements ( List[int]): elements
+        plane ( point_3d): plane
+        plane_distance ( float): plane_distance
 
     Returns:
-        bool: if point 
+        List[int]
     """
 
-
-def get_bounding_box_vertices_local(element: int, elements: List[int]) -> List[point_3d]:
-    """create a bounding box that is aligned to a reference element. 
-    The bounding box includes all elements contained in the list.
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def reset_element_cadwork_guid(id: int) -> None:
+    """reset element cadwork guid
     Args:
-        element (int): element ID reference element
-        elements (List[int]): element IDs
+        id ( int): id
 
     Returns:
-        List[point_3d]: bbx vertices
+        None
     """
 
-
-def get_bounding_box_vertices_global(elements: List[int]) -> List[point_3d]:
-    """create a bounding box that is aligned to the global coordinate system.
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def create_standard_beam_points(standard_element_name: str, p1: point_3d, p2: point_3d, p3: point_3d) -> int:
+    """create standard beam points
     Args:
-        elements (List[int]): element IDs
+        standard_element_name ( str): standard_element_name
+        p1 ( point_3d): p1
+        p2 ( point_3d): p2
+        p3 ( point_3d): p3
 
     Returns:
-        List[point_3d]: bbx vertices
+        int
     """
 
-
-def create_bounding_box_local(element: int, elements: List[int]) -> int:
-    """create a bounding box that is aligned to a reference element. 
-    The bounding box includes all elements contained in the list.
-
+def create_standard_beam_vectors(standard_element_name: str, length: float, p1: point_3d, xl: point_3d, zl: point_3d) -> int:
+    """create standard beam vectors
     Args:
-        element (int): element ID reference element
-        elements (List[int]): element IDs
+        standard_element_name ( str): standard_element_name
+        length ( float): length
+        p1 ( point_3d): p1
+        xl ( point_3d): xl
+        zl ( point_3d): zl
 
     Returns:
-        int: element ID bounding box
+        int
     """
 
-
-def create_bounding_box_global(elements: List[int]) -> int:
-    """create a bounding box that is aligned to the global coordinate system.
-
+def create_standard_panel_points(standard_element_name: str, p1: point_3d, p2: point_3d, p3: point_3d) -> int:
+    """create standard panel points
     Args:
-        elements (List[int]): element IDs
+        standard_element_name ( str): standard_element_name
+        p1 ( point_3d): p1
+        p2 ( point_3d): p2
+        p3 ( point_3d): p3
 
     Returns:
-        int: element ID bounding box
+        int
     """
 
-
-def extrude_surface_to_auxiliary_vector(element: int, vector: point_3d) -> int:
-    """Extrude a surface to a auxiliary element. 
-
+def create_standard_panel_vectors(standard_element_name: str, length: float, p1: point_3d, xl: point_3d, zl: point_3d) -> int:
+    """create standard panel vectors
     Args:
-        element (int): element ID
-        vector (point_3d): vector e.g. point_3d(0,0,1200)
+        standard_element_name ( str): standard_element_name
+        length ( float): length
+        p1 ( point_3d): p1
+        xl ( point_3d): xl
+        zl ( point_3d): zl
 
     Returns:
-        int: element ID
+        int
     """
 
-
-def extrude_surface_to_beam_vector(element: int, vector: point_3d) -> int:
-    """Extrude a surface to a beam. 
-
+def create_standard_steel_points(standard_element_name: str, p1: point_3d, p2: point_3d, p3: point_3d) -> int:
+    """create standard steel points
     Args:
-        element (int): element ID
-        vector (point_3d): vector e.g. point_3d(0,0,1200)
+        standard_element_name ( str): standard_element_name
+        p1 ( point_3d): p1
+        p2 ( point_3d): p2
+        p3 ( point_3d): p3
 
     Returns:
-        int: element ID
+        int
     """
 
-
-def extrude_surface_to_panel_vector(element: int, vector: point_3d) -> int:
-    """Extrude a surface to a panel.
-
+def create_standard_steel_vectors(standard_element_name: str, length: float, p1: point_3d, xl: point_3d, zl: point_3d) -> int:
+    """create standard steel vectors
     Args:
-        element (int): element ID
-        vector (point_3d): vector e.g. point_3d(0,0,1200)
+        standard_element_name ( str): standard_element_name
+        length ( float): length
+        p1 ( point_3d): p1
+        xl ( point_3d): xl
+        zl ( point_3d): zl
 
     Returns:
-        int: element ID
+        int
     """
 
-
-def activate_parts_without_situation() -> List[int]:
-    """
+def move_element_with_undo(element_id_list: List[int], vector: point_3d) -> None:
+    """move element with undo
+    Args:
+        element_id_list ( List[int]): element_id_list
+        vector ( point_3d): vector
 
     Returns:
-        List[int]: element IDs
+        None
     """
-
-
-def activate_rv_without_situation() -> List[int]:
-    """
-
-    Returns:
-        List[int]: element IDs
-    """
-
-
-def parts_situation_manual(element: int, addChilds: List[int], removeChilds: List[int]) -> None:
-    """
-
-    Args:
-        element (int): element ID
-        addChilds (List[int]): add childs
-        removeChilds (List[int]): remove childs
-    """
-
-
-def auto_set_parts_situation(elements: List[int]) -> None:
-    """
-
-    Args:
-        elementIDs (List[int]): element IDs
-    """
-
-
-def auto_set_rough_volume_situation(elements: List[int]) -> None:
-    """
-
-    Args:
-        elements (List[int]): element IDs
-    """
-
-
-def rough_volume_situation_manual(element: int, addPartner: List[int], removePartner: List[int]) -> None:
-    """
-
-    Args:
-        element (int): element ID
-        addPartner (List[int]): add partner
-        removePartner (List[int]): remove partner
-    """
-
-
-def add_elements_to_detail(elements: List[int], detail_group: int) -> None:
-    """
-    detail groups:
-    0: without assigment
-
-    1: Angle; 2: Area; 3: Cross; 4: Edge; 5: End; 6: Line; 7: Open; 
-    8: T; 9: FloorArea; 10: FloorEnd; 11: FloorLine; 12: FloorOpen
-
-    Args:
-        elements (List[int]): element IDs
-        detail_group (int): a detail group
-    """
-
-
-def get_all_nesting_raw_parts() -> List[int]:
-    """Get all nesting raw parts.
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Returns:
-        List[int]: element IDs
-    """
-
-
-def get_standard_beam_list() -> List[str]:
-    """Get standard beam list
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Returns:
-        List[str]: standard beam names
-    """
-
-
-def get_standard_panel_list() -> List[str]:
-    """Get standard panel list
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Returns:
-        List[str]: standard panel names
-    """
-
-
-def get_reference_element(element: int) -> int:
-    """Get reference element
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        int: element ID
-    """
-
-
-def create_linear_optimization(elements: List[int], optimization_number: int,
-                               total_length: float, start_cut: float,
-                               end_cut: float, saw_kerf: float, is_production_list: bool) -> int:
-    """create linear optimization
-
-    Args:
-        elements (List[int]): element IDs
-        optimization_number (int): number of nesting volume
-        total_length (float): total length nesting volume
-        start_cut (float): start cut
-        end_cut (float): end cut
-        saw_kerf (float): saw kerf
-        is_production_list (bool): measurements
-
-    Returns:
-        int: element ID
-    """
-
-
-def move_element_with_undo(elements: List[int], aVector: point_3d) -> None:
-    """Move elements and add 'step' to undo memory.
-
-     Examples:
-        >>> import element_controller as ec
-        >>> import geometry_controller as gc
-        >>> import cadwork
-        >>> element_ids = ec.get_active_identifiable_element_ids()
-        >>> ec.move_element_with_undo(element_ids, gc.get_yl(*element_ids) * 1500.)
-
-    Args:
-        elements (List[int]): element IDs
-        aVector (point_3d): a Target
-    """
-
 
 def create_normal_axis_points(p1: point_3d, p2: point_3d) -> int:
     """create normal axis points
-
     Args:
-        p1 (point_3d): point 1
-        p2 (point_3d): point 2
+        p1 ( point_3d): p1
+        p2 ( point_3d): p2
 
     Returns:
-        int: element ID
+        int
     """
 
-
-def create_normal_axis_vectors(length: float, p1: point_3d, direction: point_3d) -> int:
+def create_normal_axis_vectors(length: float, p1: point_3d, xl: point_3d) -> int:
     """create normal axis vectors
-
     Args:
-        length (float): length
-        p1 (point_3d): point 1
-        direction (point_3d): direction
+        length ( float): length
+        p1 ( point_3d): p1
+        xl ( point_3d): xl
 
     Returns:
-        int: element ID
+        int
     """
 
-
-def convert_bolt_to_standardconnector(elements: List[int], standard_connector_axis_name: str) -> int:
-    """convert bolt to standard connector
-
+def convert_bolt_to_standardconnector(elements: List[int], standard_element_name: str) -> None:
+    """convert bolt to standardconnector
     Args:
-        elements (List[int]): element IDs
-        standard_connector_axis_name (str): standard connector axis name
+        elements ( List[int]): elements
+        standard_element_name ( str): standard_element_name
 
     Returns:
-        int: element ID
+        None
     """
 
-
-def get_joined_elements(elmement: int) -> List[int]:
-    """Get joined elements
-
+def extrude_surface_to_auxiliary_vector(surface: int, vector: point_3d) -> int:
+    """extrude surface to auxiliary vector
     Args:
-        element (int): element ID
+        surface ( int): surface
+        vector ( point_3d): vector
 
     Returns:
-        List[int]: element IDs
+        int
     """
 
-
-def start_element_module_calculation_silently(elements: List[int]) -> None:
-    """Start element module calculation silently
-
+def extrude_surface_to_panel_vector(surface: int, vector: point_3d) -> int:
+    """extrude surface to panel vector
     Args:
-        elements (List[int]): element IDs
-    """
-
-
-def replace_physical_drillings_with_drilling_axes(elements: List[int], minimum_diameter: float, maximum_diameter: float) -> List[int]:
-    """Replace physical drillings with drilling axes that are in the range of the given diameters.
-
-    Args:
-        elements (List[int]): element IDs
-        minimum_diameter (float): minimum diameter
-        maximum_diameter (float): maximum diameter
+        surface ( int): surface
+        vector ( point_3d): vector
 
     Returns:
-        List[int]: element IDs
+        int
     """
+
+def extrude_surface_to_beam_vector(surface: int, vector: point_3d) -> int:
+    """extrude surface to beam vector
+    Args:
+        surface ( int): surface
+        vector ( point_3d): vector
+
+    Returns:
+        int
+    """
+
+def convert_container_to_container_block(elements: List[int]) -> None:
+    """convert container to container block
+    Args:
+        elements ( List[int]): elements
+
+    Returns:
+        None
+    """
+
+def create_bounding_box_local(a0: int, a1: List[int]) -> int:
+    """create bounding box local
+    Args:
+        a0 ( int): a0
+        a1 ( List[int]): a1
+
+    Returns:
+        int
+    """
+
+def create_bounding_box_global(a1: List[int]) -> int:
+    """create bounding box global
+    Args:
+        a1 ( List[int]): a1
+
+    Returns:
+        int
+    """
+
+def convert_auxiliary_to_panel(a0: List[int]) -> None:
+    """convert auxiliary to panel
+    Args:
+        a0 ( List[int]): a0
+
+    Returns:
+        None
+    """
+
+def convert_auxiliary_to_beam(a0: List[int]) -> None:
+    """convert auxiliary to beam
+    Args:
+        a0 ( List[int]): a0
+
+    Returns:
+        None
+    """
+
+def auto_set_rough_volume_situation(a0: List[int]) -> None:
+    """auto set rough volume situation
+    Args:
+        a0 ( List[int]): a0
+
+    Returns:
+        None
+    """
+
+def rough_volume_situation_manual(a0: int, a1: List[int], a2: List[int]) -> None:
+    """rough volume situation manual
+    Args:
+        a0 ( int): a0
+        a1 ( List[int]): a1
+        a2 ( List[int]): a2
+
+    Returns:
+        None
+    """
+
+def auto_set_parts_situation(a0: List[int]) -> None:
+    """auto set parts situation
+    Args:
+        a0 ( List[int]): a0
+
+    Returns:
+        None
+    """
+
+def parts_situation_manual(a0: int, a1: List[int], a2: List[int]) -> None:
+    """parts situation manual
+    Args:
+        a0 ( int): a0
+        a1 ( List[int]): a1
+        a2 ( List[int]): a2
+
+    Returns:
+        None
+    """
+
+def activate_rv_without_situation() -> List[int]:
+    """activate rv without situation
+    Args:
+
+    Returns:
+        List[int]
+    """
+
+def activate_parts_without_situation() -> List[int]:
+    """activate parts without situation
+    Args:
+
+    Returns:
+        List[int]
+    """
+
+def add_elements_to_detail(a0: List[int], a1: int) -> None:
+    """add elements to detail
+    Args:
+        a0 ( List[int]): a0
+        a1 ( int): a1
+
+    Returns:
+        None
+    """
+
+def subtract_elements_with_undo(hard_elements: List[int], soft_elements: List[int], with_undo: bool) -> List[int]:
+    """subtract elements with undo
+    Args:
+        hard_elements ( List[int]): hard_elements
+        soft_elements ( List[int]): soft_elements
+        with_undo ( bool): with_undo
+
+    Returns:
+        List[int]
+    """
+
+def create_linear_optimization(elements: List[int], optimization_number: int, total_length: float, start_cut: float, end_cut: float, saw_kerf: float, is_production_list: bool) -> int:
+    """create linear optimization
+    Args:
+        elements ( List[int]): elements
+        optimization_number ( int): optimization_number
+        total_length ( float): total_length
+        start_cut ( float): start_cut
+        end_cut ( float): end_cut
+        saw_kerf ( float): saw_kerf
+        is_production_list ( bool): is_production_list
+
+    Returns:
+        int
+    """
+
+def start_element_module_calculation_silently(covers: List[int]) -> None:
+    """start element module calculation silently
+    Args:
+        covers ( List[int]): covers
+
+    Returns:
+        None
+    """
+
+def replace_physical_drillings_with_drilling_axes(a0: List[int], a1: float, a2: float) -> List[int]:
+    """replace physical drillings with drilling axes
+    Args:
+        a0 ( List[int]): a0
+        a1 ( float): a1
+        a2 ( float): a2
+
+    Returns:
+        List[int]
+    """
+
+def cut_element_with_processing_group(a0: int, a1: int) -> None:
+    """cut element with processing group
+    Args:
+        a0 ( int): a0
+        a1 ( int): a1
+
+    Returns:
+        None
+    """
+
+def add_element_to_detail(a0: List[int], a1: int) -> None:
+    """add element to detail
+    Args:
+        a0 ( List[int]): a0
+        a1 ( int): a1
+
+    Returns:
+        None
+    """
+
+def convert_elements_to_auxiliary_elements(a0: List[int]) -> None:
+    """convert elements to auxiliary elements
+    Args:
+        a0 ( List[int]): a0
+
+    Returns:
+        None
+    """
+
+def create_circular_axis_points(a0: float, a1: point_3d, a2: point_3d) -> int:
+    """create circular axis points
+    Args:
+        a0 ( float): a0
+        a1 ( point_3d): a1
+        a2 ( point_3d): a2
+
+    Returns:
+        int
+    """
+
+def create_circular_axis_vector(a0: float, a1: float, a2: point_3d, a3: point_3d) -> int:
+    """create circular axis vector
+    Args:
+        a0 ( float): a0
+        a1 ( float): a1
+        a2 ( point_3d): a2
+        a3 ( point_3d): a3
+
+    Returns:
+        int
+    """
+
+def create_polygon_panel(polygon_vertices: List[point_3d], thickness: float, xl: point_3d, zl: point_3d) -> int:
+    """create polygon panel
+    Args:
+        polygon_vertices ( List[point_3d]): polygon_vertices
+        thickness ( float): thickness
+        xl ( point_3d): xl
+        zl ( point_3d): zl
+
+    Returns:
+        int
+    """
+
+def cut_elements_with_overmeasure(a0: List[int], a1: List[int]) -> None:
+    """cut elements with overmeasure
+    Args:
+        a0 ( List[int]): a0
+        a1 ( List[int]): a1
+
+    Returns:
+        None
+    """
+
+def cut_log_corner_joint(a0: str, a1: List[int]) -> None:
+    """cut log corner joint
+    Args:
+        a0 ( str): a0
+        a1 ( List[int]): a1
+
+    Returns:
+        None
+    """
+
+def get_edge_selection(a0: List[int]) -> edge_list:
+    """get edge selection
+    Args:
+        a0 ( List[int]): a0
+
+    Returns:
+        edge_list
+    """
+
+def get_facets_with_lasso(a0: List[int]) -> facet_list:
+    """get facets with lasso
+    Args:
+        a0 ( List[int]): a0
+
+    Returns:
+        facet_list
+    """
+
+def create_standard_element_from_guid_points(a0: str, a1: point_3d, a2: point_3d, a3: point_3d) -> int:
+    """create standard element from guid points
+    Args:
+        a0 ( str): a0
+        a1 ( point_3d): a1
+        a2 ( point_3d): a2
+        a3 ( point_3d): a3
+
+    Returns:
+        int
+    """
+
+def create_standard_element_from_guid_vectors(a0: str, a1: float, a2: point_3d, a3: point_3d, a4: point_3d) -> int:
+    """create standard element from guid vectors
+    Args:
+        a0 ( str): a0
+        a1 ( float): a1
+        a2 ( point_3d): a2
+        a3 ( point_3d): a3
+        a4 ( point_3d): a4
+
+    Returns:
+        int
+    """
+
+def fillet_edge(a0: int, a1: point_3d, a2: point_3d, a3: float) -> None:
+    """fillet edge
+    Args:
+        a0 ( int): a0
+        a1 ( point_3d): a1
+        a2 ( point_3d): a2
+        a3 ( float): a3
+
+    Returns:
+        None
+    """
+
+def chamfer_edge(a0: int, a1: point_3d, a2: point_3d, a3: float) -> None:
+    """chamfer edge
+    Args:
+        a0 ( int): a0
+        a1 ( point_3d): a1
+        a2 ( point_3d): a2
+        a3 ( float): a3
+
+    Returns:
+        None
+    """
+
+def convert_drilling_to_circular_beam(elements: List[int]) -> None:
+    """convert drilling to circular beam
+    Args:
+        elements ( List[int]): elements
+
+    Returns:
+        None
+    """
+
+def convert_lines_to_surfaces(elements: List[int]) -> List[int]:
+    """convert lines to surfaces
+    Args:
+        elements ( List[int]): elements
+
+    Returns:
+        List[int]
+    """
+
+def convert_surfaces_to_volume(elements: List[int]) -> int:
+    """convert surfaces to volume
+    Args:
+        elements ( List[int]): elements
+
+    Returns:
+        int
+    """
+
+def get_all_identifiable_element_ids() -> List[int]:
+    """get all identifiable element ids
+    Args:
+
+    Returns:
+        List[int]
+    """
+
+def get_visible_identifiable_element_ids() -> List[int]:
+    """get visible identifiable element ids
+    Args:
+
+    Returns:
+        List[int]
+    """
+
+def get_invisible_identifiable_element_ids() -> List[int]:
+    """get invisible identifiable element ids
+    Args:
+
+    Returns:
+        List[int]
+    """
+
+def get_active_identifiable_element_ids() -> List[int]:
+    """get active identifiable element ids
+    Args:
+
+    Returns:
+        List[int]
+    """
+
+def get_inactive_all_identifiable_element_ids() -> List[int]:
+    """get inactive all identifiable element ids
+    Args:
+
+    Returns:
+        List[int]
+    """
+
+def get_inactive_visible_identifiable_element_ids() -> List[int]:
+    """get inactive visible identifiable element ids
+    Args:
+
+    Returns:
+        List[int]
+    """
+
+def check_if_point_is_in_element(point: point_3d, element_id: int) -> bool:
+    """check if point is in element
+    Args:
+        point ( point_3d): point
+        element_id ( int): element_id
+
+    Returns:
+        bool
+    """
+
+def check_if_point_is_on_element(point: point_3d, element_id: int) -> bool:
+    """check if point is on element
+    Args:
+        point ( point_3d): point
+        element_id ( int): element_id
+
+    Returns:
+        bool
+    """
+
+def get_element_contact_facets(first_id: int, second_id: int) -> facet_list:
+    """get element contact facets
+    Args:
+        first_id ( int): first_id
+        second_id ( int): second_id
+
+    Returns:
+        facet_list
+    """
+
+def get_element_raw_interface_vertices(first_id: int, second_id: int) -> List[point_3d]:
+    """get element raw interface vertices
+    Args:
+        first_id ( int): first_id
+        second_id ( int): second_id
+
+    Returns:
+        List[point_3d]
+    """
+
+def get_standard_export_solid_list() -> List[str]:
+    """get standard export solid list
+    Args:
+
+    Returns:
+        List[str]
+    """
+
+def get_standard_container_list() -> List[str]:
+    """get standard container list
+    Args:
+
+    Returns:
+        List[str]
+    """
+
+def get_standard_beam_list() -> List[str]:
+    """get standard beam list
+    Args:
+
+    Returns:
+        List[str]
+    """
+
+def get_standard_panel_list() -> List[str]:
+    """get standard panel list
+    Args:
+
+    Returns:
+        List[str]
+    """
+
+def get_variant_sibling_element_ids(a0: int) -> List[int]:
+    """get variant sibling element ids
+    Args:
+        a0 ( int): a0
+
+    Returns:
+        List[int]
+    """
+
+def get_reference_element(element: int) -> int:
+    """get reference element
+    Args:
+        element ( int): element
+
+    Returns:
+        int
+    """
+
+def get_element_contact_vertices(first_id: int, second_id: int) -> List[point_3d]:
+    """get element contact vertices
+    Args:
+        first_id ( int): first_id
+        second_id ( int): second_id
+
+    Returns:
+        List[point_3d]
+    """
+
+def get_nesting_parent_id(id: int) -> int:
+    """get nesting parent id
+    Args:
+        id ( int): id
+
+    Returns:
+        int
+    """
+
+def check_if_elements_are_in_collision(first_element_id: int, second_element_id: int) -> bool:
+    """check if elements are in collision
+    Args:
+        first_element_id ( int): first_element_id
+        second_element_id ( int): second_element_id
+
+    Returns:
+        bool
+    """
+
+def check_if_elements_are_in_contact(first_element_id: int, second_element_id: int) -> bool:
+    """check if elements are in contact
+    Args:
+        first_element_id ( int): first_element_id
+        second_element_id ( int): second_element_id
+
+    Returns:
+        bool
+    """
+
+def get_element_module_properties_for_element(id: int) -> element_module_properties:
+    """get element module properties for element
+    Args:
+        id ( int): id
+
+    Returns:
+        element_module_properties
+    """
+
+def get_element_type_description(id: int) -> str:
+    """get element type description
+    Args:
+        id ( int): id
+
+    Returns:
+        str
+    """
+
+def get_opening_variant_ids(elements: List[int], opening_type: int) -> List[int]:
+    """get opening variant ids
+    Args:
+        elements ( List[int]): elements
+        opening_type ( int): opening_type
+
+    Returns:
+        List[int]
+    """
+
+def get_parent_container_id(id: int) -> int:
+    """get parent container id
+    Args:
+        id ( int): id
+
+    Returns:
+        int
+    """
+
+def get_export_solid_content_elements(id: int) -> List[int]:
+    """get export solid content elements
+    Args:
+        id ( int): id
+
+    Returns:
+        List[int]
+    """
+
+def get_container_content_elements(id: int) -> List[int]:
+    """get container content elements
+    Args:
+        id ( int): id
+
+    Returns:
+        List[int]
+    """
+
+def get_element_detail_path() -> str:
+    """get element detail path
+    Args:
+
+    Returns:
+        str
+    """
+
+def get_element_cadwork_guid(id: int) -> str:
+    """get element cadwork guid
+    Args:
+        id ( int): id
+
+    Returns:
+        str
+    """
+
+def get_bounding_box_vertices_local(a0: int, a1: List[int]) -> List[point_3d]:
+    """get bounding box vertices local
+    Args:
+        a0 ( int): a0
+        a1 ( List[int]): a1
+
+    Returns:
+        List[point_3d]
+    """
+
+def get_bounding_box_vertices_global(a0: List[int]) -> List[point_3d]:
+    """get bounding box vertices global
+    Args:
+        a0 ( List[int]): a0
+
+    Returns:
+        List[point_3d]
+    """
+
+def get_all_nesting_raw_parts() -> List[int]:
+    """get all nesting raw parts
+    Args:
+
+    Returns:
+        List[int]
+    """
+
+def get_joined_elements(a0: int) -> List[int]:
+    """get joined elements
+    Args:
+        a0 ( int): a0
+
+    Returns:
+        List[int]
+    """
+
+def check_element_duplicates(elements: List[int]) -> List[int]:
+    """check element duplicates
+    Args:
+        elements ( List[int]): elements
+
+    Returns:
+        List[int]
+    """
+
+def get_elements_in_contact(a0: int) -> List[int]:
+    """get elements in contact
+    Args:
+        a0 ( int): a0
+
+    Returns:
+        List[int]
+    """
+
+def create_text_object_with_options(position: point_3d, xl: point_3d, zl: point_3d, text_options: text_object_options) -> int:
+    """create text object with options
+    Args:
+        position ( point_3d): position
+        xl ( point_3d): xl
+        zl ( point_3d): zl
+        text_options ( text_object_options): text_options
+
+    Returns:
+        int
+    """
+

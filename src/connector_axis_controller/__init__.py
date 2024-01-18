@@ -1,275 +1,313 @@
 from typing import List
+from cadwork import point_3d
 
-from cadwork import (point_3d)
-
-def create_standard_connector(name: str, start: point_3d, end: point_3d) -> int: 
-    """Creates a standard connector axis between two points.
-
+def get_last_error(error_code: int) -> str:
+    """get last error
     Args:
-        name (str): Name of the standard axis
-        start (point_3d): Point 1
-        end (point_3d): Point 2
+        error_code ( int): error_code
 
     Returns:
-        int: element ID
+        str
     """
-def get_item_guid_by_name(name: str, number: int) -> str: 
-    """Get CA guid item by element name
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
 
+def create_standard_connector(axis_name: str, point1: point_3d, point2: point_3d) -> int:
+    """create standard connector
     Args:
-        name (str): CA name
-        number (int): item type
+        axis_name ( str): axis_name
+        point1 ( point_3d): point1
+        point2 ( point_3d): point2
 
     Returns:
-        str: guid
+        int
     """
-def get_bolt_length(number: int) -> float: 
-    """Gets the Bolt Length
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
 
+def set_bolt_length(axis_id: int, length: float) -> None:
+    """set bolt length
     Args:
-        number (int): element ID
+        axis_id ( int): axis_id
+        length ( float): length
 
     Returns:
-        float: bolt length
+        None
     """
-def set_bolt_length(number: int, value: float) -> None: 
-    """Sets the Bolt Length
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
 
+def set_bolt_length_automatic(axis_id: int, length_automatic: bool) -> None:
+    """set bolt length automatic
     Args:
-        number (int): element ID
-        value (float): length
-    """
-def get_bolt_over_length(number: int) -> float: 
-    """Gets the Bolt OverLength
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        number (int): element ID
+        axis_id ( int): axis_id
+        length_automatic ( bool): length_automatic
 
     Returns:
-        float: bolt length
+        None
     """
-def set_bolt_over_length(number: int, value: float) -> None: 
-    """Set bolt OverLength
 
+def set_diameter(axis_id: int, diameter: float) -> None:
+    """set diameter
     Args:
-        number (int): element ID
-        value (float): length
-    """
-def get_bolt_length_automatic(number: int) -> bool: 
-    """Returns if Bolt Length Automatic is set
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        number (int): element ID
+        axis_id ( int): axis_id
+        diameter ( float): diameter
 
     Returns:
-        bool: check if automatic is set
+        None
     """
-def set_bolt_length_automatic(number: int, value: bool) -> None: 
-    """Set bolt length automatic
 
+def set_section_diameter(axis_id: int, section_nr: int, diameter: float) -> None:
+    """set section diameter
     Args:
-        number (int): element ID
-        value (bool): length automatic
-    """
-def get_bolt_item_guid(number: int) -> str: 
-    """Gets the Guid of the Bolt Item
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        number (int): _description_
+        axis_id ( int): axis_id
+        section_nr ( int): section_nr
+        diameter ( float): diameter
 
     Returns:
-        str: _description_
+        None
     """
-def set_bolt_item(number: int, item: str) -> None: 
-    """Sets the Bolt Item
 
+def check_axis(axis_id: int) -> bool:
+    """check axis
     Args:
-        number (int): element ID
-        item (str): Item Guid
-    """
-def set_diameter(number: int, value: float) -> None: 
-    """Sets the Drilling Diameter
-
-    Args:
-        number (int): element ID
-        value (float): diameter
-    """
-def set_section_diameter(number: int, section_nr: int, value: float) -> None: 
-    """Sets the Drilling Diameter for a specific Sections
-
-    Args:
-        number (int): element ID
-        section_nr (int): Section number
-        value (float): diameter
-    """
-def get_section_diameter(number: int, section_nr: int) -> float: 
-    """Gets the Drilling Diameter of a specific Sections
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        number (int): element ID
-        other_number (int): Section number
+        axis_id ( int): axis_id
 
     Returns:
-        float: diameter
+        bool
     """
 
-def get_section_count(element: int) -> int:
-    """Return the number of section
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def clear_errors() -> None:
+    """clear errors
     Args:
-        element (int): axis ID
 
     Returns:
-        int: number of section
+        None
     """
 
-def get_section_material_name(element: int, section_nr:int) -> str:
-    """Returns material of a section contact element
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def update_axis_cutting_ability(axis_i_ds: List[int]) -> None:
+    """update axis cutting ability
     Args:
-        element (int): axis ID
-        section_nr (int): section nr
+        axis_i_ds ( List[int]): axis_i_ds
 
     Returns:
-        str: material name
+        None
     """
 
-def get_axis_items_guids(number: int) -> List[str]: 
-    """Returns a list of GUIDs of all axis items.
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def set_bolt_item(axis_id: int, item_guid: str) -> None:
+    """set bolt item
     Args:
-        number (int): element ID
+        axis_id ( int): axis_id
+        item_guid ( str): item_guid
 
     Returns:
-        List[str]: elemnt IDs
+        None
     """
-def get_axis_item_name(guid: str) -> str: 
-    """Returns the name of an axis item.
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
 
+def create_blank_connector(a0: float, a1: point_3d, a2: point_3d) -> int:
+    """create blank connector
     Args:
-        name (str): guid
+        a0 ( float): a0
+        a1 ( point_3d): a1
+        a2 ( point_3d): a2
 
     Returns:
-        str: element name
+        int
     """
-def get_axis_item_material(name: str) -> str: 
-    """Returns the material of an axis item.
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
 
+def import_from_file(a0: str) -> None:
+    """import from file
     Args:
-        name (str): guid
+        a0 ( str): a0
 
     Returns:
-        str: element name
+        None
     """
-def get_axis_item_norm(name: str) -> str: 
-    """Returns the norm of an axis item.
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
 
+def start_configuration_dialog() -> None:
+    """start configuration dialog
     Args:
-        name (str): guid
 
     Returns:
-        str: norm
+        None
     """
-def get_axis_item_strength_category(name: str) -> str: 
-    """Returns the strength category of an axis item.
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
 
+def get_item_guid_by_name(name: str, item_type: int) -> str:
+    """get item guid by name
     Args:
-        name (str): guid
+        name ( str): name
+        item_type ( int): item_type
 
     Returns:
-        str: strength category 
+        str
     """
-def get_axis_item_user_field(name: str, number: int) -> str: 
-    """Returns an userfield value of an axis item.
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
 
+def get_bolt_length(axis_id: int) -> float:
+    """get bolt length
     Args:
-        name (str): guid
-        number (int): item number
+        axis_id ( int): axis_id
 
     Returns:
-        str: item user field
+        float
     """
-def get_axis_item_order_number(name: str) -> str: 
-    """Returns the strength category of an axis item.
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
 
+def get_bolt_over_length(axis_id: int) -> float:
+    """get bolt over length
     Args:
-        name (str): guid
+        axis_id ( int): axis_id
 
     Returns:
-        str: item order number
+        float
     """
-def get_bolt_order_number(number: int) -> str: 
-    """Returns the ordernumber of a bolt item.
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
 
+def set_bolt_over_length(axis_id: int, over_length: float) -> None:
+    """set bolt over length
     Args:
-        number (int): element ID
+        axis_id ( int): axis_id
+        over_length ( float): over_length
 
     Returns:
-        str: Order number
+        None
     """
-def check_axis(number: int) -> bool: 
-    """Check connector axis. 
 
+def get_bolt_length_automatic(axis_id: int) -> bool:
+    """get bolt length automatic
     Args:
-        number (int): element ID
+        axis_id ( int): axis_id
 
     Returns:
-        bool: result
+        bool
     """
 
-def update_axis_cutting_ability(elements:List[int]) -> None:
-    """Update Connector axis cutting ability.
-
+def get_bolt_item_guid(axis_id: int) -> str:
+    """get bolt item guid
     Args:
-        elements (List[int]): element IDs
-    """
-
-def get_section_contact_element(element: int, section_nr:int) -> int:
-    """Get section contact element.
-    
-    Examples:
-        >>> element_ids = [610415]
-        >>> ac.get_section_contact_element(*element_ids, 0)
-        >>> 545121
-
-    Args:
-        element (int): a axis ID
-        section_nr (int): a section number
+        axis_id ( int): axis_id
 
     Returns:
-        int: element ID
+        str
     """
+
+def get_section_diameter(axis_id: int, section_nr: int) -> float:
+    """get section diameter
+    Args:
+        axis_id ( int): axis_id
+        section_nr ( int): section_nr
+
+    Returns:
+        float
+    """
+
+def get_axis_items_guids(axis_id: int) -> List[str]:
+    """get axis items guids
+    Args:
+        axis_id ( int): axis_id
+
+    Returns:
+        List[str]
+    """
+
+def get_axis_item_name(guid: str) -> str:
+    """get axis item name
+    Args:
+        guid ( str): guid
+
+    Returns:
+        str
+    """
+
+def get_axis_item_material(guid: str) -> str:
+    """get axis item material
+    Args:
+        guid ( str): guid
+
+    Returns:
+        str
+    """
+
+def get_axis_item_norm(guid: str) -> str:
+    """get axis item norm
+    Args:
+        guid ( str): guid
+
+    Returns:
+        str
+    """
+
+def get_axis_item_strength_category(guid: str) -> str:
+    """get axis item strength category
+    Args:
+        guid ( str): guid
+
+    Returns:
+        str
+    """
+
+def get_axis_item_user_field(guid: str, user_item_nr: int) -> str:
+    """get axis item user field
+    Args:
+        guid ( str): guid
+        user_item_nr ( int): user_item_nr
+
+    Returns:
+        str
+    """
+
+def get_axis_item_order_number(guid: str) -> str:
+    """get axis item order number
+    Args:
+        guid ( str): guid
+
+    Returns:
+        str
+    """
+
+def get_bolt_order_number(axis_id: int) -> str:
+    """get bolt order number
+    Args:
+        axis_id ( int): axis_id
+
+    Returns:
+        str
+    """
+
+def get_section_count(axis_id: int) -> int:
+    """get section count
+    Args:
+        axis_id ( int): axis_id
+
+    Returns:
+        int
+    """
+
+def get_section_material_name(axis_id: int, section_nr: int) -> str:
+    """get section material name
+    Args:
+        axis_id ( int): axis_id
+        section_nr ( int): section_nr
+
+    Returns:
+        str
+    """
+
+def get_section_contact_element(a0: float, a1: int) -> int:
+    """get section contact element
+    Args:
+        a0 ( float): a0
+        a1 ( int): a1
+
+    Returns:
+        int
+    """
+
+def get_bolt_diameter(a0: int) -> float:
+    """get bolt diameter
+    Args:
+        a0 ( int): a0
+
+    Returns:
+        float
+    """
+
+def get_standard_connector_list() -> List[str]:
+    """get standard connector list
+    Args:
+
+    Returns:
+        List[str]
+    """
+

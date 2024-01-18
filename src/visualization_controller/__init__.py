@@ -1,352 +1,546 @@
 from typing import List
-from cadwork import (rgb_color,
-                     visibility_state,
-                     activation_state,
-                     point_3d)
+from cadwork import point_3d
+from cadwork import rgb_color
+from cadwork import camera_data
 
 
-def get_color(element: int) -> int:
-    """
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-
+def get_last_error(error_code: int) -> str:
+    """get last error
     Args:
-        number (int): element ID
+        error_code ( int): error_code
 
     Returns:
-        int: color number
+        strerror string
     """
 
 
-def set_color(elements: List[int], color: int) -> None:
-    """
-    Examples:
-        >>> set_color([123456, 234567], 5)
-
+def set_color(element_id_list: List[int], color_id: int) -> None:
+    """set color
     Args:
-        elements (List[int]): element IDs
-        color (int): color number
-    """
-
-
-def get_opengl_color(element: int) -> rgb_color:
-    """
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
+        color_id ( int): color_id
 
     Returns:
-        rgb_color: rgb color 
+        None
     """
 
 
-def set_opengl_color(element: int, color: rgb_color) -> None:
-    """_summary_
-
+def set_opengl_color(element_id_list: List[int], color: None) -> None:
+    """set opengl color
     Args:
-        element (int): element ID
-        color (rgb_color): rgb color
-    """
-
-
-def is_active(element: int) -> bool:
-    """Tests if element is active
-
-    Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
+        color ( None): color
 
     Returns:
-        bool: result
+        None
     """
 
 
-def set_active(elements: List[int]) -> None:
-    """Set elements active
-
+def is_active(id: int) -> bool:
+    """is active
     Args:
-        elements (List[int]): element IDs
-    """
-
-
-def set_inactive(elements: List[int]) -> None:
-    """Set elements inactive
-
-    Args:
-        elements (List[int]): element IDs
-    """
-
-
-def is_visible(element: int) -> bool:
-    """Check if element is visible
-
-    Args:
-        element (int): element ID
+        id ( int): id
 
     Returns:
-        bool: result
+        boolis element active
     """
 
 
-def set_visible(elements: List[int]) -> None:
-    """Sets the element visible
-
+def set_active(element_id_list: List[int]) -> None:
+    """set active
     Args:
-        elements (List[int]): element IDs
-    """
-
-
-def set_invisible(elements: List[int]) -> None:
-    """Sets the element invisible
-
-    Args:
-        elements (List[int]): element IDs
-    """
-
-
-def is_immutable(element: int) -> bool:
-    """ests if the element is immutable
-
-    Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
 
     Returns:
-        bool: result
+        None
     """
 
 
-def set_immutable(elements: List[int]) -> None:
-    """Sets the element immutable
-
+def set_active(element_id_list: List[int]) -> None:
+    """set active
     Args:
-        elements (List[int]): element IDs
+        element_id_list ( List[int]): element_id_list
+
+    Returns:
+        None
     """
 
 
-def set_mutable(elements: List[int]) -> None:
-    """Sets the element mutable
-
+def set_inactive(element_id_list: List[int]) -> None:
+    """set inactive
     Args:
-        elements (List[int]): element IDs
+        element_id_list ( List[int]): element_id_list
+
+    Returns:
+        None
+    """
+
+
+def is_visible(id: int) -> bool:
+    """is visible
+    Args:
+        id ( int): id
+
+    Returns:
+        boolis element visible
+    """
+
+
+def set_visible(element_id_list: List[int]) -> None:
+    """set visible
+    Args:
+        element_id_list ( List[int]): element_id_list
+
+    Returns:
+        None
+    """
+
+
+def set_invisible(element_id_list: List[int]) -> None:
+    """set invisible
+    Args:
+        element_id_list ( List[int]): element_id_list
+
+    Returns:
+        None
+    """
+
+
+def is_immutable(id: int) -> bool:
+    """is immutable
+    Args:
+        id ( int): id
+
+    Returns:
+        boolis element immutable
+    """
+
+
+def set_immutable(element_id_list: List[int]) -> None:
+    """set immutable
+    Args:
+        element_id_list ( List[int]): element_id_list
+
+    Returns:
+        None
+    """
+
+
+def set_mutable(element_id_list: List[int]) -> None:
+    """set mutable
+    Args:
+        element_id_list ( List[int]): element_id_list
+
+    Returns:
+        None
     """
 
 
 def show_all_elements() -> None:
-    """Shows all elements
+    """show all elements
+    Args:
+
+    Returns:
+        None
     """
 
 
 def hide_all_elements() -> None:
-    """Hide all elements
+    """hide all elements
+    Args:
+
+    Returns:
+        None
     """
 
 
 def zoom_all_elements() -> None:
     """zoom all elements
+    Args:
+
+    Returns:
+        None
     """
 
 
 def zoom_active_elements() -> None:
-    """zoom only active elements
+    """zoom active elements
+    Args:
+
+    Returns:
+        None
     """
 
 
 def refresh() -> None:
-    """Refresh the drawing area
-    """
-
-
-def set_material(elements: List[int], material_id: int) -> None:
-    """Sets the element material
-
+    """refresh
     Args:
-        elements (List[int]): element IDs
-        element (int): element ID
-    """
-
-
-def get_material(element: int) -> int:
-    """Gets the element material
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
 
     Returns:
-        int: material ID
+        None
     """
 
 
-def save_visibility_state() -> visibility_state:
-    """Saves the visibility state
+def set_material(element_id_list: List[int], id: int) -> None:
+    """set material
+    Args:
+        element_id_list ( List[int]): element_id_list
+        id ( int): id
 
     Returns:
-        visibility_state: visibility state
+        None
     """
 
 
-def restore_visibility_state(state: visibility_state) -> None:
-    """Restores the visibility state
-
+def save_visibility_state() -> "visibility_state":
+    """save visibility state
     Args:
-        state (visibility_state): visibility state
-    """
-
-
-def save_activation_state() -> activation_state:
-    """_summary_
 
     Returns:
-        activation_state: _description_
+        visibility_statevisibility state
     """
 
 
-def restore_activation_state(state: activation_state) -> None:
-    """Saves the activation state
-
+def restore_visibility_state(state: None) -> None:
+    """restore visibility state
     Args:
-        state (activation_state): activation state
+        state ( None): state
+
+    Returns:
+        None
+    """
+
+
+def save_activation_state() -> "activation_state":
+    """save activation state
+    Args:
+
+    Returns:
+        activation_stateactivation state
+    """
+
+
+def restore_activation_state(state: None) -> None:
+    """restore activation state
+    Args:
+        state ( None): state
+
+    Returns:
+        None
     """
 
 
 def show_view_positive_x() -> None:
-    """
+    """show view positive x
+    Args:
+
+    Returns:
+        None
     """
 
 
 def show_view_negative_x() -> None:
-    """
+    """show view negative x
+    Args:
+
+    Returns:
+        None
     """
 
 
 def show_view_positive_y() -> None:
-    """
+    """show view positive y
+    Args:
+
+    Returns:
+        None
     """
 
 
 def show_view_negative_y() -> None:
-    """
+    """show view negative y
+    Args:
+
+    Returns:
+        None
     """
 
 
 def show_view_positive_z() -> None:
-    """
+    """show view positive z
+    Args:
+
+    Returns:
+        None
     """
 
 
 def show_view_negative_z() -> None:
-    """
+    """show view negative z
+    Args:
+
+    Returns:
+        None
     """
 
 
 def show_view_standard_axo() -> None:
-    """
+    """show view standard axo
+    Args:
+
+    Returns:
+        None
     """
 
 
 def show_view_wireframe() -> None:
-    """
+    """show view wireframe
+    Args:
+
+    Returns:
+        None
     """
 
 
 def show_view_hidden_lines() -> None:
-    """
+    """show view hidden lines
+    Args:
+
+    Returns:
+        None
     """
 
 
 def show_view_dashed_hidden_lines() -> None:
-    """
+    """show view dashed hidden lines
+    Args:
+
+    Returns:
+        None
     """
 
 
 def show_view_shaded2() -> None:
-    """
+    """show view shaded2
+    Args:
+
+    Returns:
+        None
     """
 
 
 def show_view_shaded1() -> None:
-    """
-    """
-
-
-def is_selectable(element: int) -> bool:
-    """Returns if the element is selectable
-
+    """show view shaded1
     Args:
-        element (int): element ID
 
     Returns:
-        bool: result
+        None
     """
 
 
-def set_unselectable(elements: List[int]) -> None:
-    """Sets a list of elements unselectable
-
+def is_selectable(id: int) -> bool:
+    """is selectable
     Args:
-        elements (List[int]): element IDs
-    """
-
-
-def set_selectable(elements: List[int]) -> None:
-    """Sets a list of elements selectable
-
-    Args:
-        elements (List[int]): element IDs
-    """
-
-
-def get_rgb_from_cadwork_color_id(color: int) -> rgb_color:
-    """Returns RGB color object
-
-    Examples:
-        >>> color = get_rgb_from_cadwork_color_id(5)
-        >>> color.r
-        0
-        >>> color.g
-        255
-        >>> color.b
-        0
-
-    Args:
-        color (int): color nr
+        id ( int): id
 
     Returns:
-        rgb_color: rgb obj
+        bool
+    """
+
+
+def set_unselectable(element_id_list: List[int]) -> None:
+    """set unselectable
+    Args:
+        element_id_list ( List[int]): element_id_list
+
+    Returns:
+        None
+    """
+
+
+def set_selectable(element_id_list: List[int]) -> None:
+    """set selectable
+    Args:
+        element_id_list ( List[int]): element_id_list
+
+    Returns:
+        None
+    """
+
+
+def clear_errors() -> None:
+    """clear errors
+    Args:
+
+    Returns:
+        None
+    """
+
+
+def load_marking_settings(settings_file_path: str) -> None:
+    """load marking settings
+    Args:
+        settings_file_path ( str): settings_file_path
+
+    Returns:
+        None
+    """
+
+
+def is_plane_2d() -> bool:
+    """is plane 2d
+    Args:
+
+    Returns:
+        bool
+    """
+
+
+def set_camera(position: point_3d, target: point_3d) -> None:
+    """set camera
+    Args:
+        position ( point_3d): position
+        target ( point_3d): target
+
+    Returns:
+        None
     """
 
 
 def show_perspective_central() -> None:
-    """ shows perspective central
-    """
-
-
-def set_camera(aPosition: point_3d, aTarget: point_3d) -> None:
-    """Set camera position and target
-
+    """show perspective central
     Args:
-        aPosition (point_3d): position
-        aTarget (point_3d): target
-    """
-
-
-def set_texture_rotated(elements: List[int], rotated: bool) -> None:
-    """Set texture rotated
-
-    Args:
-        elements (List[int]): element IDs
-        rotated (bool): rotated
-    """
-
-
-def is_texture_rotated(element: int) -> bool:
-    """Returns if texture is rotated
-
-    Args:
-        element (int): element ID
 
     Returns:
-        bool: result
+        None
+    """
+
+
+def set_color_without_material(a0: List[int], a1: int) -> None:
+    """set color without material
+    Args:
+        a0 ( List[int]): a0
+        a1 ( int): a1
+
+    Returns:
+        None
+    """
+
+
+def set_texture_rotated(a0: List[int], a1: bool) -> None:
+    """set texture rotated
+    Args:
+        a0 ( List[int]): a0
+        a1 ( bool): a1
+
+    Returns:
+        None
+    """
+
+
+def show_reference_side_beam(show: bool) -> None:
+    """show reference side beam
+    Args:
+        show ( bool): show
+
+    Returns:
+        None
+    """
+
+
+def show_reference_side_panel(show: bool) -> None:
+    """show reference side panel
+    Args:
+        show ( bool): show
+
+    Returns:
+        None
+    """
+
+
+def show_reference_side_wall(show: bool) -> None:
+    """show reference side wall
+    Args:
+        show ( bool): show
+
+    Returns:
+        None
+    """
+
+
+def show_view_axo() -> None:
+    """show view axo
+    Args:
+
+    Returns:
+        None
+    """
+
+
+def get_color(id: int) -> int:
+    """get color
+    Args:
+        id ( int): id
+
+    Returns:
+        intcolor ID
+    """
+
+
+def get_opengl_color(id: int) -> rgb_color:
+    """get opengl color
+    Args:
+        id ( int): id
+
+    Returns:
+        rgb_colorRBG color
+    """
+
+
+def get_material(element_id: int) -> int:
+    """get material
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        intmaterial ID
+    """
+
+
+def get_rgb_from_cadwork_color_id(color_id: None) -> rgb_color:
+    """get rgb from cadwork color id
+    Args:
+        color_id ( None): color_id
+
+    Returns:
+        rgb_colorcolorRGB
+    """
+
+
+def is_texture_rotated(a0: int) -> bool:
+    """is texture rotated
+    Args:
+        a0 ( int): a0
+
+    Returns:
+        bool
+    """
+
+
+def get_camera_data() -> camera_data:
+    """get camera data
+    Args:
+
+    Returns:
+        camera_datacamera data
+    """
+
+
+def set_camera_data(camera_data: None) -> None:
+    """set camera data
+    Args:
+        camera_data ( None): camera_data
+
+    Returns:
+        None
     """

@@ -1,6 +1,8 @@
-# Attribute Controller
+# BREP
 
-::: attribute_controller
+::: cadwork.text_object_options
+::: cadwork.text_element_type
+
 rendering:
 show_root_heading: false
 show_source: true

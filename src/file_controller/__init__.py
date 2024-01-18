@@ -1,287 +1,299 @@
 from typing import List
+from cadwork import point_3d
+from cadwork import rhino_options
 
-from cadwork import point_3d, rhino_options
-
-
-def export_stl_file(elements: List[int], file: str) -> None:
-    """ Exports an STL file
-
+def get_last_error(error_code: int) -> str:
+    """get last error
     Args:
-        elements (List[int]): element IDs
-        file (str): file path
-    """
-
-
-def import_step_file(file: str, scale: float) -> List[int]:
-    """Imports a STEP file
-
-    Args:
-        file (str): file path
-        scale (float): file scale factor
+        error_code ( int): error_code
 
     Returns:
-        List[int]: element IDs
+        strerror string
     """
 
-
-def import_step_file_with_message_option(file: str, scale: float, option: bool) -> List[int]:
-    """Imports a STEP file
-
+def export_stl_file(element_id_list: List[int], file_path: str) -> None:
+    """export stl file
     Args:
-        file (str): file path
-        scale (float): file scale factor
-        option (bool): hide message
+        element_id_list ( List[int]): element_id_list
+        file_path ( str): file_path
 
     Returns:
-        List[int]: element IDs
+        None
     """
 
-
-def export_webgl(elements: List[int], file: str) -> None:
-    """Exports a WebGL File
-
+def import_step_file(file_path: str, scale_factor: float) -> List[int]:
+    """import step file
     Args:
-        elements (List[int]): element IDs
-        file (str): file path
-    """
-
-
-def export_3d_file(elements: List[int], file: str) -> None:
-    """Exports a 3d or 3dc file. Based on the extension in the file name.
-
-    Examples:
-    >>> export_3d_file(elements, "example.3dc")
-    >>> export_3d_file(elements, "example.3d")
-
-    Args:
-        elements (List[int]): element IDs
-        file (str): file path
-    """
-
-
-def import_sat_file(file: str, scale: float, option: bool) -> List[int]:
-    """Imports an SAT file
-
-    Args:
-        file (str): file path
-        scale (float): file scale factor
-        option (bool): use binary mode
+        file_path ( str): file_path
+        scale_factor ( float): scale_factor
 
     Returns:
-        List[int]: element IDs
+        List[int]imported element ID list
     """
 
-
-def import_3dc_file(file: str) -> List[int]:
-    """Imports a 3DC file
-
+def import_step_file_with_message_option(file_path: str, scale_factor: float, hide_message: bool) -> List[int]:
+    """import step file with message option
     Args:
-        file (str): file path
+        file_path ( str): file_path
+        scale_factor ( float): scale_factor
+        hide_message ( bool): hide_message
 
     Returns:
-        List[int]: element IDs
+        List[int]imported element ID list
     """
 
-
-def import_rhino_file(file: str, option: bool) -> List[int]:
-    """Imports a Rhino file
-
+def export_webgl(element_id_list: List[int], file_path: str) -> bool:
+    """export webgl
     Args:
-        file (str): file path
-        option (bool): import without dialog
+        element_id_list ( List[int]): element_id_list
+        file_path ( str): file_path
 
     Returns:
-        List[int]: element IDs
+        booldid operation succeed
     """
 
-
-def export_step_file(elements: List[int], file: str, scale: float, number: int, option: bool) -> None:
-    """Exports a STEP file
-
+def export_3d_file(element_id_list: List[int], file_path: str) -> bool:
+    """export 3d file
     Args:
-        elements (List[int]): element IDs
-        file (str): file path
-        scale (float): file scale factor
-        number (int): file version
-        option (bool): use text mode
-    """
-
-
-def import_3dz_file(file: str) -> None:
-    """Imports a 3DZ file
-
-    Args:
-        file (str): file path
-    """
-
-
-def export_obj_file(elements: List[int], file: str) -> None:
-    """Exports a OBJ file
-
-    Args:
-        elements (List[int]): element IDs
-        file (str): file path
-    """
-
-
-def import_sat_file_silently(file: str, scale: float, option: bool) -> List[int]:
-    """_summary_
-
-    Args:
-        file (str): _description_
-        scale (float): _description_
-        option (bool): _description_
+        element_id_list ( List[int]): element_id_list
+        file_path ( str): file_path
 
     Returns:
-        List[int]: _description_
+        booldid operation succeed
     """
 
-
-def export_fbx_file(elements: List[int], file: str, number: int) -> None:
-    """Export fbx file
-
+def import_sat_file(file_path: str, scale_factor: float, binary: bool) -> List[int]:
+    """import sat file
     Args:
-        elements (List[int]): element IDs
-        file (str): file path
-        number (int): fbx format  1 = "FBX binary(*.fbx) ; 2 = "FBX ascii(*.fbx)" ; 3 = "FBX encrypted(*.fbx)" ; 4 = "FBX 6.0 binary(*.fbx)" ; 5 = "FBX 6.0 ascii(*.fbx)" ; 6 = "FBX 6.0 encrypted(*.fbx)"
-    """
-
-
-def import_3dc_file_with_glide(file: str) -> List[int]:
-    """Imports a 3DC file with glide
-
-    Args:
-        file (str): file path
+        file_path ( str): file_path
+        scale_factor ( float): scale_factor
+        binary ( bool): binary
 
     Returns:
-        List[int]: element IDs
+        List[int]imported element ID list
     """
 
-
-def import_btl_file(file: str) -> None:
-    """Imports a BTL file
-
+def import_3dc_file(file_path: str) -> List[int]:
+    """import 3dc file
     Args:
-        file (str): file path
-    """
-
-
-def export_3dc_file(elements: List[int], file: str) -> None:
-    """Exports a 3D/3DC file
-
-    Args:
-        elements (List[int]): element IDs
-        file (str): file path
-    """
-
-
-def import_btl_file_for_nesting(file: str) -> None:
-    """Imports a BTL file for nesting
-
-    Args:
-        file (str): file path
-    """
-
-
-def export_btl_file_for_nesting(file: str) -> None:
-    """Exports a BTL file for nesting
-
-    Args:
-        file (str): file path
-    """
-
-
-def export_rhino_file(elements: List[int], file: str, version: int, user_default_assignment: bool, write_standard_attributes: bool) -> None:
-    """Exports a 3dm rhino file
-
-    Args:
-        elements (List[int]): element IDs
-        file (str): file path
-        version (int): Rhino version V5.0 = 5, V6.0 = 6, V7.0 = 7
-        user_default_assignment (bool): true: default assignment is used; false: no attributes are exported
-        write_standard_attributes (bool): see checkbox in assignment dialog
-    """
-
-
-def export_sat_file(elements: List[int], file: str, scale: float, option: bool, number: int) -> None:
-    """exports a SAT File
-
-    Args:
-        elements (List[int]): element IDs
-        file (str): file path
-        scale (float): scale factor
-        option (bool): binary 
-        number (int): version
-    """
-
-
-def import_variant_file(file: str, insert_point: point_3d) -> List[int]:
-    """imports a variant by .val-File
-
-    Args:
-        file (str): file path
-        insert_point (point_3d): insert point
+        file_path ( str): file_path
 
     Returns:
-        List[int]: element IDs
+        List[int]imported element ID list
     """
 
-
-def set_blum_export_path(file: str) -> None:
-    """Set blum export path
-
+def import_rhino_file(file_path: str, without_dialog: bool) -> List[int]:
+    """import rhino file
     Args:
-        file (str): file path
+        file_path ( str): file_path
+        without_dialog ( bool): without_dialog
+
+    Returns:
+        List[int]imported element ID list
     """
 
+def export_step_file(element_list: List[int], file_path: str, scale_factor: float, version: int, text_mode: bool) -> None:
+    """export step file
+    Args:
+        element_list ( List[int]): element_list
+        file_path ( str): file_path
+        scale_factor ( float): scale_factor
+        version ( int): version
+        text_mode ( bool): text_mode
+
+    Returns:
+        None
+    """
+
+def import_3dz_file(file_path: str) -> None:
+    """import 3dz file
+    Args:
+        file_path ( str): file_path
+
+    Returns:
+        None
+    """
+
+def export_obj_file(elements: List[int], file_path: str) -> None:
+    """export obj file
+    Args:
+        elements ( List[int]): elements
+        file_path ( str): file_path
+
+    Returns:
+        None
+    """
+
+def import_sat_file_silently(file_path: str, scale_factor: float, binary: bool) -> List[int]:
+    """import sat file silently
+    Args:
+        file_path ( str): file_path
+        scale_factor ( float): scale_factor
+        binary ( bool): binary
+
+    Returns:
+        List[int]
+    """
+
+def export_fbx_file(elements: List[int], file_path: str, fbx_format: int) -> None:
+    """export fbx file
+    Args:
+        elements ( List[int]): elements
+        file_path ( str): file_path
+        fbx_format ( int): fbx_format
+
+    Returns:
+        None
+    """
+
+def clear_errors() -> None:
+    """clear errors
+    Args:
+
+    Returns:
+        None
+    """
+
+def import_3dc_file_with_glide(file_path: str) -> List[int]:
+    """import 3dc file with glide
+    Args:
+        file_path ( str): file_path
+
+    Returns:
+        List[int]imported element ID list
+    """
+
+def import_btl_file(file_path: str) -> None:
+    """import btl file
+    Args:
+        file_path ( str): file_path
+
+    Returns:
+        None
+    """
+
+def export_3dc_file(element_id_list: List[int], file_path: str) -> None:
+    """export 3dc file
+    Args:
+        element_id_list ( List[int]): element_id_list
+        file_path ( str): file_path
+
+    Returns:
+        None
+    """
+
+def import_btl_file_for_nesting(file_path: str) -> None:
+    """import btl file for nesting
+    Args:
+        file_path ( str): file_path
+
+    Returns:
+        None
+    """
+
+def export_btl_file_for_nesting(file_path: str) -> None:
+    """export btl file for nesting
+    Args:
+        file_path ( str): file_path
+
+    Returns:
+        None
+    """
+
+def export_rhino_file(element_id_list: List[int], file_path: str, version: int, use_default_assignment: bool, write_standard_attributes: bool) -> None:
+    """export rhino file
+    Args:
+        element_id_list ( List[int]): element_id_list
+        file_path ( str): file_path
+        version ( int): version
+        use_default_assignment ( bool): use_default_assignment
+        write_standard_attributes ( bool): write_standard_attributes
+
+    Returns:
+        None
+    """
+
+def import_bxf_file(file_path: str, insert_position: point_3d) -> List[int]:
+    """import bxf file
+    Args:
+        file_path ( str): file_path
+        insert_position ( point_3d): insert_position
+
+    Returns:
+        List[int]
+    """
 
 def get_blum_export_path() -> str:
-    """Get blum export path
+    """get blum export path
+    Args:
 
     Returns:
-        str: file path
+        str
     """
 
-
-def import_element_light(file_path: str, insert_position: point_3d) -> int:
-    """Imports an element light
-        allowed formats are OBJ, SKP
-
-    Examples:
-    >>> import_element_light("C:\\UserXY\\Files\\example.obj", point_3d(0,0,0))
-
+def set_blum_export_path(path: str) -> None:
+    """set blum export path
     Args:
-        file_path (str): file path
-        insert_position (point_3d): insert position
+        path ( str): path
 
     Returns:
-        int: element ID
+        None
     """
 
-
-def export_glb_file(elements: List[int], file: str) -> None:
-    """Exports a GLB file
-
+def export_sat_file(elements: List[int], file_path: str, scale_factor: float, binary: bool, version: int) -> None:
+    """export sat file
     Args:
-        elements (List[int]): element IDs
-        file (str): file path
+        elements ( List[int]): elements
+        file_path ( str): file_path
+        scale_factor ( float): scale_factor
+        binary ( bool): binary
+        version ( int): version
+
+    Returns:
+        None
     """
 
-
-def export_rhino_file_with_options(elements: List[int], file: str, version: int, user_default_assignment: bool, write_standard_attributes: bool, rhino_options: rhino_options) -> None:
-    """export rh9ino file with options
-
-    Examples:
-        >>> rhino_options = rhino_options()
-        >>> rhino_options.set_cut_drillings(True)
-        >>> rhino_options.set_cut_end_types_counterparts(True)
-        >>> file_controller.export_rhino_file_with_options(elements, "yourFile.3dm", 7, True, True, rhino_options)
-
+def export_glb_file(elements: List[int], file_path: str) -> None:
+    """export glb file
     Args:
-        elements (List[int]): element IDs
-        file (str): file path
-        version (int): Rhino Version V5.0 = 5, V6.0 = 6, V7.0 = 7
-        user_default_assignment (bool): true: default assignment is used; false: no attributes are exported
-        write_standard_attributes (bool): see checkbox in assignment dialog
-        rhino_options (rhino_options): rhino export options
+        elements ( List[int]): elements
+        file_path ( str): file_path
+
+    Returns:
+        None
     """
+
+def import_variant_file(file_path: str, insert_position: point_3d) -> List[int]:
+    """import variant file
+    Args:
+        file_path ( str): file_path
+        insert_position ( point_3d): insert_position
+
+    Returns:
+        List[int]imported element ID list
+    """
+
+def import_element_light(a0: str, a1: point_3d) -> int:
+    """import element light
+    Args:
+        a0 ( str): a0
+        a1 ( point_3d): a1
+
+    Returns:
+        int
+    """
+
+def export_rhino_file_with_options(a0: List[int], a1: str, a2: int, a3: bool, a4: bool, a5: rhino_options) -> None:
+    """export rhino file with options
+    Args:
+        a0 ( List[int]): a0
+        a1 ( str): a1
+        a2 ( int): a2
+        a3 ( bool): a3
+        a4 ( bool): a4
+        a5 ( rhino_options): a5
+
+    Returns:
+        None
+    """
+
