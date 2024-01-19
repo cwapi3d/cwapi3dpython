@@ -271,10 +271,10 @@ def set_project_country(country: str) -> None:
     """
 
 
-def get_user_file_from_dialog(filter: str) -> str:
+def get_user_file_from_dialog(name_filter: str) -> str:
     """get user file from dialog
     Args:
-        filter ( str): filter
+        name_filter ( str): name_filter
 
     Returns:
         strfile path
@@ -346,10 +346,10 @@ def export_screen_to_image(file_path: str) -> None:
     """
 
 
-def get_new_user_file_from_dialog(filter: str) -> str:
+def get_new_user_file_from_dialog(name_filter: str) -> str:
     """get new user file from dialog
     Args:
-        filter ( str): filter
+        name_filter ( str): name_filter
 
     Returns:
         strfile path
@@ -761,10 +761,10 @@ def set_north_angle(north_angle: float) -> None:
     """
 
 
-def get_user_file_from_dialog_in_path(filter: str, path: str) -> str:
+def get_user_file_from_dialog_in_path(name_filter: str, path: str) -> str:
     """get user file from dialog in path
     Args:
-        filter ( str): filter
+        name_filter ( str): name_filter
         path ( str): path
 
     Returns:
@@ -772,10 +772,10 @@ def get_user_file_from_dialog_in_path(filter: str, path: str) -> str:
     """
 
 
-def get_new_user_file_from_dialog_in_path(filter: str, path: str) -> str:
+def get_new_user_file_from_dialog_in_path(name_filter: str, path: str) -> str:
     """get new user file from dialog in path
     Args:
-        filter ( str): filter
+        name_filter ( str): name_filter
         path ( str): path
 
     Returns:
