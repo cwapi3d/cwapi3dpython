@@ -789,50 +789,50 @@ def set_attribute_display_settings_for_solid_wall_panel(a0: attribute_display_se
     """
 
 
-def get_name(id: int) -> str:
+def get_name(element_id: int) -> str:
     """get name
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         strelement name
     """
 
 
-def get_group(id: int) -> str:
+def get_group(element_id: int) -> str:
     """get group
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         strelement group
     """
 
 
-def get_subgroup(id: int) -> str:
+def get_subgroup(element_id: int) -> str:
     """get subgroup
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         strelement subgroup
     """
 
 
-def get_comment(id: int) -> str:
+def get_comment(element_id: int) -> str:
     """get comment
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         strelement comment
     """
 
 
-def get_user_attribute(id: int, number: int) -> str:
+def get_user_attribute(element_id: int, number: int) -> str:
     """get user attribute
     Args:
-        id ( int): id
+        element_id ( int): element_id
         number ( int): number
 
     Returns:
@@ -840,40 +840,40 @@ def get_user_attribute(id: int, number: int) -> str:
     """
 
 
-def get_sku(id: int) -> str:
+def get_sku(element_id: int) -> str:
     """get sku
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         strelement SKU
     """
 
 
-def get_production_number(id: int) -> int:
+def get_production_number(element_id: int) -> int:
     """get production number
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         intelement production number
     """
 
 
-def get_part_number(id: int) -> int:
+def get_part_number(element_id: int) -> int:
     """get part number
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         intelement part number
     """
 
 
-def get_additional_data(id: int, data_id: str) -> str:
+def get_additional_data(element_id: int, data_id: str) -> str:
     """get additional data
     Args:
-        id ( int): id
+        element_id ( int): element_id
         data_id ( str): data_id
 
     Returns:
@@ -891,50 +891,50 @@ def get_user_attribute_name(number: int) -> str:
     """
 
 
-def get_wall_situation(id: int) -> str:
+def get_wall_situation(element_id: int) -> str:
     """get wall situation
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         strelement wall situation
     """
 
 
-def get_element_material_name(id: int) -> str:
+def get_element_material_name(element_id: int) -> str:
     """get element material name
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         strelement material name
     """
 
 
-def get_prefab_layer(id: int) -> str:
+def get_prefab_layer(element_id: int) -> str:
     """get prefab layer
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         strelement prefab layer
     """
 
 
-def get_machine_calculation_set(id: int) -> str:
+def get_machine_calculation_set(element_id: int) -> str:
     """get machine calculation set
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         strelement machine calculation set
     """
 
 
-def get_cutting_set(id: int) -> str:
+def get_cutting_set(element_id: int) -> str:
     """get cutting set
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         strelement cutting set
@@ -961,60 +961,60 @@ def get_name_extended_settings(name: str) -> extended_settings:
     """
 
 
-def get_output_type(id: int) -> process_type:
+def get_output_type(element_id: int) -> process_type:
     """get output type
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         process_typeelement output type
     """
 
 
-def get_extended_settings(id: int) -> extended_settings:
+def get_extended_settings(element_id: int) -> extended_settings:
     """get extended settings
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         extended_settingselement extended settings
     """
 
 
-def get_element_type(id: int) -> element_type:
+def get_element_type(element_id: int) -> element_type:
     """get element type
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element_typeelement type
     """
 
 
-def get_fastening_attribute(id: int) -> str:
+def get_fastening_attribute(element_id: int) -> str:
     """get fastening attribute
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         strelement fastening attribute
     """
 
 
-def get_assembly_number(id: int) -> str:
+def get_assembly_number(element_id: int) -> str:
     """get assembly number
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         str
     """
 
 
-def get_list_quantity(id: int) -> int:
+def get_list_quantity(element_id: int) -> int:
     """get list quantity
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         int
@@ -1031,180 +1031,180 @@ def get_ignore_in_vba_calculation(element: int) -> bool:
     """
 
 
-def get_standard_element_name(id: None) -> str:
+def get_standard_element_name(element_id: None) -> str:
     """get standard element name
     Args:
-        id ( None): id
+        element_id ( None): element_id
 
     Returns:
         str
     """
 
 
-def get_steel_shape_name(id: None) -> str:
+def get_steel_shape_name(element_id: None) -> str:
     """get steel shape name
     Args:
-        id ( None): id
+        element_id ( None): element_id
 
     Returns:
         str
     """
 
 
-def is_beam(id: int) -> bool:
+def is_beam(element_id: int) -> bool:
     """is beam
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         boolis element beam
     """
 
 
-def is_panel(id: int) -> bool:
+def is_panel(element_id: int) -> bool:
     """is panel
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         boolis element panel
     """
 
 
-def is_opening(id: int) -> bool:
+def is_opening(element_id: int) -> bool:
     """is opening
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         boolis element opening
     """
 
 
-def is_wall(id: int) -> bool:
+def is_wall(element_id: int) -> bool:
     """is wall
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         boolis element wall
     """
 
 
-def is_floor(id: int) -> bool:
+def is_floor(element_id: int) -> bool:
     """is floor
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         boolis element floor
     """
 
 
-def is_roof(id: int) -> bool:
+def is_roof(element_id: int) -> bool:
     """is roof
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         boolis element roof
     """
 
 
-def is_metal(id: int) -> bool:
+def is_metal(element_id: int) -> bool:
     """is metal
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         boolis element metal
     """
 
 
-def is_export_solid(id: int) -> bool:
+def is_export_solid(element_id: int) -> bool:
     """is export solid
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         boolis element export solid
     """
 
 
-def is_container(id: int) -> bool:
+def is_container(element_id: int) -> bool:
     """is container
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         boolis element container
     """
 
 
-def is_connector_axis(id: int) -> bool:
+def is_connector_axis(element_id: int) -> bool:
     """is connector axis
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         boolis element connector axis
     """
 
 
-def is_drilling(id: int) -> bool:
+def is_drilling(element_id: int) -> bool:
     """is drilling
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         boolis element drilling
     """
 
 
-def is_node(id: int) -> bool:
+def is_node(element_id: int) -> bool:
     """is node
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         boolis element node
     """
 
 
-def is_auxiliary(id: int) -> bool:
+def is_auxiliary(element_id: int) -> bool:
     """is auxiliary
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         boolis element auxiliary
     """
 
 
-def is_roof_surface(id: int) -> bool:
+def is_roof_surface(element_id: int) -> bool:
     """is roof surface
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         boolis element roof surface
     """
 
 
-def is_caddy_object(id: int) -> bool:
+def is_caddy_object(element_id: int) -> bool:
     """is caddy object
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         boolis element caddy object
     """
 
 
-def is_envelope(id: int) -> bool:
+def is_envelope(element_id: int) -> bool:
     """is envelope
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         bool
@@ -1231,30 +1231,30 @@ def is_architecture_wall_xml(element: None) -> bool:
     """
 
 
-def is_surface(id: None) -> bool:
+def is_surface(element_id: None) -> bool:
     """is surface
     Args:
-        id ( None): id
+        element_id ( None): element_id
 
     Returns:
         boolis Surface
     """
 
 
-def is_line(id: None) -> bool:
+def is_line(element_id: None) -> bool:
     """is line
     Args:
-        id ( None): id
+        element_id ( None): element_id
 
     Returns:
         boolis Line
     """
 
 
-def get_auto_attribute(id: int, number: int) -> str:
+def get_auto_attribute(element_id: int, number: int) -> str:
     """get auto attribute
     Args:
-        id ( int): id
+        element_id ( int): element_id
         number ( int): number
 
     Returns:
@@ -1272,70 +1272,70 @@ def get_auto_attribute_name(number: int) -> str:
     """
 
 
-def is_framed_wall(id: int) -> bool:
+def is_framed_wall(element_id: int) -> bool:
     """is framed wall
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         bool
     """
 
 
-def is_solid_wall(id: int) -> bool:
+def is_solid_wall(element_id: int) -> bool:
     """is solid wall
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         bool
     """
 
 
-def is_log_wall(id: int) -> bool:
+def is_log_wall(element_id: int) -> bool:
     """is log wall
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         bool
     """
 
 
-def is_framed_floor(id: int) -> bool:
+def is_framed_floor(element_id: int) -> bool:
     """is framed floor
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         bool
     """
 
 
-def is_solid_floor(id: int) -> bool:
+def is_solid_floor(element_id: int) -> bool:
     """is solid floor
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         bool
     """
 
 
-def is_framed_roof(id: int) -> bool:
+def is_framed_roof(element_id: int) -> bool:
     """is framed roof
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         bool
     """
 
 
-def is_solid_roof(id: int) -> bool:
+def is_solid_roof(element_id: int) -> bool:
     """is solid roof
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         bool
@@ -1548,20 +1548,20 @@ def set_element_grouping_type(a0: element_grouping_type) -> None:
     """
 
 
-def get_associated_nesting_name(id: None) -> str:
+def get_associated_nesting_name(element_id: None) -> str:
     """get associated nesting name
     Args:
-        id ( None): id
+        element_id ( None): element_id
 
     Returns:
         str
     """
 
 
-def get_associated_nesting_number(id: None) -> str:
+def get_associated_nesting_number(element_id: None) -> str:
     """get associated nesting number
     Args:
-        id ( None): id
+        element_id ( None): element_id
 
     Returns:
         str
@@ -1757,10 +1757,10 @@ def get_attribute_display_settings_for_solid_wall_panel() -> attribute_display_s
     """
 
 
-def is_processing(id: None) -> bool:
+def is_processing(element_id: int) -> bool:
     """is processing
     Args:
-        id ( None): id
+        element_id ( int): element_id
 
     Returns:
         bool

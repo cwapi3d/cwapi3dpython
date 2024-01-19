@@ -36,10 +36,10 @@ def set_opengl_color(element_id_list: List[int], color: None) -> None:
     """
 
 
-def is_active(id: int) -> bool:
+def is_active(element_id: int) -> bool:
     """is active
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         boolis element active
@@ -66,10 +66,10 @@ def set_inactive(element_id_list: List[int]) -> None:
     """
 
 
-def is_visible(id: int) -> bool:
+def is_visible(element_id: int) -> bool:
     """is visible
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         boolis element visible
@@ -96,10 +96,10 @@ def set_invisible(element_id_list: List[int]) -> None:
     """
 
 
-def is_immutable(id: int) -> bool:
+def is_immutable(element_id: int) -> bool:
     """is immutable
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         boolis element immutable
@@ -171,11 +171,11 @@ def refresh() -> None:
     """
 
 
-def set_material(element_id_list: List[int], id: int) -> None:
+def set_material(element_id_list: List[int], element_id: int) -> None:
     """set material
     Args:
         element_id_list ( List[int]): element_id_list
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         None
@@ -191,7 +191,7 @@ def save_visibility_state() -> "visibility_state":
     """
 
 
-def restore_visibility_state(state: None) -> None:
+def restore_visibility_state(state: "visibility_state") -> None:
     """restore visibility state
     Args:
         state ( None): state
@@ -210,7 +210,7 @@ def save_activation_state() -> "activation_state":
     """
 
 
-def restore_activation_state(state: None) -> None:
+def restore_activation_state(state: "activation_state") -> None:
     """restore activation state
     Args:
         state ( None): state
@@ -328,10 +328,10 @@ def show_view_shaded1() -> None:
     """
 
 
-def is_selectable(id: int) -> bool:
+def is_selectable(element_id: int) -> bool:
     """is selectable
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         bool
@@ -467,20 +467,20 @@ def show_view_axo() -> None:
     """
 
 
-def get_color(id: int) -> int:
+def get_color(element_id: int) -> int:
     """get color
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         intcolor ID
     """
 
 
-def get_opengl_color(id: int) -> rgb_color:
+def get_opengl_color(element_id: int) -> rgb_color:
     """get opengl color
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         rgb_colorRBG color
@@ -498,7 +498,7 @@ def get_material(element_id: int) -> int:
 
 
 def get_rgb_from_cadwork_color_id(color_id: None) -> rgb_color:
-    """get rgb from cadwork color id
+    """get rgb from cadwork color element_id
     Args:
         color_id ( None): color_id
 

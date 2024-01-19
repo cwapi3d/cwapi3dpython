@@ -53,9 +53,8 @@ nav:
           - BREP data: documentation/brep_data.md
           - IFC:
             - IFC2x3 Element Type: documentation/ifc_2x3_element_type.md
-            - IFC Export Options: documentation/ifc_export_options.md
+            - IFC Options: documentation/ifc_options.md
           - Camera: documentation/camera_data.md
-          - IFC Options: documentation/ifc_options.md
           - Layer Settings: documentation/layer_settings.md
           - Text Object Options: documentation/text_object_options.md
       - Connector Axis Controller: documentation/connector_axis_controller.md

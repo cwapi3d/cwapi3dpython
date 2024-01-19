@@ -7,8 +7,9 @@ def get_last_error(error_code: int) -> str:
         str
     """
 
+
 def get_endtype_id(name: str) -> int:
-    """get endtype id
+    """get endtype element_id
     Args:
         name ( str): name
 
@@ -16,26 +17,29 @@ def get_endtype_id(name: str) -> int:
         int
     """
 
-def get_endtype_id_start(id: int) -> int:
-    """get endtype id start
+
+def get_endtype_id_start(element_id: int) -> int:
+    """get endtype element_id start
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         int
     """
 
-def get_endtype_id_end(id: int) -> int:
-    """get endtype id end
+
+def get_endtype_id_end(element_id: int) -> int:
+    """get endtype element_id end
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         int
     """
+
 
 def get_endtype_id_facet(a0: int, a1: int) -> int:
-    """get endtype id facet
+    """get endtype element_id facet
     Args:
         a0 ( int): a0
         a1 ( int): a1
@@ -44,25 +48,28 @@ def get_endtype_id_facet(a0: int, a1: int) -> int:
         int
     """
 
-def set_endtype_name_start(id: int, name: str) -> None:
+
+def set_endtype_name_start(element_id: int, name: str) -> None:
     """set endtype name start
     Args:
-        id ( int): id
+        element_id ( int): element_id
         name ( str): name
 
     Returns:
         None
     """
 
-def set_endtype_name_end(id: int, name: str) -> None:
+
+def set_endtype_name_end(element_id: int, name: str) -> None:
     """set endtype name end
     Args:
-        id ( int): id
+        element_id ( int): element_id
         name ( str): name
 
     Returns:
         None
     """
+
 
 def set_endtype_name_facet(a0: int, a1: str, a2: int) -> None:
     """set endtype name facet
@@ -75,8 +82,9 @@ def set_endtype_name_facet(a0: int, a1: str, a2: int) -> None:
         None
     """
 
+
 def set_endtype_id_start(element_id: int, endtype_id: int) -> None:
-    """set endtype id start
+    """set endtype element_id start
     Args:
         element_id ( int): element_id
         endtype_id ( int): endtype_id
@@ -84,9 +92,10 @@ def set_endtype_id_start(element_id: int, endtype_id: int) -> None:
     Returns:
         None
     """
+
 
 def set_endtype_id_end(element_id: int, endtype_id: int) -> None:
-    """set endtype id end
+    """set endtype element_id end
     Args:
         element_id ( int): element_id
         endtype_id ( int): endtype_id
@@ -95,8 +104,9 @@ def set_endtype_id_end(element_id: int, endtype_id: int) -> None:
         None
     """
 
+
 def set_endtype_id_facet(a0: int, a1: int, a2: int) -> None:
-    """set endtype id facet
+    """set endtype element_id facet
     Args:
         a0 ( int): a0
         a1 ( int): a1
@@ -106,6 +116,7 @@ def set_endtype_id_facet(a0: int, a1: int, a2: int) -> None:
         None
     """
 
+
 def clear_errors() -> None:
     """clear errors
     Args:
@@ -113,6 +124,7 @@ def clear_errors() -> None:
     Returns:
         None
     """
+
 
 def create_new_endtype(endtype_name: str, endtype_id: int, folder_name: str) -> int:
     """create new endtype
@@ -125,32 +137,36 @@ def create_new_endtype(endtype_name: str, endtype_id: int, folder_name: str) -> 
         int
     """
 
-def get_endtype_name(id: int) -> str:
+
+def get_endtype_name(element_id: int) -> str:
     """get endtype name
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         str
     """
 
-def get_endtype_name_start(id: int) -> str:
+
+def get_endtype_name_start(element_id: int) -> str:
     """get endtype name start
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         str
     """
 
-def get_endtype_name_end(id: int) -> str:
+
+def get_endtype_name_end(element_id: int) -> str:
     """get endtype name end
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         str
     """
+
 
 def get_endtype_name_facet(a0: int, a1: int) -> str:
     """get endtype name facet
@@ -161,4 +177,3 @@ def get_endtype_name_facet(a0: int, a1: int) -> str:
     Returns:
         str
     """
-
