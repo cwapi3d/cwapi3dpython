@@ -1,529 +1,491 @@
 from typing import List
 
+def get_last_error(error_code: int) -> str:
+    """get last error
+    Args:
+        error_code ( int): error_code
+
+    Returns:
+        strerror string
+    """
 
 def create_material(name: str) -> int:
-    """
-
+    """create material
     Args:
-        name (str): material name
+        name ( str): name
 
     Returns:
-        int: material ID
+        intmaterial ID
     """
 
+def set_name(material_id: int, name: str) -> None:
+    """set name
+    Args:
+        material_id ( int): material_id
+        name ( str): name
+
+    Returns:
+        None
+    """
+
+def set_group(material_id: int, group: str) -> None:
+    """set group
+    Args:
+        material_id ( int): material_id
+        group ( str): group
+
+    Returns:
+        None
+    """
+
+def set_code(material_id: int, code: str) -> None:
+    """set code
+    Args:
+        material_id ( int): material_id
+        code ( str): code
+
+    Returns:
+        None
+    """
+
+def set_modulus_elasticity_1(material_id: int, modulus_elasticity1: float) -> None:
+    """set modulus elasticity 1
+    Args:
+        material_id ( int): material_id
+        modulus_elasticity1 ( float): modulus_elasticity1
+
+    Returns:
+        None
+    """
+
+def set_modulus_elasticity_2(material_id: int, modulus_elasticity2: float) -> None:
+    """set modulus elasticity 2
+    Args:
+        material_id ( int): material_id
+        modulus_elasticity2 ( float): modulus_elasticity2
+
+    Returns:
+        None
+    """
+
+def set_modulus_elasticity_3(material_id: int, modulus_elasticity3: float) -> None:
+    """set modulus elasticity 3
+    Args:
+        material_id ( int): material_id
+        modulus_elasticity3 ( float): modulus_elasticity3
+
+    Returns:
+        None
+    """
+
+def set_shear_modulus_1(material_id: int, shear_modulus1: float) -> None:
+    """set shear modulus 1
+    Args:
+        material_id ( int): material_id
+        shear_modulus1 ( float): shear_modulus1
+
+    Returns:
+        None
+    """
+
+def set_shear_modulus_2(material_id: int, shear_modulus2: float) -> None:
+    """set shear modulus 2
+    Args:
+        material_id ( int): material_id
+        shear_modulus2 ( float): shear_modulus2
+
+    Returns:
+        None
+    """
+
+def set_price(material_id: int, price: float) -> None:
+    """set price
+    Args:
+        material_id ( int): material_id
+        price ( float): price
+
+    Returns:
+        None
+    """
+
+def set_price_type(material_id: int, price_type: str) -> None:
+    """set price type
+    Args:
+        material_id ( int): material_id
+        price_type ( str): price_type
+
+    Returns:
+        None
+    """
+
+def set_thermal_conductivity(material_id: int, thermal_conductivity: float) -> None:
+    """set thermal conductivity
+    Args:
+        material_id ( int): material_id
+        thermal_conductivity ( float): thermal_conductivity
+
+    Returns:
+        None
+    """
+
+def set_heat_capacity(material_id: int, heat_capacity: float) -> None:
+    """set heat capacity
+    Args:
+        material_id ( int): material_id
+        heat_capacity ( float): heat_capacity
+
+    Returns:
+        None
+    """
+
+def set_u_min(material_id: int, u_min: float) -> None:
+    """set u min
+    Args:
+        material_id ( int): material_id
+        u_min ( float): u_min
+
+    Returns:
+        None
+    """
+
+def set_u_max(material_id: int, u_max: float) -> None:
+    """set u max
+    Args:
+        material_id ( int): material_id
+        u_max ( float): u_max
+
+    Returns:
+        None
+    """
+
+def set_fire_resistance_class(material_id: int, fire_resistance_class: str) -> None:
+    """set fire resistance class
+    Args:
+        material_id ( int): material_id
+        fire_resistance_class ( str): fire_resistance_class
+
+    Returns:
+        None
+    """
+
+def set_smoke_class(material_id: int, smoke_class: str) -> None:
+    """set smoke class
+    Args:
+        material_id ( int): material_id
+        smoke_class ( str): smoke_class
+
+    Returns:
+        None
+    """
+
+def set_drop_forming_class(material_id: int, drop_forming_class: str) -> None:
+    """set drop forming class
+    Args:
+        material_id ( int): material_id
+        drop_forming_class ( str): drop_forming_class
+
+    Returns:
+        None
+    """
+
+def set_burn_off_rate(material_id: int, burn_off_rate: float) -> None:
+    """set burn off rate
+    Args:
+        material_id ( int): material_id
+        burn_off_rate ( float): burn_off_rate
+
+    Returns:
+        None
+    """
+
+def set_weight(material_id: int, weight: float) -> None:
+    """set weight
+    Args:
+        material_id ( int): material_id
+        weight ( float): weight
+
+    Returns:
+        None
+    """
+
+def set_weight_type(material_id: int, weight_type: str) -> None:
+    """set weight type
+    Args:
+        material_id ( int): material_id
+        weight_type ( str): weight_type
+
+    Returns:
+        None
+    """
+
+def clear_errors() -> None:
+    """clear errors
+    Args:
+
+    Returns:
+        None
+    """
+
+def set_grade(a0: int, a1: str) -> None:
+    """set grade
+    Args:
+        a0 ( int): a0
+        a1 ( str): a1
+
+    Returns:
+        None
+    """
+
+def set_quality(a0: int, a1: str) -> None:
+    """set quality
+    Args:
+        a0 ( int): a0
+        a1 ( str): a1
+
+    Returns:
+        None
+    """
+
+def set_composition(a0: int, a1: str) -> None:
+    """set composition
+    Args:
+        a0 ( int): a0
+        a1 ( str): a1
+
+    Returns:
+        None
+    """
+
+def get_material_id(material_name: str) -> int:
+    """get material id
+    Args:
+        material_name ( str): material_name
+
+    Returns:
+        intmaterial ID
+    """
 
 def get_name(material_id: int) -> str:
-    """Get material name
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get name
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        str: material name
+        strmaterial name
     """
-
-
-def set_name(material_id: int, value: str) -> None:
-    """
-
-    Args:
-        material_id (int): element ID
-        value (str): a material name
-    """
-
 
 def get_group(material_id: int) -> str:
-    """get material group
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get group
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        str: material group
+        strmaterial group
     """
-
-
-def set_group(material_id: int, value: str) -> None:
-    """set material group
-
-    Args:
-        material_id (int): element ID
-        value (str): material group (name)
-    """
-
 
 def get_code(material_id: int) -> str:
-    """get material code
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get code
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        str: material code
+        strmaterial code
     """
-
-
-def set_code(material_id: int, value: str) -> None:
-    """set material code
-
-    Args:
-        material_id (int): element ID
-        value (str): material code
-    """
-
 
 def get_modulus_elasticity_1(material_id: int) -> float:
-    """
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get modulus elasticity 1
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        float: value
+        floatmaterial modulus of elasticity 1
     """
-
-
-def set_modulus_elasticity_1(material_id: int, value: float) -> None:
-    """
-
-    Args:
-        material_id (int): element ID
-        value (float): value
-    """
-
 
 def get_modulus_elasticity_2(material_id: int) -> float:
-    """
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get modulus elasticity 2
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        float: value
+        floatmaterial modulus of elasticity 2
     """
-
-
-def set_modulus_elasticity_2(material_id: int, value: float) -> None:
-    """
-
-    Args:
-        material_id (int): element ID
-        value (float): value
-    """
-
 
 def get_modulus_elasticity_3(material_id: int) -> float:
-    """
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get modulus elasticity 3
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        float: value
+        floatmaterial modulus of elasticity 3
     """
-
-
-def set_modulus_elasticity_3(material_id: int, value: float) -> None:
-    """
-
-    Args:
-        material_id (int): element ID
-        value (float): value
-    """
-
 
 def get_shear_modulus_1(material_id: int) -> float:
-    """
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get shear modulus 1
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        float: value
+        floatmaterial shear modulus 1
     """
-
-
-def set_shear_modulus_1(material_id: int, value: float) -> None:
-    """
-
-    Args:
-        material_id (int): element ID
-        value (float): value
-    """
-
 
 def get_shear_modulus_2(material_id: int) -> float:
-    """
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get shear modulus 2
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        float: value
+        floatmaterial shear modulus 2
     """
-
-
-def set_shear_modulus_2(material_id: int, value: float) -> None:
-    """
-
-    Args:
-        material_id (int): element ID
-        value (float): value
-    """
-
 
 def get_price(material_id: int) -> float:
-    """
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get price
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        float: value
+        floatmaterial price
     """
-
-
-def set_price(material_id: int, value: float) -> None:
-    """
-
-    Args:
-        material_id (int): element ID
-        value (float): value
-    """
-
 
 def get_price_type(material_id: int) -> str:
-    """
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get price type
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        str: _description_
+        strmaterial price type
     """
-
-
-def set_price_type(material_id: int, value: str) -> None:
-    """
-
-    Args:
-        material_id (int): element ID
-        value (str): _description_
-    """
-
 
 def get_thermal_conductivity(material_id: int) -> float:
-    """
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get thermal conductivity
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        float: value
+        floatmaterial thermal conductivity
     """
-
-
-def set_thermal_conductivity(material_id: int, value: float) -> None:
-    """
-
-    Args:
-        material_id (int): element ID
-        value (float): value
-    """
-
 
 def get_heat_capacity(material_id: int) -> float:
-    """
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get heat capacity
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        float: value
+        floatmaterial heat capacity
     """
-
-
-def set_heat_capacity(material_id: int, value: float) -> None:
-    """
-
-    Args:
-        material_id (int): element ID
-        value (float): value
-    """
-
 
 def get_u_min(material_id: int) -> float:
-    """
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get u min
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        float: value
+        floatmaterial U min
     """
-
-
-def set_u_min(material_id: int, value: float) -> None:
-    """
-
-    Args:
-        material_id (int): element ID
-        value (float): value
-    """
-
 
 def get_u_max(material_id: int) -> float:
-    """
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get u max
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        float: value
+        floatmaterial U max
     """
-
-
-def set_u_max(material_id: int, value: float) -> None:
-    """
-
-    Args:
-        material_id (int): element ID
-        value (float): value
-    """
-
 
 def get_fire_resistance_class(material_id: int) -> str:
-    """
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get fire resistance class
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        str: _description_
+        strmaterial fire resistance class
     """
-
-
-def set_fire_resistance_class(material_id: int, value: str) -> None:
-    """
-
-    Args:
-        material_id (int): element ID
-        value (str): _description_
-    """
-
 
 def get_smoke_class(material_id: int) -> str:
-    """
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get smoke class
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        str: _description_
+        strmaterial smoke class
     """
-
-
-def set_smoke_class(material_id: int, value: str) -> None:
-    """
-
-    Args:
-        material_id (int): element ID
-        value (str): _description_
-    """
-
 
 def get_drop_forming_class(material_id: int) -> str:
-    """
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get drop forming class
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        str: _description_
+        strmaterial drop forming class
     """
-
-
-def set_drop_forming_class(material_id: int, value: str) -> None:
-    """
-
-    Args:
-        material_id (int): element ID
-        value (str): _description_
-    """
-
 
 def get_burn_off_rate(material_id: int) -> float:
-    """
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get burn off rate
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        float: value
+        floatmaterial burn off rate
     """
-
-
-def set_burn_off_rate(material_id: int, value: float) -> None:
-    """
-
-    Args:
-        material_id (int): element ID
-        value (float): value
-    """
-
 
 def get_weight(material_id: int) -> float:
-    """get material weight
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get weight
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        float: value
+        floatmaterial weight
     """
-
-
-def set_weight(material_id: int, value: float) -> None:
-    """set material weight
-
-    Args:
-        material_id (int): element ID
-        value (float): value
-    """
-
 
 def get_weight_type(material_id: int) -> str:
-    """gets the material weight type
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get weight type
     Args:
-        material_id (int): element ID
+        material_id ( int): material_id
 
     Returns:
-        str: weight type
+        strmaterial weight type
     """
-
-
-def set_weight_type(element: int, value: str) -> None:
-    """sets the material weight type
-
-    Args:
-        element (int): element ID
-        value (str): weight type
-    """
-
-
-def get_material_id(name: str) -> None:
-    """
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        name (str): material name
-    """
-
 
 def get_all_materials() -> List[int]:
-    """
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
+    """get all materials
+    Args:
 
     Returns:
-        List[int]: all materials
+        List[int]material ID list
     """
 
-
-def set_grade(material_id: int, grade: str) -> None:
-    """
-
+def get_grade(a0: int) -> str:
+    """get grade
     Args:
-        material_id int: material ID
-        grade (str): grade
-    """
-
-
-def get_grade(material_id: int) -> str:
-    """
-
-    Args:
-        material_id int: material ID
+        a0 ( int): a0
 
     Returns:
-        str: grade
+        str
     """
 
-
-def set_quality(material_id: int, quality: str) -> None:
-    """
-
+def get_quality(a0: int) -> str:
+    """get quality
     Args:
-        material_id int: material ID
-        quality (str): quality
-    """
-
-
-def get_quality(material_id: int) -> str:
-    """
-
-    Args:
-        material_id int: material ID
+        a0 ( int): a0
 
     Returns:
-        str: quality
+        str
     """
 
-
-def set_composition(material_id: int, composition: str) -> None:
-    """
-
+def get_composition(a0: int) -> str:
+    """get composition
     Args:
-        material_id int: material ID
-        composition (str): composition
-    """
-
-
-def get_composition(material_id: int) -> str:
-    """
-
-    Args:
-        material_id int: material ID
+        a0 ( int): a0
 
     Returns:
-        str: composition
+        str
     """
+
+def get_short_name(a0: int) -> str:
+    """get short name
+    Args:
+        a0 ( int): a0
+
+    Returns:
+        str
+    """
+

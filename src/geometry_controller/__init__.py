@@ -1,962 +1,843 @@
 from typing import List
-from cadwork import facet_list, point_3d
+from cadwork import facet_list
+from cadwork import point_3d
 
 
-def get_width(element: int) -> float:
-    """Get element width. 
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def get_last_error(error_code: int) -> str:
+    """get last error
     Args:
-        element (int): element ID
+        error_code ( int): error_code
 
     Returns:
-        float: width
+        strerror string
     """
 
 
-def get_height(element: int) -> float:
-    """Get element height. 
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def rotate_height_axis_90(element_id_list: List[int]) -> None:
+    """rotate height axis 90
     Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
 
     Returns:
-        float: height
+        None
     """
 
 
-def get_length(element: int) -> float:
-    """Get element length. 
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def rotate_height_axis_180(element_id_list: List[int]) -> None:
+    """rotate height axis 180
     Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
 
     Returns:
-        float: length
+        None
     """
 
 
-def get_p1(element: int) -> point_3d:
-    """Get start Point of element. 
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        point_3d: start point
-    """
-
-
-def get_p2(element: int) -> point_3d:
-    """Get end Point of element. 
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        point_3d: end point
-    """
-
-
-def get_p3(element: int) -> point_3d:
-    """Point for orientation of the Z axis of the element. This point is on the same plane as point 1.
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        point_3d: orientation point
-    """
-
-
-def get_start_height_cut_angle(element: int) -> float:
-    """get start height cut angle
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID 
-
-    Returns:
-        float:  value
-    """
-
-
-def get_start_width_cut_angle(element: int) -> float:
-    """get start width cut angle
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        float:  value
-    """
-
-
-def get_end_height_cut_angle(element: int) -> float:
-    """get end height cut angle
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        float:  value
-    """
-
-
-def get_end_width_cut_angle(element: int) -> float:
-    """get end width cut angle
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        float:  value
-    """
-
-
-def rotate_height_axis_90(elements: List[int]) -> None:
-    """rotate element height axis 90° 
-
-    Args:
-        elements (List[int]):  element IDs
-    """
-
-
-def rotate_height_axis_180(elements: List[int]) -> None:
-    """rotate element height axis 180° 
-
-    Args:
-        elements (List[int]):  element IDs
-    """
-
-
-def get_over_width(element: int) -> float:
-    """get over widht
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        float:  value
-    """
-
-
-def set_over_width(element: int, value: float) -> None:
+def set_over_width(element_id_list: List[int], value: float) -> None:
     """set over width
-
     Args:
-        element (int): element ID
-        value (float):  a value
-    """
-
-
-def get_over_height(element: int) -> float:
-    """get over height
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
+        value ( float): value
 
     Returns:
-        float:  value
+        None
     """
 
 
-def set_over_height(element: int, value: float) -> None:
+def set_over_height(element_id_list: List[int], value: float) -> None:
     """set over height
-
     Args:
-        element (int): element ID
-        value (float):  a value
-    """
-
-
-def get_over_length(element: int) -> float:
-    """get over length
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
+        value ( float): value
 
     Returns:
-        float:  value
+        None
     """
 
 
-def set_over_length(element: int, value: float) -> None:
+def set_over_length(element_id_list: List[int], value: float) -> None:
     """set over length
-
     Args:
-        element (int): element ID
-        value (float):  a value
-    """
-
-
-def get_rounding_width(element: int) -> float:
-    """get rounding width
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
+        value ( float): value
 
     Returns:
-        float:  value
+        None
     """
 
 
-def set_rounding_width(element: int, value: float) -> None:
+def set_rounding_width(element_id_list: List[int], value: float) -> None:
     """set rounding width
-
     Args:
-        element (int): element ID
-        value (float):  a value
-    """
-
-
-def get_rounding_height(element: int) -> float:
-    """get rounding height
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
+        value ( float): value
 
     Returns:
-        float:  value
+        None
     """
 
 
-def set_rounding_height(element: int, value: float) -> None:
+def set_rounding_height(element_id_list: List[int], value: float) -> None:
     """set rounding height
-
     Args:
-        element (int): element ID
-        value (float):  a value
-    """
-
-
-def get_rounding_length(element: int) -> float:
-    """get rounding length
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
+        value ( float): value
 
     Returns:
-        float:  value
+        None
     """
 
 
-def set_rounding_length(element: int, value: float) -> None:
+def set_rounding_length(element_id_list: List[int], value: float) -> None:
     """set rounding length
-
     Args:
-        element (int): element ID
-        value (float):  a value
-    """
-
-
-def get_cross_correction_negative_width(element: int) -> float:
-    """get cross correction negative width
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
+        value ( float): value
 
     Returns:
-        float:  value
+        None
     """
 
 
-def set_cross_correction_negative_width(element: int, value: float) -> None:
+def set_cross_correction_negative_width(element_id_list: List[int], value: float) -> None:
     """set cross correction negative width
-
     Args:
-        element (int): element ID
-        value (float):  a value
-    """
-
-
-def get_cross_correction_positive_width(element: int) -> float:
-    """get cross correction positive width
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
+        value ( float): value
 
     Returns:
-        float:  value
+        None
     """
 
 
-def set_cross_correction_positive_width(element: int, value: float) -> None:
+def set_cross_correction_positive_width(element_id_list: List[int], value: float) -> None:
     """set cross correction positive width
-
     Args:
-        element (int): element ID
-        value (float):  a value
-    """
-
-
-def get_cross_correction_negative_height(element: int) -> float:
-    """set cross correction negative height
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
+        value ( float): value
 
     Returns:
-        float:  value
+        None
     """
 
 
-def set_cross_correction_negative_height(element: int, value: float) -> None:
+def set_cross_correction_negative_height(element_id_list: List[int], value: float) -> None:
     """set cross correction negative height
-
     Args:
-        element (int): element ID
-        value (float):  a value
-    """
-
-
-def get_cross_correction_positive_height(element: int) -> float:
-    """get cross correction positive height
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
+        value ( float): value
 
     Returns:
-        float:  value
+        None
     """
 
 
-def set_cross_correction_positive_height(element: int, value: float) -> None:
+def set_cross_correction_positive_height(element_id_list: List[int], value: float) -> None:
     """set cross correction positive height
-
     Args:
-        element (int): element ID
-        value (float):  a value
-    """
-
-
-def get_cross_correction_negative_length(element: int) -> float:
-    """get cross correction negative length
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
+        value ( float): value
 
     Returns:
-        float:  value
+        None
     """
 
 
-def set_cross_correction_negative_length(element: int, value: float) -> None:
+def set_cross_correction_negative_length(element_id_list: List[int], value: float) -> None:
     """set cross correction negative length
-
     Args:
-        element (int): element ID
-        value (float):  a value
-    """
-
-
-def get_cross_correction_positive_length(element: int) -> float:
-    """get cross correction positive length
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
+        value ( float): value
 
     Returns:
-        float:  value
+        None
     """
 
 
-def set_cross_correction_positive_length(element: int, value: float) -> None:
+def set_cross_correction_positive_length(element_id_list: List[int], value: float) -> None:
     """set cross correction positive length
-
     Args:
-        element (int): element ID
-        value (float):  a value
-    """
-
-
-def get_weight(element: int) -> float:
-    """get element weight
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
+        value ( float): value
 
     Returns:
-        float:  value
+        None
     """
 
 
-def get_list_weight(element: int) -> float:
-    """get element list weight 
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        float:  value
-    """
-
-
-def get_volume(element: int) -> float:
-    """get element volume
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        float:  value
-    """
-
-
-def get_list_volume(element: int) -> float:
-    """get element list volume
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        float:  value
-    """
-
-
-def get_xl(element: int) -> point_3d:
-    """get local X vector
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        point_3d: point_3d (x,y,z)
-    """
-
-
-def get_yl(element: int) -> point_3d:
-    """get local Y vector
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        point_3d: point_3d (x,y,z)
-    """
-
-
-def get_zl(element: int) -> point_3d:
-    """get local Z vector
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        point_3d: point_3d (x,y,z)
-    """
-
-
-def get_center_of_gravity(element: int) -> point_3d:
-    """get center of gravity geometrical 
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        point_3d: point_3d (x,y,z)
-    """
-
-
-def get_center_of_gravity_for_list_considering_materials(elements: List[int]) -> point_3d:
-    """get center of gravity considering material weights 
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        elements (List[int]):  element IDs
-
-    Returns:
-        point_3d: point_3d (x,y,z)
-    """
-
-
-def get_reference_side(element: int) -> int:
-    """get element reference side
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        int: face ID
-    """
-
-
-def get_element_vertices(element: int) -> List[point_3d]:
-    """get BREP vertices of element
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        List[point_3d]: vertex list
-    """
-
-
-def apply_global_scale(elements: List[int], scale: float, origin: point_3d) -> None:
+def apply_global_scale(element_id_list: List[int], scale: float, origin: point_3d) -> None:
     """apply global scale
-
     Args:
-        elements (List[int]):  element IDs
-        scale (float): scale factor
-        origin (point_3d): a origin
-    """
-
-
-def auto_regenerate_axes(elements: List[int]) -> None:
-    """regenerate element axis system
-
-    Args:
-        elements (List[int]):  element IDs
-    """
-
-
-def rotate_length_axis_90(elements: List[int]) -> None:
-    """rotate length axis 90°
-
-    Args:
-        elements (List[int]):  element IDs
-    """
-
-
-def rotate_length_axis_180(elements: List[int]) -> None:
-    """rotate length axis 180°
-
-    Args:
-        elements (List[int]):  element IDs
-    """
-
-
-def invert_model(elements: List[int]) -> None:
-    """Inverts element model
-
-    Args:
-        elements (List[int]):  element IDs
-    """
-
-
-def get_element_facets(element: int) -> List[List[point_3d]]:
-    """get element facets in a nested list
-
-    Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
+        scale ( float): scale
+        origin ( point_3d): origin
 
     Returns:
-        List[List[point_3d]]: nested vertex list
+        None
     """
 
 
-def get_list_width(element: int) -> float:
-    """get list width
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def auto_regenerate_axes(element_id_list: List[int]) -> None:
+    """auto regenerate axes
     Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
 
     Returns:
-        float:  value
+        None
     """
 
 
-def get_list_height(element: int) -> float:
-    """get list height
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def rotate_length_axis_90(element_id_list: List[int]) -> None:
+    """rotate length axis 90
     Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
 
     Returns:
-        float:  value
+        None
     """
 
 
-def get_list_length(element: int) -> float:
-    """get list length
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def rotate_length_axis_180(element_id_list: List[int]) -> None:
+    """rotate length axis 180
     Args:
-        element (int): element ID
+        element_id_list ( List[int]): element_id_list
 
     Returns:
-        float:  value
+        None
     """
 
 
-def set_width_real(elements: List[int], value: float) -> None:
+def invert_model(element_id_list: List[int]) -> None:
+    """invert model
+    Args:
+        element_id_list ( List[int]): element_id_list
+
+    Returns:
+        None
+    """
+
+
+def set_width_real(elements: List[int], width: float) -> None:
     """set width real
-
     Args:
-        elements (List[int]):  element IDs
-        value (float):  a value
-    """
-
-
-def set_height_real(elements: List[int], value: float) -> None:
-    """set height real
-
-    Args:
-        elements (List[int]):  element IDs
-        value (float):  a value
-    """
-
-
-def set_length_real(elements: List[int], value: float) -> None:
-    """set length real
-
-    Args:
-        elements (List[int]):  element IDs
-        value (float):  a value
-    """
-
-
-def rotate_height_axis_2_points(elements: List[int], start: point_3d, end: point_3d) -> None:
-    """rotate height axis via 2 points. The axis is defined by a point 1 and a point 2. 
-
-    Args:
-        elements (List[int]):  element IDs
-        start (point_3d): start point
-        end (point_3d): end point
-    """
-
-
-def get_minimum_distance_between_elements(first_element: int, second_element: int) -> float:
-    """get the minimum distance between two elements
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        first_element (int): element ID
-        second_element (int): element ID
+        elements ( List[int]): elements
+        width ( float): width
 
     Returns:
-        float:  value
+        None
+    """
+
+
+def set_height_real(elements: List[int], height: float) -> None:
+    """set height real
+    Args:
+        elements ( List[int]): elements
+        height ( float): height
+
+    Returns:
+        None
+    """
+
+
+def set_length_real(elements: List[int], length: float) -> None:
+    """set length real
+    Args:
+        elements ( List[int]): elements
+        length ( float): length
+
+    Returns:
+        None
+    """
+
+
+def rotate_height_axis_2_points(elements: List[int], point1: point_3d, point2: point_3d) -> None:
+    """rotate height axis 2 points
+    Args:
+        elements ( List[int]): elements
+        point1 ( point_3d): point1
+        point2 ( point_3d): point2
+
+    Returns:
+        None
+    """
+
+
+def clear_errors() -> None:
+    """clear errors
+    Args:
+
+    Returns:
+        None
+    """
+
+
+def set_drilling_tolerance(elements: List[int], tolerance: float) -> None:
+    """set drilling tolerance
+    Args:
+        elements ( List[int]): elements
+        tolerance ( float): tolerance
+
+    Returns:
+        None
+    """
+
+
+def auto_regenerate_axes_silently(a0: List[int]) -> None:
+    """auto regenerate axes silently
+    Args:
+        a0 ( List[int]): a0
+
+    Returns:
+        None
+    """
+
+
+def rotate_length_axis_2_points(elements: List[int], point1: point_3d, point2: point_3d) -> None:
+    """rotate length axis 2 points
+    Args:
+        elements ( List[int]): elements
+        point1 ( point_3d): point1
+        point2 ( point_3d): point2
+
+    Returns:
+        None
+    """
+
+
+def get_width(element_id: int) -> float:
+    """get width
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement width
+    """
+
+
+def get_height(element_id: int) -> float:
+    """get height
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement height
+    """
+
+
+def get_length(element_id: int) -> float:
+    """get length
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement length
+    """
+
+
+def get_p1(element_id: int) -> point_3d:
+    """get p1
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        point_3delement P1
+    """
+
+
+def get_p2(element_id: int) -> point_3d:
+    """get p2
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        point_3delement P2
+    """
+
+
+def get_p3(element_id: int) -> point_3d:
+    """get p3
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        point_3delement P3
+    """
+
+
+def get_start_height_cut_angle(element_id: int) -> float:
+    """get start height cut angle
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement start height cut angle
+    """
+
+
+def get_start_width_cut_angle(element_id: int) -> float:
+    """get start width cut angle
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement start width cut angle
+    """
+
+
+def get_end_height_cut_angle(element_id: int) -> float:
+    """get end height cut angle
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement end height cut angle
+    """
+
+
+def get_end_width_cut_angle(element_id: int) -> float:
+    """get end width cut angle
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement end width cut angle
+    """
+
+
+def get_over_width(element_id: int) -> float:
+    """get over width
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement overwidth
+    """
+
+
+def get_over_height(element_id: int) -> float:
+    """get over height
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement overheight
+    """
+
+
+def get_over_length(element_id: int) -> float:
+    """get over length
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement overlength
+    """
+
+
+def get_rounding_width(element_id: int) -> float:
+    """get rounding width
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement rounding width
+    """
+
+
+def get_rounding_height(element_id: int) -> float:
+    """get rounding height
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement rounding height
+    """
+
+
+def get_rounding_length(element_id: int) -> float:
+    """get rounding length
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement rounding length
+    """
+
+
+def get_cross_correction_negative_width(element_id: int) -> float:
+    """get cross correction negative width
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement negative width cross correction
+    """
+
+
+def get_cross_correction_positive_width(element_id: int) -> float:
+    """get cross correction positive width
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement positive width cross correction
+    """
+
+
+def get_cross_correction_negative_height(element_id: int) -> float:
+    """get cross correction negative height
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement negative height cross correction
+    """
+
+
+def get_cross_correction_positive_height(element_id: int) -> float:
+    """get cross correction positive height
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement positive height cross correction
+    """
+
+
+def get_cross_correction_negative_length(element_id: int) -> float:
+    """get cross correction negative length
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement negative length cross correction
+    """
+
+
+def get_cross_correction_positive_length(element_id: int) -> float:
+    """get cross correction positive length
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement positive length cross correction
+    """
+
+
+def get_weight(element_id: int) -> float:
+    """get weight
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement real weight
+    """
+
+
+def get_list_weight(element_id: int) -> float:
+    """get list weight
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement list weight
+    """
+
+
+def get_volume(element_id: int) -> float:
+    """get volume
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement real volume
+    """
+
+
+def get_list_volume(element_id: int) -> float:
+    """get list volume
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement list volume
+    """
+
+
+def get_xl(element_id: int) -> point_3d:
+    """get xl
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        point_3delement XL vector
+    """
+
+
+def get_yl(element_id: int) -> point_3d:
+    """get yl
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        point_3delement YL vector
+    """
+
+
+def get_zl(element_id: int) -> point_3d:
+    """get zl
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        point_3delement ZL vector
+    """
+
+
+def get_center_of_gravity(element_id: int) -> point_3d:
+    """get center of gravity
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        point_3delement center of gravity
+    """
+
+
+def get_reference_side(element_id: int) -> int:
+    """get reference side
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        intelement reference side
+    """
+
+
+def get_element_vertices(element_id: int) -> List[point_3d]:
+    """get element vertices
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        List[point_3d]element vertices
+    """
+
+
+def get_element_facets(element_id: int) -> facet_list:
+    """get element facets
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        facet_listelement facets
+    """
+
+
+def get_list_width(element_id: int) -> float:
+    """get list width
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement list width
+    """
+
+
+def get_list_height(element_id: int) -> float:
+    """get list height
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement list height
+    """
+
+
+def get_list_length(element_id: int) -> float:
+    """get list length
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        floatelement list length
+    """
+
+
+def get_minimum_distance_between_elements(first_id: int, second_id: int) -> float:
+    """get minimum distance between elements
+    Args:
+        first_id ( int): first_id
+        second_id ( int): second_id
+
+    Returns:
+        floatminimum distance
     """
 
 
 def get_total_area_of_all_faces(element: int) -> float:
-    """get total area fo all element faces
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get total area of all faces
     Args:
-        element (int): element ID
+        element ( int): element
 
     Returns:
-        float:  value
+        floatelement total faces area
     """
 
 
 def get_area_of_front_face(element: int) -> float:
-    """accumulates area of all faces that are perpendicular to the length (Xl) axis. 
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get area of front face
     Args:
-        element (int): element ID
+        element ( int): element
 
     Returns:
-        float:  value
+        floatelement front face area
     """
 
 
 def get_door_surface(elements: List[int]) -> float:
     """get door surface
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
     Args:
-        elements (List[int]):  element IDs
+        elements ( List[int]): elements
 
     Returns:
-        float:  value
+        floatelement door surface
     """
 
 
 def get_window_surface(elements: List[int]) -> float:
     """get window surface
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
     Args:
-        elements (List[int]):  element IDs
+        elements ( List[int]): elements
 
     Returns:
-        float:  value
+        floatelement window surface
     """
 
 
 def get_local_x() -> point_3d:
-    """X vector of the coordinate system in 3D
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
+    """get local x
+    Args:
 
     Returns:
-        point_3d: point_3d (x,y,z)
+        point_3dlocal X vector
     """
 
 
 def get_local_z() -> point_3d:
-    """Z vector of the coordinate system in 3D
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
+    """get local z
+    Args:
 
     Returns:
-        point_3d: point_3d (x,y,z)
+        point_3dlocal Y vector
     """
 
 
 def get_local_y() -> point_3d:
-    """Y vector of the coordinate system in 3D
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
+    """get local y
+    Args:
 
     Returns:
-        point_3d: point_3d (x,y,z)
-    """
-
-
-def set_drilling_tolerance(elements: List[int], value: float) -> None:
-    """set drilling tolerance
-
-    Args:
-        elements (List[int]):  element IDs
-        value (float):  a value
+        point_3dlocal Z vector
     """
 
 
 def get_drilling_tolerance(element: int) -> float:
     """get drilling tolerance
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
     Args:
-        element (int): element ID
+        element ( int): element
 
     Returns:
-        float:  value
+        floatthe drilling tolerance
     """
 
 
-def get_element_reference_face_vertices(element: int) -> List[point_3d]:
+def get_element_reference_face_vertices(element_id: int) -> List[point_3d]:
     """get element reference face vertices
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
     Args:
-        element (int): element ID
+        element_id ( int): element_id
 
     Returns:
-        List[point_3d]: vertex list
+        List[point_3d]vertexlist of all points
     """
 
 
-def get_element_reference_face_area(element: int) -> float:
+def get_element_reference_face_area(element_id: int) -> float:
     """get element reference face area
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
     Args:
-        element (int): element ID
+        element_id ( int): element_id
 
     Returns:
-        float:  value
-    """
-
-
-def auto_regenerate_axes_silently(elements: List[int]) -> None:
-    """automatic, silent regeneration of element axes 
-
-    Args:
-        elements (List[int]):  element IDs
-    """
-
-
-def rotate_length_axis_2_points(elements: List[int], start: point_3d, end: point_3d) -> None:
-    """rotate length axis via 2 points. The axis is defined by a point 1 and a point 2. 
-
-    Args:
-        elements (List[int]):  element IDs
-        start (point_3d): start point
-        end (point_3d): end point
+        floatarea(size) of reference face
     """
 
 
 def get_center_of_gravity_for_list(elements: List[int]) -> point_3d:
-    """get geometrical center of gravity for elements
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get center of gravity for list
     Args:
-        elements (List[int]):  element IDs
+        elements ( List[int]): elements
 
     Returns:
-        point_3d: point_3d (x,y,z)
+        point_3d
     """
 
 
-def are_facets_coplanar(vertices_first_plane: List[point_3d], vertices_second_plane: List[point_3d]) -> bool:
-    """checks if points of facet/plane are coplanar
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def get_center_of_gravity_for_list_considering_materials(elements: List[int]) -> point_3d:
+    """get center of gravity for list considering materials
     Args:
-        vertices_first_plane (List[point_3d]): a first point list
-        vertices_second_plane (List[point_3d]): a second point list
+        elements ( List[int]): elements
 
     Returns:
-        bool: are facets/vertices coplanar
+        point_3d
     """
 
 
-def get_actual_physical_volume(element: int) -> float:
-    """get the real/physical volume of an element
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def get_element_facet_count(element_id: int) -> int:
+    """get element facet count
     Args:
-        element (int): element ID
+        element_id ( int): element_id
 
     Returns:
-        float: volume
+        int
     """
 
 
-def get_element_facet_count(element: int) -> int:
-    """Get element facet count
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def get_weight_real(element_id: int) -> float:
+    """get weight real
     Args:
-        element (int): element ID
+        element_id ( int): element_id
 
     Returns:
-        int: number of facets
+        float
     """
 
 
-def get_weight_real(element: int) -> float:
-    """Get weight real
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def get_actual_physical_weight(a0: int) -> float:
+    """get actual physical weight
     Args:
-        element (int): element ID
+        a0 ( int): a0
 
     Returns:
-        float: weight real
+        float
     """
 
 
-def create_division_zone(element: int, point: point_3d, direction: int) -> None:
-    """ create division zone
-        positive direction = 1
-        negative direction = -1
-
+def get_actual_physical_volume(a0: int) -> float:
+    """get actual physical volume
     Args:
-        element (int): element ID
-        point (point_3d): positon
-        direction (point_3d): direction vector
-    """
-
-
-def delete_division_zone(element: int) -> None:
-    """ delete division zone
-
-    Args:
-        element (int): element ID
-    """
-
-
-def get_division_zone_points(element: int) -> List[point_3d]:
-    """ get division zone points
-
-    Args:
-        element (int): element ID
+        a0 ( int): a0
 
     Returns:
-        List[point_3d]: list of points
+        float
     """
 
 
-def get_element_facets(element: int) -> facet_list:
-    """get element facets
-
-    Examples:
-        >>> import cadwork
-        >>> import geometry_controller
-        >>> facets = geometry_controller.get_element_facets(element_id)
-        >>> for index in facets.count():
-                normal = facets.get_normal_vector(index)
-
-
+def are_facets_coplanar(a0: List[point_3d], a1: List[point_3d]) -> bool:
+    """are facets coplanar
     Args:
-        element (int): element ID
+        a0 ( List[point_3d]): a0
+        a1 ( List[point_3d]): a1
 
     Returns:
-        facet_list: list of facets
+        bool
     """

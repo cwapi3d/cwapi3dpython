@@ -1,313 +1,274 @@
 from typing import List
-from cadwork import (ifc_2x3_element_type, ifc_options)
+from cadwork import ifc_2x3_element_type
+from cadwork import ifc_options
 
 
-def get_ifc_guid(element: int) -> str:
-    """Get readable ifc guid. Convert readable guid to IfcGuid, see -> https://github.com/IfcOpenShell/IfcOpenShell/blob/master/src/ifcopenshell-python/ifcopenshell/guid.py
-
+def get_last_error(a0: int) -> str:
+    """get last error
     Args:
-        element (int): element ID
+        a0 ( int): a0
 
     Returns:
-        str: readable guid
+        str
     """
 
 
-def set_building_and_storey(elements: List[int], building: str, storey: str) -> None:
-    """Set bulding and storey 
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def get_ifc_guid(element_id: int) -> str:
+    """get ifc guid
     Args:
-        elements (List[int]): element IDs
-        building (str): building name
-        storey (str): storey name
+        element_id ( int): element_id
+
+    Returns:
+        str
+    """
+
+
+def clear_errors() -> None:
+    """clear errors
+    Args:
+
+    Returns:
+        None
+    """
+
+
+def get_ifc2x3_element_type(element_id: int) -> ifc_2x3_element_type:
+    """get ifc2x3 element type
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        ifc_2x3_element_type
+    """
+
+
+def set_ifc2x3_element_type(element_i_ds: List[int], element_type: None) -> None:
+    """set ifc2x3 element type
+    Args:
+        element_i_ds ( List[int]): element_i_ds
+        element_type ( None): element_type
+
+    Returns:
+        None
+    """
+
+
+def import_ifc_as_graphical_object(file_path: str) -> bool:
+    """import ifc as graphical object
+    Args:
+        file_path ( str): file_path
+
+    Returns:
+        bool
+    """
+
+
+def import_bcf(file_path: str) -> bool:
+    """import bcf
+    Args:
+        file_path ( str): file_path
+
+    Returns:
+        bool
+    """
+
+
+def export_bcf(file_path: str) -> bool:
+    """export bcf
+    Args:
+        file_path ( str): file_path
+
+    Returns:
+        bool
+    """
+
+
+def export_ifc(element_i_ds: List[int], file_path: str) -> bool:
+    """export ifc
+    Args:
+        element_i_ds ( List[int]): element_i_ds
+        file_path ( str): file_path
+
+    Returns:
+        bool
+    """
+
+
+def import_ifc_return_exchange_objects(file_path: str) -> List[int]:
+    """import ifc return exchange objects
+    Args:
+        file_path ( str): file_path
+
+    Returns:
+        List[int]
+    """
+
+
+def convert_exchange_objects(exchange_objects: List[int]) -> List[int]:
+    """convert exchange objects
+    Args:
+        exchange_objects ( List[int]): exchange_objects
+
+    Returns:
+        List[int]
+    """
+
+
+def set_storey_height(building: str, storey: str, height: float) -> None:
+    """set storey height
+    Args:
+        building ( str): building
+        storey ( str): storey
+        height ( float): height
+
+    Returns:
+        None
+    """
+
+
+def set_building_and_storey(element_id_list: List[int], building: str, storey: str) -> None:
+    """set building and storey
+    Args:
+        element_id_list ( List[int]): element_id_list
+        building ( str): building
+        storey ( str): storey
+
+    Returns:
+        None
     """
 
 
 def get_building(element: int) -> str:
-    """Get building name
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get building
     Args:
-        element (int): element ID
+        element ( int): element
 
     Returns:
-        str: building name
+        str
     """
 
 
 def get_storey(element: int) -> str:
-    """Get Storey
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+    """get storey
     Args:
-        element (int): element ID
+        element ( int): element
 
     Returns:
-        str: storey name
+        str
     """
 
 
-def get_ifc2x3_element_type(element: int) -> ifc_2x3_element_type:
-    """Get IFC element type. 
-
+def get_storey_height(building: str, storey: str) -> float:
+    """get storey height
     Args:
-        element (int): element ID
+        building ( str): building
+        storey ( str): storey
 
     Returns:
-        ifc_2x3_element_type: ifc type 
+        float
     """
 
 
-def set_ifc2x3_element_type(elements: List[int], ifc_2x3_element_type: ifc_2x3_element_type) -> None:
-    """Set IFC element type.
-
+def get_ifc2x3_element_type_string(element_type: None) -> str:
+    """get ifc2x3 element type string
     Args:
-        elements (List[int]): element IDs
-        ifc_2x3_element_type (ifc_2x3_element_type): cadwork ifc element type
-    """
-
-
-def import_ifc_as_graphical_object(file: str) -> None:
-    """Import ifc as graphical object
-
-    Args:
-        file (str): path to ifc file
-    """
-
-
-def import_bcf(file: str) -> None:
-    """Import bcf file.
-
-    Args:
-        file (str): path to bcf file
-    """
-
-
-def export_bcf(file: str) -> None:
-    """Export bcf file. 
-
-    Args:
-        file (str): Destination path 
-    """
-
-
-def export_ifc(elements: List[int], file: str) -> bool:
-    """Export an ifc file.
-
-    Args:
-        elements (List[int]): element IDs
-        file (str): Destination path 
-    """
-
-
-def convert_exchange_objects(elements: List[int]) -> List[int]:
-    """Convert exchange objects to cadwork elements 
-
-    Args:
-        elements (List[int]): element IDs
+        element_type ( None): element_type
 
     Returns:
-        List[int]: converted elements 
+        str
+    """
+
+
+def get_ifc2x3_element_type_display_string(element_type: None) -> str:
+    """get ifc2x3 element type display string
+    Args:
+        element_type ( None): element_type
+
+    Returns:
+        str
     """
 
 
 def get_all_buildings() -> List[str]:
-    """Get all, in 3D, existing buildings 
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
+    """get all buildings
+    Args:
 
     Returns:
-        List[str]: building names 
+        List[str]
     """
 
 
-def get_all_storeys(building_name: str) -> List[str]:
-    """Get all Storeys from a building.
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def get_all_storeys(building: str) -> List[str]:
+    """get all storeys
     Args:
-        building_name (str): building name
+        building ( str): building
 
     Returns:
-        List[str]: storey names 
+        List[str]
     """
 
 
-def get_storey_height(building_name: str, storey_name: str) -> float:
-    """Get the storey height. 
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def export_ifc2x3_silently(element_i_ds: List[int], file_path: str) -> bool:
+    """export ifc2x3 silently
     Args:
-        building_name (str): building name
-        storey_name (str): storey name
+        element_i_ds ( List[int]): element_i_ds
+        file_path ( str): file_path
 
     Returns:
-        float: storey elevation height
+        bool
     """
 
 
-def import_ifc_return_exchange_objects(file_path: str) -> None:
-    """Import ifc as exchange objects
-
+def export_ifc4_silently(element_i_ds: List[int], file_path: str) -> bool:
+    """export ifc4 silently
     Args:
-        file_path (str): file path
-    """
-
-
-def set_storey_height(building_name: str, storey_name: str, height: float) -> None:
-    """Set the storey elevation. 
-
-    Args:
-        building_name (str): building name
-        storey_name (str): storey name
-        height (float): storey elevation 
-    """
-
-
-def get_ifc2x3_element_type_string(ifc_2x3_element_type: ifc_2x3_element_type) -> str:
-    """Get ifc tpye as a string
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        ifc_2x3_element_type (ifc_2x3_element_type): cadwork ifc element type
+        element_i_ds ( List[int]): element_i_ds
+        file_path ( str): file_path
 
     Returns:
-        str: entity name
+        bool
     """
 
 
-def get_ifc2x3_element_type_display_string(ifc_2x3_element_type: ifc_2x3_element_type) -> str:
-    """Get ifc tpye display string
-
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
+def get_element_id_from_base64_ifc_guid(a1: str) -> int:
+    """get element element_id from base64 ifc guid
     Args:
-        ifc_2x3_element_type (ifc_2x3_element_type): cadwork ifc element type
+        a1 ( str): a1
 
     Returns:
-        str: entity name
+        int
     """
 
 
-def export_ifc2x3_silently(elements: List[int], file: str) -> bool:
-    """Export an ifc file. Elements without an IfcType get a matching IfcType assigned.
-    Elements without a building or storey get the default building and storey assigned. 
-
+def get_ifc_base64_guid(element_id: int) -> str:
+    """get ifc base64 guid
     Args:
-        elements (List[int]): element IDs
-        file (str): Destination path 
+        element_id ( int): element_id
 
     Returns:
-        bool: True if export was successful
+        strThe IFC GUID in base64 string format ("28kif20KPEuBjk2m1N3ep$").
     """
 
 
-def export_ifc4_silently(elements: List[int], file: str) -> bool:
-    """Export an ifc file. Elements without an IfcType get a matching IfcType assigned.
-    Elements without a building or storey get the default building and storey assigned. 
-
+def export_ifc2x3_silently_with_options(element_i_ds: List[int], file_path: str, options: ifc_options) -> bool:
+    """export ifc2x3 silently with options
     Args:
-        elements (List[int]): element IDs
-        file (str): Destination path 
+        element_i_ds ( List[int]): element_i_ds
+        file_path ( str): file_path
+        options ( ifc_options): options
 
     Returns:
-        bool: True if export was successful
+        bool
     """
 
 
-def get_element_id_from_base64_ifc_guid(base64_ifc_guid: str) -> int:
-    """Get element id from base64 ifc guid
-    IFC-GUID must be a fixed 22 character length string
-
-    Examples:
-     >>> get_element_id_from_base64_ifc_guid("28kif20KPEuBjk2m1N3ep$")
-        546169
-
+def export_ifc4_silently_with_options(element_i_ds: List[int], file_path: str, options: ifc_options) -> bool:
+    """export ifc4 silently with options
     Args:
-        base64_ifc_guid (str): base64 ifc guid
+        element_i_ds ( List[int]): element_i_ds
+        file_path ( str): file_path
+        options ( ifc_options): options
 
     Returns:
-        int: element id
-    """
-
-
-def get_ifc_base64_guid(element: int) -> str:
-    """Get ifc base64 guid from element id
-
-    Examples:
-     >>> get_ifc_base64_guid(546169)
-        "28kif20KPEuBjk2m1N3ep$"
-
-    Args:
-        element (int): element id
-
-    Returns:
-        str: base64 ifc guid
-    """
-
-
-def export_ifc2x3_silently_with_options(elements: List[int], file: str, options: ifc_options) -> bool:
-    """Export an ifc file. Elements without an IfcType get a matching IfcType assigned.
-    Elements without a building or storey get the default building and storey assigned. 
-    Create an ifc_options object and set the desired options.
-
-    Examples:
-        >>> import cadwork
-        >>> import bim_controller
-        >>> import element_controller
-        >>> ifc_options = cadwork.ifc_options()
-        >>> ifc_options_level_of_detail = ifc_options.get_ifc_options_level_of_detail()
-        >>> ifc_options_level_of_detail.get_cut_drillings()
-        >>> ifc_options_level_of_detail.set_cut_drillings(True)
-        >>> ifc_options_level_of_detail.get_cut_drillings()
-        >>> ifc_options_level_of_detail.set_export_vba_drillings(True)
-        >>> ifc_options_level_of_detail.set_export_vba_components(True)
-        >>> element_ids = element_controller.get_active_identifiable_element_ids()
-        >>> bim_controller.export_ifc2x3_silently_with_options(element_ids, "C:\\some_path\\test.ifc", ifc_options)
-
-    Args:
-        elements (List[int]): element IDs
-        file (str): Destination path 
-        options (ifc_options): ifc options
-
-
-    Returns:
-        bool: True if export was successful
-    """
-
-
-def export_ifc4_silently_with_options(elements: List[int], file: str, options: ifc_options) -> bool:
-    """Export an ifc file. Elements without an IfcType get a matching IfcType assigned.
-    Elements without a building or storey get the default building and storey assigned. 
-    Create an ifc_options object and set the desired options.
-
-    Examples:
-        >>> import cadwork
-        >>> import bim_controller
-        >>> import element_controller
-        >>> ifc_options = cadwork.ifc_options()
-        >>> ifc_options_level_of_detail = ifc_options.get_ifc_options_level_of_detail()
-        >>> ifc_options_level_of_detail.get_cut_drillings()
-        >>> ifc_options_level_of_detail.set_cut_drillings(True)
-        >>> ifc_options_level_of_detail.get_cut_drillings()
-        >>> ifc_options_level_of_detail.set_export_vba_drillings(True)
-        >>> ifc_options_level_of_detail.set_export_vba_components(True)
-        >>> element_ids = element_controller.get_active_identifiable_element_ids()
-        >>> bim_controller.export_ifc4_silently_with_options(element_ids, "C:\\some_path\\test.ifc", ifc_options)
-
-    Args:
-        elements (List[int]): element IDs
-        file (str): Destination path 
-        options (ifc_options): ifc options
-
-
-    Returns:
-        bool: True if export was successful
+        bool
     """

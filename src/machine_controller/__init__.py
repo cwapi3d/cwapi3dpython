@@ -1,84 +1,130 @@
+from typing import List
 
-def export_btl(version: int, file: str) -> None:
-    """Exports a BTL file
-
+def get_last_error(error_code: int) -> str:
+    """get last error
     Args:
-        version (int): BTL version
-        file (str): file path
-    """
-
-
-def export_weinmann_mfb(version: int) -> None:
-    """ Exports a WUP file
-
-    Args:
-        version (int): WUP version
-    """
-
-
-def export_hundegger(version: int) -> None:
-    """Exports a Hundegger file
-
-    Args:
-        version (int): hundegger type
-    """
-
-
-def export_hundegger_with_file_path(version: int, file: str) -> None:
-    """Exports a Hundegger file
-
-    Args:
-        version (int): hundegger type
-        file (str): file path
-    """
-
-
-def export_btl_with_presetting(version: int, file: str, presetting: str) -> None:
-    """Exports a BTL file with a presetting file
-
-    Args:
-        version (int): BTL version
-        file (str): file path
-        presetting (str): export presetting file .xml
-    """
-
-
-def export_hundegger_with_file_path_and_presetting(type: int, file: str, presetting: str) -> None:
-    """Exports a Hundegger file
-
-    Args:
-        type (int): hundegger type
-        file (str): file path
-        presetting (str): export presetting file .xml
-    """
-
-
-def load_hundegger_calculation_set(type: int, file: str) -> None:
-    """
-
-    Args:
-        type (int): hundegger type
-        file (str): file path
-    """
-
-
-def get_machine_calculation_state(element: int) -> str:
-    """ get machine calculation state
-
-    Args:
-        element (int): element ID
+        error_code ( int): error_code
 
     Returns:
-        str: machine calculation state
+        strerror string
     """
 
-
-def get_machine_calculation_set_machine_type(element: int) -> str:
-    """ get machine calculation set machine type
-
+def export_btl(btl_version: int, file_path: str) -> None:
+    """export btl
     Args:
-        element (int): element ID
+        btl_version ( int): btl_version
+        file_path ( str): file_path
 
     Returns:
-        str: machine calculation set machine type
+        None
     """
+
+def export_weinmann_mfb(mfb_version: int) -> None:
+    """export weinmann mfb
+    Args:
+        mfb_version ( int): mfb_version
+
+    Returns:
+        None
+    """
+
+def export_hundegger(hundeggertype: int) -> None:
+    """export hundegger
+    Args:
+        hundeggertype ( int): hundeggertype
+
+    Returns:
+        None
+    """
+
+def clear_errors() -> None:
+    """clear errors
+    Args:
+
+    Returns:
+        None
+    """
+
+def export_hundegger_with_file_path(hundeggertype: int, file_path: str) -> None:
+    """export hundegger with file path
+    Args:
+        hundeggertype ( int): hundeggertype
+        file_path ( str): file_path
+
+    Returns:
+        None
+    """
+
+def export_hundegger_with_file_path_and_presetting(hundeggertype: int, file_path: str, presetting: str) -> None:
+    """export hundegger with file path and presetting
+    Args:
+        hundeggertype ( int): hundeggertype
+        file_path ( str): file_path
+        presetting ( str): presetting
+
+    Returns:
+        None
+    """
+
+def export_btl_with_presetting(btl_version: int, file_path: str, presetting: str) -> None:
+    """export btl with presetting
+    Args:
+        btl_version ( int): btl_version
+        file_path ( str): file_path
+        presetting ( str): presetting
+
+    Returns:
+        None
+    """
+
+def calculate_btl_machine_data(elements: List[int], btl_version: int) -> None:
+    """calculate btl machine data
+    Args:
+        elements ( List[int]): elements
+        btl_version ( int): btl_version
+
+    Returns:
+        None
+    """
+
+def calculate_hundegger_machine_data(elements: List[int], hunderggertype: int) -> None:
+    """calculate hundegger machine data
+    Args:
+        elements ( List[int]): elements
+        hunderggertype ( int): hunderggertype
+
+    Returns:
+        None
+    """
+
+def load_hundegger_calculation_set(hundeggertype: int, file_path: str) -> None:
+    """load hundegger calculation set
+    Args:
+        hundeggertype ( int): hundeggertype
+        file_path ( str): file_path
+
+    Returns:
+        None
+    """
+
+def export_hundegger_with_file_path_silent(hundeggertype: int, file_path: str) -> None:
+    """export hundegger with file path silent
+    Args:
+        hundeggertype ( int): hundeggertype
+        file_path ( str): file_path
+
+    Returns:
+        None
+    """
+
+def export_hundegger_with_file_path_and_presetting_silent(hundeggertype: int, file_path: str, presetting: str) -> None:
+    """export hundegger with file path and presetting silent
+    Args:
+        hundeggertype ( int): hundeggertype
+        file_path ( str): file_path
+        presetting ( str): presetting
+
+    Returns:
+        None
+    """
+

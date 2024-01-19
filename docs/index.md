@@ -13,6 +13,11 @@ List calculations, list outputs, various import and export functions and much mo
 
 The Python Guide should enable you to start scripting in cadwork 3D. We hope we can convince you of the great potential with Python in cadwork. 
 
+## Discussion - Form
+
+[GitHub Discussion - Ask and answer questions from the Community](https://github.com/cwapi3d/cwapi3dpython/discussions){target=_blank} :speech_balloon:
+
+
 ## Introduction
 
 ### What Is an API?

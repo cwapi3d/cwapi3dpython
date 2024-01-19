@@ -1,6 +1,10 @@
-# ifc export options
+# Camera Data
 
-::: cadwork.ifc_options
+::: cadwork.camera_data
+::: cadwork.projection_type
+rendering:
+show_root_heading: false
+show_source: true
 
 rendering:
 show_root_heading: false

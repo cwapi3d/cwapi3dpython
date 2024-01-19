@@ -1,419 +1,529 @@
-class element_type():
-    def __init__(self) -> None:
-        pass
-
-    def isAdditionalElement(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isAuxiliary(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isCadwork(self) -> bool:
-        """
-
-        !!! Warning
-            Function deprecated.
+class element_type:
+    def isRotationElement(self) -> bool:
+        """isRotationElement
+        Args:
 
         Returns:
-            bool: condition
+            bool
         """
 
-    def isCircularAxis(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
+    def is_rotation_element(self) -> bool:
+        """is_rotation_element
+        Args:
 
-    def isCircularBeam(self) -> bool:
-        """
         Returns:
-            bool: condition
+            bool
         """
 
     def isConnectorAxis(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isConnectorNode(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isContainer(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isDimension(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isDrillingAxis(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isEaveAxis(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isExportSolid(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isExportSolidScene(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isFloor(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isGlobalCut(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isGraphicalObject(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isLine(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isNestingParent(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isNone(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isNormalNode(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isOpening(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isPanel(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isRectangularAxis(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isRectangularBeam(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isRoof(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isRoom(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isRotationElement(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isSectionTrace(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isSteelShape(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isSurface(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isTextDocument(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isWall(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def isWireAxis(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def is_additional_element(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def is_auxiliary(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def is_cadwork(self) -> bool:
-        """
-        !!! Warning
-            Function deprecated.
+        """isConnectorAxis
+        Args:
 
         Returns:
-            bool: condition
-        """
-
-    def is_circular_axis(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def is_circular_beam(self) -> bool:
-        """
-        Returns:
-            bool: condition
+            bool
         """
 
     def is_connector_axis(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def is_connector_node(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def is_container(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def is_dimension(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def is_drilling_axis(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def is_eave_axis(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def is_export_solid(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def is_export_solid_scene(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def is_floor(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def is_global_cut(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def is_graphical_object(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def is_line(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def is_nesting_parent(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def is_none(self) -> bool:
-        """
-
-
+        """is_connector_axis
+        Args:
 
         Returns:
-            bool: condition
+            bool
         """
 
-    def is_normal_node(self) -> bool:
-        """
-
-
+    def isOpening(self) -> bool:
+        """isOpening
+        Args:
 
         Returns:
-            bool: condition
+            bool
         """
 
     def is_opening(self) -> bool:
-        """
+        """is_opening
+        Args:
 
         Returns:
-            bool: condition
+            bool
         """
 
-    def is_panel(self) -> bool:
-        """
+    def isDimension(self) -> bool:
+        """isDimension
+        Args:
 
         Returns:
-            bool: condition
+            bool
+        """
+
+    def is_dimension(self) -> bool:
+        """is_dimension
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isDrillingAxis(self) -> bool:
+        """isDrillingAxis
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_drilling_axis(self) -> bool:
+        """is_drilling_axis
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isGraphicalObject(self) -> bool:
+        """isGraphicalObject
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_graphical_object(self) -> bool:
+        """is_graphical_object
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isRectangularAxis(self) -> bool:
+        """isRectangularAxis
+        Args:
+
+        Returns:
+            bool
         """
 
     def is_rectangular_axis(self) -> bool:
-        """
+        """is_rectangular_axis
+        Args:
 
         Returns:
-            bool: condition
+            bool
         """
 
-    def is_rectangular_beam(self) -> bool:
-        """
+    def isAuxiliary(self) -> bool:
+        """isAuxiliary
+        Args:
 
         Returns:
-            bool: condition
+            bool
+        """
+
+    def is_auxiliary(self) -> bool:
+        """is_auxiliary
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isPanel(self) -> bool:
+        """isPanel
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_panel(self) -> bool:
+        """is_panel
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isNormalNode(self) -> bool:
+        """isNormalNode
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_normal_node(self) -> bool:
+        """is_normal_node
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isGlobalCut(self) -> bool:
+        """isGlobalCut
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_global_cut(self) -> bool:
+        """is_global_cut
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isAdditionalElement(self) -> bool:
+        """isAdditionalElement
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_additional_element(self) -> bool:
+        """is_additional_element
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isExportSolidScene(self) -> bool:
+        """isExportSolidScene
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_export_solid_scene(self) -> bool:
+        """is_export_solid_scene
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isCircularBeam(self) -> bool:
+        """isCircularBeam
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_circular_beam(self) -> bool:
+        """is_circular_beam
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isCadwork(self) -> bool:
+        """isCadwork
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_cadwork(self) -> bool:
+        """is_cadwork
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isLine(self) -> bool:
+        """isLine
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_line(self) -> bool:
+        """is_line
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isContainer(self) -> bool:
+        """isContainer
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_container(self) -> bool:
+        """is_container
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isRoof(self) -> bool:
+        """isRoof
+        Args:
+
+        Returns:
+            bool
         """
 
     def is_roof(self) -> bool:
-        """
+        """is_roof
+        Args:
+
         Returns:
-            bool: condition
+            bool
         """
 
-    def is_room(self) -> bool:
-        """
-         Returns:
-             bool: condition
-         """
+    def isSurface(self) -> bool:
+        """isSurface
+        Args:
 
-    def is_rotation_element(self) -> bool:
-        """
         Returns:
-            bool: condition
-        """
-
-    def is_section_trace(self) -> bool:
-        """
-        Returns:
-            bool: condition
-        """
-
-    def is_steel_shape(self) -> bool:
-        """
-        Returns:
-            bool: condition
+            bool
         """
 
     def is_surface(self) -> bool:
-        """
+        """is_surface
+        Args:
 
         Returns:
-            bool: condition
+            bool
+        """
+
+    def isTextDocument(self) -> bool:
+        """isTextDocument
+        Args:
+
+        Returns:
+            bool
         """
 
     def is_text_document(self) -> bool:
-        """
+        """is_text_document
+        Args:
 
         Returns:
-            bool: condition
+            bool
         """
 
-    def is_wall(self) -> bool:
-        """
+    def isExportSolid(self) -> bool:
+        """isExportSolid
+        Args:
+
         Returns:
-            bool: condition
+            bool
+        """
+
+    def is_export_solid(self) -> bool:
+        """is_export_solid
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isFloor(self) -> bool:
+        """isFloor
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_floor(self) -> bool:
+        """is_floor
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isWireAxis(self) -> bool:
+        """isWireAxis
+        Args:
+
+        Returns:
+            bool
         """
 
     def is_wire_axis(self) -> bool:
-        """
+        """is_wire_axis
+        Args:
 
         Returns:
-            bool: condition
+            bool
         """
+
+    def isEaveAxis(self) -> bool:
+        """isEaveAxis
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_eave_axis(self) -> bool:
+        """is_eave_axis
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isSteelShape(self) -> bool:
+        """isSteelShape
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_steel_shape(self) -> bool:
+        """is_steel_shape
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isNestingParent(self) -> bool:
+        """isNestingParent
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_nesting_parent(self) -> bool:
+        """is_nesting_parent
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isNone(self) -> bool:
+        """isNone
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_none(self) -> bool:
+        """is_none
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isWall(self) -> bool:
+        """isWall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_wall(self) -> bool:
+        """is_wall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isRectangularBeam(self) -> bool:
+        """isRectangularBeam
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_rectangular_beam(self) -> bool:
+        """is_rectangular_beam
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isCircularAxis(self) -> bool:
+        """isCircularAxis
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_circular_axis(self) -> bool:
+        """is_circular_axis
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isRoom(self) -> bool:
+        """isRoom
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_room(self) -> bool:
+        """is_room
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isSectionTrace(self) -> bool:
+        """isSectionTrace
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_section_trace(self) -> bool:
+        """is_section_trace
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isConnectorNode(self) -> bool:
+        """isConnectorNode
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_connector_node(self) -> bool:
+        """is_connector_node
+        Args:
+
+        Returns:
+            bool
+        """
+

@@ -1,1324 +1,1369 @@
-class element_module_properties():
-    def __init__(self) -> None:
-        pass
-
-    def get_cutting_element_priority(self, element_module_properties) -> int:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cutting_priority = cw.element_module_properties.get_cutting_element_priority(element_module_properties)
-
+class element_module_properties:
+    def setStretchWithOpeningLintel(self, active: bool) -> None:
+        """setStretchWithOpeningLintel
         Args:
-            element_module_properties (_type_): element module properties
+            active ( bool): active
 
         Returns:
-            int: cutting_element_priority
+            None
         """
 
-    def get_distribute_in_axis_direction_distance(self, element_module_properties) -> float:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> distribute_in_axis_direction_distance = cw.element_module_properties.get_distribute_in_axis_direction_distance(element_module_properties)
-
+    def set_stretch_with_opening_lintel(self, active: bool) -> None:
+        """set_stretch_with_opening_lintel
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
 
         Returns:
-            float: distribute_in_axis_direction_distance
+            None
         """
 
-    def get_distribute_in_axis_direction_number(self, element_module_properties) -> int:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> distribute_in_axis_direction_number = cw.element_module_properties.get_distribute_in_axis_direction_number(element_module_properties)
-
+    def isStretchWithOpeningLintel(self) -> bool:
+        """isStretchWithOpeningLintel
         Args:
-            element_module_properties (_element_module_properties_): element module properties
 
         Returns:
-            int: distribute_in_axis_direction_number
+            bool
         """
 
-    def get_distribute_perpendicular_to_axis_direction_distance(self, element_module_properties) -> float:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> distribute_perpendicular_to_axis_direction_distance = cw.element_module_properties.get_distribute_perpendicular_to_axis_direction_distance(element_module_properties)
-
+    def is_stretch_with_opening_lintel(self) -> bool:
+        """is_stretch_with_opening_lintel
         Args:
-            element_module_properties (_element_module_properties_): element module properties
 
         Returns:
-            float: distribute_perpendicular_to_axis_direction_distance
+            bool
         """
 
-    def get_distribute_perpendicular_to_axis_direction_number(self, element_module_properties) -> int:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> distribute_perpendicular_to_axis_direction_number = cw.element_module_properties.get_distribute_perpendicular_to_axis_direction_number(element_module_properties)
-
+    def getDistributePerpendicularToAxisDirectionNumber(self) -> int:
+        """getDistributePerpendicularToAxisDirectionNumber
         Args:
-            element_module_properties (_element_module_properties_): element module properties
 
         Returns:
-            int: distribute_perpendicular_to_axis_direction_number
+            int
         """
 
-    def get_keep_in_center_of_layer_current_wall(self, element_module_properties) -> str:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> unique_layer_name = cw.element_module_properties.get_keep_in_center_of_layer_current_wall(element_module_properties)
-
+    def get_distribute_perpendicular_to_axis_direction_number(self) -> int:
+        """get_distribute_perpendicular_to_axis_direction_number
         Args:
-            element_module_properties (_element_module_properties_): element module properties
 
         Returns:
-            str: unique_layer_name
+            int
         """
 
-    def get_keep_in_center_of_layer_neighbour_wall(self, element_module_properties) -> str:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> unique_layer_name = cw.element_module_properties.get_keep_in_center_of_layer_neighbour_wall(element_module_properties)
-
+    def setKeepInCenterOfRoughVolume(self, active: bool) -> None:
+        """setKeepInCenterOfRoughVolume
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
 
         Returns:
-            str: unique_layer_name
+            None
         """
 
-    def get_unique_layername(self, element_module_properties) -> str:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> unique_layer_name = cw.element_module_properties.get_unique_layername(element_module_properties)
-
+    def set_keep_in_center_of_rough_volume(self, active: bool) -> None:
+        """set_keep_in_center_of_rough_volume
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
 
         Returns:
-            str: unique_layer_name
+            None
         """
 
-    def is_auxiliary(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_auxiliary = cw.element_module_properties.is_auxiliary(element_module_properties)
-
+    def setSolderInAxisDirection(self, active: bool) -> None:
+        """setSolderInAxisDirection
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_bottom_plate(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_bottom_plate = cw.element_module_properties.is_bottom_plate(element_module_properties)
-
+    def set_solder_in_axis_direction(self, active: bool) -> None:
+        """set_solder_in_axis_direction
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_cutting_element(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_cutting_element = cw.element_module_properties.is_cutting_element(element_module_properties)
-
+    def isAuxiliary(self) -> bool:
+        """isAuxiliary
         Args:
-            element_module_properties (_element_module_properties_): element module properties
 
         Returns:
-            bool: condition
+            bool
         """
 
-    def is_distribute_in_axis_direction(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_distribute_in_axis_direction = cw.element_module_properties.is_distribute_in_axis_direction(element_module_properties)
-
+    def is_auxiliary(self) -> bool:
+        """is_auxiliary
         Args:
-            element_module_properties (_element_module_properties_): element module properties
 
         Returns:
-            bool: condition
+            bool
         """
 
-    def is_distribute_in_axis_direction_use_max_distance(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_distribute_in_axis_direction_use_max_distance = cw.element_module_properties.is_distribute_in_axis_direction_use_max_distance(element_module_properties)
-
+    def setMainElement(self, active: bool) -> None:
+        """setMainElement
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_distribute_in_axis_direction_use_number(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_distribute_in_axis_direction_use_number = cw.element_module_properties.is_distribute_in_axis_direction_use_number(element_module_properties)
-
+    def set_main_element(self, active: bool) -> None:
+        """set_main_element
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_distribute_perpendicular_to_axis_direction(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_distribute_perpendicular_to_axis_direction = cw.element_module_properties.is_distribute_perpendicular_to_axis_direction(element_module_properties)
-
+    def setKeepInCenterOfLayerCurrentWall(self, active: bool, layername: str) -> None:
+        """setKeepInCenterOfLayerCurrentWall
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
+            layername ( str): layername
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_distribute_perpendicular_to_axis_direction_use_max_distance(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_distribute_perpendicular_to_axis_direction_use_max_distance = cw.element_module_properties.is_distribute_perpendicular_to_axis_direction_use_max_distance(element_module_properties)
-
+    def set_keep_in_center_of_layer_current_wall(self, active: bool, layername: str) -> None:
+        """set_keep_in_center_of_layer_current_wall
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
+            layername ( str): layername
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_distribute_perpendicular_to_axis_direction_use_number(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_distribute_perpendicular_to_axis_direction_use_number = cw.element_module_properties.is_distribute_perpendicular_to_axis_direction_use_number(element_module_properties)
-
+    def setAuxiliary(self, active: bool) -> None:
+        """setAuxiliary
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_element_from_detail(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_element_from_detail = cw.element_module_properties.is_element_from_detail(element_module_properties)
-
+    def set_auxiliary(self, active: bool) -> None:
+        """set_auxiliary
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_keep_in_center_of_layer_current_wall(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_keep_in_center_of_layer_current_wall = cw.element_module_properties.is_keep_in_center_of_layer_current_wall(element_module_properties)
-
+    def isKeepInCenterOfRoughVolume(self) -> bool:
+        """isKeepInCenterOfRoughVolume
         Args:
-            element_module_properties (_element_module_properties_): element module properties
 
         Returns:
-            bool: condition
+            bool
         """
 
-    def is_keep_in_center_of_layer_neighbour_wall(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_keep_in_center_of_layer_neighbour_wall = cw.element_module_properties.is_keep_in_center_of_layer_neighbour_wall(element_module_properties)
-
+    def is_keep_in_center_of_rough_volume(self) -> bool:
+        """is_keep_in_center_of_rough_volume
         Args:
-            element_module_properties (_element_module_properties_): element module properties
 
         Returns:
-            bool: condition
+            bool
         """
 
-    def is_main_element(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_main_element = cw.element_module_properties.is_main_element(element_module_properties)
-
+    def getDistributeInAxisDirectionNumber(self) -> int:
+        """getDistributeInAxisDirectionNumber
         Args:
-            element_module_properties (_element_module_properties_): element module properties
 
         Returns:
-            bool: condition
+            int
         """
 
-    def is_move_according_length_axis(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_move_according_length_axis = cw.element_module_properties.is_move_according_length_axis(element_module_properties)
-
+    def get_distribute_in_axis_direction_number(self) -> int:
+        """get_distribute_in_axis_direction_number
         Args:
-            element_module_properties (_element_module_properties_): element module properties
 
         Returns:
-            bool: condition
+            int
         """
 
-    def is_move_according_thickness_axis(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_move_according_thickness_axis = cw.element_module_properties.is_move_according_thickness_axis(element_module_properties)
-
+    def setDistributePerpendicularToAxisDirection(self, active: bool, distance: float) -> None:
+        """setDistributePerpendicularToAxisDirection
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
+            distance ( float): distance
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_move_with_top_of_wall(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_move_with_top_of_wall = cw.element_module_properties.is_move_with_top_of_wall(element_module_properties)
-
+    def set_distribute_perpendicular_to_axis_direction(self, active: bool, distance: float) -> None:
+        """set_distribute_perpendicular_to_axis_direction
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
+            distance ( float): distance
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_no_collision_control(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_no_collision_control = cw.element_module_properties.is_no_collision_control(element_module_properties)
-
+    def setCuttingElement(self, active: bool, priority: int) -> None:
+        """setCuttingElement
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
+            priority ( int): priority
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_no_inside_cover_control(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_no_inside_cover_control = cw.element_module_properties.is_no_inside_cover_control(element_module_properties)
-
+    def set_cutting_element(self, active: bool, priority: int) -> None:
+        """set_cutting_element
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
+            priority ( int): priority
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_not_cut_with_cutting_element(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_not_cut_with_cutting_element = cw.element_module_properties.is_not_cut_with_cutting_element(element_module_properties)
-
+    def setKeepInCenterOfLayerNeighbourWall(self, active: bool, layername: str) -> None:
+        """setKeepInCenterOfLayerNeighbourWall
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
+            layername ( str): layername
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_not_placed_at_end_of_wall(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_not_placed_at_end_of_wall = cw.element_module_properties.is_not_placed_at_end_of_wall(element_module_properties)
-
+    def set_keep_in_center_of_layer_neighbour_wall(self, active: bool, layername: str) -> None:
+        """set_keep_in_center_of_layer_neighbour_wall
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
+            layername ( str): layername
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_not_placed_at_start_of_wall(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_not_placed_at_start_of_wall = cw.element_module_properties.is_not_placed_at_start_of_wall(element_module_properties)
-
+    def setElementFromDetail(self, active: bool) -> None:
+        """setElementFromDetail
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_opening_lintel(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_opening_lintel = cw.element_module_properties.is_opening_lintel(element_module_properties)
-
+    def set_element_from_detail(self, active: bool) -> None:
+        """set_element_from_detail
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_opening_sill(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_opening_sill = cw.element_module_properties.is_opening_sill(element_module_properties)
-
+    def setDistributePerpendicularToAxisDirectionUseMaxDistance(self, active: bool) -> None:
+        """setDistributePerpendicularToAxisDirectionUseMaxDistance
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_solder_in_axis_direction(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_solder_in_axis_direction = cw.element_module_properties.is_solder_in_axis_direction(element_module_properties)
-
+    def set_distribute_perpendicular_to_axis_direction_use_max_distance(self, active: bool) -> None:
+        """set_distribute_perpendicular_to_axis_direction_use_max_distance
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_stop_in_axis_direction(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_stop_in_axis_direction = cw.element_module_properties.is_stop_in_axis_direction(element_module_properties)
-
+    def setNotCutWithCuttingElement(self, active: bool) -> None:
+        """setNotCutWithCuttingElement
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_stop_perpendicular_to_axis_direction(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_stop_perpendicular_to_axis_direction = cw.element_module_properties.is_stop_perpendicular_to_axis_direction(element_module_properties)
-
+    def set_not_cut_with_cutting_element(self, active: bool) -> None:
+        """set_not_cut_with_cutting_element
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_strecht_according_length_axis(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_strecht_according_length_axis = cw.element_module_properties.is_strecht_according_length_axis(element_module_properties)
-
+    def setMoveWithTopOfWall(self, active: bool) -> None:
+        """setMoveWithTopOfWall
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_strecht_according_thickness_axis(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_strecht_according_thickness_axis = cw.element_module_properties.is_strecht_according_thickness_axis(element_module_properties)
-
+    def set_move_with_top_of_wall(self, active: bool) -> None:
+        """set_move_with_top_of_wall
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_stretch_with_opening_lintel(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_stretch_with_opening_lintel = cw.element_module_properties.is_stretch_with_opening_lintel(element_module_properties)
-
+    def setOpeningLintel(self, active: bool) -> None:
+        """setOpeningLintel
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_stretch_with_opening_sill(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_stretch_with_opening_sill = cw.element_module_properties.is_stretch_with_opening_sill(element_module_properties)
-
+    def set_opening_lintel(self, active: bool) -> None:
+        """set_opening_lintel
         Args:
-            element_module_properties (_element_module_properties_): element module properties
+            active ( bool): active
 
         Returns:
-            bool: condition
+            None
         """
 
-    def is_stretch_in_opening_width(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_stretch_in_opening_width = cw.element_module_properties.is_stretch_in_opening_width(element_module_properties)
-
+    def isStrechtAccordingThicknessAxis(self) -> bool:
+        """isStrechtAccordingThicknessAxis
         Args:
-            element_module_properties (_element_module_properties_): element module properties
 
         Returns:
-            bool: condition
+            bool
         """
 
-    def is_stretch_with_top_of_wall(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_stretch_with_top_of_wall = cw.element_module_properties.is_stretch_with_top_of_wall(element_module_properties)
-
+    def is_strecht_according_thickness_axis(self) -> bool:
+        """is_strecht_according_thickness_axis
         Args:
-            element_module_properties (_element_module_properties_): element module properties
 
         Returns:
-            bool: condition
+            bool
         """
 
-    def is_top_plate(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_top_plate = cw.element_module_properties.is_top_plate(element_module_properties)
-
+    def isStopDistributionInAxisDirection(self) -> bool:
+        """isStopDistributionInAxisDirection
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-        Returns:
-            bool: condition
-        """
-
-    def is_unique_layername(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_unique_layername = cw.element_module_properties.is_unique_layername(element_module_properties)
-
-        Args:
-            element_module_properties (_element_module_properties_): element module properties
 
         Returns:
-            bool: condition
+            bool
         """
 
-    def is_use_for_detail_coordinate_system(self, element_module_properties) -> bool:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> is_use_for_detail_coordinate_system = cw.element_module_properties.is_use_for_detail_coordinate_system(element_module_properties)
-
+    def is_stop_distribution_in_axis_direction(self) -> bool:
+        """is_stop_distribution_in_axis_direction
         Args:
-            element_module_properties (_element_module_properties_): element module properties
 
         Returns:
-            bool: condition
+            bool
         """
 
-    def set_auxiliary(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_auxiliary(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def setStretchInOpeningWidth(self, active: bool) -> None:
+        """setStretchInOpeningWidth
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+
+        Returns:
+            None
         """
 
-    def set_bottom_plate(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_bottom_plate(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def set_stretch_in_opening_width(self, active: bool) -> None:
+        """set_stretch_in_opening_width
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+
+        Returns:
+            None
         """
 
-    def set_cutting_element(self, element_module_properties, active: bool, priority: int) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_cutting_element(element_module_properties, True, 3)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def getCuttingElementPriority(self) -> int:
+        """getCuttingElementPriority
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
-            priority (int): _description_
+
+        Returns:
+            int
         """
 
-    def set_distribute_in_axis_direction_use_max_distance(self, element_module_properties, acitve: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_distribute_in_axis_direction(element_module_properties, True, 555.5)
-                >>> cw.element_module_properties.set_distribute_in_axis_direction_use_max_distance(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def get_cutting_element_priority(self) -> int:
+        """get_cutting_element_priority
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
-            priority (int): _description_
+
+        Returns:
+            int
         """
 
-    def set_distribute_in_axis_direction_use_number(self, element_module_properties, active: bool, number: int) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_distribute_in_axis_direction(element_module_properties, True, 555.5)
-                >>> cw.element_module_properties.set_distribute_in_axis_direction_use_number(element_module_properties, True, 11)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def isDistributePerpendicularToAxisDirectionUseNumber(self) -> bool:
+        """isDistributePerpendicularToAxisDirectionUseNumber
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
-            number (int): _description_
+
+        Returns:
+            bool
         """
 
-    def set_distribute_in_axis_direction(self, element_module_properties, active: bool, distance: float) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_distribute_in_axis_direction(element_module_properties, True, 555.5)
-                >>> cw.element_module_properties.set_distribute_in_axis_direction_use_max_distance(element_module_properties, False)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def is_distribute_perpendicular_to_axis_direction_use_number(self) -> bool:
+        """is_distribute_perpendicular_to_axis_direction_use_number
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
-            distance (float): _description_
+
+        Returns:
+            bool
         """
 
-    def set_distribute_perpendicular_to_axis_direction_use_max_distance(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_distribute_perpendicular_to_axis_direction(element_module_properties, True, 555.5)
-                >>> cw.element_module_properties.set_distribute_perpendicular_to_axis_direction_use_max_distance(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def setBottomPlate(self, active: bool) -> None:
+        """setBottomPlate
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+
+        Returns:
+            None
         """
 
-    def set_distribute_perpendicular_to_axis_direction_use_number(self, element_module_properties, active: bool, number: int) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_distribute_perpendicular_to_axis_direction(element_module_properties, True, 555.5)
-                >>> cw.element_module_properties.set_distribute_perpendicular_to_axis_direction_use_number(element_module_properties, True, 15)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def set_bottom_plate(self, active: bool) -> None:
+        """set_bottom_plate
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
-            number (int): _description_
+            active ( bool): active
+
+        Returns:
+            None
         """
 
-    def set_distribute_perpendicular_to_axis_direction(self, element_module_properties, active: bool, distance: float) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_distribute_perpendicular_to_axis_direction(element_module_properties, True, 555.5)
-                >>> cw.element_module_properties.set_distribute_perpendicular_to_axis_direction_use_max_distance(element_module_properties, False)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def setNotPlacedAtEndOfWall(self, active: bool) -> None:
+        """setNotPlacedAtEndOfWall
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
-            distance (float): _description_
+            active ( bool): active
+
+        Returns:
+            None
         """
 
-    def set_element_from_detail(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_element_from_detail(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def set_not_placed_at_end_of_wall(self, active: bool) -> None:
+        """set_not_placed_at_end_of_wall
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+
+        Returns:
+            None
         """
 
-    def set_keep_in_center_of_layer_current_wall(self, element_module_properties, active: bool, layer_name: str) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_keep_in_center_of_layer_current_wall(element_module_properties, True, 'layer_name')
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def isDistributeInAxisDirectionUseNumber(self) -> bool:
+        """isDistributeInAxisDirectionUseNumber
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
-            name (str): _description_
+
+        Returns:
+            bool
         """
 
-    def set_keep_in_center_of_layer_neighbour_wall(self, element_module_properties, active: bool, layer_name: str) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_keep_in_center_of_layer_neighbour_wall(element_module_properties, True, 'layer_name')
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def is_distribute_in_axis_direction_use_number(self) -> bool:
+        """is_distribute_in_axis_direction_use_number
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
-            name (str): _description_
+
+        Returns:
+            bool
         """
 
-    def set_keep_in_center_of_rough_volume(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_keep_in_center_of_rough_volume(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def setUniqueLayername(self, active: bool, layername: str) -> None:
+        """setUniqueLayername
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+            layername ( str): layername
+
+        Returns:
+            None
         """
 
-    def set_main_element(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_keep_in_center_of_rough_volume(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def set_unique_layername(self, active: bool, layername: str) -> None:
+        """set_unique_layername
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+            layername ( str): layername
+
+        Returns:
+            None
         """
 
-    def set_move_according_length_axis(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_move_according_length_axis(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def setStopDistributionInAxisDirection(self, active: bool) -> None:
+        """setStopDistributionInAxisDirection
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+
+        Returns:
+            None
         """
 
-    def set_move_according_thickness_axis(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_move_according_thickness_axis(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def set_stop_distribution_in_axis_direction(self, active: bool) -> None:
+        """set_stop_distribution_in_axis_direction
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+
+        Returns:
+            None
         """
 
-    def set_move_with_top_of_wall(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_move_with_top_of_wall(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def setDistributeInAxisDirectionUseMaxDistance(self, active: bool) -> None:
+        """setDistributeInAxisDirectionUseMaxDistance
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+
+        Returns:
+            None
         """
 
-    def set_no_collision_control(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_no_collision_control(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def set_distribute_in_axis_direction_use_max_distance(self, active: bool) -> None:
+        """set_distribute_in_axis_direction_use_max_distance
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+
+        Returns:
+            None
         """
 
-    def set_no_inside_cover_control(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_no_inside_cover_control(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def setStretchWithOpeningSill(self, active: bool) -> None:
+        """setStretchWithOpeningSill
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+
+        Returns:
+            None
         """
 
-    def set_not_cut_with_cutting_element(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_not_cut_with_cutting_element(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def set_stretch_with_opening_sill(self, active: bool) -> None:
+        """set_stretch_with_opening_sill
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+
+        Returns:
+            None
         """
 
-    def set_not_placed_at_end_of_wall(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_not_placed_at_end_of_wall(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def isElementFromDetail(self) -> bool:
+        """isElementFromDetail
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+
+        Returns:
+            bool
         """
 
-    def set_not_placed_at_start_of_wall(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_not_placed_at_start_of_wall(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def is_element_from_detail(self) -> bool:
+        """is_element_from_detail
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+
+        Returns:
+            bool
         """
 
-    def set_opening_lintel(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_opening_lintel(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def setDistributePerpendicularToAxisDirectionUseNumber(self, active: bool, number: int) -> None:
+        """setDistributePerpendicularToAxisDirectionUseNumber
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+            number ( int): number
+
+        Returns:
+            None
         """
 
-    def set_opening_sill(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_opening_sill(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def set_distribute_perpendicular_to_axis_direction_use_number(self, active: bool, number: int) -> None:
+        """set_distribute_perpendicular_to_axis_direction_use_number
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+            number ( int): number
+
+        Returns:
+            None
         """
 
-    def set_solder_in_axis_direction(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_solder_in_axis_direction(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def isStrechtAccordingLengthAxis(self) -> bool:
+        """isStrechtAccordingLengthAxis
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+
+        Returns:
+            bool
         """
 
-    def set_stop_in_axis_direction(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_stop_in_axis_direction(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def is_strecht_according_length_axis(self) -> bool:
+        """is_strecht_according_length_axis
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+
+        Returns:
+            bool
         """
 
-    def set_stop_perpendicular_to_axis_direction(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_stop_perpendicular_to_axis_direction(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def setDistributeInAxisDirectionUseNumber(self, active: bool, number: int) -> None:
+        """setDistributeInAxisDirectionUseNumber
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+            number ( int): number
+
+        Returns:
+            None
         """
 
-    def set_stretch_according_length_axis(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_strecht_according_length_axis(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def set_distribute_in_axis_direction_use_number(self, active: bool, number: int) -> None:
+        """set_distribute_in_axis_direction_use_number
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+            number ( int): number
+
+        Returns:
+            None
         """
 
-    def set_stretch_according_thickness_axis(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_strecht_according_thickness_axis(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def setMoveAccordingLengthAxis(self, active: bool) -> None:
+        """setMoveAccordingLengthAxis
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+
+        Returns:
+            None
         """
 
-    def set_stretch_with_opening_lintel(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_stretch_with_opening_lintel(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def set_move_according_length_axis(self, active: bool) -> None:
+        """set_move_according_length_axis
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+
+        Returns:
+            None
         """
 
-    def set_stretch_with_opening_sill(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_stretch_with_opening_sill(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def setNoInsideControl(self, active: bool) -> None:
+        """setNoInsideControl
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+
+        Returns:
+            None
         """
 
-    def set_stretch_with_top_of_wall(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_stretch_with_top_of_wall(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def set_no_inside_control(self, active: bool) -> None:
+        """set_no_inside_control
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+
+        Returns:
+            None
         """
 
-    def set_stretch_in_opening_width(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_stretch_in_opening_width(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def isStopDistributionPerpendicularToAxisDirection(self) -> bool:
+        """isStopDistributionPerpendicularToAxisDirection
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+
+        Returns:
+            bool
         """
 
-    def set_top_plate(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_top_plate(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def is_stop_distribution_perpendicular_to_axis_direction(self) -> bool:
+        """is_stop_distribution_perpendicular_to_axis_direction
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+
+        Returns:
+            bool
         """
 
-    def set_unique_layername(self, element_module_properties, active: bool, layer_name: str) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_unique_layername(element_module_properties, True, 'layer_name')
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def setStopDistributionPerpendicularToAxisDirection(self, active: bool) -> None:
+        """setStopDistributionPerpendicularToAxisDirection
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
-            name (str): _description_
+            active ( bool): active
+
+        Returns:
+            None
         """
 
-    def set_use_for_detail_coordinate_system(self, element_module_properties, active: bool) -> None:
-        """
-        Examples:
-            >>> import element_controller as ec
-            >>> import cadwork as cw
-            >>> element_ids = ec.get_active_identifiable_element_ids()
-            >>> for element in element_ids:
-                >>> element_module_properties = ec.get_element_module_properties_for_element(element)
-                >>> cw.element_module_properties.set_use_for_detail_coordinate_system(element_module_properties, True)
-                >>> ec.set_element_module_properties_for_elements([element], element_module_properties)
-
+    def set_stop_distribution_perpendicular_to_axis_direction(self, active: bool) -> None:
+        """set_stop_distribution_perpendicular_to_axis_direction
         Args:
-            element_module_properties (_element_module_properties_): element module properties
-            active (bool): _description_
+            active ( bool): active
+
+        Returns:
+            None
         """
+
+    def setMoveAccordingThicknessAxis(self, active: bool) -> None:
+        """setMoveAccordingThicknessAxis
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_move_according_thickness_axis(self, active: bool) -> None:
+        """set_move_according_thickness_axis
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def isStretchWithTopOfWall(self) -> bool:
+        """isStretchWithTopOfWall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_stretch_with_top_of_wall(self) -> bool:
+        """is_stretch_with_top_of_wall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isDistributeInAxisDirection(self) -> bool:
+        """isDistributeInAxisDirection
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_distribute_in_axis_direction(self) -> bool:
+        """is_distribute_in_axis_direction
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def getKeepInCenterOfLayerCurrentWall(self) -> str:
+        """getKeepInCenterOfLayerCurrentWall
+        Args:
+
+        Returns:
+            str
+        """
+
+    def get_keep_in_center_of_layer_current_wall(self) -> str:
+        """get_keep_in_center_of_layer_current_wall
+        Args:
+
+        Returns:
+            str
+        """
+
+    def isNotPlacedAtEndOfWall(self) -> bool:
+        """isNotPlacedAtEndOfWall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_not_placed_at_end_of_wall(self) -> bool:
+        """is_not_placed_at_end_of_wall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isKeepInCenterOfLayerNeighbourWall(self) -> bool:
+        """isKeepInCenterOfLayerNeighbourWall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_keep_in_center_of_layer_neighbour_wall(self) -> bool:
+        """is_keep_in_center_of_layer_neighbour_wall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def setStrechtAccordingLengthAxis(self, active: bool) -> None:
+        """setStrechtAccordingLengthAxis
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_strecht_according_length_axis(self, active: bool) -> None:
+        """set_strecht_according_length_axis
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def isOpeningSill(self) -> bool:
+        """isOpeningSill
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_opening_sill(self) -> bool:
+        """is_opening_sill
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isDistributePerpendicularToAxisDirectionUseMaxDistance(self) -> bool:
+        """isDistributePerpendicularToAxisDirectionUseMaxDistance
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_distribute_perpendicular_to_axis_direction_use_max_distance(self) -> bool:
+        """is_distribute_perpendicular_to_axis_direction_use_max_distance
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isDistributePerpendicularToAxisDirection(self) -> bool:
+        """isDistributePerpendicularToAxisDirection
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_distribute_perpendicular_to_axis_direction(self) -> bool:
+        """is_distribute_perpendicular_to_axis_direction
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isBottomPlate(self) -> bool:
+        """isBottomPlate
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_bottom_plate(self) -> bool:
+        """is_bottom_plate
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isOpeningLintel(self) -> bool:
+        """isOpeningLintel
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_opening_lintel(self) -> bool:
+        """is_opening_lintel
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isNotPlacedAtStartOfWall(self) -> bool:
+        """isNotPlacedAtStartOfWall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_not_placed_at_start_of_wall(self) -> bool:
+        """is_not_placed_at_start_of_wall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isKeepInCenterOfLayerCurrentWall(self) -> bool:
+        """isKeepInCenterOfLayerCurrentWall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_keep_in_center_of_layer_current_wall(self) -> bool:
+        """is_keep_in_center_of_layer_current_wall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def setStrechtAccordingThicknessAxis(self, active: bool) -> None:
+        """setStrechtAccordingThicknessAxis
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_strecht_according_thickness_axis(self, active: bool) -> None:
+        """set_strecht_according_thickness_axis
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def isMoveAccordingThicknessAxis(self) -> bool:
+        """isMoveAccordingThicknessAxis
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_move_according_thickness_axis(self) -> bool:
+        """is_move_according_thickness_axis
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def getKeepInCenterOfLayerNeighbourWall(self) -> str:
+        """getKeepInCenterOfLayerNeighbourWall
+        Args:
+
+        Returns:
+            str
+        """
+
+    def get_keep_in_center_of_layer_neighbour_wall(self) -> str:
+        """get_keep_in_center_of_layer_neighbour_wall
+        Args:
+
+        Returns:
+            str
+        """
+
+    def setTopPlate(self, active: bool) -> None:
+        """setTopPlate
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_top_plate(self, active: bool) -> None:
+        """set_top_plate
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def setNoCollisionControl(self, active: bool) -> None:
+        """setNoCollisionControl
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_no_collision_control(self, active: bool) -> None:
+        """set_no_collision_control
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def setNotPlacedAtStartOfWall(self, active: bool) -> None:
+        """setNotPlacedAtStartOfWall
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_not_placed_at_start_of_wall(self, active: bool) -> None:
+        """set_not_placed_at_start_of_wall
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def isMoveWithTopOfWall(self) -> bool:
+        """isMoveWithTopOfWall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_move_with_top_of_wall(self) -> bool:
+        """is_move_with_top_of_wall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isUniqueLayername(self) -> bool:
+        """isUniqueLayername
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_unique_layername(self) -> bool:
+        """is_unique_layername
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isTopPlate(self) -> bool:
+        """isTopPlate
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_top_plate(self) -> bool:
+        """is_top_plate
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isMainElement(self) -> bool:
+        """isMainElement
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_main_element(self) -> bool:
+        """is_main_element
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def setOpeningSill(self, active: bool) -> None:
+        """setOpeningSill
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_opening_sill(self, active: bool) -> None:
+        """set_opening_sill
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def setStretchWithTopOfWall(self, active: bool) -> None:
+        """setStretchWithTopOfWall
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_stretch_with_top_of_wall(self, active: bool) -> None:
+        """set_stretch_with_top_of_wall
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def getDistributeInAxisDirectionDistance(self) -> float:
+        """getDistributeInAxisDirectionDistance
+        Args:
+
+        Returns:
+            float
+        """
+
+    def get_distribute_in_axis_direction_distance(self) -> float:
+        """get_distribute_in_axis_direction_distance
+        Args:
+
+        Returns:
+            float
+        """
+
+    def getUniqueLayername(self) -> str:
+        """getUniqueLayername
+        Args:
+
+        Returns:
+            str
+        """
+
+    def get_unique_layername(self) -> str:
+        """get_unique_layername
+        Args:
+
+        Returns:
+            str
+        """
+
+    def isSolderInAxisDirection(self) -> bool:
+        """isSolderInAxisDirection
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_solder_in_axis_direction(self) -> bool:
+        """is_solder_in_axis_direction
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isStretchWithOpeningSill(self) -> bool:
+        """isStretchWithOpeningSill
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_stretch_with_opening_sill(self) -> bool:
+        """is_stretch_with_opening_sill
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isCuttingElement(self) -> bool:
+        """isCuttingElement
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_cutting_element(self) -> bool:
+        """is_cutting_element
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def setUseForDetailCoordinateSystem(self, active: bool) -> None:
+        """setUseForDetailCoordinateSystem
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_use_for_detail_coordinate_system(self, active: bool) -> None:
+        """set_use_for_detail_coordinate_system
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def isMoveAccordingLengthAxis(self) -> bool:
+        """isMoveAccordingLengthAxis
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_move_according_length_axis(self) -> bool:
+        """is_move_according_length_axis
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isNoInsideControl(self) -> bool:
+        """isNoInsideControl
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_no_inside_control(self) -> bool:
+        """is_no_inside_control
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isDistributeInAxisDirectionUseMaxDistance(self) -> bool:
+        """isDistributeInAxisDirectionUseMaxDistance
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_distribute_in_axis_direction_use_max_distance(self) -> bool:
+        """is_distribute_in_axis_direction_use_max_distance
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def setDistributeInAxisDirection(self, active: bool, distance: float) -> None:
+        """setDistributeInAxisDirection
+        Args:
+            active ( bool): active
+            distance ( float): distance
+
+        Returns:
+            None
+        """
+
+    def set_distribute_in_axis_direction(self, active: bool, distance: float) -> None:
+        """set_distribute_in_axis_direction
+        Args:
+            active ( bool): active
+            distance ( float): distance
+
+        Returns:
+            None
+        """
+
+    def isUseForDetailCoordinateSystem(self) -> bool:
+        """isUseForDetailCoordinateSystem
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_use_for_detail_coordinate_system(self) -> bool:
+        """is_use_for_detail_coordinate_system
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isStretchInOpeningWidth(self) -> bool:
+        """isStretchInOpeningWidth
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_stretch_in_opening_width(self) -> bool:
+        """is_stretch_in_opening_width
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def getDistributePerpendicularToAxisDirectionDistance(self) -> float:
+        """getDistributePerpendicularToAxisDirectionDistance
+        Args:
+
+        Returns:
+            float
+        """
+
+    def get_distribute_perpendicular_to_axis_direction_distance(self) -> float:
+        """get_distribute_perpendicular_to_axis_direction_distance
+        Args:
+
+        Returns:
+            float
+        """
+
+    def isNotCutWithCuttingElement(self) -> bool:
+        """isNotCutWithCuttingElement
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_not_cut_with_cutting_element(self) -> bool:
+        """is_not_cut_with_cutting_element
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isNoCollisionControl(self) -> bool:
+        """isNoCollisionControl
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_no_collision_control(self) -> bool:
+        """is_no_collision_control
+        Args:
+
+        Returns:
+            bool
+        """
+

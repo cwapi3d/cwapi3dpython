@@ -1,73 +1,82 @@
-from .vertex_list import vertex_list
-from .point_3d import point_3d
+from cadwork import point_3d
+from cadwork import polygon_list
+from cadwork import vertex_list
 
 
 class facet_list:
-    def __init__(self) -> None:
-        pass
-
-    def at(index: int) -> vertex_list:
-        """
-        Args:
-            index (int): index
-
-        Returns:
-            vertex_list: vertex list
-        """
-        pass
-
     def count(self) -> int:
-        """
-        Returns:
-            int: count
-        """
-        pass
+        """count
+        Args:
 
-    def get_distance_to_origin(self) -> float:
-        """
         Returns:
-            float: distance
+            int
         """
-        pass
 
-    def get_external_polygon(self) -> vertex_list:
-        """
-        Returns:
-            vertex_list: vertex list
-        """
-        pass
+    def at(self, index: int) -> point_3d:
+        """at
+        Args:
+            index ( int): index
 
-    def get_external_polygon_for_reference_face(self) -> vertex_list:
-        """
         Returns:
-            vertex_list: vertex list
+            point_3d
         """
-        pass
 
-    def get_internal_polygons(self) -> vertex_list:
-        """
-        Returns:
-            vertex_list: vertex list
-        """
-        pass
+    def get_external_polygon(self, index: int) -> vertex_list:
+        """get external polygon
+        Args:
+            index ( int): index
 
-    def get_internal_polygons_for_reference_face(self) -> vertex_list:
-        """
         Returns:
-            vertex_list: vertex list
+            vertex_list
         """
-        pass
 
-    def get_normal_vector(self) -> point_3d:
-        """
+    def get_internal_polygons(self, index: int) -> polygon_list:
+        """get internal polygons
+        Args:
+            index ( int): index
+
         Returns:
-            point_3d: normal vector
+            polygon_list
         """
-        pass
 
     def get_vertices_for_reference_face(self) -> vertex_list:
-        """
+        """get vertices for reference face
+        Args:
+
         Returns:
-            vertex_list: vertex list
+            vertex_list
         """
-        pass
+
+    def get_external_polygon_for_reference_face(self) -> vertex_list:
+        """get external polygon for reference face
+        Args:
+
+        Returns:
+            vertex_list
+        """
+
+    def get_internal_polygons_for_reference_face(self) -> polygon_list:
+        """get internal polygons for reference face
+        Args:
+
+        Returns:
+            polygon_list
+        """
+
+    def get_normal_vector(self, index: int) -> point_3d:
+        """get normal vector
+        Args:
+            index ( int): index
+
+        Returns:
+            point_3d
+        """
+
+    def get_distance_to_origin(self, index: int) -> float:
+        """get distance to origin
+        Args:
+            index ( int): index
+
+        Returns:
+            float
+        """

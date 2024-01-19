@@ -1,6 +1,15 @@
-# Attribute Controller
+# IFC Options
 
-::: attribute_controller
+::: cadwork.ifc_options
+
+::: cadwork.ifc_options_aggregation
+
+::: cadwork.ifc_options_level_of_detail
+
+::: cadwork.ifc_options_project_data
+
+::: cadwork.ifc_options_properties
+
 rendering:
 show_root_heading: false
 show_source: true

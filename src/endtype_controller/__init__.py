@@ -1,142 +1,179 @@
-from typing import List
+def get_last_error(error_code: int) -> str:
+    """get last error
+    Args:
+        error_code ( int): error_code
+
+    Returns:
+        str
+    """
+
+
+def get_endtype_id(name: str) -> int:
+    """get endtype element_id
+    Args:
+        name ( str): name
+
+    Returns:
+        int
+    """
+
+
+def get_endtype_id_start(element_id: int) -> int:
+    """get endtype element_id start
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        int
+    """
+
+
+def get_endtype_id_end(element_id: int) -> int:
+    """get endtype element_id end
+    Args:
+        element_id ( int): element_id
+
+    Returns:
+        int
+    """
+
+
+def get_endtype_id_facet(a0: int, a1: int) -> int:
+    """get endtype element_id facet
+    Args:
+        a0 ( int): a0
+        a1 ( int): a1
+
+    Returns:
+        int
+    """
+
+
+def set_endtype_name_start(element_id: int, name: str) -> None:
+    """set endtype name start
+    Args:
+        element_id ( int): element_id
+        name ( str): name
+
+    Returns:
+        None
+    """
+
+
+def set_endtype_name_end(element_id: int, name: str) -> None:
+    """set endtype name end
+    Args:
+        element_id ( int): element_id
+        name ( str): name
+
+    Returns:
+        None
+    """
+
+
+def set_endtype_name_facet(a0: int, a1: str, a2: int) -> None:
+    """set endtype name facet
+    Args:
+        a0 ( int): a0
+        a1 ( str): a1
+        a2 ( int): a2
+
+    Returns:
+        None
+    """
+
+
+def set_endtype_id_start(element_id: int, endtype_id: int) -> None:
+    """set endtype element_id start
+    Args:
+        element_id ( int): element_id
+        endtype_id ( int): endtype_id
+
+    Returns:
+        None
+    """
+
+
+def set_endtype_id_end(element_id: int, endtype_id: int) -> None:
+    """set endtype element_id end
+    Args:
+        element_id ( int): element_id
+        endtype_id ( int): endtype_id
+
+    Returns:
+        None
+    """
+
+
+def set_endtype_id_facet(a0: int, a1: int, a2: int) -> None:
+    """set endtype element_id facet
+    Args:
+        a0 ( int): a0
+        a1 ( int): a1
+        a2 ( int): a2
+
+    Returns:
+        None
+    """
+
+
+def clear_errors() -> None:
+    """clear errors
+    Args:
+
+    Returns:
+        None
+    """
 
 
 def create_new_endtype(endtype_name: str, endtype_id: int, folder_name: str) -> int:
-    """Create a new endtype
-
+    """create new endtype
     Args:
-        endtype_name (str): name
-        endtype_id (int): endtype id
-        folder_name (str): folder name
+        endtype_name ( str): endtype_name
+        endtype_id ( int): endtype_id
+        folder_name ( str): folder_name
 
     Returns:
-        int: endtype id
+        int
     """
-    
-def get_endtype_id(name: str) -> int:
-    """Gets the endtypeID by endtypename
 
+
+def get_endtype_name(element_id: int) -> str:
+    """get endtype name
     Args:
-        name (str): endtype name
+        element_id ( int): element_id
 
     Returns:
-        int: endtype id
+        str
     """
-def get_endtype_id_end(element_id: int) -> int:
-    """Gets the endtypeID of the end face
 
+
+def get_endtype_name_start(element_id: int) -> str:
+    """get endtype name start
     Args:
-        arg0 (int): elmement ID
+        element_id ( int): element_id
 
     Returns:
-        int: endtype id
+        str
     """
-def get_endtype_id_facet(element: int, face_number: int) -> int:
-    """Gets the endtypeID of the face with a number
 
+
+def get_endtype_name_end(element_id: int) -> str:
+    """get endtype name end
     Args:
-        element (int): element ID
-        face_number (int): face number 
+        element_id ( int): element_id
 
     Returns:
-        int: endtype id
+        str
     """
-def get_endtype_id_start(element: int) -> int:
-    """Gets the endtypeID of the start face
 
+
+def get_endtype_name_facet(a0: int, a1: int) -> str:
+    """get endtype name facet
     Args:
-        element (int): element ID
+        a0 ( int): a0
+        a1 ( int): a1
 
     Returns:
-        int: endtype id
-    """
-def get_endtype_name(endtype_id: int) -> str:
-    """Get endtype name
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        endtype_id (int): endtype ID
-
-    Returns:
-        str: endtype name
-    """
-def get_endtype_name_end(element: int) -> str:
-    """Get endtype name end
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        endtype_id (int): endtype ID
-
-    Returns:
-        str: endtype name
-    """
-def get_endtype_name_facet(element: int, face_number: int) -> str:
-    """Gets the endtypename of the face with a number
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-        face_number (int): face number
-
-    Returns:
-        str: endtype name facet
-    """
-def get_endtype_name_start(element: int) -> str:
-    """Gets the endtypename of the start face
-    
-    [:information_source: Available for script filled attributes](#){.mark-text}
-
-    Args:
-        element (int): element ID
-
-    Returns:
-        str: endtype name start
-    """
-
-def set_endtype_id_end(element: int, endtype_id: int) -> None:
-    """Sets the endtype to end face by endtypeID
-
-    Args:
-        element (int): element ID
-        endtype_id (int): endtype ID
-    """
-def set_endtype_id_facet(element: int, endtype_id: int, face_number: int) -> None:
-    """Sets the endtype to a face by endtypeID
-
-    Args:
-        element (int): element ID
-        endtype_id (int): endtype ID
-        face_number (int): face number
-    """
-def set_endtype_id_start(element: int, endtype_id: int) -> None:
-    """Sets the endtype to start face by endtypeID
-
-    Args:
-        element (int): element ID
-        endtype_id (int): endtype ID
-    """
-def set_endtype_name_end(element: int, face_number: str) -> None:
-    """Sets the endtype to end face by endtypename
-
-    Args:
-        element (int): element ID
-        face_number (str): face number
-    """
-def set_endtype_name_facet(element: int, name: str, face_number: int) -> None:
-    """Sets the endtype to a face by endtypename
-
-    Args:
-        element (int): element ID
-        name (str): name
-        face_number (int): face number
-    """
-def set_endtype_name_start(element: int, face_number: str) -> None:
-    """Sets the endtype to start face by endtypename
-
-    Args:
-        element (int): element ID
-        face_number (str): face number
+        str
     """
