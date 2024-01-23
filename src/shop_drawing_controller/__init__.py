@@ -2,7 +2,7 @@ from typing import List
 from cadwork import point_3d
 
 def get_last_error(error_code: int) -> str:
-    """get last error
+    """Gets the last error 
     Args:
         error_code ( int): error_code
 
@@ -11,7 +11,7 @@ def get_last_error(error_code: int) -> str:
     """
 
 def export_2d_wireframe_with_clipboard(clipboard_number: int) -> None:
-    """export 2d wireframe with clipboard
+    """Exports a 2D wireframe to the clipboard 
     Args:
         clipboard_number ( int): clipboard_number
 
@@ -20,7 +20,7 @@ def export_2d_wireframe_with_clipboard(clipboard_number: int) -> None:
     """
 
 def export_2d_hidden_lines_with_clipboard(clipboard_number: int) -> None:
-    """export 2d hidden lines with clipboard
+    """Exports a 2D hidden lines to the clipboard 
     Args:
         clipboard_number ( int): clipboard_number
 
@@ -29,7 +29,7 @@ def export_2d_hidden_lines_with_clipboard(clipboard_number: int) -> None:
     """
 
 def export_2d_wireframe_with_2dc(file_path: str) -> None:
-    """export 2d wireframe with 2dc
+    """Exports a 2D wireframe to a 2DC file 
     Args:
         file_path ( str): file_path
 
@@ -38,7 +38,7 @@ def export_2d_wireframe_with_2dc(file_path: str) -> None:
     """
 
 def export_2d_hidden_lines_with_2dc(file_path: str) -> None:
-    """export 2d hidden lines with 2dc
+    """Exports a 2D hidden lines to a 2DC file 
     Args:
         file_path ( str): file_path
 
@@ -47,7 +47,7 @@ def export_2d_hidden_lines_with_2dc(file_path: str) -> None:
     """
 
 def export_wall_with_clipboard(clipboard_number: int, element_id_list: List[int]) -> None:
-    """export wall with clipboard
+    """Exports a wall to the clipboard 
     Args:
         clipboard_number ( int): clipboard_number
         element_id_list ( List[int]): element_id_list
@@ -57,7 +57,7 @@ def export_wall_with_clipboard(clipboard_number: int, element_id_list: List[int]
     """
 
 def export_export_solid_with_clipboard(clipboard_number: int, element_id_list: List[int]) -> None:
-    """export export solid with clipboard
+    """Exports an export solid to the clipboard 
     Args:
         clipboard_number ( int): clipboard_number
         element_id_list ( List[int]): element_id_list
@@ -67,7 +67,7 @@ def export_export_solid_with_clipboard(clipboard_number: int, element_id_list: L
     """
 
 def export_piece_by_piece_with_clipboard(clipboard_number: int, element_id_list: List[int]) -> None:
-    """export piece by piece with clipboard
+    """Exports a piece-by-piece to the clipboard 
     Args:
         clipboard_number ( int): clipboard_number
         element_id_list ( List[int]): element_id_list
@@ -77,7 +77,7 @@ def export_piece_by_piece_with_clipboard(clipboard_number: int, element_id_list:
     """
 
 def assign_export_solid(ceo_element: List[int], element_id_list: List[int]) -> None:
-    """assign export solid
+    """Assigns elements to an export solid 
     Args:
         ceo_element ( List[int]): ceo_element
         element_id_list ( List[int]): element_id_list
@@ -87,7 +87,7 @@ def assign_export_solid(ceo_element: List[int], element_id_list: List[int]) -> N
     """
 
 def export_container_with_clipboard(clipboard_number: int, elements: List[int]) -> None:
-    """export container with clipboard
+    """Export a container to the clipboard 
     Args:
         clipboard_number ( int): clipboard_number
         elements ( List[int]): elements
@@ -97,7 +97,7 @@ def export_container_with_clipboard(clipboard_number: int, elements: List[int]) 
     """
 
 def add_wall_section_horizontal(element: int, position: point_3d) -> None:
-    """add wall section horizontal
+    """Adds a horizontal wall section 
     Args:
         element ( int): element
         position ( point_3d): position
@@ -107,7 +107,7 @@ def add_wall_section_horizontal(element: int, position: point_3d) -> None:
     """
 
 def add_wall_section_vertical(element: int, position: point_3d) -> None:
-    """add wall section vertical
+    """Adds a vertical wall section 
     Args:
         element ( int): element
         position ( point_3d): position
@@ -117,7 +117,7 @@ def add_wall_section_vertical(element: int, position: point_3d) -> None:
     """
 
 def export_wall_with_clipboard_and_presetting(clipboard_number: int, element_id_list: List[int], presetting_file: str) -> None:
-    """export wall with clipboard and presetting
+    """Exports a wall to the clipboard 
     Args:
         clipboard_number ( int): clipboard_number
         element_id_list ( List[int]): element_id_list
@@ -128,7 +128,7 @@ def export_wall_with_clipboard_and_presetting(clipboard_number: int, element_id_
     """
 
 def load_export_piece_by_piece_settings(settings_file_path: str) -> None:
-    """load export piece by piece settings
+    """Loads piece by piece export settings 
     Args:
         settings_file_path ( str): settings_file_path
 
@@ -137,7 +137,7 @@ def load_export_piece_by_piece_settings(settings_file_path: str) -> None:
     """
 
 def save_export_piece_by_piece_settings(settings_file_path: str) -> None:
-    """save export piece by piece settings
+    """Saves piece by piece export settings 
     Args:
         settings_file_path ( str): settings_file_path
 
@@ -154,7 +154,7 @@ def clear_errors() -> None:
     """
 
 def load_export_wall_settings(settings_file_path: str) -> None:
-    """load export wall settings
+    """Loads wall export settings 
     Args:
         settings_file_path ( str): settings_file_path
 
@@ -163,7 +163,7 @@ def load_export_wall_settings(settings_file_path: str) -> None:
     """
 
 def load_export_solid_settings(settings_file_path: str) -> None:
-    """load export solid settings
+    """Loads export solid settings 
     Args:
         settings_file_path ( str): settings_file_path
 
@@ -172,7 +172,7 @@ def load_export_solid_settings(settings_file_path: str) -> None:
     """
 
 def load_export_container_settings(settings_file_path: str) -> None:
-    """load export container settings
+    """Loads container export settings 
     Args:
         settings_file_path ( str): settings_file_path
 

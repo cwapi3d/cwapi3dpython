@@ -1,7 +1,7 @@
 from typing import List
 
 def get_last_error(error_code: int) -> str:
-    """get last error
+    """Gets the last error 
     Args:
         error_code ( int): error_code
 
@@ -10,7 +10,7 @@ def get_last_error(error_code: int) -> str:
     """
 
 def export_production_list(element_id_list: List[int], file_path: str) -> None:
-    """export production list
+    """Exports a production list 
     Args:
         element_id_list ( List[int]): element_id_list
         file_path ( str): file_path
@@ -20,7 +20,7 @@ def export_production_list(element_id_list: List[int], file_path: str) -> None:
     """
 
 def export_part_list(element_id_list: List[int], file_path: str) -> None:
-    """export part list
+    """Exports a part list 
     Args:
         element_id_list ( List[int]): element_id_list
         file_path ( str): file_path
@@ -30,7 +30,7 @@ def export_part_list(element_id_list: List[int], file_path: str) -> None:
     """
 
 def check_position_numbers_production_list() -> List[int]:
-    """check position numbers production list
+    """Checks the production list numbers and returns the element ids with discrepancies 
     Args:
 
     Returns:
@@ -38,7 +38,7 @@ def check_position_numbers_production_list() -> List[int]:
     """
 
 def check_position_numbers_part_list() -> List[int]:
-    """check position numbers part list
+    """Checks the part list numbers and returns the element ids with discrepancies 
     Args:
 
     Returns:

@@ -1,12 +1,10 @@
 from typing import List
-
 from cadwork import camera_data
 from cadwork import point_3d
 from cadwork import rgb_color
 
-
 def get_last_error(error_code: int) -> str:
-    """get last error
+    """Gets the last error 
     Args:
         error_code ( int): error_code
 
@@ -14,9 +12,8 @@ def get_last_error(error_code: int) -> str:
         error string (str)
     """
 
-
 def set_color(element_id_list: List[int], color_id: int) -> None:
-    """set color
+    """Sets the element color 
     Args:
         element_id_list ( List[int]): element_id_list
         color_id ( int): color_id
@@ -25,9 +22,8 @@ def set_color(element_id_list: List[int], color_id: int) -> None:
         None
     """
 
-
 def set_opengl_color(element_id_list: List[int], color: None) -> None:
-    """set opengl color
+    """Sets the element OpenGL color 
     Args:
         element_id_list ( List[int]): element_id_list
         color ( None): color
@@ -36,9 +32,8 @@ def set_opengl_color(element_id_list: List[int], color: None) -> None:
         None
     """
 
-
 def is_active(element_id: int) -> bool:
-    """is active
+    """Tests if element is active 
     Args:
         element_id ( int): element_id
 
@@ -46,19 +41,17 @@ def is_active(element_id: int) -> bool:
         is element active (bool)
     """
 
-
 def set_active(element_id_list: List[int]) -> None:
-    """set active
+    """Sets element active 
     Args:
         element_id_list ( List[int]): element_id_list
 
     Returns:
         None
     """
-
 
 def set_inactive(element_id_list: List[int]) -> None:
-    """set inactive
+    """Sets the element inactive 
     Args:
         element_id_list ( List[int]): element_id_list
 
@@ -66,9 +59,8 @@ def set_inactive(element_id_list: List[int]) -> None:
         None
     """
 
-
 def is_visible(element_id: int) -> bool:
-    """is visible
+    """Tests if element is visible 
     Args:
         element_id ( int): element_id
 
@@ -76,19 +68,17 @@ def is_visible(element_id: int) -> bool:
         is element visible (bool)
     """
 
-
 def set_visible(element_id_list: List[int]) -> None:
-    """set visible
+    """Sets the element visible 
     Args:
         element_id_list ( List[int]): element_id_list
 
     Returns:
         None
     """
-
 
 def set_invisible(element_id_list: List[int]) -> None:
-    """set invisible
+    """Sets the element invisible 
     Args:
         element_id_list ( List[int]): element_id_list
 
@@ -96,9 +86,8 @@ def set_invisible(element_id_list: List[int]) -> None:
         None
     """
 
-
 def is_immutable(element_id: int) -> bool:
-    """is immutable
+    """Tests if the element is immutable 
     Args:
         element_id ( int): element_id
 
@@ -106,19 +95,17 @@ def is_immutable(element_id: int) -> bool:
         is element immutable (bool)
     """
 
-
 def set_immutable(element_id_list: List[int]) -> None:
-    """set immutable
+    """Sets the element immutable 
     Args:
         element_id_list ( List[int]): element_id_list
 
     Returns:
         None
     """
-
 
 def set_mutable(element_id_list: List[int]) -> None:
-    """set mutable
+    """Sets the element mutable 
     Args:
         element_id_list ( List[int]): element_id_list
 
@@ -126,54 +113,48 @@ def set_mutable(element_id_list: List[int]) -> None:
         None
     """
 
-
 def show_all_elements() -> None:
-    """show all elements
+    """Shows all elements
     Args:
 
     Returns:
         None
     """
-
 
 def hide_all_elements() -> None:
-    """hide all elements
+    """Hides all elements
     Args:
 
     Returns:
         None
     """
-
 
 def zoom_all_elements() -> None:
-    """zoom all elements
+    """Zooms on all elements
     Args:
 
     Returns:
         None
     """
-
 
 def zoom_active_elements() -> None:
-    """zoom active elements
+    """Zooms on all active elements
     Args:
 
     Returns:
         None
     """
-
 
 def refresh() -> None:
-    """refresh
+    """Refresh the drawing area
     Args:
 
     Returns:
         None
     """
 
-
 def set_material(element_id_list: List[int], element_id: int) -> None:
-    """set material
+    """Sets the element material 
     Args:
         element_id_list ( List[int]): element_id_list
         element_id ( int): element_id
@@ -182,18 +163,16 @@ def set_material(element_id_list: List[int], element_id: int) -> None:
         None
     """
 
-
 def save_visibility_state() -> 'visibility_state':
-    """save visibility state
+    """Saves the visibility state 
     Args:
 
     Returns:
         visibility state (visibility_state)
     """
 
-
 def restore_visibility_state(state: None) -> None:
-    """restore visibility state
+    """Restores the visibility state 
     Args:
         state ( None): state
 
@@ -201,18 +180,16 @@ def restore_visibility_state(state: None) -> None:
         None
     """
 
-
 def save_activation_state() -> 'activation_state':
-    """save activation state
+    """Saves the activation state 
     Args:
 
     Returns:
         activation state (activation_state)
     """
 
-
 def restore_activation_state(state: None) -> None:
-    """restore activation state
+    """Restores the activation state 
     Args:
         state ( None): state
 
@@ -220,117 +197,104 @@ def restore_activation_state(state: None) -> None:
         None
     """
 
-
 def show_view_positive_x() -> None:
-    """show view positive x
+    """Sets the view to +X
     Args:
 
     Returns:
         None
     """
-
 
 def show_view_negative_x() -> None:
-    """show view negative x
+    """Sets the view to -X
     Args:
 
     Returns:
         None
     """
-
 
 def show_view_positive_y() -> None:
-    """show view positive y
+    """Sets the view to +Y
     Args:
 
     Returns:
         None
     """
-
 
 def show_view_negative_y() -> None:
-    """show view negative y
+    """Sets the view to -Y
     Args:
 
     Returns:
         None
     """
-
 
 def show_view_positive_z() -> None:
-    """show view positive z
+    """Sets the view to +Z
     Args:
 
     Returns:
         None
     """
-
 
 def show_view_negative_z() -> None:
-    """show view negative z
+    """Sets the view to -Z
     Args:
 
     Returns:
         None
     """
-
 
 def show_view_standard_axo() -> None:
-    """show view standard axo
+    """Sets the view to standard axonometry
     Args:
 
     Returns:
         None
     """
-
 
 def show_view_wireframe() -> None:
-    """show view wireframe
+    """Sets the view to wireframe
     Args:
 
     Returns:
         None
     """
-
 
 def show_view_hidden_lines() -> None:
-    """show view hidden lines
+    """Sets the view to hidden lines
     Args:
 
     Returns:
         None
     """
-
 
 def show_view_dashed_hidden_lines() -> None:
-    """show view dashed hidden lines
+    """Sets the view to dashed hidden lines
     Args:
 
     Returns:
         None
     """
-
 
 def show_view_shaded2() -> None:
-    """show view shaded2
+    """Sets the view to shaded 2
     Args:
 
     Returns:
         None
     """
-
 
 def show_view_shaded1() -> None:
-    """show view shaded1
+    """Sets the view to shaded 1
     Args:
 
     Returns:
         None
     """
 
-
 def is_selectable(element_id: int) -> bool:
-    """is selectable
+    """Returns if the element is selectable 
     Args:
         element_id ( int): element_id
 
@@ -338,26 +302,23 @@ def is_selectable(element_id: int) -> bool:
         bool
     """
 
-
 def set_unselectable(element_id_list: List[int]) -> None:
-    """set unselectable
+    """Sets a list of elements unselectable 
     Args:
         element_id_list ( List[int]): element_id_list
 
     Returns:
         None
     """
-
 
 def set_selectable(element_id_list: List[int]) -> None:
-    """set selectable
+    """Sets a list of elements selectable 
     Args:
         element_id_list ( List[int]): element_id_list
 
     Returns:
         None
     """
-
 
 def clear_errors() -> None:
     """clear errors
@@ -367,9 +328,8 @@ def clear_errors() -> None:
         None
     """
 
-
 def load_marking_settings(settings_file_path: str) -> None:
-    """load marking settings
+    """Loads marking settings file 
     Args:
         settings_file_path ( str): settings_file_path
 
@@ -377,18 +337,16 @@ def load_marking_settings(settings_file_path: str) -> None:
         None
     """
 
-
 def is_plane_2d() -> bool:
-    """is plane 2d
+    """returns if plane 2d is active 
     Args:
 
     Returns:
         bool
     """
 
-
 def set_camera(position: point_3d, target: point_3d) -> None:
-    """set camera
+    """Sets the position of the camera, pointing to a target. 
     Args:
         position ( point_3d): position
         target ( point_3d): target
@@ -397,15 +355,13 @@ def set_camera(position: point_3d, target: point_3d) -> None:
         None
     """
 
-
 def show_perspective_central() -> None:
-    """show perspective central
+    """changes the viewmode to Perpective
     Args:
 
     Returns:
         None
     """
-
 
 def set_color_without_material(a0: List[int], a1: int) -> None:
     """set color without material
@@ -417,7 +373,6 @@ def set_color_without_material(a0: List[int], a1: int) -> None:
         None
     """
 
-
 def set_texture_rotated(a0: List[int], a1: bool) -> None:
     """set texture rotated
     Args:
@@ -428,7 +383,6 @@ def set_texture_rotated(a0: List[int], a1: bool) -> None:
         None
     """
 
-
 def show_reference_side_beam(show: bool) -> None:
     """show reference side beam
     Args:
@@ -437,7 +391,6 @@ def show_reference_side_beam(show: bool) -> None:
     Returns:
         None
     """
-
 
 def show_reference_side_panel(show: bool) -> None:
     """show reference side panel
@@ -448,7 +401,6 @@ def show_reference_side_panel(show: bool) -> None:
         None
     """
 
-
 def show_reference_side_wall(show: bool) -> None:
     """show reference side wall
     Args:
@@ -458,18 +410,16 @@ def show_reference_side_wall(show: bool) -> None:
         None
     """
 
-
 def show_view_axo() -> None:
-    """show view axo
+    """changes the viewmode to Axo
     Args:
 
     Returns:
         None
     """
 
-
 def get_color(element_id: int) -> int:
-    """get color
+    """Gets the element color 
     Args:
         element_id ( int): element_id
 
@@ -477,9 +427,8 @@ def get_color(element_id: int) -> int:
         color ID (int)
     """
 
-
 def get_opengl_color(element_id: int) -> rgb_color:
-    """get opengl color
+    """Gets the element OpenGL color 
     Args:
         element_id ( int): element_id
 
@@ -487,16 +436,14 @@ def get_opengl_color(element_id: int) -> rgb_color:
         RBG color (rgb_color)
     """
 
-
 def get_material(element_id: int) -> int:
-    """get material
+    """Gets the element material 
     Args:
         element_id ( int): element_id
 
     Returns:
         material ID (int)
     """
-
 
 def get_rgb_from_cadwork_color_id(color_id: None) -> rgb_color:
     """get rgb from cadwork color id
@@ -507,7 +454,6 @@ def get_rgb_from_cadwork_color_id(color_id: None) -> rgb_color:
         colorRGB (rgb_color)
     """
 
-
 def is_texture_rotated(a0: int) -> bool:
     """is texture rotated
     Args:
@@ -517,21 +463,20 @@ def is_texture_rotated(a0: int) -> bool:
         bool
     """
 
-
 def get_camera_data() -> camera_data:
-    """get camera data
+    """Get the camera data 
     Args:
 
     Returns:
         camera data (camera_data)
     """
 
-
 def set_camera_data(camera_data: None) -> None:
-    """set camera data
+    """Set the camera data - this will override the current camera data 
     Args:
         camera_data ( None): camera_data
 
     Returns:
         None
     """
+

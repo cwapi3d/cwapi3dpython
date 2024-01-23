@@ -1,7 +1,7 @@
 from typing import List
 
 def get_last_error(error_code: int) -> str:
-    """get last error
+    """Gets the last error 
     Args:
         error_code ( int): error_code
 
@@ -10,7 +10,7 @@ def get_last_error(error_code: int) -> str:
     """
 
 def create_material(name: str) -> int:
-    """create material
+    """Creates new material 
     Args:
         name ( str): name
 
@@ -19,7 +19,7 @@ def create_material(name: str) -> int:
     """
 
 def set_name(material_id: int, name: str) -> None:
-    """set name
+    """Sets the material name 
     Args:
         material_id ( int): material_id
         name ( str): name
@@ -29,7 +29,7 @@ def set_name(material_id: int, name: str) -> None:
     """
 
 def set_group(material_id: int, group: str) -> None:
-    """set group
+    """Sets the material group 
     Args:
         material_id ( int): material_id
         group ( str): group
@@ -39,7 +39,7 @@ def set_group(material_id: int, group: str) -> None:
     """
 
 def set_code(material_id: int, code: str) -> None:
-    """set code
+    """Sets the material code 
     Args:
         material_id ( int): material_id
         code ( str): code
@@ -49,7 +49,7 @@ def set_code(material_id: int, code: str) -> None:
     """
 
 def set_modulus_elasticity_1(material_id: int, modulus_elasticity1: float) -> None:
-    """set modulus elasticity 1
+    """Sets the material modulus of elasticity 1 
     Args:
         material_id ( int): material_id
         modulus_elasticity1 ( float): modulus_elasticity1
@@ -59,7 +59,7 @@ def set_modulus_elasticity_1(material_id: int, modulus_elasticity1: float) -> No
     """
 
 def set_modulus_elasticity_2(material_id: int, modulus_elasticity2: float) -> None:
-    """set modulus elasticity 2
+    """Sets the material modulus of elasticity 2 
     Args:
         material_id ( int): material_id
         modulus_elasticity2 ( float): modulus_elasticity2
@@ -69,7 +69,7 @@ def set_modulus_elasticity_2(material_id: int, modulus_elasticity2: float) -> No
     """
 
 def set_modulus_elasticity_3(material_id: int, modulus_elasticity3: float) -> None:
-    """set modulus elasticity 3
+    """Sets the material modulus of elasticity 3 
     Args:
         material_id ( int): material_id
         modulus_elasticity3 ( float): modulus_elasticity3
@@ -79,7 +79,7 @@ def set_modulus_elasticity_3(material_id: int, modulus_elasticity3: float) -> No
     """
 
 def set_shear_modulus_1(material_id: int, shear_modulus1: float) -> None:
-    """set shear modulus 1
+    """Sets the material shear modulus 1 
     Args:
         material_id ( int): material_id
         shear_modulus1 ( float): shear_modulus1
@@ -89,7 +89,7 @@ def set_shear_modulus_1(material_id: int, shear_modulus1: float) -> None:
     """
 
 def set_shear_modulus_2(material_id: int, shear_modulus2: float) -> None:
-    """set shear modulus 2
+    """Sets the material shear modulus 2 
     Args:
         material_id ( int): material_id
         shear_modulus2 ( float): shear_modulus2
@@ -99,7 +99,7 @@ def set_shear_modulus_2(material_id: int, shear_modulus2: float) -> None:
     """
 
 def set_price(material_id: int, price: float) -> None:
-    """set price
+    """Sets the material price 
     Args:
         material_id ( int): material_id
         price ( float): price
@@ -109,7 +109,7 @@ def set_price(material_id: int, price: float) -> None:
     """
 
 def set_price_type(material_id: int, price_type: str) -> None:
-    """set price type
+    """Sets the material price type 
     Args:
         material_id ( int): material_id
         price_type ( str): price_type
@@ -119,7 +119,7 @@ def set_price_type(material_id: int, price_type: str) -> None:
     """
 
 def set_thermal_conductivity(material_id: int, thermal_conductivity: float) -> None:
-    """set thermal conductivity
+    """Sets the material thermal conductivity 
     Args:
         material_id ( int): material_id
         thermal_conductivity ( float): thermal_conductivity
@@ -129,7 +129,7 @@ def set_thermal_conductivity(material_id: int, thermal_conductivity: float) -> N
     """
 
 def set_heat_capacity(material_id: int, heat_capacity: float) -> None:
-    """set heat capacity
+    """Sets the material heat capacity 
     Args:
         material_id ( int): material_id
         heat_capacity ( float): heat_capacity
@@ -139,7 +139,7 @@ def set_heat_capacity(material_id: int, heat_capacity: float) -> None:
     """
 
 def set_u_min(material_id: int, u_min: float) -> None:
-    """set u min
+    """Sets the material U min 
     Args:
         material_id ( int): material_id
         u_min ( float): u_min
@@ -149,7 +149,7 @@ def set_u_min(material_id: int, u_min: float) -> None:
     """
 
 def set_u_max(material_id: int, u_max: float) -> None:
-    """set u max
+    """Sets the material U max 
     Args:
         material_id ( int): material_id
         u_max ( float): u_max
@@ -159,7 +159,7 @@ def set_u_max(material_id: int, u_max: float) -> None:
     """
 
 def set_fire_resistance_class(material_id: int, fire_resistance_class: str) -> None:
-    """set fire resistance class
+    """Sets the material fire resistance class 
     Args:
         material_id ( int): material_id
         fire_resistance_class ( str): fire_resistance_class
@@ -169,7 +169,7 @@ def set_fire_resistance_class(material_id: int, fire_resistance_class: str) -> N
     """
 
 def set_smoke_class(material_id: int, smoke_class: str) -> None:
-    """set smoke class
+    """Sets the material smoke class 
     Args:
         material_id ( int): material_id
         smoke_class ( str): smoke_class
@@ -179,7 +179,7 @@ def set_smoke_class(material_id: int, smoke_class: str) -> None:
     """
 
 def set_drop_forming_class(material_id: int, drop_forming_class: str) -> None:
-    """set drop forming class
+    """Sets the material drop forming class 
     Args:
         material_id ( int): material_id
         drop_forming_class ( str): drop_forming_class
@@ -189,7 +189,7 @@ def set_drop_forming_class(material_id: int, drop_forming_class: str) -> None:
     """
 
 def set_burn_off_rate(material_id: int, burn_off_rate: float) -> None:
-    """set burn off rate
+    """Sets the material burn-off rate 
     Args:
         material_id ( int): material_id
         burn_off_rate ( float): burn_off_rate
@@ -199,7 +199,7 @@ def set_burn_off_rate(material_id: int, burn_off_rate: float) -> None:
     """
 
 def set_weight(material_id: int, weight: float) -> None:
-    """set weight
+    """Sets the material weight 
     Args:
         material_id ( int): material_id
         weight ( float): weight
@@ -209,7 +209,7 @@ def set_weight(material_id: int, weight: float) -> None:
     """
 
 def set_weight_type(material_id: int, weight_type: str) -> None:
-    """set weight type
+    """Sets the material weight type 
     Args:
         material_id ( int): material_id
         weight_type ( str): weight_type
@@ -257,7 +257,7 @@ def set_composition(a0: int, a1: str) -> None:
     """
 
 def get_material_id(material_name: str) -> int:
-    """get material id
+    """Gets the material with a given name 
     Args:
         material_name ( str): material_name
 
@@ -266,7 +266,7 @@ def get_material_id(material_name: str) -> int:
     """
 
 def get_name(material_id: int) -> str:
-    """get name
+    """Gets the material name 
     Args:
         material_id ( int): material_id
 
@@ -275,7 +275,7 @@ def get_name(material_id: int) -> str:
     """
 
 def get_group(material_id: int) -> str:
-    """get group
+    """Gets the material group 
     Args:
         material_id ( int): material_id
 
@@ -284,7 +284,7 @@ def get_group(material_id: int) -> str:
     """
 
 def get_code(material_id: int) -> str:
-    """get code
+    """Gets the material code 
     Args:
         material_id ( int): material_id
 
@@ -293,7 +293,7 @@ def get_code(material_id: int) -> str:
     """
 
 def get_modulus_elasticity_1(material_id: int) -> float:
-    """get modulus elasticity 1
+    """Gets the material modulus of elasticity 1 
     Args:
         material_id ( int): material_id
 
@@ -302,7 +302,7 @@ def get_modulus_elasticity_1(material_id: int) -> float:
     """
 
 def get_modulus_elasticity_2(material_id: int) -> float:
-    """get modulus elasticity 2
+    """Gets the material modulus of elasticity 2 
     Args:
         material_id ( int): material_id
 
@@ -311,7 +311,7 @@ def get_modulus_elasticity_2(material_id: int) -> float:
     """
 
 def get_modulus_elasticity_3(material_id: int) -> float:
-    """get modulus elasticity 3
+    """Gets the material modulus of elasticity 3 
     Args:
         material_id ( int): material_id
 
@@ -320,7 +320,7 @@ def get_modulus_elasticity_3(material_id: int) -> float:
     """
 
 def get_shear_modulus_1(material_id: int) -> float:
-    """get shear modulus 1
+    """Gets the material shear modulus 1 
     Args:
         material_id ( int): material_id
 
@@ -329,7 +329,7 @@ def get_shear_modulus_1(material_id: int) -> float:
     """
 
 def get_shear_modulus_2(material_id: int) -> float:
-    """get shear modulus 2
+    """Gets the material shear modulus 2 
     Args:
         material_id ( int): material_id
 
@@ -338,7 +338,7 @@ def get_shear_modulus_2(material_id: int) -> float:
     """
 
 def get_price(material_id: int) -> float:
-    """get price
+    """Gets the material price 
     Args:
         material_id ( int): material_id
 
@@ -347,7 +347,7 @@ def get_price(material_id: int) -> float:
     """
 
 def get_price_type(material_id: int) -> str:
-    """get price type
+    """Sets the material price type 
     Args:
         material_id ( int): material_id
 
@@ -356,7 +356,7 @@ def get_price_type(material_id: int) -> str:
     """
 
 def get_thermal_conductivity(material_id: int) -> float:
-    """get thermal conductivity
+    """Gets the material thermal conductivity 
     Args:
         material_id ( int): material_id
 
@@ -365,7 +365,7 @@ def get_thermal_conductivity(material_id: int) -> float:
     """
 
 def get_heat_capacity(material_id: int) -> float:
-    """get heat capacity
+    """Gets the material heat capacity 
     Args:
         material_id ( int): material_id
 
@@ -374,7 +374,7 @@ def get_heat_capacity(material_id: int) -> float:
     """
 
 def get_u_min(material_id: int) -> float:
-    """get u min
+    """Gets the material U min 
     Args:
         material_id ( int): material_id
 
@@ -383,7 +383,7 @@ def get_u_min(material_id: int) -> float:
     """
 
 def get_u_max(material_id: int) -> float:
-    """get u max
+    """Gets the material U max 
     Args:
         material_id ( int): material_id
 
@@ -392,7 +392,7 @@ def get_u_max(material_id: int) -> float:
     """
 
 def get_fire_resistance_class(material_id: int) -> str:
-    """get fire resistance class
+    """Gets the material fire resistance class 
     Args:
         material_id ( int): material_id
 
@@ -401,7 +401,7 @@ def get_fire_resistance_class(material_id: int) -> str:
     """
 
 def get_smoke_class(material_id: int) -> str:
-    """get smoke class
+    """Gets the material smoke class 
     Args:
         material_id ( int): material_id
 
@@ -410,7 +410,7 @@ def get_smoke_class(material_id: int) -> str:
     """
 
 def get_drop_forming_class(material_id: int) -> str:
-    """get drop forming class
+    """Gets the material drop forming class 
     Args:
         material_id ( int): material_id
 
@@ -419,7 +419,7 @@ def get_drop_forming_class(material_id: int) -> str:
     """
 
 def get_burn_off_rate(material_id: int) -> float:
-    """get burn off rate
+    """Gets the material burn-off rate 
     Args:
         material_id ( int): material_id
 
@@ -428,7 +428,7 @@ def get_burn_off_rate(material_id: int) -> float:
     """
 
 def get_weight(material_id: int) -> float:
-    """get weight
+    """Gets the material weight 
     Args:
         material_id ( int): material_id
 
@@ -437,7 +437,7 @@ def get_weight(material_id: int) -> float:
     """
 
 def get_weight_type(material_id: int) -> str:
-    """get weight type
+    """Gets the material weight type 
     Args:
         material_id ( int): material_id
 
@@ -446,7 +446,7 @@ def get_weight_type(material_id: int) -> str:
     """
 
 def get_all_materials() -> List[int]:
-    """get all materials
+    """Gets all the materials 
     Args:
 
     Returns:
