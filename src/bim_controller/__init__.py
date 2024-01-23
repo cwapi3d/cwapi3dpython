@@ -13,10 +13,10 @@ def get_last_error(a0: int) -> str:
     """
 
 
-def get_ifc_guid(element_id: int) -> str:
+def get_ifc_guid(id: int) -> str:
     """get ifc guid
     Args:
-        element_id ( int): element_id
+        id ( int): id
 
     Returns:
         str
@@ -231,7 +231,7 @@ def export_ifc4_silently(element_i_ds: List[int], file_path: str) -> bool:
 
 
 def get_element_id_from_base64_ifc_guid(a1: str) -> int:
-    """get element element_id from base64 ifc guid
+    """get element id from base64 ifc guid
     Args:
         a1 ( str): a1
 
@@ -246,7 +246,7 @@ def get_ifc_base64_guid(element_id: int) -> str:
         element_id ( int): element_id
 
     Returns:
-        strThe IFC GUID in base64 string format ("28kif20KPEuBjk2m1N3ep$").
+        The IFC GUID in base64 string format ("28kif20KPEuBjk2m1N3ep$"). (str)
     """
 
 

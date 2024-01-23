@@ -6,7 +6,7 @@ def get_last_error(error_code: int) -> str:
         error_code ( int): error_code
 
     Returns:
-        strerror string
+        error string (str)
     """
 
 def create_material(name: str) -> int:
@@ -15,7 +15,7 @@ def create_material(name: str) -> int:
         name ( str): name
 
     Returns:
-        intmaterial ID
+        material ID (int)
     """
 
 def set_name(material_id: int, name: str) -> None:
@@ -262,7 +262,7 @@ def get_material_id(material_name: str) -> int:
         material_name ( str): material_name
 
     Returns:
-        intmaterial ID
+        material ID (int)
     """
 
 def get_name(material_id: int) -> str:
@@ -271,7 +271,7 @@ def get_name(material_id: int) -> str:
         material_id ( int): material_id
 
     Returns:
-        strmaterial name
+        material name (str)
     """
 
 def get_group(material_id: int) -> str:
@@ -280,7 +280,7 @@ def get_group(material_id: int) -> str:
         material_id ( int): material_id
 
     Returns:
-        strmaterial group
+        material group (str)
     """
 
 def get_code(material_id: int) -> str:
@@ -289,7 +289,7 @@ def get_code(material_id: int) -> str:
         material_id ( int): material_id
 
     Returns:
-        strmaterial code
+        material code (str)
     """
 
 def get_modulus_elasticity_1(material_id: int) -> float:
@@ -298,7 +298,7 @@ def get_modulus_elasticity_1(material_id: int) -> float:
         material_id ( int): material_id
 
     Returns:
-        floatmaterial modulus of elasticity 1
+        material modulus of elasticity 1 (float)
     """
 
 def get_modulus_elasticity_2(material_id: int) -> float:
@@ -307,7 +307,7 @@ def get_modulus_elasticity_2(material_id: int) -> float:
         material_id ( int): material_id
 
     Returns:
-        floatmaterial modulus of elasticity 2
+        material modulus of elasticity 2 (float)
     """
 
 def get_modulus_elasticity_3(material_id: int) -> float:
@@ -316,7 +316,7 @@ def get_modulus_elasticity_3(material_id: int) -> float:
         material_id ( int): material_id
 
     Returns:
-        floatmaterial modulus of elasticity 3
+        material modulus of elasticity 3 (float)
     """
 
 def get_shear_modulus_1(material_id: int) -> float:
@@ -325,7 +325,7 @@ def get_shear_modulus_1(material_id: int) -> float:
         material_id ( int): material_id
 
     Returns:
-        floatmaterial shear modulus 1
+        material shear modulus 1 (float)
     """
 
 def get_shear_modulus_2(material_id: int) -> float:
@@ -334,7 +334,7 @@ def get_shear_modulus_2(material_id: int) -> float:
         material_id ( int): material_id
 
     Returns:
-        floatmaterial shear modulus 2
+        material shear modulus 2 (float)
     """
 
 def get_price(material_id: int) -> float:
@@ -343,7 +343,7 @@ def get_price(material_id: int) -> float:
         material_id ( int): material_id
 
     Returns:
-        floatmaterial price
+        material price (float)
     """
 
 def get_price_type(material_id: int) -> str:
@@ -352,7 +352,7 @@ def get_price_type(material_id: int) -> str:
         material_id ( int): material_id
 
     Returns:
-        strmaterial price type
+        material price type (str)
     """
 
 def get_thermal_conductivity(material_id: int) -> float:
@@ -361,7 +361,7 @@ def get_thermal_conductivity(material_id: int) -> float:
         material_id ( int): material_id
 
     Returns:
-        floatmaterial thermal conductivity
+        material thermal conductivity (float)
     """
 
 def get_heat_capacity(material_id: int) -> float:
@@ -370,7 +370,7 @@ def get_heat_capacity(material_id: int) -> float:
         material_id ( int): material_id
 
     Returns:
-        floatmaterial heat capacity
+        material heat capacity (float)
     """
 
 def get_u_min(material_id: int) -> float:
@@ -379,7 +379,7 @@ def get_u_min(material_id: int) -> float:
         material_id ( int): material_id
 
     Returns:
-        floatmaterial U min
+        material U min (float)
     """
 
 def get_u_max(material_id: int) -> float:
@@ -388,7 +388,7 @@ def get_u_max(material_id: int) -> float:
         material_id ( int): material_id
 
     Returns:
-        floatmaterial U max
+        material U max (float)
     """
 
 def get_fire_resistance_class(material_id: int) -> str:
@@ -397,7 +397,7 @@ def get_fire_resistance_class(material_id: int) -> str:
         material_id ( int): material_id
 
     Returns:
-        strmaterial fire resistance class
+        material fire resistance class (str)
     """
 
 def get_smoke_class(material_id: int) -> str:
@@ -406,7 +406,7 @@ def get_smoke_class(material_id: int) -> str:
         material_id ( int): material_id
 
     Returns:
-        strmaterial smoke class
+        material smoke class (str)
     """
 
 def get_drop_forming_class(material_id: int) -> str:
@@ -415,7 +415,7 @@ def get_drop_forming_class(material_id: int) -> str:
         material_id ( int): material_id
 
     Returns:
-        strmaterial drop forming class
+        material drop forming class (str)
     """
 
 def get_burn_off_rate(material_id: int) -> float:
@@ -424,7 +424,7 @@ def get_burn_off_rate(material_id: int) -> float:
         material_id ( int): material_id
 
     Returns:
-        floatmaterial burn off rate
+        material burn off rate (float)
     """
 
 def get_weight(material_id: int) -> float:
@@ -433,7 +433,7 @@ def get_weight(material_id: int) -> float:
         material_id ( int): material_id
 
     Returns:
-        floatmaterial weight
+        material weight (float)
     """
 
 def get_weight_type(material_id: int) -> str:
@@ -442,7 +442,7 @@ def get_weight_type(material_id: int) -> str:
         material_id ( int): material_id
 
     Returns:
-        strmaterial weight type
+        material weight type (str)
     """
 
 def get_all_materials() -> List[int]:
@@ -450,7 +450,7 @@ def get_all_materials() -> List[int]:
     Args:
 
     Returns:
-        List[int]material ID list
+        material ID list (List[int])
     """
 
 def get_grade(a0: int) -> str:

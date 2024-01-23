@@ -1,6 +1,5 @@
 from cadwork import point_3d
 
-
 class vertex_list:
     def count(self) -> int:
         """count
@@ -27,3 +26,4 @@ class vertex_list:
         Returns:
             None
         """
+

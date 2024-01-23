@@ -37,7 +37,7 @@ from typing import List
 def get_auto_attribute_elements() -> List[int]:
     """Get ontly the elements of the selected types in the attribute manager dialog. All other elements will 
     get an empty attribute value.
-
+    
     Returns:
         List[int]: element IDs
 """

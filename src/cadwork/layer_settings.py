@@ -15,38 +15,6 @@ class layer_settings:
             bool
         """
 
-    def setWithoutOutput(self) -> None:
-        """setWithoutOutput
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_without_output(self) -> None:
-        """set_without_output
-        Args:
-
-        Returns:
-            None
-        """
-
-    def setWithAttributesOutput(self) -> None:
-        """setWithAttributesOutput
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_with_attributes_output(self) -> None:
-        """set_with_attributes_output
-        Args:
-
-        Returns:
-            None
-        """
-
     def isWithoutDimensionsOutput(self) -> bool:
         """isWithoutDimensionsOutput
         Args:
@@ -79,22 +47,6 @@ class layer_settings:
             bool
         """
 
-    def setWithoutDimensionsOutput(self) -> None:
-        """setWithoutDimensionsOutput
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_without_dimensions_output(self) -> None:
-        """set_without_dimensions_output
-        Args:
-
-        Returns:
-            None
-        """
-
     def setLayer(self, layer_number: int) -> None:
         """setLayer
         Args:
@@ -108,6 +60,54 @@ class layer_settings:
         """set_layer
         Args:
             layer_number ( int): layer_number
+
+        Returns:
+            None
+        """
+
+    def setWithAttributesOutput(self) -> None:
+        """setWithAttributesOutput
+        Args:
+
+        Returns:
+            None
+        """
+
+    def set_with_attributes_output(self) -> None:
+        """set_with_attributes_output
+        Args:
+
+        Returns:
+            None
+        """
+
+    def getLayer(self) -> int:
+        """getLayer
+        Args:
+
+        Returns:
+            int
+        """
+
+    def get_layer(self) -> int:
+        """get_layer
+        Args:
+
+        Returns:
+            int
+        """
+
+    def setWithoutOutput(self) -> None:
+        """setWithoutOutput
+        Args:
+
+        Returns:
+            None
+        """
+
+    def set_without_output(self) -> None:
+        """set_without_output
+        Args:
 
         Returns:
             None
@@ -145,19 +145,19 @@ class layer_settings:
             None
         """
 
-    def getLayer(self) -> int:
-        """getLayer
+    def setWithoutDimensionsOutput(self) -> None:
+        """setWithoutDimensionsOutput
         Args:
 
         Returns:
-            int
+            None
         """
 
-    def get_layer(self) -> int:
-        """get_layer
+    def set_without_dimensions_output(self) -> None:
+        """set_without_dimensions_output
         Args:
 
         Returns:
-            int
+            None
         """
 

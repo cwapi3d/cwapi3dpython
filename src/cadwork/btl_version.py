@@ -31,8 +31,8 @@ class btl_version(IntEnum):
         btlx_2_2 = 122
 
     """
-    # Todo: btl_1_0 = 110 => btlx_1_0 uses same value
-    # btl_1_1 = 111 => btlx_1_1 uses same value
+    # btl_1_0 = 110
+    # btl_1_1 = 111
     btl_1_2 = 112
     btl_1_3 = 113
     btl_1_4 = 114
@@ -53,3 +53,4 @@ class btl_version(IntEnum):
 
     def __int__(self) -> int:
         return self.value
+

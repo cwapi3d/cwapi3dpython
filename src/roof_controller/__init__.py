@@ -1,35 +1,31 @@
 from typing import List
 
-
-def get_profile_length(element_id: int) -> float:
+def get_profile_length(id: int) -> float:
     """get profile length
     Args:
-        element_id ( int): element_id
+        id ( int): id
 
     Returns:
-        floatprofile length
+        profile length (float)
     """
 
-
-def get_edge_length(element_id: int, edge_type: str) -> float:
+def get_edge_length(id: int, edge_type: str) -> float:
     """get edge length
     Args:
-        element_id ( int): element_id
+        id ( int): id
         edge_type ( str): edge_type
 
     Returns:
-        floatedge length
+        edge length (float)
     """
-
 
 def get_all_caddy_element_ids() -> List[int]:
     """get all caddy element ids
     Args:
 
     Returns:
-        List[int]element ID list
+        element ID list (List[int])
     """
-
 
 def get_last_error(a0: int) -> str:
     """get last error
@@ -40,7 +36,6 @@ def get_last_error(a0: int) -> str:
         str
     """
 
-
 def clear_errors() -> None:
     """clear errors
     Args:
@@ -48,3 +43,4 @@ def clear_errors() -> None:
     Returns:
         None
     """
+

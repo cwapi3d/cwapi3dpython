@@ -1,6 +1,22 @@
 class element_module_properties:
-    def setStretchWithOpeningLintel(self, active: bool) -> None:
-        """setStretchWithOpeningLintel
+    def isKeepInCenterOfLayerCurrentWall(self) -> bool:
+        """isKeepInCenterOfLayerCurrentWall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_keep_in_center_of_layer_current_wall(self) -> bool:
+        """is_keep_in_center_of_layer_current_wall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def setDistributeInAxisDirectionUseMaxDistance(self, active: bool) -> None:
+        """setDistributeInAxisDirectionUseMaxDistance
         Args:
             active ( bool): active
 
@@ -8,13 +24,267 @@ class element_module_properties:
             None
         """
 
-    def set_stretch_with_opening_lintel(self, active: bool) -> None:
-        """set_stretch_with_opening_lintel
+    def set_distribute_in_axis_direction_use_max_distance(self, active: bool) -> None:
+        """set_distribute_in_axis_direction_use_max_distance
         Args:
             active ( bool): active
 
         Returns:
             None
+        """
+
+    def setDistributePerpendicularToAxisDirectionUseMaxDistance(self, active: bool) -> None:
+        """setDistributePerpendicularToAxisDirectionUseMaxDistance
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_distribute_perpendicular_to_axis_direction_use_max_distance(self, active: bool) -> None:
+        """set_distribute_perpendicular_to_axis_direction_use_max_distance
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def setMoveAccordingLengthAxis(self, active: bool) -> None:
+        """setMoveAccordingLengthAxis
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_move_according_length_axis(self, active: bool) -> None:
+        """set_move_according_length_axis
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def setStretchInOpeningWidth(self, active: bool) -> None:
+        """setStretchInOpeningWidth
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_stretch_in_opening_width(self, active: bool) -> None:
+        """set_stretch_in_opening_width
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def isOpeningSill(self) -> bool:
+        """isOpeningSill
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_opening_sill(self) -> bool:
+        """is_opening_sill
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isStretchWithOpeningSill(self) -> bool:
+        """isStretchWithOpeningSill
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_stretch_with_opening_sill(self) -> bool:
+        """is_stretch_with_opening_sill
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isMainElement(self) -> bool:
+        """isMainElement
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_main_element(self) -> bool:
+        """is_main_element
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isDistributePerpendicularToAxisDirection(self) -> bool:
+        """isDistributePerpendicularToAxisDirection
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_distribute_perpendicular_to_axis_direction(self) -> bool:
+        """is_distribute_perpendicular_to_axis_direction
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isStretchWithTopOfWall(self) -> bool:
+        """isStretchWithTopOfWall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_stretch_with_top_of_wall(self) -> bool:
+        """is_stretch_with_top_of_wall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isBottomPlate(self) -> bool:
+        """isBottomPlate
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_bottom_plate(self) -> bool:
+        """is_bottom_plate
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def getCuttingElementPriority(self) -> int:
+        """getCuttingElementPriority
+        Args:
+
+        Returns:
+            int
+        """
+
+    def get_cutting_element_priority(self) -> int:
+        """get_cutting_element_priority
+        Args:
+
+        Returns:
+            int
+        """
+
+    def setDistributePerpendicularToAxisDirectionUseNumber(self, active: bool, number: int) -> None:
+        """setDistributePerpendicularToAxisDirectionUseNumber
+        Args:
+            active ( bool): active
+            number ( int): number
+
+        Returns:
+            None
+        """
+
+    def set_distribute_perpendicular_to_axis_direction_use_number(self, active: bool, number: int) -> None:
+        """set_distribute_perpendicular_to_axis_direction_use_number
+        Args:
+            active ( bool): active
+            number ( int): number
+
+        Returns:
+            None
+        """
+
+    def setStopDistributionPerpendicularToAxisDirection(self, active: bool) -> None:
+        """setStopDistributionPerpendicularToAxisDirection
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_stop_distribution_perpendicular_to_axis_direction(self, active: bool) -> None:
+        """set_stop_distribution_perpendicular_to_axis_direction
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def isStrechtAccordingThicknessAxis(self) -> bool:
+        """isStrechtAccordingThicknessAxis
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_strecht_according_thickness_axis(self) -> bool:
+        """is_strecht_according_thickness_axis
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def setNotPlacedAtStartOfWall(self, active: bool) -> None:
+        """setNotPlacedAtStartOfWall
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_not_placed_at_start_of_wall(self, active: bool) -> None:
+        """set_not_placed_at_start_of_wall
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def isDistributePerpendicularToAxisDirectionUseMaxDistance(self) -> bool:
+        """isDistributePerpendicularToAxisDirectionUseMaxDistance
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_distribute_perpendicular_to_axis_direction_use_max_distance(self) -> bool:
+        """is_distribute_perpendicular_to_axis_direction_use_max_distance
+        Args:
+
+        Returns:
+            bool
         """
 
     def isStretchWithOpeningLintel(self) -> bool:
@@ -33,160 +303,20 @@ class element_module_properties:
             bool
         """
 
-    def getDistributePerpendicularToAxisDirectionNumber(self) -> int:
-        """getDistributePerpendicularToAxisDirectionNumber
+    def getDistributeInAxisDirectionDistance(self) -> float:
+        """getDistributeInAxisDirectionDistance
         Args:
 
         Returns:
-            int
+            float
         """
 
-    def get_distribute_perpendicular_to_axis_direction_number(self) -> int:
-        """get_distribute_perpendicular_to_axis_direction_number
+    def get_distribute_in_axis_direction_distance(self) -> float:
+        """get_distribute_in_axis_direction_distance
         Args:
 
         Returns:
-            int
-        """
-
-    def setKeepInCenterOfRoughVolume(self, active: bool) -> None:
-        """setKeepInCenterOfRoughVolume
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_keep_in_center_of_rough_volume(self, active: bool) -> None:
-        """set_keep_in_center_of_rough_volume
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def setSolderInAxisDirection(self, active: bool) -> None:
-        """setSolderInAxisDirection
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_solder_in_axis_direction(self, active: bool) -> None:
-        """set_solder_in_axis_direction
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def isAuxiliary(self) -> bool:
-        """isAuxiliary
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_auxiliary(self) -> bool:
-        """is_auxiliary
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def setMainElement(self, active: bool) -> None:
-        """setMainElement
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_main_element(self, active: bool) -> None:
-        """set_main_element
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def setKeepInCenterOfLayerCurrentWall(self, active: bool, layername: str) -> None:
-        """setKeepInCenterOfLayerCurrentWall
-        Args:
-            active ( bool): active
-            layername ( str): layername
-
-        Returns:
-            None
-        """
-
-    def set_keep_in_center_of_layer_current_wall(self, active: bool, layername: str) -> None:
-        """set_keep_in_center_of_layer_current_wall
-        Args:
-            active ( bool): active
-            layername ( str): layername
-
-        Returns:
-            None
-        """
-
-    def setAuxiliary(self, active: bool) -> None:
-        """setAuxiliary
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_auxiliary(self, active: bool) -> None:
-        """set_auxiliary
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def isKeepInCenterOfRoughVolume(self) -> bool:
-        """isKeepInCenterOfRoughVolume
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_keep_in_center_of_rough_volume(self) -> bool:
-        """is_keep_in_center_of_rough_volume
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def getDistributeInAxisDirectionNumber(self) -> int:
-        """getDistributeInAxisDirectionNumber
-        Args:
-
-        Returns:
-            int
-        """
-
-    def get_distribute_in_axis_direction_number(self) -> int:
-        """get_distribute_in_axis_direction_number
-        Args:
-
-        Returns:
-            int
+            float
         """
 
     def setDistributePerpendicularToAxisDirection(self, active: bool, distance: float) -> None:
@@ -209,28 +339,24 @@ class element_module_properties:
             None
         """
 
-    def setCuttingElement(self, active: bool, priority: int) -> None:
-        """setCuttingElement
+    def isNoInsideControl(self) -> bool:
+        """isNoInsideControl
         Args:
-            active ( bool): active
-            priority ( int): priority
 
         Returns:
-            None
+            bool
         """
 
-    def set_cutting_element(self, active: bool, priority: int) -> None:
-        """set_cutting_element
+    def is_no_inside_control(self) -> bool:
+        """is_no_inside_control
         Args:
-            active ( bool): active
-            priority ( int): priority
 
         Returns:
-            None
+            bool
         """
 
-    def setKeepInCenterOfLayerNeighbourWall(self, active: bool, layername: str) -> None:
-        """setKeepInCenterOfLayerNeighbourWall
+    def setKeepInCenterOfLayerCurrentWall(self, active: bool, layername: str) -> None:
+        """setKeepInCenterOfLayerCurrentWall
         Args:
             active ( bool): active
             layername ( str): layername
@@ -239,8 +365,8 @@ class element_module_properties:
             None
         """
 
-    def set_keep_in_center_of_layer_neighbour_wall(self, active: bool, layername: str) -> None:
-        """set_keep_in_center_of_layer_neighbour_wall
+    def set_keep_in_center_of_layer_current_wall(self, active: bool, layername: str) -> None:
+        """set_keep_in_center_of_layer_current_wall
         Args:
             active ( bool): active
             layername ( str): layername
@@ -249,8 +375,40 @@ class element_module_properties:
             None
         """
 
-    def setElementFromDetail(self, active: bool) -> None:
-        """setElementFromDetail
+    def isStopDistributionPerpendicularToAxisDirection(self) -> bool:
+        """isStopDistributionPerpendicularToAxisDirection
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_stop_distribution_perpendicular_to_axis_direction(self) -> bool:
+        """is_stop_distribution_perpendicular_to_axis_direction
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isMoveAccordingThicknessAxis(self) -> bool:
+        """isMoveAccordingThicknessAxis
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_move_according_thickness_axis(self) -> bool:
+        """is_move_according_thickness_axis
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def setOpeningLintel(self, active: bool) -> None:
+        """setOpeningLintel
         Args:
             active ( bool): active
 
@@ -258,8 +416,8 @@ class element_module_properties:
             None
         """
 
-    def set_element_from_detail(self, active: bool) -> None:
-        """set_element_from_detail
+    def set_opening_lintel(self, active: bool) -> None:
+        """set_opening_lintel
         Args:
             active ( bool): active
 
@@ -267,8 +425,24 @@ class element_module_properties:
             None
         """
 
-    def setDistributePerpendicularToAxisDirectionUseMaxDistance(self, active: bool) -> None:
-        """setDistributePerpendicularToAxisDirectionUseMaxDistance
+    def isDistributeInAxisDirectionUseNumber(self) -> bool:
+        """isDistributeInAxisDirectionUseNumber
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_distribute_in_axis_direction_use_number(self) -> bool:
+        """is_distribute_in_axis_direction_use_number
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def setNoCollisionControl(self, active: bool) -> None:
+        """setNoCollisionControl
         Args:
             active ( bool): active
 
@@ -276,8 +450,60 @@ class element_module_properties:
             None
         """
 
-    def set_distribute_perpendicular_to_axis_direction_use_max_distance(self, active: bool) -> None:
-        """set_distribute_perpendicular_to_axis_direction_use_max_distance
+    def set_no_collision_control(self, active: bool) -> None:
+        """set_no_collision_control
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def setStretchWithOpeningLintel(self, active: bool) -> None:
+        """setStretchWithOpeningLintel
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_stretch_with_opening_lintel(self, active: bool) -> None:
+        """set_stretch_with_opening_lintel
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def getDistributeInAxisDirectionNumber(self) -> int:
+        """getDistributeInAxisDirectionNumber
+        Args:
+
+        Returns:
+            int
+        """
+
+    def get_distribute_in_axis_direction_number(self) -> int:
+        """get_distribute_in_axis_direction_number
+        Args:
+
+        Returns:
+            int
+        """
+
+    def setKeepInCenterOfRoughVolume(self, active: bool) -> None:
+        """setKeepInCenterOfRoughVolume
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_keep_in_center_of_rough_volume(self, active: bool) -> None:
+        """set_keep_in_center_of_rough_volume
         Args:
             active ( bool): active
 
@@ -321,8 +547,8 @@ class element_module_properties:
             None
         """
 
-    def setOpeningLintel(self, active: bool) -> None:
-        """setOpeningLintel
+    def setNoInsideControl(self, active: bool) -> None:
+        """setNoInsideControl
         Args:
             active ( bool): active
 
@@ -330,95 +556,13 @@ class element_module_properties:
             None
         """
 
-    def set_opening_lintel(self, active: bool) -> None:
-        """set_opening_lintel
+    def set_no_inside_control(self, active: bool) -> None:
+        """set_no_inside_control
         Args:
             active ( bool): active
 
         Returns:
             None
-        """
-
-    def isStrechtAccordingThicknessAxis(self) -> bool:
-        """isStrechtAccordingThicknessAxis
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_strecht_according_thickness_axis(self) -> bool:
-        """is_strecht_according_thickness_axis
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def isStopDistributionInAxisDirection(self) -> bool:
-        """isStopDistributionInAxisDirection
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_stop_distribution_in_axis_direction(self) -> bool:
-        """is_stop_distribution_in_axis_direction
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def setStretchInOpeningWidth(self, active: bool) -> None:
-        """setStretchInOpeningWidth
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_stretch_in_opening_width(self, active: bool) -> None:
-        """set_stretch_in_opening_width
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def getCuttingElementPriority(self) -> int:
-        """getCuttingElementPriority
-        Args:
-
-        Returns:
-            int
-        """
-
-    def get_cutting_element_priority(self) -> int:
-        """get_cutting_element_priority
-        Args:
-
-        Returns:
-            int
-        """
-
-    def isDistributePerpendicularToAxisDirectionUseNumber(self) -> bool:
-        """isDistributePerpendicularToAxisDirectionUseNumber
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_distribute_perpendicular_to_axis_direction_use_number(self) -> bool:
-        """is_distribute_perpendicular_to_axis_direction_use_number
-        Args:
-
-        Returns:
-            bool
         """
 
     def setBottomPlate(self, active: bool) -> None:
@@ -439,6 +583,22 @@ class element_module_properties:
             None
         """
 
+    def getDistributePerpendicularToAxisDirectionNumber(self) -> int:
+        """getDistributePerpendicularToAxisDirectionNumber
+        Args:
+
+        Returns:
+            int
+        """
+
+    def get_distribute_perpendicular_to_axis_direction_number(self) -> int:
+        """get_distribute_perpendicular_to_axis_direction_number
+        Args:
+
+        Returns:
+            int
+        """
+
     def setNotPlacedAtEndOfWall(self, active: bool) -> None:
         """setNotPlacedAtEndOfWall
         Args:
@@ -457,266 +617,16 @@ class element_module_properties:
             None
         """
 
-    def isDistributeInAxisDirectionUseNumber(self) -> bool:
-        """isDistributeInAxisDirectionUseNumber
+    def isNotPlacedAtStartOfWall(self) -> bool:
+        """isNotPlacedAtStartOfWall
         Args:
 
         Returns:
             bool
         """
 
-    def is_distribute_in_axis_direction_use_number(self) -> bool:
-        """is_distribute_in_axis_direction_use_number
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def setUniqueLayername(self, active: bool, layername: str) -> None:
-        """setUniqueLayername
-        Args:
-            active ( bool): active
-            layername ( str): layername
-
-        Returns:
-            None
-        """
-
-    def set_unique_layername(self, active: bool, layername: str) -> None:
-        """set_unique_layername
-        Args:
-            active ( bool): active
-            layername ( str): layername
-
-        Returns:
-            None
-        """
-
-    def setStopDistributionInAxisDirection(self, active: bool) -> None:
-        """setStopDistributionInAxisDirection
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_stop_distribution_in_axis_direction(self, active: bool) -> None:
-        """set_stop_distribution_in_axis_direction
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def setDistributeInAxisDirectionUseMaxDistance(self, active: bool) -> None:
-        """setDistributeInAxisDirectionUseMaxDistance
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_distribute_in_axis_direction_use_max_distance(self, active: bool) -> None:
-        """set_distribute_in_axis_direction_use_max_distance
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def setStretchWithOpeningSill(self, active: bool) -> None:
-        """setStretchWithOpeningSill
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_stretch_with_opening_sill(self, active: bool) -> None:
-        """set_stretch_with_opening_sill
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def isElementFromDetail(self) -> bool:
-        """isElementFromDetail
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_element_from_detail(self) -> bool:
-        """is_element_from_detail
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def setDistributePerpendicularToAxisDirectionUseNumber(self, active: bool, number: int) -> None:
-        """setDistributePerpendicularToAxisDirectionUseNumber
-        Args:
-            active ( bool): active
-            number ( int): number
-
-        Returns:
-            None
-        """
-
-    def set_distribute_perpendicular_to_axis_direction_use_number(self, active: bool, number: int) -> None:
-        """set_distribute_perpendicular_to_axis_direction_use_number
-        Args:
-            active ( bool): active
-            number ( int): number
-
-        Returns:
-            None
-        """
-
-    def isStrechtAccordingLengthAxis(self) -> bool:
-        """isStrechtAccordingLengthAxis
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_strecht_according_length_axis(self) -> bool:
-        """is_strecht_according_length_axis
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def setDistributeInAxisDirectionUseNumber(self, active: bool, number: int) -> None:
-        """setDistributeInAxisDirectionUseNumber
-        Args:
-            active ( bool): active
-            number ( int): number
-
-        Returns:
-            None
-        """
-
-    def set_distribute_in_axis_direction_use_number(self, active: bool, number: int) -> None:
-        """set_distribute_in_axis_direction_use_number
-        Args:
-            active ( bool): active
-            number ( int): number
-
-        Returns:
-            None
-        """
-
-    def setMoveAccordingLengthAxis(self, active: bool) -> None:
-        """setMoveAccordingLengthAxis
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_move_according_length_axis(self, active: bool) -> None:
-        """set_move_according_length_axis
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def setNoInsideControl(self, active: bool) -> None:
-        """setNoInsideControl
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_no_inside_control(self, active: bool) -> None:
-        """set_no_inside_control
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def isStopDistributionPerpendicularToAxisDirection(self) -> bool:
-        """isStopDistributionPerpendicularToAxisDirection
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_stop_distribution_perpendicular_to_axis_direction(self) -> bool:
-        """is_stop_distribution_perpendicular_to_axis_direction
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def setStopDistributionPerpendicularToAxisDirection(self, active: bool) -> None:
-        """setStopDistributionPerpendicularToAxisDirection
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_stop_distribution_perpendicular_to_axis_direction(self, active: bool) -> None:
-        """set_stop_distribution_perpendicular_to_axis_direction
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def setMoveAccordingThicknessAxis(self, active: bool) -> None:
-        """setMoveAccordingThicknessAxis
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_move_according_thickness_axis(self, active: bool) -> None:
-        """set_move_according_thickness_axis
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def isStretchWithTopOfWall(self) -> bool:
-        """isStretchWithTopOfWall
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_stretch_with_top_of_wall(self) -> bool:
-        """is_stretch_with_top_of_wall
+    def is_not_placed_at_start_of_wall(self) -> bool:
+        """is_not_placed_at_start_of_wall
         Args:
 
         Returns:
@@ -739,452 +649,6 @@ class element_module_properties:
             bool
         """
 
-    def getKeepInCenterOfLayerCurrentWall(self) -> str:
-        """getKeepInCenterOfLayerCurrentWall
-        Args:
-
-        Returns:
-            str
-        """
-
-    def get_keep_in_center_of_layer_current_wall(self) -> str:
-        """get_keep_in_center_of_layer_current_wall
-        Args:
-
-        Returns:
-            str
-        """
-
-    def isNotPlacedAtEndOfWall(self) -> bool:
-        """isNotPlacedAtEndOfWall
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_not_placed_at_end_of_wall(self) -> bool:
-        """is_not_placed_at_end_of_wall
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def isKeepInCenterOfLayerNeighbourWall(self) -> bool:
-        """isKeepInCenterOfLayerNeighbourWall
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_keep_in_center_of_layer_neighbour_wall(self) -> bool:
-        """is_keep_in_center_of_layer_neighbour_wall
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def setStrechtAccordingLengthAxis(self, active: bool) -> None:
-        """setStrechtAccordingLengthAxis
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_strecht_according_length_axis(self, active: bool) -> None:
-        """set_strecht_according_length_axis
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def isOpeningSill(self) -> bool:
-        """isOpeningSill
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_opening_sill(self) -> bool:
-        """is_opening_sill
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def isDistributePerpendicularToAxisDirectionUseMaxDistance(self) -> bool:
-        """isDistributePerpendicularToAxisDirectionUseMaxDistance
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_distribute_perpendicular_to_axis_direction_use_max_distance(self) -> bool:
-        """is_distribute_perpendicular_to_axis_direction_use_max_distance
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def isDistributePerpendicularToAxisDirection(self) -> bool:
-        """isDistributePerpendicularToAxisDirection
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_distribute_perpendicular_to_axis_direction(self) -> bool:
-        """is_distribute_perpendicular_to_axis_direction
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def isBottomPlate(self) -> bool:
-        """isBottomPlate
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_bottom_plate(self) -> bool:
-        """is_bottom_plate
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def isOpeningLintel(self) -> bool:
-        """isOpeningLintel
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_opening_lintel(self) -> bool:
-        """is_opening_lintel
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def isNotPlacedAtStartOfWall(self) -> bool:
-        """isNotPlacedAtStartOfWall
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_not_placed_at_start_of_wall(self) -> bool:
-        """is_not_placed_at_start_of_wall
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def isKeepInCenterOfLayerCurrentWall(self) -> bool:
-        """isKeepInCenterOfLayerCurrentWall
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_keep_in_center_of_layer_current_wall(self) -> bool:
-        """is_keep_in_center_of_layer_current_wall
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def setStrechtAccordingThicknessAxis(self, active: bool) -> None:
-        """setStrechtAccordingThicknessAxis
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_strecht_according_thickness_axis(self, active: bool) -> None:
-        """set_strecht_according_thickness_axis
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def isMoveAccordingThicknessAxis(self) -> bool:
-        """isMoveAccordingThicknessAxis
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_move_according_thickness_axis(self) -> bool:
-        """is_move_according_thickness_axis
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def getKeepInCenterOfLayerNeighbourWall(self) -> str:
-        """getKeepInCenterOfLayerNeighbourWall
-        Args:
-
-        Returns:
-            str
-        """
-
-    def get_keep_in_center_of_layer_neighbour_wall(self) -> str:
-        """get_keep_in_center_of_layer_neighbour_wall
-        Args:
-
-        Returns:
-            str
-        """
-
-    def setTopPlate(self, active: bool) -> None:
-        """setTopPlate
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_top_plate(self, active: bool) -> None:
-        """set_top_plate
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def setNoCollisionControl(self, active: bool) -> None:
-        """setNoCollisionControl
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_no_collision_control(self, active: bool) -> None:
-        """set_no_collision_control
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def setNotPlacedAtStartOfWall(self, active: bool) -> None:
-        """setNotPlacedAtStartOfWall
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_not_placed_at_start_of_wall(self, active: bool) -> None:
-        """set_not_placed_at_start_of_wall
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def isMoveWithTopOfWall(self) -> bool:
-        """isMoveWithTopOfWall
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_move_with_top_of_wall(self) -> bool:
-        """is_move_with_top_of_wall
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def isUniqueLayername(self) -> bool:
-        """isUniqueLayername
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_unique_layername(self) -> bool:
-        """is_unique_layername
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def isTopPlate(self) -> bool:
-        """isTopPlate
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_top_plate(self) -> bool:
-        """is_top_plate
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def isMainElement(self) -> bool:
-        """isMainElement
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_main_element(self) -> bool:
-        """is_main_element
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def setOpeningSill(self, active: bool) -> None:
-        """setOpeningSill
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_opening_sill(self, active: bool) -> None:
-        """set_opening_sill
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def setStretchWithTopOfWall(self, active: bool) -> None:
-        """setStretchWithTopOfWall
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_stretch_with_top_of_wall(self, active: bool) -> None:
-        """set_stretch_with_top_of_wall
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def getDistributeInAxisDirectionDistance(self) -> float:
-        """getDistributeInAxisDirectionDistance
-        Args:
-
-        Returns:
-            float
-        """
-
-    def get_distribute_in_axis_direction_distance(self) -> float:
-        """get_distribute_in_axis_direction_distance
-        Args:
-
-        Returns:
-            float
-        """
-
-    def getUniqueLayername(self) -> str:
-        """getUniqueLayername
-        Args:
-
-        Returns:
-            str
-        """
-
-    def get_unique_layername(self) -> str:
-        """get_unique_layername
-        Args:
-
-        Returns:
-            str
-        """
-
-    def isSolderInAxisDirection(self) -> bool:
-        """isSolderInAxisDirection
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_solder_in_axis_direction(self) -> bool:
-        """is_solder_in_axis_direction
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def isStretchWithOpeningSill(self) -> bool:
-        """isStretchWithOpeningSill
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_stretch_with_opening_sill(self) -> bool:
-        """is_stretch_with_opening_sill
-        Args:
-
-        Returns:
-            bool
-        """
-
     def isCuttingElement(self) -> bool:
         """isCuttingElement
         Args:
@@ -1195,72 +659,6 @@ class element_module_properties:
 
     def is_cutting_element(self) -> bool:
         """is_cutting_element
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def setUseForDetailCoordinateSystem(self, active: bool) -> None:
-        """setUseForDetailCoordinateSystem
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def set_use_for_detail_coordinate_system(self, active: bool) -> None:
-        """set_use_for_detail_coordinate_system
-        Args:
-            active ( bool): active
-
-        Returns:
-            None
-        """
-
-    def isMoveAccordingLengthAxis(self) -> bool:
-        """isMoveAccordingLengthAxis
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_move_according_length_axis(self) -> bool:
-        """is_move_according_length_axis
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def isNoInsideControl(self) -> bool:
-        """isNoInsideControl
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_no_inside_control(self) -> bool:
-        """is_no_inside_control
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def isDistributeInAxisDirectionUseMaxDistance(self) -> bool:
-        """isDistributeInAxisDirectionUseMaxDistance
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_distribute_in_axis_direction_use_max_distance(self) -> bool:
-        """is_distribute_in_axis_direction_use_max_distance
         Args:
 
         Returns:
@@ -1287,16 +685,124 @@ class element_module_properties:
             None
         """
 
-    def isUseForDetailCoordinateSystem(self) -> bool:
-        """isUseForDetailCoordinateSystem
+    def setUniqueLayername(self, active: bool, layername: str) -> None:
+        """setUniqueLayername
+        Args:
+            active ( bool): active
+            layername ( str): layername
+
+        Returns:
+            None
+        """
+
+    def set_unique_layername(self, active: bool, layername: str) -> None:
+        """set_unique_layername
+        Args:
+            active ( bool): active
+            layername ( str): layername
+
+        Returns:
+            None
+        """
+
+    def isElementFromDetail(self) -> bool:
+        """isElementFromDetail
         Args:
 
         Returns:
             bool
         """
 
-    def is_use_for_detail_coordinate_system(self) -> bool:
-        """is_use_for_detail_coordinate_system
+    def is_element_from_detail(self) -> bool:
+        """is_element_from_detail
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def setAuxiliary(self, active: bool) -> None:
+        """setAuxiliary
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_auxiliary(self, active: bool) -> None:
+        """set_auxiliary
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def setDistributeInAxisDirectionUseNumber(self, active: bool, number: int) -> None:
+        """setDistributeInAxisDirectionUseNumber
+        Args:
+            active ( bool): active
+            number ( int): number
+
+        Returns:
+            None
+        """
+
+    def set_distribute_in_axis_direction_use_number(self, active: bool, number: int) -> None:
+        """set_distribute_in_axis_direction_use_number
+        Args:
+            active ( bool): active
+            number ( int): number
+
+        Returns:
+            None
+        """
+
+    def isStrechtAccordingLengthAxis(self) -> bool:
+        """isStrechtAccordingLengthAxis
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_strecht_according_length_axis(self) -> bool:
+        """is_strecht_according_length_axis
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def setUseForDetailCoordinateSystem(self, active: bool) -> None:
+        """setUseForDetailCoordinateSystem
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_use_for_detail_coordinate_system(self, active: bool) -> None:
+        """set_use_for_detail_coordinate_system
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def isSolderInAxisDirection(self) -> bool:
+        """isSolderInAxisDirection
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_solder_in_axis_direction(self) -> bool:
+        """is_solder_in_axis_direction
         Args:
 
         Returns:
@@ -1319,6 +825,24 @@ class element_module_properties:
             bool
         """
 
+    def setOpeningSill(self, active: bool) -> None:
+        """setOpeningSill
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_opening_sill(self, active: bool) -> None:
+        """set_opening_sill
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
     def getDistributePerpendicularToAxisDirectionDistance(self) -> float:
         """getDistributePerpendicularToAxisDirectionDistance
         Args:
@@ -1335,6 +859,112 @@ class element_module_properties:
             float
         """
 
+    def setKeepInCenterOfLayerNeighbourWall(self, active: bool, layername: str) -> None:
+        """setKeepInCenterOfLayerNeighbourWall
+        Args:
+            active ( bool): active
+            layername ( str): layername
+
+        Returns:
+            None
+        """
+
+    def set_keep_in_center_of_layer_neighbour_wall(self, active: bool, layername: str) -> None:
+        """set_keep_in_center_of_layer_neighbour_wall
+        Args:
+            active ( bool): active
+            layername ( str): layername
+
+        Returns:
+            None
+        """
+
+    def setCuttingElement(self, active: bool, priority: int) -> None:
+        """setCuttingElement
+        Args:
+            active ( bool): active
+            priority ( int): priority
+
+        Returns:
+            None
+        """
+
+    def set_cutting_element(self, active: bool, priority: int) -> None:
+        """set_cutting_element
+        Args:
+            active ( bool): active
+            priority ( int): priority
+
+        Returns:
+            None
+        """
+
+    def setTopPlate(self, active: bool) -> None:
+        """setTopPlate
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_top_plate(self, active: bool) -> None:
+        """set_top_plate
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def isKeepInCenterOfLayerNeighbourWall(self) -> bool:
+        """isKeepInCenterOfLayerNeighbourWall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_keep_in_center_of_layer_neighbour_wall(self) -> bool:
+        """is_keep_in_center_of_layer_neighbour_wall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isDistributeInAxisDirectionUseMaxDistance(self) -> bool:
+        """isDistributeInAxisDirectionUseMaxDistance
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_distribute_in_axis_direction_use_max_distance(self) -> bool:
+        """is_distribute_in_axis_direction_use_max_distance
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isOpeningLintel(self) -> bool:
+        """isOpeningLintel
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_opening_lintel(self) -> bool:
+        """is_opening_lintel
+        Args:
+
+        Returns:
+            bool
+        """
+
     def isNotCutWithCuttingElement(self) -> bool:
         """isNotCutWithCuttingElement
         Args:
@@ -1345,6 +975,40 @@ class element_module_properties:
 
     def is_not_cut_with_cutting_element(self) -> bool:
         """is_not_cut_with_cutting_element
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def setStrechtAccordingThicknessAxis(self, active: bool) -> None:
+        """setStrechtAccordingThicknessAxis
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_strecht_according_thickness_axis(self, active: bool) -> None:
+        """set_strecht_according_thickness_axis
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def isNotPlacedAtEndOfWall(self) -> bool:
+        """isNotPlacedAtEndOfWall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_not_placed_at_end_of_wall(self) -> bool:
+        """is_not_placed_at_end_of_wall
         Args:
 
         Returns:
@@ -1365,5 +1029,341 @@ class element_module_properties:
 
         Returns:
             bool
+        """
+
+    def isKeepInCenterOfRoughVolume(self) -> bool:
+        """isKeepInCenterOfRoughVolume
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_keep_in_center_of_rough_volume(self) -> bool:
+        """is_keep_in_center_of_rough_volume
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def setMoveAccordingThicknessAxis(self, active: bool) -> None:
+        """setMoveAccordingThicknessAxis
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_move_according_thickness_axis(self, active: bool) -> None:
+        """set_move_according_thickness_axis
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def isDistributePerpendicularToAxisDirectionUseNumber(self) -> bool:
+        """isDistributePerpendicularToAxisDirectionUseNumber
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_distribute_perpendicular_to_axis_direction_use_number(self) -> bool:
+        """is_distribute_perpendicular_to_axis_direction_use_number
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def setMainElement(self, active: bool) -> None:
+        """setMainElement
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_main_element(self, active: bool) -> None:
+        """set_main_element
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def setStopDistributionInAxisDirection(self, active: bool) -> None:
+        """setStopDistributionInAxisDirection
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_stop_distribution_in_axis_direction(self, active: bool) -> None:
+        """set_stop_distribution_in_axis_direction
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def setStretchWithOpeningSill(self, active: bool) -> None:
+        """setStretchWithOpeningSill
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_stretch_with_opening_sill(self, active: bool) -> None:
+        """set_stretch_with_opening_sill
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def isMoveWithTopOfWall(self) -> bool:
+        """isMoveWithTopOfWall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_move_with_top_of_wall(self) -> bool:
+        """is_move_with_top_of_wall
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def getKeepInCenterOfLayerNeighbourWall(self) -> str:
+        """getKeepInCenterOfLayerNeighbourWall
+        Args:
+
+        Returns:
+            str
+        """
+
+    def get_keep_in_center_of_layer_neighbour_wall(self) -> str:
+        """get_keep_in_center_of_layer_neighbour_wall
+        Args:
+
+        Returns:
+            str
+        """
+
+    def setElementFromDetail(self, active: bool) -> None:
+        """setElementFromDetail
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_element_from_detail(self, active: bool) -> None:
+        """set_element_from_detail
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def isStopDistributionInAxisDirection(self) -> bool:
+        """isStopDistributionInAxisDirection
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_stop_distribution_in_axis_direction(self) -> bool:
+        """is_stop_distribution_in_axis_direction
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isAuxiliary(self) -> bool:
+        """isAuxiliary
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_auxiliary(self) -> bool:
+        """is_auxiliary
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def setSolderInAxisDirection(self, active: bool) -> None:
+        """setSolderInAxisDirection
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_solder_in_axis_direction(self, active: bool) -> None:
+        """set_solder_in_axis_direction
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def isMoveAccordingLengthAxis(self) -> bool:
+        """isMoveAccordingLengthAxis
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_move_according_length_axis(self) -> bool:
+        """is_move_according_length_axis
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isTopPlate(self) -> bool:
+        """isTopPlate
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_top_plate(self) -> bool:
+        """is_top_plate
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def getKeepInCenterOfLayerCurrentWall(self) -> str:
+        """getKeepInCenterOfLayerCurrentWall
+        Args:
+
+        Returns:
+            str
+        """
+
+    def get_keep_in_center_of_layer_current_wall(self) -> str:
+        """get_keep_in_center_of_layer_current_wall
+        Args:
+
+        Returns:
+            str
+        """
+
+    def setStrechtAccordingLengthAxis(self, active: bool) -> None:
+        """setStrechtAccordingLengthAxis
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_strecht_according_length_axis(self, active: bool) -> None:
+        """set_strecht_according_length_axis
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def isUseForDetailCoordinateSystem(self) -> bool:
+        """isUseForDetailCoordinateSystem
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_use_for_detail_coordinate_system(self) -> bool:
+        """is_use_for_detail_coordinate_system
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def isUniqueLayername(self) -> bool:
+        """isUniqueLayername
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_unique_layername(self) -> bool:
+        """is_unique_layername
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def setStretchWithTopOfWall(self, active: bool) -> None:
+        """setStretchWithTopOfWall
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def set_stretch_with_top_of_wall(self, active: bool) -> None:
+        """set_stretch_with_top_of_wall
+        Args:
+            active ( bool): active
+
+        Returns:
+            None
+        """
+
+    def getUniqueLayername(self) -> str:
+        """getUniqueLayername
+        Args:
+
+        Returns:
+            str
+        """
+
+    def get_unique_layername(self) -> str:
+        """get_unique_layername
+        Args:
+
+        Returns:
+            str
         """
 

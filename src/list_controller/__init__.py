@@ -6,7 +6,7 @@ def get_last_error(error_code: int) -> str:
         error_code ( int): error_code
 
     Returns:
-        strerror string
+        error string (str)
     """
 
 def export_production_list(element_id_list: List[int], file_path: str) -> None:
@@ -34,7 +34,7 @@ def check_position_numbers_production_list() -> List[int]:
     Args:
 
     Returns:
-        List[int]element ids with discrepancies
+        element ids with discrepancies (List[int])
     """
 
 def check_position_numbers_part_list() -> List[int]:
@@ -42,7 +42,7 @@ def check_position_numbers_part_list() -> List[int]:
     Args:
 
     Returns:
-        List[int]element ids with discrepancies
+        element ids with discrepancies (List[int])
     """
 
 def clear_errors() -> None:

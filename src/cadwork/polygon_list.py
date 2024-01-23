@@ -1,6 +1,5 @@
 from cadwork import point_3d
 
-
 class polygon_list:
     def count(self) -> int:
         """count
@@ -18,3 +17,4 @@ class polygon_list:
         Returns:
             point_3d
         """
+
