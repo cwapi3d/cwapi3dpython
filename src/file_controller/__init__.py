@@ -3,7 +3,7 @@ from cadwork import point_3d
 from cadwork import rhino_options
 
 def get_last_error(error_code: int) -> str:
-    """get last error
+    """Gets the last error 
     Args:
         error_code ( int): error_code
 
@@ -12,7 +12,7 @@ def get_last_error(error_code: int) -> str:
     """
 
 def export_stl_file(element_id_list: List[int], file_path: str) -> None:
-    """export stl file
+    """Exports an STL file 
     Args:
         element_id_list ( List[int]): element_id_list
         file_path ( str): file_path
@@ -22,7 +22,7 @@ def export_stl_file(element_id_list: List[int], file_path: str) -> None:
     """
 
 def import_step_file(file_path: str, scale_factor: float) -> List[int]:
-    """import step file
+    """Imports a STEP file 
     Args:
         file_path ( str): file_path
         scale_factor ( float): scale_factor
@@ -32,7 +32,7 @@ def import_step_file(file_path: str, scale_factor: float) -> List[int]:
     """
 
 def import_step_file_with_message_option(file_path: str, scale_factor: float, hide_message: bool) -> List[int]:
-    """import step file with message option
+    """Imports a STEP file 
     Args:
         file_path ( str): file_path
         scale_factor ( float): scale_factor
@@ -43,7 +43,7 @@ def import_step_file_with_message_option(file_path: str, scale_factor: float, hi
     """
 
 def export_webgl(element_id_list: List[int], file_path: str) -> bool:
-    """export webgl
+    """Exports a WebGL file 
     Args:
         element_id_list ( List[int]): element_id_list
         file_path ( str): file_path
@@ -53,7 +53,7 @@ def export_webgl(element_id_list: List[int], file_path: str) -> bool:
     """
 
 def export_3d_file(element_id_list: List[int], file_path: str) -> bool:
-    """export 3d file
+    """Exports a 3D file 
     Args:
         element_id_list ( List[int]): element_id_list
         file_path ( str): file_path
@@ -63,7 +63,7 @@ def export_3d_file(element_id_list: List[int], file_path: str) -> bool:
     """
 
 def import_sat_file(file_path: str, scale_factor: float, binary: bool) -> List[int]:
-    """import sat file
+    """Imports an SAT file 
     Args:
         file_path ( str): file_path
         scale_factor ( float): scale_factor
@@ -74,7 +74,7 @@ def import_sat_file(file_path: str, scale_factor: float, binary: bool) -> List[i
     """
 
 def import_3dc_file(file_path: str) -> List[int]:
-    """import 3dc file
+    """Imports a 3DC file 
     Args:
         file_path ( str): file_path
 
@@ -83,7 +83,7 @@ def import_3dc_file(file_path: str) -> List[int]:
     """
 
 def import_rhino_file(file_path: str, without_dialog: bool) -> List[int]:
-    """import rhino file
+    """Imports a Rhino file 
     Args:
         file_path ( str): file_path
         without_dialog ( bool): without_dialog
@@ -93,7 +93,7 @@ def import_rhino_file(file_path: str, without_dialog: bool) -> List[int]:
     """
 
 def export_step_file(element_list: List[int], file_path: str, scale_factor: float, version: int, text_mode: bool) -> None:
-    """export step file
+    """Exports a STEP file 
     Args:
         element_list ( List[int]): element_list
         file_path ( str): file_path
@@ -106,7 +106,7 @@ def export_step_file(element_list: List[int], file_path: str, scale_factor: floa
     """
 
 def import_3dz_file(file_path: str) -> None:
-    """import 3dz file
+    """Imports a 3DZ file 
     Args:
         file_path ( str): file_path
 
@@ -115,7 +115,7 @@ def import_3dz_file(file_path: str) -> None:
     """
 
 def export_obj_file(elements: List[int], file_path: str) -> None:
-    """export obj file
+    """Exports a OBJ file 
     Args:
         elements ( List[int]): elements
         file_path ( str): file_path
@@ -125,7 +125,7 @@ def export_obj_file(elements: List[int], file_path: str) -> None:
     """
 
 def import_sat_file_silently(file_path: str, scale_factor: float, binary: bool) -> List[int]:
-    """import sat file silently
+    """Imports a SAT File without messages 
     Args:
         file_path ( str): file_path
         scale_factor ( float): scale_factor
@@ -136,7 +136,7 @@ def import_sat_file_silently(file_path: str, scale_factor: float, binary: bool) 
     """
 
 def export_fbx_file(elements: List[int], file_path: str, fbx_format: int) -> None:
-    """export fbx file
+    """Exports a FBX file 
     Args:
         elements ( List[int]): elements
         file_path ( str): file_path
@@ -155,7 +155,7 @@ def clear_errors() -> None:
     """
 
 def import_3dc_file_with_glide(file_path: str) -> List[int]:
-    """import 3dc file with glide
+    """Imports a 3DC file with glide 
     Args:
         file_path ( str): file_path
 
@@ -164,7 +164,7 @@ def import_3dc_file_with_glide(file_path: str) -> List[int]:
     """
 
 def import_btl_file(file_path: str) -> None:
-    """import btl file
+    """Imports a BTL file 
     Args:
         file_path ( str): file_path
 
@@ -173,7 +173,7 @@ def import_btl_file(file_path: str) -> None:
     """
 
 def export_3dc_file(element_id_list: List[int], file_path: str) -> None:
-    """export 3dc file
+    """Exports a 3D file 
     Args:
         element_id_list ( List[int]): element_id_list
         file_path ( str): file_path
@@ -183,7 +183,7 @@ def export_3dc_file(element_id_list: List[int], file_path: str) -> None:
     """
 
 def import_btl_file_for_nesting(file_path: str) -> None:
-    """import btl file for nesting
+    """Imports a BTL file for nesting 
     Args:
         file_path ( str): file_path
 
@@ -192,7 +192,7 @@ def import_btl_file_for_nesting(file_path: str) -> None:
     """
 
 def export_btl_file_for_nesting(file_path: str) -> None:
-    """export btl file for nesting
+    """Exports a BTL file for nesting 
     Args:
         file_path ( str): file_path
 
@@ -201,7 +201,7 @@ def export_btl_file_for_nesting(file_path: str) -> None:
     """
 
 def export_rhino_file(element_id_list: List[int], file_path: str, version: int, use_default_assignment: bool, write_standard_attributes: bool) -> None:
-    """export rhino file
+    """Exports a 3dm rhino file 
     Args:
         element_id_list ( List[int]): element_id_list
         file_path ( str): file_path
@@ -241,7 +241,7 @@ def set_blum_export_path(path: str) -> None:
     """
 
 def export_sat_file(elements: List[int], file_path: str, scale_factor: float, binary: bool, version: int) -> None:
-    """export sat file
+    """exports a SAT File 
     Args:
         elements ( List[int]): elements
         file_path ( str): file_path
@@ -254,7 +254,7 @@ def export_sat_file(elements: List[int], file_path: str, scale_factor: float, bi
     """
 
 def export_glb_file(elements: List[int], file_path: str) -> None:
-    """export glb file
+    """exports a GLB File 
     Args:
         elements ( List[int]): elements
         file_path ( str): file_path
@@ -264,7 +264,7 @@ def export_glb_file(elements: List[int], file_path: str) -> None:
     """
 
 def import_variant_file(file_path: str, insert_position: point_3d) -> List[int]:
-    """import variant file
+    """imports a variant by .val-File 
     Args:
         file_path ( str): file_path
         insert_position ( point_3d): insert_position

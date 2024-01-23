@@ -1,7 +1,7 @@
 from typing import List
 
 def get_profile_length(element_id: int) -> float:
-    """get profile length
+    """Gets the profile length 
     Args:
         element_id ( int): element_id
 
@@ -10,7 +10,7 @@ def get_profile_length(element_id: int) -> float:
     """
 
 def get_edge_length(element_id: int, edge_type: str) -> float:
-    """get edge length
+    """Gets the edge length 
     Args:
         element_id ( int): element_id
         edge_type ( str): edge_type
@@ -20,7 +20,7 @@ def get_edge_length(element_id: int, edge_type: str) -> float:
     """
 
 def get_all_caddy_element_ids() -> List[int]:
-    """get all caddy element ids
+    """Gets all caddy elements 
     Args:
 
     Returns:

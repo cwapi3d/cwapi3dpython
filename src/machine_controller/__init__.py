@@ -1,7 +1,7 @@
 from typing import List
 
 def get_last_error(error_code: int) -> str:
-    """get last error
+    """Gets the last error 
     Args:
         error_code ( int): error_code
 
@@ -10,7 +10,7 @@ def get_last_error(error_code: int) -> str:
     """
 
 def export_btl(btl_version: int, file_path: str) -> None:
-    """export btl
+    """Exports a BTL file 
     Args:
         btl_version ( int): btl_version
         file_path ( str): file_path
@@ -20,7 +20,7 @@ def export_btl(btl_version: int, file_path: str) -> None:
     """
 
 def export_weinmann_mfb(mfb_version: int) -> None:
-    """export weinmann mfb
+    """Exports a WUP file 
     Args:
         mfb_version ( int): mfb_version
 
@@ -29,7 +29,7 @@ def export_weinmann_mfb(mfb_version: int) -> None:
     """
 
 def export_hundegger(hundeggertype: int) -> None:
-    """export hundegger
+    """Exports a Hundegger file 
     Args:
         hundeggertype ( int): hundeggertype
 
@@ -46,7 +46,7 @@ def clear_errors() -> None:
     """
 
 def export_hundegger_with_file_path(hundeggertype: int, file_path: str) -> None:
-    """export hundegger with file path
+    """Exports a Hundegger file 
     Args:
         hundeggertype ( int): hundeggertype
         file_path ( str): file_path
@@ -56,7 +56,7 @@ def export_hundegger_with_file_path(hundeggertype: int, file_path: str) -> None:
     """
 
 def export_hundegger_with_file_path_and_presetting(hundeggertype: int, file_path: str, presetting: str) -> None:
-    """export hundegger with file path and presetting
+    """Exports a Hundegger file 
     Args:
         hundeggertype ( int): hundeggertype
         file_path ( str): file_path
@@ -67,7 +67,7 @@ def export_hundegger_with_file_path_and_presetting(hundeggertype: int, file_path
     """
 
 def export_btl_with_presetting(btl_version: int, file_path: str, presetting: str) -> None:
-    """export btl with presetting
+    """Exports a BTL file with a presetting file 
     Args:
         btl_version ( int): btl_version
         file_path ( str): file_path
@@ -78,7 +78,7 @@ def export_btl_with_presetting(btl_version: int, file_path: str, presetting: str
     """
 
 def calculate_btl_machine_data(elements: List[int], btl_version: int) -> None:
-    """calculate btl machine data
+    """Calculates the Machine Data for BTL 
     Args:
         elements ( List[int]): elements
         btl_version ( int): btl_version
@@ -88,7 +88,7 @@ def calculate_btl_machine_data(elements: List[int], btl_version: int) -> None:
     """
 
 def calculate_hundegger_machine_data(elements: List[int], hunderggertype: int) -> None:
-    """calculate hundegger machine data
+    """Calculates the Machine Data for Hundegger 
     Args:
         elements ( List[int]): elements
         hunderggertype ( int): hunderggertype
@@ -108,7 +108,7 @@ def load_hundegger_calculation_set(hundeggertype: int, file_path: str) -> None:
     """
 
 def export_hundegger_with_file_path_silent(hundeggertype: int, file_path: str) -> None:
-    """export hundegger with file path silent
+    """Exports a Hundegger file silently 
     Args:
         hundeggertype ( int): hundeggertype
         file_path ( str): file_path
@@ -118,7 +118,7 @@ def export_hundegger_with_file_path_silent(hundeggertype: int, file_path: str) -
     """
 
 def export_hundegger_with_file_path_and_presetting_silent(hundeggertype: int, file_path: str, presetting: str) -> None:
-    """export hundegger with file path and presetting silent
+    """Exports a Hundegger file silently 
     Args:
         hundeggertype ( int): hundeggertype
         file_path ( str): file_path

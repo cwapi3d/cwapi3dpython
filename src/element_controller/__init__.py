@@ -6,7 +6,7 @@ from cadwork import point_3d
 from cadwork import text_object_options
 
 def get_last_error(error_code: int) -> str:
-    """get last error
+    """Gets the last error 
     Args:
         error_code ( int): error_code
 
@@ -520,7 +520,7 @@ def clear_errors() -> None:
     """
 
 def glide_elements(element_i_ds: List[int], glide_point: point_3d) -> None:
-    """glide elements
+    """Glides elements 
     Args:
         element_i_ds ( List[int]): element_i_ds
         glide_point ( point_3d): glide_point
@@ -638,7 +638,7 @@ def create_surface(surface_vertices: List[point_3d]) -> int:
     """
 
 def convert_circular_beam_to_drilling(elements: List[int]) -> None:
-    """convert circular beam to drilling
+    """converts circular/round beams into drillings 
     Args:
         elements ( List[int]): elements
 
@@ -719,7 +719,7 @@ def mirror_copy_elements(elements: List[int], plane: point_3d, plane_distance: f
     """
 
 def reset_element_cadwork_guid(element_id: int) -> None:
-    """reset element cadwork guid
+    """sets the Cadwork Guid of an element to NULL 
     Args:
         element_id ( int): element_id
 

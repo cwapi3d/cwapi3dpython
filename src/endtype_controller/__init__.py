@@ -8,7 +8,7 @@ def get_last_error(error_code: int) -> str:
     """
 
 def get_endtype_id(name: str) -> int:
-    """get endtype id
+    """Gets the endtypeID by endtypename 
     Args:
         name ( str): name
 
@@ -17,7 +17,7 @@ def get_endtype_id(name: str) -> int:
     """
 
 def get_endtype_id_start(element_id: int) -> int:
-    """get endtype id start
+    """Gets the endtypeID of the start face 
     Args:
         element_id ( int): element_id
 
@@ -26,7 +26,7 @@ def get_endtype_id_start(element_id: int) -> int:
     """
 
 def get_endtype_id_end(element_id: int) -> int:
-    """get endtype id end
+    """Gets the endtypeID of the end face 
     Args:
         element_id ( int): element_id
 
@@ -45,7 +45,7 @@ def get_endtype_id_facet(a0: int, a1: int) -> int:
     """
 
 def set_endtype_name_start(element_id: int, name: str) -> None:
-    """set endtype name start
+    """Sets the endtype to start face by endtypename 
     Args:
         element_id ( int): element_id
         name ( str): name
@@ -55,7 +55,7 @@ def set_endtype_name_start(element_id: int, name: str) -> None:
     """
 
 def set_endtype_name_end(element_id: int, name: str) -> None:
-    """set endtype name end
+    """Sets the endtype to end face by endtypename 
     Args:
         element_id ( int): element_id
         name ( str): name
@@ -76,7 +76,7 @@ def set_endtype_name_facet(a0: int, a1: str, a2: int) -> None:
     """
 
 def set_endtype_id_start(element_id: int, endtype_id: int) -> None:
-    """set endtype id start
+    """Sets the endtype to start face by endtypeID 
     Args:
         element_id ( int): element_id
         endtype_id ( int): endtype_id
@@ -86,7 +86,7 @@ def set_endtype_id_start(element_id: int, endtype_id: int) -> None:
     """
 
 def set_endtype_id_end(element_id: int, endtype_id: int) -> None:
-    """set endtype id end
+    """Sets the endtype to end face by endtypeID 
     Args:
         element_id ( int): element_id
         endtype_id ( int): endtype_id
@@ -115,7 +115,7 @@ def clear_errors() -> None:
     """
 
 def create_new_endtype(endtype_name: str, endtype_id: int, folder_name: str) -> int:
-    """create new endtype
+    """Creates a new Endtype 
     Args:
         endtype_name ( str): endtype_name
         endtype_id ( int): endtype_id
@@ -126,7 +126,7 @@ def create_new_endtype(endtype_name: str, endtype_id: int, folder_name: str) -> 
     """
 
 def get_endtype_name(element_id: int) -> str:
-    """get endtype name
+    """Gets the endtypename by endtypeID 
     Args:
         element_id ( int): element_id
 
@@ -135,7 +135,7 @@ def get_endtype_name(element_id: int) -> str:
     """
 
 def get_endtype_name_start(element_id: int) -> str:
-    """get endtype name start
+    """Gets the endtypename of the start face 
     Args:
         element_id ( int): element_id
 
@@ -144,7 +144,7 @@ def get_endtype_name_start(element_id: int) -> str:
     """
 
 def get_endtype_name_end(element_id: int) -> str:
-    """get endtype name end
+    """Gets the endtypename of the end face 
     Args:
         element_id ( int): element_id
 

@@ -1,7 +1,7 @@
 from typing import List
 
 def get_last_error(error_code: int) -> str:
-    """get last error
+    """Gets the last error 
     Args:
         error_code ( int): error_code
 
@@ -10,7 +10,7 @@ def get_last_error(error_code: int) -> str:
     """
 
 def add_scene(name: str) -> bool:
-    """add scene
+    """Adds a new scene 
     Args:
         name ( str): name
 
@@ -19,7 +19,7 @@ def add_scene(name: str) -> bool:
     """
 
 def rename_scene(old_name: str, new_name: str) -> bool:
-    """rename scene
+    """Renames a scene 
     Args:
         old_name ( str): old_name
         new_name ( str): new_name
@@ -29,7 +29,7 @@ def rename_scene(old_name: str, new_name: str) -> bool:
     """
 
 def delete_scene(name: str) -> bool:
-    """delete scene
+    """Deletes a scene 
     Args:
         name ( str): name
 
@@ -38,7 +38,7 @@ def delete_scene(name: str) -> bool:
     """
 
 def add_elements_to_scene(name: str, element_i_ds: List[int]) -> bool:
-    """add elements to scene
+    """Adds elements to a scene 
     Args:
         name ( str): name
         element_i_ds ( List[int]): element_i_ds
@@ -48,7 +48,7 @@ def add_elements_to_scene(name: str, element_i_ds: List[int]) -> bool:
     """
 
 def remove_elements_from_scene(name: str, element_i_ds: List[int]) -> bool:
-    """remove elements from scene
+    """Removes elements from a scene 
     Args:
         name ( str): name
         element_i_ds ( List[int]): element_i_ds
@@ -58,7 +58,7 @@ def remove_elements_from_scene(name: str, element_i_ds: List[int]) -> bool:
     """
 
 def get_elements_from_scene(name: str) -> List[int]:
-    """get elements from scene
+    """Gets the elements from a scene 
     Args:
         name ( str): name
 
@@ -67,7 +67,7 @@ def get_elements_from_scene(name: str) -> List[int]:
     """
 
 def activate_scene(name: str) -> bool:
-    """activate scene
+    """Activates a scene 
     Args:
         name ( str): name
 
