@@ -492,12 +492,16 @@ def get_list_weight(element_id: int) -> float:
     """
 
 def get_volume(element_id: int) -> float:
-    """Gets the element real volume 
+    """Gets the element raw volume 
+
+    This does not include negative geometry operations, such as end-types,
+    drillings, connectors, openings, and MEP elements.
+
     Args:
         element_id ( int): element_id
 
     Returns:
-        element real volume (float)
+        element raw volume (float)
     """
 
 def get_list_volume(element_id: int) -> float:
@@ -743,6 +747,11 @@ def get_actual_physical_weight(a0: int) -> float:
 
 def get_actual_physical_volume(a0: int) -> float:
     """get actual physical volume
+
+    This includes negative geometry operations, such as end-types, drillings,
+    connectors, openings, and MEP elements. It might also take into account
+    different drilling bodies and counterbores in a connector.
+
     Args:
         a0 ( int): a0
 
