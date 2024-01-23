@@ -5,6 +5,7 @@ from cadwork import element_type
 from cadwork import extended_settings
 from cadwork import process_type
 
+
 def get_last_error(error_code: int) -> str:
     """Gets the last error 
     Args:
@@ -13,6 +14,7 @@ def get_last_error(error_code: int) -> str:
     Returns:
         error string (str)
     """
+
 
 def set_name(element_id_list: List[int], name: str) -> None:
     """Sets the element name 
@@ -24,6 +26,7 @@ def set_name(element_id_list: List[int], name: str) -> None:
         None
     """
 
+
 def set_group(element_id_list: List[int], group: str) -> None:
     """Sets the element group 
     Args:
@@ -33,6 +36,7 @@ def set_group(element_id_list: List[int], group: str) -> None:
     Returns:
         None
     """
+
 
 def set_subgroup(element_id_list: List[int], subgroup: str) -> None:
     """Sets the element subgroup 
@@ -44,6 +48,7 @@ def set_subgroup(element_id_list: List[int], subgroup: str) -> None:
         None
     """
 
+
 def set_comment(element_id_list: List[int], comment: str) -> None:
     """Sets the element comment 
     Args:
@@ -53,6 +58,7 @@ def set_comment(element_id_list: List[int], comment: str) -> None:
     Returns:
         None
     """
+
 
 def set_user_attribute(element_id_list: List[int], number: int, user_attribute: str) -> None:
     """Sets the element user attribute 
@@ -65,6 +71,7 @@ def set_user_attribute(element_id_list: List[int], number: int, user_attribute: 
         None
     """
 
+
 def set_sku(element_id_list: List[int], sku: str) -> None:
     """Sets the element SKU 
     Args:
@@ -74,6 +81,7 @@ def set_sku(element_id_list: List[int], sku: str) -> None:
     Returns:
         None
     """
+
 
 def set_production_number(element_id_list: List[int], production_number: int) -> None:
     """Sets the element production number 
@@ -85,6 +93,7 @@ def set_production_number(element_id_list: List[int], production_number: int) ->
         None
     """
 
+
 def set_part_number(element_id_list: List[int], part_number: int) -> None:
     """Sets the element part number 
     Args:
@@ -94,6 +103,7 @@ def set_part_number(element_id_list: List[int], part_number: int) -> None:
     Returns:
         None
     """
+
 
 def set_additional_data(element_id_list: List[int], data_id: str, data_text: str) -> None:
     """Sets the element additional data 
@@ -106,6 +116,7 @@ def set_additional_data(element_id_list: List[int], data_id: str, data_text: str
         None
     """
 
+
 def delete_additional_data(element_id_list: List[int], data_id: str) -> None:
     """Deletes the element additional data 
     Args:
@@ -115,6 +126,7 @@ def delete_additional_data(element_id_list: List[int], data_id: str) -> None:
     Returns:
         None
     """
+
 
 def set_user_attribute_name(number: int, user_attribute_name: str) -> None:
     """Sets the user attribute name 
@@ -126,6 +138,7 @@ def set_user_attribute_name(number: int, user_attribute_name: str) -> None:
         None
     """
 
+
 def set_process_type_and_extended_settings_from_name(element_id_list: List[int]) -> None:
     """Sets the element process type and extended settings from the element name 
     Args:
@@ -134,6 +147,7 @@ def set_process_type_and_extended_settings_from_name(element_id_list: List[int])
     Returns:
         None
     """
+
 
 def set_name_process_type(name: str, process_type: None) -> None:
     """Sets the process type for an element name 
@@ -145,6 +159,7 @@ def set_name_process_type(name: str, process_type: None) -> None:
         None
     """
 
+
 def set_name_extended_settings(name: str, extended_settings: None) -> None:
     """Sets the extended settings for an element name 
     Args:
@@ -154,6 +169,7 @@ def set_name_extended_settings(name: str, extended_settings: None) -> None:
     Returns:
         None
     """
+
 
 def set_output_type(element_id_list: List[int], process_type: None) -> None:
     """Sets the element output type 
@@ -165,6 +181,7 @@ def set_output_type(element_id_list: List[int], process_type: None) -> None:
         None
     """
 
+
 def set_extended_settings(element_id_list: List[int], extended_settings: None) -> None:
     """Sets the element extended settings 
     Args:
@@ -175,6 +192,7 @@ def set_extended_settings(element_id_list: List[int], extended_settings: None) -
         None
     """
 
+
 def set_wall(a0: List[int]) -> None:
     """set wall
     Args:
@@ -183,6 +201,7 @@ def set_wall(a0: List[int]) -> None:
     Returns:
         None
     """
+
 
 def set_floor(element_id_list: List[int]) -> None:
     """Sets the element to floor 
@@ -193,6 +212,7 @@ def set_floor(element_id_list: List[int]) -> None:
         None
     """
 
+
 def set_opening(element_id_list: List[int]) -> None:
     """Sets the element to opening 
     Args:
@@ -201,6 +221,7 @@ def set_opening(element_id_list: List[int]) -> None:
     Returns:
         None
     """
+
 
 def set_fastening_attribute(element_id_list: List[int], value: str) -> None:
     """Sets the element fastening attribute 
@@ -212,6 +233,7 @@ def set_fastening_attribute(element_id_list: List[int], value: str) -> None:
         None
     """
 
+
 def set_element_material(element_id_list: List[int], material: int) -> None:
     """Sets the element material 
     Args:
@@ -221,6 +243,7 @@ def set_element_material(element_id_list: List[int], material: int) -> None:
     Returns:
         None
     """
+
 
 def set_assembly_number(element_id_list: List[int], assembly_number: str) -> None:
     """set assembly number
@@ -232,6 +255,7 @@ def set_assembly_number(element_id_list: List[int], assembly_number: str) -> Non
         None
     """
 
+
 def set_list_quantity(element_id_list: List[int], list_quantity: int) -> None:
     """set list quantity
     Args:
@@ -241,6 +265,7 @@ def set_list_quantity(element_id_list: List[int], list_quantity: int) -> None:
     Returns:
         None
     """
+
 
 def set_layer_settings(element_id_list: List[int], layer_settings: None) -> None:
     """set layer settings
@@ -252,6 +277,7 @@ def set_layer_settings(element_id_list: List[int], layer_settings: None) -> None
         None
     """
 
+
 def set_ignore_in_vba_calculation(elements: List[int], ignore: bool) -> None:
     """Sets if the element should be ignored in VBA Calculation 
     Args:
@@ -262,6 +288,7 @@ def set_ignore_in_vba_calculation(elements: List[int], ignore: bool) -> None:
         None
     """
 
+
 def clear_errors() -> None:
     """clear errors
     Args:
@@ -269,6 +296,7 @@ def clear_errors() -> None:
     Returns:
         None
     """
+
 
 def set_reference_wall_2dc(elements: List[int], _2dc_file_path: str) -> None:
     """Applies a new 2dc reference wall to an element 
@@ -280,6 +308,7 @@ def set_reference_wall_2dc(elements: List[int], _2dc_file_path: str) -> None:
         None
     """
 
+
 def get_user_attribute_count() -> int:
     """get user attribute count
     Args:
@@ -287,6 +316,7 @@ def get_user_attribute_count() -> int:
     Returns:
         int
     """
+
 
 def set_standard_part(elements: List[int]) -> None:
     """Sets covers (wall,opening or floor) to standard part. 
@@ -297,6 +327,7 @@ def set_standard_part(elements: List[int]) -> None:
         None
     """
 
+
 def set_solid_wall(elements: List[int]) -> None:
     """Sets elements to solid wall. 
     Args:
@@ -305,6 +336,7 @@ def set_solid_wall(elements: List[int]) -> None:
     Returns:
         None
     """
+
 
 def set_log_wall(elements: List[int]) -> None:
     """Sets elements to log wall. 
@@ -315,6 +347,7 @@ def set_log_wall(elements: List[int]) -> None:
         None
     """
 
+
 def set_solid_floor(elements: List[int]) -> None:
     """Sets elements to solid floor. 
     Args:
@@ -323,6 +356,7 @@ def set_solid_floor(elements: List[int]) -> None:
     Returns:
         None
     """
+
 
 def set_roof(elements: List[int]) -> None:
     """Sets elements to roof cover. 
@@ -333,6 +367,7 @@ def set_roof(elements: List[int]) -> None:
         None
     """
 
+
 def set_solid_roof(elements: List[int]) -> None:
     """Sets elements to solid roof cover. 
     Args:
@@ -342,6 +377,7 @@ def set_solid_roof(elements: List[int]) -> None:
         None
     """
 
+
 def get_node_symbol(element: None) -> int:
     """get node symbol
     Args:
@@ -350,6 +386,7 @@ def get_node_symbol(element: None) -> int:
     Returns:
         int
     """
+
 
 def set_node_symbol(elements: List[int], symbol: int) -> None:
     """set node symbol
@@ -361,6 +398,7 @@ def set_node_symbol(elements: List[int], symbol: int) -> None:
         None
     """
 
+
 def enable_attribute_display() -> None:
     """enable attribute display
     Args:
@@ -368,6 +406,7 @@ def enable_attribute_display() -> None:
     Returns:
         None
     """
+
 
 def disable_attribute_display() -> None:
     """disable attribute display
@@ -377,6 +416,7 @@ def disable_attribute_display() -> None:
         None
     """
 
+
 def is_attribute_display_enabled() -> bool:
     """is attribute display enabled
     Args:
@@ -385,6 +425,7 @@ def is_attribute_display_enabled() -> bool:
         bool
     """
 
+
 def update_auto_attribute() -> None:
     """update auto attribute
     Args:
@@ -392,6 +433,7 @@ def update_auto_attribute() -> None:
     Returns:
         None
     """
+
 
 def set_additional_guid(a0: List[int], a1: str, a2: str) -> None:
     """set additional guid
@@ -404,6 +446,7 @@ def set_additional_guid(a0: List[int], a1: str, a2: str) -> None:
         None
     """
 
+
 def add_item_to_group_list(a0: str) -> None:
     """add item to group list
     Args:
@@ -412,6 +455,7 @@ def add_item_to_group_list(a0: str) -> None:
     Returns:
         None
     """
+
 
 def add_item_to_subgroup_list(a0: str) -> None:
     """add item to subgroup list
@@ -422,6 +466,7 @@ def add_item_to_subgroup_list(a0: str) -> None:
         None
     """
 
+
 def add_item_to_comment_list(a0: str) -> None:
     """add item to comment list
     Args:
@@ -431,6 +476,7 @@ def add_item_to_comment_list(a0: str) -> None:
         None
     """
 
+
 def add_item_to_sku_list(a0: str) -> None:
     """add item to sku list
     Args:
@@ -439,6 +485,7 @@ def add_item_to_sku_list(a0: str) -> None:
     Returns:
         None
     """
+
 
 def add_item_to_user_attribute_list(a0: int, a1: str) -> None:
     """add item to user attribute list
@@ -450,6 +497,7 @@ def add_item_to_user_attribute_list(a0: int, a1: str) -> None:
         None
     """
 
+
 def set_container_number(a0: List[int], a1: int) -> None:
     """set container number
     Args:
@@ -460,6 +508,7 @@ def set_container_number(a0: List[int], a1: int) -> None:
         None
     """
 
+
 def get_name_list_items() -> List[str]:
     """get name list items
     Args:
@@ -467,6 +516,7 @@ def get_name_list_items() -> List[str]:
     Returns:
         List[str]
     """
+
 
 def add_item_to_name_list(a0: str) -> None:
     """add item to name list
@@ -477,6 +527,7 @@ def add_item_to_name_list(a0: str) -> None:
         None
     """
 
+
 def delete_item_from_comment_list(a0: str) -> bool:
     """delete item from comment list
     Args:
@@ -485,6 +536,7 @@ def delete_item_from_comment_list(a0: str) -> bool:
     Returns:
         bool
     """
+
 
 def delete_item_from_group_list(a0: str) -> bool:
     """delete item from group list
@@ -495,6 +547,7 @@ def delete_item_from_group_list(a0: str) -> bool:
         bool
     """
 
+
 def delete_item_from_sku_list(a0: str) -> bool:
     """delete item from sku list
     Args:
@@ -504,6 +557,7 @@ def delete_item_from_sku_list(a0: str) -> bool:
         bool
     """
 
+
 def delete_item_from_subgroup_list(a0: str) -> bool:
     """delete item from subgroup list
     Args:
@@ -512,6 +566,7 @@ def delete_item_from_subgroup_list(a0: str) -> bool:
     Returns:
         bool
     """
+
 
 def delete_item_from_user_attribute_list(a0: int, a1: str) -> bool:
     """delete item from user attribute list
@@ -523,6 +578,7 @@ def delete_item_from_user_attribute_list(a0: int, a1: str) -> bool:
         bool
     """
 
+
 def set_attribute_display_settings_for_2d(a0: attribute_display_settings) -> None:
     """set attribute display settings for 2d
     Args:
@@ -531,6 +587,7 @@ def set_attribute_display_settings_for_2d(a0: attribute_display_settings) -> Non
     Returns:
         None
     """
+
 
 def set_attribute_display_settings_for_2d_with_layout(a0: attribute_display_settings) -> None:
     """set attribute display settings for 2d with layout
@@ -541,6 +598,7 @@ def set_attribute_display_settings_for_2d_with_layout(a0: attribute_display_sett
         None
     """
 
+
 def set_attribute_display_settings_for_2d_without_layout(a0: attribute_display_settings) -> None:
     """set attribute display settings for 2d without layout
     Args:
@@ -549,6 +607,7 @@ def set_attribute_display_settings_for_2d_without_layout(a0: attribute_display_s
     Returns:
         None
     """
+
 
 def set_attribute_display_settings_for_3d(a0: attribute_display_settings) -> None:
     """set attribute display settings for 3d
@@ -559,6 +618,7 @@ def set_attribute_display_settings_for_3d(a0: attribute_display_settings) -> Non
         None
     """
 
+
 def set_attribute_display_settings_for_container(a0: attribute_display_settings) -> None:
     """set attribute display settings for container
     Args:
@@ -567,6 +627,7 @@ def set_attribute_display_settings_for_container(a0: attribute_display_settings)
     Returns:
         None
     """
+
 
 def set_attribute_display_settings_for_export_solid(a0: attribute_display_settings) -> None:
     """set attribute display settings for export solid
@@ -577,6 +638,7 @@ def set_attribute_display_settings_for_export_solid(a0: attribute_display_settin
         None
     """
 
+
 def set_attribute_display_settings_for_framed_wall_axis(a0: attribute_display_settings) -> None:
     """set attribute display settings for framed wall axis
     Args:
@@ -585,6 +647,7 @@ def set_attribute_display_settings_for_framed_wall_axis(a0: attribute_display_se
     Returns:
         None
     """
+
 
 def set_attribute_display_settings_for_framed_wall_beam(a0: attribute_display_settings) -> None:
     """set attribute display settings for framed wall beam
@@ -595,6 +658,7 @@ def set_attribute_display_settings_for_framed_wall_beam(a0: attribute_display_se
         None
     """
 
+
 def set_attribute_display_settings_for_framed_wall_opening(a0: attribute_display_settings) -> None:
     """set attribute display settings for framed wall opening
     Args:
@@ -603,6 +667,7 @@ def set_attribute_display_settings_for_framed_wall_opening(a0: attribute_display
     Returns:
         None
     """
+
 
 def set_attribute_display_settings_for_framed_wall_panel(a0: attribute_display_settings) -> None:
     """set attribute display settings for framed wall panel
@@ -613,6 +678,7 @@ def set_attribute_display_settings_for_framed_wall_panel(a0: attribute_display_s
         None
     """
 
+
 def set_attribute_display_settings_for_log_wall_axis(a0: attribute_display_settings) -> None:
     """set attribute display settings for log wall axis
     Args:
@@ -621,6 +687,7 @@ def set_attribute_display_settings_for_log_wall_axis(a0: attribute_display_setti
     Returns:
         None
     """
+
 
 def set_attribute_display_settings_for_log_wall_beam(a0: attribute_display_settings) -> None:
     """set attribute display settings for log wall beam
@@ -631,6 +698,7 @@ def set_attribute_display_settings_for_log_wall_beam(a0: attribute_display_setti
         None
     """
 
+
 def set_attribute_display_settings_for_log_wall_opening(a0: attribute_display_settings) -> None:
     """set attribute display settings for log wall opening
     Args:
@@ -639,6 +707,7 @@ def set_attribute_display_settings_for_log_wall_opening(a0: attribute_display_se
     Returns:
         None
     """
+
 
 def set_attribute_display_settings_for_log_wall_panel(a0: attribute_display_settings) -> None:
     """set attribute display settings for log wall panel
@@ -649,6 +718,7 @@ def set_attribute_display_settings_for_log_wall_panel(a0: attribute_display_sett
         None
     """
 
+
 def set_attribute_display_settings_for_machine(a0: attribute_display_settings) -> None:
     """set attribute display settings for machine
     Args:
@@ -657,6 +727,7 @@ def set_attribute_display_settings_for_machine(a0: attribute_display_settings) -
     Returns:
         None
     """
+
 
 def set_attribute_display_settings_for_nesting_element(a0: attribute_display_settings) -> None:
     """set attribute display settings for nesting element
@@ -667,6 +738,7 @@ def set_attribute_display_settings_for_nesting_element(a0: attribute_display_set
         None
     """
 
+
 def set_attribute_display_settings_for_nesting_volume(a0: attribute_display_settings) -> None:
     """set attribute display settings for nesting volume
     Args:
@@ -675,6 +747,7 @@ def set_attribute_display_settings_for_nesting_volume(a0: attribute_display_sett
     Returns:
         None
     """
+
 
 def set_attribute_display_settings_for_solid_wall_axis(a0: attribute_display_settings) -> None:
     """set attribute display settings for solid wall axis
@@ -685,6 +758,7 @@ def set_attribute_display_settings_for_solid_wall_axis(a0: attribute_display_set
         None
     """
 
+
 def set_attribute_display_settings_for_solid_wall_beam(a0: attribute_display_settings) -> None:
     """set attribute display settings for solid wall beam
     Args:
@@ -693,6 +767,7 @@ def set_attribute_display_settings_for_solid_wall_beam(a0: attribute_display_set
     Returns:
         None
     """
+
 
 def set_attribute_display_settings_for_solid_wall_opening(a0: attribute_display_settings) -> None:
     """set attribute display settings for solid wall opening
@@ -703,6 +778,7 @@ def set_attribute_display_settings_for_solid_wall_opening(a0: attribute_display_
         None
     """
 
+
 def set_attribute_display_settings_for_solid_wall_panel(a0: attribute_display_settings) -> None:
     """set attribute display settings for solid wall panel
     Args:
@@ -711,6 +787,7 @@ def set_attribute_display_settings_for_solid_wall_panel(a0: attribute_display_se
     Returns:
         None
     """
+
 
 def get_name(element_id: int) -> str:
     """Gets the element name 
@@ -721,6 +798,7 @@ def get_name(element_id: int) -> str:
         element name (str)
     """
 
+
 def get_group(element_id: int) -> str:
     """Gets the element group 
     Args:
@@ -730,14 +808,6 @@ def get_group(element_id: int) -> str:
         element group (str)
     """
 
-def get_subgroup(element_id: int) -> str:
-    """Gets the element subgroup 
-    Args:
-        element_id ( int): element_id
-
-    Returns:
-        element subgroup (str)
-    """
 
 def get_subgroup(element_id: int) -> str:
     """Gets the element subgroup 
@@ -747,6 +817,7 @@ def get_subgroup(element_id: int) -> str:
     Returns:
         element subgroup (str)
     """
+
 
 def get_comment(element_id: int) -> str:
     """Gets the element comment 
@@ -756,6 +827,7 @@ def get_comment(element_id: int) -> str:
     Returns:
         element comment (str)
     """
+
 
 def get_user_attribute(element_id: int, number: int) -> str:
     """Gets the element user attribute 
@@ -767,6 +839,7 @@ def get_user_attribute(element_id: int, number: int) -> str:
         element user attribute (str)
     """
 
+
 def get_sku(element_id: int) -> str:
     """Gets the element SKU 
     Args:
@@ -775,6 +848,7 @@ def get_sku(element_id: int) -> str:
     Returns:
         element SKU (str)
     """
+
 
 def get_production_number(element_id: int) -> int:
     """Gets the element production number 
@@ -785,6 +859,7 @@ def get_production_number(element_id: int) -> int:
         element production number (int)
     """
 
+
 def get_part_number(element_id: int) -> int:
     """Gets the element part number 
     Args:
@@ -793,6 +868,7 @@ def get_part_number(element_id: int) -> int:
     Returns:
         element part number (int)
     """
+
 
 def get_additional_data(element_id: int, data_id: str) -> str:
     """Gets the element additional data 
@@ -804,6 +880,7 @@ def get_additional_data(element_id: int, data_id: str) -> str:
         element additional data (str)
     """
 
+
 def get_user_attribute_name(number: int) -> str:
     """Gets the user attribute name 
     Args:
@@ -812,6 +889,7 @@ def get_user_attribute_name(number: int) -> str:
     Returns:
         user attribute name (str)
     """
+
 
 def get_wall_situation(element_id: int) -> str:
     """Gets the element wall situation 
@@ -822,6 +900,7 @@ def get_wall_situation(element_id: int) -> str:
         element wall situation (str)
     """
 
+
 def get_element_material_name(element_id: int) -> str:
     """Gets the element material name 
     Args:
@@ -830,6 +909,7 @@ def get_element_material_name(element_id: int) -> str:
     Returns:
         element material name (str)
     """
+
 
 def get_prefab_layer(element_id: int) -> str:
     """Gets the element prefab layer 
@@ -840,6 +920,7 @@ def get_prefab_layer(element_id: int) -> str:
         element prefab layer (str)
     """
 
+
 def get_machine_calculation_set(element_id: int) -> str:
     """Gets the element machine calculation set 
     Args:
@@ -848,6 +929,7 @@ def get_machine_calculation_set(element_id: int) -> str:
     Returns:
         element machine calculation set (str)
     """
+
 
 def get_cutting_set(element_id: int) -> str:
     """Gets the element cutting set 
@@ -858,6 +940,7 @@ def get_cutting_set(element_id: int) -> str:
         element cutting set (str)
     """
 
+
 def get_name_process_type(name: str) -> process_type:
     """Gets the process type for an element name 
     Args:
@@ -866,6 +949,7 @@ def get_name_process_type(name: str) -> process_type:
     Returns:
         process type (process_type)
     """
+
 
 def get_name_extended_settings(name: str) -> extended_settings:
     """Gets the extended settings for an element name 
@@ -876,6 +960,7 @@ def get_name_extended_settings(name: str) -> extended_settings:
         extended settings (extended_settings)
     """
 
+
 def get_output_type(element_id: int) -> process_type:
     """Gets the element output type 
     Args:
@@ -884,6 +969,7 @@ def get_output_type(element_id: int) -> process_type:
     Returns:
         element output type (process_type)
     """
+
 
 def get_extended_settings(element_id: int) -> extended_settings:
     """Gets the element extended settings 
@@ -894,6 +980,7 @@ def get_extended_settings(element_id: int) -> extended_settings:
         element extended settings (extended_settings)
     """
 
+
 def get_element_type(element_id: int) -> element_type:
     """Gets the element type 
     Args:
@@ -902,6 +989,7 @@ def get_element_type(element_id: int) -> element_type:
     Returns:
         element type (element_type)
     """
+
 
 def get_fastening_attribute(element_id: int) -> str:
     """Get the element fastening attribute 
@@ -912,6 +1000,7 @@ def get_fastening_attribute(element_id: int) -> str:
         element fastening attribute (str)
     """
 
+
 def get_assembly_number(element_id: int) -> str:
     """get assembly number
     Args:
@@ -920,6 +1009,7 @@ def get_assembly_number(element_id: int) -> str:
     Returns:
         str
     """
+
 
 def get_list_quantity(element_id: int) -> int:
     """get list quantity
@@ -930,6 +1020,7 @@ def get_list_quantity(element_id: int) -> int:
         int
     """
 
+
 def get_ignore_in_vba_calculation(element: int) -> bool:
     """get ignore in vba calculation
     Args:
@@ -938,6 +1029,7 @@ def get_ignore_in_vba_calculation(element: int) -> bool:
     Returns:
         bool
     """
+
 
 def get_standard_element_name(element_id: None) -> str:
     """get standard element name
@@ -948,6 +1040,7 @@ def get_standard_element_name(element_id: None) -> str:
         str
     """
 
+
 def get_steel_shape_name(element_id: None) -> str:
     """get steel shape name
     Args:
@@ -956,6 +1049,7 @@ def get_steel_shape_name(element_id: None) -> str:
     Returns:
         str
     """
+
 
 def is_beam(element_id: int) -> bool:
     """Tests if element is beam 
@@ -966,6 +1060,7 @@ def is_beam(element_id: int) -> bool:
         is element beam (bool)
     """
 
+
 def is_panel(element_id: int) -> bool:
     """Tests if element is panel 
     Args:
@@ -974,6 +1069,7 @@ def is_panel(element_id: int) -> bool:
     Returns:
         is element panel (bool)
     """
+
 
 def is_opening(element_id: int) -> bool:
     """Tests if element is opening 
@@ -984,6 +1080,7 @@ def is_opening(element_id: int) -> bool:
         is element opening (bool)
     """
 
+
 def is_wall(element_id: int) -> bool:
     """Tests if element is wall 
     Args:
@@ -992,6 +1089,7 @@ def is_wall(element_id: int) -> bool:
     Returns:
         is element wall (bool)
     """
+
 
 def is_floor(element_id: int) -> bool:
     """Tests if element is floor 
@@ -1002,6 +1100,7 @@ def is_floor(element_id: int) -> bool:
         is element floor (bool)
     """
 
+
 def is_roof(element_id: int) -> bool:
     """Tests if element is roof 
     Args:
@@ -1010,6 +1109,7 @@ def is_roof(element_id: int) -> bool:
     Returns:
         is element roof (bool)
     """
+
 
 def is_metal(element_id: int) -> bool:
     """Tests if element is metal 
@@ -1020,6 +1120,7 @@ def is_metal(element_id: int) -> bool:
         is element metal (bool)
     """
 
+
 def is_export_solid(element_id: int) -> bool:
     """Tests if element is export solid 
     Args:
@@ -1028,6 +1129,7 @@ def is_export_solid(element_id: int) -> bool:
     Returns:
         is element export solid (bool)
     """
+
 
 def is_container(element_id: int) -> bool:
     """Tests if element is container 
@@ -1038,6 +1140,7 @@ def is_container(element_id: int) -> bool:
         is element container (bool)
     """
 
+
 def is_connector_axis(element_id: int) -> bool:
     """Tests if element is connector axis 
     Args:
@@ -1046,6 +1149,7 @@ def is_connector_axis(element_id: int) -> bool:
     Returns:
         is element connector axis (bool)
     """
+
 
 def is_drilling(element_id: int) -> bool:
     """Tests if element is drilling 
@@ -1056,6 +1160,7 @@ def is_drilling(element_id: int) -> bool:
         is element drilling (bool)
     """
 
+
 def is_node(element_id: int) -> bool:
     """Tests if element is node 
     Args:
@@ -1064,6 +1169,7 @@ def is_node(element_id: int) -> bool:
     Returns:
         is element node (bool)
     """
+
 
 def is_auxiliary(element_id: int) -> bool:
     """Tests if element is auxiliary 
@@ -1074,6 +1180,7 @@ def is_auxiliary(element_id: int) -> bool:
         is element auxiliary (bool)
     """
 
+
 def is_roof_surface(element_id: int) -> bool:
     """Tests if the element is roof surface 
     Args:
@@ -1082,6 +1189,7 @@ def is_roof_surface(element_id: int) -> bool:
     Returns:
         is element roof surface (bool)
     """
+
 
 def is_caddy_object(element_id: int) -> bool:
     """Tests if the element is caddy object 
@@ -1092,6 +1200,7 @@ def is_caddy_object(element_id: int) -> bool:
         is element caddy object (bool)
     """
 
+
 def is_envelope(element_id: int) -> bool:
     """is envelope
     Args:
@@ -1100,6 +1209,7 @@ def is_envelope(element_id: int) -> bool:
     Returns:
         bool
     """
+
 
 def is_architecture_wall_2dc(element: None) -> bool:
     """Tests if the element has a 2dc reference wall 
@@ -1110,6 +1220,7 @@ def is_architecture_wall_2dc(element: None) -> bool:
         is architecturewall 2dc (bool)
     """
 
+
 def is_architecture_wall_xml(element: None) -> bool:
     """Tests if the element has a xml reference wall 
     Args:
@@ -1118,6 +1229,7 @@ def is_architecture_wall_xml(element: None) -> bool:
     Returns:
         is architecturewall xml (bool)
     """
+
 
 def is_surface(element_id: None) -> bool:
     """Tests if the element is a Surface 
@@ -1128,6 +1240,7 @@ def is_surface(element_id: None) -> bool:
         is Surface (bool)
     """
 
+
 def is_line(element_id: None) -> bool:
     """Tests if the element is a Line 
     Args:
@@ -1136,6 +1249,7 @@ def is_line(element_id: None) -> bool:
     Returns:
         is Line (bool)
     """
+
 
 def get_auto_attribute(element_id: int, number: int) -> str:
     """get auto attribute
@@ -1147,6 +1261,7 @@ def get_auto_attribute(element_id: int, number: int) -> str:
         str
     """
 
+
 def get_auto_attribute_name(number: int) -> str:
     """get auto attribute name
     Args:
@@ -1155,6 +1270,7 @@ def get_auto_attribute_name(number: int) -> str:
     Returns:
         str
     """
+
 
 def is_framed_wall(element_id: int) -> bool:
     """is framed wall
@@ -1165,6 +1281,7 @@ def is_framed_wall(element_id: int) -> bool:
         bool
     """
 
+
 def is_solid_wall(element_id: int) -> bool:
     """is solid wall
     Args:
@@ -1173,6 +1290,7 @@ def is_solid_wall(element_id: int) -> bool:
     Returns:
         bool
     """
+
 
 def is_log_wall(element_id: int) -> bool:
     """is log wall
@@ -1183,6 +1301,7 @@ def is_log_wall(element_id: int) -> bool:
         bool
     """
 
+
 def is_framed_floor(element_id: int) -> bool:
     """is framed floor
     Args:
@@ -1191,6 +1310,7 @@ def is_framed_floor(element_id: int) -> bool:
     Returns:
         bool
     """
+
 
 def is_solid_floor(element_id: int) -> bool:
     """is solid floor
@@ -1201,6 +1321,7 @@ def is_solid_floor(element_id: int) -> bool:
         bool
     """
 
+
 def is_framed_roof(element_id: int) -> bool:
     """is framed roof
     Args:
@@ -1210,6 +1331,7 @@ def is_framed_roof(element_id: int) -> bool:
         bool
     """
 
+
 def is_solid_roof(element_id: int) -> bool:
     """is solid roof
     Args:
@@ -1218,6 +1340,7 @@ def is_solid_roof(element_id: int) -> bool:
     Returns:
         bool
     """
+
 
 def get_additional_guid(a0: int, a1: str) -> str:
     """get additional guid
@@ -1229,6 +1352,7 @@ def get_additional_guid(a0: int, a1: str) -> str:
         str
     """
 
+
 def get_prefab_layer_all_assigned(a0: int) -> List[int]:
     """get prefab layer all assigned
     Args:
@@ -1237,6 +1361,7 @@ def get_prefab_layer_all_assigned(a0: int) -> List[int]:
     Returns:
         List[int]
     """
+
 
 def get_prefab_layer_with_dimensions(a0: int) -> List[int]:
     """get prefab layer with dimensions
@@ -1247,6 +1372,7 @@ def get_prefab_layer_with_dimensions(a0: int) -> List[int]:
         List[int]
     """
 
+
 def get_prefab_layer_without_dimensions(a0: int) -> List[int]:
     """get prefab layer without dimensions
     Args:
@@ -1255,6 +1381,7 @@ def get_prefab_layer_without_dimensions(a0: int) -> List[int]:
     Returns:
         List[int]
     """
+
 
 def is_nesting_parent(a0: int) -> bool:
     """is nesting parent
@@ -1265,6 +1392,7 @@ def is_nesting_parent(a0: int) -> bool:
         bool
     """
 
+
 def is_nesting_raw_part(a0: int) -> bool:
     """is nesting raw part
     Args:
@@ -1273,6 +1401,7 @@ def is_nesting_raw_part(a0: int) -> bool:
     Returns:
         bool
     """
+
 
 def get_container_number(a0: int) -> int:
     """get container number
@@ -1283,6 +1412,7 @@ def get_container_number(a0: int) -> int:
         int
     """
 
+
 def get_container_number_with_prefix(a0: int) -> str:
     """get container number with prefix
     Args:
@@ -1292,6 +1422,7 @@ def get_container_number_with_prefix(a0: int) -> str:
         str
     """
 
+
 def get_group_list_items() -> List[str]:
     """get group list items
     Args:
@@ -1299,6 +1430,7 @@ def get_group_list_items() -> List[str]:
     Returns:
         List[str]
     """
+
 
 def get_subgroup_list_items() -> List[str]:
     """get subgroup list items
@@ -1308,6 +1440,7 @@ def get_subgroup_list_items() -> List[str]:
         List[str]
     """
 
+
 def get_comment_list_items() -> List[str]:
     """get comment list items
     Args:
@@ -1316,6 +1449,7 @@ def get_comment_list_items() -> List[str]:
         List[str]
     """
 
+
 def get_sku_list_items() -> List[str]:
     """get sku list items
     Args:
@@ -1323,6 +1457,7 @@ def get_sku_list_items() -> List[str]:
     Returns:
         List[str]
     """
+
 
 def get_user_attribute_list_items(a0: int) -> List[str]:
     """get user attribute list items
@@ -1333,6 +1468,7 @@ def get_user_attribute_list_items(a0: int) -> List[str]:
         List[str]
     """
 
+
 def is_circular_mep(a0: int) -> bool:
     """is circular mep
     Args:
@@ -1341,6 +1477,7 @@ def is_circular_mep(a0: int) -> bool:
     Returns:
         bool
     """
+
 
 def is_rectangular_mep(a0: int) -> bool:
     """is rectangular mep
@@ -1351,6 +1488,7 @@ def is_rectangular_mep(a0: int) -> bool:
         bool
     """
 
+
 def get_machine_calculation_state(a0: int) -> str:
     """get machine calculation state
     Args:
@@ -1359,6 +1497,7 @@ def get_machine_calculation_state(a0: int) -> str:
     Returns:
         str
     """
+
 
 def get_machine_calculation_set_machine_type(a0: int) -> str:
     """get machine calculation set machine type
@@ -1369,6 +1508,7 @@ def get_machine_calculation_set_machine_type(a0: int) -> str:
         str
     """
 
+
 def is_btl_processing_group(a0: int) -> bool:
     """is btl processing group
     Args:
@@ -1377,6 +1517,7 @@ def is_btl_processing_group(a0: int) -> bool:
     Returns:
         bool
     """
+
 
 def is_hundegger_processing_group(a0: int) -> bool:
     """is hundegger processing group
@@ -1387,6 +1528,7 @@ def is_hundegger_processing_group(a0: int) -> bool:
         bool
     """
 
+
 def get_element_grouping_type() -> element_grouping_type:
     """Get the element grouping type (group, subgroup) 
     Args:
@@ -1394,6 +1536,7 @@ def get_element_grouping_type() -> element_grouping_type:
     Returns:
         element grouping type (element_grouping_type)
     """
+
 
 def set_element_grouping_type(element_grouping_type: element_grouping_type) -> None:
     """Set the element grouping type (group, subgroup) 
@@ -1404,6 +1547,7 @@ def set_element_grouping_type(element_grouping_type: element_grouping_type) -> N
         None
     """
 
+
 def get_associated_nesting_name(element_id: None) -> str:
     """get associated nesting name
     Args:
@@ -1412,6 +1556,7 @@ def get_associated_nesting_name(element_id: None) -> str:
     Returns:
         str
     """
+
 
 def get_associated_nesting_number(element_id: None) -> str:
     """get associated nesting number
@@ -1422,6 +1567,7 @@ def get_associated_nesting_number(element_id: None) -> str:
         str
     """
 
+
 def get_attribute_display_settings_for_2d() -> attribute_display_settings:
     """get attribute display settings for 2d
     Args:
@@ -1429,6 +1575,7 @@ def get_attribute_display_settings_for_2d() -> attribute_display_settings:
     Returns:
         attribute_display_settings
     """
+
 
 def get_attribute_display_settings_for_2d_with_layout() -> attribute_display_settings:
     """get attribute display settings for 2d with layout
@@ -1438,6 +1585,7 @@ def get_attribute_display_settings_for_2d_with_layout() -> attribute_display_set
         attribute_display_settings
     """
 
+
 def get_attribute_display_settings_for_2d_without_layout() -> attribute_display_settings:
     """get attribute display settings for 2d without layout
     Args:
@@ -1445,6 +1593,7 @@ def get_attribute_display_settings_for_2d_without_layout() -> attribute_display_
     Returns:
         attribute_display_settings
     """
+
 
 def get_attribute_display_settings_for_3d() -> attribute_display_settings:
     """get attribute display settings for 3d
@@ -1454,6 +1603,7 @@ def get_attribute_display_settings_for_3d() -> attribute_display_settings:
         attribute_display_settings
     """
 
+
 def get_attribute_display_settings_for_container() -> attribute_display_settings:
     """get attribute display settings for container
     Args:
@@ -1461,6 +1611,7 @@ def get_attribute_display_settings_for_container() -> attribute_display_settings
     Returns:
         attribute_display_settings
     """
+
 
 def get_attribute_display_settings_for_export_solid() -> attribute_display_settings:
     """get attribute display settings for export solid
@@ -1470,6 +1621,7 @@ def get_attribute_display_settings_for_export_solid() -> attribute_display_setti
         attribute_display_settings
     """
 
+
 def get_attribute_display_settings_for_framed_wall_axis() -> attribute_display_settings:
     """get attribute display settings for framed wall axis
     Args:
@@ -1477,6 +1629,7 @@ def get_attribute_display_settings_for_framed_wall_axis() -> attribute_display_s
     Returns:
         attribute_display_settings
     """
+
 
 def get_attribute_display_settings_for_framed_wall_beam() -> attribute_display_settings:
     """get attribute display settings for framed wall beam
@@ -1486,6 +1639,7 @@ def get_attribute_display_settings_for_framed_wall_beam() -> attribute_display_s
         attribute_display_settings
     """
 
+
 def get_attribute_display_settings_for_framed_wall_opening() -> attribute_display_settings:
     """get attribute display settings for framed wall opening
     Args:
@@ -1493,6 +1647,7 @@ def get_attribute_display_settings_for_framed_wall_opening() -> attribute_displa
     Returns:
         attribute_display_settings
     """
+
 
 def get_attribute_display_settings_for_framed_wall_panel() -> attribute_display_settings:
     """get attribute display settings for framed wall panel
@@ -1502,6 +1657,7 @@ def get_attribute_display_settings_for_framed_wall_panel() -> attribute_display_
         attribute_display_settings
     """
 
+
 def get_attribute_display_settings_for_log_wall_axis() -> attribute_display_settings:
     """get attribute display settings for log wall axis
     Args:
@@ -1509,6 +1665,7 @@ def get_attribute_display_settings_for_log_wall_axis() -> attribute_display_sett
     Returns:
         attribute_display_settings
     """
+
 
 def get_attribute_display_settings_for_log_wall_beam() -> attribute_display_settings:
     """get attribute display settings for log wall beam
@@ -1518,6 +1675,7 @@ def get_attribute_display_settings_for_log_wall_beam() -> attribute_display_sett
         attribute_display_settings
     """
 
+
 def get_attribute_display_settings_for_log_wall_opening() -> attribute_display_settings:
     """get attribute display settings for log wall opening
     Args:
@@ -1525,6 +1683,7 @@ def get_attribute_display_settings_for_log_wall_opening() -> attribute_display_s
     Returns:
         attribute_display_settings
     """
+
 
 def get_attribute_display_settings_for_log_wall_panel() -> attribute_display_settings:
     """get attribute display settings for log wall panel
@@ -1534,6 +1693,7 @@ def get_attribute_display_settings_for_log_wall_panel() -> attribute_display_set
         attribute_display_settings
     """
 
+
 def get_attribute_display_settings_for_machine() -> attribute_display_settings:
     """get attribute display settings for machine
     Args:
@@ -1541,6 +1701,7 @@ def get_attribute_display_settings_for_machine() -> attribute_display_settings:
     Returns:
         attribute_display_settings
     """
+
 
 def get_attribute_display_settings_for_nesting_element() -> attribute_display_settings:
     """get attribute display settings for nesting element
@@ -1550,6 +1711,7 @@ def get_attribute_display_settings_for_nesting_element() -> attribute_display_se
         attribute_display_settings
     """
 
+
 def get_attribute_display_settings_for_nesting_volume() -> attribute_display_settings:
     """get attribute display settings for nesting volume
     Args:
@@ -1557,6 +1719,7 @@ def get_attribute_display_settings_for_nesting_volume() -> attribute_display_set
     Returns:
         attribute_display_settings
     """
+
 
 def get_attribute_display_settings_for_solid_wall_axis() -> attribute_display_settings:
     """get attribute display settings for solid wall axis
@@ -1566,6 +1729,7 @@ def get_attribute_display_settings_for_solid_wall_axis() -> attribute_display_se
         attribute_display_settings
     """
 
+
 def get_attribute_display_settings_for_solid_wall_beam() -> attribute_display_settings:
     """get attribute display settings for solid wall beam
     Args:
@@ -1573,6 +1737,7 @@ def get_attribute_display_settings_for_solid_wall_beam() -> attribute_display_se
     Returns:
         attribute_display_settings
     """
+
 
 def get_attribute_display_settings_for_solid_wall_opening() -> attribute_display_settings:
     """get attribute display settings for solid wall opening
@@ -1582,6 +1747,7 @@ def get_attribute_display_settings_for_solid_wall_opening() -> attribute_display
         attribute_display_settings
     """
 
+
 def get_attribute_display_settings_for_solid_wall_panel() -> attribute_display_settings:
     """get attribute display settings for solid wall panel
     Args:
@@ -1589,6 +1755,7 @@ def get_attribute_display_settings_for_solid_wall_panel() -> attribute_display_s
     Returns:
         attribute_display_settings
     """
+
 
 def is_processing(element_id: None) -> bool:
     """is processing
@@ -1599,6 +1766,7 @@ def is_processing(element_id: None) -> bool:
         bool
     """
 
+
 def set_framed_wall(element_id_list: List[int]) -> None:
     """Sets the element to framed wall 
     Args:
@@ -1607,4 +1775,3 @@ def set_framed_wall(element_id_list: List[int]) -> None:
     Returns:
         None
     """
-
