@@ -1,21 +1,11 @@
 from cadwork import element_grouping_type
 from cadwork import ifc_element_combine_behaviour
 
-
 class ifc_options_aggregation:
-    def set_consider_element_aggregation(self, consider_element_aggregation: bool) -> None:
-        """set consider element aggregation
+    def set_element_aggregation_attribute(self, element_aggregation_attribute: element_grouping_type) -> None:
+        """set element aggregation attribute
         Args:
-            consider_element_aggregation ( bool): consider_element_aggregation
-
-        Returns:
-            None
-        """
-
-    def set_export_cover_geometry(self, export_cover_geometry: bool) -> None:
-        """set export cover geometry
-        Args:
-            export_cover_geometry ( bool): export_cover_geometry
+            element_aggregation_attribute ( element_grouping_type): element_aggregation_attribute
 
         Returns:
             None
@@ -30,16 +20,16 @@ class ifc_options_aggregation:
             None
         """
 
-    def get_export_cover_geometry(self) -> bool:
-        """get export cover geometry
+    def get_element_aggregation_attribute(self) -> int:
+        """get element aggregation attribute
         Args:
 
         Returns:
-            bool
+            int
         """
 
-    def get_consider_element_aggregation(self) -> bool:
-        """get consider element aggregation
+    def get_export_cover_geometry(self) -> bool:
+        """get export cover geometry
         Args:
 
         Returns:
@@ -54,19 +44,29 @@ class ifc_options_aggregation:
             ifc_element_combine_behaviour
         """
 
-    def set_element_aggregation_attribute(self, element_aggregation_attribute: element_grouping_type) -> None:
-        """set element aggregation attribute
+    def set_export_cover_geometry(self, export_cover_geometry: bool) -> None:
+        """set export cover geometry
         Args:
-            element_aggregation_attribute ( element_grouping_type): element_aggregation_attribute
+            export_cover_geometry ( bool): export_cover_geometry
 
         Returns:
             None
         """
 
-    def get_element_aggregation_attribute(self) -> int:
-        """get element aggregation attribute
+    def set_consider_element_aggregation(self, consider_element_aggregation: bool) -> None:
+        """set consider element aggregation
+        Args:
+            consider_element_aggregation ( bool): consider_element_aggregation
+
+        Returns:
+            None
+        """
+
+    def get_consider_element_aggregation(self) -> bool:
+        """get consider element aggregation
         Args:
 
         Returns:
-            int
+            bool
         """
+

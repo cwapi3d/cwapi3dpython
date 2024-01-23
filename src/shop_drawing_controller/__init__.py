@@ -7,7 +7,7 @@ def get_last_error(error_code: int) -> str:
         error_code ( int): error_code
 
     Returns:
-        strerror string
+        error string (str)
     """
 
 def export_2d_wireframe_with_clipboard(clipboard_number: int) -> None:

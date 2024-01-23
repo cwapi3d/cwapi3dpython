@@ -2,7 +2,6 @@ from cadwork import point_3d
 from cadwork import polygon_list
 from cadwork import vertex_list
 
-
 class facet_list:
     def count(self) -> int:
         """count
@@ -80,3 +79,4 @@ class facet_list:
         Returns:
             float
         """
+

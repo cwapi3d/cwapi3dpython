@@ -2,16 +2,14 @@ from typing import List
 from cadwork import facet_list
 from cadwork import point_3d
 
-
 def get_last_error(error_code: int) -> str:
     """get last error
     Args:
         error_code ( int): error_code
 
     Returns:
-        strerror string
+        error string (str)
     """
-
 
 def rotate_height_axis_90(element_id_list: List[int]) -> None:
     """rotate height axis 90
@@ -22,7 +20,6 @@ def rotate_height_axis_90(element_id_list: List[int]) -> None:
         None
     """
 
-
 def rotate_height_axis_180(element_id_list: List[int]) -> None:
     """rotate height axis 180
     Args:
@@ -31,7 +28,6 @@ def rotate_height_axis_180(element_id_list: List[int]) -> None:
     Returns:
         None
     """
-
 
 def set_over_width(element_id_list: List[int], value: float) -> None:
     """set over width
@@ -43,7 +39,6 @@ def set_over_width(element_id_list: List[int], value: float) -> None:
         None
     """
 
-
 def set_over_height(element_id_list: List[int], value: float) -> None:
     """set over height
     Args:
@@ -53,7 +48,6 @@ def set_over_height(element_id_list: List[int], value: float) -> None:
     Returns:
         None
     """
-
 
 def set_over_length(element_id_list: List[int], value: float) -> None:
     """set over length
@@ -65,7 +59,6 @@ def set_over_length(element_id_list: List[int], value: float) -> None:
         None
     """
 
-
 def set_rounding_width(element_id_list: List[int], value: float) -> None:
     """set rounding width
     Args:
@@ -75,7 +68,6 @@ def set_rounding_width(element_id_list: List[int], value: float) -> None:
     Returns:
         None
     """
-
 
 def set_rounding_height(element_id_list: List[int], value: float) -> None:
     """set rounding height
@@ -87,7 +79,6 @@ def set_rounding_height(element_id_list: List[int], value: float) -> None:
         None
     """
 
-
 def set_rounding_length(element_id_list: List[int], value: float) -> None:
     """set rounding length
     Args:
@@ -97,7 +88,6 @@ def set_rounding_length(element_id_list: List[int], value: float) -> None:
     Returns:
         None
     """
-
 
 def set_cross_correction_negative_width(element_id_list: List[int], value: float) -> None:
     """set cross correction negative width
@@ -109,7 +99,6 @@ def set_cross_correction_negative_width(element_id_list: List[int], value: float
         None
     """
 
-
 def set_cross_correction_positive_width(element_id_list: List[int], value: float) -> None:
     """set cross correction positive width
     Args:
@@ -119,7 +108,6 @@ def set_cross_correction_positive_width(element_id_list: List[int], value: float
     Returns:
         None
     """
-
 
 def set_cross_correction_negative_height(element_id_list: List[int], value: float) -> None:
     """set cross correction negative height
@@ -131,7 +119,6 @@ def set_cross_correction_negative_height(element_id_list: List[int], value: floa
         None
     """
 
-
 def set_cross_correction_positive_height(element_id_list: List[int], value: float) -> None:
     """set cross correction positive height
     Args:
@@ -141,7 +128,6 @@ def set_cross_correction_positive_height(element_id_list: List[int], value: floa
     Returns:
         None
     """
-
 
 def set_cross_correction_negative_length(element_id_list: List[int], value: float) -> None:
     """set cross correction negative length
@@ -153,7 +139,6 @@ def set_cross_correction_negative_length(element_id_list: List[int], value: floa
         None
     """
 
-
 def set_cross_correction_positive_length(element_id_list: List[int], value: float) -> None:
     """set cross correction positive length
     Args:
@@ -163,7 +148,6 @@ def set_cross_correction_positive_length(element_id_list: List[int], value: floa
     Returns:
         None
     """
-
 
 def apply_global_scale(element_id_list: List[int], scale: float, origin: point_3d) -> None:
     """apply global scale
@@ -176,7 +160,6 @@ def apply_global_scale(element_id_list: List[int], scale: float, origin: point_3
         None
     """
 
-
 def auto_regenerate_axes(element_id_list: List[int]) -> None:
     """auto regenerate axes
     Args:
@@ -185,7 +168,6 @@ def auto_regenerate_axes(element_id_list: List[int]) -> None:
     Returns:
         None
     """
-
 
 def rotate_length_axis_90(element_id_list: List[int]) -> None:
     """rotate length axis 90
@@ -196,7 +178,6 @@ def rotate_length_axis_90(element_id_list: List[int]) -> None:
         None
     """
 
-
 def rotate_length_axis_180(element_id_list: List[int]) -> None:
     """rotate length axis 180
     Args:
@@ -206,7 +187,6 @@ def rotate_length_axis_180(element_id_list: List[int]) -> None:
         None
     """
 
-
 def invert_model(element_id_list: List[int]) -> None:
     """invert model
     Args:
@@ -215,7 +195,6 @@ def invert_model(element_id_list: List[int]) -> None:
     Returns:
         None
     """
-
 
 def set_width_real(elements: List[int], width: float) -> None:
     """set width real
@@ -227,7 +206,6 @@ def set_width_real(elements: List[int], width: float) -> None:
         None
     """
 
-
 def set_height_real(elements: List[int], height: float) -> None:
     """set height real
     Args:
@@ -238,7 +216,6 @@ def set_height_real(elements: List[int], height: float) -> None:
         None
     """
 
-
 def set_length_real(elements: List[int], length: float) -> None:
     """set length real
     Args:
@@ -248,7 +225,6 @@ def set_length_real(elements: List[int], length: float) -> None:
     Returns:
         None
     """
-
 
 def rotate_height_axis_2_points(elements: List[int], point1: point_3d, point2: point_3d) -> None:
     """rotate height axis 2 points
@@ -261,7 +237,6 @@ def rotate_height_axis_2_points(elements: List[int], point1: point_3d, point2: p
         None
     """
 
-
 def clear_errors() -> None:
     """clear errors
     Args:
@@ -269,7 +244,6 @@ def clear_errors() -> None:
     Returns:
         None
     """
-
 
 def set_drilling_tolerance(elements: List[int], tolerance: float) -> None:
     """set drilling tolerance
@@ -281,7 +255,6 @@ def set_drilling_tolerance(elements: List[int], tolerance: float) -> None:
         None
     """
 
-
 def auto_regenerate_axes_silently(a0: List[int]) -> None:
     """auto regenerate axes silently
     Args:
@@ -290,7 +263,6 @@ def auto_regenerate_axes_silently(a0: List[int]) -> None:
     Returns:
         None
     """
-
 
 def rotate_length_axis_2_points(elements: List[int], point1: point_3d, point2: point_3d) -> None:
     """rotate length axis 2 points
@@ -303,16 +275,14 @@ def rotate_length_axis_2_points(elements: List[int], point1: point_3d, point2: p
         None
     """
 
-
 def get_width(element_id: int) -> float:
     """get width
     Args:
         element_id ( int): element_id
 
     Returns:
-        floatelement width
+        element width (float)
     """
-
 
 def get_height(element_id: int) -> float:
     """get height
@@ -320,9 +290,8 @@ def get_height(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement height
+        element height (float)
     """
-
 
 def get_length(element_id: int) -> float:
     """get length
@@ -330,9 +299,8 @@ def get_length(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement length
+        element length (float)
     """
-
 
 def get_p1(element_id: int) -> point_3d:
     """get p1
@@ -340,9 +308,8 @@ def get_p1(element_id: int) -> point_3d:
         element_id ( int): element_id
 
     Returns:
-        point_3delement P1
+        element P1 (point_3d)
     """
-
 
 def get_p2(element_id: int) -> point_3d:
     """get p2
@@ -350,9 +317,8 @@ def get_p2(element_id: int) -> point_3d:
         element_id ( int): element_id
 
     Returns:
-        point_3delement P2
+        element P2 (point_3d)
     """
-
 
 def get_p3(element_id: int) -> point_3d:
     """get p3
@@ -360,9 +326,8 @@ def get_p3(element_id: int) -> point_3d:
         element_id ( int): element_id
 
     Returns:
-        point_3delement P3
+        element P3 (point_3d)
     """
-
 
 def get_start_height_cut_angle(element_id: int) -> float:
     """get start height cut angle
@@ -370,9 +335,8 @@ def get_start_height_cut_angle(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement start height cut angle
+        element start height cut angle (float)
     """
-
 
 def get_start_width_cut_angle(element_id: int) -> float:
     """get start width cut angle
@@ -380,9 +344,8 @@ def get_start_width_cut_angle(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement start width cut angle
+        element start width cut angle (float)
     """
-
 
 def get_end_height_cut_angle(element_id: int) -> float:
     """get end height cut angle
@@ -390,9 +353,8 @@ def get_end_height_cut_angle(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement end height cut angle
+        element end height cut angle (float)
     """
-
 
 def get_end_width_cut_angle(element_id: int) -> float:
     """get end width cut angle
@@ -400,9 +362,8 @@ def get_end_width_cut_angle(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement end width cut angle
+        element end width cut angle (float)
     """
-
 
 def get_over_width(element_id: int) -> float:
     """get over width
@@ -410,9 +371,8 @@ def get_over_width(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement overwidth
+        element overwidth (float)
     """
-
 
 def get_over_height(element_id: int) -> float:
     """get over height
@@ -420,9 +380,8 @@ def get_over_height(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement overheight
+        element overheight (float)
     """
-
 
 def get_over_length(element_id: int) -> float:
     """get over length
@@ -430,9 +389,8 @@ def get_over_length(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement overlength
+        element overlength (float)
     """
-
 
 def get_rounding_width(element_id: int) -> float:
     """get rounding width
@@ -440,9 +398,8 @@ def get_rounding_width(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement rounding width
+        element rounding width (float)
     """
-
 
 def get_rounding_height(element_id: int) -> float:
     """get rounding height
@@ -450,9 +407,8 @@ def get_rounding_height(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement rounding height
+        element rounding height (float)
     """
-
 
 def get_rounding_length(element_id: int) -> float:
     """get rounding length
@@ -460,9 +416,8 @@ def get_rounding_length(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement rounding length
+        element rounding length (float)
     """
-
 
 def get_cross_correction_negative_width(element_id: int) -> float:
     """get cross correction negative width
@@ -470,9 +425,8 @@ def get_cross_correction_negative_width(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement negative width cross correction
+        element negative width cross correction (float)
     """
-
 
 def get_cross_correction_positive_width(element_id: int) -> float:
     """get cross correction positive width
@@ -480,9 +434,8 @@ def get_cross_correction_positive_width(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement positive width cross correction
+        element positive width cross correction (float)
     """
-
 
 def get_cross_correction_negative_height(element_id: int) -> float:
     """get cross correction negative height
@@ -490,9 +443,8 @@ def get_cross_correction_negative_height(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement negative height cross correction
+        element negative height cross correction (float)
     """
-
 
 def get_cross_correction_positive_height(element_id: int) -> float:
     """get cross correction positive height
@@ -500,9 +452,8 @@ def get_cross_correction_positive_height(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement positive height cross correction
+        element positive height cross correction (float)
     """
-
 
 def get_cross_correction_negative_length(element_id: int) -> float:
     """get cross correction negative length
@@ -510,9 +461,8 @@ def get_cross_correction_negative_length(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement negative length cross correction
+        element negative length cross correction (float)
     """
-
 
 def get_cross_correction_positive_length(element_id: int) -> float:
     """get cross correction positive length
@@ -520,9 +470,8 @@ def get_cross_correction_positive_length(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement positive length cross correction
+        element positive length cross correction (float)
     """
-
 
 def get_weight(element_id: int) -> float:
     """get weight
@@ -530,9 +479,8 @@ def get_weight(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement real weight
+        element real weight (float)
     """
-
 
 def get_list_weight(element_id: int) -> float:
     """get list weight
@@ -540,9 +488,8 @@ def get_list_weight(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement list weight
+        element list weight (float)
     """
-
 
 def get_volume(element_id: int) -> float:
     """get volume
@@ -550,9 +497,8 @@ def get_volume(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement real volume
+        element real volume (float)
     """
-
 
 def get_list_volume(element_id: int) -> float:
     """get list volume
@@ -560,9 +506,8 @@ def get_list_volume(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement list volume
+        element list volume (float)
     """
-
 
 def get_xl(element_id: int) -> point_3d:
     """get xl
@@ -570,9 +515,8 @@ def get_xl(element_id: int) -> point_3d:
         element_id ( int): element_id
 
     Returns:
-        point_3delement XL vector
+        element XL vector (point_3d)
     """
-
 
 def get_yl(element_id: int) -> point_3d:
     """get yl
@@ -580,9 +524,8 @@ def get_yl(element_id: int) -> point_3d:
         element_id ( int): element_id
 
     Returns:
-        point_3delement YL vector
+        element YL vector (point_3d)
     """
-
 
 def get_zl(element_id: int) -> point_3d:
     """get zl
@@ -590,9 +533,8 @@ def get_zl(element_id: int) -> point_3d:
         element_id ( int): element_id
 
     Returns:
-        point_3delement ZL vector
+        element ZL vector (point_3d)
     """
-
 
 def get_center_of_gravity(element_id: int) -> point_3d:
     """get center of gravity
@@ -600,9 +542,8 @@ def get_center_of_gravity(element_id: int) -> point_3d:
         element_id ( int): element_id
 
     Returns:
-        point_3delement center of gravity
+        element center of gravity (point_3d)
     """
-
 
 def get_reference_side(element_id: int) -> int:
     """get reference side
@@ -610,9 +551,8 @@ def get_reference_side(element_id: int) -> int:
         element_id ( int): element_id
 
     Returns:
-        intelement reference side
+        element reference side (int)
     """
-
 
 def get_element_vertices(element_id: int) -> List[point_3d]:
     """get element vertices
@@ -620,9 +560,8 @@ def get_element_vertices(element_id: int) -> List[point_3d]:
         element_id ( int): element_id
 
     Returns:
-        List[point_3d]element vertices
+        element vertices (List[point_3d])
     """
-
 
 def get_element_facets(element_id: int) -> facet_list:
     """get element facets
@@ -630,9 +569,8 @@ def get_element_facets(element_id: int) -> facet_list:
         element_id ( int): element_id
 
     Returns:
-        facet_listelement facets
+        element facets (facet_list)
     """
-
 
 def get_list_width(element_id: int) -> float:
     """get list width
@@ -640,9 +578,8 @@ def get_list_width(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement list width
+        element list width (float)
     """
-
 
 def get_list_height(element_id: int) -> float:
     """get list height
@@ -650,9 +587,8 @@ def get_list_height(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement list height
+        element list height (float)
     """
-
 
 def get_list_length(element_id: int) -> float:
     """get list length
@@ -660,9 +596,8 @@ def get_list_length(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatelement list length
+        element list length (float)
     """
-
 
 def get_minimum_distance_between_elements(first_id: int, second_id: int) -> float:
     """get minimum distance between elements
@@ -671,9 +606,8 @@ def get_minimum_distance_between_elements(first_id: int, second_id: int) -> floa
         second_id ( int): second_id
 
     Returns:
-        floatminimum distance
+        minimum distance (float)
     """
-
 
 def get_total_area_of_all_faces(element: int) -> float:
     """get total area of all faces
@@ -681,9 +615,8 @@ def get_total_area_of_all_faces(element: int) -> float:
         element ( int): element
 
     Returns:
-        floatelement total faces area
+        element total faces area (float)
     """
-
 
 def get_area_of_front_face(element: int) -> float:
     """get area of front face
@@ -691,9 +624,8 @@ def get_area_of_front_face(element: int) -> float:
         element ( int): element
 
     Returns:
-        floatelement front face area
+        element front face area (float)
     """
-
 
 def get_door_surface(elements: List[int]) -> float:
     """get door surface
@@ -701,9 +633,8 @@ def get_door_surface(elements: List[int]) -> float:
         elements ( List[int]): elements
 
     Returns:
-        floatelement door surface
+        element door surface (float)
     """
-
 
 def get_window_surface(elements: List[int]) -> float:
     """get window surface
@@ -711,36 +642,32 @@ def get_window_surface(elements: List[int]) -> float:
         elements ( List[int]): elements
 
     Returns:
-        floatelement window surface
+        element window surface (float)
     """
-
 
 def get_local_x() -> point_3d:
     """get local x
     Args:
 
     Returns:
-        point_3dlocal X vector
+        local X vector (point_3d)
     """
-
 
 def get_local_z() -> point_3d:
     """get local z
     Args:
 
     Returns:
-        point_3dlocal Y vector
+        local Y vector (point_3d)
     """
-
 
 def get_local_y() -> point_3d:
     """get local y
     Args:
 
     Returns:
-        point_3dlocal Z vector
+        local Z vector (point_3d)
     """
-
 
 def get_drilling_tolerance(element: int) -> float:
     """get drilling tolerance
@@ -748,9 +675,8 @@ def get_drilling_tolerance(element: int) -> float:
         element ( int): element
 
     Returns:
-        floatthe drilling tolerance
+        the drilling tolerance (float)
     """
-
 
 def get_element_reference_face_vertices(element_id: int) -> List[point_3d]:
     """get element reference face vertices
@@ -758,9 +684,8 @@ def get_element_reference_face_vertices(element_id: int) -> List[point_3d]:
         element_id ( int): element_id
 
     Returns:
-        List[point_3d]vertexlist of all points
+        vertexlist of all points (List[point_3d])
     """
-
 
 def get_element_reference_face_area(element_id: int) -> float:
     """get element reference face area
@@ -768,9 +693,8 @@ def get_element_reference_face_area(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        floatarea(size) of reference face
+        area(size) of reference face (float)
     """
-
 
 def get_center_of_gravity_for_list(elements: List[int]) -> point_3d:
     """get center of gravity for list
@@ -781,7 +705,6 @@ def get_center_of_gravity_for_list(elements: List[int]) -> point_3d:
         point_3d
     """
 
-
 def get_center_of_gravity_for_list_considering_materials(elements: List[int]) -> point_3d:
     """get center of gravity for list considering materials
     Args:
@@ -790,7 +713,6 @@ def get_center_of_gravity_for_list_considering_materials(elements: List[int]) ->
     Returns:
         point_3d
     """
-
 
 def get_element_facet_count(element_id: int) -> int:
     """get element facet count
@@ -801,7 +723,6 @@ def get_element_facet_count(element_id: int) -> int:
         int
     """
 
-
 def get_weight_real(element_id: int) -> float:
     """get weight real
     Args:
@@ -810,7 +731,6 @@ def get_weight_real(element_id: int) -> float:
     Returns:
         float
     """
-
 
 def get_actual_physical_weight(a0: int) -> float:
     """get actual physical weight
@@ -821,7 +741,6 @@ def get_actual_physical_weight(a0: int) -> float:
         float
     """
 
-
 def get_actual_physical_volume(a0: int) -> float:
     """get actual physical volume
     Args:
@@ -830,7 +749,6 @@ def get_actual_physical_volume(a0: int) -> float:
     Returns:
         float
     """
-
 
 def are_facets_coplanar(a0: List[point_3d], a1: List[point_3d]) -> bool:
     """are facets coplanar
@@ -841,3 +759,4 @@ def are_facets_coplanar(a0: List[point_3d], a1: List[point_3d]) -> bool:
     Returns:
         bool
     """
+

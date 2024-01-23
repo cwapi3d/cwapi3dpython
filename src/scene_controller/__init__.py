@@ -6,7 +6,7 @@ def get_last_error(error_code: int) -> str:
         error_code ( int): error_code
 
     Returns:
-        strerror string
+        error string (str)
     """
 
 def add_scene(name: str) -> bool:
@@ -15,7 +15,7 @@ def add_scene(name: str) -> bool:
         name ( str): name
 
     Returns:
-        booldid operation succeed
+        did operation succeed (bool)
     """
 
 def rename_scene(old_name: str, new_name: str) -> bool:
@@ -25,7 +25,7 @@ def rename_scene(old_name: str, new_name: str) -> bool:
         new_name ( str): new_name
 
     Returns:
-        booldid operation succeed
+        did operation succeed (bool)
     """
 
 def delete_scene(name: str) -> bool:
@@ -34,7 +34,7 @@ def delete_scene(name: str) -> bool:
         name ( str): name
 
     Returns:
-        booldid operation succeed
+        did operation succeed (bool)
     """
 
 def add_elements_to_scene(name: str, element_i_ds: List[int]) -> bool:
@@ -44,7 +44,7 @@ def add_elements_to_scene(name: str, element_i_ds: List[int]) -> bool:
         element_i_ds ( List[int]): element_i_ds
 
     Returns:
-        booldid operation succeed
+        did operation succeed (bool)
     """
 
 def remove_elements_from_scene(name: str, element_i_ds: List[int]) -> bool:
@@ -54,7 +54,7 @@ def remove_elements_from_scene(name: str, element_i_ds: List[int]) -> bool:
         element_i_ds ( List[int]): element_i_ds
 
     Returns:
-        booldid operation succeed
+        did operation succeed (bool)
     """
 
 def get_elements_from_scene(name: str) -> List[int]:
@@ -63,7 +63,7 @@ def get_elements_from_scene(name: str) -> List[int]:
         name ( str): name
 
     Returns:
-        List[int]element ID list
+        element ID list (List[int])
     """
 
 def activate_scene(name: str) -> bool:
@@ -72,7 +72,7 @@ def activate_scene(name: str) -> bool:
         name ( str): name
 
     Returns:
-        booldid operation succeed
+        did operation succeed (bool)
     """
 
 def clear_errors() -> None:

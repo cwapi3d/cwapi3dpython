@@ -1,7 +1,8 @@
 from typing import List
+
+from cadwork import camera_data
 from cadwork import point_3d
 from cadwork import rgb_color
-from cadwork import camera_data
 
 
 def get_last_error(error_code: int) -> str:
@@ -10,7 +11,7 @@ def get_last_error(error_code: int) -> str:
         error_code ( int): error_code
 
     Returns:
-        strerror string
+        error string (str)
     """
 
 
@@ -42,7 +43,7 @@ def is_active(element_id: int) -> bool:
         element_id ( int): element_id
 
     Returns:
-        boolis element active
+        is element active (bool)
     """
 
 
@@ -72,7 +73,7 @@ def is_visible(element_id: int) -> bool:
         element_id ( int): element_id
 
     Returns:
-        boolis element visible
+        is element visible (bool)
     """
 
 
@@ -102,7 +103,7 @@ def is_immutable(element_id: int) -> bool:
         element_id ( int): element_id
 
     Returns:
-        boolis element immutable
+        is element immutable (bool)
     """
 
 
@@ -182,16 +183,16 @@ def set_material(element_id_list: List[int], element_id: int) -> None:
     """
 
 
-def save_visibility_state() -> "visibility_state":
+def save_visibility_state() -> 'visibility_state':
     """save visibility state
     Args:
 
     Returns:
-        visibility_statevisibility state
+        visibility state (visibility_state)
     """
 
 
-def restore_visibility_state(state: "visibility_state") -> None:
+def restore_visibility_state(state: None) -> None:
     """restore visibility state
     Args:
         state ( None): state
@@ -201,16 +202,16 @@ def restore_visibility_state(state: "visibility_state") -> None:
     """
 
 
-def save_activation_state() -> "activation_state":
+def save_activation_state() -> 'activation_state':
     """save activation state
     Args:
 
     Returns:
-        activation_stateactivation state
+        activation state (activation_state)
     """
 
 
-def restore_activation_state(state: "activation_state") -> None:
+def restore_activation_state(state: None) -> None:
     """restore activation state
     Args:
         state ( None): state
@@ -473,7 +474,7 @@ def get_color(element_id: int) -> int:
         element_id ( int): element_id
 
     Returns:
-        intcolor ID
+        color ID (int)
     """
 
 
@@ -483,7 +484,7 @@ def get_opengl_color(element_id: int) -> rgb_color:
         element_id ( int): element_id
 
     Returns:
-        rgb_colorRBG color
+        RBG color (rgb_color)
     """
 
 
@@ -493,17 +494,17 @@ def get_material(element_id: int) -> int:
         element_id ( int): element_id
 
     Returns:
-        intmaterial ID
+        material ID (int)
     """
 
 
 def get_rgb_from_cadwork_color_id(color_id: None) -> rgb_color:
-    """get rgb from cadwork color element_id
+    """get rgb from cadwork color id
     Args:
         color_id ( None): color_id
 
     Returns:
-        rgb_colorcolorRGB
+        colorRGB (rgb_color)
     """
 
 
@@ -522,7 +523,7 @@ def get_camera_data() -> camera_data:
     Args:
 
     Returns:
-        camera_datacamera data
+        camera data (camera_data)
     """
 
 

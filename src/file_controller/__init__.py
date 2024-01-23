@@ -8,7 +8,7 @@ def get_last_error(error_code: int) -> str:
         error_code ( int): error_code
 
     Returns:
-        strerror string
+        error string (str)
     """
 
 def export_stl_file(element_id_list: List[int], file_path: str) -> None:
@@ -28,7 +28,7 @@ def import_step_file(file_path: str, scale_factor: float) -> List[int]:
         scale_factor ( float): scale_factor
 
     Returns:
-        List[int]imported element ID list
+        imported element ID list (List[int])
     """
 
 def import_step_file_with_message_option(file_path: str, scale_factor: float, hide_message: bool) -> List[int]:
@@ -39,7 +39,7 @@ def import_step_file_with_message_option(file_path: str, scale_factor: float, hi
         hide_message ( bool): hide_message
 
     Returns:
-        List[int]imported element ID list
+        imported element ID list (List[int])
     """
 
 def export_webgl(element_id_list: List[int], file_path: str) -> bool:
@@ -49,7 +49,7 @@ def export_webgl(element_id_list: List[int], file_path: str) -> bool:
         file_path ( str): file_path
 
     Returns:
-        booldid operation succeed
+        did operation succeed (bool)
     """
 
 def export_3d_file(element_id_list: List[int], file_path: str) -> bool:
@@ -59,7 +59,7 @@ def export_3d_file(element_id_list: List[int], file_path: str) -> bool:
         file_path ( str): file_path
 
     Returns:
-        booldid operation succeed
+        did operation succeed (bool)
     """
 
 def import_sat_file(file_path: str, scale_factor: float, binary: bool) -> List[int]:
@@ -70,7 +70,7 @@ def import_sat_file(file_path: str, scale_factor: float, binary: bool) -> List[i
         binary ( bool): binary
 
     Returns:
-        List[int]imported element ID list
+        imported element ID list (List[int])
     """
 
 def import_3dc_file(file_path: str) -> List[int]:
@@ -79,7 +79,7 @@ def import_3dc_file(file_path: str) -> List[int]:
         file_path ( str): file_path
 
     Returns:
-        List[int]imported element ID list
+        imported element ID list (List[int])
     """
 
 def import_rhino_file(file_path: str, without_dialog: bool) -> List[int]:
@@ -89,7 +89,7 @@ def import_rhino_file(file_path: str, without_dialog: bool) -> List[int]:
         without_dialog ( bool): without_dialog
 
     Returns:
-        List[int]imported element ID list
+        imported element ID list (List[int])
     """
 
 def export_step_file(element_list: List[int], file_path: str, scale_factor: float, version: int, text_mode: bool) -> None:
@@ -160,7 +160,7 @@ def import_3dc_file_with_glide(file_path: str) -> List[int]:
         file_path ( str): file_path
 
     Returns:
-        List[int]imported element ID list
+        imported element ID list (List[int])
     """
 
 def import_btl_file(file_path: str) -> None:
@@ -270,7 +270,7 @@ def import_variant_file(file_path: str, insert_position: point_3d) -> List[int]:
         insert_position ( point_3d): insert_position
 
     Returns:
-        List[int]imported element ID list
+        imported element ID list (List[int])
     """
 
 def import_element_light(a0: str, a1: point_3d) -> int:

@@ -1,104 +1,104 @@
 from typing import List
 from cadwork import point_3d
 
-def create_dimension(a0: point_3d, a1: point_3d, a2: point_3d, a3: List[point_3d]) -> int:
+def create_dimension(xl: point_3d, plane_normal: point_3d, distance: point_3d, dimension_points: List[point_3d]) -> int:
     """create dimension
     Args:
-        a0 ( point_3d): a0
-        a1 ( point_3d): a1
-        a2 ( point_3d): a2
-        a3 ( List[point_3d]): a3
+        xl ( point_3d): xl
+        plane_normal ( point_3d): plane_normal
+        distance ( point_3d): distance
+        dimension_points ( List[point_3d]): dimension_points
 
     Returns:
         int
     """
 
-def set_orientation(a0: List[int], a1: point_3d, a2: point_3d) -> None:
+def set_orientation(elements: List[int], view_dir: point_3d, view_dir_up: point_3d) -> None:
     """set orientation
     Args:
-        a0 ( List[int]): a0
-        a1 ( point_3d): a1
-        a2 ( point_3d): a2
+        elements ( List[int]): elements
+        view_dir ( point_3d): view_dir
+        view_dir_up ( point_3d): view_dir_up
 
     Returns:
         None
     """
 
-def add_segment(a0: int, a1: point_3d) -> None:
+def add_segment(element: int, segment: point_3d) -> None:
     """add segment
     Args:
-        a0 ( int): a0
-        a1 ( point_3d): a1
+        element ( int): element
+        segment ( point_3d): segment
 
     Returns:
         None
     """
 
-def set_precision(a0: List[int], a1: int) -> None:
+def set_precision(elements: List[int], precision: int) -> None:
     """set precision
     Args:
-        a0 ( List[int]): a0
-        a1 ( int): a1
+        elements ( List[int]): elements
+        precision ( int): precision
 
     Returns:
         None
     """
 
-def set_text_size(a0: List[int], a1: float) -> None:
+def set_text_size(elements: List[int], text_size: float) -> None:
     """set text size
     Args:
-        a0 ( List[int]): a0
-        a1 ( float): a1
+        elements ( List[int]): elements
+        text_size ( float): text_size
 
     Returns:
         None
     """
 
-def set_line_thickness(a0: List[int], a1: float) -> None:
+def set_line_thickness(elements: List[int], thickness: float) -> None:
     """set line thickness
     Args:
-        a0 ( List[int]): a0
-        a1 ( float): a1
+        elements ( List[int]): elements
+        thickness ( float): thickness
 
     Returns:
         None
     """
 
-def set_total_dimension(a0: List[int], a1: bool) -> None:
+def set_total_dimension(elements: List[int], total: bool) -> None:
     """set total dimension
     Args:
-        a0 ( List[int]): a0
-        a1 ( bool): a1
+        elements ( List[int]): elements
+        total ( bool): total
 
     Returns:
         None
     """
 
-def set_text_color(a0: List[int], a1: int) -> None:
+def set_text_color(elements: List[int], color_id: int) -> None:
     """set text color
     Args:
-        a0 ( List[int]): a0
-        a1 ( int): a1
+        elements ( List[int]): elements
+        color_id ( int): color_id
 
     Returns:
         None
     """
 
-def set_line_color(a0: List[int], a1: int) -> None:
+def set_line_color(elements: List[int], color_id: int) -> None:
     """set line color
     Args:
-        a0 ( List[int]): a0
-        a1 ( int): a1
+        elements ( List[int]): elements
+        color_id ( int): color_id
 
     Returns:
         None
     """
 
-def set_default_anchor_length(a0: List[int], a1: float) -> None:
+def set_default_anchor_length(elements: List[int], length: float) -> None:
     """set default anchor length
     Args:
-        a0 ( List[int]): a0
-        a1 ( float): a1
+        elements ( List[int]): elements
+        length ( float): length
 
     Returns:
         None

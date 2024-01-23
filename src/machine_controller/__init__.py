@@ -6,7 +6,7 @@ def get_last_error(error_code: int) -> str:
         error_code ( int): error_code
 
     Returns:
-        strerror string
+        error string (str)
     """
 
 def export_btl(btl_version: int, file_path: str) -> None:

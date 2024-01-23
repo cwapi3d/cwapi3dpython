@@ -1,4 +1,5 @@
 from typing import List
+
 from cadwork import attribute_display_settings
 from cadwork import element_grouping_type
 from cadwork import element_type
@@ -12,7 +13,7 @@ def get_last_error(error_code: int) -> str:
         error_code ( int): error_code
 
     Returns:
-        strerror string
+        error string (str)
     """
 
 
@@ -193,10 +194,10 @@ def set_extended_settings(element_id_list: List[int], extended_settings: None) -
     """
 
 
-def set_wall(element_id_list: List[int]) -> None:
+def set_wall(a0: List[int]) -> None:
     """set wall
     Args:
-        element_id_list ( List[int]): element_id_list
+        a0 ( List[int]): a0
 
     Returns:
         None
@@ -298,11 +299,11 @@ def clear_errors() -> None:
     """
 
 
-def set_reference_wall_2dc(elements: List[int], a2dc_file_path: str) -> None:
+def set_reference_wall_2dc(elements: List[int], _2dc_file_path: str) -> None:
     """set reference wall 2dc
     Args:
         elements ( List[int]): elements
-        2dc_file_path ( str): 2dc_file_path
+        _2dc_file_path ( str): _2dc_file_path
 
     Returns:
         None
@@ -795,7 +796,7 @@ def get_name(element_id: int) -> str:
         element_id ( int): element_id
 
     Returns:
-        strelement name
+        element name (str)
     """
 
 
@@ -805,7 +806,7 @@ def get_group(element_id: int) -> str:
         element_id ( int): element_id
 
     Returns:
-        strelement group
+        element group (str)
     """
 
 
@@ -815,7 +816,7 @@ def get_subgroup(element_id: int) -> str:
         element_id ( int): element_id
 
     Returns:
-        strelement subgroup
+        element subgroup (str)
     """
 
 
@@ -825,7 +826,7 @@ def get_comment(element_id: int) -> str:
         element_id ( int): element_id
 
     Returns:
-        strelement comment
+        element comment (str)
     """
 
 
@@ -836,7 +837,7 @@ def get_user_attribute(element_id: int, number: int) -> str:
         number ( int): number
 
     Returns:
-        strelement user attribute
+        element user attribute (str)
     """
 
 
@@ -846,7 +847,7 @@ def get_sku(element_id: int) -> str:
         element_id ( int): element_id
 
     Returns:
-        strelement SKU
+        element SKU (str)
     """
 
 
@@ -856,7 +857,7 @@ def get_production_number(element_id: int) -> int:
         element_id ( int): element_id
 
     Returns:
-        intelement production number
+        element production number (int)
     """
 
 
@@ -866,7 +867,7 @@ def get_part_number(element_id: int) -> int:
         element_id ( int): element_id
 
     Returns:
-        intelement part number
+        element part number (int)
     """
 
 
@@ -877,7 +878,7 @@ def get_additional_data(element_id: int, data_id: str) -> str:
         data_id ( str): data_id
 
     Returns:
-        strelement additional data
+        element additional data (str)
     """
 
 
@@ -887,7 +888,7 @@ def get_user_attribute_name(number: int) -> str:
         number ( int): number
 
     Returns:
-        struser attribute name
+        user attribute name (str)
     """
 
 
@@ -897,7 +898,7 @@ def get_wall_situation(element_id: int) -> str:
         element_id ( int): element_id
 
     Returns:
-        strelement wall situation
+        element wall situation (str)
     """
 
 
@@ -907,7 +908,7 @@ def get_element_material_name(element_id: int) -> str:
         element_id ( int): element_id
 
     Returns:
-        strelement material name
+        element material name (str)
     """
 
 
@@ -917,7 +918,7 @@ def get_prefab_layer(element_id: int) -> str:
         element_id ( int): element_id
 
     Returns:
-        strelement prefab layer
+        element prefab layer (str)
     """
 
 
@@ -927,7 +928,7 @@ def get_machine_calculation_set(element_id: int) -> str:
         element_id ( int): element_id
 
     Returns:
-        strelement machine calculation set
+        element machine calculation set (str)
     """
 
 
@@ -937,7 +938,7 @@ def get_cutting_set(element_id: int) -> str:
         element_id ( int): element_id
 
     Returns:
-        strelement cutting set
+        element cutting set (str)
     """
 
 
@@ -947,7 +948,7 @@ def get_name_process_type(name: str) -> process_type:
         name ( str): name
 
     Returns:
-        process_typeprocess type
+        process type (process_type)
     """
 
 
@@ -957,7 +958,7 @@ def get_name_extended_settings(name: str) -> extended_settings:
         name ( str): name
 
     Returns:
-        extended_settingsextended settings
+        extended settings (extended_settings)
     """
 
 
@@ -967,7 +968,7 @@ def get_output_type(element_id: int) -> process_type:
         element_id ( int): element_id
 
     Returns:
-        process_typeelement output type
+        element output type (process_type)
     """
 
 
@@ -977,7 +978,7 @@ def get_extended_settings(element_id: int) -> extended_settings:
         element_id ( int): element_id
 
     Returns:
-        extended_settingselement extended settings
+        element extended settings (extended_settings)
     """
 
 
@@ -987,7 +988,7 @@ def get_element_type(element_id: int) -> element_type:
         element_id ( int): element_id
 
     Returns:
-        element_typeelement type
+        element type (element_type)
     """
 
 
@@ -997,7 +998,7 @@ def get_fastening_attribute(element_id: int) -> str:
         element_id ( int): element_id
 
     Returns:
-        strelement fastening attribute
+        element fastening attribute (str)
     """
 
 
@@ -1057,7 +1058,7 @@ def is_beam(element_id: int) -> bool:
         element_id ( int): element_id
 
     Returns:
-        boolis element beam
+        is element beam (bool)
     """
 
 
@@ -1067,7 +1068,7 @@ def is_panel(element_id: int) -> bool:
         element_id ( int): element_id
 
     Returns:
-        boolis element panel
+        is element panel (bool)
     """
 
 
@@ -1077,7 +1078,7 @@ def is_opening(element_id: int) -> bool:
         element_id ( int): element_id
 
     Returns:
-        boolis element opening
+        is element opening (bool)
     """
 
 
@@ -1087,7 +1088,7 @@ def is_wall(element_id: int) -> bool:
         element_id ( int): element_id
 
     Returns:
-        boolis element wall
+        is element wall (bool)
     """
 
 
@@ -1097,7 +1098,7 @@ def is_floor(element_id: int) -> bool:
         element_id ( int): element_id
 
     Returns:
-        boolis element floor
+        is element floor (bool)
     """
 
 
@@ -1107,7 +1108,7 @@ def is_roof(element_id: int) -> bool:
         element_id ( int): element_id
 
     Returns:
-        boolis element roof
+        is element roof (bool)
     """
 
 
@@ -1117,7 +1118,7 @@ def is_metal(element_id: int) -> bool:
         element_id ( int): element_id
 
     Returns:
-        boolis element metal
+        is element metal (bool)
     """
 
 
@@ -1127,7 +1128,7 @@ def is_export_solid(element_id: int) -> bool:
         element_id ( int): element_id
 
     Returns:
-        boolis element export solid
+        is element export solid (bool)
     """
 
 
@@ -1137,7 +1138,7 @@ def is_container(element_id: int) -> bool:
         element_id ( int): element_id
 
     Returns:
-        boolis element container
+        is element container (bool)
     """
 
 
@@ -1147,7 +1148,7 @@ def is_connector_axis(element_id: int) -> bool:
         element_id ( int): element_id
 
     Returns:
-        boolis element connector axis
+        is element connector axis (bool)
     """
 
 
@@ -1157,7 +1158,7 @@ def is_drilling(element_id: int) -> bool:
         element_id ( int): element_id
 
     Returns:
-        boolis element drilling
+        is element drilling (bool)
     """
 
 
@@ -1167,7 +1168,7 @@ def is_node(element_id: int) -> bool:
         element_id ( int): element_id
 
     Returns:
-        boolis element node
+        is element node (bool)
     """
 
 
@@ -1177,7 +1178,7 @@ def is_auxiliary(element_id: int) -> bool:
         element_id ( int): element_id
 
     Returns:
-        boolis element auxiliary
+        is element auxiliary (bool)
     """
 
 
@@ -1187,7 +1188,7 @@ def is_roof_surface(element_id: int) -> bool:
         element_id ( int): element_id
 
     Returns:
-        boolis element roof surface
+        is element roof surface (bool)
     """
 
 
@@ -1197,7 +1198,7 @@ def is_caddy_object(element_id: int) -> bool:
         element_id ( int): element_id
 
     Returns:
-        boolis element caddy object
+        is element caddy object (bool)
     """
 
 
@@ -1217,7 +1218,7 @@ def is_architecture_wall_2dc(element: None) -> bool:
         element ( None): element
 
     Returns:
-        boolis architecturewall 2dc
+        is architecturewall 2dc (bool)
     """
 
 
@@ -1227,7 +1228,7 @@ def is_architecture_wall_xml(element: None) -> bool:
         element ( None): element
 
     Returns:
-        boolis architecturewall xml
+        is architecturewall xml (bool)
     """
 
 
@@ -1237,7 +1238,7 @@ def is_surface(element_id: None) -> bool:
         element_id ( None): element_id
 
     Returns:
-        boolis Surface
+        is Surface (bool)
     """
 
 
@@ -1247,7 +1248,7 @@ def is_line(element_id: None) -> bool:
         element_id ( None): element_id
 
     Returns:
-        boolis Line
+        is Line (bool)
     """
 
 
@@ -1534,14 +1535,14 @@ def get_element_grouping_type() -> element_grouping_type:
     Args:
 
     Returns:
-        element_grouping_type
+        element grouping type (element_grouping_type)
     """
 
 
-def set_element_grouping_type(a0: element_grouping_type) -> None:
+def set_element_grouping_type(grouping_type: element_grouping_type) -> None:
     """set element grouping type
     Args:
-        a0 ( element_grouping_type): a0
+        grouping_type ( element_grouping_type): grouping_type
 
     Returns:
         None
@@ -1757,11 +1758,21 @@ def get_attribute_display_settings_for_solid_wall_panel() -> attribute_display_s
     """
 
 
-def is_processing(element_id: int) -> bool:
+def is_processing(element_id: None) -> bool:
     """is processing
     Args:
-        element_id ( int): element_id
+        element_id ( None): element_id
 
     Returns:
         bool
+    """
+
+
+def set_framed_wall(element_id_list: List[int]) -> None:
+    """set framed wall
+    Args:
+        element_id_list ( List[int]): element_id_list
+
+    Returns:
+        None
     """
