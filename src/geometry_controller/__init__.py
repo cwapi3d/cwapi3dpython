@@ -275,325 +275,325 @@ def rotate_length_axis_2_points(elements: List[int], point1: point_3d, point2: p
         None
     """
 
-def get_width(id: int) -> float:
+def get_width(element_id: int) -> float:
     """get width
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element width (float)
     """
 
-def get_height(id: int) -> float:
+def get_height(element_id: int) -> float:
     """get height
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element height (float)
     """
 
-def get_length(id: int) -> float:
+def get_length(element_id: int) -> float:
     """get length
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element length (float)
     """
 
-def get_p1(id: int) -> point_3d:
+def get_p1(element_id: int) -> point_3d:
     """get p1
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element P1 (point_3d)
     """
 
-def get_p2(id: int) -> point_3d:
+def get_p2(element_id: int) -> point_3d:
     """get p2
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element P2 (point_3d)
     """
 
-def get_p3(id: int) -> point_3d:
+def get_p3(element_id: int) -> point_3d:
     """get p3
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element P3 (point_3d)
     """
 
-def get_start_height_cut_angle(id: int) -> float:
+def get_start_height_cut_angle(element_id: int) -> float:
     """get start height cut angle
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element start height cut angle (float)
     """
 
-def get_start_width_cut_angle(id: int) -> float:
+def get_start_width_cut_angle(element_id: int) -> float:
     """get start width cut angle
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element start width cut angle (float)
     """
 
-def get_end_height_cut_angle(id: int) -> float:
+def get_end_height_cut_angle(element_id: int) -> float:
     """get end height cut angle
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element end height cut angle (float)
     """
 
-def get_end_width_cut_angle(id: int) -> float:
+def get_end_width_cut_angle(element_id: int) -> float:
     """get end width cut angle
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element end width cut angle (float)
     """
 
-def get_over_width(id: int) -> float:
+def get_over_width(element_id: int) -> float:
     """get over width
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element overwidth (float)
     """
 
-def get_over_height(id: int) -> float:
+def get_over_height(element_id: int) -> float:
     """get over height
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element overheight (float)
     """
 
-def get_over_length(id: int) -> float:
+def get_over_length(element_id: int) -> float:
     """get over length
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element overlength (float)
     """
 
-def get_rounding_width(id: int) -> float:
+def get_rounding_width(element_id: int) -> float:
     """get rounding width
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element rounding width (float)
     """
 
-def get_rounding_height(id: int) -> float:
+def get_rounding_height(element_id: int) -> float:
     """get rounding height
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element rounding height (float)
     """
 
-def get_rounding_length(id: int) -> float:
+def get_rounding_length(element_id: int) -> float:
     """get rounding length
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element rounding length (float)
     """
 
-def get_cross_correction_negative_width(id: int) -> float:
+def get_cross_correction_negative_width(element_id: int) -> float:
     """get cross correction negative width
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element negative width cross correction (float)
     """
 
-def get_cross_correction_positive_width(id: int) -> float:
+def get_cross_correction_positive_width(element_id: int) -> float:
     """get cross correction positive width
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element positive width cross correction (float)
     """
 
-def get_cross_correction_negative_height(id: int) -> float:
+def get_cross_correction_negative_height(element_id: int) -> float:
     """get cross correction negative height
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element negative height cross correction (float)
     """
 
-def get_cross_correction_positive_height(id: int) -> float:
+def get_cross_correction_positive_height(element_id: int) -> float:
     """get cross correction positive height
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element positive height cross correction (float)
     """
 
-def get_cross_correction_negative_length(id: int) -> float:
+def get_cross_correction_negative_length(element_id: int) -> float:
     """get cross correction negative length
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element negative length cross correction (float)
     """
 
-def get_cross_correction_positive_length(id: int) -> float:
+def get_cross_correction_positive_length(element_id: int) -> float:
     """get cross correction positive length
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element positive length cross correction (float)
     """
 
-def get_weight(id: int) -> float:
+def get_weight(element_id: int) -> float:
     """get weight
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element real weight (float)
     """
 
-def get_list_weight(id: int) -> float:
+def get_list_weight(element_id: int) -> float:
     """get list weight
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element list weight (float)
     """
 
-def get_volume(id: int) -> float:
+def get_volume(element_id: int) -> float:
     """get volume
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element real volume (float)
     """
 
-def get_list_volume(id: int) -> float:
+def get_list_volume(element_id: int) -> float:
     """get list volume
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element list volume (float)
     """
 
-def get_xl(id: int) -> point_3d:
+def get_xl(element_id: int) -> point_3d:
     """get xl
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element XL vector (point_3d)
     """
 
-def get_yl(id: int) -> point_3d:
+def get_yl(element_id: int) -> point_3d:
     """get yl
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element YL vector (point_3d)
     """
 
-def get_zl(id: int) -> point_3d:
+def get_zl(element_id: int) -> point_3d:
     """get zl
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element ZL vector (point_3d)
     """
 
-def get_center_of_gravity(id: int) -> point_3d:
+def get_center_of_gravity(element_id: int) -> point_3d:
     """get center of gravity
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element center of gravity (point_3d)
     """
 
-def get_reference_side(id: int) -> int:
+def get_reference_side(element_id: int) -> int:
     """get reference side
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element reference side (int)
     """
 
-def get_element_vertices(id: int) -> List[point_3d]:
+def get_element_vertices(element_id: int) -> List[point_3d]:
     """get element vertices
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element vertices (List[point_3d])
     """
 
-def get_element_facets(id: int) -> facet_list:
+def get_element_facets(element_id: int) -> facet_list:
     """get element facets
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element facets (facet_list)
     """
 
-def get_list_width(id: int) -> float:
+def get_list_width(element_id: int) -> float:
     """get list width
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element list width (float)
     """
 
-def get_list_height(id: int) -> float:
+def get_list_height(element_id: int) -> float:
     """get list height
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element list height (float)
     """
 
-def get_list_length(id: int) -> float:
+def get_list_length(element_id: int) -> float:
     """get list length
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element list length (float)
@@ -714,19 +714,19 @@ def get_center_of_gravity_for_list_considering_materials(elements: List[int]) ->
         point_3d
     """
 
-def get_element_facet_count(id: int) -> int:
+def get_element_facet_count(element_id: int) -> int:
     """get element facet count
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         int
     """
 
-def get_weight_real(id: int) -> float:
+def get_weight_real(element_id: int) -> float:
     """get weight real
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         float

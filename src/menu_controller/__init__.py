@@ -9,3 +9,4 @@ def display_simple_menu(menu_items: List[str]) -> str:
     Returns:
         str
     """
+

@@ -34,10 +34,10 @@ def get_3d_file_path() -> str:
         3D file path (str)
     """
 
-def set_project_data(id: str, data: str) -> None:
+def set_project_data(element_id: str, data: str) -> None:
     """set project data
     Args:
-        id ( str): id
+        element_id ( str): element_id
         data ( str): data
 
     Returns:
@@ -243,10 +243,10 @@ def set_project_country(country: str) -> None:
         None
     """
 
-def get_user_file_from_dialog(filter: str) -> str:
+def get_user_file_from_dialog(name_filter: str) -> str:
     """get user file from dialog
     Args:
-        filter ( str): filter
+        name_filter ( str): name_filter
 
     Returns:
         file path (str)
@@ -310,10 +310,10 @@ def export_screen_to_image(file_path: str) -> None:
         None
     """
 
-def get_new_user_file_from_dialog(filter: str) -> str:
+def get_new_user_file_from_dialog(name_filter: str) -> str:
     """get new user file from dialog
     Args:
-        filter ( str): filter
+        name_filter ( str): name_filter
 
     Returns:
         file path (str)
@@ -356,10 +356,10 @@ def check_autostart(api_name: str) -> bool:
         bool
     """
 
-def delete_project_data(id: str) -> None:
+def delete_project_data(element_id: str) -> None:
     """delete project data
     Args:
-        id ( str): id
+        element_id ( str): element_id
 
     Returns:
         None
@@ -681,20 +681,20 @@ def set_north_angle(north_angle: float) -> None:
         None
     """
 
-def get_user_file_from_dialog_in_path(filter: str, path: str) -> str:
+def get_user_file_from_dialog_in_path(name_filter: str, path: str) -> str:
     """get user file from dialog in path
     Args:
-        filter ( str): filter
+        name_filter ( str): name_filter
         path ( str): path
 
     Returns:
         str
     """
 
-def get_new_user_file_from_dialog_in_path(filter: str, path: str) -> str:
+def get_new_user_file_from_dialog_in_path(name_filter: str, path: str) -> str:
     """get new user file from dialog in path
     Args:
-        filter ( str): filter
+        name_filter ( str): name_filter
         path ( str): path
 
     Returns:
@@ -778,10 +778,10 @@ def get_3d_file_name() -> str:
         3D file name (str)
     """
 
-def get_project_data(id: str) -> str:
+def get_project_data(element_id: str) -> str:
     """get project data
     Args:
-        id ( str): id
+        element_id ( str): element_id
 
     Returns:
         project data (str)
@@ -1046,6 +1046,6 @@ def get_3d_gui_upper_left_screen_coordinates() -> Tuple[int, int]:
     Args:
 
     Returns:
-        std::tuple<int, int>
+        Tuple[int, int]
     """
 

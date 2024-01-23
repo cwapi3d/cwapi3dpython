@@ -1,18 +1,18 @@
 from typing import List
 
-def get_profile_length(id: int) -> float:
+def get_profile_length(element_id: int) -> float:
     """get profile length
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         profile length (float)
     """
 
-def get_edge_length(id: int, edge_type: str) -> float:
+def get_edge_length(element_id: int, edge_type: str) -> float:
     """get edge length
     Args:
-        id ( int): id
+        element_id ( int): element_id
         edge_type ( str): edge_type
 
     Returns:

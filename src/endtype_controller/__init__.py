@@ -16,19 +16,19 @@ def get_endtype_id(name: str) -> int:
         int
     """
 
-def get_endtype_id_start(id: int) -> int:
+def get_endtype_id_start(element_id: int) -> int:
     """get endtype id start
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         int
     """
 
-def get_endtype_id_end(id: int) -> int:
+def get_endtype_id_end(element_id: int) -> int:
     """get endtype id end
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         int
@@ -44,20 +44,20 @@ def get_endtype_id_facet(a0: int, a1: int) -> int:
         int
     """
 
-def set_endtype_name_start(id: int, name: str) -> None:
+def set_endtype_name_start(element_id: int, name: str) -> None:
     """set endtype name start
     Args:
-        id ( int): id
+        element_id ( int): element_id
         name ( str): name
 
     Returns:
         None
     """
 
-def set_endtype_name_end(id: int, name: str) -> None:
+def set_endtype_name_end(element_id: int, name: str) -> None:
     """set endtype name end
     Args:
-        id ( int): id
+        element_id ( int): element_id
         name ( str): name
 
     Returns:
@@ -125,28 +125,28 @@ def create_new_endtype(endtype_name: str, endtype_id: int, folder_name: str) -> 
         int
     """
 
-def get_endtype_name(id: int) -> str:
+def get_endtype_name(element_id: int) -> str:
     """get endtype name
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         str
     """
 
-def get_endtype_name_start(id: int) -> str:
+def get_endtype_name_start(element_id: int) -> str:
     """get endtype name start
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         str
     """
 
-def get_endtype_name_end(id: int) -> str:
+def get_endtype_name_end(element_id: int) -> str:
     """get endtype name end
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         str

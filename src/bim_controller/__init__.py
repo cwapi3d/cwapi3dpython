@@ -1,4 +1,5 @@
 from typing import List
+
 from cadwork import ifc_2x3_element_type
 from cadwork import ifc_options
 
@@ -13,10 +14,10 @@ def get_last_error(a0: int) -> str:
     """
 
 
-def get_ifc_guid(id: int) -> str:
+def get_ifc_guid(element_id: int) -> str:
     """get ifc guid
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         str

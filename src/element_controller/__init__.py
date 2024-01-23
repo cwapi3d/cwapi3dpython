@@ -310,10 +310,10 @@ def subtract_elements(hard_elements: List[int], soft_elements: List[int]) -> Lis
         List[int]
     """
 
-def check_element_id(id: int) -> bool:
+def check_element_id(element_id: int) -> bool:
     """check element id
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         bool
@@ -539,10 +539,10 @@ def cut_elements_with_miter(first_id: int, second_id: int) -> bool:
         bool
     """
 
-def cut_element_with_plane(id: int, cut_plane_normal_vector: point_3d, distance_from_global_origin: float) -> bool:
+def cut_element_with_plane(element_id: int, cut_plane_normal_vector: point_3d, distance_from_global_origin: float) -> bool:
     """cut element with plane
     Args:
-        id ( int): id
+        element_id ( int): element_id
         cut_plane_normal_vector ( point_3d): cut_plane_normal_vector
         distance_from_global_origin ( float): distance_from_global_origin
 
@@ -571,10 +571,10 @@ def create_rectangular_mep(width: float, depth: float, points: List[point_3d]) -
         int
     """
 
-def slice_element_with_plane(id: int, cut_plane_normal_vector: point_3d, distance_from_global_origin: float) -> bool:
+def slice_element_with_plane(element_id: int, cut_plane_normal_vector: point_3d, distance_from_global_origin: float) -> bool:
     """slice element with plane
     Args:
-        id ( int): id
+        element_id ( int): element_id
         cut_plane_normal_vector ( point_3d): cut_plane_normal_vector
         distance_from_global_origin ( float): distance_from_global_origin
 
@@ -718,10 +718,10 @@ def mirror_copy_elements(elements: List[int], plane: point_3d, plane_distance: f
         List[int]
     """
 
-def reset_element_cadwork_guid(id: int) -> None:
+def reset_element_cadwork_guid(element_id: int) -> None:
     """reset element cadwork guid
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         None
@@ -1357,10 +1357,10 @@ def get_element_contact_vertices(first_id: int, second_id: int) -> List[point_3d
         List[point_3d]
     """
 
-def get_nesting_parent_id(id: int) -> int:
+def get_nesting_parent_id(element_id: int) -> int:
     """get nesting parent id
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         int
@@ -1386,19 +1386,19 @@ def check_if_elements_are_in_contact(first_element_id: int, second_element_id: i
         bool
     """
 
-def get_element_module_properties_for_element(id: int) -> element_module_properties:
+def get_element_module_properties_for_element(element_id: int) -> element_module_properties:
     """get element module properties for element
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         element_module_properties
     """
 
-def get_element_type_description(id: int) -> str:
+def get_element_type_description(element_id: int) -> str:
     """get element type description
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         str
@@ -1414,28 +1414,28 @@ def get_opening_variant_ids(elements: List[int], opening_type: int) -> List[int]
         List[int]
     """
 
-def get_parent_container_id(id: int) -> int:
+def get_parent_container_id(element_id: int) -> int:
     """get parent container id
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         int
     """
 
-def get_export_solid_content_elements(id: int) -> List[int]:
+def get_export_solid_content_elements(element_id: int) -> List[int]:
     """get export solid content elements
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         List[int]
     """
 
-def get_container_content_elements(id: int) -> List[int]:
+def get_container_content_elements(element_id: int) -> List[int]:
     """get container content elements
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         List[int]
@@ -1449,10 +1449,10 @@ def get_element_detail_path() -> str:
         str
     """
 
-def get_element_cadwork_guid(id: int) -> str:
+def get_element_cadwork_guid(element_id: int) -> str:
     """get element cadwork guid
     Args:
-        id ( int): id
+        element_id ( int): element_id
 
     Returns:
         str
