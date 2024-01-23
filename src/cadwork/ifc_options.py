@@ -12,7 +12,7 @@ class ifc_options:
             ifc_options_aggregation
         """
 
-    def get_ifc_options_project_data(self) -> 'ifc_options_aggregation':
+    def get_ifc_options_project_data(self) -> 'ifc_options_project_data':
         """get ifc options project data
         Args:
 

@@ -1539,10 +1539,10 @@ def get_element_grouping_type() -> element_grouping_type:
     """
 
 
-def set_element_grouping_type(type: element_grouping_type) -> None:
+def set_element_grouping_type(grouping_type: element_grouping_type) -> None:
     """set element grouping type
     Args:
-        type ( element_grouping_type): type
+        grouping_type ( element_grouping_type): grouping_type
 
     Returns:
         None
