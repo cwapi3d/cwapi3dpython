@@ -6,6 +6,7 @@ on:
       - 'main'
     paths-ignore:
       - '.github/**'
+      - 'site/**'
 
 jobs:
   build-and-publish:

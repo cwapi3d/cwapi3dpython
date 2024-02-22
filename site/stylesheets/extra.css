@@ -1,0 +1,68 @@
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #10069f;
+}
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #10069f;
+}
+
+.md-tabs {
+  background-color: #10069f;
+}
+
+.md-typeset {
+  font-size: 0.7rem;
+}
+
+.md-footer__link--prev {
+  display: none;
+}
+
+.md-footer__link--next {
+  display: none;
+}
+
+.mark-text {
+  /* font-family: "wand-sparkles";  */
+  font-size: 14px;
+  font-weight: 500;
+  content: "";
+  cursor: none;
+}
+
+.table {
+  color: #10069f;
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 10%;
+  row-gap: 2em;
+}
+/* ---------- */
+* {
+  box-sizing: border-box;
+}
+
+.media {
+  border: 2px solid 10069f;
+  border-radius: 5px;
+  border-spacing: 5px 1rem;
+  background-color: lightgray;
+  max-width: 800px;
+  max-height: 320px;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-areas: "img content";
+  /* margin-bottom: 1em; */
+}
+
+.media .image {
+  /* min-width: 560px; */
+  grid-area: img;
+  /* background-color: #ffd8a8; */
+}
+
+.media .text {
+  color: black;
+  grid-area: content;
+  padding: 10px;
+}

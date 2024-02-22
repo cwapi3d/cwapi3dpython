@@ -1,13 +1,5 @@
-__pycache__/
 *.py[cod]
-*$py.class
-
-venv/
-.venv/
-build/
-dist/
-*.egg-info/
-docs/_build/
 .idea/
-site/
-venv.zip
+__pycache__/
+dist/
+venv/
