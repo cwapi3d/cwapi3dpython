@@ -16,9 +16,9 @@ jobs:
       - run: pip install pip-tools
       - run: pip-sync
       - run: python -m mkdocs build
-
-      - run: |
-          chmod -c -R +rX "_site/" | while read line; do
-            echo "::warning title=Invalid file permissions automatically fixed::$line"
-          done
+#      - run: |
+#          chmod -c -R +rX "_site/" | while read line; do
+#            echo "::warning title=Invalid file permissions automatically fixed::$line"
+#          done
+      - run: tar --dereference --hard-dereference --directory site/ -cvf github-pages.tar.gz .
       - uses: actions/upload-pages-artifact@v3
