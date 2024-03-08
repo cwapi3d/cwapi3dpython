@@ -535,32 +535,8 @@ class element_type:
             None
         """
 
-    def set_panel(self) -> None:
-        """set panel
-        Args:
-
-        Returns:
-            None
-        """
-
     def set_nesting_parent(self) -> None:
         """set nesting parent
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_nesting_parent(self) -> None:
-        """set nesting parent
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_connector_node(self) -> None:
-        """set connector node
         Args:
 
         Returns:
@@ -583,32 +559,8 @@ class element_type:
             None
         """
 
-    def set_dimension(self) -> None:
-        """set dimension
-        Args:
-
-        Returns:
-            None
-        """
-
     def set_circular_beam(self) -> None:
         """set circular beam
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_circular_beam(self) -> None:
-        """set circular beam
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_room(self) -> None:
-        """set room
         Args:
 
         Returns:
@@ -631,32 +583,8 @@ class element_type:
             None
         """
 
-    def set_cadwork(self) -> None:
-        """set cadwork
-        Args:
-
-        Returns:
-            None
-        """
-
     def set_rectangular_beam(self) -> None:
         """set rectangular beam
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_rectangular_beam(self) -> None:
-        """set rectangular beam
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_steel_shape(self) -> None:
-        """set steel shape
         Args:
 
         Returns:
@@ -679,32 +607,8 @@ class element_type:
             None
         """
 
-    def set_surface(self) -> None:
-        """set surface
-        Args:
-
-        Returns:
-            None
-        """
-
     def set_text_document(self) -> None:
         """set text document
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_text_document(self) -> None:
-        """set text document
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_container(self) -> None:
-        """set container
         Args:
 
         Returns:
@@ -727,32 +631,8 @@ class element_type:
             None
         """
 
-    def set_auxiliary(self) -> None:
-        """set auxiliary
-        Args:
-
-        Returns:
-            None
-        """
-
     def set_additional_element(self) -> None:
         """set additional element
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_additional_element(self) -> None:
-        """set additional element
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_circular_axis(self) -> None:
-        """set circular axis
         Args:
 
         Returns:
@@ -775,32 +655,8 @@ class element_type:
             None
         """
 
-    def set_connector_axis(self) -> None:
-        """set connector axis
-        Args:
-
-        Returns:
-            None
-        """
-
     def set_global_cut(self) -> None:
         """set global cut
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_global_cut(self) -> None:
-        """set global cut
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_export_solid_scene(self) -> None:
-        """set export solid scene
         Args:
 
         Returns:
@@ -823,32 +679,8 @@ class element_type:
             None
         """
 
-    def set_normal_node(self) -> None:
-        """set normal node
-        Args:
-
-        Returns:
-            None
-        """
-
     def set_section_trace(self) -> None:
         """set section trace
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_section_trace(self) -> None:
-        """set section trace
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_wire_axis(self) -> None:
-        """set wire axis
         Args:
 
         Returns:
@@ -871,32 +703,8 @@ class element_type:
             None
         """
 
-    def set_opening(self) -> None:
-        """set opening
-        Args:
-
-        Returns:
-            None
-        """
-
     def set_eave_axis(self) -> None:
         """set eave axis
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_eave_axis(self) -> None:
-        """set eave axis
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_line(self) -> None:
-        """set line
         Args:
 
         Returns:
@@ -919,32 +727,8 @@ class element_type:
             None
         """
 
-    def set_export_solid(self) -> None:
-        """set export solid
-        Args:
-
-        Returns:
-            None
-        """
-
     def set_none(self) -> None:
         """set none
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_none(self) -> None:
-        """set none
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_rectangular_axis(self) -> None:
-        """set rectangular axis
         Args:
 
         Returns:
@@ -967,32 +751,8 @@ class element_type:
             None
         """
 
-    def set_drilling_axis(self) -> None:
-        """set drilling axis
-        Args:
-
-        Returns:
-            None
-        """
-
     def set_graphical_object(self) -> None:
         """set graphical object
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_graphical_object(self) -> None:
-        """set graphical object
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_rotation_element(self) -> None:
-        """set rotation element
         Args:
 
         Returns:
