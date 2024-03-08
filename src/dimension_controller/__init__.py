@@ -104,3 +104,42 @@ def set_default_anchor_length(elements: List[int], length: float) -> None:
         None
     """
 
+
+def set_distance(elements: List[int], distance: point_3d) -> None:
+    """sets the distance vector between the points and the line
+    Args:
+        elements ( List[int]): elements
+        distance ( point_3d): distance
+
+    Returns:
+        None
+    """
+
+def shift_distance_and_texts(elements: List[int], shifted: bool) -> None:
+    """sets if distance and texts are shifted
+    Args:
+        elements ( List[int]): elements
+        shifted ( bool): shifted
+
+    Returns:
+        None
+    """
+
+def get_dimension_points(element: int) -> List[point_3d]:
+    """gets all dimension points ordered by dimension direction
+    Args:
+        element ( int): element
+
+    Returns:
+        ICwAPI3DVertexList (List[point_3d])
+    """
+
+def get_default_anchor_length(element: int) -> float:
+    """gets the default anchor length
+    Args:
+        element ( int): element
+
+    Returns:
+        double (float)
+    """
+

@@ -4,12 +4,12 @@ from cadwork import ifc_options_project_data
 from cadwork import ifc_options_properties
 
 class ifc_options:
-    def get_ifc_options_aggregation(self) -> 'ifc_options_aggregation':
-        """get ifc options aggregation
+    def get_ifc_options_level_of_detail(self) -> 'ifc_options_level_of_detail':
+        """get ifc options level of detail
         Args:
 
         Returns:
-            ifc_options_aggregation
+            ifc_options_level_of_detail
         """
 
     def get_ifc_options_project_data(self) -> 'ifc_options_project_data':
@@ -28,11 +28,11 @@ class ifc_options:
             ifc_options_properties
         """
 
-    def get_ifc_options_level_of_detail(self) -> 'ifc_options_level_of_detail':
-        """get ifc options level of detail
+    def get_ifc_options_aggregation(self) -> 'ifc_options_aggregation':
+        """get ifc options aggregation
         Args:
 
         Returns:
-            ifc_options_level_of_detail
+            ifc_options_aggregation
         """
 

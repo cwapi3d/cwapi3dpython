@@ -91,3 +91,21 @@ def get_scene_list() -> List[str]:
         List[str]
     """
 
+def group_scences(a0: List[str]) -> int:
+    """group scences
+    Args:
+        a0 ( std): a0
+
+    Returns:
+        int
+    """
+
+def ungroup_scences(a0: int) -> None:
+    """ungroup scences
+    Args:
+        a0 ( int): a0
+
+    Returns:
+        None
+    """
+

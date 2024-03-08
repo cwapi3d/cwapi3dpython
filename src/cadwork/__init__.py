@@ -17,6 +17,7 @@ from .ifc_options_aggregation import ifc_options_aggregation
 from .ifc_options_level_of_detail import ifc_options_level_of_detail
 from .ifc_options_project_data import ifc_options_project_data
 from .ifc_options_properties import ifc_options_properties
+from .import_3dc_options import import_3dc_options
 from .layer_settings import layer_settings
 from .node_symbol import node_symbol
 from .point_3d import point_3d

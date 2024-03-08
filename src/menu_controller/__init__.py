@@ -1,6 +1,5 @@
 from typing import List
 
-
 def display_simple_menu(menu_items: List[str]) -> str:
     """display simple menu
     Args:

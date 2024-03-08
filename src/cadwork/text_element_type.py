@@ -13,11 +13,13 @@ class text_element_type(IntEnum):
         line = 0
         surface = 1
         volume = 2
+        raster = 3
 
     """
     line = 0
     surface = 1
     volume = 2
+    raster = 3
 
     def __int__(self) -> int:
         return self.value

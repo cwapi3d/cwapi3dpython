@@ -162,3 +162,53 @@ def get_endtype_name_facet(a0: int, a1: int) -> str:
         str
     """
 
+from typing import List
+
+def get_existing_tenon_ids() -> List[int]:
+    """Get the existing tenon endtypeIDs
+    Args:
+
+    Returns:
+        list of existing tenon endtypeIDs (List[int])
+    """
+
+def get_existing_lengthening_ids() -> List[int]:
+    """Get the existing lengthening endtypeIDs
+    Args:
+
+    Returns:
+        list of existing lengthening endtypeIDs (List[int])
+    """
+
+def get_existing_dovetail_ids() -> List[int]:
+    """Get the existing dovetail endtypeIDs
+    Args:
+
+    Returns:
+        list of existing dovetail endtypeIDs (List[int])
+    """
+
+def get_existing_dovetail_dado_ids() -> List[int]:
+    """Get the existing dado endtypeIDs
+    Args:
+
+    Returns:
+        list of existing dado endtypeIDs (List[int])
+    """
+
+def get_existing_japanese_tenon_ids() -> List[int]:
+    """Get the existing japanese-tenon endtypeIDs
+    Args:
+
+    Returns:
+        list of existing japanese-tenon endtypeIDs (List[int])
+    """
+
+def start_endtype_dialog() -> int:
+    """Start endtype dialog
+    Args:
+
+    Returns:
+        Selected endtypeID (int)
+    """
+

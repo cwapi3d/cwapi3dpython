@@ -1,6 +1,5 @@
 from cadwork import text_element_type
 
-
 class text_object_options:
     def set_font_name(self, font_name: str) -> None:
         """set font name
@@ -16,7 +15,7 @@ class text_object_options:
         Args:
 
         Returns:
-
+            str
         """
 
     def set_text(self, text: str) -> None:
@@ -154,3 +153,4 @@ class text_object_options:
         Returns:
             bool
         """
+

@@ -1,68 +1,34 @@
 class layer_settings:
-    def isWithDimensionsOutput(self) -> bool:
-        """isWithDimensionsOutput
+    def setWithoutOutput(self) -> None:
+        """setWithoutOutput
         Args:
-
-        Returns:
-            bool
-        """
-
-    def is_with_dimensions_output(self) -> bool:
-        """is_with_dimensions_output
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def isWithoutDimensionsOutput(self) -> bool:
-        """isWithoutDimensionsOutput
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_without_dimensions_output(self) -> bool:
-        """is_without_dimensions_output
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def isWithoutOutput(self) -> bool:
-        """isWithoutOutput
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_without_output(self) -> bool:
-        """is_without_output
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def setLayer(self, layer_number: int) -> None:
-        """setLayer
-        Args:
-            layer_number ( int): layer_number
 
         Returns:
             None
         """
 
-    def set_layer(self, layer_number: int) -> None:
-        """set_layer
+    def set_without_output(self) -> None:
+        """set_without_output
         Args:
-            layer_number ( int): layer_number
 
         Returns:
             None
+        """
+
+    def isWithAttributesOutput(self) -> bool:
+        """isWithAttributesOutput
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_with_attributes_output(self) -> bool:
+        """is_with_attributes_output
+        Args:
+
+        Returns:
+            bool
         """
 
     def setWithAttributesOutput(self) -> None:
@@ -97,32 +63,16 @@ class layer_settings:
             int
         """
 
-    def setWithoutOutput(self) -> None:
-        """setWithoutOutput
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_without_output(self) -> None:
-        """set_without_output
-        Args:
-
-        Returns:
-            None
-        """
-
-    def isWithAttributesOutput(self) -> bool:
-        """isWithAttributesOutput
+    def isWithoutOutput(self) -> bool:
+        """isWithoutOutput
         Args:
 
         Returns:
             bool
         """
 
-    def is_with_attributes_output(self) -> bool:
-        """is_with_attributes_output
+    def is_without_output(self) -> bool:
+        """is_without_output
         Args:
 
         Returns:
@@ -159,5 +109,55 @@ class layer_settings:
 
         Returns:
             None
+        """
+
+    def isWithDimensionsOutput(self) -> bool:
+        """isWithDimensionsOutput
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_with_dimensions_output(self) -> bool:
+        """is_with_dimensions_output
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def setLayer(self, layer_number: int) -> None:
+        """setLayer
+        Args:
+            layer_number ( int): layer_number
+
+        Returns:
+            None
+        """
+
+    def set_layer(self, layer_number: int) -> None:
+        """set_layer
+        Args:
+            layer_number ( int): layer_number
+
+        Returns:
+            None
+        """
+
+    def isWithoutDimensionsOutput(self) -> bool:
+        """isWithoutDimensionsOutput
+        Args:
+
+        Returns:
+            bool
+        """
+
+    def is_without_dimensions_output(self) -> bool:
+        """is_without_dimensions_output
+        Args:
+
+        Returns:
+            bool
         """
 
