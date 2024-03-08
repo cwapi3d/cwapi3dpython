@@ -492,12 +492,16 @@ def get_list_weight(element_id: int) -> float:
     """
 
 def get_volume(element_id: int) -> float:
-    """Gets the element real volume 
+    """Gets the element rough volume 
+
+    This does not include negative geometry operations, such as end-types,
+    drillings, connectors, openings, and MEP elements.
+
     Args:
         element_id ( int): element_id
 
     Returns:
-        element real volume (float)
+        element rough volume (float)
     """
 
 def get_list_volume(element_id: int) -> float:
@@ -693,70 +697,75 @@ def get_element_reference_face_area(element_id: int) -> float:
         element_id ( int): element_id
 
     Returns:
-        area(size) of reference face (float)
+        area (size) of reference face (float)
     """
 
 def get_center_of_gravity_for_list(elements: List[int]) -> point_3d:
-    """get center of gravity for list
+    """Gets center of gravity for list 
     Args:
         elements ( List[int]): elements
 
     Returns:
-        point_3d
+        center of gravity (point_3d)
     """
 
 def get_center_of_gravity_for_list_considering_materials(elements: List[int]) -> point_3d:
-    """get center of gravity for list considering materials
+    """Gets center of gravity for list considering materials 
     Args:
         elements ( List[int]): elements
 
     Returns:
-        point_3d
+        center of gravity (point_3d)
     """
 
 def get_element_facet_count(element_id: int) -> int:
-    """get element facet count
+    """Gets element facet count 
     Args:
         element_id ( int): element_id
 
     Returns:
-        int
+        element facet count (int)
     """
 
 def get_weight_real(element_id: int) -> float:
-    """get weight real
+    """Gets weight of the element 
     Args:
         element_id ( int): element_id
 
     Returns:
-        float
+        weight of the element (float)
     """
 
 def get_actual_physical_weight(a0: int) -> float:
-    """get actual physical weight
+    """Gets actual physical weight 
     Args:
         a0 ( int): a0
 
     Returns:
-        float
+        actual physical weight (float)
     """
 
 def get_actual_physical_volume(a0: int) -> float:
-    """get actual physical volume
+    """Gets actual physical volume 
+
+    This includes negative geometry operations, such as end-types, drillings,
+    connectors, openings, and MEP elements. It might also take into account
+    different drilling bodies and counterbores in a connector.
+
     Args:
         a0 ( int): a0
 
     Returns:
-        float
+        actual physical volume (float)
     """
 
 def are_facets_coplanar(a0: List[point_3d], a1: List[point_3d]) -> bool:
-    """are facets coplanar
+    """Tests if facets are coplanar 
     Args:
         a0 ( List[point_3d]): a0
         a1 ( List[point_3d]): a1
 
     Returns:
-        bool
+        are facets coplanar (bool)
     """
 

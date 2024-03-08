@@ -4,6 +4,9 @@ on:
   push:
     branches-ignore:
       - 'main'
+    paths-ignore:
+      - '.github/**'
+      - 'site/**'
 
 jobs:
   build-and-publish:
@@ -44,8 +47,8 @@ jobs:
           --wheel
           --outdir dist/
           .
-      - uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          user: __token__
-          password: ${{ secrets.TEST_PYPI_API_TOKEN }}
-          repository-url: https://test.pypi.org/legacy/
+#      - uses: pypa/gh-action-pypi-publish@release/v1
+#        with:
+#          user: __token__
+#          password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+#          repository-url: https://test.pypi.org/legacy/
