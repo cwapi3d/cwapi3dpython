@@ -11,10 +11,18 @@ class ifc_options_aggregation:
             None
         """
 
-    def set_element_combine_type(self, element_combine_type: ifc_element_combine_behaviour) -> None:
-        """set element combine type
+    def get_consider_element_aggregation(self) -> bool:
+        """get consider element aggregation
         Args:
-            element_combine_type ( ifc_element_combine_behaviour): element_combine_type
+
+        Returns:
+            bool
+        """
+
+    def set_export_cover_geometry(self, export_cover_geometry: bool) -> None:
+        """set export cover geometry
+        Args:
+            export_cover_geometry ( bool): export_cover_geometry
 
         Returns:
             None
@@ -36,23 +44,6 @@ class ifc_options_aggregation:
             bool
         """
 
-    def get_element_combine_type(self) -> ifc_element_combine_behaviour:
-        """get element combine type
-        Args:
-
-        Returns:
-            ifc_element_combine_behaviour
-        """
-
-    def set_export_cover_geometry(self, export_cover_geometry: bool) -> None:
-        """set export cover geometry
-        Args:
-            export_cover_geometry ( bool): export_cover_geometry
-
-        Returns:
-            None
-        """
-
     def set_consider_element_aggregation(self, consider_element_aggregation: bool) -> None:
         """set consider element aggregation
         Args:
@@ -62,11 +53,20 @@ class ifc_options_aggregation:
             None
         """
 
-    def get_consider_element_aggregation(self) -> bool:
-        """get consider element aggregation
+    def get_element_combine_type(self) -> ifc_element_combine_behaviour:
+        """get element combine type
         Args:
 
         Returns:
-            bool
+            ifc_element_combine_behaviour
+        """
+
+    def set_element_combine_type(self, element_combine_type: ifc_element_combine_behaviour) -> None:
+        """set element combine type
+        Args:
+            element_combine_type ( ifc_element_combine_behaviour): element_combine_type
+
+        Returns:
+            None
         """
 

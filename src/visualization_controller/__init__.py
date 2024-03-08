@@ -480,3 +480,19 @@ def set_camera_data(camera_data: None) -> None:
         None
     """
 
+def is_cadwork_window_in_light_mode() -> bool:
+    """Check if Cadwork window is in light mode
+    Args:
+
+    Returns:
+        window is in light mode (bool)
+    """
+
+def is_cadwork_window_in_dark_mode() -> bool:
+    """Check if Cadwork window is in dark mode
+    Args:
+
+    Returns:
+        window is in dark mode (bool)
+    """
+

@@ -2,7 +2,7 @@ from typing import List, Tuple
 from cadwork import point_3d
 
 def get_last_error(error_code: int) -> str:
-    """Gets the last error 
+    """Gets the last error
     Args:
         error_code ( int): error_code
 
@@ -11,7 +11,7 @@ def get_last_error(error_code: int) -> str:
     """
 
 def get_3d_version() -> int:
-    """Gets the 3D version 
+    """Gets the 3D version
     Args:
 
     Returns:
@@ -19,7 +19,7 @@ def get_3d_version() -> int:
     """
 
 def get_3d_build() -> int:
-    """Gets the 3D build 
+    """Gets the 3D build
     Args:
 
     Returns:
@@ -27,7 +27,7 @@ def get_3d_build() -> int:
     """
 
 def get_3d_file_path() -> str:
-    """Gets the 3D file path 
+    """Gets the 3D file path
     Args:
 
     Returns:
@@ -35,7 +35,7 @@ def get_3d_file_path() -> str:
     """
 
 def set_project_data(element_id: str, data: str) -> None:
-    """Sets the project data 
+    """Sets the project data
     Args:
         element_id ( str): element_id
         data ( str): data
@@ -45,7 +45,7 @@ def set_project_data(element_id: str, data: str) -> None:
     """
 
 def print_error(message: str) -> None:
-    """Prints an error 
+    """Prints an error
     Args:
         message ( str): message
 
@@ -54,24 +54,25 @@ def print_error(message: str) -> None:
     """
 
 def get_language() -> str:
-    """Gets the 3D language 
+    """Gets the 3D language
     Args:
 
     Returns:
         3D language (str)
     """
 
-def print_message(message: str) -> None:
-    """Prints a message 
+def print_message(message: str, column: int) -> None:
+    """Prints a message
     Args:
         message ( str): message
+        column ( int): column
 
     Returns:
         None
     """
 
 def get_user_int(message: str) -> int:
-    """Prompts the user for an integer 
+    """Prompts the user for an integer
     Args:
         message ( str): message
 
@@ -80,7 +81,7 @@ def get_user_int(message: str) -> int:
     """
 
 def get_user_double(message: str) -> float:
-    """Prompts the user for a double 
+    """Prompts the user for a double
     Args:
         message ( str): message
 
@@ -88,17 +89,18 @@ def get_user_double(message: str) -> float:
         user double (float)
     """
 
-def get_user_bool(message: str) -> bool:
-    """Prompts the user for a boolean 
+def get_user_bool(message: str, default_yes: bool) -> bool:
+    """Prompts the user for a boolean
     Args:
         message ( str): message
+        default_yes ( bool): default_yes
 
     Returns:
         user boolean (bool)
     """
 
 def get_user_string(message: str) -> str:
-    """Prompts the user for a string 
+    """Prompts the user for a string
     Args:
         message ( str): message
 
@@ -107,7 +109,7 @@ def get_user_string(message: str) -> str:
     """
 
 def set_project_name(project_name: str) -> None:
-    """Sets the project name 
+    """Sets the project name
     Args:
         project_name ( str): project_name
 
@@ -116,7 +118,7 @@ def set_project_name(project_name: str) -> None:
     """
 
 def set_project_number(project_number: str) -> None:
-    """Sets the project number 
+    """Sets the project number
     Args:
         project_number ( str): project_number
 
@@ -125,7 +127,7 @@ def set_project_number(project_number: str) -> None:
     """
 
 def set_project_part(project_part: str) -> None:
-    """Sets the project part 
+    """Sets the project part
     Args:
         project_part ( str): project_part
 
@@ -134,7 +136,7 @@ def set_project_part(project_part: str) -> None:
     """
 
 def set_project_architect(project_architect: str) -> None:
-    """Sets the project architect 
+    """Sets the project architect
     Args:
         project_architect ( str): project_architect
 
@@ -143,7 +145,7 @@ def set_project_architect(project_architect: str) -> None:
     """
 
 def set_project_customer(project_customer: str) -> None:
-    """Sets the project customer 
+    """Sets the project customer
     Args:
         project_customer ( str): project_customer
 
@@ -152,7 +154,7 @@ def set_project_customer(project_customer: str) -> None:
     """
 
 def set_project_designer(project_designer: str) -> None:
-    """Sets the project designer 
+    """Sets the project designer
     Args:
         project_designer ( str): project_designer
 
@@ -161,7 +163,7 @@ def set_project_designer(project_designer: str) -> None:
     """
 
 def set_project_deadline(project_deadline: str) -> None:
-    """Sets the project deadline 
+    """Sets the project deadline
     Args:
         project_deadline ( str): project_deadline
 
@@ -170,7 +172,7 @@ def set_project_deadline(project_deadline: str) -> None:
     """
 
 def set_project_user_attribute(number: int, user_attribute: str) -> None:
-    """Sets the project user attribute 
+    """Sets the project user attribute
     Args:
         number ( int): number
         user_attribute ( str): user_attribute
@@ -180,7 +182,7 @@ def set_project_user_attribute(number: int, user_attribute: str) -> None:
     """
 
 def set_project_user_attribute_name(number: int, user_attribute_name: str) -> None:
-    """Sets the project user attribute name 
+    """Sets the project user attribute name
     Args:
         number ( int): number
         user_attribute_name ( str): user_attribute_name
@@ -190,7 +192,7 @@ def set_project_user_attribute_name(number: int, user_attribute_name: str) -> No
     """
 
 def set_project_latitude(latitude: float) -> None:
-    """Sets the project latitude 
+    """Sets the project latitude
     Args:
         latitude ( float): latitude
 
@@ -199,7 +201,7 @@ def set_project_latitude(latitude: float) -> None:
     """
 
 def set_project_longitude(longitude: float) -> None:
-    """Sets the project longitude 
+    """Sets the project longitude
     Args:
         longitude ( float): longitude
 
@@ -208,7 +210,7 @@ def set_project_longitude(longitude: float) -> None:
     """
 
 def set_project_address(address: str) -> None:
-    """Sets the project address 
+    """Sets the project address
     Args:
         address ( str): address
 
@@ -217,7 +219,7 @@ def set_project_address(address: str) -> None:
     """
 
 def set_project_postal_code(postal_code: str) -> None:
-    """Sets the project postal code 
+    """Sets the project postal code
     Args:
         postal_code ( str): postal_code
 
@@ -226,7 +228,7 @@ def set_project_postal_code(postal_code: str) -> None:
     """
 
 def set_project_city(city: str) -> None:
-    """Sets the project city 
+    """Sets the project city
     Args:
         city ( str): city
 
@@ -235,7 +237,7 @@ def set_project_city(city: str) -> None:
     """
 
 def set_project_country(country: str) -> None:
-    """Sets the project country 
+    """Sets the project country
     Args:
         country ( str): country
 
@@ -244,7 +246,7 @@ def set_project_country(country: str) -> None:
     """
 
 def get_user_file_from_dialog(name_filter: str) -> str:
-    """Gets a file with a dialog 
+    """Gets a file with a dialog
     Args:
         name_filter ( str): name_filter
 
@@ -253,7 +255,7 @@ def get_user_file_from_dialog(name_filter: str) -> str:
     """
 
 def get_client_number() -> str:
-    """Gets the client number 
+    """Gets the client number
     Args:
 
     Returns:
@@ -261,7 +263,7 @@ def get_client_number() -> str:
     """
 
 def get_user_point() -> point_3d:
-    """Gets a point from the user 
+    """Gets a point from the user
     Args:
 
     Returns:
@@ -285,7 +287,7 @@ def enable_auto_display_refresh() -> None:
     """
 
 def create_new_guid() -> str:
-    """Creates a new GUID 
+    """Creates a new GUID
     Args:
 
     Returns:
@@ -293,7 +295,7 @@ def create_new_guid() -> str:
     """
 
 def print_to_console(message: str) -> None:
-    """Prints a message to the console 
+    """Prints a message to the console
     Args:
         message ( str): message
 
@@ -301,17 +303,18 @@ def print_to_console(message: str) -> None:
         None
     """
 
-def export_screen_to_image(file_path: str) -> None:
-    """Exports the screen to an image 
+def export_screen_to_image(file_path: str, factor: int) -> None:
+    """Exports the screen to an image
     Args:
         file_path ( str): file_path
+        factor ( int): factor
 
     Returns:
         None
     """
 
 def get_new_user_file_from_dialog(name_filter: str) -> str:
-    """Gets a new file with a dialog 
+    """Gets a new file with a dialog
     Args:
         name_filter ( str): name_filter
 
@@ -357,7 +360,7 @@ def check_autostart(api_name: str) -> bool:
     """
 
 def delete_project_data(element_id: str) -> None:
-    """Deletes the project data 
+    """Deletes the project data
     Args:
         element_id ( str): element_id
 
@@ -366,7 +369,7 @@ def delete_project_data(element_id: str) -> None:
     """
 
 def run_external_program(name: str) -> bool:
-    """Runs a 3D external program 
+    """Runs a 3D external program
     Args:
         name ( str): name
 
@@ -383,7 +386,7 @@ def save_3d_file_silently() -> None:
     """
 
 def get_licence_first_part() -> str:
-    """Gets the first part of the licence 
+    """Gets the first part of the licence
     Args:
 
     Returns:
@@ -391,7 +394,7 @@ def get_licence_first_part() -> str:
     """
 
 def get_licence_second_part() -> str:
-    """Gets the second part of the licence 
+    """Gets the second part of the licence
     Args:
 
     Returns:
@@ -407,7 +410,7 @@ def show_progress_bar() -> None:
     """
 
 def update_progress_bar(value: int) -> None:
-    """Updates the ProgressBar with a value 
+    """Updates the ProgressBar with a value
     Args:
         value ( int): value
 
@@ -424,7 +427,7 @@ def hide_progress_bar() -> None:
     """
 
 def get_user_color(initial_color: int) -> int:
-    """Gets a color choosen by the user 
+    """Gets a color choosen by the user
     Args:
         initial_color ( int): initial_color
 
@@ -433,7 +436,7 @@ def get_user_color(initial_color: int) -> int:
     """
 
 def get_3d_linear_units() -> str:
-    """Gets the current linear units 
+    """Gets the current linear units
     Args:
 
     Returns:
@@ -441,7 +444,7 @@ def get_3d_linear_units() -> str:
     """
 
 def get_3d_linear_display_units() -> str:
-    """Gets the current display units 
+    """Gets the current display units
     Args:
 
     Returns:
@@ -449,7 +452,7 @@ def get_3d_linear_display_units() -> str:
     """
 
 def get_3d_angular_units() -> str:
-    """Gets the current angular units 
+    """Gets the current angular units
     Args:
 
     Returns:
@@ -457,7 +460,7 @@ def get_3d_angular_units() -> str:
     """
 
 def get_3d_angular_display_units() -> str:
-    """Gets the current angular display units 
+    """Gets the current angular display units
     Args:
 
     Returns:
@@ -465,7 +468,7 @@ def get_3d_angular_display_units() -> str:
     """
 
 def get_3d_build_date() -> str:
-    """Gets the current build date 
+    """Gets the current build date
     Args:
 
     Returns:
@@ -473,7 +476,7 @@ def get_3d_build_date() -> str:
     """
 
 def set_project_elevation(elevation: float) -> None:
-    """Sets the project elevation 
+    """Sets the project elevation
     Args:
         elevation ( float): elevation
 
@@ -762,7 +765,7 @@ def execute_shortcut(a0: int, a1: int) -> None:
     """
 
 def run_external_program_from_custom_directory(file_path: str) -> bool:
-    """Runs a 3D external program from a custom file path 
+    """Runs a 3D external program from a custom file path
     Args:
         file_path ( str): file_path
 
@@ -771,7 +774,7 @@ def run_external_program_from_custom_directory(file_path: str) -> bool:
     """
 
 def get_3d_file_name() -> str:
-    """Gets the 3D file name 
+    """Gets the 3D file name
     Args:
 
     Returns:
@@ -779,7 +782,7 @@ def get_3d_file_name() -> str:
     """
 
 def get_project_data(element_id: str) -> str:
-    """Gets the project data 
+    """Gets the project data
     Args:
         element_id ( str): element_id
 
@@ -788,7 +791,7 @@ def get_project_data(element_id: str) -> str:
     """
 
 def get_project_name() -> str:
-    """Gets the project name 
+    """Gets the project name
     Args:
 
     Returns:
@@ -796,7 +799,7 @@ def get_project_name() -> str:
     """
 
 def get_project_part() -> str:
-    """Sets the project part 
+    """Sets the project part
     Args:
 
     Returns:
@@ -804,7 +807,7 @@ def get_project_part() -> str:
     """
 
 def get_project_architect() -> str:
-    """Gets the project architect 
+    """Gets the project architect
     Args:
 
     Returns:
@@ -812,7 +815,7 @@ def get_project_architect() -> str:
     """
 
 def get_project_number() -> str:
-    """Gets the project number 
+    """Gets the project number
     Args:
 
     Returns:
@@ -820,7 +823,7 @@ def get_project_number() -> str:
     """
 
 def get_project_customer() -> str:
-    """Gets the project customer 
+    """Gets the project customer
     Args:
 
     Returns:
@@ -828,7 +831,7 @@ def get_project_customer() -> str:
     """
 
 def get_project_designer() -> str:
-    """Gets the project designer 
+    """Gets the project designer
     Args:
 
     Returns:
@@ -836,7 +839,7 @@ def get_project_designer() -> str:
     """
 
 def get_project_deadline() -> str:
-    """Gets the project deadline 
+    """Gets the project deadline
     Args:
 
     Returns:
@@ -844,7 +847,7 @@ def get_project_deadline() -> str:
     """
 
 def get_project_user_attribute(number: int) -> str:
-    """Gets the project user attribute 
+    """Gets the project user attribute
     Args:
         number ( int): number
 
@@ -853,7 +856,7 @@ def get_project_user_attribute(number: int) -> str:
     """
 
 def get_project_user_attribute_name(number: int) -> str:
-    """Gets the project user attribute name 
+    """Gets the project user attribute name
     Args:
         number ( int): number
 
@@ -862,7 +865,7 @@ def get_project_user_attribute_name(number: int) -> str:
     """
 
 def get_project_latitude() -> float:
-    """Gets the project latitude 
+    """Gets the project latitude
     Args:
 
     Returns:
@@ -870,7 +873,7 @@ def get_project_latitude() -> float:
     """
 
 def get_project_longitude() -> float:
-    """Gets the project longitude 
+    """Gets the project longitude
     Args:
 
     Returns:
@@ -878,7 +881,7 @@ def get_project_longitude() -> float:
     """
 
 def get_project_postal_code() -> str:
-    """Gets the project postal code 
+    """Gets the project postal code
     Args:
 
     Returns:
@@ -886,7 +889,7 @@ def get_project_postal_code() -> str:
     """
 
 def get_project_address() -> str:
-    """Gets the project address 
+    """Gets the project address
     Args:
 
     Returns:
@@ -894,7 +897,7 @@ def get_project_address() -> str:
     """
 
 def get_project_city() -> str:
-    """Gets the project city 
+    """Gets the project city
     Args:
 
     Returns:
@@ -902,7 +905,7 @@ def get_project_city() -> str:
     """
 
 def get_project_country() -> str:
-    """Gets the project country 
+    """Gets the project country
     Args:
 
     Returns:
@@ -910,7 +913,7 @@ def get_project_country() -> str:
     """
 
 def get_project_elevation() -> float:
-    """Gets the project elevation 
+    """Gets the project elevation
     Args:
 
     Returns:
@@ -926,7 +929,7 @@ def get_project_description() -> str:
     """
 
 def get_project_guid() -> str:
-    """Gets the project GUID 
+    """Gets the project GUID
     Args:
 
     Returns:
@@ -934,7 +937,7 @@ def get_project_guid() -> str:
     """
 
 def get_3d_userprofil_path() -> str:
-    """Gets the 3D userprofil path 
+    """Gets the 3D userprofil path
     Args:
 
     Returns:
@@ -976,7 +979,7 @@ def get_user_catalog_path() -> str:
     """
 
 def get_3d_hwnd() -> int:
-    """Gets the 3D HWND 
+    """Gets the 3D HWND
     Args:
 
     Returns:
@@ -984,7 +987,7 @@ def get_3d_hwnd() -> int:
     """
 
 def close_cadwork_document_saved() -> None:
-    """close cadwork saved 
+    """close cadwork saved
     Args:
 
     Returns:
@@ -1008,7 +1011,7 @@ def get_use_of_global_coordinates() -> bool:
     """
 
 def set_use_of_global_coordinates(use_of_global_coordinates: bool) -> None:
-    """Sets the use of global coordinates 
+    """Sets the use of global coordinates
     Args:
         use_of_global_coordinates ( bool): use_of_global_coordinates
 
@@ -1017,7 +1020,7 @@ def set_use_of_global_coordinates(use_of_global_coordinates: bool) -> None:
     """
 
 def get_global_origin() -> point_3d:
-    """Gets the global origin 
+    """Gets the global origin
     Args:
 
     Returns:
@@ -1025,7 +1028,7 @@ def get_global_origin() -> point_3d:
     """
 
 def set_global_origin(global_origin: point_3d) -> None:
-    """Sets the global origin 
+    """Sets the global origin
     Args:
         global_origin ( point_3d): global_origin
 
@@ -1034,7 +1037,7 @@ def set_global_origin(global_origin: point_3d) -> None:
     """
 
 def create_snapshot() -> str:
-    """get snapshot from screen 
+    """get snapshot from screen
     Args:
 
     Returns:

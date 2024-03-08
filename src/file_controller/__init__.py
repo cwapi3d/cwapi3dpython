@@ -1,6 +1,7 @@
 from typing import List
 from cadwork import point_3d
 from cadwork import rhino_options
+from cadwork import import_3dc_options
 
 def get_last_error(error_code: int) -> str:
     """Gets the last error 
@@ -292,6 +293,49 @@ def export_rhino_file_with_options(a0: List[int], a1: str, a2: int, a3: bool, a4
         a3 ( bool): a3
         a4 ( bool): a4
         a5 ( rhino_options): a5
+
+    Returns:
+        None
+    """
+
+
+def import_3dc_file_with_options(file_path: str, import3dc_options: None) -> List[int]:
+    """imports a 3d or a 3dc file depending on the import options
+    Args:
+        file_path ( str): file_path
+        import3dc_options ( None): import3dc_options
+
+    Returns:
+        imported element ID list (List[int])
+    """
+
+def get_import_3dc_options() -> 'import_3dc_options':
+    """get import 3dc options
+    Args:
+
+    Returns:
+        import_3dc_options
+    """
+
+
+def load_webgl_preset_file(file_path: str) -> None:
+    """loads a preset file for the WebGl export
+    Args:
+        file_path ( str): file_path
+
+    Returns:
+        None
+    """
+
+def export_step_file_extrude_drillings(elements: List[int], file_path: str, scale_factor: float, version: int, text_mode: bool, imperial_units: bool) -> None:
+    """Exports a STEP file with extruded drillings
+    Args:
+        elements ( List[int]): elements
+        file_path ( str): file_path
+        scale_factor ( float): scale_factor
+        version ( int): version
+        text_mode ( bool): text_mode
+        imperial_units ( bool): imperial_units
 
     Returns:
         None

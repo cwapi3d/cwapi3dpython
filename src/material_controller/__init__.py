@@ -489,3 +489,20 @@ def get_short_name(a0: int) -> str:
         str
     """
 
+def get_all_material_groups() -> List[str]:
+    """Gets all the material groups
+    Args:
+
+    Returns:
+        group names (List[str])
+    """
+
+def get_parent_group(group: str) -> str:
+    """Gets the parent group of a material group
+    Args:
+        group ( str): group
+
+    Returns:
+        parent group name (str)
+    """
+

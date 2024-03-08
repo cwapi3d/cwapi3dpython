@@ -4,6 +4,7 @@ from cadwork import element_module_properties
 from cadwork import facet_list
 from cadwork import point_3d
 from cadwork import text_object_options
+from cadwork import coordinate_system_data
 
 def get_last_error(error_code: int) -> str:
     """Gets the last error 
@@ -1522,5 +1523,104 @@ def create_text_object_with_options(position: point_3d, xl: point_3d, zl: point_
 
     Returns:
         int
+    """
+
+
+def cut_corner_lap(elements: List[int], depth: float, clearance_base: float, clearance_side: float, backcut: float, drilling_count: int, drilling_diameter: float, drilling_tolerance: float) -> None:
+    """cuts a corner-lap with specific parameters
+    Args:
+        elements ( List[int]): elements
+        depth ( float): depth
+        clearance_base ( float): clearance_base
+        clearance_side ( float): clearance_side
+        backcut ( float): backcut
+        drilling_count ( int): drilling_count
+        drilling_diameter ( float): drilling_diameter
+        drilling_tolerance ( float): drilling_tolerance
+
+    Returns:
+        None
+    """
+
+def cut_t_lap(elements: List[int], depth: float, clearance_base: float, clearance_side: float, backcut: float, drilling_count: int, drilling_diameter: float, drilling_tolerance: float) -> None:
+    """cuts a t-lap with specific parameters
+    Args:
+        elements ( List[int]): elements
+        depth ( float): depth
+        clearance_base ( float): clearance_base
+        clearance_side ( float): clearance_side
+        backcut ( float): backcut
+        drilling_count ( int): drilling_count
+        drilling_diameter ( float): drilling_diameter
+        drilling_tolerance ( float): drilling_tolerance
+
+    Returns:
+        None
+    """
+
+def cut_cross_lap(elements: List[int], depth: float, clearance_base: float, clearance_side: float, drilling_count: int, drilling_diameter: float, drilling_tolerance: float) -> None:
+    """cuts a cross-lap with specific parameters
+    Args:
+        elements ( List[int]): elements
+        depth ( float): depth
+        clearance_base ( float): clearance_base
+        clearance_side ( float): clearance_side
+        drilling_count ( int): drilling_count
+        drilling_diameter ( float): drilling_diameter
+        drilling_tolerance ( float): drilling_tolerance
+
+    Returns:
+        None
+    """
+
+def delete_processes_keep_cutting_bodies(elements: List[int], keep_cutting_elements_only: bool) -> List[int]:
+    """Gets the cutting bodies of all processes (and deletes processes), like Ctrl+D Action
+    Args:
+        elements ( List[int]): elements
+        keep_cutting_elements_only ( bool): keep_cutting_elements_only
+
+    Returns:
+        List[int]
+    """
+
+def cut_double_tenon(elements: List[int], depth1: float, depth2: float, clearance: float, backcut: float, drilling_count: int, drilling_diameter: float, drilling_tolerance: float) -> None:
+    """cuts a double tenon with specific parameters
+    Args:
+        elements ( List[int]): elements
+        depth1 ( float): depth1
+        depth2 ( float): depth2
+        clearance ( float): clearance
+        backcut ( float): backcut
+        drilling_count ( int): drilling_count
+        drilling_diameter ( float): drilling_diameter
+        drilling_tolerance ( float): drilling_tolerance
+
+    Returns:
+        None
+    """
+
+def get_coordinate_system_data_nesting_child(nesting_parent_id: int, nesting_child_id: int) -> 'coordinate_system_data':
+    """Get the coordinate system of nesting child
+    Args:
+        nesting_parent_id ( int): nesting_parent_id
+        nesting_child_id ( int): nesting_child_id
+
+    Returns:
+        A global element coordinate-system of the nested child element consisting of a Point1, a Point2 and a Point3. You can get the local placement by subtracting the parent coordinate-system with child coordinate-system (coordinate_system_data)
+    """
+
+def cut_half_lap(elements: List[int], length: float, clearance_length: float, clearance_depth: float, drilling_count: int, drilling_diameter: float, drilling_tolerance: float) -> None:
+    """cuts a half lap joint with specific parameters
+    Args:
+        elements ( List[int]): elements
+        length ( float): length
+        clearance_length ( float): clearance_length
+        clearance_depth ( float): clearance_depth
+        drilling_count ( int): drilling_count
+        drilling_diameter ( float): drilling_diameter
+        drilling_tolerance ( float): drilling_tolerance
+
+    Returns:
+        None
     """
 

@@ -11,6 +11,7 @@ def get_last_error(a0: int) -> str:
         str
     """
 
+
 def get_ifc_guid(element_id: int) -> str:
     """get ifc guid
     Args:
@@ -85,7 +86,7 @@ def export_ifc(element_i_ds: List[int], file_path: str) -> bool:
     """
 
 def import_ifc_return_exchange_objects(file_path: str) -> List[int]:
-    """imports an IFC File and returns the ids of the Exchange Objects 
+    """imports an IFC File and returns the ids of the Exchange Objects
     Args:
         file_path ( str): file_path
 
@@ -105,7 +106,7 @@ def set_storey_height(building: str, storey: str, height: float) -> None:
     """
 
 def convert_exchange_objects(exchange_objects: List[int]) -> List[int]:
-    """converts a list of Exchange Objects to Cadwork Elements 
+    """converts a list of Exchange Objects to Cadwork Elements
     Args:
         exchange_objects ( List[int]): exchange_objects
 
@@ -217,7 +218,7 @@ def get_element_id_from_base64_ifc_guid(a1: str) -> int:
     """
 
 def get_ifc_base64_guid(element_id: int) -> str:
-    """Get IFC base64 Guid from element ID 
+    """Get IFC base64 Guid from element ID
     Args:
         element_id ( int): element_id
 
@@ -245,5 +246,43 @@ def export_ifc4_silently_with_options(element_i_ds: List[int], file_path: str, o
 
     Returns:
         bool
+    """
+
+
+def update_bmt_structure(element_i_ds: List[int]) -> None:
+    """Update the Tree Structure in the BIM-Management-Tool with the passed elements
+    Args:
+        element_i_ds ( List[int]): element_i_ds
+
+    Returns:
+        None
+    """
+
+
+def update_bmt_structure_created_elements(element_i_ds: List[int]) -> None:
+    """This function takes the specified elements and inserts them into the BMT structure and adds them to the active building and storey.
+    Args:
+        element_i_ds ( List[int]): element_i_ds
+
+    Returns:
+        None
+    """
+
+def update_bmt_structure_building_storey(element_i_ds: List[int]) -> None:
+    """This function takes the specified elements and inserts them into the BMT structure and adds them to the assigned Building and Storey.
+    Args:
+        element_i_ds ( List[int]): element_i_ds
+
+    Returns:
+        None
+    """
+
+
+def get_ifc_options() -> ifc_options:
+    """Get the IfcOptions with the settings used in the document // *
+    Args:
+
+    Returns:
+        IfcOptions // (ifc_options)
     """
 

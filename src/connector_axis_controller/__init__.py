@@ -11,7 +11,7 @@ def get_last_error(error_code: int) -> str:
     """
 
 def create_standard_connector(axis_name: str, point1: point_3d, point2: point_3d) -> int:
-    """Creates a standard connector axis between two points. 
+    """Creates a standard connector axis between two points.
     Args:
         axis_name ( str): axis_name
         point1 ( point_3d): point1
@@ -22,7 +22,7 @@ def create_standard_connector(axis_name: str, point1: point_3d, point2: point_3d
     """
 
 def set_bolt_length(axis_id: int, length: float) -> None:
-    """Sets the Bolt Length 
+    """Sets the Bolt Length
     Args:
         axis_id ( int): axis_id
         length ( float): length
@@ -32,7 +32,7 @@ def set_bolt_length(axis_id: int, length: float) -> None:
     """
 
 def set_bolt_length_automatic(axis_id: int, length_automatic: bool) -> None:
-    """Sets the Bolt Length Automatic 
+    """Sets the Bolt Length Automatic
     Args:
         axis_id ( int): axis_id
         length_automatic ( bool): length_automatic
@@ -42,7 +42,7 @@ def set_bolt_length_automatic(axis_id: int, length_automatic: bool) -> None:
     """
 
 def set_diameter(axis_id: int, diameter: float) -> None:
-    """Sets the Drilling Diameter for all Sections 
+    """Sets the Drilling Diameter for all Sections
     Args:
         axis_id ( int): axis_id
         diameter ( float): diameter
@@ -52,7 +52,7 @@ def set_diameter(axis_id: int, diameter: float) -> None:
     """
 
 def set_section_diameter(axis_id: int, section_nr: int, diameter: float) -> None:
-    """Sets the Drilling Diameter for a specific Sections 
+    """Sets the Drilling Diameter for a specific Sections
     Args:
         axis_id ( int): axis_id
         section_nr ( int): section_nr
@@ -63,7 +63,7 @@ def set_section_diameter(axis_id: int, section_nr: int, diameter: float) -> None
     """
 
 def check_axis(axis_id: int) -> bool:
-    """Returns if the axis is valid. 
+    """Returns if the axis is valid.
     Args:
         axis_id ( int): axis_id
 
@@ -80,7 +80,7 @@ def clear_errors() -> None:
     """
 
 def update_axis_cutting_ability(axis_i_ds: List[int]) -> None:
-    """updates the Connection Config (CuttingAbility) of Axis/VBAs 
+    """updates the Connection Config (CuttingAbility) of Axis/VBAs
     Args:
         axis_i_ds ( List[int]): axis_i_ds
 
@@ -89,7 +89,7 @@ def update_axis_cutting_ability(axis_i_ds: List[int]) -> None:
     """
 
 def set_bolt_item(axis_id: int, item_guid: str) -> None:
-    """Sets the Bolt Item 
+    """Sets the Bolt Item
     Args:
         axis_id ( int): axis_id
         item_guid ( str): item_guid
@@ -119,7 +119,7 @@ def import_from_file(a0: str) -> None:
     """
 
 def start_configuration_dialog() -> None:
-    """Starts the ConnectorAxis configuration dialog. 
+    """Starts the ConnectorAxis configuration dialog.
     Args:
 
     Returns:
@@ -137,7 +137,7 @@ def get_item_guid_by_name(name: str, item_type: int) -> str:
     """
 
 def get_bolt_length(axis_id: int) -> float:
-    """Gets the Bolt Length 
+    """Gets the Bolt Length
     Args:
         axis_id ( int): axis_id
 
@@ -146,7 +146,7 @@ def get_bolt_length(axis_id: int) -> float:
     """
 
 def get_bolt_over_length(axis_id: int) -> float:
-    """Gets the Bolt OverLength 
+    """Gets the Bolt OverLength
     Args:
         axis_id ( int): axis_id
 
@@ -155,7 +155,7 @@ def get_bolt_over_length(axis_id: int) -> float:
     """
 
 def set_bolt_over_length(axis_id: int, over_length: float) -> None:
-    """Sets the Bolt OverLength 
+    """Sets the Bolt OverLength
     Args:
         axis_id ( int): axis_id
         over_length ( float): over_length
@@ -165,7 +165,7 @@ def set_bolt_over_length(axis_id: int, over_length: float) -> None:
     """
 
 def get_bolt_length_automatic(axis_id: int) -> bool:
-    """Returns if Bolt Length Automatic is set 
+    """Returns if Bolt Length Automatic is set
     Args:
         axis_id ( int): axis_id
 
@@ -174,7 +174,7 @@ def get_bolt_length_automatic(axis_id: int) -> bool:
     """
 
 def get_bolt_item_guid(axis_id: int) -> str:
-    """Gets the Guid of the Bolt Item 
+    """Gets the Guid of the Bolt Item
     Args:
         axis_id ( int): axis_id
 
@@ -183,7 +183,7 @@ def get_bolt_item_guid(axis_id: int) -> str:
     """
 
 def get_section_diameter(axis_id: int, section_nr: int) -> float:
-    """Gets the Drilling Diameter of a specific Sections 
+    """Gets the Drilling Diameter of a specific Sections
     Args:
         axis_id ( int): axis_id
         section_nr ( int): section_nr
@@ -193,7 +193,7 @@ def get_section_diameter(axis_id: int, section_nr: int) -> float:
     """
 
 def get_axis_items_guids(axis_id: int) -> List[str]:
-    """Returns a list of GUIDs of all axis items. 
+    """Returns a list of GUIDs of all axis items.
     Args:
         axis_id ( int): axis_id
 
@@ -202,7 +202,7 @@ def get_axis_items_guids(axis_id: int) -> List[str]:
     """
 
 def get_axis_item_name(guid: str) -> str:
-    """Returns the name of an axis item. 
+    """Returns the name of an axis item.
     Args:
         guid ( str): guid
 
@@ -211,7 +211,7 @@ def get_axis_item_name(guid: str) -> str:
     """
 
 def get_axis_item_material(guid: str) -> str:
-    """Returns the material of an axis item. 
+    """Returns the material of an axis item.
     Args:
         guid ( str): guid
 
@@ -220,7 +220,7 @@ def get_axis_item_material(guid: str) -> str:
     """
 
 def get_axis_item_norm(guid: str) -> str:
-    """Returns the norm of an axis item. 
+    """Returns the norm of an axis item.
     Args:
         guid ( str): guid
 
@@ -229,7 +229,7 @@ def get_axis_item_norm(guid: str) -> str:
     """
 
 def get_axis_item_strength_category(guid: str) -> str:
-    """Returns the strength category of an axis item. 
+    """Returns the strength category of an axis item.
     Args:
         guid ( str): guid
 
@@ -238,7 +238,7 @@ def get_axis_item_strength_category(guid: str) -> str:
     """
 
 def get_axis_item_user_field(guid: str, user_item_nr: int) -> str:
-    """Returns an userfield value of an axis item. 
+    """Returns an userfield value of an axis item.
     Args:
         guid ( str): guid
         user_item_nr ( int): user_item_nr
@@ -248,7 +248,7 @@ def get_axis_item_user_field(guid: str, user_item_nr: int) -> str:
     """
 
 def get_axis_item_order_number(guid: str) -> str:
-    """Returns the strength category of an axis item. 
+    """Returns the strength category of an axis item.
     Args:
         guid ( str): guid
 
@@ -257,7 +257,7 @@ def get_axis_item_order_number(guid: str) -> str:
     """
 
 def get_bolt_order_number(axis_id: int) -> str:
-    """Returns the ordernumber of a bolt item. 
+    """Returns the ordernumber of a bolt item.
     Args:
         axis_id ( int): axis_id
 
@@ -266,7 +266,7 @@ def get_bolt_order_number(axis_id: int) -> str:
     """
 
 def get_section_count(axis_id: int) -> int:
-    """Returns the number of sections. 
+    """Returns the number of sections.
     Args:
         axis_id ( int): axis_id
 
@@ -275,7 +275,7 @@ def get_section_count(axis_id: int) -> int:
     """
 
 def get_section_material_name(axis_id: int, section_nr: int) -> str:
-    """Returns material of a section contact element. 
+    """Returns material of a section contact element.
     Args:
         axis_id ( int): axis_id
         section_nr ( int): section_nr
@@ -304,7 +304,7 @@ def get_bolt_diameter(a0: int) -> float:
     """
 
 def get_standard_connector_list() -> List[str]:
-    """Returns a list of all standard connectors. 
+    """Returns a list of all standard connectors.
     Args:
 
     Returns:

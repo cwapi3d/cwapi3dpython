@@ -1599,3 +1599,40 @@ def set_framed_wall(element_id_list: List[int]) -> None:
         None
     """
 
+def delete_user_attribute(number: int) -> bool:
+    """Delete user attribute from attribute list. The attribute is only deleted when the attribute is not used.
+    Args:
+        number ( int): number
+
+    Returns:
+        bool deletion successfully (bool)
+    """
+
+
+def set_framed_floor(element_id_list: List[int]) -> None:
+    """Sets the elements to framed floor
+    Args:
+        element_id_list ( List[int]): element_id_list
+
+    Returns:
+        None
+    """
+
+def set_framed_roof(element_id_list: List[int]) -> None:
+    """Sets the elements to framed roof
+    Args:
+        element_id_list ( List[int]): element_id_list
+
+    Returns:
+        None
+    """
+
+def get_name_list_items_by_element_type(a0: element_type) -> List[str]:
+    """get name list items by element type
+    Args:
+        a0 ( element_type): a0
+
+    Returns:
+        List[str]
+    """
+

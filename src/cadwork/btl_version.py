@@ -31,8 +31,6 @@ class btl_version(IntEnum):
         btlx_2_2 = 122
 
     """
-    # btl_1_0 = 110
-    # btl_1_1 = 111
     btl_1_2 = 112
     btl_1_3 = 113
     btl_1_4 = 114
