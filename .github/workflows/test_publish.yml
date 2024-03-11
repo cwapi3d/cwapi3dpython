@@ -9,7 +9,7 @@ on:
       - 'site/**'
 
 jobs:
-  pypi-publish:
+  publish-to-testpypi:
     name: Test Build and Publish
     runs-on: 'ubuntu-22.04'
 
@@ -47,8 +47,8 @@ jobs:
           --wheel
           --outdir dist/
           .
-     - uses: pypa/gh-action-pypi-publish@release/v1
-       with:
-         user: __token__
-         password: ${{ secrets.TEST_PYPI_API_TOKEN }}
-         repository-url: https://test.pypi.org/legacy/
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+          repository-url: https://test.pypi.org/legacy/

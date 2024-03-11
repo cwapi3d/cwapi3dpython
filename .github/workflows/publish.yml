@@ -9,7 +9,7 @@ on:
       - 'site/**'
 
 jobs:
-  build-and-publish:
+  publish-to-pypi:
     name: Build and Publish
     runs-on: 'ubuntu-22.04'
     steps:
