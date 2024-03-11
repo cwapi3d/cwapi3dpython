@@ -22,6 +22,7 @@ jobs:
       - run: mv src/bim_controller/__init__.py src/bim_controller/__init__.pyi
       - run: mv src/cadwork/__init__.py src/cadwork/__init__.pyi
       - run: mv src/connector_axis_controller/__init__.py src/connector_axis_controller/__init__.pyi
+      - run: mv src/dimension_controller/__init__.py src/dimension_controller/__init__.pyi
       - run: mv src/element_controller/__init__.py src/element_controller/__init__.pyi
       - run: mv src/endtype_controller/__init__.py src/endtype_controller/__init__.pyi
       - run: mv src/file_controller/__init__.py src/file_controller/__init__.pyi
