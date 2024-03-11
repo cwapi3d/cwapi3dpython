@@ -10,8 +10,8 @@ on:
 
 jobs:
   build-and-publish:
-    name: Build and Publish
-    runs-on: 'ubuntu-22.04'
+  name: Build and Publish
+  runs-on: 'ubuntu-22.04'
 
     steps:
       - uses: actions/checkout@v4
