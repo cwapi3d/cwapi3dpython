@@ -9,13 +9,13 @@ on:
       - 'site/**'
 
 jobs:
-  publish-to-testpypi:
+  build-and-publish:
     name: Test Build and Publish
     runs-on: 'ubuntu-22.04'
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.10'
       - run: mv src/attribute_controller/__init__.py src/attribute_controller/__init__.pyi
@@ -47,8 +47,8 @@ jobs:
           --wheel
           --outdir dist/
           .
-      - uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          user: __token__
-          password: ${{ secrets.TEST_PYPI_API_TOKEN }}
-          repository-url: https://test.pypi.org/legacy/
+     - uses: pypa/gh-action-pypi-publish@release/v1
+       with:
+         user: __token__
+         password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+         repository-url: https://test.pypi.org/legacy/
