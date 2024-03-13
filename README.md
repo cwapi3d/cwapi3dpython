@@ -1,5 +1,7 @@
 # Cadwork Python Interface
 
+![Logo](https://filehost.cadwork.ca/cadwork_logo.png)
+
 [![PyPI](https://img.shields.io/pypi/v/cwapi3d)](https://pypi.python.org/pypi/cwapi3d/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/cwapi3d)](https://pypi.python.org/pypi/cwapi3d/)
 [![RTD](https://img.shields.io/readthedocs/cwapi3dpython)](https://python.cadwork.dev)

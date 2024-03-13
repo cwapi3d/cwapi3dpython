@@ -1,18 +1,21 @@
 # BREP
 
-::: cadwork.facet_list
+::: src.cadwork.facet_list
+    rendering:
+        show_root_heading: false
+        show_source: true
 
-::: cadwork.edge_list
+::: src.cadwork.edge_list
+    rendering:
+        show_root_heading: false
+        show_source: true
 
-::: cadwork.polygon_list
+::: src.cadwork.polygon_list
+    rendering:
+        show_root_heading: false
+        show_source: true
 
-::: cadwork.vertex_list
-
-rendering:
-show_root_heading: false
-show_source: true
-
-<noscript>
-    <img src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/pixel.gif">
-</noscript>
-<script defer src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/script.js"></script>
+::: src.cadwork.vertex_list
+    rendering:
+        show_root_heading: false
+        show_source: true

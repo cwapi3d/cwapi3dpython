@@ -1,34 +1,59 @@
 ## Node symbols
 
-::: cadwork.node_symbol
+::: src.cadwork.node_symbol
+    rendering:
+        show_root_heading: false
+        show_source: true
 
 ## Element module
 
-::: cadwork.element_module_detail
+::: src.cadwork.element_module_detail
+    rendering:
+        show_root_heading: false
+        show_source: true
 
-::: cadwork.division_zone_direction
+::: src.cadwork.division_zone_direction
+    rendering:
+        show_root_heading: false
+        show_source: true
 
-::: cadwork.element_grouping_type
+::: src.cadwork.element_grouping_type
+    rendering:
+        show_root_heading: false
+        show_source: true
 
 ## F-Keys
 
-::: cadwork.shortcut_key
+::: src.cadwork.shortcut_key
+    rendering:
+        show_root_heading: false
+        show_source: true
 
-::: cadwork.shortcut_key_modifier
+::: src.cadwork.shortcut_key_modifier
+    rendering:
+        show_root_heading: false
+        show_source: true
 
 ## Machines
 
-::: cadwork.btl_version
+::: src.cadwork.btl_version
+    rendering:
+        show_root_heading: false
+        show_source: true
 
-::: cadwork.hundegger_machine_type
+::: src.cadwork.hundegger_machine_type
+    rendering:
+        show_root_heading: false
+        show_source: true
 
-::: cadwork.weinmann_mfb_version
+::: src.cadwork.weinmann_mfb_version
+    rendering:
+        show_root_heading: false
+        show_source: true
 
 ## IFC Aggregation Behaviour
 
-::: cadwork.ifc_element_combine_behaviour
-
-<noscript>
-    <img src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/pixel.gif">
-</noscript>
-<script defer src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/script.js"></script>
+::: src.cadwork.ifc_element_combine_behaviour
+    rendering:
+        show_root_heading: false
+        show_source: true

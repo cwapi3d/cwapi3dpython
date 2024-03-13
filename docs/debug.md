@@ -10,7 +10,9 @@ In the console you will see the screen output, or errors.
 
 User Test -> Userprofile -> Test Options... -> Console
 
-![GIF](img/console.gif){: style="width:900px"}
+<figure markdown="1">
+![GIF](img/console.gif){width=700}
+</figure>
 
 ## Console
 
@@ -24,15 +26,21 @@ print("hello world")
 
 Print output in console:
 
-![Screenshot](img/hello.png){: style="width:300px"}
+<figure markdown="1">
+![Screenshot](img/hello.png){width=300}
+</figure>
 
 Displayed Bug in console:
 
-![Screenshot](img/console_cw.png){: style="width:800px"}
+<figure markdown="1">
+![Screenshot](img/console_cw.png){width=800}
+</figure>
 
 or use the debugger from Python IDLE.
 
-![Screenshot](img/debug.jpg)
+<figure markdown="1">
+![Screenshot](img/debug.jpg){width=700}
+</figure>
 
 # Pycharm Professional
 
@@ -51,12 +59,14 @@ or use the debugger from Python IDLE.
 ```python
 
 import math
-#==============this code added==================================================================:
+# ==============this code added==================================================================:
 import pydevd_pycharm
 
 pydevd_pycharm.settrace('172.20.208.95', port=12345, stdoutToServer=True,
                         stderrToServer=True)
-#================================================================================================
+
+
+# ================================================================================================
 class Solver:
 
     def demo(self, a, b, c):
@@ -71,6 +81,7 @@ class Solver:
         else:
             return "This equation has no roots"
 
+
 if __name__ == '__main__':
     solver = Solver()
 
@@ -84,7 +95,3 @@ while True:
 
 ```
 
-<noscript>
-    <img src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/pixel.gif">
-</noscript>
-<script defer src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/script.js"></script>

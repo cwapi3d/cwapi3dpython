@@ -2,7 +2,6 @@ site_name: Cadwork Python Documentation
 
 repo_name: cwapi3d/cwapi3dpython
 repo_url: https://github.com/cwapi3d/cwapi3dpython
-edit_uri: ""
 
 copyright: Copyright 2024 Cadwork
 
@@ -14,23 +13,19 @@ theme:
   favicon: cw_logo.svg
   version: V30
   palette:
-    - scheme: slate
-      primary: "light-blue"
-      accent: "pink"
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
     - scheme: default
-      primary: "light-blue"
-      accent: "pink"
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
     - search.suggest
     - search.highlight
     - navigation.tabs
-    # - toc.integrate
+    - content.code.copy
 
 nav:
   - Home:
@@ -52,8 +47,8 @@ nav:
           - Rhino Export Options: documentation/rhino_export_options.md
           - BREP data: documentation/brep_data.md
           - IFC:
-            - IFC2x3 Element Type: documentation/ifc_2x3_element_type.md
-            - IFC Options: documentation/ifc_options.md
+              - IFC2x3 Element Type: documentation/ifc_2x3_element_type.md
+              - IFC Options: documentation/ifc_options.md
           - Camera: documentation/camera_data.md
           - Layer Settings: documentation/layer_settings.md
           - Text Object Options: documentation/text_object_options.md
@@ -72,7 +67,6 @@ nav:
       - Shop Drawing Controller: documentation/shop_drawing_controller.md
       - Utility Controller: documentation/utility_controller.md
       - Visualization Controller: documentation/visualization_controller.md
-    
   - Examples:
       - Geometry: examples/geometry.md
       - Attribute Controller: examples/attribute_example.md
@@ -100,50 +94,44 @@ nav:
       - auto_attributes.md
   - About:
       - About Guide: about.md
-  - Release Notes: release.md
+  - Release Notes: release_notes.md
 
 markdown_extensions:
-  - attr_list
   - admonition
-  - pymdownx.inlinehilite
-  - pymdownx.keys
+  - attr_list
+  - footnotes
+  - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.gemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_alt
   - pymdownx.highlight:
       linenums: true
-      linenums_style: pymdownx-inline
+  - pymdownx.keys
   - pymdownx.superfences:
-  - footnotes:
-      SEPARATOR: _footnote_
-  - pymdownx.emoji:
-     emoji_index: !!python/name:material.extensions.emoji.twemoji
-     emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.magiclink:
-      repo_url_shorthand: true
-      user: cwapi3d
-      repo: cwapi3dpython
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
-extra_css:
-  - stylesheets/extra.css
+#extra_css:
+#  - stylesheets/extra.css
+
 extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - js/mathjax.js
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
-  - javascripts/tablesort.js
+  - js/tablesort.js
 
 plugins:
-  - search:
-      separator: '[\s\-/\\]+' # \s\-\.\_
-  - mkdocstrings:
-      enabled: !ENV [ENABLE_MKDOCSTRINGS, true]
-      default_handler: python
-      handlers:
-        python:
-          setup_commands:
-            - import sys
-            - sys.path.append('src/')
-          options:
-            show_root_heading: true
-            show_source: true
+  - mkdocstrings
+  - search
+  - privacy
 
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/cwapi3d
-      name: CWAPI3D
+      name: cwapi3d
