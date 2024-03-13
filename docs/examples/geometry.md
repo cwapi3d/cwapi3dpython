@@ -37,34 +37,59 @@ A vector defines a direction and length. A point defines a location.
 
 ### Cadwork Points and Vectors
 
-<figure markdown="1">
-``` mermaid
-graph TD;
-    point_3d-->|coordinate|x;
-    point_3d-->|coordinate|y;
-    point_3d-->|coordinate|z;
-```
-</figure>
+[//]: # (<figure markdown="1">)
 
-<figure markdown="1">
-``` mermaid
-graph TD;
-    point_3d-->|coordinate|100;
-    point_3d-->|coordinate|400;
-    point_3d-->|coordinate|250;
-```
-<figcaption>point_3d(100, 400, 250)</figcaption>
-</figure>
+[//]: # (``` mermaid)
 
-<figure markdown="1">
-``` mermaid
-graph TD;
-    point_3d-->|coordinate|1.0;
-    point_3d-->|coordinate|0.0;
-    point_3d-->|coordinate|0.5;
-```
-<figcaption>point_3d(1.0, 0.0, 0.5)</figcaption>
-</figure>
+[//]: # (graph TD;)
+
+[//]: # (    point_3d-->|coordinate|x;)
+
+[//]: # (    point_3d-->|coordinate|y;)
+
+[//]: # (    point_3d-->|coordinate|z;)
+
+[//]: # (```)
+
+[//]: # (</figure>)
+
+[//]: # ()
+[//]: # (<figure markdown="1">)
+
+[//]: # (``` mermaid)
+
+[//]: # (graph TD;)
+
+[//]: # (    point_3d-->|coordinate|100;)
+
+[//]: # (    point_3d-->|coordinate|400;)
+
+[//]: # (    point_3d-->|coordinate|250;)
+
+[//]: # (```)
+
+[//]: # (<figcaption>point_3d&#40;100, 400, 250&#41;</figcaption>)
+
+[//]: # (</figure>)
+
+[//]: # ()
+[//]: # (<figure markdown="1">)
+
+[//]: # (``` mermaid)
+
+[//]: # (graph TD;)
+
+[//]: # (    point_3d-->|coordinate|1.0;)
+
+[//]: # (    point_3d-->|coordinate|0.0;)
+
+[//]: # (    point_3d-->|coordinate|0.5;)
+
+[//]: # (```)
+
+[//]: # (<figcaption>point_3d&#40;1.0, 0.0, 0.5&#41;</figcaption>)
+
+[//]: # (</figure>)
 
 A cadwork point_3d list can be accessed like a simple python list.
 
