@@ -128,7 +128,6 @@ extra_javascript:
 plugins:
   - mkdocstrings
   - search
-  - privacy
 
 extra:
   social:
