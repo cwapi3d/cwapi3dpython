@@ -3,20 +3,25 @@ hide:
   - toc
 ---
 
-# Set upt Python in cadwork - Step by Step
+# Setup Python in Cadwork
 
 To use Python scripts in cadwork, they must be located in the userprofile in the folder api.x64. 
 
 Click in a 3D file on **Help** --> **Info** and open the folder named **Userprofile** which brings you to the api.x64 directory.
 
-![Screenshot](img/info.png){: style="width:600px"}
+<figure markdown="1">
+![Screenshot](img/info.png){width=600}
+</figure>
 
 A folder must be created in the api.x64 directory for each script. The Python script must have the same name as the folder so that it can be executed.  
 
-![Screenshot](img/directory.png){: style="width:600px"}
+<figure markdown="1">
+![Screenshot](img/directory.png){width=600}
+</figure>
 
-![Screenshot](img/script.png){: style="width:600px"}
-
+<figure markdown="1">
+![Screenshot](img/script.png){width=600}
+</figure>
 
 Once you have placed a folder and a script in the directory, you can start a cadwork 3D file. 
 
@@ -41,9 +46,9 @@ For the plugins you can add a description. To do this, you can use the following
 Save the XML file under the name plugin_info.xml in the directory of your plugin.
 The plugin info is then displayed as soon as the mouse pointer is hovered over the icon.
 
-<br>
-![Screenshot](img/info_xml.png)
-<br>
+<figure markdown="1">
+![Screenshot](img/info_xml.png){width=500}
+</figure>
 
 #### plugin_info.xml
 ```xml
@@ -126,29 +131,35 @@ On macOS, there is one application menu. It dynamically changes according to the
 
 Go to [Github - cadwork](https://github.com/CadworkMontreal/PythonConsole) -> click on Button **Code** and clone or Download ZIP into your directory -> c:\users\public\documents\cadwork\userprofil_28\API.x64\PythonConsole'. 
 
-![Screenshot](img/clone.png){: style="width:800px"}
-
+<figure markdown="1">
+![Screenshot](img/clone.png){width=800}
+</figure>
 
 ### run Code
 Open cadwork 3D and open the Python Console (IDLE) from the plugin bar. 
 
 Save your .py script an hit key F5 or go via Menu -> Run -> Run Module
 ![Screenshot](img/run.png){: style="width:800px"}
+Save your .py script and press ++f5++ or go via Menu -> Run -> Run Module
+
+<figure markdown="1">
+![Screenshot](img/run.png){width=800}
+</figure>
 
 Example Code:
 
 ```python
 # import modules
-import  cadwork   
-import  element_controller      as ec
-import  attribute_controller    as ac
+import cadwork
+import element_controller as ec
+import attribute_controller as ac
 
 # get active element_ids
 element_ids = ec.get_active_identifiable_element_ids()
 
 for element_id in element_ids:
-    subgroup = ac.get_subgroup(element_id) # get subgroup name of active element_ids
-    print(subgroup) # print the subgroup names
+    subgroup = ac.get_subgroup(element_id)  # get subgroup name of active element_ids
+    print(subgroup)  # print the subgroup names
 ```
 
 
@@ -165,9 +176,10 @@ Cadwork uses CPython version 3.9.10
 
 ### Install CWAPI3D package on your device
 
-```python
+```bash
 pip install cwapi3d
 ```
+
 [Github - cwapi3d python](https://github.com/cwapi3d/cwapi3dpython){target=_blank}
 
 [PyPi Python Package](https://pypi.org/project/cwapi3d/){target=_blank}
@@ -178,9 +190,5 @@ The script cannot be run from the IDE (PyCharm, VS Code, ...). The script call m
 
 
 
-<noscript>
-    <img src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/pixel.gif">
-</noscript>
-<script defer src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/script.js"></script>
 
 
