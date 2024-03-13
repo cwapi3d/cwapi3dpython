@@ -37,14 +37,12 @@ A vector defines a direction and length. A point defines a location.
 
 ### Cadwork Points and Vectors
 
-
 ``` mermaid
 graph TD;
     point_3d-->|coordinate|x;
     point_3d-->|coordinate|y;
     point_3d-->|coordinate|z;
 ```
-
 
 ``` mermaid
 graph TD;
@@ -53,14 +51,12 @@ graph TD;
     point_3d-->|coordinate|250;
 ```
 
-
 ``` mermaid
 graph TD;
     point_3d-->|coordinate|1.0;
     point_3d-->|coordinate|0.0;
     point_3d-->|coordinate|0.5;
 ```
-
 
 A cadwork point_3d list can be accessed like a simple python list.
 
