@@ -1,20 +1,26 @@
 # IFC Options
 
-::: cadwork.ifc_options
+::: src.cadwork.ifc_options
+    rendering:
+        show_root_heading: false
+        show_source: true
 
-::: cadwork.ifc_options_aggregation
+::: src.cadwork.ifc_options_aggregation
+    rendering:
+        show_root_heading: false
+        show_source: true
 
-::: cadwork.ifc_options_level_of_detail
+::: src.cadwork.ifc_options_level_of_detail
+    rendering:
+        show_root_heading: false
+        show_source: true
 
-::: cadwork.ifc_options_project_data
+::: src.cadwork.ifc_options_project_data
+    rendering:
+        show_root_heading: false
+        show_source: true
 
-::: cadwork.ifc_options_properties
-
-rendering:
-show_root_heading: false
-show_source: true
-
-<noscript>
-    <img src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/pixel.gif">
-</noscript>
-<script defer src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/script.js"></script>
+::: src.cadwork.ifc_options_properties
+    rendering:
+        show_root_heading: false
+        show_source: true
