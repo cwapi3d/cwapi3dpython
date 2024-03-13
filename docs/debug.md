@@ -38,7 +38,6 @@ Displayed Bug in console:
 
 or use the debugger from Python IDLE.
 
-![Screenshot](img/debug.jpg)
 <figure markdown="1">
 ![Screenshot](img/debug.jpg){width=700}
 </figure>
@@ -60,12 +59,14 @@ or use the debugger from Python IDLE.
 ```python
 
 import math
-#==============this code added==================================================================:
+# ==============this code added==================================================================:
 import pydevd_pycharm
 
 pydevd_pycharm.settrace('172.20.208.95', port=12345, stdoutToServer=True,
                         stderrToServer=True)
-#================================================================================================
+
+
+# ================================================================================================
 class Solver:
 
     def demo(self, a, b, c):
@@ -79,6 +80,7 @@ class Solver:
             return -b / (2 * a)
         else:
             return "This equation has no roots"
+
 
 if __name__ == '__main__':
     solver = Solver()

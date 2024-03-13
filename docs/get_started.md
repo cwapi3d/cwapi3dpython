@@ -23,26 +23,27 @@ A folder must be created in the api.x64 directory for each script. The Python sc
 ![Screenshot](img/script.png){width=600}
 </figure>
 
-Once you have placed a folder and a script in the directory, you can start a cadwork 3D file. 
+Once you have placed a folder and a script in the directory, you can start a cadwork 3D file.
 
-Now show the plugin bar (Window -> Plugins). For the moment you see a button with the name of the plugin/script folder. 
+Now show the plugin bar (Window -> Plugins). For the moment you see a button with the name of the plugin/script folder.
 
 Instead of this name you can place an icon in the api.x64 folder under the plugin directory.
 
 !!! important "Scripts that should be callable from the plugin bar must be placed in the folder<br> ..\userprofile_28\3d\API.x64. <br>A folder must be created in this directory. The name of the folder must have the same name as the script."
-    
+
     * ..\userprofile_28\3d\API.x64 (Directory)
         * MyFirstScript (Folder)
             * MyFirstScript.py (Python File)
             * Icon.png (Plugin Icon, size ~30x30 pixel)
 
 ### add a plugin icon
+
 You can add an icon, which will be displayed in the plugin bar.
 Just add an PNG or SVG File into the API directory c:\users\public\documents\cadwork\userprofil_27\API.x64\PythonConsole. The file must have the following name **Icon.png or Icon.svg** . The icon should be scaled down to 30x30 pixels.
 
 ### Plugin Info
 
-For the plugins you can add a description. To do this, you can use the following xml file and customize and extend it according to your needs. 
+For the plugins you can add a description. To do this, you can use the following xml file and customize and extend it according to your needs.
 Save the XML file under the name plugin_info.xml in the directory of your plugin.
 The plugin info is then displayed as soon as the mouse pointer is hovered over the icon.
 
@@ -51,6 +52,7 @@ The plugin info is then displayed as soon as the mouse pointer is hovered over t
 </figure>
 
 #### plugin_info.xml
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <PluginInfo>
@@ -58,59 +60,59 @@ The plugin info is then displayed as soon as the mouse pointer is hovered over t
     <Date>2022-04-12</Date>
     <Author>your Name</Author>
     <Name>
-      <Text language="German">Plugin Title - foo bar baz</Text>
-      <Text language="English">Plugin Title - foo bar baz</Text>
-      <Text language="French"> Plugin Title - foo bar baz</Text>
-      <Text language="Italian"/>
-      <Text language="Spanish"/>
-      <Text language="Czech"/>
-      <Text language="Finnish"/>
-      <Text language="Russian"/>
-      <Text language="Polish"/>
-      <Text language="Romanian"/>
-      <Text language="Norwegian"/>
-      <Text language="Chinese"/>
-      <Text language="Portuguese"/>
-      <Text language="Estonian"/>
-      <Text language="Japanese"/>
+        <Text language="German">Plugin Title - foo bar baz</Text>
+        <Text language="English">Plugin Title - foo bar baz</Text>
+        <Text language="French">Plugin Title - foo bar baz</Text>
+        <Text language="Italian"/>
+        <Text language="Spanish"/>
+        <Text language="Czech"/>
+        <Text language="Finnish"/>
+        <Text language="Russian"/>
+        <Text language="Polish"/>
+        <Text language="Romanian"/>
+        <Text language="Norwegian"/>
+        <Text language="Chinese"/>
+        <Text language="Portuguese"/>
+        <Text language="Estonian"/>
+        <Text language="Japanese"/>
     </Name>
     <Description>
-      <Text language="German">
-<![CDATA[
+        <Text language="German">
+            <![CDATA[
 Hallo Welt... Plugin Beschreibung
 ]]>
-      </Text>
-      <Text language="English">
-<![CDATA[
+        </Text>
+        <Text language="English">
+            <![CDATA[
 Hello World... Plugin Description
 ]]>
-      </Text>
-      <Text language="French">
-<![CDATA[
+        </Text>
+        <Text language="French">
+            <![CDATA[
 Bonjour le monde... Description du plugin
 ]]>
-      </Text>
-      <Text language="Italian"/>
-      <Text language="Spanish"/>
-      <Text language="Czech"/>
-      <Text language="Finnish"/>
-      <Text language="Russian"/>
-      <Text language="Polish"/>
-      <Text language="Romanian"/>
-      <Text language="Norwegian"/>
-      <Text language="Chinese"/>
-      <Text language="Portuguese"/>
-      <Text language="Estonian"/>
-      <Text language="Japanese"/>
+        </Text>
+        <Text language="Italian"/>
+        <Text language="Spanish"/>
+        <Text language="Czech"/>
+        <Text language="Finnish"/>
+        <Text language="Russian"/>
+        <Text language="Polish"/>
+        <Text language="Romanian"/>
+        <Text language="Norwegian"/>
+        <Text language="Chinese"/>
+        <Text language="Portuguese"/>
+        <Text language="Estonian"/>
+        <Text language="Japanese"/>
     </Description>
 </PluginInfo>
 ```
 
 ## easy start with Python IDLE :bulb:
+
 IDLE is Python’s Integrated Development and Learning Environment.
 
-The IDLE allows you to run Python scripts directly in cadwork. 
-
+The IDLE allows you to run Python scripts directly in cadwork.
 
 IDLE has the following features:
 
@@ -120,7 +122,7 @@ IDLE has the following features:
 * multi-window text editor with multiple undo, Python colorizing, smart indent, call tips, auto completion, and other features
 * search within any window, replace within editor windows, and search through multiple files (grep)
 * debugger with persistent breakpoints, stepping, and viewing of global and local namespaces
-configuration, browsers, and other dialogs
+  configuration, browsers, and other dialogs
 
 Menus
 IDLE has two main window types, the Shell window and the Editor window. It is possible to have multiple editor windows simultaneously. On Windows and Linux, each has its own top menu. Each menu documented below indicates which window type it is associated with.
@@ -129,14 +131,15 @@ On macOS, there is one application menu. It dynamically changes according to the
 
 ### download / clone IDLE in cadwork userprofile
 
-Go to [Github - cadwork](https://github.com/CadworkMontreal/PythonConsole) -> click on Button **Code** and clone or Download ZIP into your directory -> c:\users\public\documents\cadwork\userprofil_28\API.x64\PythonConsole'. 
+Go to [GitHub - Cadwork](https://github.com/CadworkMontreal/PythonConsole) -> click on Button **Code** and clone or Download ZIP into your directory -> c:\users\public\documents\cadwork\userprofil_28\API.x64\PythonConsole'.
 
 <figure markdown="1">
 ![Screenshot](img/clone.png){width=800}
 </figure>
 
 ### run Code
-Open cadwork 3D and open the Python Console (IDLE) from the plugin bar. 
+
+Open cadwork 3D and open the Python Console (IDLE) from the plugin bar.
 
 Save your .py script and press ++f5++ or go via Menu -> Run -> Run Module
 
@@ -160,16 +163,15 @@ for element_id in element_ids:
     print(subgroup)  # print the subgroup names
 ```
 
-
-
 ## Use your prefered IDE (advanced user)
-Of course, you can also use any other Python IDE. 
-For this purpose e.g. PyCharm is recommended. 
-Install the CWAPI3D package into your environment via ```pip install cwapi3d```. Open your IDE and start with your script. 
+
+Of course, you can also use any other Python IDE.
+For this purpose e.g. PyCharm is recommended.
+Install the CWAPI3D package into your environment via ```pip install cwapi3d```. Open your IDE and start with your script.
 Install a specific version ```pip install <PACKAGE>==<VERSION>```
 
-
 ### Python version used in cadwork :bulb:  <br>
+
 Cadwork uses CPython version 3.9.10
 
 ### Install CWAPI3D package on your device
@@ -182,7 +184,7 @@ pip install cwapi3d
 
 [PyPi Python Package](https://pypi.org/project/cwapi3d/){target=_blank}
 
-The script cannot be run from the IDE (PyCharm, VS Code, ...). The script call must be made in cadwork (Plugin Bar). 
+The script cannot be run from the IDE (PyCharm, VS Code, ...). The script call must be made in cadwork (Plugin Bar).
 
 [Example Video - How to Python in cadwork](videos.md#Videos) :tv: <br>
 
