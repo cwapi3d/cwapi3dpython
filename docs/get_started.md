@@ -5,7 +5,7 @@ hide:
 
 # Setup Python in Cadwork
 
-To use Python scripts in cadwork, they must be located in the userprofile in the folder api.x64. 
+To use Python scripts in cadwork, they must be located in the userprofile in the folder api.x64.
 
 Click in a 3D file on **Help** --> **Info** and open the folder named **Userprofile** which brings you to the api.x64 directory.
 
@@ -13,7 +13,7 @@ Click in a 3D file on **Help** --> **Info** and open the folder named **Userprof
 ![Screenshot](img/info.png){width=600}
 </figure>
 
-A folder must be created in the api.x64 directory for each script. The Python script must have the same name as the folder so that it can be executed.  
+A folder must be created in the api.x64 directory for each script. The Python script must have the same name as the folder so that it can be executed.
 
 <figure markdown="1">
 ![Screenshot](img/directory.png){width=600}
@@ -138,8 +138,6 @@ Go to [Github - cadwork](https://github.com/CadworkMontreal/PythonConsole) -> cl
 ### run Code
 Open cadwork 3D and open the Python Console (IDLE) from the plugin bar. 
 
-Save your .py script an hit key F5 or go via Menu -> Run -> Run Module
-![Screenshot](img/run.png){: style="width:800px"}
 Save your .py script and press ++f5++ or go via Menu -> Run -> Run Module
 
 <figure markdown="1">
