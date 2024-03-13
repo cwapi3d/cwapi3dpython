@@ -2,7 +2,6 @@ site_name: Cadwork Python Documentation
 
 repo_name: cwapi3d/cwapi3dpython
 repo_url: https://github.com/cwapi3d/cwapi3dpython
-edit_uri: ""
 
 copyright: Copyright 2024 Cadwork
 
@@ -30,7 +29,7 @@ theme:
     - search.suggest
     - search.highlight
     - navigation.tabs
-    # - toc.integrate
+    - content.code.copy
 
 nav:
   - Home:
@@ -100,9 +99,10 @@ nav:
       - auto_attributes.md
   - About:
       - About Guide: about.md
-  - Release Notes: release.md
+  - Release Notes: release_notes.md
 
 markdown_extensions:
+  - md_in_html
   - attr_list
   - admonition
   - pymdownx.inlinehilite
@@ -146,4 +146,4 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/cwapi3d
-      name: CWAPI3D
+      name: cwapi3d
