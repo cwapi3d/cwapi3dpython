@@ -4,51 +4,21 @@ on:
   push:
     branches:
       - 'main'
-    paths-ignore:
-      - '.github/**'
-      - 'site/**'
 
 jobs:
   build-and-publish:
     name: Build and Publish
-    runs-on: 'ubuntu-22.04'
-
+    runs-on: 'ubuntu-latest'
+    environment:
+          name: pypi
+          url: https://pypi.org/p/cwapi3d
+    permissions:
+      id-token: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-      - run: mv src/attribute_controller/__init__.py src/attribute_controller/__init__.pyi
-      - run: mv src/bim_controller/__init__.py src/bim_controller/__init__.pyi
-      - run: mv src/cadwork/__init__.py src/cadwork/__init__.pyi
-      - run: mv src/connector_axis_controller/__init__.py src/connector_axis_controller/__init__.pyi
-      - run: mv src/dimension_controller/__init__.py src/dimension_controller/__init__.pyi
-      - run: mv src/element_controller/__init__.py src/element_controller/__init__.pyi
-      - run: mv src/endtype_controller/__init__.py src/endtype_controller/__init__.pyi
-      - run: mv src/file_controller/__init__.py src/file_controller/__init__.pyi
-      - run: mv src/geometry_controller/__init__.py src/geometry_controller/__init__.pyi
-      - run: mv src/list_controller/__init__.py src/list_controller/__init__.pyi
-      - run: mv src/machine_controller/__init__.py src/machine_controller/__init__.pyi
-      - run: mv src/material_controller/__init__.py src/material_controller/__init__.pyi
-      - run: mv src/menu_controller/__init__.py src/menu_controller/__init__.pyi
-      - run: mv src/roof_controller/__init__.py src/roof_controller/__init__.pyi
-      - run: mv src/scene_controller/__init__.py src/scene_controller/__init__.pyi
-      - run: mv src/shop_drawing_controller/__init__.py src/shop_drawing_controller/__init__.pyi
-      - run: mv src/utility_controller/__init__.py src/utility_controller/__init__.pyi
-      - run: mv src/visualization_controller/__init__.py src/visualization_controller/__init__.pyi
-      - run: >-
-          python -m
-          pip install
-          build
-          --user
-      - run: >-
-          python -m
-          build
-          --sdist
-          --wheel
-          --outdir dist/
-          .
+      - run: pip install build
+      - run: python -m build
       - uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          user: __token__
-          password: ${{ secrets.PYPI_API_TOKEN }}
