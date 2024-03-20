@@ -3,12 +3,11 @@ from enum import IntEnum, unique
 
 @unique
 class node_symbol(IntEnum):
-    """
+    """node symbol
 
     Examples:
         >>> cadwork.node_symbol.SmallSquare
         SmallSquare
-
     """
     SmallSquare = 1
     """"""

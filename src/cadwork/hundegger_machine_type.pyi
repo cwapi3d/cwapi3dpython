@@ -3,12 +3,11 @@ from enum import IntEnum, unique
 
 @unique
 class hundegger_machine_type(IntEnum):
-    """
+    """hundegger machine type
 
     Examples:
         >>> cadwork.hundegger_machine_type.p8_10
         p8_10
-
     """
     p8_10 = 1
     """"""

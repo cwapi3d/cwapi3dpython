@@ -3,7 +3,7 @@ from enum import IntEnum, unique
 
 @unique
 class division_zone_direction(IntEnum):
-    """
+    """division zone direction
 
     Examples:
         >>> cadwork.division_zone_direction.positive
