@@ -3,12 +3,11 @@ from enum import IntEnum, unique
 
 @unique
 class weinmann_mfb_version(IntEnum):
-    """
+    """weinmann mfb version
 
     Examples:
         >>> cadwork.weinmann_mfb_version.wup_2_0
         wup_2_0
-
     """
     wup_2_0 = 20
     """"""

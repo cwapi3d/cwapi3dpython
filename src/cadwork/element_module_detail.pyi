@@ -3,7 +3,7 @@ from enum import IntEnum, unique
 
 @unique
 class element_module_detail(IntEnum):
-    """
+    """element module detail
 
     Examples:
         >>> cadwork.element_module_detail.no_detail

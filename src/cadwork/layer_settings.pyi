@@ -1,163 +1,75 @@
 class layer_settings:
-    def setWithoutOutput(self) -> None:
-        """setWithoutOutput
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_without_output(self) -> None:
-        """set_without_output
-        Args:
-
-        Returns:
-            None
-        """
-
-    def isWithAttributesOutput(self) -> bool:
-        """isWithAttributesOutput
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_with_attributes_output(self) -> bool:
-        """is_with_attributes_output
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def setWithAttributesOutput(self) -> None:
-        """setWithAttributesOutput
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_with_attributes_output(self) -> None:
-        """set_with_attributes_output
-        Args:
-
-        Returns:
-            None
-        """
-
-    def getLayer(self) -> int:
-        """getLayer
-        Args:
-
-        Returns:
-            int
-        """
-
+    
     def get_layer(self) -> int:
-        """get_layer
-        Args:
+        """get layer
 
         Returns:
             int
-        """
-
-    def isWithoutOutput(self) -> bool:
-        """isWithoutOutput
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_without_output(self) -> bool:
-        """is_without_output
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def setWithDimensionsOutput(self) -> None:
-        """setWithDimensionsOutput
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_with_dimensions_output(self) -> None:
-        """set_with_dimensions_output
-        Args:
-
-        Returns:
-            None
-        """
-
-    def setWithoutDimensionsOutput(self) -> None:
-        """setWithoutDimensionsOutput
-        Args:
-
-        Returns:
-            None
-        """
-
-    def set_without_dimensions_output(self) -> None:
-        """set_without_dimensions_output
-        Args:
-
-        Returns:
-            None
-        """
-
-    def isWithDimensionsOutput(self) -> bool:
-        """isWithDimensionsOutput
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def is_with_dimensions_output(self) -> bool:
-        """is_with_dimensions_output
-        Args:
-
-        Returns:
-            bool
-        """
-
-    def setLayer(self, layer_number: int) -> None:
-        """setLayer
-        Args:
-            layer_number ( int): layer_number
-
-        Returns:
-            None
         """
 
     def set_layer(self, layer_number: int) -> None:
-        """set_layer
-        Args:
-            layer_number ( int): layer_number
+        """set layer
+
+        Parameters:
+            layer_number: layer_number
 
         Returns:
             None
         """
 
-    def isWithoutDimensionsOutput(self) -> bool:
-        """isWithoutDimensionsOutput
-        Args:
+    def is_without_output(self) -> bool:
+        """is without output
 
         Returns:
             bool
         """
 
-    def is_without_dimensions_output(self) -> bool:
-        """is_without_dimensions_output
-        Args:
+    def set_without_output(self) -> None:
+        """set without output
+
+        Returns:
+            None
+        """
+
+    def is_with_dimensions_output(self) -> bool:
+        """is with dimensions output
 
         Returns:
             bool
+        """
+
+    def set_with_dimensions_output(self) -> None:
+        """set with dimensions output
+
+        Returns:
+            None
+        """
+
+    def is_without_dimensions_output(self) -> bool:
+        """is without dimensions output
+
+        Returns:
+            bool
+        """
+
+    def set_without_dimensions_output(self) -> None:
+        """set without dimensions output
+
+        Returns:
+            None
+        """
+
+    def is_with_attributes_output(self) -> bool:
+        """is with attributes output
+
+        Returns:
+            bool
+        """
+
+    def set_with_attributes_output(self) -> None:
+        """set with attributes output
+
+        Returns:
+            None
         """
 

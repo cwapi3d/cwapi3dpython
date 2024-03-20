@@ -3,18 +3,15 @@ from enum import IntEnum, unique
 
 @unique
 class shortcut_key_modifier(IntEnum):
-    """
+    """shortcut key modifier
 
     Examples:
-        >>> cadwork.shortcut_key_modifier.no_modifier
-        no_modifier
-
+        >>> cadwork.shortcut_key_modifier.shift
+        shift
     """
-    no_modifier = 0
+    shift = 1
     """"""
     ctrl = 2
-    """"""
-    shift = 1
     """"""
     alt = 3
     """"""

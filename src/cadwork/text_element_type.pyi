@@ -3,12 +3,11 @@ from enum import IntEnum, unique
 
 @unique
 class text_element_type(IntEnum):
-    """
+    """text element type
 
     Examples:
         >>> cadwork.text_element_type.line
         line
-
     """
     line = 0
     """"""
@@ -21,3 +20,4 @@ class text_element_type(IntEnum):
 
     def __int__(self) -> int:
         return self.value
+

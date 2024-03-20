@@ -1,9 +1,9 @@
 from cadwork import point_3d
 
 class vertex_list:
+    
     def count(self) -> int:
         """count
-        Args:
 
         Returns:
             int
@@ -11,8 +11,9 @@ class vertex_list:
 
     def at(self, index: int) -> point_3d:
         """at
-        Args:
-            index ( int): index
+
+        Parameters:
+            index: index
 
         Returns:
             point_3d
@@ -20,8 +21,9 @@ class vertex_list:
 
     def append(self, vertex: point_3d) -> None:
         """append
-        Args:
-            vertex ( point_3d): vertex
+
+        Parameters:
+            vertex: vertex
 
         Returns:
             None

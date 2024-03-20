@@ -29,65 +29,65 @@ theme:
 
 nav:
   - Home:
-      - index.md
-      - Getting Started: get_started.md
-      - Packages and Modules: modules.md
-      - Debugging: debug.md
-      - Community: community.md
+    - index.md
+    - Getting Started: get_started.md
+    - Packages and Modules: modules.md
+    - Debugging: debug.md
+    - Community: community.md
   - Reference:
-      - Attribute Controller: documentation/attribute_controller.md
-      - BIM Controller: documentation/bim_controller.md
-      - Cadwork:
-          - Element Module Properties: documentation/element_module_properties.md
-          - Element Type: documentation/element_type.md
-          - Process Type: documentation/process_type.md
-          - Point 3D: documentation/point_3d.md
-          - Enumerations: documentation/enums.md
-          - Extended Settings: documentation/extended_settings.md
-          - Rhino Export Options: documentation/rhino_export_options.md
-          - BREP data: documentation/brep_data.md
-          - IFC:
-              - IFC2x3 Element Type: documentation/ifc_2x3_element_type.md
-              - IFC Options: documentation/ifc_options.md
-          - Camera: documentation/camera_data.md
-          - Layer Settings: documentation/layer_settings.md
-          - Text Object Options: documentation/text_object_options.md
-      - Connector Axis Controller: documentation/connector_axis_controller.md
-      - Dimension Controller: documentation/dimension_controller.md
-      - Element Controller: documentation/element_controller.md
-      - End-Type Controller: documentation/endtype_controller.md
-      - File Controller: documentation/file_controller.md
-      - Geometry Controller: documentation/geometry_controller.md
-      - List Controller: documentation/list_controller.md
-      - Machine Controller: documentation/machine_controller.md
-      - Material Controller: documentation/material_controller.md
-      - Menu Controller: documentation/menu_controller.md
-      - Roof Controller: documentation/roof_controller.md
-      - Scene Controller: documentation/scene_controller.md
-      - Shop Drawing Controller: documentation/shop_drawing_controller.md
-      - Utility Controller: documentation/utility_controller.md
-      - Visualization Controller: documentation/visualization_controller.md
+    - Attribute Controller: documentation/attribute_controller.md
+    - BIM Controller: documentation/bim_controller.md
+    - Cadwork:
+        - Element Module Properties: documentation/element_module_properties.md
+        - Element Type: documentation/element_type.md
+        - Process Type: documentation/process_type.md
+        - Point 3D: documentation/point_3d.md
+        - Enumerations: documentation/enums.md
+        - Extended Settings: documentation/extended_settings.md
+        - Rhino Export Options: documentation/rhino_export_options.md
+        - BREP data: documentation/brep_data.md
+        - IFC:
+            - IFC2x3 Element Type: documentation/ifc_2x3_element_type.md
+            - IFC Options: documentation/ifc_options.md
+        - Camera: documentation/camera_data.md
+        - Layer Settings: documentation/layer_settings.md
+        - Text Object Options: documentation/text_object_options.md
+    - Connector Axis Controller: documentation/connector_axis_controller.md
+    - Dimension Controller: documentation/dimension_controller.md
+    - Element Controller: documentation/element_controller.md
+    - End-Type Controller: documentation/endtype_controller.md
+    - File Controller: documentation/file_controller.md
+    - Geometry Controller: documentation/geometry_controller.md
+    - List Controller: documentation/list_controller.md
+    - Machine Controller: documentation/machine_controller.md
+    - Material Controller: documentation/material_controller.md
+    - Menu Controller: documentation/menu_controller.md
+    - Roof Controller: documentation/roof_controller.md
+    - Scene Controller: documentation/scene_controller.md
+    - Shop Drawing Controller: documentation/shop_drawing_controller.md
+    - Utility Controller: documentation/utility_controller.md
+    - Visualization Controller: documentation/visualization_controller.md
   - Examples:
-      - Geometry: examples/geometry.md
-      - Attribute Controller: examples/attribute_example.md
-      - BIM Controller: examples/bim_example.md
-      - Cadwork: examples/cadwork.md
-      - Connector Axis Controller: examples/connector_example.md
-      - Element Controller: examples/element_example.md
-      - End-Type Controller: examples/endtype_example.md
-      - File Controller: examples/file_example.md
-      - Geometry Controller: examples/geometry_example.md
-      - List Controller: examples/list_example.md
-      - Machine Controller: examples/machine_example.md
-      - Material Controller: examples/material_example.md
-      - Menu Controller: examples/menu_example.md
-      - Roof Controller: examples/roof_example.md
-      - Scene Controller: examples/scene_example.md
-      - Shop Drawing Controller: examples/shop_drawing_example.md
-      - Utility Controller: examples/utility_example.md
-      - Visualization Controller: examples/visualization_example.md
-      - GUI: examples/tk_gui.md
-      - Compare: examples/compare.md
+    - Geometry: examples/geometry.md
+    - Attribute Controller: examples/attribute_example.md
+    - BIM Controller: examples/bim_example.md
+    - Cadwork: examples/cadwork.md
+    - Connector Axis Controller: examples/connector_example.md
+    - Element Controller: examples/element_example.md
+    - End-Type Controller: examples/endtype_example.md
+    - File Controller: examples/file_example.md
+    - Geometry Controller: examples/geometry_example.md
+    - List Controller: examples/list_example.md
+    - Machine Controller: examples/machine_example.md
+    - Material Controller: examples/material_example.md
+    - Menu Controller: examples/menu_example.md
+    - Roof Controller: examples/roof_example.md
+    - Scene Controller: examples/scene_example.md
+    - Shop Drawing Controller: examples/shop_drawing_example.md
+    - Utility Controller: examples/utility_example.md
+    - Visualization Controller: examples/visualization_example.md
+    - GUI: examples/tk_gui.md
+    - Compare: examples/compare.md
   - Videos:
       - videos.md
   - Auto Attributes:
