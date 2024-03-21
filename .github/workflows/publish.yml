@@ -6,7 +6,7 @@ on:
       - 'main'
 
 jobs:
-  publish-to-pypi:
+  build-and-publish:
     name: Build and Publish
     runs-on: 'ubuntu-latest'
     environment:

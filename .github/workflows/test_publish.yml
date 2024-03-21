@@ -6,7 +6,7 @@ on:
       - 'main'
 
 jobs:
-  publish-to-testpypi:
+  build-and-publish:
     name: Test Build and Publish
     runs-on: 'ubuntu-latest'
     environment:
