@@ -41,8 +41,9 @@ content via a Python script.
 These attributes are created similar to the user-defined attributes in the Attributes dialog
 (User profile -> Wood... -> Attributes) in the new Script Filled -> Configuration tab.
 
+<figure markdown="1">
 ![Backup Text](img/auto.jpg "script-filled attributes"){: style="width:700px"}
-
+</figure>
 
 A created script-filled attribute is available for each element type in cadwork. In the tab "Type 
 script populated" the evaluation of the script can be limited to single element types. Tjis can be useful if, for example 
@@ -53,7 +54,9 @@ attribute remains empty for all other element types. If the element type is subs
 The execution status of the scripts can be controlled.
 The icon for configuring the script-filled attributes is visualized in the Windows menu bar to the left of the message center icon. This display hides a button that can be used to subsequently change the selected status. 
 
+<figure markdown="1">
 ![Backup Text](img/auto_button.jpg "script-filled attributes settings"){: style="width:700px"}
+</figure>
 
 ## available functions
 The available functions are marked in the documentation with an info description. 
@@ -140,7 +143,3 @@ for element_id in element_ids:
     cadwork.set_auto_attribute([element_id], f'{material} - {storey}')
 ```
 
-<noscript>
-    <img src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/pixel.gif">
-</noscript>
-<script defer src="https://analytics.cadwork.ca/ingress/e6b1702b-6224-4e93-94b7-9e4c2cd7ae06/script.js"></script>

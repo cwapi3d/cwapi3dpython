@@ -12,8 +12,9 @@ let's grow the community :rocket:
 
 [GitHub Issues](https://github.com/cwapi3d/cwapi3dpython/issues)
 
+<figure markdown="1">
 ![Screenshot](img/issues.png)
-
+</figure>
 
 # OpenSource cwmath
 

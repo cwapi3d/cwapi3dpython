@@ -1,6 +1,53 @@
-[build-system]
-requires = [
-    "setuptools>=43",
-    "wheel"
+[project]
+name = "cwapi3d"
+version = "30.443.9"
+authors = [{ name = "Cadwork", email = "it@cadwork.ca" }]
+requires-python = ">= 3.10"
+description = 'Python bindings for CwAPI3D'
+readme = "README.md"
+license = { file = "LICENSE" }
+keywords = ["cadwork"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Plugins",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Software Development :: Libraries",
 ]
+
+[project.urls]
+Homepage = "https://github.com/cwapi3d/cwapi3dpython"
+
+[build-system]
+requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = [
+    "attribute_controller",
+    "bim_controller",
+    "cadwork",
+    "connector_axis_controller",
+    "dimension_controller",
+    "element_controller",
+    "endtype_controller",
+    "file_controller",
+    "geometry_controller",
+    "list_controller",
+    "machine_controller",
+    "material_controller",
+    "menu_controller",
+    "multi_layer_cover_controller",
+    "roof_controller",
+    "scene_controller",
+    "shop_drawing_controller",
+    "utility_controller",
+    "visualization_controller"
+]
+package-dir = { "" = "src" }
+
+[tool.setuptools.exclude-package-data]
+"*" = [".py"]

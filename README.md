@@ -1,8 +1,10 @@
 # Cadwork Python Interface
 
+![Logo](https://filehost.cadwork.ca/cadwork_logo.png)
+
 [![PyPI](https://img.shields.io/pypi/v/cwapi3d)](https://pypi.python.org/pypi/cwapi3d/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/cwapi3d)](https://pypi.python.org/pypi/cwapi3d/)
-[![RTD](https://img.shields.io/readthedocs/cwapi3dpython)](https://python.cadwork.dev)
+[![RTD](https://img.shields.io/readthedocs/cwapi3dpython)](https://docs.cadwork.com/projects/cwapi3dpython/en/latest/)
 [![Issues](https://img.shields.io/github/issues/cwapi3d/cwapi3dpython)](https://github.com/cwapi3d/cwapi3dpython/issues)
 [![Pulls](https://img.shields.io/github/issues-pr/cwapi3d/cwapi3dpython)](https://github.com/cwapi3d/cwapi3dpython/pulls)
 [![GitHub](https://img.shields.io/github/license/cwapi3d/cwapi3dpython)](https://choosealicense.com/licenses/mit/)
