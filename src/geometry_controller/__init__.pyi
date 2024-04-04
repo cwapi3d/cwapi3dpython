@@ -542,13 +542,13 @@ def get_list_weight(element_id: int) -> float:
     """
 
 def get_volume(element_id: int) -> float:
-    """Gets the element real volume
+    """Gets the element rough volume (does not include negative geometry operations, such as end-types, drillings, connectors, openings, and MEP elements)
 
     Parameters:
         element_id: element_id
 
     Returns:
-        element real volume
+        element rough volume
     """
 
 def get_list_volume(element_id: int) -> float:
@@ -813,24 +813,24 @@ def get_actual_physical_weight(a0: int) -> float:
         float
     """
 
-def get_actual_physical_volume(a0: int) -> float:
-    """get actual physical volume
+def get_actual_physical_volume(element_id: int) -> float:
+    """Gets actual physical volume (includes negative geometry operations, such as end-types, drillings, connectors, openings, and MEP elements) (it might also take into account different drilling bodies and counterbores in a connector)
 
     Parameters:
-        a0: a0
+        element_id: element_id
 
     Returns:
-        float
+        actual physical volume
     """
 
-def are_facets_coplanar(a0: List[point_3d], a1: List[point_3d]) -> bool:
-    """are facets coplanar
+def are_facets_coplanar(first_facet: List[point_3d], second_facet: List[point_3d]) -> bool:
+    """Tests if facets are coplanar
 
     Parameters:
-        a0: a0
-        a1: a1
+        first_facet: first_facet
+        second_facet: second_facet
 
     Returns:
-        bool
+        facet coplanarity
     """
 
