@@ -18,6 +18,7 @@ from .ifc_options_aggregation import ifc_options_aggregation
 from .ifc_options_level_of_detail import ifc_options_level_of_detail
 from .ifc_options_project_data import ifc_options_project_data
 from .ifc_options_properties import ifc_options_properties
+from .ifc_predefined_type import ifc_predefined_type
 from .import_3dc_options import import_3dc_options
 from .layer_settings import layer_settings
 from .node_symbol import node_symbol
@@ -28,10 +29,12 @@ from .projection_type import projection_type
 from .rhino_options import rhino_options
 from .shortcut_key import shortcut_key
 from .shortcut_key_modifier import shortcut_key_modifier
+from .standard_element_type import standard_element_type
 from .text_element_type import text_element_type
 from .text_object_options import text_object_options
 from .vertex_list import vertex_list
 from .weinmann_mfb_version import weinmann_mfb_version
+from .window_geometry import window_geometry
 from typing import List
 
 

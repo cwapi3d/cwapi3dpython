@@ -1,4 +1,4 @@
-# Test Object Options
+# Text Object Options
 
 ::: src.cadwork.text_object_options
     rendering:

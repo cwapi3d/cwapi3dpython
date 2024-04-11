@@ -1,7 +1,7 @@
 from typing import List
 from cadwork import ifc_2x3_element_type
 from cadwork import ifc_options
-
+from cadwork import ifc_predefined_type
 
 def get_last_error(a0: int) -> str:
     """get last error
@@ -13,7 +13,6 @@ def get_last_error(a0: int) -> str:
         str
     """
 
-
 def get_ifc_guid(element_id: int) -> str:
     """get ifc guid
 
@@ -24,14 +23,12 @@ def get_ifc_guid(element_id: int) -> str:
         str
     """
 
-
 def clear_errors() -> None:
     """clear errors
 
     Returns:
         None
     """
-
 
 def get_ifc2x3_element_type(element_id: int) -> ifc_2x3_element_type:
     """get ifc2x3 element type
@@ -42,7 +39,6 @@ def get_ifc2x3_element_type(element_id: int) -> ifc_2x3_element_type:
     Returns:
         ifc_2x3_element_type
     """
-
 
 def set_ifc2x3_element_type(element_i_ds: List[int], element_type: None) -> None:
     """set ifc2x3 element type
@@ -55,7 +51,6 @@ def set_ifc2x3_element_type(element_i_ds: List[int], element_type: None) -> None
         None
     """
 
-
 def import_ifc_as_graphical_object(file_path: str) -> bool:
     """import ifc as graphical object
 
@@ -65,7 +60,6 @@ def import_ifc_as_graphical_object(file_path: str) -> bool:
     Returns:
         bool
     """
-
 
 def import_bcf(file_path: str) -> bool:
     """import bcf
@@ -77,7 +71,6 @@ def import_bcf(file_path: str) -> bool:
         bool
     """
 
-
 def export_bcf(file_path: str) -> bool:
     """export bcf
 
@@ -87,7 +80,6 @@ def export_bcf(file_path: str) -> bool:
     Returns:
         bool
     """
-
 
 def export_ifc(element_i_ds: List[int], file_path: str) -> bool:
     """export ifc
@@ -100,7 +92,6 @@ def export_ifc(element_i_ds: List[int], file_path: str) -> bool:
         bool
     """
 
-
 def import_ifc_return_exchange_objects(file_path: str) -> List[int]:
     """imports an IFC File and returns the ids of the Exchange Objects
 
@@ -110,7 +101,6 @@ def import_ifc_return_exchange_objects(file_path: str) -> List[int]:
     Returns:
         List[int]
     """
-
 
 def set_storey_height(building: str, storey: str, height: float) -> None:
     """set storey height
@@ -124,7 +114,6 @@ def set_storey_height(building: str, storey: str, height: float) -> None:
         None
     """
 
-
 def convert_exchange_objects(exchange_objects: List[int]) -> List[int]:
     """converts a list of Exchange Objects to Cadwork Elements
 
@@ -134,7 +123,6 @@ def convert_exchange_objects(exchange_objects: List[int]) -> List[int]:
     Returns:
         List[int]
     """
-
 
 def export_ifc2x3_silently(element_i_ds: List[int], file_path: str) -> bool:
     """export ifc2x3 silently
@@ -147,7 +135,6 @@ def export_ifc2x3_silently(element_i_ds: List[int], file_path: str) -> bool:
         bool
     """
 
-
 def export_ifc4_silently(element_i_ds: List[int], file_path: str) -> bool:
     """export ifc4 silently
 
@@ -158,7 +145,6 @@ def export_ifc4_silently(element_i_ds: List[int], file_path: str) -> bool:
     Returns:
         bool
     """
-
 
 def export_ifc2x3_silently_with_options(element_i_ds: List[int], file_path: str, options: ifc_options) -> bool:
     """export ifc2x3 silently with options
@@ -172,7 +158,6 @@ def export_ifc2x3_silently_with_options(element_i_ds: List[int], file_path: str,
         bool
     """
 
-
 def export_ifc4_silently_with_options(element_i_ds: List[int], file_path: str, options: ifc_options) -> bool:
     """export ifc4 silently with options
 
@@ -185,7 +170,6 @@ def export_ifc4_silently_with_options(element_i_ds: List[int], file_path: str, o
         bool
     """
 
-
 def update_bmt_structure_created_elements(element_i_ds: List[int]) -> None:
     """This function takes the specified elements and inserts them into the BMT structure and adds them to the active building and storey.
 
@@ -195,7 +179,6 @@ def update_bmt_structure_created_elements(element_i_ds: List[int]) -> None:
     Returns:
         None
     """
-
 
 def update_bmt_structure_building_storey(element_i_ds: List[int]) -> None:
     """This function takes the specified elements and inserts them into the BMT structure and adds them to the assigned Building and Storey.
@@ -207,14 +190,12 @@ def update_bmt_structure_building_storey(element_i_ds: List[int]) -> None:
         None
     """
 
-
 def get_ifc_options() -> ifc_options:
     """Get the IfcOptions with the settings used in the document // *
 
     Returns:
         IfcOptions //
     """
-
 
 def set_building_and_storey(element_id_list: List[int], building: str, storey: str) -> None:
     """set building and storey
@@ -228,7 +209,6 @@ def set_building_and_storey(element_id_list: List[int], building: str, storey: s
         None
     """
 
-
 def get_building(element: int) -> str:
     """get building
 
@@ -239,7 +219,6 @@ def get_building(element: int) -> str:
         str
     """
 
-
 def get_storey(element: int) -> str:
     """get storey
 
@@ -249,7 +228,6 @@ def get_storey(element: int) -> str:
     Returns:
         str
     """
-
 
 def get_storey_height(building: str, storey: str) -> float:
     """get storey height
@@ -262,7 +240,6 @@ def get_storey_height(building: str, storey: str) -> float:
         float
     """
 
-
 def get_ifc2x3_element_type_string(element_type: None) -> str:
     """get ifc2x3 element type string
 
@@ -272,7 +249,6 @@ def get_ifc2x3_element_type_string(element_type: None) -> str:
     Returns:
         str
     """
-
 
 def get_ifc2x3_element_type_display_string(element_type: None) -> str:
     """get ifc2x3 element type display string
@@ -284,14 +260,12 @@ def get_ifc2x3_element_type_display_string(element_type: None) -> str:
         str
     """
 
-
 def get_all_buildings() -> List[str]:
     """get all buildings
 
     Returns:
         List[str]
     """
-
 
 def get_all_storeys(building: str) -> List[str]:
     """get all storeys
@@ -303,7 +277,6 @@ def get_all_storeys(building: str) -> List[str]:
         List[str]
     """
 
-
 def get_element_id_from_base64_ifc_guid(a1: str) -> int:
     """get element id from base64 ifc guid
 
@@ -314,7 +287,6 @@ def get_element_id_from_base64_ifc_guid(a1: str) -> int:
         int
     """
 
-
 def get_ifc_base64_guid(element_id: int) -> str:
     """Get IFC base64 Guid from element ID
 
@@ -324,3 +296,25 @@ def get_ifc_base64_guid(element_id: int) -> str:
     Returns:
         The IFC GUID in base64 string format ("28kif20KPEuBjk2m1N3ep$").
     """
+
+def get_ifc_predefined_type(element_id: int) -> 'ifc_predefined_type':
+    """Get the IfcPredefinedType of an element.
+
+    Parameters:
+        element_id: element_id
+
+    Returns:
+        IfcPredefinedType Wrapper
+    """
+
+def set_ifc_predefined_type(element_i_ds: List[int], predefined_type: None) -> None:
+    """Set a predefined type to elements. Attention, if you change the PredefinedType of the elements, you are responsible for ensuring that valid types are set
+
+    Parameters:
+        element_i_ds: element_i_ds
+        predefined_type: predefined_type
+
+    Returns:
+        None
+    """
+

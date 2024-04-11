@@ -5,6 +5,83 @@ hide:
 
 # Differences from the last to the current version
 
+- What all counts as a change:
+  - New functions
+  - Changed function descriptions (docstrings)
+  - New classes
+  - Changed classes descriptions (docstrings)
+  - New enums
+  - Changed enums descriptions (docstrings)
+
+
+## Missing Items
+### Functions attribute_controller
+#### is_attribute_visible_in_modify_window
+
+```python
+def is_attribute_visible_in_modify_window(number: int) ->bool:
+    """is attribute visible in modify window
+
+    Parameters:
+        number: number
+
+    Returns:
+        bool
+    """
+
+```
+
+#### set_attribute_visibility_in_modify_window
+
+```python
+def set_attribute_visibility_in_modify_window(number: int, visibility: bool
+    ) ->None:
+    """set attribute visibility in modify window
+
+    Parameters:
+        number: number
+        visibility: visibility
+
+    Returns:
+        None
+    """
+
+```
+
+## Missing Items
+### Functions bim_controller
+#### get_ifc_predefined_type
+
+```python
+def get_ifc_predefined_type(element_id: int) ->ifc_predefined_type:
+    """Get the IfcPredefinedType of an element.
+
+    Parameters:
+        element_id: element_id
+
+    Returns:
+        IfcPredefinedType Wrapper
+    """
+
+```
+
+#### set_ifc_predefined_type
+
+```python
+def set_ifc_predefined_type(element_i_ds: List[int], predefined_type: None
+    ) ->None:
+    """Set a predefined type to elements. Attention, if you change the PredefinedType of the elements, you are responsible for ensuring that valid types are set
+
+    Parameters:
+        element_i_ds: element_i_ds
+        predefined_type: predefined_type
+
+    Returns:
+        None
+    """
+
+```
+
 ## Missing Items
 ### Functions dimension_controller
 #### get_distance
@@ -102,6 +179,381 @@ def convert_surfaces_to_roof_surfaces(elements: List[int], roof_name: str
 
 ```
 
+#### start_standard_element_dialog
+
+```python
+def start_standard_element_dialog(standard_element_type: None) ->str:
+    """Starts the standard element dialogue based on the chosen element type
+
+    Parameters:
+        standard_element_type: standard_element_type
+
+    Returns:
+        Returns guid of selected standard element if item is valid, else null
+    """
+
+```
+
+#### remove_standard_connector_axis
+
+```python
+def remove_standard_connector_axis(a0: str) ->None:
+    """remove standard connector axis
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        None
+    """
+
+```
+
+#### remove_standard_beam
+
+```python
+def remove_standard_beam(guid: str) ->None:
+    """remove standard beam
+
+    Parameters:
+        guid: guid
+
+    Returns:
+        None
+    """
+
+```
+
+#### remove_standard_panel
+
+```python
+def remove_standard_panel(guid: str) ->None:
+    """remove standard panel
+
+    Parameters:
+        guid: guid
+
+    Returns:
+        None
+    """
+
+```
+
+#### remove_standard_container
+
+```python
+def remove_standard_container(guid: str) ->None:
+    """remove standard container
+
+    Parameters:
+        guid: guid
+
+    Returns:
+        None
+    """
+
+```
+
+#### remove_standard_export_solid
+
+```python
+def remove_standard_export_solid(guid: str) ->None:
+    """remove standard export solid
+
+    Parameters:
+        guid: guid
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_user_element_ids_with_count
+
+```python
+def get_user_element_ids_with_count(count: int) ->List[int]:
+    """get user element ids with count
+
+    Parameters:
+        count: count
+
+    Returns:
+        List[int]
+    """
+
+```
+
+#### cut_scarf_straight
+
+```python
+def cut_scarf_straight(elements: List[int], length: float, depth: float,
+    clearance_length: float, clearance_depth: float, clearance_hook: float,
+    drilling_count: int, drilling_diameter: float, drilling_tolerance: float
+    ) ->None:
+    """cut scarf straight
+
+    Parameters:
+        elements: elements
+        length: length
+        depth: depth
+        clearance_length: clearance_length
+        clearance_depth: clearance_depth
+        clearance_hook: clearance_hook
+        drilling_count: drilling_count
+        drilling_diameter: drilling_diameter
+        drilling_tolerance: drilling_tolerance
+
+    Returns:
+        None
+    """
+
+```
+
+#### cut_scarf_diagonal
+
+```python
+def cut_scarf_diagonal(elements: List[int], length: float, depth: float,
+    clearance_length: float, clearance_depth: float, drilling_count: int,
+    drilling_diameter: float, drilling_tolerance: float) ->None:
+    """cut scarf diagonal
+
+    Parameters:
+        elements: elements
+        length: length
+        depth: depth
+        clearance_length: clearance_length
+        clearance_depth: clearance_depth
+        drilling_count: drilling_count
+        drilling_diameter: drilling_diameter
+        drilling_tolerance: drilling_tolerance
+
+    Returns:
+        None
+    """
+
+```
+
+#### cut_scarf_with_wedge
+
+```python
+def cut_scarf_with_wedge(elements: List[int], length: float, depth: float,
+    clearance_length: float, clearance_depth: float, wedge_width: float,
+    drilling_count: int, drilling_diameter: float, drilling_tolerance: float
+    ) ->None:
+    """cut scarf with wedge
+
+    Parameters:
+        elements: elements
+        length: length
+        depth: depth
+        clearance_length: clearance_length
+        clearance_depth: clearance_depth
+        wedge_width: wedge_width
+        drilling_count: drilling_count
+        drilling_diameter: drilling_diameter
+        drilling_tolerance: drilling_tolerance
+
+    Returns:
+        None
+    """
+
+```
+
+## Missing Items
+### Functions geometry_controller
+#### get_round_machine_rough_part_negative_width
+
+```python
+def get_round_machine_rough_part_negative_width(element_id: int) ->bool:
+    """get round machine rough part negative width
+
+    Parameters:
+        element_id: element_id
+
+    Returns:
+        bool
+    """
+
+```
+
+#### set_round_machine_rough_part_negative_width
+
+```python
+def set_round_machine_rough_part_negative_width(elements: List[int], value:
+    bool) ->None:
+    """set round machine rough part negative width
+
+    Parameters:
+        elements: elements
+        value: value
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_round_machine_rough_part_positive_width
+
+```python
+def get_round_machine_rough_part_positive_width(element_id: int) ->bool:
+    """get round machine rough part positive width
+
+    Parameters:
+        element_id: element_id
+
+    Returns:
+        bool
+    """
+
+```
+
+#### set_round_machine_rough_part_positive_width
+
+```python
+def set_round_machine_rough_part_positive_width(elements: List[int], value:
+    bool) ->None:
+    """set round machine rough part positive width
+
+    Parameters:
+        elements: elements
+        value: value
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_round_machine_rough_part_negative_height
+
+```python
+def get_round_machine_rough_part_negative_height(element_id: int) ->bool:
+    """get round machine rough part negative height
+
+    Parameters:
+        element_id: element_id
+
+    Returns:
+        bool
+    """
+
+```
+
+#### set_round_machine_rough_part_negative_height
+
+```python
+def set_round_machine_rough_part_negative_height(elements: List[int], value:
+    bool) ->None:
+    """set round machine rough part negative height
+
+    Parameters:
+        elements: elements
+        value: value
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_round_machine_rough_part_positive_height
+
+```python
+def get_round_machine_rough_part_positive_height(element_id: int) ->bool:
+    """get round machine rough part positive height
+
+    Parameters:
+        element_id: element_id
+
+    Returns:
+        bool
+    """
+
+```
+
+#### set_round_machine_rough_part_positive_height
+
+```python
+def set_round_machine_rough_part_positive_height(elements: List[int], value:
+    bool) ->None:
+    """set round machine rough part positive height
+
+    Parameters:
+        elements: elements
+        value: value
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_round_machine_rough_part_negative_length
+
+```python
+def get_round_machine_rough_part_negative_length(element_id: int) ->bool:
+    """get round machine rough part negative length
+
+    Parameters:
+        element_id: element_id
+
+    Returns:
+        bool
+    """
+
+```
+
+#### set_round_machine_rough_part_negative_length
+
+```python
+def set_round_machine_rough_part_negative_length(elements: List[int], value:
+    bool) ->None:
+    """set round machine rough part negative length
+
+    Parameters:
+        elements: elements
+        value: value
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_round_machine_rough_part_positive_length
+
+```python
+def get_round_machine_rough_part_positive_length(element_id: int) ->bool:
+    """get round machine rough part positive length
+
+    Parameters:
+        element_id: element_id
+
+    Returns:
+        bool
+    """
+
+```
+
+#### set_round_machine_rough_part_positive_length
+
+```python
+def set_round_machine_rough_part_positive_length(elements: List[int], value:
+    bool) ->None:
+    """set round machine rough part positive length
+
+    Parameters:
+        elements: elements
+        value: value
+
+    Returns:
+        None
+    """
+
+```
+
 ## Missing Items
 ### Functions list_controller
 #### export_cover_list
@@ -139,260 +591,470 @@ def export_cover_list_with_settings(element_id_list: List[int], file_path:
 ```
 
 ## Missing Items
-### Classes cadwork
-#### attribute_display_settings
+### Functions material_controller
+#### get_material_color_assignment_for_nodes
 
 ```python
-class attribute_display_settings:
+def get_material_color_assignment_for_nodes(a0: int) ->int:
+    """get material color assignment for nodes
 
-    def get_text_position_percentage(self) ->int:
-        """get text position percentage
+    Parameters:
+        a0: a0
 
-        Returns:
-            int
-        """
-
-    def set_text_position_percentage(self, percentage: int) ->None:
-        """set text position percentage
-
-        Parameters:
-            percentage: percentage
-
-        Returns:
-            None
-        """
-
-    def get_text_position_absolute(self) ->int:
-        """get text position absolute
-
-        Returns:
-            int
-        """
-
-    def set_text_position_absolute(self, absolute: int) ->None:
-        """set text position absolute
-
-        Parameters:
-            absolute: absolute
-
-        Returns:
-            None
-        """
-
-    def is_text_position_type_percentage(self) ->bool:
-        """is text position type percentage
-
-        Returns:
-            bool
-        """
-
-    def set_text_position_type_percentage(self, percentage_type: bool) ->None:
-        """set text position type percentage
-
-        Parameters:
-            percentage_type: percentage_type
-
-        Returns:
-            None
-        """
-
-    def is_text_position_type_absolute(self) ->bool:
-        """is text position type absolute
-
-        Returns:
-            bool
-        """
-
-    def set_text_position_type_absolute(self, absolute_type: bool) ->None:
-        """set text position type absolute
-
-        Parameters:
-            absolute_type: absolute_type
-
-        Returns:
-            None
-        """
-
-```
-
-## Missing Items
-### Classes cadwork
-#### btl_version
-
-```python
-@unique
-class btl_version(IntEnum):
-    """btl version
-
-    Examples:
-        >>> cadwork.btl_version.btlx_1_0
-        btlx_1_0
+    Returns:
+        int
     """
-    btlx_1_0 = 110
-    """"""
-    btlx_1_1 = 111
-    """"""
-    btl_1_2 = 112
-    """"""
-    btl_1_3 = 113
-    """"""
-    btl_1_4 = 114
-    """"""
-    btl_1_5 = 115
-    """"""
-    btl_1_6 = 116
-    """"""
-    btl_10_0 = 100
-    """"""
-    btl_10_1 = 101
-    """"""
-    btl_10_2 = 102
-    """"""
-    btl_10_3 = 103
-    """"""
-    btl_10_4 = 104
-    """"""
-    btl_10_5 = 105
-    """"""
-    btl_10_6 = 106
-    """"""
-    btlx_2_0 = 120
-    """"""
-    btlx_2_1 = 121
-    """"""
-    btlx_2_2 = 122
-    """"""
 
-    def __int__(self) ->int:
-        return self.value
+```
+
+#### set_material_color_assignment_for_nodes
+
+```python
+def set_material_color_assignment_for_nodes(a0: int, a1: int) ->None:
+    """set material color assignment for nodes
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_material_color_assignment_for_standard_axes
+
+```python
+def get_material_color_assignment_for_standard_axes(a0: int) ->int:
+    """get material color assignment for standard axes
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        int
+    """
+
+```
+
+#### set_material_color_assignment_for_standard_axes
+
+```python
+def set_material_color_assignment_for_standard_axes(a0: int, a1: int) ->None:
+    """set material color assignment for standard axes
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_material_color_assignment_for_drillings
+
+```python
+def get_material_color_assignment_for_drillings(a0: int) ->int:
+    """get material color assignment for drillings
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        int
+    """
+
+```
+
+#### set_material_color_assignment_for_drillings
+
+```python
+def set_material_color_assignment_for_drillings(a0: int, a1: int) ->None:
+    """set material color assignment for drillings
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_material_color_assignment_for_mep_axes
+
+```python
+def get_material_color_assignment_for_mep_axes(a0: int) ->int:
+    """get material color assignment for mep axes
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        int
+    """
+
+```
+
+#### set_material_color_assignment_for_mep_axes
+
+```python
+def set_material_color_assignment_for_mep_axes(a0: int, a1: int) ->None:
+    """set material color assignment for mep axes
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_material_color_assignment_for_beams
+
+```python
+def get_material_color_assignment_for_beams(a0: int) ->int:
+    """get material color assignment for beams
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        int
+    """
+
+```
+
+#### set_material_color_assignment_for_beams
+
+```python
+def set_material_color_assignment_for_beams(a0: int, a1: int) ->None:
+    """set material color assignment for beams
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_material_color_assignment_for_panels
+
+```python
+def get_material_color_assignment_for_panels(a0: int) ->int:
+    """get material color assignment for panels
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        int
+    """
+
+```
+
+#### set_material_color_assignment_for_panels
+
+```python
+def set_material_color_assignment_for_panels(a0: int, a1: int) ->None:
+    """set material color assignment for panels
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_material_color_assignment_for_auxiliary_elements
+
+```python
+def get_material_color_assignment_for_auxiliary_elements(a0: int) ->int:
+    """get material color assignment for auxiliary elements
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        int
+    """
+
+```
+
+#### set_material_color_assignment_for_auxiliary_elements
+
+```python
+def set_material_color_assignment_for_auxiliary_elements(a0: int, a1: int
+    ) ->None:
+    """set material color assignment for auxiliary elements
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_material_color_assignment_for_surfaces
+
+```python
+def get_material_color_assignment_for_surfaces(a0: int) ->int:
+    """get material color assignment for surfaces
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        int
+    """
+
+```
+
+#### set_material_color_assignment_for_surfaces
+
+```python
+def set_material_color_assignment_for_surfaces(a0: int, a1: int) ->None:
+    """set material color assignment for surfaces
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_texture_color
+
+```python
+def get_texture_color(a0: int) ->int:
+    """get texture color
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        int
+    """
+
+```
+
+#### set_texture_color
+
+```python
+def set_texture_color(a0: int, a1: int) ->None:
+    """set texture color
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_texture_transparency
+
+```python
+def get_texture_transparency(a0: int) ->int:
+    """get texture transparency
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        int
+    """
+
+```
+
+#### set_texture_transparency
+
+```python
+def set_texture_transparency(a0: int, a1: int) ->None:
+    """set texture transparency
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_texture_rotation_angle
+
+```python
+def get_texture_rotation_angle(a0: int) ->float:
+    """get texture rotation angle
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        float
+    """
+
+```
+
+#### set_texture_rotation_angle
+
+```python
+def set_texture_rotation_angle(a0: int, a1: float) ->None:
+    """set texture rotation angle
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_texture_length_alignment
+
+```python
+def get_texture_length_alignment(a0: int) ->bool:
+    """get texture length alignment
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        bool
+    """
+
+```
+
+#### set_texture_length_alignment
+
+```python
+def set_texture_length_alignment(a0: int, a1: bool) ->None:
+    """set texture length alignment
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_texture_zoom_x
+
+```python
+def get_texture_zoom_x(a0: int) ->float:
+    """get texture zoom x
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        float
+    """
+
+```
+
+#### set_texture_zoom_x
+
+```python
+def set_texture_zoom_x(a0: int, a1: float) ->None:
+    """set texture zoom x
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_texture_zoom_y
+
+```python
+def get_texture_zoom_y(a0: int) ->float:
+    """get texture zoom y
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        float
+    """
+
+```
+
+#### set_texture_zoom_y
+
+```python
+def set_texture_zoom_y(a0: int, a1: float) ->None:
+    """set texture zoom y
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
 
 ```
 
 ## Missing Items
-### Classes cadwork
-#### camera_data
+### Functions scene_controller
+#### is_scene_present
 
 ```python
-class camera_data:
+def is_scene_present(name: str) ->bool:
+    """Queries of scene with name is present
 
-    def get_position(self) ->point_3d:
-        """get position
+    Parameters:
+        name: name
 
-        Returns:
-            point_3d
-        """
+    Returns:
+        presence of scene
+    """
 
-    def set_position(self, position: point_3d) ->None:
-        """set position
+```
 
-        Parameters:
-            position: position
+## Missing Items
+### Functions utility_controller
+#### get_3d_main_window_geometry
 
-        Returns:
-            None
-        """
+```python
+def get_3d_main_window_geometry() ->'window_geometry':
+    """get 3d main window geometry
 
-    def get_target(self) ->point_3d:
-        """get target
-
-        Returns:
-            point_3d
-        """
-
-    def set_target(self, target: point_3d) ->None:
-        """set target
-
-        Parameters:
-            target: target
-
-        Returns:
-            None
-        """
-
-    def get_up_vector(self) ->point_3d:
-        """get up vector
-
-        Returns:
-            point_3d
-        """
-
-    def set_up_vector(self, up_vector: point_3d) ->None:
-        """set up vector
-
-        Parameters:
-            up_vector: up_vector
-
-        Returns:
-            None
-        """
-
-    def get_projection_type(self) ->projection_type:
-        """get projection type
-
-        Returns:
-            projection_type
-        """
-
-    def set_projection_type(self, projection_type: projection_type) ->None:
-        """set projection type
-
-        Parameters:
-            projection_type: projection_type
-
-        Returns:
-            None
-        """
-
-    def get_field_width(self) ->float:
-        """get field width
-
-        Returns:
-            float
-        """
-
-    def set_field_width(self, field_width: float) ->None:
-        """set field width
-
-        Parameters:
-            field_width: field_width
-
-        Returns:
-            None
-        """
-
-    def get_field_height(self) ->float:
-        """get field height
-
-        Returns:
-            float
-        """
-
-    def set_field_height(self, field_height: float) ->None:
-        """set field height
-
-        Parameters:
-            field_height: field_height
-
-        Returns:
-            None
-        """
-
-    def get_field_of_view(self) ->float:
-        """get field of view
-
-        Returns:
-            float
-        """
-
-    def set_field_of_view(self, field_of_view: float) ->None:
-        """set field of view
-
-        Parameters:
-            field_of_view: field_of_view
-
-        Returns:
-            None
-        """
+    Returns:
+        window geometry
+    """
 
 ```
 
@@ -428,822 +1090,10 @@ class coordinate_system_data:
 
 ## Missing Items
 ### Classes cadwork
-#### division_zone_direction
+#### ifc_predefined_type
 
 ```python
-@unique
-class division_zone_direction(IntEnum):
-    """division zone direction
-
-    Examples:
-        >>> cadwork.division_zone_direction.positive
-        positive
-    """
-    positive = 1
-    """"""
-    negative = 2
-    """"""
-    no_direction = 3
-    """"""
-
-    def __int__(self) ->int:
-        return self.value
-
-```
-
-## Missing Items
-### Classes cadwork
-#### edge_list
-
-```python
-class edge_list:
-
-    def count(self) ->int:
-        """count
-
-        Returns:
-            int
-        """
-
-    def at(self, index: int) ->point_3d:
-        """at
-
-        Parameters:
-            index: index
-
-        Returns:
-            point_3d
-        """
-
-```
-
-## Missing Items
-### Classes cadwork
-#### element_grouping_type
-
-```python
-@unique
-class element_grouping_type(IntEnum):
-    """element grouping type
-
-    Examples:
-        >>> cadwork.element_grouping_type.group
-        group
-    """
-    group = 1
-    """"""
-    subgroup = 2
-    """"""
-    _none = 3
-    """"""
-
-    def __int__(self) ->int:
-        return self.value
-
-```
-
-## Missing Items
-### Classes cadwork
-#### element_module_detail
-
-```python
-@unique
-class element_module_detail(IntEnum):
-    """element module detail
-
-    Examples:
-        >>> cadwork.element_module_detail.no_detail
-        no_detail
-    """
-    no_detail = 1
-    """"""
-    angle_detail = 2
-    """"""
-    area_detail = 3
-    """"""
-    cross_detail = 4
-    """"""
-    edge_detail = 5
-    """"""
-    end_detail = 6
-    """"""
-    line_detail = 7
-    """"""
-    open_detail = 8
-    """"""
-    t_detail = 9
-    """"""
-    floor_area_detail = 10
-    """"""
-    floor_end_detail = 11
-    """"""
-    floor_line_detail = 12
-    """"""
-    floor_open_detail = 13
-    """"""
-
-    def __int__(self) ->int:
-        return self.value
-
-```
-
-## Missing Items
-### Classes cadwork
-#### element_module_properties
-
-```python
-class element_module_properties:
-
-    def is_stretch_with_top_of_wall(self) ->bool:
-        """is stretch with top of wall
-
-        Returns:
-            bool
-        """
-
-    def is_move_with_top_of_wall(self) ->bool:
-        """is move with top of wall
-
-        Returns:
-            bool
-        """
-
-    def is_distribute_in_axis_direction(self) ->bool:
-        """is distribute in axis direction
-
-        Returns:
-            bool
-        """
-
-    def is_distribute_perpendicular_to_axis_direction(self) ->bool:
-        """is distribute perpendicular to axis direction
-
-        Returns:
-            bool
-        """
-
-    def is_stop_in_axis_direction(self) ->bool:
-        """is stop in axis direction
-
-        Returns:
-            bool
-        """
-
-    def is_stop_perpendicular_to_axis_direction(self) ->bool:
-        """is stop perpendicular to axis direction
-
-        Returns:
-            bool
-        """
-
-    def is_bottom_plate(self) ->bool:
-        """is bottom plate
-
-        Returns:
-            bool
-        """
-
-    def is_top_plate(self) ->bool:
-        """is top plate
-
-        Returns:
-            bool
-        """
-
-    def is_opening_sill(self) ->bool:
-        """is opening sill
-
-        Returns:
-            bool
-        """
-
-    def is_opening_lintel(self) ->bool:
-        """is opening lintel
-
-        Returns:
-            bool
-        """
-
-    def is_cutting_element(self) ->bool:
-        """is cutting element
-
-        Returns:
-            bool
-        """
-
-    def is_not_cut_with_cutting_element(self) ->bool:
-        """is not cut with cutting element
-
-        Returns:
-            bool
-        """
-
-    def is_auxiliary(self) ->bool:
-        """is auxiliary
-
-        Returns:
-            bool
-        """
-
-    def is_not_placed_at_end_of_wall(self) ->bool:
-        """is not placed at end of wall
-
-        Returns:
-            bool
-        """
-
-    def is_not_placed_at_start_of_wall(self) ->bool:
-        """is not placed at start of wall
-
-        Returns:
-            bool
-        """
-
-    def is_stretch_with_opening_lintel(self) ->bool:
-        """is stretch with opening lintel
-
-        Returns:
-            bool
-        """
-
-    def is_stretch_with_opening_sill(self) ->bool:
-        """is stretch with opening sill
-
-        Returns:
-            bool
-        """
-
-    def is_solder_in_axis_direction(self) ->bool:
-        """is solder in axis direction
-
-        Returns:
-            bool
-        """
-
-    def is_no_collision_control(self) ->bool:
-        """is no collision control
-
-        Returns:
-            bool
-        """
-
-    def is_no_inside_cover_control(self) ->bool:
-        """is no inside cover control
-
-        Returns:
-            bool
-        """
-
-    def is_use_for_detail_coordinate_system(self) ->bool:
-        """is use for detail coordinate system
-
-        Returns:
-            bool
-        """
-
-    def set_stretch_with_top_of_wall(self, active: bool) ->None:
-        """set stretch with top of wall
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_move_with_top_of_wall(self, active: bool) ->None:
-        """set move with top of wall
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_distribute_in_axis_direction(self, active: bool, distance: float
-        ) ->None:
-        """set distribute in axis direction
-
-        Parameters:
-            active: active
-            distance: distance
-
-        Returns:
-            None
-        """
-
-    def set_distribute_perpendicular_to_axis_direction(self, active: bool,
-        distance: float) ->None:
-        """set distribute perpendicular to axis direction
-
-        Parameters:
-            active: active
-            distance: distance
-
-        Returns:
-            None
-        """
-
-    def set_stop_in_axis_direction(self, active: bool) ->None:
-        """set stop in axis direction
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_stop_perpendicular_to_axis_direction(self, active: bool) ->None:
-        """set stop perpendicular to axis direction
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_bottom_plate(self, active: bool) ->None:
-        """set bottom plate
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_top_plate(self, active: bool) ->None:
-        """set top plate
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_opening_sill(self, active: bool) ->None:
-        """set opening sill
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_opening_lintel(self, active: bool) ->None:
-        """set opening lintel
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_cutting_element(self, active: bool, priority: int) ->None:
-        """set cutting element
-
-        Parameters:
-            active: active
-            priority: priority
-
-        Returns:
-            None
-        """
-
-    def set_not_cut_with_cutting_element(self, active: bool) ->None:
-        """set not cut with cutting element
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_auxiliary(self) ->None:
-        """set auxiliary
-
-        Returns:
-            None
-        """
-
-    def set_not_placed_at_end_of_wall(self, active: bool) ->None:
-        """set not placed at end of wall
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_not_placed_at_start_of_wall(self, active: bool) ->None:
-        """set not placed at start of wall
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_stretch_with_opening_lintel(self, active: bool) ->None:
-        """set stretch with opening lintel
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_stretch_with_opening_sill(self, active: bool) ->None:
-        """set stretch with opening sill
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_solder_in_axis_direction(self, active: bool) ->None:
-        """set solder in axis direction
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_no_collision_control(self, active: bool) ->None:
-        """set no collision control
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_no_inside_cover_control(self, active: bool) ->None:
-        """set no inside cover control
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_use_for_detail_coordinate_system(self, active: bool) ->None:
-        """set use for detail coordinate system
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def get_distribute_in_axis_direction_distance(self) ->float:
-        """get distribute in axis direction distance
-
-        Returns:
-            float
-        """
-
-    def get_distribute_perpendicular_to_axis_direction_distance(self) ->float:
-        """get distribute perpendicular to axis direction distance
-
-        Returns:
-            float
-        """
-
-    def get_cutting_element_priority(self) ->int:
-        """get cutting element priority
-
-        Returns:
-            int
-        """
-
-    def is_distribute_in_axis_direction_use_max_distance(self) ->bool:
-        """is distribute in axis direction use max distance
-
-        Returns:
-            bool
-        """
-
-    def is_distribute_perpendicular_to_axis_direction_use_max_distance(self
-        ) ->bool:
-        """is distribute perpendicular to axis direction use max distance
-
-        Returns:
-            bool
-        """
-
-    def is_distribute_in_axis_direction_use_number(self) ->bool:
-        """is distribute in axis direction use number
-
-        Returns:
-            bool
-        """
-
-    def is_distribute_perpendicular_to_axis_direction_use_number(self) ->bool:
-        """is distribute perpendicular to axis direction use number
-
-        Returns:
-            bool
-        """
-
-    def set_distribute_in_axis_direction_use_max_distance(self, active: bool
-        ) ->None:
-        """set distribute in axis direction use max distance
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_distribute_perpendicular_to_axis_direction_use_max_distance(self,
-        active: bool) ->None:
-        """set distribute perpendicular to axis direction use max distance
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_distribute_in_axis_direction_use_number(self, active: bool,
-        number: int) ->None:
-        """set distribute in axis direction use number
-
-        Parameters:
-            active: active
-            number: number
-
-        Returns:
-            None
-        """
-
-    def set_distribute_perpendicular_to_axis_direction_use_number(self,
-        active: bool, number: int) ->None:
-        """set distribute perpendicular to axis direction use number
-
-        Parameters:
-            active: active
-            number: number
-
-        Returns:
-            None
-        """
-
-    def get_distribute_in_axis_direction_number(self) ->int:
-        """get distribute in axis direction number
-
-        Returns:
-            int
-        """
-
-    def get_distribute_perpendicular_to_axis_direction_number(self) ->int:
-        """get distribute perpendicular to axis direction number
-
-        Returns:
-            int
-        """
-
-    def is_main_element(self) ->bool:
-        """is main element
-
-        Returns:
-            bool
-        """
-
-    def is_strecht_according_thickness_axis(self) ->bool:
-        """is strecht according thickness axis
-
-        Returns:
-            bool
-        """
-
-    def is_strecht_according_length_axis(self) ->bool:
-        """is strecht according length axis
-
-        Returns:
-            bool
-        """
-
-    def is_move_according_thickness_axis(self) ->bool:
-        """is move according thickness axis
-
-        Returns:
-            bool
-        """
-
-    def is_move_according_length_axis(self) ->bool:
-        """is move according length axis
-
-        Returns:
-            bool
-        """
-
-    def is_unique_layername(self) ->bool:
-        """is unique layername
-
-        Returns:
-            bool
-        """
-
-    def is_keep_in_center_of_layer_current_wall(self) ->bool:
-        """is keep in center of layer current wall
-
-        Returns:
-            bool
-        """
-
-    def is_keep_in_center_of_layer_neighbour_wall(self) ->bool:
-        """is keep in center of layer neighbour wall
-
-        Returns:
-            bool
-        """
-
-    def is_keep_in_center_of_rough_volume(self) ->bool:
-        """is keep in center of rough volume
-
-        Returns:
-            bool
-        """
-
-    def is_element_from_detail(self) ->bool:
-        """is element from detail
-
-        Returns:
-            bool
-        """
-
-    def set_main_element(self, active: bool) ->None:
-        """set main element
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_strecht_according_thickness_axis(self, active: bool) ->None:
-        """set strecht according thickness axis
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_strecht_according_length_axis(self, active: bool) ->None:
-        """set strecht according length axis
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_move_according_thickness_axis(self, active: bool) ->None:
-        """set move according thickness axis
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_move_according_length_axis(self, active: bool) ->None:
-        """set move according length axis
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_unique_layername(self, active: bool, layername: str) ->None:
-        """set unique layername
-
-        Parameters:
-            active: active
-            layername: layername
-
-        Returns:
-            None
-        """
-
-    def set_keep_in_center_of_layer_current_wall(self, active: bool,
-        layername: str) ->None:
-        """set keep in center of layer current wall
-
-        Parameters:
-            active: active
-            layername: layername
-
-        Returns:
-            None
-        """
-
-    def set_keep_in_center_of_layer_neighbour_wall(self, active: bool,
-        layername: str) ->None:
-        """set keep in center of layer neighbour wall
-
-        Parameters:
-            active: active
-            layername: layername
-
-        Returns:
-            None
-        """
-
-    def set_keep_in_center_of_rough_volume(self, active: bool) ->None:
-        """set keep in center of rough volume
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def set_element_from_detail(self, active: bool) ->None:
-        """set element from detail
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-    def get_unique_layername(self) ->str:
-        """get unique layername
-
-        Returns:
-            str
-        """
-
-    def get_keep_in_center_of_layer_current_wall(self) ->str:
-        """get keep in center of layer current wall
-
-        Returns:
-            str
-        """
-
-    def get_keep_in_center_of_layer_neighbour_wall(self) ->str:
-        """get keep in center of layer neighbour wall
-
-        Returns:
-            str
-        """
-
-    def is_stretch_in_opening_width(self) ->bool:
-        """is stretch in opening width
-
-        Returns:
-            bool
-        """
-
-    def set_stretch_in_opening_width(self, active: bool) ->None:
-        """set stretch in opening width
-
-        Parameters:
-            active: active
-
-        Returns:
-            None
-        """
-
-```
-
-## Missing Items
-### Classes cadwork
-#### element_type
-
-```python
-class element_type:
+class ifc_predefined_type:
 
     def is_none(self) ->bool:
         """is none
@@ -1252,99 +1102,134 @@ class element_type:
             bool
         """
 
-    def is_normal_node(self) ->bool:
-        """is normal node
+    def is_ceiling(self) ->bool:
+        """is ceiling
 
         Returns:
             bool
         """
 
-    def is_connector_node(self) ->bool:
-        """is connector node
+    def is_cladding(self) ->bool:
+        """is cladding
 
         Returns:
             bool
         """
 
-    def is_wire_axis(self) ->bool:
-        """is wire axis
+    def is_flooring(self) ->bool:
+        """is flooring
 
         Returns:
             bool
         """
 
-    def is_eave_axis(self) ->bool:
-        """is eave axis
+    def is_insulation(self) ->bool:
+        """is insulation
 
         Returns:
             bool
         """
 
-    def is_rectangular_axis(self) ->bool:
-        """is rectangular axis
+    def is_membrane(self) ->bool:
+        """is membrane
 
         Returns:
             bool
         """
 
-    def is_circular_axis(self) ->bool:
-        """is circular axis
+    def is_roofing(self) ->bool:
+        """is roofing
 
         Returns:
             bool
         """
 
-    def is_drilling_axis(self) ->bool:
-        """is drilling axis
+    def is_sleeving(self) ->bool:
+        """is sleeving
 
         Returns:
             bool
         """
 
-    def is_connector_axis(self) ->bool:
-        """is connector axis
+    def is_wrapping(self) ->bool:
+        """is wrapping
 
         Returns:
             bool
         """
 
-    def is_line(self) ->bool:
-        """is line
+    def is_footing_beam(self) ->bool:
+        """is footing beam
 
         Returns:
             bool
         """
 
-    def is_surface(self) ->bool:
-        """is surface
+    def is_pad_footing(self) ->bool:
+        """is pad footing
 
         Returns:
             bool
         """
 
-    def is_cadwork(self) ->bool:
-        """is cadwork
+    def is_pile_cap(self) ->bool:
+        """is pile cap
 
         Returns:
             bool
         """
 
-    def is_global_cut(self) ->bool:
-        """is global cut
+    def is_strip_footing(self) ->bool:
+        """is strip footing
 
         Returns:
             bool
         """
 
-    def is_wall(self) ->bool:
-        """is wall
+    def is_cohesion(self) ->bool:
+        """is cohesion
 
         Returns:
             bool
         """
 
-    def is_opening(self) ->bool:
-        """is opening
+    def is_friction(self) ->bool:
+        """is friction
+
+        Returns:
+            bool
+        """
+
+    def is_support(self) ->bool:
+        """is support
+
+        Returns:
+            bool
+        """
+
+    def is_balustrade(self) ->bool:
+        """is balustrade
+
+        Returns:
+            bool
+        """
+
+    def is_guardrail(self) ->bool:
+        """is guardrail
+
+        Returns:
+            bool
+        """
+
+    def is_handrail(self) ->bool:
+        """is handrail
+
+        Returns:
+            bool
+        """
+
+    def is_baseslab(self) ->bool:
+        """is baseslab
 
         Returns:
             bool
@@ -1357,6 +1242,13 @@ class element_type:
             bool
         """
 
+    def is_landing(self) ->bool:
+        """is landing
+
+        Returns:
+            bool
+        """
+
     def is_roof(self) ->bool:
         """is roof
 
@@ -1364,113 +1256,946 @@ class element_type:
             bool
         """
 
-    def is_container(self) ->bool:
-        """is container
+    def is_beam(self) ->bool:
+        """is beam
 
         Returns:
             bool
         """
 
-    def is_export_solid(self) ->bool:
-        """is export solid
+    def is_spandrel(self) ->bool:
+        """is spandrel
 
         Returns:
             bool
         """
 
-    def is_auxiliary(self) ->bool:
-        """is auxiliary
+    def is_tbeam(self) ->bool:
+        """is tbeam
 
         Returns:
             bool
         """
 
-    def is_nesting_parent(self) ->bool:
-        """is nesting parent
+    def is_complex(self) ->bool:
+        """is complex
 
         Returns:
             bool
         """
 
-    def is_rectangular_beam(self) ->bool:
-        """is rectangular beam
+    def is_element(self) ->bool:
+        """is element
 
         Returns:
             bool
         """
 
-    def is_circular_beam(self) ->bool:
-        """is circular beam
+    def is_partial(self) ->bool:
+        """is partial
 
         Returns:
             bool
         """
 
-    def is_steel_shape(self) ->bool:
-        """is steel shape
+    def is_provision_for_space(self) ->bool:
+        """is provision for space
 
         Returns:
             bool
         """
 
-    def is_panel(self) ->bool:
-        """is panel
+    def is_provision_for_void(self) ->bool:
+        """is provision for void
 
         Returns:
             bool
         """
 
-    def is_rotation_element(self) ->bool:
-        """is rotation element
+    def is_column(self) ->bool:
+        """is column
 
         Returns:
             bool
         """
 
-    def is_additional_element(self) ->bool:
-        """is additional element
+    def is_pilaster(self) ->bool:
+        """is pilaster
 
         Returns:
             bool
         """
 
-    def is_room(self) ->bool:
-        """is room
+    def is_molding(self) ->bool:
+        """is molding
 
         Returns:
             bool
         """
 
-    def is_graphical_object(self) ->bool:
-        """is graphical object
+    def is_skirtingboard(self) ->bool:
+        """is skirtingboard
 
         Returns:
             bool
         """
 
-    def is_dimension(self) ->bool:
-        """is dimension
+    def is_door(self) ->bool:
+        """is door
 
         Returns:
             bool
         """
 
-    def is_text_document(self) ->bool:
-        """is text document
+    def is_gate(self) ->bool:
+        """is gate
 
         Returns:
             bool
         """
 
-    def is_export_solid_scene(self) ->bool:
-        """is export solid scene
+    def is_trap_door(self) ->bool:
+        """is trap door
 
         Returns:
             bool
         """
 
-    def is_section_trace(self) ->bool:
-        """is section trace
+    def is_caisson_foundation(self) ->bool:
+        """is caisson foundation
+
+        Returns:
+            bool
+        """
+
+    def is_brace(self) ->bool:
+        """is brace
+
+        Returns:
+            bool
+        """
+
+    def is_chord(self) ->bool:
+        """is chord
+
+        Returns:
+            bool
+        """
+
+    def is_collar(self) ->bool:
+        """is collar
+
+        Returns:
+            bool
+        """
+
+    def is_member(self) ->bool:
+        """is member
+
+        Returns:
+            bool
+        """
+
+    def is_mullion(self) ->bool:
+        """is mullion
+
+        Returns:
+            bool
+        """
+
+    def is_plate(self) ->bool:
+        """is plate
+
+        Returns:
+            bool
+        """
+
+    def is_post(self) ->bool:
+        """is post
+
+        Returns:
+            bool
+        """
+
+    def is_purlin(self) ->bool:
+        """is purlin
+
+        Returns:
+            bool
+        """
+
+    def is_rafter(self) ->bool:
+        """is rafter
+
+        Returns:
+            bool
+        """
+
+    def is_stringer(self) ->bool:
+        """is stringer
+
+        Returns:
+            bool
+        """
+
+    def is_strut(self) ->bool:
+        """is strut
+
+        Returns:
+            bool
+        """
+
+    def is_stud(self) ->bool:
+        """is stud
+
+        Returns:
+            bool
+        """
+
+    def is_bored(self) ->bool:
+        """is bored
+
+        Returns:
+            bool
+        """
+
+    def is_driven(self) ->bool:
+        """is driven
+
+        Returns:
+            bool
+        """
+
+    def is_jetgrouting(self) ->bool:
+        """is jetgrouting
+
+        Returns:
+            bool
+        """
+
+    def is_curtain_panel(self) ->bool:
+        """is curtain panel
+
+        Returns:
+            bool
+        """
+
+    def is_sheet(self) ->bool:
+        """is sheet
+
+        Returns:
+            bool
+        """
+
+    def is_half_turn_ramp(self) ->bool:
+        """is half turn ramp
+
+        Returns:
+            bool
+        """
+
+    def is_quarter_turn_ramp(self) ->bool:
+        """is quarter turn ramp
+
+        Returns:
+            bool
+        """
+
+    def is_spiral_ramp(self) ->bool:
+        """is spiral ramp
+
+        Returns:
+            bool
+        """
+
+    def is_straight_run_ramp(self) ->bool:
+        """is straight run ramp
+
+        Returns:
+            bool
+        """
+
+    def is_two_quarter_turn_ramp(self) ->bool:
+        """is two quarter turn ramp
+
+        Returns:
+            bool
+        """
+
+    def is_two_straight_run_ramp(self) ->bool:
+        """is two straight run ramp
+
+        Returns:
+            bool
+        """
+
+    def is_barrel_roof(self) ->bool:
+        """is barrel roof
+
+        Returns:
+            bool
+        """
+
+    def is_butterfly_roof(self) ->bool:
+        """is butterfly roof
+
+        Returns:
+            bool
+        """
+
+    def is_dome_roof(self) ->bool:
+        """is dome roof
+
+        Returns:
+            bool
+        """
+
+    def is_flat_roof(self) ->bool:
+        """is flat roof
+
+        Returns:
+            bool
+        """
+
+    def is_freeform(self) ->bool:
+        """is freeform
+
+        Returns:
+            bool
+        """
+
+    def is_gable_roof(self) ->bool:
+        """is gable roof
+
+        Returns:
+            bool
+        """
+
+    def is_gambrel_roof(self) ->bool:
+        """is gambrel roof
+
+        Returns:
+            bool
+        """
+
+    def is_hipped_gable_roof(self) ->bool:
+        """is hipped gable roof
+
+        Returns:
+            bool
+        """
+
+    def is_hip_roof(self) ->bool:
+        """is hip roof
+
+        Returns:
+            bool
+        """
+
+    def is_mansard_roof(self) ->bool:
+        """is mansard roof
+
+        Returns:
+            bool
+        """
+
+    def is_pavilion_roof(self) ->bool:
+        """is pavilion roof
+
+        Returns:
+            bool
+        """
+
+    def is_rainbow_roof(self) ->bool:
+        """is rainbow roof
+
+        Returns:
+            bool
+        """
+
+    def is_shed_roof(self) ->bool:
+        """is shed roof
+
+        Returns:
+            bool
+        """
+
+    def is_curved_run_stair(self) ->bool:
+        """is curved run stair
+
+        Returns:
+            bool
+        """
+
+    def is_double_return_stair(self) ->bool:
+        """is double return stair
+
+        Returns:
+            bool
+        """
+
+    def is_half_turn_stair(self) ->bool:
+        """is half turn stair
+
+        Returns:
+            bool
+        """
+
+    def is_half_winding_stair(self) ->bool:
+        """is half winding stair
+
+        Returns:
+            bool
+        """
+
+    def is_quarter_turn_stair(self) ->bool:
+        """is quarter turn stair
+
+        Returns:
+            bool
+        """
+
+    def is_quarter_winding_stair(self) ->bool:
+        """is quarter winding stair
+
+        Returns:
+            bool
+        """
+
+    def is_spiral_stair(self) ->bool:
+        """is spiral stair
+
+        Returns:
+            bool
+        """
+
+    def is_straight_run_stair(self) ->bool:
+        """is straight run stair
+
+        Returns:
+            bool
+        """
+
+    def is_three_quarter_turn_stair(self) ->bool:
+        """is three quarter turn stair
+
+        Returns:
+            bool
+        """
+
+    def is_three_quarter_winding_stair(self) ->bool:
+        """is three quarter winding stair
+
+        Returns:
+            bool
+        """
+
+    def is_two_curved_run_stair(self) ->bool:
+        """is two curved run stair
+
+        Returns:
+            bool
+        """
+
+    def is_two_quarter_turn_stair(self) ->bool:
+        """is two quarter turn stair
+
+        Returns:
+            bool
+        """
+
+    def is_two_quarter_winding_stair(self) ->bool:
+        """is two quarter winding stair
+
+        Returns:
+            bool
+        """
+
+    def is_two_straight_run_stair(self) ->bool:
+        """is two straight run stair
+
+        Returns:
+            bool
+        """
+
+    def is_curved(self) ->bool:
+        """is curved
+
+        Returns:
+            bool
+        """
+
+    def is_spiral(self) ->bool:
+        """is spiral
+
+        Returns:
+            bool
+        """
+
+    def is_straight(self) ->bool:
+        """is straight
+
+        Returns:
+            bool
+        """
+
+    def is_winder(self) ->bool:
+        """is winder
+
+        Returns:
+            bool
+        """
+
+    def is_elemented_wall(self) ->bool:
+        """is elemented wall
+
+        Returns:
+            bool
+        """
+
+    def is_movable(self) ->bool:
+        """is movable
+
+        Returns:
+            bool
+        """
+
+    def is_parapet(self) ->bool:
+        """is parapet
+
+        Returns:
+            bool
+        """
+
+    def is_partitioning(self) ->bool:
+        """is partitioning
+
+        Returns:
+            bool
+        """
+
+    def is_plumbing_wall(self) ->bool:
+        """is plumbing wall
+
+        Returns:
+            bool
+        """
+
+    def is_polygonal(self) ->bool:
+        """is polygonal
+
+        Returns:
+            bool
+        """
+
+    def is_shear(self) ->bool:
+        """is shear
+
+        Returns:
+            bool
+        """
+
+    def is_solid_wall(self) ->bool:
+        """is solid wall
+
+        Returns:
+            bool
+        """
+
+    def is_standard(self) ->bool:
+        """is standard
+
+        Returns:
+            bool
+        """
+
+    def is_lightdome(self) ->bool:
+        """is lightdome
+
+        Returns:
+            bool
+        """
+
+    def is_skylight(self) ->bool:
+        """is skylight
+
+        Returns:
+            bool
+        """
+
+    def is_window(self) ->bool:
+        """is window
+
+        Returns:
+            bool
+        """
+
+    def is_opening(self) ->bool:
+        """is opening
+
+        Returns:
+            bool
+        """
+
+    def is_recess(self) ->bool:
+        """is recess
+
+        Returns:
+            bool
+        """
+
+    def is_anchorbolt(self) ->bool:
+        """is anchorbolt
+
+        Returns:
+            bool
+        """
+
+    def is_bolt(self) ->bool:
+        """is bolt
+
+        Returns:
+            bool
+        """
+
+    def is_dowel(self) ->bool:
+        """is dowel
+
+        Returns:
+            bool
+        """
+
+    def is_nail(self) ->bool:
+        """is nail
+
+        Returns:
+            bool
+        """
+
+    def is_nail_plate(self) ->bool:
+        """is nail plate
+
+        Returns:
+            bool
+        """
+
+    def is_rivet(self) ->bool:
+        """is rivet
+
+        Returns:
+            bool
+        """
+
+    def is_screw(self) ->bool:
+        """is screw
+
+        Returns:
+            bool
+        """
+
+    def is_shear_connector(self) ->bool:
+        """is shear connector
+
+        Returns:
+            bool
+        """
+
+    def is_staple(self) ->bool:
+        """is staple
+
+        Returns:
+            bool
+        """
+
+    def is_stud_shear_connector(self) ->bool:
+        """is stud shear connector
+
+        Returns:
+            bool
+        """
+
+    def is_glue(self) ->bool:
+        """is glue
+
+        Returns:
+            bool
+        """
+
+    def is_mortar(self) ->bool:
+        """is mortar
+
+        Returns:
+            bool
+        """
+
+    def is_weld(self) ->bool:
+        """is weld
+
+        Returns:
+            bool
+        """
+
+    def is_external(self) ->bool:
+        """is external
+
+        Returns:
+            bool
+        """
+
+    def is_gfa(self) ->bool:
+        """is gfa
+
+        Returns:
+            bool
+        """
+
+    def is_internal(self) ->bool:
+        """is internal
+
+        Returns:
+            bool
+        """
+
+    def is_parking(self) ->bool:
+        """is parking
+
+        Returns:
+            bool
+        """
+
+    def is_space(self) ->bool:
+        """is space
+
+        Returns:
+            bool
+        """
+
+    def is_accessory_assembly(self) ->bool:
+        """is accessory assembly
+
+        Returns:
+            bool
+        """
+
+    def is_arch(self) ->bool:
+        """is arch
+
+        Returns:
+            bool
+        """
+
+    def is_beam_grid(self) ->bool:
+        """is beam grid
+
+        Returns:
+            bool
+        """
+
+    def is_braced_frame(self) ->bool:
+        """is braced frame
+
+        Returns:
+            bool
+        """
+
+    def is_girder(self) ->bool:
+        """is girder
+
+        Returns:
+            bool
+        """
+
+    def is_reinforcement_unit(self) ->bool:
+        """is reinforcement unit
+
+        Returns:
+            bool
+        """
+
+    def is_rigid_frame(self) ->bool:
+        """is rigid frame
+
+        Returns:
+            bool
+        """
+
+    def is_slab_field(self) ->bool:
+        """is slab field
+
+        Returns:
+            bool
+        """
+
+    def is_truss(self) ->bool:
+        """is truss
+
+        Returns:
+            bool
+        """
+
+    def is_cable_ladder_segment(self) ->bool:
+        """is cable ladder segment
+
+        Returns:
+            bool
+        """
+
+    def is_cable_tray_segment(self) ->bool:
+        """is cable tray segment
+
+        Returns:
+            bool
+        """
+
+    def is_cable_trunking_segment(self) ->bool:
+        """is cable trunking segment
+
+        Returns:
+            bool
+        """
+
+    def is_conduit_segment(self) ->bool:
+        """is conduit segment
+
+        Returns:
+            bool
+        """
+
+    def is_busbar_segment(self) ->bool:
+        """is busbar segment
+
+        Returns:
+            bool
+        """
+
+    def is_cable_segment(self) ->bool:
+        """is cable segment
+
+        Returns:
+            bool
+        """
+
+    def is_conductor_segment(self) ->bool:
+        """is conductor segment
+
+        Returns:
+            bool
+        """
+
+    def is_core_segment(self) ->bool:
+        """is core segment
+
+        Returns:
+            bool
+        """
+
+    def is_flexible_segment(self) ->bool:
+        """is flexible segment
+
+        Returns:
+            bool
+        """
+
+    def is_rigid_segment(self) ->bool:
+        """is rigid segment
+
+        Returns:
+            bool
+        """
+
+    def is_culvert(self) ->bool:
+        """is culvert
+
+        Returns:
+            bool
+        """
+
+    def is_gutter(self) ->bool:
+        """is gutter
+
+        Returns:
+            bool
+        """
+
+    def is_spool(self) ->bool:
+        """is spool
+
+        Returns:
+            bool
+        """
+
+    def is_audio_visual_outlet(self) ->bool:
+        """is audio visual outlet
+
+        Returns:
+            bool
+        """
+
+    def is_communications_outlet(self) ->bool:
+        """is communications outlet
+
+        Returns:
+            bool
+        """
+
+    def is_power_outlet(self) ->bool:
+        """is power outlet
+
+        Returns:
+            bool
+        """
+
+    def is_data_outlet(self) ->bool:
+        """is data outlet
+
+        Returns:
+            bool
+        """
+
+    def is_telephone_outlet(self) ->bool:
+        """is telephone outlet
+
+        Returns:
+            bool
+        """
+
+    def is_anchoring(self) ->bool:
+        """is anchoring
+
+        Returns:
+            bool
+        """
+
+    def is_edge(self) ->bool:
+        """is edge
+
+        Returns:
+            bool
+        """
+
+    def is_ligature(self) ->bool:
+        """is ligature
+
+        Returns:
+            bool
+        """
+
+    def is_main(self) ->bool:
+        """is main
+
+        Returns:
+            bool
+        """
+
+    def is_punching(self) ->bool:
+        """is punching
+
+        Returns:
+            bool
+        """
+
+    def is_ring(self) ->bool:
+        """is ring
 
         Returns:
             bool
@@ -1483,85 +2208,750 @@ class element_type:
             None
         """
 
-    def set_normal_node(self) ->None:
-        """set normal node
+    def set_ceiling(self) ->None:
+        """set ceiling
 
         Returns:
             None
         """
 
-    def set_connector_node(self) ->None:
-        """set connector node
+    def set_cladding(self) ->None:
+        """set cladding
 
         Returns:
             None
         """
 
-    def set_wire_axis(self) ->None:
-        """set wire axis
+    def set_flooring(self) ->None:
+        """set flooring
 
         Returns:
             None
         """
 
-    def set_eave_axis(self) ->None:
-        """set eave axis
+    def set_insulation(self) ->None:
+        """set insulation
 
         Returns:
             None
         """
 
-    def set_rectangular_axis(self) ->None:
-        """set rectangular axis
+    def set_membrane(self) ->None:
+        """set membrane
 
         Returns:
             None
         """
 
-    def set_circular_axis(self) ->None:
-        """set circular axis
+    def set_roofing(self) ->None:
+        """set roofing
 
         Returns:
             None
         """
 
-    def set_drilling_axis(self) ->None:
-        """set drilling axis
+    def set_sleeving(self) ->None:
+        """set sleeving
 
         Returns:
             None
         """
 
-    def set_connector_axis(self) ->None:
-        """set connector axis
+    def set_wrapping(self) ->None:
+        """set wrapping
 
         Returns:
             None
         """
 
-    def set_line(self) ->None:
-        """set line
+    def set_footing_beam(self) ->None:
+        """set footing beam
 
         Returns:
             None
         """
 
-    def set_surface(self) ->None:
-        """set surface
+    def set_pad_footing(self) ->None:
+        """set pad footing
 
         Returns:
             None
         """
 
-    def set_cadwork(self) ->None:
-        """set cadwork
+    def set_pile_cap(self) ->None:
+        """set pile cap
 
         Returns:
             None
         """
 
-    def set_global_cut(self) ->None:
-        """set global cut
+    def set_strip_footing(self) ->None:
+        """set strip footing
+
+        Returns:
+            None
+        """
+
+    def set_cohesion(self) ->None:
+        """set cohesion
+
+        Returns:
+            None
+        """
+
+    def set_friction(self) ->None:
+        """set friction
+
+        Returns:
+            None
+        """
+
+    def set_support(self) ->None:
+        """set support
+
+        Returns:
+            None
+        """
+
+    def set_balustrade(self) ->None:
+        """set balustrade
+
+        Returns:
+            None
+        """
+
+    def set_guardrail(self) ->None:
+        """set guardrail
+
+        Returns:
+            None
+        """
+
+    def set_handrail(self) ->None:
+        """set handrail
+
+        Returns:
+            None
+        """
+
+    def set_baseslab(self) ->None:
+        """set baseslab
+
+        Returns:
+            None
+        """
+
+    def set_floor(self) ->None:
+        """set floor
+
+        Returns:
+            None
+        """
+
+    def set_landing(self) ->None:
+        """set landing
+
+        Returns:
+            None
+        """
+
+    def set_roof(self) ->None:
+        """set roof
+
+        Returns:
+            None
+        """
+
+    def set_beam(self) ->None:
+        """set beam
+
+        Returns:
+            None
+        """
+
+    def set_hollowcore(self) ->None:
+        """set hollowcore
+
+        Returns:
+            None
+        """
+
+    def set_joist(self) ->None:
+        """set joist
+
+        Returns:
+            None
+        """
+
+    def set_lintel(self) ->None:
+        """set lintel
+
+        Returns:
+            None
+        """
+
+    def set_spandrel(self) ->None:
+        """set spandrel
+
+        Returns:
+            None
+        """
+
+    def set_tbeam(self) ->None:
+        """set tbeam
+
+        Returns:
+            None
+        """
+
+    def set_complex(self) ->None:
+        """set complex
+
+        Returns:
+            None
+        """
+
+    def set_element(self) ->None:
+        """set element
+
+        Returns:
+            None
+        """
+
+    def set_partial(self) ->None:
+        """set partial
+
+        Returns:
+            None
+        """
+
+    def set_provision_for_space(self) ->None:
+        """set provision for space
+
+        Returns:
+            None
+        """
+
+    def set_provision_for_void(self) ->None:
+        """set provision for void
+
+        Returns:
+            None
+        """
+
+    def set_column(self) ->None:
+        """set column
+
+        Returns:
+            None
+        """
+
+    def set_pilaster(self) ->None:
+        """set pilaster
+
+        Returns:
+            None
+        """
+
+    def set_molding(self) ->None:
+        """set molding
+
+        Returns:
+            None
+        """
+
+    def set_skirtingboard(self) ->None:
+        """set skirtingboard
+
+        Returns:
+            None
+        """
+
+    def set_door(self) ->None:
+        """set door
+
+        Returns:
+            None
+        """
+
+    def set_gate(self) ->None:
+        """set gate
+
+        Returns:
+            None
+        """
+
+    def set_trap_door(self) ->None:
+        """set trap door
+
+        Returns:
+            None
+        """
+
+    def set_caisson_foundation(self) ->None:
+        """set caisson foundation
+
+        Returns:
+            None
+        """
+
+    def set_brace(self) ->None:
+        """set brace
+
+        Returns:
+            None
+        """
+
+    def set_chord(self) ->None:
+        """set chord
+
+        Returns:
+            None
+        """
+
+    def set_collar(self) ->None:
+        """set collar
+
+        Returns:
+            None
+        """
+
+    def set_member(self) ->None:
+        """set member
+
+        Returns:
+            None
+        """
+
+    def set_mullion(self) ->None:
+        """set mullion
+
+        Returns:
+            None
+        """
+
+    def set_plate(self) ->None:
+        """set plate
+
+        Returns:
+            None
+        """
+
+    def set_post(self) ->None:
+        """set post
+
+        Returns:
+            None
+        """
+
+    def set_purlin(self) ->None:
+        """set purlin
+
+        Returns:
+            None
+        """
+
+    def set_rafter(self) ->None:
+        """set rafter
+
+        Returns:
+            None
+        """
+
+    def set_stringer(self) ->None:
+        """set stringer
+
+        Returns:
+            None
+        """
+
+    def set_strut(self) ->None:
+        """set strut
+
+        Returns:
+            None
+        """
+
+    def set_stud(self) ->None:
+        """set stud
+
+        Returns:
+            None
+        """
+
+    def set_bored(self) ->None:
+        """set bored
+
+        Returns:
+            None
+        """
+
+    def set_driven(self) ->None:
+        """set driven
+
+        Returns:
+            None
+        """
+
+    def set_jetgrouting(self) ->None:
+        """set jetgrouting
+
+        Returns:
+            None
+        """
+
+    def set_curtain_panel(self) ->None:
+        """set curtain panel
+
+        Returns:
+            None
+        """
+
+    def set_sheet(self) ->None:
+        """set sheet
+
+        Returns:
+            None
+        """
+
+    def set_half_turn_ramp(self) ->None:
+        """set half turn ramp
+
+        Returns:
+            None
+        """
+
+    def set_quarter_turn_ramp(self) ->None:
+        """set quarter turn ramp
+
+        Returns:
+            None
+        """
+
+    def set_spiral_ramp(self) ->None:
+        """set spiral ramp
+
+        Returns:
+            None
+        """
+
+    def set_straight_run_ramp(self) ->None:
+        """set straight run ramp
+
+        Returns:
+            None
+        """
+
+    def set_two_quarter_turn_ramp(self) ->None:
+        """set two quarter turn ramp
+
+        Returns:
+            None
+        """
+
+    def set_two_straight_run_ramp(self) ->None:
+        """set two straight run ramp
+
+        Returns:
+            None
+        """
+
+    def set_barrel_roof(self) ->None:
+        """set barrel roof
+
+        Returns:
+            None
+        """
+
+    def set_butterfly_roof(self) ->None:
+        """set butterfly roof
+
+        Returns:
+            None
+        """
+
+    def set_dome_roof(self) ->None:
+        """set dome roof
+
+        Returns:
+            None
+        """
+
+    def set_flat_roof(self) ->None:
+        """set flat roof
+
+        Returns:
+            None
+        """
+
+    def set_freeform(self) ->None:
+        """set freeform
+
+        Returns:
+            None
+        """
+
+    def set_gable_roof(self) ->None:
+        """set gable roof
+
+        Returns:
+            None
+        """
+
+    def set_gambrel_roof(self) ->None:
+        """set gambrel roof
+
+        Returns:
+            None
+        """
+
+    def set_hipped_gable_roof(self) ->None:
+        """set hipped gable roof
+
+        Returns:
+            None
+        """
+
+    def set_hip_roof(self) ->None:
+        """set hip roof
+
+        Returns:
+            None
+        """
+
+    def set_mansard_roof(self) ->None:
+        """set mansard roof
+
+        Returns:
+            None
+        """
+
+    def set_pavilion_roof(self) ->None:
+        """set pavilion roof
+
+        Returns:
+            None
+        """
+
+    def set_rainbow_roof(self) ->None:
+        """set rainbow roof
+
+        Returns:
+            None
+        """
+
+    def set_shed_roof(self) ->None:
+        """set shed roof
+
+        Returns:
+            None
+        """
+
+    def set_curved_run_stair(self) ->None:
+        """set curved run stair
+
+        Returns:
+            None
+        """
+
+    def set_double_return_stair(self) ->None:
+        """set double return stair
+
+        Returns:
+            None
+        """
+
+    def set_half_turn_stair(self) ->None:
+        """set half turn stair
+
+        Returns:
+            None
+        """
+
+    def set_half_winding_stair(self) ->None:
+        """set half winding stair
+
+        Returns:
+            None
+        """
+
+    def set_quarter_turn_stair(self) ->None:
+        """set quarter turn stair
+
+        Returns:
+            None
+        """
+
+    def set_quarter_winding_stair(self) ->None:
+        """set quarter winding stair
+
+        Returns:
+            None
+        """
+
+    def set_spiral_stair(self) ->None:
+        """set spiral stair
+
+        Returns:
+            None
+        """
+
+    def set_straight_run_stair(self) ->None:
+        """set straight run stair
+
+        Returns:
+            None
+        """
+
+    def set_three_quarter_turn_stair(self) ->None:
+        """set three quarter turn stair
+
+        Returns:
+            None
+        """
+
+    def set_three_quarter_winding_stair(self) ->None:
+        """set three quarter winding stair
+
+        Returns:
+            None
+        """
+
+    def set_two_curved_run_stair(self) ->None:
+        """set two curved run stair
+
+        Returns:
+            None
+        """
+
+    def set_two_quarter_turn_stair(self) ->None:
+        """set two quarter turn stair
+
+        Returns:
+            None
+        """
+
+    def set_two_quarter_winding_stair(self) ->None:
+        """set two quarter winding stair
+
+        Returns:
+            None
+        """
+
+    def set_two_straight_run_stair(self) ->None:
+        """set two straight run stair
+
+        Returns:
+            None
+        """
+
+    def set_curved(self) ->None:
+        """set curved
+
+        Returns:
+            None
+        """
+
+    def set_spiral(self) ->None:
+        """set spiral
+
+        Returns:
+            None
+        """
+
+    def set_straight(self) ->None:
+        """set straight
+
+        Returns:
+            None
+        """
+
+    def set_winder(self) ->None:
+        """set winder
+
+        Returns:
+            None
+        """
+
+    def set_elemented_wall(self) ->None:
+        """set elemented wall
+
+        Returns:
+            None
+        """
+
+    def set_movable(self) ->None:
+        """set movable
+
+        Returns:
+            None
+        """
+
+    def set_parapet(self) ->None:
+        """set parapet
+
+        Returns:
+            None
+        """
+
+    def set_partitioning(self) ->None:
+        """set partitioning
+
+        Returns:
+            None
+        """
+
+    def set_plumbing_wall(self) ->None:
+        """set plumbing wall
+
+        Returns:
+            None
+        """
+
+    def set_polygonal(self) ->None:
+        """set polygonal
+
+        Returns:
+            None
+        """
+
+    def set_shear(self) ->None:
+        """set shear
+
+        Returns:
+            None
+        """
+
+    def set_solid_wall(self) ->None:
+        """set solid wall
+
+        Returns:
+            None
+        """
+
+    def set_standard(self) ->None:
+        """set standard
+
+        Returns:
+            None
+        """
+
+    def set_lightdome(self) ->None:
+        """set lightdome
+
+        Returns:
+            None
+        """
+
+    def set_skylight(self) ->None:
+        """set skylight
+
+        Returns:
+            None
+        """
+
+    def set_window(self) ->None:
+        """set window
 
         Returns:
             None
@@ -1574,1766 +2964,193 @@ class element_type:
             None
         """
 
-    def set_container(self) ->None:
-        """set container
+    def set_recess(self) ->None:
+        """set recess
 
         Returns:
             None
         """
 
-    def set_export_solid(self) ->None:
-        """set export solid
+    def set_anchorbolt(self) ->None:
+        """set anchorbolt
 
         Returns:
             None
         """
 
-    def set_auxiliary(self) ->None:
-        """set auxiliary
+    def set_bolt(self) ->None:
+        """set bolt
 
         Returns:
             None
         """
 
-    def set_nesting_parent(self) ->None:
-        """set nesting parent
+    def set_dowel(self) ->None:
+        """set dowel
 
         Returns:
             None
         """
 
-    def set_rectangular_beam(self) ->None:
-        """set rectangular beam
+    def set_nail(self) ->None:
+        """set nail
 
         Returns:
             None
         """
 
-    def set_circular_beam(self) ->None:
-        """set circular beam
+    def set_nailplate(self) ->None:
+        """set nailplate
 
         Returns:
             None
         """
 
-    def set_steel_shape(self) ->None:
-        """set steel shape
+    def set_rivet(self) ->None:
+        """set rivet
 
         Returns:
             None
         """
 
-    def set_panel(self) ->None:
-        """set panel
+    def set_screw(self) ->None:
+        """set screw
 
         Returns:
             None
         """
 
-    def set_rotation_element(self) ->None:
-        """set rotation element
+    def set_shearconnector(self) ->None:
+        """set shearconnector
 
         Returns:
             None
         """
 
-    def set_additional_element(self) ->None:
-        """set additional element
+    def set_staple(self) ->None:
+        """set staple
 
         Returns:
             None
         """
 
-    def set_room(self) ->None:
-        """set room
+    def set_studshearconnector(self) ->None:
+        """set studshearconnector
 
         Returns:
             None
         """
 
-    def set_graphical_object(self) ->None:
-        """set graphical object
+    def set_glue(self) ->None:
+        """set glue
 
         Returns:
             None
         """
 
-    def set_dimension(self) ->None:
-        """set dimension
+    def set_mortar(self) ->None:
+        """set mortar
 
         Returns:
             None
         """
 
-    def set_text_document(self) ->None:
-        """set text document
+    def set_weld(self) ->None:
+        """set weld
 
         Returns:
             None
         """
 
-    def set_export_solid_scene(self) ->None:
-        """set export solid scene
+    def set_external(self) ->None:
+        """set external
 
         Returns:
             None
         """
 
-    def set_section_trace(self) ->None:
-        """set section trace
+    def set_gfa(self) ->None:
+        """set gfa
 
         Returns:
             None
         """
 
-```
+    def set_internal(self) ->None:
+        """set internal
 
-## Missing Items
-### Classes cadwork
-#### extended_settings
-
-```python
-class extended_settings:
-
-    def get_btl_wall_export(self) ->bool:
-        """get btl wall export
-
-        Returns:
-            bool
-        """
-
-    def get_chief_element(self) ->bool:
-        """get chief element
-
-        Returns:
-            bool
-        """
-
-    def get_group_export(self) ->bool:
-        """get group export
-
-        Returns:
-            bool
-        """
-
-    def get_ignore_for_connector_axis(self) ->bool:
-        """get ignore for connector axis
-
-        Returns:
-            bool
-        """
-
-    def get_log_home_export(self) ->bool:
-        """get log home export
-
-        Returns:
-            bool
-        """
-
-    def get_log_macro_export(self) ->bool:
-        """get log macro export
-
-        Returns:
-            bool
-        """
-
-    def get_mfb_export(self) ->bool:
-        """get mfb export
-
-        Returns:
-            bool
-        """
-
-    def get_outline(self) ->bool:
-        """get outline
-
-        Returns:
-            bool
-        """
-
-    def get_piece_by_piece_export_with_dimensions(self) ->bool:
-        """get piece by piece export with dimensions
-
-        Returns:
-            bool
-        """
-
-    def get_piece_by_piece_export_without_dimensions(self) ->bool:
-        """get piece by piece export without dimensions
-
-        Returns:
-            bool
-        """
-
-    def get_wall_export(self) ->bool:
-        """get wall export
-
-        Returns:
-            bool
-        """
-
-    def set_btl_wall_export(self, value: bool) ->None:
-        """set btl wall export
-
-        Parameters:
-            value: value
-
-        Returns:
-            None
-        """
-
-    def set_chief_element(self, value: bool) ->None:
-        """set chief element
-
-        Parameters:
-            value: value
-
-        Returns:
-            None
-        """
-
-    def set_group_export(self, value: bool) ->None:
-        """set group export
-
-        Parameters:
-            value: value
-
-        Returns:
-            None
-        """
-
-    def set_ignore_for_connector_axis(self, value: bool) ->None:
-        """set ignore for connector axis
-
-        Parameters:
-            value: value
-
-        Returns:
-            None
-        """
-
-    def set_log_home_export(self, value: bool) ->None:
-        """set log home export
-
-        Parameters:
-            value: value
-
-        Returns:
-            None
-        """
-
-    def set_mfb_export(self, value: bool) ->None:
-        """set mfb export
-
-        Parameters:
-            value: value
-
-        Returns:
-            None
-        """
-
-    def set_outline(self, value: bool) ->None:
-        """set outline
-
-        Parameters:
-            value: value
-
-        Returns:
-            None
-        """
-
-    def set_piece_by_piece_export_with_dimensions(self, value: bool) ->None:
-        """set piece by piece export with dimensions
-
-        Parameters:
-            value: value
-
-        Returns:
-            None
-        """
-
-    def set_piece_by_piece_export_without_dimensions(self, value: bool) ->None:
-        """set piece by piece export without dimensions
-
-        Parameters:
-            value: value
-
-        Returns:
-            None
-        """
-
-    def set_wall_export(self, value: bool) ->None:
-        """set wall export
-
-        Parameters:
-            value: value
-
-        Returns:
-            None
-        """
-
-```
-
-## Missing Items
-### Classes cadwork
-#### facet_list
-
-```python
-class facet_list:
-
-    def count(self) ->int:
-        """count
-
-        Returns:
-            int
-        """
-
-    def at(self, index: int) ->point_3d:
-        """at
-
-        Parameters:
-            index: index
-
-        Returns:
-            point_3d
-        """
-
-    def get_external_polygon(self, index: int) ->vertex_list:
-        """get external polygon
-
-        Parameters:
-            index: index
-
-        Returns:
-            vertex_list
-        """
-
-    def get_internal_polygons(self, index: int) ->polygon_list:
-        """get internal polygons
-
-        Parameters:
-            index: index
-
-        Returns:
-            polygon_list
-        """
-
-    def get_vertices_for_reference_face(self) ->vertex_list:
-        """get vertices for reference face
-
-        Returns:
-            vertex_list
-        """
-
-    def get_external_polygon_for_reference_face(self) ->vertex_list:
-        """get external polygon for reference face
-
-        Returns:
-            vertex_list
-        """
-
-    def get_internal_polygons_for_reference_face(self) ->polygon_list:
-        """get internal polygons for reference face
-
-        Returns:
-            polygon_list
-        """
-
-    def get_normal_vector(self, index: int) ->point_3d:
-        """get normal vector
-
-        Parameters:
-            index: index
-
-        Returns:
-            point_3d
-        """
-
-    def get_distance_to_origin(self, index: int) ->float:
-        """get distance to origin
-
-        Parameters:
-            index: index
-
-        Returns:
-            float
-        """
-
-```
-
-## Missing Items
-### Classes cadwork
-#### hundegger_machine_type
-
-```python
-@unique
-class hundegger_machine_type(IntEnum):
-    """hundegger machine type
-
-    Examples:
-        >>> cadwork.hundegger_machine_type.p8_10
-        p8_10
-    """
-    p8_10 = 1
-    """"""
-    k1 = 2
-    """"""
-    k2 = 3
-    """"""
-    k2_cambium = 4
-    """"""
-    k2_uf_5 = 5
-    """"""
-    k2_uf_5_cambium = 6
-    """"""
-    speedcut = 7
-    """"""
-    pba = 8
-    """"""
-    pba_bvx = 9
-    """"""
-    pba_bvx_cambium = 10
-    """"""
-    spm = 12
-    """"""
-    spm_cambium = 13
-    """"""
-    robot_drive = 14
-    """"""
-    turbo_drive = 15
-    """"""
-
-    def __int__(self) ->int:
-        return self.value
-
-```
-
-## Missing Items
-### Classes cadwork
-#### ifc_2x3_element_type
-
-```python
-class ifc_2x3_element_type:
-
-    def is_none(self) ->bool:
-        """is none
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_beam(self) ->bool:
-        """is ifc beam
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_column(self) ->bool:
-        """is ifc column
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_curtain_wall(self) ->bool:
-        """is ifc curtain wall
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_door(self) ->bool:
-        """is ifc door
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_member(self) ->bool:
-        """is ifc member
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_plate(self) ->bool:
-        """is ifc plate
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_railing(self) ->bool:
-        """is ifc railing
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_ramp(self) ->bool:
-        """is ifc ramp
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_ramp_flight(self) ->bool:
-        """is ifc ramp flight
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_roof(self) ->bool:
-        """is ifc roof
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_slab(self) ->bool:
-        """is ifc slab
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_stair(self) ->bool:
-        """is ifc stair
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_stair_flight(self) ->bool:
-        """is ifc stair flight
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_wall(self) ->bool:
-        """is ifc wall
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_wall_standard_case(self) ->bool:
-        """is ifc wall standard case
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_window(self) ->bool:
-        """is ifc window
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_building_element_proxy(self) ->bool:
-        """is ifc building element proxy
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_chimney(self) ->bool:
-        """is ifc chimney
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_covering(self) ->bool:
-        """is ifc covering
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_footing(self) ->bool:
-        """is ifc footing
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_furnishing_element(self) ->bool:
-        """is ifc furnishing element
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_opening_element(self) ->bool:
-        """is ifc opening element
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_space(self) ->bool:
-        """is ifc space
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_flow_segment(self) ->bool:
-        """is ifc flow segment
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_building_element_part(self) ->bool:
-        """is ifc building element part
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_discrete_accessory(self) ->bool:
-        """is ifc discrete accessory
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_fastener(self) ->bool:
-        """is ifc fastener
-
-        Returns:
-            bool
-        """
-
-    def is_ifc_mechanical_fastener(self) ->bool:
-        """is ifc mechanical fastener
-
-        Returns:
-            bool
-        """
-
-    def set_none(self) ->None:
-        """set none
-
-        Returns:
-            None
-        """
-
-    def set_ifc_beam(self) ->None:
-        """set ifc beam
-
-        Returns:
-            None
-        """
-
-    def set_ifc_column(self) ->None:
-        """set ifc column
-
-        Returns:
-            None
-        """
-
-    def set_ifc_curtain_wall(self) ->None:
-        """set ifc curtain wall
-
-        Returns:
-            None
-        """
-
-    def set_ifc_door(self) ->None:
-        """set ifc door
-
-        Returns:
-            None
-        """
-
-    def set_ifc_member(self) ->None:
-        """set ifc member
-
-        Returns:
-            None
-        """
-
-    def set_ifc_plate(self) ->None:
-        """set ifc plate
-
-        Returns:
-            None
-        """
-
-    def set_ifc_railing(self) ->None:
-        """set ifc railing
-
-        Returns:
-            None
-        """
-
-    def set_ifc_ramp(self) ->None:
-        """set ifc ramp
-
-        Returns:
-            None
-        """
-
-    def set_ifc_ramp_flight(self) ->None:
-        """set ifc ramp flight
-
-        Returns:
-            None
-        """
-
-    def set_ifc_roof(self) ->None:
-        """set ifc roof
-
-        Returns:
-            None
-        """
-
-    def set_ifc_slab(self) ->None:
-        """set ifc slab
-
-        Returns:
-            None
-        """
-
-    def set_ifc_stair(self) ->None:
-        """set ifc stair
-
-        Returns:
-            None
-        """
-
-    def set_ifc_stair_flight(self) ->None:
-        """set ifc stair flight
-
-        Returns:
-            None
-        """
-
-    def set_ifc_wall(self) ->None:
-        """set ifc wall
-
-        Returns:
-            None
-        """
-
-    def set_ifc_wall_standard_case(self) ->None:
-        """set ifc wall standard case
-
-        Returns:
-            None
-        """
-
-    def set_ifc_window(self) ->None:
-        """set ifc window
-
-        Returns:
-            None
-        """
-
-    def set_ifc_building_element_proxy(self) ->None:
-        """set ifc building element proxy
-
-        Returns:
-            None
-        """
-
-    def set_ifc_chimney(self) ->None:
-        """set ifc chimney
-
-        Returns:
-            None
-        """
-
-    def set_ifc_covering(self) ->None:
-        """set ifc covering
-
-        Returns:
-            None
-        """
-
-    def set_ifc_footing(self) ->None:
-        """set ifc footing
-
-        Returns:
-            None
-        """
-
-    def set_ifc_furnishing_element(self) ->None:
-        """set ifc furnishing element
-
-        Returns:
-            None
-        """
-
-    def set_ifc_opening_element(self) ->None:
-        """set ifc opening element
-
-        Returns:
-            None
-        """
-
-    def set_ifc_space(self) ->None:
-        """set ifc space
-
-        Returns:
-            None
-        """
-
-    def set_ifc_flow_segment(self) ->None:
-        """set ifc flow segment
-
-        Returns:
-            None
-        """
-
-    def set_ifc_building_element_part(self) ->None:
-        """set ifc building element part
-
-        Returns:
-            None
-        """
-
-    def set_ifc_discrete_accessory(self) ->None:
-        """set ifc discrete accessory
-
-        Returns:
-            None
-        """
-
-    def set_ifc_fastener(self) ->None:
-        """set ifc fastener
-
-        Returns:
-            None
-        """
-
-    def set_ifc_mechanical_fastener(self) ->None:
-        """set ifc mechanical fastener
-
-        Returns:
-            None
-        """
-
-    def __repr__(self) ->str:
-        """  repr  
-
-        Returns:
-            str
-        """
-
-```
-
-## Missing Items
-### Classes cadwork
-#### ifc_element_combine_behaviour
-
-```python
-@unique
-class ifc_element_combine_behaviour(IntEnum):
-    """ifc element combine behaviour
-
-    Examples:
-        >>> cadwork.ifc_element_combine_behaviour.element_module
-        element_module
-    """
-    element_module = 0
-    """"""
-    element_assembly = 1
-    """"""
-
-    def __int__(self) ->int:
-        return self.value
-
-```
-
-## Missing Items
-### Classes cadwork
-#### ifc_options
-
-```python
-class ifc_options:
-
-    def get_ifc_options_properties(self) ->'ifc_options_properties':
-        """get ifc options properties
-
-        Returns:
-            'ifc_options_properties'
-        """
-
-    def get_ifc_options_project_data(self) ->'ifc_options_project_data':
-        """get ifc options project data
-
-        Returns:
-            'ifc_options_project_data'
-        """
-
-    def get_ifc_options_aggregation(self) ->'ifc_options_aggregation':
-        """get ifc options aggregation
-
-        Returns:
-            'ifc_options_aggregation'
-        """
-
-    def get_ifc_options_level_of_detail(self) ->'ifc_options_level_of_detail':
-        """get ifc options level of detail
-
-        Returns:
-            'ifc_options_level_of_detail'
-        """
-
-```
-
-## Missing Items
-### Classes cadwork
-#### ifc_options_aggregation
-
-```python
-class ifc_options_aggregation:
-
-    def get_export_cover_geometry(self) ->bool:
-        """get export cover geometry
-
-        Returns:
-            bool
-        """
-
-    def set_element_aggregation_attribute(self,
-        element_aggregation_attribute: element_grouping_type) ->None:
-        """set element aggregation attribute
-
-        Parameters:
-            element_aggregation_attribute: element_aggregation_attribute
-
-        Returns:
-            None
-        """
-
-    def set_consider_element_aggregation(self, consider_element_aggregation:
-        bool) ->None:
-        """set consider element aggregation
-
-        Parameters:
-            consider_element_aggregation: consider_element_aggregation
-
-        Returns:
-            None
-        """
-
-    def get_element_aggregation_attribute(self) ->int:
-        """get element aggregation attribute
-
-        Returns:
-            int
-        """
-
-    def get_consider_element_aggregation(self) ->bool:
-        """get consider element aggregation
-
-        Returns:
-            bool
-        """
-
-    def get_element_combine_type(self) ->ifc_element_combine_behaviour:
-        """get element combine type
-
-        Returns:
-            ifc_element_combine_behaviour
-        """
-
-    def set_export_cover_geometry(self, export_cover_geometry: bool) ->None:
-        """set export cover geometry
-
-        Parameters:
-            export_cover_geometry: export_cover_geometry
-
-        Returns:
-            None
-        """
-
-    def set_element_combine_type(self, element_combine_type:
-        ifc_element_combine_behaviour) ->None:
-        """set element combine type
-
-        Parameters:
-            element_combine_type: element_combine_type
-
-        Returns:
-            None
-        """
-
-```
-
-## Missing Items
-### Classes cadwork
-#### ifc_options_level_of_detail
-
-```python
-class ifc_options_level_of_detail:
-
-    def get_export_vba_drillings(self) ->bool:
-        """get export vba drillings
-
-        Returns:
-            bool
-        """
-
-    def set_cut_endtype_counterparts(self, cut_endtype_counterparts: bool
-        ) ->None:
-        """set cut endtype counterparts
-
-        Parameters:
-            cut_endtype_counterparts: cut_endtype_counterparts
-
-        Returns:
-            None
-        """
-
-    def set_export_installation_rectangular_materialization(self,
-        export_installation_rectangular_materialization: bool) ->None:
-        """set export installation rectangular materialization
-
-        Parameters:
-            export_installation_rectangular_materialization: export_installation_rectangular_materialization
-
-        Returns:
-            None
-        """
-
-    def get_export_endtype_materialization(self) ->bool:
-        """get export endtype materialization
-
-        Returns:
-            bool
-        """
-
-    def get_cut_endtype_counterparts(self) ->bool:
-        """get cut endtype counterparts
-
-        Returns:
-            bool
-        """
-
-    def get_export_installation_round_materialization(self) ->bool:
-        """get export installation round materialization
-
-        Returns:
-            bool
-        """
-
-    def set_export_vba_drillings(self, export_vba_drillings: bool) ->None:
-        """set export vba drillings
-
-        Parameters:
-            export_vba_drillings: export_vba_drillings
-
-        Returns:
-            None
-        """
-
-    def set_cut_installation_round(self, cut_installation_round: bool) ->None:
-        """set cut installation round
-
-        Parameters:
-            cut_installation_round: cut_installation_round
-
-        Returns:
-            None
-        """
-
-    def get_export_vba_components(self) ->bool:
-        """get export vba components
-
-        Returns:
-            bool
-        """
-
-    def set_export_experimental_swept_solid_materialization(self,
-        export_swept_solid_for_simple_geometry: bool) ->None:
-        """set export experimental swept solid materialization
-
-        Parameters:
-            export_swept_solid_for_simple_geometry: export_swept_solid_for_simple_geometry
-
-        Returns:
-            None
-        """
-
-    def set_export_endtype_materialization(self, materializaiton: bool) ->None:
-        """set export endtype materialization
-
-        Parameters:
-            materializaiton: materializaiton
-
-        Returns:
-            None
-        """
-
-    def set_cut_drillings(self, flag: bool) ->None:
-        """set cut drillings
-
-        Parameters:
-            flag: flag
-
-        Returns:
-            None
-        """
-
-    def get_cut_drillings(self) ->bool:
-        """get cut drillings
-
-        Returns:
-            bool
-        """
-
-    def set_export_vba_components(self, export_vba_components: bool) ->None:
-        """set export vba components
-
-        Parameters:
-            export_vba_components: export_vba_components
-
-        Returns:
-            None
-        """
-
-    def get_export_experimental_swept_solid_materialization(self) ->bool:
-        """get export experimental swept solid materialization
-
-        Returns:
-            bool
-        """
-
-    def get_cut_installation_round(self) ->bool:
-        """get cut installation round
-
-        Returns:
-            bool
-        """
-
-    def set_export_installation_round_materialization(self,
-        export_installation_round_materialization: bool) ->None:
-        """set export installation round materialization
-
-        Parameters:
-            export_installation_round_materialization: export_installation_round_materialization
-
-        Returns:
-            None
-        """
-
-    def get_cut_installation_rectangular(self) ->bool:
-        """get cut installation rectangular
-
-        Returns:
-            bool
-        """
-
-    def get_export_installation_rectangular_materialization(self) ->bool:
-        """get export installation rectangular materialization
-
         Returns:
-            bool
-        """
-
-    def set_cut_installation_rectangular(self, cut_installation_rectangular:
-        bool) ->None:
-        """set cut installation rectangular
-
-        Parameters:
-            cut_installation_rectangular: cut_installation_rectangular
-
-        Returns:
-            None
-        """
-
-```
-
-## Missing Items
-### Classes cadwork
-#### ifc_options_project_data
-
-```python
-class ifc_options_project_data:
-
-    def get_export_coordinates_in_ifc_site(self) ->bool:
-        """get export coordinates in ifc site
-
-        Returns:
-            bool
-        """
-
-    def set_export_project_name_as_ifc_project(self,
-        export_project_name_as_ifc_project: bool) ->None:
-        """set export project name as ifc project
-
-        Parameters:
-            export_project_name_as_ifc_project: export_project_name_as_ifc_project
-
-        Returns:
-            None
-        """
-
-    def set_export_coordinates_in_ifc_site(self,
-        export_coordinates_in_ifc_site: bool) ->None:
-        """set export coordinates in ifc site
-
-        Parameters:
-            export_coordinates_in_ifc_site: export_coordinates_in_ifc_site
-
-        Returns:
-            None
-        """
-
-    def set_export_true_north_in_geometric_context(self,
-        export_true_north_in_geometric_context: bool) ->None:
-        """set export true north in geometric context
-
-        Parameters:
-            export_true_north_in_geometric_context: export_true_north_in_geometric_context
-
-        Returns:
-            None
-        """
-
-    def get_export_project_name_as_ifc_project(self) ->bool:
-        """get export project name as ifc project
-
-        Returns:
-            bool
-        """
-
-    def get_export_true_north_in_geometric_context(self) ->bool:
-        """get export true north in geometric context
-
-        Returns:
-            bool
-        """
-
-    def get_export_adress_in_ifc_site(self) ->bool:
-        """get export adress in ifc site
-
-        Returns:
-            bool
-        """
-
-    def set_export_adress_in_ifc_site(self, export_adress_in_ifc_site: bool
-        ) ->None:
-        """set export adress in ifc site
-
-        Parameters:
-            export_adress_in_ifc_site: export_adress_in_ifc_site
-
-        Returns:
-            None
-        """
-
-```
-
-## Missing Items
-### Classes cadwork
-#### ifc_options_properties
-
-```python
-class ifc_options_properties:
-
-    def get_attriubte_nr_ifc_tag(self) ->int:
-        """get attriubte nr ifc tag
-
-        Returns:
-            int
-        """
-
-    def set_export_empty_building_and_storeys(self,
-        export_empty_building_and_storeys: bool) ->None:
-        """set export empty building and storeys
-
-        Parameters:
-            export_empty_building_and_storeys: export_empty_building_and_storeys
-
-        Returns:
-            None
-        """
-
-    def set_attribute_nr_ifc_tag(self, attribute_nr_ifc_tag: int) ->None:
-        """set attribute nr ifc tag
-
-        Parameters:
-            attribute_nr_ifc_tag: attribute_nr_ifc_tag
-
-        Returns:
-            None
-        """
-
-    def set_export_bim_wood_property(self, export_bi_mwood_property: bool
-        ) ->None:
-        """set export bim wood property
-
-        Parameters:
-            export_bi_mwood_property: export_bi_mwood_property
-
-        Returns:
-            None
-        """
-
-    def get_export_empty_building_and_storeys(self) ->bool:
-        """get export empty building and storeys
-
-        Returns:
-            bool
-        """
-
-    def set_ignore_user_attributes_used_in_psets(self,
-        ignore_user_attributes_used_in_user_psets: bool) ->None:
-        """set ignore user attributes used in psets
-
-        Parameters:
-            ignore_user_attributes_used_in_user_psets: ignore_user_attributes_used_in_user_psets
-
-        Returns:
-            None
-        """
-
-    def get_ignore_user_attributes_used_in_psets(self) ->bool:
-        """get ignore user attributes used in psets
-
-        Returns:
-            bool
-        """
-
-    def get_attribute_nr_ifc_layer(self) ->int:
-        """get attribute nr ifc layer
-
-        Returns:
-            int
-        """
-
-    def set_attribute_nr_ifc_layer(self, attribute_nr_ifc_layer: int) ->None:
-        """set attribute nr ifc layer
-
-        Parameters:
-            attribute_nr_ifc_layer: attribute_nr_ifc_layer
-
-        Returns:
-            None
-        """
-
-    def get_export_bim_wood_property(self) ->bool:
-        """get export bim wood property
-
-        Returns:
-            bool
-        """
-
-    def set_export_cadwork_3d_pset(self, export_cadwork3d_p_set: bool) ->None:
-        """set export cadwork 3d pset
-
-        Parameters:
-            export_cadwork3d_p_set: export_cadwork3d_p_set
-
-        Returns:
-            None
-        """
-
-    def get_export_cadwork_3d_pset(self) ->bool:
-        """get export cadwork 3d pset
-
-        Returns:
-            bool
-        """
-
-```
-
-## Missing Items
-### Classes cadwork
-#### import_3dc_options
-
-```python
-class import_3dc_options:
-
-    def set_import_saved_2d_planes(self, value: bool) ->None:
-        """set import saved 2d planes
-
-        Parameters:
-            value: value
-
-        Returns:
-            None
-        """
-
-    def get_import_saved_2d_planes(self) ->bool:
-        """get import saved 2d planes
-
-        Returns:
-            bool
-        """
-
-    def set_import_saved_scenes(self, value: bool) ->None:
-        """set import saved scenes
-
-        Parameters:
-            value: value
-
-        Returns:
-            None
-        """
-
-    def get_import_saved_scenes(self) ->bool:
-        """get import saved scenes
-
-        Returns:
-            bool
-        """
-
-    def set_import_export_solids(self, value: bool) ->None:
-        """set import export solids
-
-        Parameters:
-            value: value
-
-        Returns:
-            None
-        """
-
-    def get_import_export_solids(self) ->bool:
-        """get import export solids
-
-        Returns:
-            bool
-        """
-
-    def set_reset_position_numbers(self, value: bool) ->None:
-        """set reset position numbers
-
-        Parameters:
-            value: value
-
-        Returns:
-            None
-        """
-
-    def get_reset_position_numbers(self) ->bool:
-        """get reset position numbers
-
-        Returns:
-            bool
-        """
-
-```
-
-## Missing Items
-### Classes cadwork
-#### layer_settings
-
-```python
-class layer_settings:
-
-    def get_layer(self) ->int:
-        """get layer
-
-        Returns:
-            int
-        """
-
-    def set_layer(self, layer_number: int) ->None:
-        """set layer
-
-        Parameters:
-            layer_number: layer_number
-
-        Returns:
-            None
-        """
-
-    def is_without_output(self) ->bool:
-        """is without output
-
-        Returns:
-            bool
-        """
-
-    def set_without_output(self) ->None:
-        """set without output
-
-        Returns:
             None
         """
 
-    def is_with_dimensions_output(self) ->bool:
-        """is with dimensions output
+    def set_parking(self) ->None:
+        """set parking
 
         Returns:
-            bool
-        """
-
-    def set_with_dimensions_output(self) ->None:
-        """set with dimensions output
-
-        Returns:
             None
-        """
-
-    def is_without_dimensions_output(self) ->bool:
-        """is without dimensions output
-
-        Returns:
-            bool
         """
 
-    def set_without_dimensions_output(self) ->None:
-        """set without dimensions output
+    def set_space(self) ->None:
+        """set space
 
         Returns:
             None
         """
 
-    def is_with_attributes_output(self) ->bool:
-        """is with attributes output
+    def set_accessory_assembly(self) ->None:
+        """set accessory assembly
 
         Returns:
-            bool
-        """
-
-    def set_with_attributes_output(self) ->None:
-        """set with attributes output
-
-        Returns:
             None
-        """
-
-```
-
-## Missing Items
-### Classes cadwork
-#### node_symbol
-
-```python
-@unique
-class node_symbol(IntEnum):
-    """node symbol
-
-    Examples:
-        >>> cadwork.node_symbol.SmallSquare
-        SmallSquare
-    """
-    SmallSquare = 1
-    """"""
-    Square = 2
-    """"""
-    Cross = 3
-    """"""
-    Circle = 4
-    """"""
-    FilledCircle = 5
-    """"""
-    ChessSquare = 6
-    """"""
-    HalfFilledSquare = 7
-    """"""
-    CrossSquare = 8
-    """"""
-    FilledSquare = 9
-    """"""
-
-    def __int__(self) ->int:
-        return self.value
-
-```
-
-## Missing Items
-### Classes cadwork
-#### point_3d
-
-```python
-class point_3d:
-
-    def dot(self, p: 'point_3d') ->float:
-        """dot
-
-        Parameters:
-            p: p
-
-        Returns:
-            float
         """
 
-    def cross(self, p: 'point_3d') ->'point_3d':
-        """cross
+    def set_arch(self) ->None:
+        """set arch
 
-        Parameters:
-            p: p
-
-        Returns:
-            'point_3d'
-        """
-
-    def magnitude(self) ->float:
-        """magnitude
-
-        Returns:
-            float
-        """
-
-    def normalized(self) ->'point_3d':
-        """normalized
-
-        Returns:
-            'point_3d'
-        """
-
-    def distance(self, p: 'point_3d') ->float:
-        """distance
-
-        Parameters:
-            p: p
-
-        Returns:
-            float
-        """
-
-    def invert(self) ->'point_3d':
-        """invert
-
-        Returns:
-            'point_3d'
-        """
-
-```
-
-## Missing Items
-### Classes cadwork
-#### polygon_list
-
-```python
-class polygon_list:
-
-    def count(self) ->int:
-        """count
-
-        Returns:
-            int
-        """
-
-    def at(self, index: int) ->point_3d:
-        """at
-
-        Parameters:
-            index: index
-
-        Returns:
-            point_3d
-        """
-
-```
-
-## Missing Items
-### Classes cadwork
-#### process_type
-
-```python
-class process_type:
-
-    def set_none(self) ->None:
-        """set none
-
         Returns:
             None
-        """
-
-    def is_none(self) ->bool:
-        """is none
-
-        Returns:
-            bool
         """
 
-    def set_purlin(self) ->None:
-        """set purlin
+    def set_beam_grid(self) ->None:
+        """set beam grid
 
         Returns:
             None
-        """
-
-    def is_purlin(self) ->bool:
-        """is purlin
-
-        Returns:
-            bool
         """
 
-    def set_stud(self) ->None:
-        """set stud
+    def set_braced_frame(self) ->None:
+        """set braced frame
 
         Returns:
             None
-        """
-
-    def is_stud(self) ->bool:
-        """is stud
-
-        Returns:
-            bool
         """
 
-    def set_rafter(self) ->None:
-        """set rafter
+    def set_girder(self) ->None:
+        """set girder
 
         Returns:
             None
-        """
-
-    def is_rafter(self) ->bool:
-        """is rafter
-
-        Returns:
-            bool
         """
 
-    def set_jack_rafter(self) ->None:
-        """set jack rafter
+    def set_reinforcement_unit(self) ->None:
+        """set reinforcement unit
 
         Returns:
             None
-        """
-
-    def is_jack_rafter(self) ->bool:
-        """is jack rafter
-
-        Returns:
-            bool
         """
 
-    def set_hip_valley(self) ->None:
-        """set hip valley
+    def set_rigid_frame(self) ->None:
+        """set rigid frame
 
         Returns:
             None
-        """
-
-    def is_hip_valley(self) ->bool:
-        """is hip valley
-
-        Returns:
-            bool
         """
 
-    def set_log(self) ->None:
-        """set log
+    def set_slab_field(self) ->None:
+        """set slab field
 
         Returns:
             None
-        """
-
-    def is_log(self) ->bool:
-        """is log
-
-        Returns:
-            bool
         """
 
     def set_truss(self) ->None:
@@ -3343,227 +3160,201 @@ class process_type:
             None
         """
 
-    def is_truss(self) ->bool:
-        """is truss
-
-        Returns:
-            bool
-        """
-
-    def set_tread(self) ->None:
-        """set tread
+    def set_cable_ladder_segment(self) ->None:
+        """set cable ladder segment
 
         Returns:
             None
         """
 
-    def is_tread(self) ->bool:
-        """is tread
-
-        Returns:
-            bool
-        """
-
-    def set_user_1(self) ->None:
-        """set user 1
+    def set_cable_tray_segment(self) ->None:
+        """set cable tray segment
 
         Returns:
             None
         """
 
-    def is_user_1(self) ->bool:
-        """is user 1
-
-        Returns:
-            bool
-        """
-
-    def set_user_2(self) ->None:
-        """set user 2
+    def set_cable_trunking_segment(self) ->None:
+        """set cable trunking segment
 
         Returns:
             None
         """
 
-    def is_user_2(self) ->bool:
-        """is user 2
-
-        Returns:
-            bool
-        """
-
-    def set_user_3(self) ->None:
-        """set user 3
+    def set_conduit_segment(self) ->None:
+        """set conduit segment
 
         Returns:
             None
         """
 
-    def is_user_3(self) ->bool:
-        """is user 3
-
-        Returns:
-            bool
-        """
-
-    def set_user_4(self) ->None:
-        """set user 4
+    def set_busbar_segment(self) ->None:
+        """set busbar segment
 
         Returns:
             None
         """
 
-    def is_user_4(self) ->bool:
-        """is user 4
-
-        Returns:
-            bool
-        """
-
-    def set_user_5(self) ->None:
-        """set user 5
+    def set_cable_segment(self) ->None:
+        """set cable segment
 
         Returns:
             None
         """
 
-    def is_user_5(self) ->bool:
-        """is user 5
-
-        Returns:
-            bool
-        """
-
-    def set_panel_1(self) ->None:
-        """set panel 1
+    def set_conductor_segment(self) ->None:
+        """set conductor segment
 
         Returns:
             None
         """
 
-    def is_panel_1(self) ->bool:
-        """is panel 1
-
-        Returns:
-            bool
-        """
-
-    def set_panel_2(self) ->None:
-        """set panel 2
+    def set_core_segment(self) ->None:
+        """set core segment
 
         Returns:
             None
         """
 
-    def is_panel_2(self) ->bool:
-        """is panel 2
-
-        Returns:
-            bool
-        """
-
-    def set_panel_3(self) ->None:
-        """set panel 3
+    def set_flexible_segment(self) ->None:
+        """set flexible segment
 
         Returns:
             None
         """
 
-    def is_panel_3(self) ->bool:
-        """is panel 3
-
-        Returns:
-            bool
-        """
-
-    def set_panel_4(self) ->None:
-        """set panel 4
+    def set_rigid_segment(self) ->None:
+        """set rigid segment
 
         Returns:
             None
         """
 
-    def is_panel_4(self) ->bool:
-        """is panel 4
-
-        Returns:
-            bool
-        """
-
-    def set_panel_5(self) ->None:
-        """set panel 5
+    def set_culvert(self) ->None:
+        """set culvert
 
         Returns:
             None
         """
 
-    def is_panel_5(self) ->bool:
-        """is panel 5
-
-        Returns:
-            bool
-        """
-
-    def set_rough_volume_framed_wall(self) ->None:
-        """set rough volume framed wall
+    def set_gutter(self) ->None:
+        """set gutter
 
         Returns:
             None
         """
 
-    def is_rough_volume_framed_wall(self) ->bool:
-        """is rough volume framed wall
-
-        Returns:
-            bool
-        """
-
-    def set_rough_volume_solid_wood_wall(self) ->None:
-        """set rough volume solid wood wall
+    def set_spool(self) ->None:
+        """set spool
 
         Returns:
             None
         """
 
-    def is_rough_volume_solid_wood_wall(self) ->bool:
-        """is rough volume solid wood wall
-
-        Returns:
-            bool
-        """
-
-    def set_rough_volume_log_home(self) ->None:
-        """set rough volume log home
+    def set_audio_visual_outlet(self) ->None:
+        """set audio visual outlet
 
         Returns:
             None
         """
 
-    def is_rough_volume_log_home(self) ->bool:
-        """is rough volume log home
+    def set_communications_outlet(self) ->None:
+        """set communications outlet
 
         Returns:
-            bool
+            None
+        """
+
+    def set_power_outlet(self) ->None:
+        """set power outlet
+
+        Returns:
+            None
+        """
+
+    def set_data_outlet(self) ->None:
+        """set data outlet
+
+        Returns:
+            None
+        """
+
+    def set_telephone_outlet(self) ->None:
+        """set telephone outlet
+
+        Returns:
+            None
+        """
+
+    def set_anchoring(self) ->None:
+        """set anchoring
+
+        Returns:
+            None
+        """
+
+    def set_edge(self) ->None:
+        """set edge
+
+        Returns:
+            None
+        """
+
+    def set_ligature(self) ->None:
+        """set ligature
+
+        Returns:
+            None
+        """
+
+    def set_main(self) ->None:
+        """set main
+
+        Returns:
+            None
+        """
+
+    def set_punching(self) ->None:
+        """set punching
+
+        Returns:
+            None
+        """
+
+    def set_ring(self) ->None:
+        """set ring
+
+        Returns:
+            None
         """
 
 ```
 
 ## Missing Items
+## Missing Items
 ### Classes cadwork
-#### projection_type
+#### standard_element_type
 
 ```python
 @unique
-class projection_type(IntEnum):
-    """projection type
+class standard_element_type(IntEnum):
+    """standard element type
 
     Examples:
-        >>> cadwork.projection_type.Perspective
-        Perspective
+        >>> cadwork.standard_element_type.beam
+        beam
     """
-    Perspective = 1
+    beam = 0
     """"""
-    Orthographic = 2
+    panel = 2
+    """"""
+    vba = 3
+    """"""
+    exportSolid = 4
+    """"""
+    container = 5
+    """"""
+    metal = 6
     """"""
 
     def __int__(self) ->int:
@@ -3573,417 +3364,24 @@ class projection_type(IntEnum):
 
 ## Missing Items
 ### Classes cadwork
-#### rhino_options
+#### window_geometry
 
 ```python
-class rhino_options:
+class window_geometry:
 
-    def get_materialize_end_types(self) ->bool:
-        """get materialize end types
 
-        Returns:
-            bool
-        """
+    class point:
 
-    def set_materialize_end_types(self, flag: bool) ->None:
-        """set materialize end types
+        def __init__(self, x, y):
+            self.x = x
+            self.y = y
 
-        Parameters:
-            flag: flag
-
-        Returns:
-            None
-        """
-
-    def get_cut_end_types_counterparts(self) ->bool:
-        """get cut end types counterparts
-
-        Returns:
-            bool
-        """
-
-    def set_cut_end_types_counterparts(self, flag: bool) ->None:
-        """set cut end types counterparts
-
-        Parameters:
-            flag: flag
-
-        Returns:
-            None
-        """
-
-    def get_cut_drillings(self) ->bool:
-        """get cut drillings
-
-        Returns:
-            bool
-        """
-
-    def set_cut_drillings(self, flag: bool) ->None:
-        """set cut drillings
-
-        Parameters:
-            flag: flag
-
-        Returns:
-            None
-        """
-
-    def get_cut_mep(self) ->bool:
-        """get cut mep
-
-        Returns:
-            bool
-        """
-
-    def set_cut_mep(self, flag: bool) ->None:
-        """set cut mep
-
-        Parameters:
-            flag: flag
-
-        Returns:
-            None
-        """
-
-    def get_cut_openings(self) ->bool:
-        """get cut openings
-
-        Returns:
-            bool
-        """
-
-    def set_cut_openings(self, flag: bool) ->None:
-        """set cut openings
-
-        Parameters:
-            flag: flag
-
-        Returns:
-            None
-        """
+    def __init__(self):
+        self.bottom_left = self.point(0, 0)
+        self.bottom_right = self.point(0, 0)
+        self.top_left = self.point(0, 0)
+        self.top_right = self.point(0, 0)
 
 ```
 
-## Missing Items
-### Classes cadwork
-#### shortcut_key
-
-```python
-@unique
-class shortcut_key(IntEnum):
-    """shortcut key
-
-    Examples:
-        >>> cadwork.shortcut_key.F1
-        F1
-    """
-    F1 = 1
-    """"""
-    F2 = 2
-    """"""
-    F3 = 3
-    """"""
-    F4 = 4
-    """"""
-    F5 = 5
-    """"""
-    F6 = 6
-    """"""
-    F7 = 7
-    """"""
-    F8 = 8
-    """"""
-    F9 = 9
-    """"""
-    F10 = 10
-    """"""
-    F11 = 11
-    """"""
-    F12 = 12
-    """"""
-
-    def __int__(self) ->int:
-        return self.value
-
-```
-
-## Missing Items
-### Classes cadwork
-#### shortcut_key_modifier
-
-```python
-@unique
-class shortcut_key_modifier(IntEnum):
-    """shortcut key modifier
-
-    Examples:
-        >>> cadwork.shortcut_key_modifier.shift
-        shift
-    """
-    shift = 1
-    """"""
-    ctrl = 2
-    """"""
-    alt = 3
-    """"""
-
-    def __int__(self) ->int:
-        return self.value
-
-```
-
-## Missing Items
-### Classes cadwork
-#### text_element_type
-
-```python
-@unique
-class text_element_type(IntEnum):
-    """text element type
-
-    Examples:
-        >>> cadwork.text_element_type.line
-        line
-    """
-    line = 0
-    """"""
-    surface = 1
-    """"""
-    volume = 2
-    """"""
-    raster = 3
-    """"""
-
-    def __int__(self) ->int:
-        return self.value
-
-```
-
-## Missing Items
-### Classes cadwork
-#### text_object_options
-
-```python
-class text_object_options:
-
-    def set_font_name(self, font_name: str) ->None:
-        """set font name
-
-        Parameters:
-            font_name: font_name
-
-        Returns:
-            None
-        """
-
-    def get_font_name(self) ->str:
-        """get font name
-
-        Returns:
-            str
-        """
-
-    def set_text(self, text: str) ->None:
-        """set text
-
-        Parameters:
-            text: text
-
-        Returns:
-            None
-        """
-
-    def get_text(self) ->str:
-        """get text
-
-        Returns:
-            str
-        """
-
-    def set_bold(self, value: bool) ->None:
-        """set bold
-
-        Parameters:
-            value: value
-
-        Returns:
-            None
-        """
-
-    def get_bold(self) ->bool:
-        """get bold
-
-        Returns:
-            bool
-        """
-
-    def set_italic(self, value: bool) ->None:
-        """set italic
-
-        Parameters:
-            value: value
-
-        Returns:
-            None
-        """
-
-    def get_italic(self) ->bool:
-        """get italic
-
-        Returns:
-            bool
-        """
-
-    def set_height(self, height: float) ->None:
-        """set height
-
-        Parameters:
-            height: height
-
-        Returns:
-            None
-        """
-
-    def get_height(self) ->float:
-        """get height
-
-        Returns:
-            float
-        """
-
-    def set_element_type(self, element_type: text_element_type) ->None:
-        """set element type
-
-        Parameters:
-            element_type: element_type
-
-        Returns:
-            None
-        """
-
-    def get_element_type(self) ->text_element_type:
-        """get element type
-
-        Returns:
-            text_element_type
-        """
-
-    def set_thickness(self, thickness: float) ->None:
-        """set thickness
-
-        Parameters:
-            thickness: thickness
-
-        Returns:
-            None
-        """
-
-    def get_thickness(self) ->float:
-        """get thickness
-
-        Returns:
-            float
-        """
-
-    def set_color(self, color: int) ->None:
-        """set color
-
-        Parameters:
-            color: color
-
-        Returns:
-            None
-        """
-
-    def get_color(self) ->int:
-        """get color
-
-        Returns:
-            int
-        """
-
-    def set_height_relative(self, value: bool) ->None:
-        """set height relative
-
-        Parameters:
-            value: value
-
-        Returns:
-            None
-        """
-
-    def get_height_relative(self) ->bool:
-        """get height relative
-
-        Returns:
-            bool
-        """
-
-```
-
-## Missing Items
-### Classes cadwork
-#### vertex_list
-
-```python
-class vertex_list:
-
-    def count(self) ->int:
-        """count
-
-        Returns:
-            int
-        """
-
-    def at(self, index: int) ->point_3d:
-        """at
-
-        Parameters:
-            index: index
-
-        Returns:
-            point_3d
-        """
-
-    def append(self, vertex: point_3d) ->None:
-        """append
-
-        Parameters:
-            vertex: vertex
-
-        Returns:
-            None
-        """
-
-```
-
-## Missing Items
-### Classes cadwork
-#### weinmann_mfb_version
-
-```python
-@unique
-class weinmann_mfb_version(IntEnum):
-    """weinmann mfb version
-
-    Examples:
-        >>> cadwork.weinmann_mfb_version.wup_2_0
-        wup_2_0
-    """
-    wup_2_0 = 20
-    """"""
-    wup_3_1 = 31
-    """"""
-    wup_3_2 = 32
-    """"""
-    wup_3_3 = 33
-    """"""
-    wup_3_4 = 34
-    """"""
-
-    def __int__(self) ->int:
-        return self.value
-
-```
 

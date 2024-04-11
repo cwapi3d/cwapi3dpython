@@ -117,3 +117,13 @@ def ungroup_scences(a0: int) -> None:
         None
     """
 
+def is_scene_present(name: str) -> bool:
+    """Queries of scene with name is present
+
+    Parameters:
+        name: name
+
+    Returns:
+        presence of scene
+    """
+

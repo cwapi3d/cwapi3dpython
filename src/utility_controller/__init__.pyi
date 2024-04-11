@@ -1,5 +1,7 @@
 from typing import List
+from typing import Tuple
 from cadwork import point_3d
+from cadwork import window_geometry
 
 def get_last_error(error_code: int) -> str:
     """Gets the last error
@@ -1038,6 +1040,13 @@ def get_3d_gui_upper_left_screen_coordinates() -> Tuple[int, int]:
     """get 3d gui upper left screen coordinates
 
     Returns:
-        Tuple[int, int]
+        coordinates of the upper left corner of the 3D GUI
+    """
+
+def get_3d_main_window_geometry() -> 'window_geometry':
+    """get 3d main window geometry
+
+    Returns:
+        window geometry
     """
 

@@ -143,3 +143,26 @@ def generate_new_part_list_silently(a0: List[int], a1: int, a2: bool, a3: bool) 
         None
     """
 
+def export_cover_list(element_id_list: List[int], file_path: str) -> None:
+    """Exports a Wall/Roof/Floor list
+
+    Parameters:
+        element_id_list: element_id_list
+        file_path: file_path
+
+    Returns:
+        None
+    """
+
+def export_cover_list_with_settings(element_id_list: List[int], file_path: str, settings_file_path: str) -> None:
+    """Exports a Wall/Roof/Floor list with settings file
+
+    Parameters:
+        element_id_list: element_id_list
+        file_path: file_path
+        settings_file_path: settings_file_path
+
+    Returns:
+        None
+    """
+
