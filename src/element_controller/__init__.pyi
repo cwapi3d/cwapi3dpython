@@ -1808,8 +1808,6 @@ def remove_standard_connector_axis(a0: str) -> None:
         None
     """
 
-from typing import List
-
 def remove_standard_beam(guid: str) -> None:
     """remove standard beam
 

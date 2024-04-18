@@ -834,8 +834,6 @@ def are_facets_coplanar(first_facet: List[point_3d], second_facet: List[point_3d
         facet coplanarity
     """
 
-from typing import List
-
 def get_round_machine_rough_part_negative_width(element_id: int) -> bool:
     """get round machine rough part negative width
 

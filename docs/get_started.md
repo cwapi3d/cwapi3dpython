@@ -163,6 +163,15 @@ for element_id in element_ids:
     print(subgroup)  # print the subgroup names
 ```
 
+### run plugin from console
+
+You can also run the plugin from the console.
+Flag ```/PLUGIN=``` is used to start the plugin.
+
+```cmd
+...\cadwork.dir\ci_start.exe "C:\...\myFile.3d" /PLUGIN=test
+```
+
 ## Use your prefered IDE (advanced user)
 
 Of course, you can also use any other Python IDE.
