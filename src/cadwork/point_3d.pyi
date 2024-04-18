@@ -1,4 +1,6 @@
 class point_3d:
+
+    def __init__(self, x: float, y: float, z: float) -> None: ...
     
     def dot(self, p: 'point_3d') -> float:
         """dot

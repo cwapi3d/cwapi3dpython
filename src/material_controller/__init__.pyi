@@ -554,3 +554,297 @@ def get_parent_group(group: str) -> str:
         parent group name
     """
 
+def get_material_color_assignment_for_nodes(a0: int) -> int:
+    """get material color assignment for nodes
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        int
+    """
+
+def set_material_color_assignment_for_nodes(a0: int, a1: int) -> None:
+    """set material color assignment for nodes
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+def get_material_color_assignment_for_standard_axes(a0: int) -> int:
+    """get material color assignment for standard axes
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        int
+    """
+
+def set_material_color_assignment_for_standard_axes(a0: int, a1: int) -> None:
+    """set material color assignment for standard axes
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+def get_material_color_assignment_for_drillings(a0: int) -> int:
+    """get material color assignment for drillings
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        int
+    """
+
+def set_material_color_assignment_for_drillings(a0: int, a1: int) -> None:
+    """set material color assignment for drillings
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+def get_material_color_assignment_for_mep_axes(a0: int) -> int:
+    """get material color assignment for mep axes
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        int
+    """
+
+def set_material_color_assignment_for_mep_axes(a0: int, a1: int) -> None:
+    """set material color assignment for mep axes
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+def get_material_color_assignment_for_beams(a0: int) -> int:
+    """get material color assignment for beams
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        int
+    """
+
+def set_material_color_assignment_for_beams(a0: int, a1: int) -> None:
+    """set material color assignment for beams
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+def get_material_color_assignment_for_panels(a0: int) -> int:
+    """get material color assignment for panels
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        int
+    """
+
+def set_material_color_assignment_for_panels(a0: int, a1: int) -> None:
+    """set material color assignment for panels
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+def get_material_color_assignment_for_auxiliary_elements(a0: int) -> int:
+    """get material color assignment for auxiliary elements
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        int
+    """
+
+def set_material_color_assignment_for_auxiliary_elements(a0: int, a1: int) -> None:
+    """set material color assignment for auxiliary elements
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+def get_material_color_assignment_for_surfaces(a0: int) -> int:
+    """get material color assignment for surfaces
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        int
+    """
+
+def set_material_color_assignment_for_surfaces(a0: int, a1: int) -> None:
+    """set material color assignment for surfaces
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+def get_texture_color(a0: int) -> int:
+    """get texture color
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        int
+    """
+
+def set_texture_color(a0: int, a1: int) -> None:
+    """set texture color
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+def get_texture_transparency(a0: int) -> int:
+    """get texture transparency
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        int
+    """
+
+def set_texture_transparency(a0: int, a1: int) -> None:
+    """set texture transparency
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+def get_texture_rotation_angle(a0: int) -> float:
+    """get texture rotation angle
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        float
+    """
+
+def set_texture_rotation_angle(a0: int, a1: float) -> None:
+    """set texture rotation angle
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+def get_texture_length_alignment(a0: int) -> bool:
+    """get texture length alignment
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        bool
+    """
+
+def set_texture_length_alignment(a0: int, a1: bool) -> None:
+    """set texture length alignment
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+def get_texture_zoom_x(a0: int) -> float:
+    """get texture zoom x
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        float
+    """
+
+def set_texture_zoom_x(a0: int, a1: float) -> None:
+    """set texture zoom x
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+
+def get_texture_zoom_y(a0: int) -> float:
+    """get texture zoom y
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        float
+    """
+
+def set_texture_zoom_y(a0: int, a1: float) -> None:
+    """set texture zoom y
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        None
+    """
+

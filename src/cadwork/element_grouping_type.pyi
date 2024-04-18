@@ -13,8 +13,6 @@ class element_grouping_type(IntEnum):
     """"""
     subgroup = 2
     """"""
-    _none = 3
-    """"""
 
     def __int__(self) -> int:
         return self.value

@@ -542,13 +542,13 @@ def get_list_weight(element_id: int) -> float:
     """
 
 def get_volume(element_id: int) -> float:
-    """Gets the element real volume
+    """Gets the element rough volume (does not include negative geometry operations, such as end-types, drillings, connectors, openings, and MEP elements)
 
     Parameters:
         element_id: element_id
 
     Returns:
-        element real volume
+        element rough volume
     """
 
 def get_list_volume(element_id: int) -> float:
@@ -813,24 +813,210 @@ def get_actual_physical_weight(a0: int) -> float:
         float
     """
 
-def get_actual_physical_volume(a0: int) -> float:
-    """get actual physical volume
+def get_actual_physical_volume(element_id: int) -> float:
+    """Gets actual physical volume (includes negative geometry operations, such as end-types, drillings, connectors, openings, and MEP elements) (it might also take into account different drilling bodies and counterbores in a connector)
 
     Parameters:
-        a0: a0
+        element_id: element_id
+
+    Returns:
+        actual physical volume
+    """
+
+def are_facets_coplanar(first_facet: List[point_3d], second_facet: List[point_3d]) -> bool:
+    """Tests if facets are coplanar
+
+    Parameters:
+        first_facet: first_facet
+        second_facet: second_facet
+
+    Returns:
+        facet coplanarity
+    """
+
+def get_round_machine_rough_part_negative_width(element_id: int) -> bool:
+    """get round machine rough part negative width
+
+    Parameters:
+        element_id: element_id
+
+    Returns:
+        bool
+    """
+
+def set_round_machine_rough_part_negative_width(elements: List[int], value: bool) -> None:
+    """set round machine rough part negative width
+
+    Parameters:
+        elements: elements
+        value: value
+
+    Returns:
+        None
+    """
+
+def get_round_machine_rough_part_positive_width(element_id: int) -> bool:
+    """get round machine rough part positive width
+
+    Parameters:
+        element_id: element_id
+
+    Returns:
+        bool
+    """
+
+def set_round_machine_rough_part_positive_width(elements: List[int], value: bool) -> None:
+    """set round machine rough part positive width
+
+    Parameters:
+        elements: elements
+        value: value
+
+    Returns:
+        None
+    """
+
+def get_round_machine_rough_part_negative_height(element_id: int) -> bool:
+    """get round machine rough part negative height
+
+    Parameters:
+        element_id: element_id
+
+    Returns:
+        bool
+    """
+
+def set_round_machine_rough_part_negative_height(elements: List[int], value: bool) -> None:
+    """set round machine rough part negative height
+
+    Parameters:
+        elements: elements
+        value: value
+
+    Returns:
+        None
+    """
+
+def get_round_machine_rough_part_positive_height(element_id: int) -> bool:
+    """get round machine rough part positive height
+
+    Parameters:
+        element_id: element_id
+
+    Returns:
+        bool
+    """
+
+def set_round_machine_rough_part_positive_height(elements: List[int], value: bool) -> None:
+    """set round machine rough part positive height
+
+    Parameters:
+        elements: elements
+        value: value
+
+    Returns:
+        None
+    """
+
+def get_round_machine_rough_part_negative_length(element_id: int) -> bool:
+    """get round machine rough part negative length
+
+    Parameters:
+        element_id: element_id
+
+    Returns:
+        bool
+    """
+
+def set_round_machine_rough_part_negative_length(elements: List[int], value: bool) -> None:
+    """set round machine rough part negative length
+
+    Parameters:
+        elements: elements
+        value: value
+
+    Returns:
+        None
+    """
+
+def get_round_machine_rough_part_positive_length(element_id: int) -> bool:
+    """get round machine rough part positive length
+
+    Parameters:
+        element_id: element_id
+
+    Returns:
+        bool
+    """
+
+def set_round_machine_rough_part_positive_length(elements: List[int], value: bool) -> None:
+    """set round machine rough part positive length
+
+    Parameters:
+        elements: elements
+        value: value
+
+    Returns:
+        None
+    """
+
+def get_standard_element_width_from_guid(standard_element_guid: str) -> float:
+    """get standard element width from guid
+
+    Parameters:
+        standard_element_guid: standard_element_guid
 
     Returns:
         float
     """
 
-def are_facets_coplanar(a0: List[point_3d], a1: List[point_3d]) -> bool:
-    """are facets coplanar
+def get_standard_element_height_from_guid(standard_element_guid: str) -> float:
+    """get standard element height from guid
 
     Parameters:
-        a0: a0
-        a1: a1
+        standard_element_guid: standard_element_guid
 
     Returns:
-        bool
+        float
+    """
+
+def get_standard_element_length_from_guid(standard_element_guid: str) -> float:
+    """get standard element length from guid
+
+    Parameters:
+        standard_element_guid: standard_element_guid
+
+    Returns:
+        float
+    """
+
+def get_standard_element_width_from_name(standard_element_name: str) -> float:
+    """get standard element width from name
+
+    Parameters:
+        standard_element_name: standard_element_name
+
+    Returns:
+        float
+    """
+
+def get_standard_element_height_from_name(standard_element_name: str) -> float:
+    """get standard element height from name
+
+    Parameters:
+        standard_element_name: standard_element_name
+
+    Returns:
+        float
+    """
+
+def get_standard_element_length_from_name(standard_element_name: str) -> float:
+    """get standard element length from name
+
+    Parameters:
+        standard_element_name: standard_element_name
+
+    Returns:
+        float
     """
 

@@ -4,6 +4,7 @@ from cadwork import element_module_properties
 from cadwork import facet_list
 from cadwork import point_3d
 from cadwork import text_object_options
+from cadwork import coordinate_system_data
 
 def get_last_error(error_code: int) -> str:
     """Gets the last error
@@ -1775,4 +1776,152 @@ def create_text_object_with_options(position: point_3d, xl: point_3d, zl: point_
     Returns:
         int
     """
+
+def convert_surfaces_to_roof_surfaces(elements: List[int], roof_name: str) -> None:
+    """converts surfaces to roof surfaces
+
+    Parameters:
+        elements: elements
+        roof_name: roof_name
+
+    Returns:
+        None
+    """
+
+def start_standard_element_dialog(standard_element_type: None) -> str:
+    """Starts the standard element dialogue based on the chosen element type
+
+    Parameters:
+        standard_element_type: standard_element_type
+
+    Returns:
+        Returns guid of selected standard element if item is valid, else null
+    """
+
+def remove_standard_connector_axis(a0: str) -> None:
+    """remove standard connector axis
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        None
+    """
+
+def remove_standard_beam(guid: str) -> None:
+    """remove standard beam
+
+    Parameters:
+        guid: guid
+
+    Returns:
+        None
+    """
+
+def remove_standard_panel(guid: str) -> None:
+    """remove standard panel
+
+    Parameters:
+        guid: guid
+
+    Returns:
+        None
+    """
+
+def remove_standard_container(guid: str) -> None:
+    """remove standard container
+
+    Parameters:
+        guid: guid
+
+    Returns:
+        None
+    """
+
+def remove_standard_export_solid(guid: str) -> None:
+    """remove standard export solid
+
+    Parameters:
+        guid: guid
+
+    Returns:
+        None
+    """
+
+def get_user_element_ids_with_count(count: int) -> List[int]:
+    """get user element ids with count
+
+    Parameters:
+        count: count
+
+    Returns:
+        List[int]
+    """
+
+def cut_scarf_straight(elements: List[int], length: float, depth: float, clearance_length: float, clearance_depth: float, clearance_hook: float, drilling_count: int, drilling_diameter: float, drilling_tolerance: float) -> None:
+    """cut scarf straight
+
+    Parameters:
+        elements: elements
+        length: length
+        depth: depth
+        clearance_length: clearance_length
+        clearance_depth: clearance_depth
+        clearance_hook: clearance_hook
+        drilling_count: drilling_count
+        drilling_diameter: drilling_diameter
+        drilling_tolerance: drilling_tolerance
+
+    Returns:
+        None
+    """
+
+def cut_scarf_diagonal(elements: List[int], length: float, depth: float, clearance_length: float, clearance_depth: float, drilling_count: int, drilling_diameter: float, drilling_tolerance: float) -> None:
+    """cut scarf diagonal
+
+    Parameters:
+        elements: elements
+        length: length
+        depth: depth
+        clearance_length: clearance_length
+        clearance_depth: clearance_depth
+        drilling_count: drilling_count
+        drilling_diameter: drilling_diameter
+        drilling_tolerance: drilling_tolerance
+
+    Returns:
+        None
+    """
+
+def cut_scarf_with_wedge(elements: List[int], length: float, depth: float, clearance_length: float, clearance_depth: float, wedge_width: float, drilling_count: int, drilling_diameter: float, drilling_tolerance: float) -> None:
+    """cut scarf with wedge
+
+    Parameters:
+        elements: elements
+        length: length
+        depth: depth
+        clearance_length: clearance_length
+        clearance_depth: clearance_depth
+        wedge_width: wedge_width
+        drilling_count: drilling_count
+        drilling_diameter: drilling_diameter
+        drilling_tolerance: drilling_tolerance
+
+    Returns:
+        None
+    """
+
+def cut_beam_end_profile(elements: List[int], profile_name: str, on_start_face: bool, on_end_face: bool) -> None:
+    """cut beam end profile
+
+    Parameters:
+        elements: elements
+        profile_name: profile_name
+        on_start_face: on_start_face
+        on_end_face: on_end_face
+
+    Returns:
+        None
+    """
+
 
