@@ -962,3 +962,63 @@ def set_round_machine_rough_part_positive_length(elements: List[int], value: boo
         None
     """
 
+def get_standard_element_width_from_guid(standard_element_guid: str) -> float:
+    """get standard element width from guid
+
+    Parameters:
+        standard_element_guid: standard_element_guid
+
+    Returns:
+        float
+    """
+
+def get_standard_element_height_from_guid(standard_element_guid: str) -> float:
+    """get standard element height from guid
+
+    Parameters:
+        standard_element_guid: standard_element_guid
+
+    Returns:
+        float
+    """
+
+def get_standard_element_length_from_guid(standard_element_guid: str) -> float:
+    """get standard element length from guid
+
+    Parameters:
+        standard_element_guid: standard_element_guid
+
+    Returns:
+        float
+    """
+
+def get_standard_element_width_from_name(standard_element_name: str) -> float:
+    """get standard element width from name
+
+    Parameters:
+        standard_element_name: standard_element_name
+
+    Returns:
+        float
+    """
+
+def get_standard_element_height_from_name(standard_element_name: str) -> float:
+    """get standard element height from name
+
+    Parameters:
+        standard_element_name: standard_element_name
+
+    Returns:
+        float
+    """
+
+def get_standard_element_length_from_name(standard_element_name: str) -> float:
+    """get standard element length from name
+
+    Parameters:
+        standard_element_name: standard_element_name
+
+    Returns:
+        float
+    """
+

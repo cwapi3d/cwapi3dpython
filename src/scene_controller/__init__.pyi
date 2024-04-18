@@ -127,3 +127,58 @@ def is_scene_present(name: str) -> bool:
         presence of scene
     """
 
+def set_group_tab_color(scene_group_name: str, red: int, green: int, blue: int) -> None:
+    """set group tab color
+
+    Parameters:
+        scene_group_name: scene_group_name
+        red: red
+        green: green
+        blue: blue
+
+    Returns:
+        None
+    """
+
+def rename_scene_group(old_name: str, new_name: str) -> None:
+    """rename scene group
+
+    Parameters:
+        old_name: old_name
+        new_name: new_name
+
+    Returns:
+        None
+    """
+
+def get_group_index_by_name(scene_group_name: str) -> int:
+    """get group index by name
+
+    Parameters:
+        scene_group_name: scene_group_name
+
+    Returns:
+        int
+    """
+
+def rename_scene_group_by_index(group_index: int, new_name: str) -> None:
+    """rename scene group by index
+
+    Parameters:
+        group_index: group_index
+        new_name: new_name
+
+    Returns:
+        None
+    """
+
+def group_scences_with_name(a0: List[str], a1: str) -> int:
+    """group scences with name
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        int
+    """

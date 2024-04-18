@@ -1050,3 +1050,10 @@ def get_3d_main_window_geometry() -> 'window_geometry':
         window geometry
     """
 
+def get_project_data_keys() -> List[str]:
+    """get project data keys
+
+    Returns:
+        List[str]
+    """
+

@@ -1913,3 +1913,17 @@ def cut_scarf_with_wedge(elements: List[int], length: float, depth: float, clear
         None
     """
 
+def cut_beam_end_profile(elements: List[int], profile_name: str, on_start_face: bool, on_end_face: bool) -> None:
+    """cut beam end profile
+
+    Parameters:
+        elements: elements
+        profile_name: profile_name
+        on_start_face: on_start_face
+        on_end_face: on_end_face
+
+    Returns:
+        None
+    """
+
+

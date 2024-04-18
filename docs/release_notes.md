@@ -6,15 +6,15 @@ hide:
 # Differences from the last to the current version
 
 - What all counts as a change:
-  - New functions
-  - Changed function descriptions (docstrings)
-  - New classes
-  - Changed classes descriptions (docstrings)
-  - New enums
-  - Changed enums descriptions (docstrings)
+    - New functions
+    - Changed function descriptions (docstrings)
+    - New classes
+    - Changed classes descriptions (docstrings)
+    - New enums
+    - Changed enums descriptions (docstrings)
 
 
-## Missing Items
+## New Items
 ### Functions attribute_controller
 #### is_attribute_visible_in_modify_window
 
@@ -48,7 +48,23 @@ def set_attribute_visibility_in_modify_window(number: int, visibility: bool
 
 ```
 
-## Missing Items
+#### set_cutting_set
+
+```python
+def set_cutting_set(element_id_list: List[int], cutting_set_name: str) ->bool:
+    """set cutting set
+
+    Parameters:
+        element_id_list: element_id_list
+        cutting_set_name: cutting_set_name
+
+    Returns:
+        bool
+    """
+
+```
+
+## New Items
 ### Functions bim_controller
 #### get_ifc_predefined_type
 
@@ -82,7 +98,7 @@ def set_ifc_predefined_type(element_i_ds: List[int], predefined_type: None
 
 ```
 
-## Missing Items
+## New Items
 ### Functions dimension_controller
 #### get_distance
 
@@ -160,7 +176,7 @@ def get_segment_distance(element: int, segment_index: int) ->float:
 
 ```
 
-## Missing Items
+## New Items
 ### Functions element_controller
 #### convert_surfaces_to_roof_surfaces
 
@@ -360,7 +376,26 @@ def cut_scarf_with_wedge(elements: List[int], length: float, depth: float,
 
 ```
 
-## Missing Items
+#### cut_beam_end_profile
+
+```python
+def cut_beam_end_profile(elements: List[int], profile_name: str,
+    on_start_face: bool, on_end_face: bool) ->None:
+    """cut beam end profile
+
+    Parameters:
+        elements: elements
+        profile_name: profile_name
+        on_start_face: on_start_face
+        on_end_face: on_end_face
+
+    Returns:
+        None
+    """
+
+```
+
+## New Items
 ### Functions geometry_controller
 #### get_round_machine_rough_part_negative_width
 
@@ -554,7 +589,97 @@ def set_round_machine_rough_part_positive_length(elements: List[int], value:
 
 ```
 
-## Missing Items
+#### get_standard_element_width_from_guid
+
+```python
+def get_standard_element_width_from_guid(standard_element_guid: str) ->float:
+    """get standard element width from guid
+
+    Parameters:
+        standard_element_guid: standard_element_guid
+
+    Returns:
+        float
+    """
+
+```
+
+#### get_standard_element_height_from_guid
+
+```python
+def get_standard_element_height_from_guid(standard_element_guid: str) ->float:
+    """get standard element height from guid
+
+    Parameters:
+        standard_element_guid: standard_element_guid
+
+    Returns:
+        float
+    """
+
+```
+
+#### get_standard_element_length_from_guid
+
+```python
+def get_standard_element_length_from_guid(standard_element_guid: str) ->float:
+    """get standard element length from guid
+
+    Parameters:
+        standard_element_guid: standard_element_guid
+
+    Returns:
+        float
+    """
+
+```
+
+#### get_standard_element_width_from_name
+
+```python
+def get_standard_element_width_from_name(standard_element_name: str) ->float:
+    """get standard element width from name
+
+    Parameters:
+        standard_element_name: standard_element_name
+
+    Returns:
+        float
+    """
+
+```
+
+#### get_standard_element_height_from_name
+
+```python
+def get_standard_element_height_from_name(standard_element_name: str) ->float:
+    """get standard element height from name
+
+    Parameters:
+        standard_element_name: standard_element_name
+
+    Returns:
+        float
+    """
+
+```
+
+#### get_standard_element_length_from_name
+
+```python
+def get_standard_element_length_from_name(standard_element_name: str) ->float:
+    """get standard element length from name
+
+    Parameters:
+        standard_element_name: standard_element_name
+
+    Returns:
+        float
+    """
+
+```
+
+## New Items
 ### Functions list_controller
 #### export_cover_list
 
@@ -590,7 +715,7 @@ def export_cover_list_with_settings(element_id_list: List[int], file_path:
 
 ```
 
-## Missing Items
+## New Items
 ### Functions material_controller
 #### get_material_color_assignment_for_nodes
 
@@ -1027,7 +1152,7 @@ def set_texture_zoom_y(a0: int, a1: float) ->None:
 
 ```
 
-## Missing Items
+## New Items
 ### Functions scene_controller
 #### is_scene_present
 
@@ -1044,7 +1169,89 @@ def is_scene_present(name: str) ->bool:
 
 ```
 
-## Missing Items
+#### set_group_tab_color
+
+```python
+def set_group_tab_color(scene_group_name: str, red: int, green: int, blue: int
+    ) ->None:
+    """set group tab color
+
+    Parameters:
+        scene_group_name: scene_group_name
+        red: red
+        green: green
+        blue: blue
+
+    Returns:
+        None
+    """
+
+```
+
+#### rename_scene_group
+
+```python
+def rename_scene_group(old_name: str, new_name: str) ->None:
+    """rename scene group
+
+    Parameters:
+        old_name: old_name
+        new_name: new_name
+
+    Returns:
+        None
+    """
+
+```
+
+#### get_group_index_by_name
+
+```python
+def get_group_index_by_name(scene_group_name: str) ->int:
+    """get group index by name
+
+    Parameters:
+        scene_group_name: scene_group_name
+
+    Returns:
+        int
+    """
+
+```
+
+#### rename_scene_group_by_index
+
+```python
+def rename_scene_group_by_index(group_index: int, new_name: str) ->None:
+    """rename scene group by index
+
+    Parameters:
+        group_index: group_index
+        new_name: new_name
+
+    Returns:
+        None
+    """
+
+```
+
+#### group_scences_with_name
+
+```python
+def group_scences_with_name(a0: List[str], a1: str) ->int:
+    """group scences with name
+
+    Parameters:
+        a0: a0
+        a1: a1
+
+    Returns:
+        int
+    """
+
+```
+
+## New Items
 ### Functions utility_controller
 #### get_3d_main_window_geometry
 
@@ -1058,7 +1265,19 @@ def get_3d_main_window_geometry() ->'window_geometry':
 
 ```
 
-## Missing Items
+#### get_project_data_keys
+
+```python
+def get_project_data_keys() ->List[str]:
+    """get project data keys
+
+    Returns:
+        List[str]
+    """
+
+```
+
+## New Items
 ### Classes cadwork
 #### coordinate_system_data
 
@@ -1088,7 +1307,7 @@ class coordinate_system_data:
 
 ```
 
-## Missing Items
+## New Items
 ### Classes cadwork
 #### ifc_predefined_type
 
@@ -3330,8 +3549,39 @@ class ifc_predefined_type:
 
 ```
 
-## Missing Items
-## Missing Items
+## New Items
+### Classes cadwork
+#### multi_layer_type
+
+```python
+@unique
+class multi_layer_type(IntEnum):
+    """multi layer type
+
+    Examples:
+        >>> cadwork.multi_layer_type.undefined
+        undefined
+    """
+    undefined = 0
+    """"""
+    structure = 1
+    """"""
+    panel = 2
+    """"""
+    lathing = 3
+    """"""
+    air = 4
+    """"""
+    covering = 5
+    """"""
+
+    def __int__(self) ->int:
+        return self.value
+
+```
+
+## New Items
+## New Items
 ### Classes cadwork
 #### standard_element_type
 
@@ -3362,7 +3612,7 @@ class standard_element_type(IntEnum):
 
 ```
 
-## Missing Items
+## New Items
 ### Classes cadwork
 #### window_geometry
 
@@ -3383,5 +3633,7 @@ class window_geometry:
         self.top_right = self.point(0, 0)
 
 ```
+
+
 
 

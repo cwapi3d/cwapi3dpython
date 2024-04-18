@@ -1771,3 +1771,13 @@ def set_attribute_visibility_in_modify_window(number: int, visibility: bool) -> 
         None
     """
 
+def set_cutting_set(element_id_list: List[int], cutting_set_name: str) -> bool:
+    """set cutting set
+
+    Parameters:
+        element_id_list: element_id_list
+        cutting_set_name: cutting_set_name
+
+    Returns:
+        bool
+    """
