@@ -1,5 +1,9 @@
+# change log build 30.498.0
+
 ## New Items
+
 ### Functions dimension_controller
+
 #### get_segment_direction
 
 ```python
@@ -17,7 +21,9 @@ def get_segment_direction(element: int, segment_index: int) ->point_3d:
 ```
 
 ## New Items
+
 ### Functions element_controller
+
 #### create_truncated_cone_beam_points
 
 ```python
@@ -75,7 +81,9 @@ def create_spline_line(spline_points: None) ->int:
 ```
 
 ## New Items
+
 ### Functions utility_controller
+
 #### get_user_int_with_default_value
 
 ```python
@@ -126,7 +134,9 @@ def get_user_string_with_default_value(message: str, default_value: str) ->str:
 ```
 
 ## New Items
+
 ### Classes cadwork
+
 #### multi_layer_type
 
 ```python
@@ -157,7 +167,9 @@ class multi_layer_type(IntEnum):
 ```
 
 ## New Items
+
 ### Classes cadwork
+
 #### ifc_2x3_element_type
 
 ```python

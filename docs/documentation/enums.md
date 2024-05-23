@@ -1,3 +1,5 @@
+# Enum types
+
 ## Node symbols
 
 ::: src.cadwork.node_symbol
@@ -59,6 +61,7 @@
         show_source: true
 
 ## Multi Layer Cover Type
+
 ::: src.cadwork.multi_layer_type
     rendering:
         show_root_heading: false
