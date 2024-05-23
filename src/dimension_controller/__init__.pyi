@@ -156,8 +156,6 @@ def get_default_anchor_length(element: int) -> float:
         double
     """
 
-from cadwork import point_3d
-
 def get_distance(element: int) -> point_3d:
     """Get the distance to the dimension reference point. The point is in the plane of the dimensioning.
 
@@ -207,5 +205,16 @@ def get_segment_distance(element: int, segment_index: int) -> float:
 
     Returns:
         distance
+    """
+
+def get_segment_direction(element: int, segment_index: int) -> point_3d:
+    """get segment direction
+
+    Parameters:
+        element: element
+        segment_index: segment_index
+
+    Returns:
+        point_3d
     """
 

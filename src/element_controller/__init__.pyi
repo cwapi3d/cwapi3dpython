@@ -1924,4 +1924,42 @@ def cut_beam_end_profile(elements: List[int], profile_name: str, on_start_face: 
         None
     """
 
+def create_truncated_cone_beam_points(start_diameter: float, end_diameter: float, p1: point_3d, p2: point_3d, p3: point_3d) -> int:
+    """create truncated cone beam points
+
+    Parameters:
+        start_diameter: start_diameter
+        end_diameter: end_diameter
+        p1: p1
+        p2: p2
+        p3: p3
+
+    Returns:
+        int
+    """
+
+def create_truncated_cone_beam_vectors(start_diameter: float, end_diameter: float, length: float, p1: point_3d, xl: point_3d, zl: point_3d) -> int:
+    """create truncated cone beam vectors
+
+    Parameters:
+        start_diameter: start_diameter
+        end_diameter: end_diameter
+        length: length
+        p1: p1
+        xl: xl
+        zl: zl
+
+    Returns:
+        int
+    """
+
+def create_spline_line(spline_points: None) -> int:
+    """create spline line
+
+    Parameters:
+        spline_points: spline_points
+
+    Returns:
+        int
+    """
 
