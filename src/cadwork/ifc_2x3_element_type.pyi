@@ -1,5 +1,5 @@
 class ifc_2x3_element_type:
-    
+
     def is_none(self) -> bool:
         """is none
 
@@ -407,9 +407,23 @@ class ifc_2x3_element_type:
         """
 
     def __repr__(self) -> str:
-        """  repr  
+        """  repr
 
         Returns:
             str
+        """
+
+    def is_ifc_element_assembly(self) -> bool:
+        """is ifc element assembly
+
+        Returns:
+            bool
+        """
+
+    def set_ifc_element_assembly(self) -> None:
+        """set ifc element assembly
+
+        Returns:
+            None
         """
 

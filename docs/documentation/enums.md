@@ -1,3 +1,5 @@
+# Enum types
+
 ## Node symbols
 
 ::: src.cadwork.node_symbol
@@ -54,6 +56,13 @@
 ## IFC Aggregation Behaviour
 
 ::: src.cadwork.ifc_element_combine_behaviour
+    rendering:
+        show_root_heading: false
+        show_source: true
+
+## Multi Layer Cover Type
+
+::: src.cadwork.multi_layer_type
     rendering:
         show_root_heading: false
         show_source: true

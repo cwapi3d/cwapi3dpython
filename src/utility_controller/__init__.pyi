@@ -1057,3 +1057,36 @@ def get_project_data_keys() -> List[str]:
         List[str]
     """
 
+def get_user_int_with_default_value(message: str, default_value: int) -> int:
+    """get user int with default value
+
+    Parameters:
+        message: message
+        default_value: default_value
+
+    Returns:
+        int
+    """
+
+def get_user_double_with_default_value(message: str, default_value: float) -> float:
+    """get user double with default value
+
+    Parameters:
+        message: message
+        default_value: default_value
+
+    Returns:
+        float
+    """
+
+def get_user_string_with_default_value(message: str, default_value: str) -> str:
+    """get user string with default value
+
+    Parameters:
+        message: message
+        default_value: default_value
+
+    Returns:
+        str
+    """
+

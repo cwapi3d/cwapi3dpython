@@ -62,6 +62,7 @@ nav:
     - Machine Controller: documentation/machine_controller.md
     - Material Controller: documentation/material_controller.md
     - Menu Controller: documentation/menu_controller.md
+    - Multi Layer Cover Controller: documentation/multi_layer_cover_controller.md
     - Roof Controller: documentation/roof_controller.md
     - Scene Controller: documentation/scene_controller.md
     - Shop Drawing Controller: documentation/shop_drawing_controller.md
