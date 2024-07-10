@@ -1963,3 +1963,36 @@ def create_spline_line(spline_points: None) -> int:
         int
     """
 
+def unjoin_elements(element_id_list: List[int]) ->bool:
+    """unjoin elements
+
+    Parameters:
+        element_id_list: element_id_list
+
+    Returns:
+        bool
+    """
+
+def unjoin_top_level_elements(element_id_list: List[int]) ->bool:
+    """unjoin top level elements
+
+    Parameters:
+        element_id_list: element_id_list
+
+    Returns:
+        bool
+    """
+
+def set_element_group_single_select_mode() ->None:
+    """set element group single select mode
+
+    Returns:
+        None
+    """
+
+def set_element_group_multi_select_mode() ->None:
+    """set element group multi select mode
+
+    Returns:
+        None
+    """
