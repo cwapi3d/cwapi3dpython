@@ -171,7 +171,7 @@ def set_material(element_id_list: List[int], element_id: int) -> None:
         None
     """
 
-def save_visibility_state() -> visibility_state:
+def save_visibility_state() -> "visibility_state":
     """Saves the visibility state
 
     Returns:
@@ -188,7 +188,7 @@ def restore_visibility_state(state: None) -> None:
         None
     """
 
-def save_activation_state() -> activation_state:
+def save_activation_state() -> "activation_state":
     """Saves the activation state
 
     Returns:
@@ -501,3 +501,13 @@ def is_cadwork_window_in_dark_mode() -> bool:
         window is in dark mode
     """
 
+def enter_working_plane(plane_normal: point_3d, plane_origin: point_3d) ->None:
+    """enter working plane
+
+    Parameters:
+        plane_normal: plane_normal
+        plane_origin: plane_origin
+
+    Returns:
+        None
+    """

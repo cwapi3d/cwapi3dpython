@@ -4,17 +4,7 @@ from cadwork import element_module_properties
 from cadwork import facet_list
 from cadwork import point_3d
 from cadwork import text_object_options
-from cadwork import coordinate_system_data
-
-def get_last_error(error_code: int) -> str:
-    """Gets the last error
-
-    Parameters:
-        error_code: error_code
-
-    Returns:
-        error string
-    """
+from cadwork.coordinate_system_data import coordinate_system_data
 
 def delete_elements(element_id_list: List[int]) -> None:
     """delete elements
@@ -563,7 +553,7 @@ def clear_errors() -> None:
     """
 
 def glide_elements(element_i_ds: List[int], glide_point: point_3d) -> None:
-    """Glides elements
+    """glide elements
 
     Parameters:
         element_i_ds: element_i_ds
@@ -669,18 +659,6 @@ def create_auto_container_from_standard_with_reference(elements: List[int], outp
         int
     """
 
-def slice_elements_with_plane_and_get_new_elements(a0: int, a1: point_3d, a2: float) -> List[int]:
-    """slice elements with plane and get new elements
-
-    Parameters:
-        a0: a0
-        a1: a1
-        a2: a2
-
-    Returns:
-        List[int]
-    """
-
 def create_surface(surface_vertices: List[point_3d]) -> int:
     """create surface
 
@@ -691,66 +669,56 @@ def create_surface(surface_vertices: List[point_3d]) -> int:
         int
     """
 
-def convert_circular_beam_to_drilling(elements: List[int]) -> None:
-    """converts circular/round beams into drillings
-
-    Parameters:
-        elements: elements
-
-    Returns:
-        None
-    """
-
-def stretch_start_facet(a0: List[int], a1: point_3d) -> None:
+def stretch_start_facet(elements: List[int], stretch_vector: point_3d) -> None:
     """stretch start facet
 
     Parameters:
-        a0: a0
-        a1: a1
+        elements: elements
+        stretch_vector: a vector that defines the stretch direction and distance
 
     Returns:
         None
     """
 
-def stretch_end_facet(a0: List[int], a1: point_3d) -> None:
+def stretch_end_facet(elements: List[int], stretch_vector: point_3d) -> None:
     """stretch end facet
 
     Parameters:
-        a0: a0
-        a1: a1
+         elements: elements
+        stretch_vector: a vector that defines the stretch direction and distance
 
     Returns:
         None
     """
 
-def set_export_solid_contents(a0: int, a1: List[int]) -> None:
+def set_export_solid_contents(export_solid_id: int, element_i_ds: List[int]) -> None:
     """set export solid contents
 
     Parameters:
-        a0: a0
-        a1: a1
+        export_solid_id: export_solid_id
+        element_i_ds: element_i_ds
 
     Returns:
         None
     """
 
-def set_container_contents(a0: int, a1: List[int]) -> None:
+def set_container_contents(container_id: int, element_i_ds: List[int]) -> None:
     """set container contents
 
     Parameters:
-        a0: a0
-        a1: a1
+        container_id: container_id
+        element_i_ds: element_i_ds
 
     Returns:
         None
     """
 
-def set_parent_opening_variants_opening_angle(a0: List[int], a1: float) -> None:
+def set_parent_opening_variants_opening_angle(element_i_ds: List[int], angle: float) -> None:
     """set parent opening variants opening angle
 
     Parameters:
-        a0: a0
-        a1: a1
+        element_i_ds: element_i_ds
+        angle: angle
 
     Returns:
         None
@@ -781,7 +749,7 @@ def mirror_copy_elements(elements: List[int], plane: point_3d, plane_distance: f
     """
 
 def reset_element_cadwork_guid(element_id: int) -> None:
-    """sets the Cadwork Guid of an element to NULL
+    """reset element cadwork guid
 
     Parameters:
         element_id: element_id
@@ -959,86 +927,86 @@ def convert_container_to_container_block(elements: List[int]) -> None:
         None
     """
 
-def create_bounding_box_local(a0: int, a1: List[int]) -> int:
+def create_bounding_box_local(reference_element: int, elements: List[int]) -> int:
     """create bounding box local
 
     Parameters:
-        a0: a0
-        a1: a1
+        reference_element: reference_element
+        elements: elements
 
     Returns:
         int
     """
 
-def create_bounding_box_global(a1: List[int]) -> int:
+def create_bounding_box_global(elements: List[int]) -> int:
     """create bounding box global
 
     Parameters:
-        a1: a1
+        elements: elements
 
     Returns:
         int
     """
 
-def convert_auxiliary_to_panel(a0: List[int]) -> None:
+def convert_auxiliary_to_panel(elements: List[int]) -> None:
     """convert auxiliary to panel
 
     Parameters:
-        a0: a0
+        elements: elements
 
     Returns:
         None
     """
 
-def convert_auxiliary_to_beam(a0: List[int]) -> None:
+def convert_auxiliary_to_beam(elements: List[int]) -> None:
     """convert auxiliary to beam
 
     Parameters:
-        a0: a0
+        elements: elements
 
     Returns:
         None
     """
 
-def auto_set_rough_volume_situation(a0: List[int]) -> None:
+def auto_set_rough_volume_situation(elements: List[int]) -> None:
     """auto set rough volume situation
 
     Parameters:
-        a0: a0
+        elements: elements
 
     Returns:
         None
     """
 
-def rough_volume_situation_manual(a0: int, a1: List[int], a2: List[int]) -> None:
+def rough_volume_situation_manual(cover: int, add_partner: List[int], remove_partner: List[int]) -> None:
     """rough volume situation manual
 
     Parameters:
-        a0: a0
-        a1: a1
-        a2: a2
+        cover: cover
+        add_partner: add_partner
+        remove_partner: remove_partner
 
     Returns:
         None
     """
 
-def auto_set_parts_situation(a0: List[int]) -> None:
+def auto_set_parts_situation(elements: List[int]) -> None:
     """auto set parts situation
 
     Parameters:
-        a0: a0
+        elements: elements
 
     Returns:
         None
     """
 
-def parts_situation_manual(a0: int, a1: List[int], a2: List[int]) -> None:
+def parts_situation_manual(cover: int, add_childs: List[int], remove_childs: List[int]) -> None:
     """parts situation manual
 
     Parameters:
-        a0: a0
-        a1: a1
-        a2: a2
+        cover: cover
+        add_childs: add_childs
+        remove_childs: remove_childs
 
     Returns:
         None
@@ -1058,12 +1026,12 @@ def activate_parts_without_situation() -> List[int]:
         List[int]
     """
 
-def add_elements_to_detail(a0: List[int], a1: int) -> None:
+def add_elements_to_detail(elements: List[int], detail: int) -> None:
     """add elements to detail
 
     Parameters:
-        a0: a0
-        a1: a1
+        elements: The list of elements to be added to the detail
+        detail: The ID of the detail
 
     Returns:
         None
@@ -1107,70 +1075,70 @@ def start_element_module_calculation_silently(covers: List[int]) -> None:
         None
     """
 
-def replace_physical_drillings_with_drilling_axes(a0: List[int], a1: float, a2: float) -> List[int]:
+def replace_physical_drillings_with_drilling_axes(elements: List[int], mininum_diameter: float, maximum_diameter: float) -> List[int]:
     """replace physical drillings with drilling axes
 
     Parameters:
-        a0: a0
-        a1: a1
-        a2: a2
+        elements: elements
+        mininum_diameter: mininum_diameter
+        maximum_diameter: maximum_diameter
 
     Returns:
         List[int]
     """
 
-def cut_element_with_processing_group(a0: int, a1: int) -> None:
+def cut_element_with_processing_group(soft_element: int, processing: int) -> None:
     """cut element with processing group
 
     Parameters:
-        a0: a0
-        a1: a1
+        soft_element: soft_element
+        processing: processing
 
     Returns:
         None
     """
 
-def add_element_to_detail(a0: List[int], a1: int) -> None:
+def add_element_to_detail(elements: List[int], detail: int) -> None:
     """add element to detail
 
     Parameters:
-        a0: a0
-        a1: a1
+        elements: elements
+        detail: detail
 
     Returns:
         None
     """
 
-def convert_elements_to_auxiliary_elements(a0: List[int]) -> None:
+def convert_elements_to_auxiliary_elements(elements: List[int]) -> None:
     """convert elements to auxiliary elements
 
     Parameters:
-        a0: a0
+        elements: elements
 
     Returns:
         None
     """
 
-def create_circular_axis_points(a0: float, a1: point_3d, a2: point_3d) -> int:
+def create_circular_axis_points(diameter: float, p1: point_3d, p2: point_3d) -> int:
     """create circular axis points
 
     Parameters:
-        a0: a0
-        a1: a1
-        a2: a2
+        diameter: diameter
+        p1: p1
+        p2: p2
 
     Returns:
         int
     """
 
-def create_circular_axis_vector(a0: float, a1: float, a2: point_3d, a3: point_3d) -> int:
+def create_circular_axis_vector(diameter: float, length: float, p1: point_3d, xl: point_3d) -> int:
     """create circular axis vector
 
     Parameters:
-        a0: a0
-        a1: a1
-        a2: a2
-        a3: a3
+        diameter: diameter
+        length: length
+        p1: p1
+        xl: xl
 
     Returns:
         int
@@ -1189,96 +1157,96 @@ def create_polygon_panel(polygon_vertices: List[point_3d], thickness: float, xl:
         int
     """
 
-def cut_elements_with_overmeasure(a0: List[int], a1: List[int]) -> None:
+def cut_elements_with_overmeasure(hard_elements: List[int], soft_elements: List[int]) -> None:
     """cut elements with overmeasure
 
     Parameters:
-        a0: a0
-        a1: a1
+        hard_elements: hard_elements
+        soft_elements: soft_elements
 
     Returns:
         None
     """
 
-def cut_log_corner_joint(a0: str, a1: List[int]) -> None:
+def cut_log_corner_joint(settings_name: str, elements: List[int]) -> None:
     """cut log corner joint
 
     Parameters:
-        a0: a0
-        a1: a1
+        settings_name: settings_name
+        elements: elements
 
     Returns:
         None
     """
 
-def get_edge_selection(a0: List[int]) -> edge_list:
+def get_edge_selection(elements: List[int]) -> edge_list:
     """get edge selection
 
     Parameters:
-        a0: a0
+        elements: elements
 
     Returns:
         edge_list
     """
 
-def get_facets_with_lasso(a0: List[int]) -> facet_list:
+def get_facets_with_lasso(elements: List[int]) -> facet_list:
     """get facets with lasso
 
     Parameters:
-        a0: a0
+        elements: elements
 
     Returns:
         facet_list
     """
 
-def create_standard_element_from_guid_points(a0: str, a1: point_3d, a2: point_3d, a3: point_3d) -> int:
+def create_standard_element_from_guid_points(guid: str, p1: point_3d, p2: point_3d, p3: point_3d) -> int:
     """create standard element from guid points
 
     Parameters:
-        a0: a0
-        a1: a1
-        a2: a2
-        a3: a3
+        guid: guid
+        p1: p1
+        p2: p2
+        p3: p3
 
     Returns:
         int
     """
 
-def create_standard_element_from_guid_vectors(a0: str, a1: float, a2: point_3d, a3: point_3d, a4: point_3d) -> int:
+def create_standard_element_from_guid_vectors(guid: str, length: float, p1: point_3d, xl: point_3d, zl: point_3d) -> int:
     """create standard element from guid vectors
 
     Parameters:
-        a0: a0
-        a1: a1
-        a2: a2
-        a3: a3
-        a4: a4
+        guid: guid
+        length: length
+        p1: p1
+        xl: xl
+        zl: zl
 
     Returns:
         int
     """
 
-def fillet_edge(a0: int, a1: point_3d, a2: point_3d, a3: float) -> None:
+def fillet_edge(element_id: int, edge_start: point_3d, edge_end: point_3d, radius: float) -> None:
     """fillet edge
 
     Parameters:
-        a0: a0
-        a1: a1
-        a2: a2
-        a3: a3
+        element_id: element_id
+        edge_start: edge_start
+        edge_end: edge_end
+        radius: radius
 
     Returns:
         None
     """
 
-def chamfer_edge(a0: int, a1: point_3d, a2: point_3d, a3: float) -> None:
+def chamfer_edge(element_id: int, edge_start: point_3d, edge_end: point_3d, length: float) -> None:
     """chamfer edge
 
     Parameters:
-        a0: a0
-        a1: a1
-        a2: a2
-        a3: a3
+        element_id: element_id
+        edge_start: edge_start
+        edge_end: edge_end
+        length: length
 
     Returns:
         None
@@ -1315,7 +1283,7 @@ def convert_surfaces_to_volume(elements: List[int]) -> int:
     """
 
 def cut_corner_lap(elements: List[int], depth: float, clearance_base: float, clearance_side: float, backcut: float, drilling_count: int, drilling_diameter: float, drilling_tolerance: float) -> None:
-    """cuts a corner-lap with specific parameters
+    """cut corner lap
 
     Parameters:
         elements: elements
@@ -1332,7 +1300,7 @@ def cut_corner_lap(elements: List[int], depth: float, clearance_base: float, cle
     """
 
 def cut_t_lap(elements: List[int], depth: float, clearance_base: float, clearance_side: float, backcut: float, drilling_count: int, drilling_diameter: float, drilling_tolerance: float) -> None:
-    """cuts a t-lap with specific parameters
+    """cut t lap
 
     Parameters:
         elements: elements
@@ -1349,7 +1317,7 @@ def cut_t_lap(elements: List[int], depth: float, clearance_base: float, clearanc
     """
 
 def cut_cross_lap(elements: List[int], depth: float, clearance_base: float, clearance_side: float, drilling_count: int, drilling_diameter: float, drilling_tolerance: float) -> None:
-    """cuts a cross-lap with specific parameters
+    """cut cross lap
 
     Parameters:
         elements: elements
@@ -1365,7 +1333,7 @@ def cut_cross_lap(elements: List[int], depth: float, clearance_base: float, clea
     """
 
 def delete_processes_keep_cutting_bodies(elements: List[int], keep_cutting_elements_only: bool) -> List[int]:
-    """Gets the cutting bodies of all processes (and deletes processes), like Ctrl+D Action
+    """delete processes keep cutting bodies
 
     Parameters:
         elements: elements
@@ -1376,7 +1344,7 @@ def delete_processes_keep_cutting_bodies(elements: List[int], keep_cutting_eleme
     """
 
 def cut_double_tenon(elements: List[int], depth1: float, depth2: float, clearance: float, backcut: float, drilling_count: int, drilling_diameter: float, drilling_tolerance: float) -> None:
-    """cuts a double tenon with specific parameters
+    """cut double tenon
 
     Parameters:
         elements: elements
@@ -1392,19 +1360,19 @@ def cut_double_tenon(elements: List[int], depth1: float, depth2: float, clearanc
         None
     """
 
-def get_coordinate_system_data_nesting_child(nesting_parent_id: int, nesting_child_id: int) -> coordinate_system_data:
-    """Get the coordinate system of nesting child
+def get_coordinate_system_data_nesting_child(nesting_parent_id: int, nesting_child_id: int) -> 'coordinate_system_data':
+    """get coordinate system data nesting child
 
     Parameters:
         nesting_parent_id: nesting_parent_id
         nesting_child_id: nesting_child_id
 
     Returns:
-        A global element coordinate-system of the nested child element consisting of a Point1, a Point2 and a Point3. You can get the local placement by subtracting the parent coordinate-system with child coordinate-system
+        coordinate_system_data
     """
 
 def cut_half_lap(elements: List[int], length: float, clearance_length: float, clearance_depth: float, drilling_count: int, drilling_diameter: float, drilling_tolerance: float) -> None:
-    """cuts a half lap joint with specific parameters
+    """cut half lap
 
     Parameters:
         elements: elements
@@ -1420,7 +1388,7 @@ def cut_half_lap(elements: List[int], length: float, clearance_length: float, cl
     """
 
 def cut_simple_scarf(elements: List[int], length: float, depth: float, clearance_length: float, clearance_depth: float, drilling_count: int, drilling_diameter: float, drilling_tolerance: float) -> None:
-    """cuts a simple scarf joint with specific parameters
+    """cut simple scarf
 
     Parameters:
         elements: elements
@@ -1437,7 +1405,7 @@ def cut_simple_scarf(elements: List[int], length: float, depth: float, clearance
     """
 
 def cut_diagonal_cut(elements: List[int], length: float, clearance_length: float, drilling_count: int, drilling_diameter: float, drilling_tolerance: float) -> None:
-    """cuts a diagonal cut joint with specific parameters
+    """cut diagonal cut
 
     Parameters:
         elements: elements
@@ -1565,11 +1533,11 @@ def get_standard_panel_list() -> List[str]:
         List[str]
     """
 
-def get_variant_sibling_element_ids(a0: int) -> List[int]:
+def get_variant_sibling_element_ids(element_id: int) -> List[int]:
     """get variant sibling element ids
 
     Parameters:
-        a0: a0
+        element_id: element_id
 
     Returns:
         List[int]
@@ -1706,22 +1674,22 @@ def get_element_cadwork_guid(element_id: int) -> str:
         str
     """
 
-def get_bounding_box_vertices_local(a0: int, a1: List[int]) -> List[point_3d]:
+def get_bounding_box_vertices_local(reference_element: int, elements: List[int]) -> List[point_3d]:
     """get bounding box vertices local
 
     Parameters:
-        a0: a0
-        a1: a1
+        reference_element: reference_element
+        elements: elements
 
     Returns:
         List[point_3d]
     """
 
-def get_bounding_box_vertices_global(a0: List[int]) -> List[point_3d]:
+def get_bounding_box_vertices_global(elements: List[int]) -> List[point_3d]:
     """get bounding box vertices global
 
     Parameters:
-        a0: a0
+        elements: elements
 
     Returns:
         List[point_3d]
@@ -1734,11 +1702,11 @@ def get_all_nesting_raw_parts() -> List[int]:
         List[int]
     """
 
-def get_joined_elements(a0: int) -> List[int]:
+def get_joined_elements(element_id: int) -> List[int]:
     """get joined elements
 
     Parameters:
-        a0: a0
+        element_id: element_id
 
     Returns:
         List[int]
@@ -1754,11 +1722,11 @@ def check_element_duplicates(elements: List[int]) -> List[int]:
         List[int]
     """
 
-def get_elements_in_contact(a0: int) -> List[int]:
+def get_elements_in_contact(element: int) -> List[int]:
     """get elements in contact
 
     Parameters:
-        a0: a0
+        element: element
 
     Returns:
         List[int]
@@ -1778,7 +1746,7 @@ def create_text_object_with_options(position: point_3d, xl: point_3d, zl: point_
     """
 
 def convert_surfaces_to_roof_surfaces(elements: List[int], roof_name: str) -> None:
-    """converts surfaces to roof surfaces
+    """convert surfaces to roof surfaces
 
     Parameters:
         elements: elements
@@ -1789,20 +1757,20 @@ def convert_surfaces_to_roof_surfaces(elements: List[int], roof_name: str) -> No
     """
 
 def start_standard_element_dialog(standard_element_type: None) -> str:
-    """Starts the standard element dialogue based on the chosen element type
+    """start standard element dialog
 
     Parameters:
         standard_element_type: standard_element_type
 
     Returns:
-        Returns guid of selected standard element if item is valid, else null
+        str
     """
 
-def remove_standard_connector_axis(a0: str) -> None:
+def remove_standard_connector_axis(guid: str) -> None:
     """remove standard connector axis
 
     Parameters:
-        a0: a0
+        guid: guid
 
     Returns:
         None
@@ -1961,5 +1929,61 @@ def create_spline_line(spline_points: None) -> int:
 
     Returns:
         int
+    """
+
+def unjoin_elements(element_id_list: List[int]) -> bool:
+    """unjoin elements
+
+    Parameters:
+        element_id_list: element_id_list
+
+    Returns:
+        bool
+    """
+
+def unjoin_top_level_elements(element_id_list: List[int]) -> bool:
+    """unjoin top level elements
+
+    Parameters:
+        element_id_list: element_id_list
+
+    Returns:
+        bool
+    """
+
+def set_element_group_single_select_mode() -> None:
+    """set element group single select mode
+
+    Returns:
+        None
+    """
+
+def set_element_group_multi_select_mode() -> None:
+    """set element group multi select mode
+
+    Returns:
+        None
+    """
+
+def convert_circular_beam_to_drilling(elements: List[int]) -> None:
+    """convert circular beam to drilling
+
+    Parameters:
+        elements: elements
+
+    Returns:
+        None
+    """
+
+def slice_elements_with_plane_and_get_new_elements(element: int, cut_plane_normal_vector: point_3d, distance_from_global_origin: float) -> List[int]:
+    """slice elements with plane and get new elements
+
+    Parameters:
+        element: The ID of the element to be sliced
+        cut_plane_normal_vector: The normal vector of the cutting plane
+        distance_from_global_origin: list of IDs of the new elements created by the slicing operation
+
+    Returns:
+        List[int]
     """
 
