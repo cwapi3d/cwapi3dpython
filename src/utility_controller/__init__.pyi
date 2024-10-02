@@ -1218,14 +1218,3 @@ def get_user_string_with_default_value(message: str, default_value: str) -> str:
         str
     """
 
-
-def enter_working_plane(plane_normal: point_3d, plane_origin: point_3d) -> None:
-    """enter working plane
-
-    Parameters:
-        plane_normal: plane_normal
-        plane_origin: plane_origin
-
-    Returns:
-        None
-    """
