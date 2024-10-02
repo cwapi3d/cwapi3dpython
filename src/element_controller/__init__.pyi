@@ -1987,3 +1987,14 @@ def slice_elements_with_plane_and_get_new_elements(element: int, cut_plane_norma
         List[int]
     """
 
+def get_elements_in_collision(element: int) ->List[int]:
+    """get elements in collision
+
+    Parameters:
+        element: element
+
+    Returns:
+        List[int]
+    """
+
+

@@ -66,3 +66,10 @@
     rendering:
         show_root_heading: false
         show_source: true
+
+## BIMteam upload
+
+::: src.cadwork.bim_team_upload_result_code
+    rendering:
+        show_root_heading: false
+        show_source: true
