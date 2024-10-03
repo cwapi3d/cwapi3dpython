@@ -53,6 +53,7 @@ nav:
         - Layer Settings: documentation/layer_settings.md
         - Text Object Options: documentation/text_object_options.md
         - Window Geometry: documentation/window_geometry.md
+        - BIMteam Upload Result: documentation/bim_team_upload_result.md
     - Connector Axis Controller: documentation/connector_axis_controller.md
     - Dimension Controller: documentation/dimension_controller.md
     - Element Controller: documentation/element_controller.md
