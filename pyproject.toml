@@ -1,6 +1,6 @@
 [project]
 name = "cwapi3d"
-version = "30.0.593"
+version = "30.0.626"
 authors = [{ name = "Cadwork", email = "it@cadwork.ca" }]
 requires-python = ">= 3.10"
 description = 'Python bindings for CwAPI3D'
