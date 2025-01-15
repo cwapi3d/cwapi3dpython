@@ -96,7 +96,8 @@ nav:
   - Auto Attributes:
       - auto_attributes.md
   - 3rd Party Packages & Plugins:
-      - tools_packages.md
+      - plugins.md
+      - packages.md
   - About:
       - About Guide: about.md
   - Release Notes: release_notes.md
