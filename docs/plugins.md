@@ -11,7 +11,7 @@ This software plugin for cadwork 3d allows you to generate, view, and edit Augme
 building plans directly in the cadwork 3d environment.
 
 <figure markdown="1">
-![Backup Text](img/ar_software_planning_tool.JPG "script-filled attributes settings"){: style="width:700px"}
+![Backup Text](img/ar_software_planning_tool.jpg "script-filled attributes settings"){: style="width:700px"}
 </figure>
 
 The AR planning software is currently availabe in combination with the AR fabrication system of
