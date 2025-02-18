@@ -1781,3 +1781,13 @@ def set_cutting_set(element_id_list: List[int], cutting_set_name: str) -> bool:
     Returns:
         bool
     """
+
+def get_standard_element_material_id(element_id: int) ->int:
+    """get standard element material id
+
+    Parameters:
+        element_id: element_id
+
+    Returns:
+        int
+    """

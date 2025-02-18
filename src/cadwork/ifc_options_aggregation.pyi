@@ -1,4 +1,4 @@
-from cadwork import element_grouping_type
+from cadwork import element_grouping_type, ifc_material_definition
 from cadwork import ifc_element_combine_behaviour
 
 class ifc_options_aggregation:
@@ -69,5 +69,22 @@ class ifc_options_aggregation:
 
         Returns:
             None
+        """
+
+    def set_multi_layer_material_definition_type(self, ifc_material_definition: ifc_material_definition) -> None:
+        """set multi layer material definition type
+
+        Parameters:
+            ifc_material_definition: ifc_material_definition
+
+        Returns:
+            None
+        """
+
+    def get_multi_layer_material_definition_type(self) -> ifc_material_definition:
+        """get multi layer material definition type
+
+        Returns:
+            ifc_material_definition
         """
 
