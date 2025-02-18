@@ -1997,4 +1997,105 @@ def get_elements_in_collision(element: int) ->List[int]:
         List[int]
     """
 
+def get_text_object_options(element: int) ->'text_object_options':
+    """get text object options
 
+    Parameters:
+        element: element
+
+    Returns:
+        text_object_options
+    """
+
+def get_is_element_group_single_select_mode() ->bool:
+    """get is element group single select mode
+
+    Returns:
+        bool
+    """
+
+def get_is_element_group_multi_select_mode() ->bool:
+    """get is element group multi select mode
+
+    Returns:
+        bool
+    """
+
+def apply_image_to_surface(element: int, image_file_path: str, p1: point_3d, p2: point_3d) ->bool:
+    """apply image to surface
+
+    Parameters:
+        element: element
+        image_file_path: image_file_path
+        p1: p1
+        p2: p2
+
+    Returns:
+        bool
+    """
+
+def set_shoulder_options(options: None) ->None:
+    """set shoulder options
+
+    Parameters:
+        options: options
+
+    Returns:
+        None
+    """
+
+def set_heel_shoulder_options(options: None) ->None:
+    """set heel shoulder options
+
+    Parameters:
+        options: options
+
+    Returns:
+        None
+    """
+
+def set_double_shoulder_options(options: None) ->None:
+    """set double shoulder options
+
+    Parameters:
+        options: options
+
+    Returns:
+        None
+    """
+
+def cut_shoulder(element_id_list: List[int], connecting_element_id_list:
+    List[int]) ->None:
+    """cut shoulder
+
+    Parameters:
+        element_id_list: element_id_list
+        connecting_element_id_list: connecting_element_id_list
+
+    Returns:
+        None
+    """
+
+def cut_heel_shoulder(element_id_list: List[int],
+    connecting_element_id_list: List[int]) ->None:
+    """cut heel shoulder
+
+    Parameters:
+        element_id_list: element_id_list
+        connecting_element_id_list: connecting_element_id_list
+
+    Returns:
+        None
+    """
+
+def cut_double_shoulder(element_id_list: List[int],
+    connecting_element_id_list: List[int]) ->None:
+    """cut double shoulder
+
+    Parameters:
+        element_id_list: element_id_list
+        connecting_element_id_list: connecting_element_id_list
+
+    Returns:
+        None
+    """

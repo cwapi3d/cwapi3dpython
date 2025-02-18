@@ -512,3 +512,64 @@ def enter_working_plane(plane_normal: point_3d, plane_origin: point_3d) ->None:
         None
     """
 
+def get_element_transparency(element_id: int) ->int:
+    """get element transparency
+
+    Parameters:
+        element_id: element_id
+
+    Returns:
+        int
+    """
+
+def set_element_transparency(element_id_list: List[int], value: int) -> None:
+    """set element transparency
+
+    Parameters:
+        element_id_list: element_id_list
+        value: value
+
+    Returns:
+        None
+    """
+
+def get_use_material_texture(element_id: int) -> bool:
+    """get use material texture
+
+    Parameters:
+        element_id: element_id
+
+    Returns:
+        bool
+    """
+
+def set_use_material_texture(element_id_list: List[int], value: bool) -> None:
+    """set use material texture
+
+    Parameters:
+        element_id_list: element_id_list
+        value: value
+
+    Returns:
+        None
+    """
+
+def display_bitmaps_as_texture_representation_in_shaded1(a0: bool) -> None:
+    """display bitmaps as texture representation in shaded1
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        None
+    """
+
+def display_bitmaps_as_texture_representation_in_shaded2(a0: bool) -> None:
+    """display bitmaps as texture representation in shaded2
+
+    Parameters:
+        a0: a0
+
+    Returns:
+        None
+    """

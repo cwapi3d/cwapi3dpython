@@ -218,3 +218,12 @@ def get_segment_direction(element: int, segment_index: int) -> point_3d:
         point_3d
     """
 
+def get_total_dimension(element: int) ->bool:
+    """get total dimension
+
+    Parameters:
+        element: element
+
+    Returns:
+        bool
+    """

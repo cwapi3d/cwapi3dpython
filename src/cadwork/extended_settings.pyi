@@ -176,4 +176,71 @@ class extended_settings:
         Returns:
             None
         """
+    
+    def get_ignore_processing(self) ->bool:
+        """get ignore processing
 
+            Returns:
+                bool
+            """
+
+    def set_ignore_processing(self, value: bool) ->None:
+        """set ignore processing
+
+            Parameters:
+                value: value
+
+            Returns:
+                None
+            """
+
+    def get_single_piece(self) -> bool:
+        """get single piece
+
+        Returns:
+            bool
+        """
+
+    def set_single_piece(self, value: bool) -> None:
+        """set single piece
+
+        Parameters:
+            value: value
+
+        Returns:
+            None
+        """
+
+    def get_composite(self) -> bool:
+        """get composite
+
+        Returns:
+            bool
+        """
+
+    def set_composite(self, value: bool) -> None:
+        """set composite
+
+        Parameters:
+            value: value
+
+        Returns:
+            None
+        """
+
+    def get_drilling_create_notches(self) -> bool:
+        """get drilling create notches
+
+        Returns:
+            bool
+        """
+
+    def set_drilling_create_notches(self, value: bool) -> None:
+        """set drilling create notches
+
+        Parameters:
+            value: value
+
+        Returns:
+            None
+        """
