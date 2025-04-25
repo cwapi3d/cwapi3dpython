@@ -1,8 +1,8 @@
 [project]
 name = "cwapi3d"
-version = "30.693.0"
+version = "32.246.0"
 authors = [{ name = "Cadwork", email = "it@cadwork.ca" }]
-requires-python = ">= 3.10"
+requires-python = ">= 3.12"
 description = 'Python bindings for CwAPI3D'
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -14,7 +14,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: Microsoft :: Windows",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.12",
     "Topic :: Software Development :: Libraries",
 ]
 

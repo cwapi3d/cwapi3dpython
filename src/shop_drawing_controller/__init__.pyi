@@ -1,5 +1,5 @@
 from typing import List
-from cadwork import point_3d
+from cadwork.point_3d import point_3d
 
 def get_last_error(error_code: int) -> str:
     """Gets the last error

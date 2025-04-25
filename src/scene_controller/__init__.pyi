@@ -97,21 +97,23 @@ def get_scene_list() -> List[str]:
         List[str]
     """
 
-def group_scences(a0: List[str]) -> int:
+
+def group_scences(scene_names: List[str]) -> int:
     """group scences
 
     Parameters:
-        a0: a0
+        scene_names: scene_names
 
     Returns:
         int
     """
 
-def ungroup_scences(a0: int) -> None:
+
+def ungroup_scences(group_index: int) -> None:
     """ungroup scences
 
     Parameters:
-        a0: a0
+        group_index: group_index
 
     Returns:
         None
@@ -172,12 +174,13 @@ def rename_scene_group_by_index(group_index: int, new_name: str) -> None:
         None
     """
 
-def group_scences_with_name(a0: List[str], a1: str) -> int:
+
+def group_scences_with_name(scene_names: List[str], group_name: str) -> int:
     """group scences with name
 
     Parameters:
-        a0: a0
-        a1: a1
+        scene_names: scene_names
+        group_name: group_name
 
     Returns:
         int

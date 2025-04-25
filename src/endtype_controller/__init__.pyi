@@ -40,12 +40,13 @@ def get_endtype_id_end(element_id: int) -> int:
         int
     """
 
-def get_endtype_id_facet(a0: int, a1: int) -> int:
+
+def get_endtype_id_facet(element_id: int, face_number: int) -> int:
     """get endtype id facet
 
     Parameters:
-        a0: a0
-        a1: a1
+        element_id: element_id
+        face_number: face_number
 
     Returns:
         int
@@ -73,13 +74,14 @@ def set_endtype_name_end(element_id: int, name: str) -> None:
         None
     """
 
-def set_endtype_name_facet(a0: int, a1: str, a2: int) -> None:
+
+def set_endtype_name_facet(element_id: int, name: str, face_number: int) -> None:
     """set endtype name facet
 
     Parameters:
-        a0: a0
-        a1: a1
-        a2: a2
+        element_id: element_id
+        name: name
+        face_number: face_number
 
     Returns:
         None
@@ -107,13 +109,14 @@ def set_endtype_id_end(element_id: int, endtype_id: int) -> None:
         None
     """
 
-def set_endtype_id_facet(a0: int, a1: int, a2: int) -> None:
+
+def set_endtype_id_facet(element_id: int, endtype_id: int, face_number: int) -> None:
     """set endtype id facet
 
     Parameters:
-        a0: a0
-        a1: a1
-        a2: a2
+        element_id: element_id
+        endtype_id: endtype_id
+        face_number: face_number
 
     Returns:
         None
@@ -168,12 +171,13 @@ def get_endtype_name_end(element_id: int) -> str:
         str
     """
 
-def get_endtype_name_facet(a0: int, a1: int) -> str:
+
+def get_endtype_name_facet(element_id: int, face_number: int) -> str:
     """get endtype name facet
 
     Parameters:
-        a0: a0
-        a1: a1
+        element_id: element_id
+        face_number: face_number
 
     Returns:
         str

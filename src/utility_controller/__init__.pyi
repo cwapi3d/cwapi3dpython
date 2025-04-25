@@ -1,7 +1,9 @@
 from typing import List
 from typing import Tuple
-from cadwork import point_3d
-from cadwork import window_geometry
+from cadwork.point_3d import point_3d
+from cadwork.window_geometry import window_geometry
+from cadwork.shortcut_key import shortcut_key
+from cadwork.shortcut_key_modifier import shortcut_key_modifier
 
 
 def get_last_error(error_code: int) -> str:
@@ -322,7 +324,13 @@ def get_user_point() -> point_3d:
 
 
 def disable_auto_display_refresh() -> None:
-    """Disables automatic display refresh
+    """
+    Disables the automatic refresh of the display.
+
+    This function prevents the display from updating automatically, which can
+    significantly improve performance during operations that involve multiple
+    changes or computations. The display will remain static until explicitly
+    refreshed by the user.
 
     Returns:
         None
@@ -330,7 +338,30 @@ def disable_auto_display_refresh() -> None:
 
 
 def enable_auto_display_refresh() -> None:
-    """Enables automatic display refresh
+    """
+    Enables the automatic refresh of the display.
+    This function restores the default behavior where the display updates
+    automatically after each operation. Use this function to resume normal
+    display updates after previously disabling them with disable_auto_display_refresh().
+    It's recommended to call this function after completing operations that required
+    disabled display refreshing.
+
+
+    Examples:
+        >>> import cadwork
+        >>> import utility_controller as uc
+        >>> import element_controller as ec
+        >>> uc.disable_auto_display_refresh()
+        >>> # Perform operations that require disabled display refresh
+        >>> your_list_of_elements: List[int] = []
+        >>> uc.enable_auto_display_refresh()
+        >>> ec.recreate_elements(your_list_of_elements)
+
+
+    Note:
+        If elements were created while display refresh was disabled, it's important
+        to recreate these elements after enabling the display refresh to ensure they
+        are properly visualized in cadwork.
 
     Returns:
         None
@@ -380,14 +411,28 @@ def get_new_user_file_from_dialog(name_filter: str) -> str:
 
 
 def api_autostart(api_name: str, option: int) -> int:
-    """api autostart
+    """Manages the autostart configuration for a specified API.
 
     Parameters:
-        api_name: api_name
-        option: option
+        api_name: Name of the API to be managed.
+        option: Determines the operation mode:
+
+            - -1: Checks if API is configured for autostart without making changes. Returns 1 if API is found, 0 if not, or -1 in case of errors.
+            - 1: Enables autostart for the specified API.
+            - 0: Disables autostart for the specified API.
+
+    Note:
+    This function reads and updates alias and module configuration files
+    to manage the autostart state of the API.
+
+    Examples:
+
+        >>> api_autostart("my_api", 1)  # Enable autostart
+        >>> api_autostart("my_api", 0)  # Disable autostart
+        >>> api_autostart("my_api", -1)  # Check current autostart state
 
     Returns:
-        int
+        The value of option if the operation is successful, or -1 in case of errors.
     """
 
 
@@ -455,18 +500,18 @@ def save_3d_file_silently() -> None:
 
 
 def get_licence_first_part() -> str:
-    """Gets the first part of the licence
+    """Gets the first part of the license
 
     Returns:
-        first part of licence
+        first part of license
     """
 
 
 def get_licence_second_part() -> str:
-    """Gets the second part of the licence
+    """Gets the second part of the license
 
     Returns:
-        second part of licence
+        second part of license
     """
 
 
@@ -821,11 +866,11 @@ def get_user_points() -> List[point_3d]:
     """
 
 
-def get_user_points_with_count(a0: int) -> List[point_3d]:
+def get_user_points_with_count(count: int) -> List[point_3d]:
     """get user points with count
 
     Parameters:
-        a0: a0
+        count: count
 
     Returns:
         List[point_3d]
@@ -840,23 +885,23 @@ def get_user_path_from_dialog() -> str:
     """
 
 
-def get_user_path_from_dialog_in_path(a0: str) -> str:
+def get_user_path_from_dialog_in_path(path: str) -> str:
     """get user path from dialog in path
 
     Parameters:
-        a0: a0
+        path: path
 
     Returns:
         str
     """
 
 
-def execute_shortcut(a0: int, a1: int) -> None:
+def execute_shortcut(shortcut_key_modifier: shortcut_key_modifier, shortcut_key: shortcut_key) -> None:
     """execute shortcut
 
     Parameters:
-        a0: a0
-        a1: a1
+        shortcut_key_modifier: shortcut_key_modifier
+        shortcut_key: shortcut_key
 
     Returns:
         None
@@ -1218,3 +1263,20 @@ def get_user_string_with_default_value(message: str, default_value: str) -> str:
         str
     """
 
+
+def get_3d_version_name() -> str:
+    """get 3d version name
+
+    Returns:
+        str
+    """
+
+
+def redirect_python_output_to_logger() -> None:
+    """redirect python output to logger.
+    This function is used to redirect the output of the Python interpreter to the logger.
+    This is useful for debugging and logging purposes.
+
+    Returns:
+        None
+    """

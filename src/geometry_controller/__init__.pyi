@@ -1,6 +1,6 @@
 from typing import List
-from cadwork import facet_list
-from cadwork import point_3d
+from cadwork.facet_list import facet_list
+from cadwork.point_3d import point_3d
 
 
 def rotate_height_axis_90(element_id_list: List[int]) -> None:
@@ -1110,4 +1110,15 @@ def get_standard_element_length_from_name(standard_element_name: str) -> float:
 
     Returns:
         float
+    """
+
+
+def get_last_error(error_code: int) -> str:
+    """get last error
+
+    Parameters:
+        error_code: error_code
+
+    Returns:
+        str
     """

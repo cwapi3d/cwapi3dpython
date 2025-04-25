@@ -155,3 +155,19 @@ class text_object_options:
             bool
         """
 
+    def set_draw_on_top(self, value: bool) -> None:
+        """set draw on top
+
+        Parameters:
+            value: value
+
+        Returns:
+            None
+        """
+
+    def get_draw_on_top(self) -> bool:
+        """get draw on top
+
+        Returns:
+            bool
+        """

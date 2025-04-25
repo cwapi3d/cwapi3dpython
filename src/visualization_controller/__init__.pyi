@@ -1,7 +1,6 @@
 from typing import List
-from cadwork import camera_data
-from cadwork import point_3d
-from cadwork import rgb_color
+from cadwork.camera_data import camera_data
+from cadwork.point_3d import point_3d
 
 def get_last_error(error_code: int) -> str:
     """Gets the last error
@@ -361,23 +360,25 @@ def show_perspective_central() -> None:
         None
     """
 
-def set_color_without_material(a0: List[int], a1: int) -> None:
+
+def set_color_without_material(elements: List[int], color_id: int) -> None:
     """set color without material
 
     Parameters:
-        a0: a0
-        a1: a1
+        elements: elements
+        color_id: color_id
 
     Returns:
         None
     """
 
-def set_texture_rotated(a0: List[int], a1: bool) -> None:
+
+def set_texture_rotated(elements: List[int], flag: bool) -> None:
     """set texture rotated
 
     Parameters:
-        a0: a0
-        a1: a1
+        elements: elements
+        flag: flag
 
     Returns:
         None
@@ -430,7 +431,8 @@ def get_color(element_id: int) -> int:
         color ID
     """
 
-def get_opengl_color(element_id: int) -> rgb_color:
+
+def get_opengl_color(element_id: int) -> 'rgb_color':
     """Gets the element OpenGL color
 
     Parameters:
@@ -450,7 +452,8 @@ def get_material(element_id: int) -> int:
         material ID
     """
 
-def get_rgb_from_cadwork_color_id(color_id: None) -> rgb_color:
+
+def get_rgb_from_cadwork_color_id(color_id: None) -> 'rgb_color':
     """get rgb from cadwork color id
 
     Parameters:
@@ -460,11 +463,12 @@ def get_rgb_from_cadwork_color_id(color_id: None) -> rgb_color:
         colorRGB
     """
 
-def is_texture_rotated(a0: int) -> bool:
+
+def is_texture_rotated(element_id: int) -> bool:
     """is texture rotated
 
     Parameters:
-        a0: a0
+        element_id: element_id
 
     Returns:
         bool
@@ -554,21 +558,23 @@ def set_use_material_texture(element_id_list: List[int], value: bool) -> None:
         None
     """
 
-def display_bitmaps_as_texture_representation_in_shaded1(a0: bool) -> None:
+
+def display_bitmaps_as_texture_representation_in_shaded1(flag: bool) -> None:
     """display bitmaps as texture representation in shaded1
 
     Parameters:
-        a0: a0
+        flag: flag
 
     Returns:
         None
     """
 
-def display_bitmaps_as_texture_representation_in_shaded2(a0: bool) -> None:
+
+def display_bitmaps_as_texture_representation_in_shaded2(flag: bool) -> None:
     """display bitmaps as texture representation in shaded2
 
     Parameters:
-        a0: a0
+        flag: flag
 
     Returns:
         None

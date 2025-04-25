@@ -1,6 +1,8 @@
 from typing import List
 from cadwork import point_3d
 from cadwork.bim_team_upload_result import bim_team_upload_result
+from cadwork.dxf_layer_format_type import dxf_layer_format_type
+from cadwork.dxf_export_version import dxf_export_version
 
 
 def get_last_error(error_code: int) -> str:
@@ -326,12 +328,12 @@ def import_variant_file(file_path: str, insert_position: point_3d) -> List[int]:
     """
 
 
-def import_element_light(a0: str, a1: point_3d) -> int:
+def import_element_light(file_path: str, insert_position: point_3d) -> int:
     """import element light
 
     Parameters:
-        a0: a0
-        a1: a1
+        file_path: file_path
+        insert_position: insert_position
 
     Returns:
         int
@@ -446,4 +448,29 @@ def upload_to_bim_team_and_create_share_link(elements: None
 
     Returns:
         bim_team_upload_result
+    """
+
+
+def export_dxf_file(file_path: str, dxf_layer_format_type: dxf_layer_format_type,
+                    dxf_export_version: dxf_export_version) -> bool:
+    """export dxf file
+
+    Parameters:
+        file_path: file_path
+        dxf_layer_format_type: dxf_layer_format_type
+        dxf_export_version: dxf_export_version
+
+    Returns:
+        bool
+    """
+
+
+def export_dstv_file(file_path: str) -> bool:
+    """export dstv file
+
+    Parameters:
+        file_path: file_path
+
+    Returns:
+        bool
     """

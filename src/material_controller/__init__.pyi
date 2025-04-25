@@ -247,34 +247,37 @@ def clear_errors() -> None:
         None
     """
 
-def set_grade(a0: int, a1: str) -> None:
+
+def set_grade(material_id: int, grade: str) -> None:
     """set grade
 
     Parameters:
-        a0: a0
-        a1: a1
+        material_id: material_id
+        grade: grade
 
     Returns:
         None
     """
 
-def set_quality(a0: int, a1: str) -> None:
+
+def set_quality(material_id: int, quality: str) -> None:
     """set quality
 
     Parameters:
-        a0: a0
-        a1: a1
+        material_id: material_id
+        quality: quality
 
     Returns:
         None
     """
 
-def set_composition(a0: int, a1: str) -> None:
+
+def set_composition(material_id: int, composition: str) -> None:
     """set composition
 
     Parameters:
-        a0: a0
-        a1: a1
+        material_id: material_id
+        composition: composition
 
     Returns:
         None
@@ -497,41 +500,45 @@ def get_all_materials() -> List[int]:
         material ID list
     """
 
-def get_grade(a0: int) -> str:
+
+def get_grade(material_id: int) -> str:
     """get grade
 
     Parameters:
-        a0: a0
+        material_id: material_id
 
     Returns:
         str
     """
 
-def get_quality(a0: int) -> str:
+
+def get_quality(material_id: int) -> str:
     """get quality
 
     Parameters:
-        a0: a0
+        material_id: material_id
 
     Returns:
         str
     """
 
-def get_composition(a0: int) -> str:
+
+def get_composition(material_id: int) -> str:
     """get composition
 
     Parameters:
-        a0: a0
+        material_id: material_id
 
     Returns:
         str
     """
 
-def get_short_name(a0: int) -> str:
+
+def get_short_name(material_id: int) -> str:
     """get short name
 
     Parameters:
-        a0: a0
+        material_id: material_id
 
     Returns:
         str
@@ -554,297 +561,324 @@ def get_parent_group(group: str) -> str:
         parent group name
     """
 
-def get_material_color_assignment_for_nodes(a0: int) -> int:
+
+def get_material_color_assignment_for_nodes(color_nr: int) -> int:
     """get material color assignment for nodes
 
     Parameters:
-        a0: a0
+        color_nr: color_nr
 
     Returns:
         int
     """
 
-def set_material_color_assignment_for_nodes(a0: int, a1: int) -> None:
+
+def set_material_color_assignment_for_nodes(color_nr: int, material_id: int) -> None:
     """set material color assignment for nodes
 
     Parameters:
-        a0: a0
-        a1: a1
+        color_nr: color_nr
+        material_id: material_id
 
     Returns:
         None
     """
 
-def get_material_color_assignment_for_standard_axes(a0: int) -> int:
+
+def get_material_color_assignment_for_standard_axes(color_nr: int) -> int:
     """get material color assignment for standard axes
 
     Parameters:
-        a0: a0
+        color_nr: color_nr
 
     Returns:
         int
     """
 
-def set_material_color_assignment_for_standard_axes(a0: int, a1: int) -> None:
+
+def set_material_color_assignment_for_standard_axes(color_nr: int, material_id: int) -> None:
     """set material color assignment for standard axes
 
     Parameters:
-        a0: a0
-        a1: a1
+        color_nr: color_nr
+        material_id: material_id
 
     Returns:
         None
     """
 
-def get_material_color_assignment_for_drillings(a0: int) -> int:
+
+def get_material_color_assignment_for_drillings(color_nr: int) -> int:
     """get material color assignment for drillings
 
     Parameters:
-        a0: a0
+        color_nr: color_nr
 
     Returns:
         int
     """
 
-def set_material_color_assignment_for_drillings(a0: int, a1: int) -> None:
+
+def set_material_color_assignment_for_drillings(color_nr: int, material_id: int) -> None:
     """set material color assignment for drillings
 
     Parameters:
-        a0: a0
-        a1: a1
+        color_nr: color_nr
+        material_id: material_id
 
     Returns:
         None
     """
 
-def get_material_color_assignment_for_mep_axes(a0: int) -> int:
+
+def get_material_color_assignment_for_mep_axes(color_nr: int) -> int:
     """get material color assignment for mep axes
 
     Parameters:
-        a0: a0
+        color_nr: color_nr
 
     Returns:
         int
     """
 
-def set_material_color_assignment_for_mep_axes(a0: int, a1: int) -> None:
+
+def set_material_color_assignment_for_mep_axes(color_nr: int, material_id: int) -> None:
     """set material color assignment for mep axes
 
     Parameters:
-        a0: a0
-        a1: a1
+        color_nr: color_nr
+        material_id: material_id
 
     Returns:
         None
     """
 
-def get_material_color_assignment_for_beams(a0: int) -> int:
+
+def get_material_color_assignment_for_beams(color_nr: int) -> int:
     """get material color assignment for beams
 
     Parameters:
-        a0: a0
+        color_nr: color_nr
 
     Returns:
         int
     """
 
-def set_material_color_assignment_for_beams(a0: int, a1: int) -> None:
+
+def set_material_color_assignment_for_beams(color_nr: int, material_id: int) -> None:
     """set material color assignment for beams
 
     Parameters:
-        a0: a0
-        a1: a1
+        color_nr: color_nr
+        material_id: material_id
 
     Returns:
         None
     """
 
-def get_material_color_assignment_for_panels(a0: int) -> int:
+
+def get_material_color_assignment_for_panels(color_nr: int) -> int:
     """get material color assignment for panels
 
     Parameters:
-        a0: a0
+        color_nr: color_nr
 
     Returns:
         int
     """
 
-def set_material_color_assignment_for_panels(a0: int, a1: int) -> None:
+
+def set_material_color_assignment_for_panels(color_nr: int, material_id: int) -> None:
     """set material color assignment for panels
 
     Parameters:
-        a0: a0
-        a1: a1
+        color_nr: color_nr
+        material_id: material_id
 
     Returns:
         None
     """
 
-def get_material_color_assignment_for_auxiliary_elements(a0: int) -> int:
+
+def get_material_color_assignment_for_auxiliary_elements(color_nr: int) -> int:
     """get material color assignment for auxiliary elements
 
     Parameters:
-        a0: a0
+        color_nr: color_nr
 
     Returns:
         int
     """
 
-def set_material_color_assignment_for_auxiliary_elements(a0: int, a1: int) -> None:
+
+def set_material_color_assignment_for_auxiliary_elements(color_nr: int, material_id: int) -> None:
     """set material color assignment for auxiliary elements
 
     Parameters:
-        a0: a0
-        a1: a1
+        color_nr: color_nr
+        material_id: material_id
 
     Returns:
         None
     """
 
-def get_material_color_assignment_for_surfaces(a0: int) -> int:
+
+def get_material_color_assignment_for_surfaces(color_nr: int) -> int:
     """get material color assignment for surfaces
 
     Parameters:
-        a0: a0
+        color_nr: color_nr
 
     Returns:
         int
     """
 
-def set_material_color_assignment_for_surfaces(a0: int, a1: int) -> None:
+
+def set_material_color_assignment_for_surfaces(color_nr: int, material_id: int) -> None:
     """set material color assignment for surfaces
 
     Parameters:
-        a0: a0
-        a1: a1
+        color_nr: color_nr
+        material_id: material_id
 
     Returns:
         None
     """
 
-def get_texture_color(a0: int) -> int:
+
+def get_texture_color(material_id: int) -> int:
     """get texture color
 
     Parameters:
-        a0: a0
+        material_id: material_id
 
     Returns:
         int
     """
 
-def set_texture_color(a0: int, a1: int) -> None:
+
+def set_texture_color(color_nr: int, material_id: int) -> None:
     """set texture color
 
     Parameters:
-        a0: a0
-        a1: a1
+        color_nr: color_nr
+        material_id: material_id
 
     Returns:
         None
     """
 
-def get_texture_transparency(a0: int) -> int:
+
+def get_texture_transparency(material_id: int) -> int:
     """get texture transparency
 
     Parameters:
-        a0: a0
+        material_id: material_id
 
     Returns:
         int
     """
 
-def set_texture_transparency(a0: int, a1: int) -> None:
+
+def set_texture_transparency(color_nr: int, material_id: int) -> None:
     """set texture transparency
 
     Parameters:
-        a0: a0
-        a1: a1
+        color_nr: color_nr
+        material_id: material_id
 
     Returns:
         None
     """
 
-def get_texture_rotation_angle(a0: int) -> float:
+
+def get_texture_rotation_angle(material_id: int) -> float:
     """get texture rotation angle
 
     Parameters:
-        a0: a0
+        material_id: material_id
 
     Returns:
         float
     """
 
-def set_texture_rotation_angle(a0: int, a1: float) -> None:
+
+def set_texture_rotation_angle(material_id: int, angle: float) -> None:
     """set texture rotation angle
 
     Parameters:
-        a0: a0
-        a1: a1
+        material_id: material_id
+        angle: angle
 
     Returns:
         None
     """
 
-def get_texture_length_alignment(a0: int) -> bool:
+
+def get_texture_length_alignment(material_id: int) -> bool:
     """get texture length alignment
 
     Parameters:
-        a0: a0
+        material_id: material_id
 
     Returns:
         bool
     """
 
-def set_texture_length_alignment(a0: int, a1: bool) -> None:
+
+def set_texture_length_alignment(material_id: int, flag: bool) -> None:
     """set texture length alignment
 
     Parameters:
-        a0: a0
-        a1: a1
+        material_id: material_id
+        flag: flag
 
     Returns:
         None
     """
 
-def get_texture_zoom_x(a0: int) -> float:
+
+def get_texture_zoom_x(material_id: int) -> float:
     """get texture zoom x
 
     Parameters:
-        a0: a0
+        material_id: material_id
 
     Returns:
         float
     """
 
-def set_texture_zoom_x(a0: int, a1: float) -> None:
+
+def set_texture_zoom_x(material_id: int, value: float) -> None:
     """set texture zoom x
 
     Parameters:
-        a0: a0
-        a1: a1
+        material_id: material_id
+        value: value
 
     Returns:
         None
     """
 
-def get_texture_zoom_y(a0: int) -> float:
+
+def get_texture_zoom_y(material_id: int) -> float:
     """get texture zoom y
 
     Parameters:
-        a0: a0
+        material_id: material_id
 
     Returns:
         float
     """
 
-def set_texture_zoom_y(a0: int, a1: float) -> None:
+
+def set_texture_zoom_y(material_id: int, value: float) -> None:
     """set texture zoom y
 
     Parameters:
-        a0: a0
-        a1: a1
+        material_id: material_id
+        value: value
 
     Returns:
         None
     """
-

@@ -102,3 +102,19 @@ class ifc_options_properties:
             bool
         """
 
+    def get_export_quantity_sets(self) -> bool:
+        """get export quantity sets
+
+        Returns:
+            bool
+        """
+
+    def set_export_quantity_sets(self, export_quantity_sets: bool) -> None:
+        """set export quantity sets
+
+        Parameters:
+            export_quantity_sets: export_quantity_sets
+
+        Returns:
+            None
+        """

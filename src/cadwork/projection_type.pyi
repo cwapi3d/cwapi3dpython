@@ -9,9 +9,9 @@ class projection_type(IntEnum):
         >>> cadwork.projection_type.Perspective
         Perspective
     """
-    Perspective = 0
+    Perspective = 1
     """"""
-    Orthographic = 1
+    Orthographic = 2
     """"""
 
     def __int__(self) -> int:

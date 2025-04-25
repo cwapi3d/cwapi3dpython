@@ -73,3 +73,24 @@
     rendering:
         show_root_heading: false
         show_source: true
+
+### Dimenson base format
+
+::: src.cadwork.dimension_base_format
+rendering:
+show_root_heading: false
+show_source: true
+
+### DXF export version
+
+::: src.cadwork.dxf_export_version
+rendering:
+show_root_heading: false
+show_source: true
+
+### DXF layer format type
+
+::: src.cadwork.dxf_layer_format_type
+rendering:
+show_root_heading: false
+show_source: true
