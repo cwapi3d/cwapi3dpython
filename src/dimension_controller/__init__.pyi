@@ -1,5 +1,6 @@
 from typing import List
 from cadwork import point_3d
+from cadwork.dimension_base_format import dimension_base_format
 
 def create_dimension(xl: point_3d, plane_normal: point_3d, distance: point_3d, dimension_points: List[point_3d]) -> int:
     """creates a dimension element
@@ -226,4 +227,15 @@ def get_total_dimension(element: int) ->bool:
 
     Returns:
         bool
+    """
+
+
+def get_dimension_base_format(element: int) -> dimension_base_format:
+    """get dimension base format
+
+    Parameters:
+        element: element
+
+    Returns:
+        dimension_base_format
     """

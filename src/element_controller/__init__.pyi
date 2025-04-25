@@ -1,10 +1,13 @@
-from typing import List
-from cadwork import edge_list
-from cadwork import element_module_properties
-from cadwork import facet_list
-from cadwork import point_3d
-from cadwork import text_object_options
+from typing import List, Dict
+from cadwork.edge_list import edge_list
+from cadwork.element_module_properties import element_module_properties
+from cadwork.facet_list import facet_list
+from cadwork.point_3d import point_3d
+from cadwork.text_object_options import text_object_options
 from cadwork.coordinate_system_data import coordinate_system_data
+from cadwork.element_map_query import element_map_query
+from cadwork.element_filter import element_filter
+from cadwork.hit_result import hit_result
 
 def delete_elements(element_id_list: List[int]) -> None:
     """delete elements
@@ -2098,4 +2101,70 @@ def cut_double_shoulder(element_id_list: List[int],
 
     Returns:
         None
+    """
+
+
+def filter_elements(elements: List[int], element_filter: element_filter) -> List[int]:
+    """filter elements
+
+    Parameters:
+        elements: elements
+        element_filter: name_filter
+
+    Example:
+        >>> import cadwork
+        >>> import element_controller as ec
+        >>> your_element_filter = cadwork.element_filter()
+        >>> your_element_filter.set_name("beam")
+        >>> filtered_elements = ec.filter_elements(ec.get_active_identifiable_element_ids(), your_element_filter)
+        >>> print(filtered_elements)
+
+    Returns:
+        List[int]
+    """
+
+
+def map_elements(elements: List[int], map_query: element_map_query) -> Dict[str, List[int]]:
+    """map elements
+
+    Parameters:
+        elements: elements
+        map_query: map_query
+
+    Example:
+        >>> import cadwork
+        >>> import element_controller as ec
+        >>> your_map_query = cadwork.element_map_query()
+        >>> your_map_query.set_by_subgroup()
+        >>> mapped_items = ec.map_elements(ec.get_active_identifiable_element_ids(), your_map_query)
+        >>> print(mapped_items)
+
+    Returns:
+        Dict[str, List[int]]
+    """
+
+
+def cast_ray_and_get_element_intersections(elements: List[int], ray_start_position: point_3d,
+                                           ray_end_position: point_3d, radius: float) -> hit_result:
+    """cast ray and get element intersections
+    Parameters:
+        elements: elements
+        ray_start_position: ray_start_position
+        ray_end_position: ray_end_position
+        radius: radius
+
+    Example:
+        >>> from cadwork import point_3d
+        >>> import element_controller as ec
+        >>> ray_start = point_3d(0, 0, 0)
+        >>> ray_end = point_3d(1000, 0, 0)
+        >>> hit_result = ec.cast_ray_and_get_element_intersections(ec.get_active_identifiable_element_ids(), ray_start, ray_end, 40.0)
+        >>> print(hits.get_hit_element_ids())
+        >>> for element in hits.get_hit_element_ids():
+        >>>     print(f"ElementID {element}: {hits.get_hit_vertices_by_element(element)}")
+        >>>     for pos in hits.get_hit_vertices_by_element(element):
+        >>>         ec.create_node(pos)
+
+    Returns:
+        hit_result
     """

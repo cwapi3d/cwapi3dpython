@@ -1,25 +1,16 @@
-class Point:
-    def __init__(self, x: float, y: float):
-        """
-        Initialize a point with x and y coordinates.
+from cadwork import point
 
-        Args:
-            x (float): The x-coordinate.
-            y (float): The y-coordinate.
-        """
-        self.x = x
-        self.y = y
 
-class WindowGeometry:
-    def __init__(self, bottom_left: Point, bottom_right: Point, top_left: Point, top_right: Point):
+class window_geometry:
+    def __init__(self, bottom_left: point, bottom_right: point, top_left: point, top_right: point):
         """
         Initialize window geometry with points defining the window corners.
 
         Args:
-            bottom_left (Point): The bottom left corner of the window.
-            bottom_right (Point): The bottom right corner of the window.
-            top_left (Point): The top left corner of the window.
-            top_right (Point): The top right corner of the window.
+            bottom_left (point): The bottom left corner of the window.
+            bottom_right (point): The bottom right corner of the window.
+            top_left (point): The top left corner of the window.
+            top_right (point): The top right corner of the window.
         """
         self.bottom_left = bottom_left
         self.bottom_right = bottom_right

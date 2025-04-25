@@ -1,9 +1,9 @@
 from typing import List
-from cadwork import attribute_display_settings
-from cadwork import element_grouping_type
-from cadwork import element_type
-from cadwork import extended_settings
-from cadwork import process_type
+from cadwork.attribute_display_settings import attribute_display_settings
+from cadwork.element_grouping_type import element_grouping_type
+from cadwork.element_type import element_type
+from cadwork.extended_settings import extended_settings
+from cadwork.process_type import process_type
 
 def get_last_error(error_code: int) -> str:
     """Gets the last error
@@ -192,21 +192,23 @@ def set_extended_settings(element_id_list: List[int], extended_settings: None) -
         None
     """
 
-def set_wall(a0: List[int]) -> None:
+
+def set_wall(element_ids: List[int]) -> None:
     """set wall
 
     Parameters:
-        a0: a0
+        element_ids: element_ids
 
     Returns:
         None
     """
 
-def set_floor(a0: List[int]) -> None:
+
+def set_floor(element_ids: List[int]) -> None:
     """set floor
 
     Parameters:
-        a0: a0
+        element_ids: element_ids
 
     Returns:
         None
@@ -353,11 +355,12 @@ def set_solid_floor(elements: List[int]) -> None:
         None
     """
 
-def set_roof(a0: List[int]) -> None:
+
+def set_roof(elements: List[int]) -> None:
     """set roof
 
     Parameters:
-        a0: a0
+        elements: elements
 
     Returns:
         None
@@ -422,75 +425,82 @@ def update_auto_attribute() -> None:
         None
     """
 
-def set_additional_guid(a0: List[int], a1: str, a2: str) -> None:
+
+def set_additional_guid(elements: List[int], data_id: str, guid: str) -> None:
     """set additional guid
 
     Parameters:
-        a0: a0
-        a1: a1
-        a2: a2
+        elements: elements
+        data_id: data_id
+        guid: guid
 
     Returns:
         None
     """
 
-def add_item_to_group_list(a0: str) -> None:
+
+def add_item_to_group_list(item: str) -> None:
     """add item to group list
 
     Parameters:
-        a0: a0
+        item: item
 
     Returns:
         None
     """
 
-def add_item_to_subgroup_list(a0: str) -> None:
+
+def add_item_to_subgroup_list(item: str) -> None:
     """add item to subgroup list
 
     Parameters:
-        a0: a0
+        item: item
 
     Returns:
         None
     """
 
-def add_item_to_comment_list(a0: str) -> None:
+
+def add_item_to_comment_list(item: str) -> None:
     """add item to comment list
 
     Parameters:
-        a0: a0
+        item: item
 
     Returns:
         None
     """
 
-def add_item_to_sku_list(a0: str) -> None:
+
+def add_item_to_sku_list(item: str) -> None:
     """add item to sku list
 
     Parameters:
-        a0: a0
+        item: item
 
     Returns:
         None
     """
 
-def add_item_to_user_attribute_list(a0: int, a1: str) -> None:
+
+def add_item_to_user_attribute_list(attribute_number: int, item: str) -> None:
     """add item to user attribute list
 
     Parameters:
-        a0: a0
-        a1: a1
+        attribute_number: attribute_number
+        item: item
 
     Returns:
         None
     """
 
-def set_container_number(a0: List[int], a1: int) -> None:
+
+def set_container_number(elements: List[int], number: int) -> None:
     """set container number
 
     Parameters:
-        a0: a0
-        a1: a1
+        elements: elements
+        number: number
 
     Returns:
         None
@@ -503,272 +513,299 @@ def get_name_list_items() -> List[str]:
         List[str]
     """
 
-def add_item_to_name_list(a0: str) -> None:
+
+def add_item_to_name_list(item: str) -> None:
     """add item to name list
 
     Parameters:
-        a0: a0
+        item: item
 
     Returns:
         None
     """
 
-def delete_item_from_comment_list(a0: str) -> bool:
+
+def delete_item_from_comment_list(item: str) -> bool:
     """delete item from comment list
 
     Parameters:
-        a0: a0
+        item: item
 
     Returns:
         bool
     """
 
-def delete_item_from_group_list(a0: str) -> bool:
+
+def delete_item_from_group_list(item: str) -> bool:
     """delete item from group list
 
     Parameters:
-        a0: a0
+        item: item
 
     Returns:
         bool
     """
 
-def delete_item_from_sku_list(a0: str) -> bool:
+
+def delete_item_from_sku_list(item: str) -> bool:
     """delete item from sku list
 
     Parameters:
-        a0: a0
+        item: item
 
     Returns:
         bool
     """
 
-def delete_item_from_subgroup_list(a0: str) -> bool:
+
+def delete_item_from_subgroup_list(item: str) -> bool:
     """delete item from subgroup list
 
     Parameters:
-        a0: a0
+        item: item
 
     Returns:
         bool
     """
 
-def delete_item_from_user_attribute_list(a0: int, a1: str) -> bool:
+
+def delete_item_from_user_attribute_list(attribute_number: int, item: str) -> bool:
     """delete item from user attribute list
 
     Parameters:
-        a0: a0
-        a1: a1
+        attribute_number: attribute_number
+        item: item
 
     Returns:
         bool
     """
 
-def set_attribute_display_settings_for_2d(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_2d(settings: attribute_display_settings) -> None:
     """set attribute display settings for 2d
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_2d_with_layout(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_2d_with_layout(settings: attribute_display_settings) -> None:
     """set attribute display settings for 2d with layout
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_2d_without_layout(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_2d_without_layout(settings: attribute_display_settings) -> None:
     """set attribute display settings for 2d without layout
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_3d(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_3d(settings: attribute_display_settings) -> None:
     """set attribute display settings for 3d
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_container(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_container(settings: attribute_display_settings) -> None:
     """set attribute display settings for container
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_export_solid(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_export_solid(settings: attribute_display_settings) -> None:
     """set attribute display settings for export solid
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_framed_wall_axis(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_framed_wall_axis(settings: attribute_display_settings) -> None:
     """set attribute display settings for framed wall axis
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_framed_wall_beam(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_framed_wall_beam(settings: attribute_display_settings) -> None:
     """set attribute display settings for framed wall beam
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_framed_wall_opening(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_framed_wall_opening(settings: attribute_display_settings) -> None:
     """set attribute display settings for framed wall opening
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_framed_wall_panel(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_framed_wall_panel(settings: attribute_display_settings) -> None:
     """set attribute display settings for framed wall panel
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_log_wall_axis(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_log_wall_axis(settings: attribute_display_settings) -> None:
     """set attribute display settings for log wall axis
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_log_wall_beam(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_log_wall_beam(settings: attribute_display_settings) -> None:
     """set attribute display settings for log wall beam
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_log_wall_opening(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_log_wall_opening(settings: attribute_display_settings) -> None:
     """set attribute display settings for log wall opening
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_log_wall_panel(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_log_wall_panel(settings: attribute_display_settings) -> None:
     """set attribute display settings for log wall panel
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_machine(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_machine(settings: attribute_display_settings) -> None:
     """set attribute display settings for machine
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_nesting_element(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_nesting_element(settings: attribute_display_settings) -> None:
     """set attribute display settings for nesting element
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_nesting_volume(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_nesting_volume(settings: attribute_display_settings) -> None:
     """set attribute display settings for nesting volume
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_solid_wall_axis(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_solid_wall_axis(settings: attribute_display_settings) -> None:
     """set attribute display settings for solid wall axis
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_solid_wall_beam(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_solid_wall_beam(settings: attribute_display_settings) -> None:
     """set attribute display settings for solid wall beam
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_solid_wall_opening(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_solid_wall_opening(settings: attribute_display_settings) -> None:
     """set attribute display settings for solid wall opening
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
     """
 
-def set_attribute_display_settings_for_solid_wall_panel(a0: attribute_display_settings) -> None:
+
+def set_attribute_display_settings_for_solid_wall_panel(settings: attribute_display_settings) -> None:
     """set attribute display settings for solid wall panel
 
     Parameters:
-        a0: a0
+        settings: settings
 
     Returns:
         None
@@ -804,11 +841,12 @@ def set_framed_wall(element_id_list: List[int]) -> None:
         None
     """
 
-def get_name_list_items_by_element_type(a0: element_type) -> List[str]:
+
+def get_name_list_items_by_element_type(element_tpye: element_type) -> List[str]:
     """get name list items by element type
 
     Parameters:
-        a0: a0
+        element_tpye: element_tpye
 
     Returns:
         List[str]
@@ -1367,82 +1405,90 @@ def is_solid_roof(element_id: int) -> bool:
         bool
     """
 
-def get_additional_guid(a0: int, a1: str) -> str:
+
+def get_additional_guid(element_id: int, data_id: str) -> str:
     """get additional guid
 
     Parameters:
-        a0: a0
-        a1: a1
+        element_id: element_id
+        data_id: data_id
 
     Returns:
         str
     """
 
-def get_prefab_layer_all_assigned(a0: int) -> List[int]:
+
+def get_prefab_layer_all_assigned(element_id: int) -> List[int]:
     """get prefab layer all assigned
 
     Parameters:
-        a0: a0
+        element_id: element_id
 
     Returns:
         List[int]
     """
 
-def get_prefab_layer_with_dimensions(a0: int) -> List[int]:
+
+def get_prefab_layer_with_dimensions(element_id: int) -> List[int]:
     """get prefab layer with dimensions
 
     Parameters:
-        a0: a0
+        element_id: element_id
 
     Returns:
         List[int]
     """
 
-def get_prefab_layer_without_dimensions(a0: int) -> List[int]:
+
+def get_prefab_layer_without_dimensions(element_id: int) -> List[int]:
     """get prefab layer without dimensions
 
     Parameters:
-        a0: a0
+        element_id: element_id
 
     Returns:
         List[int]
     """
 
-def is_nesting_parent(a0: int) -> bool:
+
+def is_nesting_parent(element_id: int) -> bool:
     """is nesting parent
 
     Parameters:
-        a0: a0
+        element_id: element_id
 
     Returns:
         bool
     """
 
-def is_nesting_raw_part(a0: int) -> bool:
+
+def is_nesting_raw_part(element_id: int) -> bool:
     """is nesting raw part
 
     Parameters:
-        a0: a0
+        element_id: element_id
 
     Returns:
         bool
     """
 
-def get_container_number(a0: int) -> int:
+
+def get_container_number(element_id: int) -> int:
     """get container number
 
     Parameters:
-        a0: a0
+        element_id: element_id
 
     Returns:
         int
     """
 
-def get_container_number_with_prefix(a0: int) -> str:
+
+def get_container_number_with_prefix(element_id: int) -> str:
     """get container number with prefix
 
     Parameters:
-        a0: a0
+        element_id: element_id
 
     Returns:
         str
@@ -1476,71 +1522,78 @@ def get_sku_list_items() -> List[str]:
         List[str]
     """
 
-def get_user_attribute_list_items(a0: int) -> List[str]:
+
+def get_user_attribute_list_items(element_id: int) -> List[str]:
     """get user attribute list items
 
     Parameters:
-        a0: a0
+        element_id: element_id
 
     Returns:
         List[str]
     """
 
-def is_circular_mep(a0: int) -> bool:
+
+def is_circular_mep(element_id: int) -> bool:
     """is circular mep
 
     Parameters:
-        a0: a0
+        element_id: element_id
 
     Returns:
         bool
     """
 
-def is_rectangular_mep(a0: int) -> bool:
+
+def is_rectangular_mep(element_id: int) -> bool:
     """is rectangular mep
 
     Parameters:
-        a0: a0
+        element_id: element_id
 
     Returns:
         bool
     """
 
-def get_machine_calculation_state(a0: int) -> str:
+
+def get_machine_calculation_state(element_id: int) -> str:
     """get machine calculation state
 
     Parameters:
-        a0: a0
+        element_id: element_id
 
     Returns:
         str
     """
 
-def get_machine_calculation_set_machine_type(a0: int) -> str:
+
+def get_machine_calculation_set_machine_type(element_id: int) -> str:
     """get machine calculation set machine type
 
     Parameters:
-        a0: a0
+        element_id: element_id
 
     Returns:
         str
     """
 
-def is_btl_processing_group(a0: int) -> bool:
+
+def is_btl_processing_group(element_id: int) -> bool:
     """is btl processing group
 
     Parameters:
-        a0: a0
+        element_id: element_id
 
     Returns:
         bool
     """
 
-def is_hundegger_processing_group(a0: int) -> bool:
+
+def is_hundegger_processing_group(element_id: int) -> bool:
     """is hundegger processing group
 
     Parameters:
-        a0: a0
+        element_id: element_id
 
     Returns:
         bool

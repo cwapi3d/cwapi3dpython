@@ -1,7 +1,8 @@
 from typing import List
-from cadwork import ifc_2x3_element_type
-from cadwork import ifc_options
-from cadwork import ifc_predefined_type
+from cadwork.ifc_2x3_element_type import ifc_2x3_element_type
+from cadwork.ifc_options import ifc_options
+from cadwork.ifc_predefined_type import ifc_predefined_type
+from cadwork.element_type import element_type
 
 def get_last_error(a0: int) -> str:
     """get last error
@@ -40,7 +41,8 @@ def get_ifc2x3_element_type(element_id: int) -> ifc_2x3_element_type:
         ifc_2x3_element_type
     """
 
-def set_ifc2x3_element_type(element_i_ds: List[int], element_type: None) -> None:
+
+def set_ifc2x3_element_type(element_i_ds: List[int], element_type: element_type) -> None:
     """set ifc2x3 element type
 
     Parameters:
@@ -191,10 +193,10 @@ def update_bmt_structure_building_storey(element_i_ds: List[int]) -> None:
     """
 
 def get_ifc_options() -> ifc_options:
-    """Get the IfcOptions with the settings used in the document // *
+    """Get the IfcOptions with the settings used in the document
 
     Returns:
-        IfcOptions //
+        ifc_options
     """
 
 def set_building_and_storey(element_id_list: List[int], building: str, storey: str) -> None:
@@ -240,7 +242,8 @@ def get_storey_height(building: str, storey: str) -> float:
         float
     """
 
-def get_ifc2x3_element_type_string(element_type: None) -> str:
+
+def get_ifc2x3_element_type_string(element_type: element_type) -> str:
     """get ifc2x3 element type string
 
     Parameters:
@@ -250,7 +253,8 @@ def get_ifc2x3_element_type_string(element_type: None) -> str:
         str
     """
 
-def get_ifc2x3_element_type_display_string(element_type: None) -> str:
+
+def get_ifc2x3_element_type_display_string(element_type: element_type) -> str:
     """get ifc2x3 element type display string
 
     Parameters:
@@ -277,11 +281,12 @@ def get_all_storeys(building: str) -> List[str]:
         List[str]
     """
 
-def get_element_id_from_base64_ifc_guid(a1: str) -> int:
+
+def get_element_id_from_base64_ifc_guid(base_64_ifc_guid: str) -> int:
     """get element id from base64 ifc guid
 
     Parameters:
-        a1: a1
+        base_64_ifc_guid: base_64_ifc_guid
 
     Returns:
         int
