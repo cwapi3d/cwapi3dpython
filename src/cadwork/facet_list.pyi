@@ -11,7 +11,7 @@ class facet_list:
             int
         """
 
-    def at(self, index: int) -> point_3d:
+    def at(self, index: int) -> vertex_list:
         """at
 
         Parameters:

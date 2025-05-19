@@ -72,11 +72,12 @@ def get_language() -> str:
     """
 
 
-def print_message(message: str, column: int) -> None:
+def print_message(message: str, row: int, column: int) -> None:
     """Prints a message
 
     Parameters:
         message: message
+        row: row
         column: column
 
     Returns:
