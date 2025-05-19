@@ -1,3 +1,4 @@
+from cadwork.rgb_color import rgb_color
 from .attribute_display_settings import attribute_display_settings
 from .bim_team_upload_result import bim_team_upload_result
 from .bim_team_upload_result_code import bim_team_upload_result_code
@@ -112,6 +113,7 @@ hit_result = hit_result
 dimension_base_format = dimension_base_format
 dxf_layer_format_type = dxf_layer_format_type
 dxf_export_version = dxf_export_version
+rgb_color = rgb_color
 
 
 def get_auto_attribute_elements() -> List[int]:

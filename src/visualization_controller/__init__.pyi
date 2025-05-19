@@ -453,7 +453,7 @@ def get_material(element_id: int) -> int:
     """
 
 
-def get_rgb_from_cadwork_color_id(color_id: None) -> 'rgb_color':
+def get_rgb_from_cadwork_color_id(color_id: int) -> 'rgb_color':
     """get rgb from cadwork color id
 
     Parameters:
