@@ -42,12 +42,12 @@ def get_ifc2x3_element_type(element_id: int) -> ifc_2x3_element_type:
     """
 
 
-def set_ifc2x3_element_type(element_i_ds: List[int], element_type: element_type) -> None:
+def set_ifc2x3_element_type(element_i_ds: List[int], ifc_type: ifc_2x3_element_type) -> None:
     """set ifc2x3 element type
 
     Parameters:
         element_i_ds: element_i_ds
-        element_type: element_type
+        ifc_type: element_type
 
     Returns:
         None

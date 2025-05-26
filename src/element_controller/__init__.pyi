@@ -2131,7 +2131,7 @@ def map_elements(elements: List[int], map_query: element_map_query) -> Dict[str,
         elements: elements
         map_query: map_query
 
-    Example:
+    Examples:
         >>> import cadwork
         >>> import element_controller as ec
         >>> your_map_query = cadwork.element_map_query()
@@ -2153,9 +2153,9 @@ def cast_ray_and_get_element_intersections(elements: List[int], ray_start_positi
         ray_end_position: ray_end_position
         radius: radius
 
-    Example:
-        >>> from cadwork import point_3d
+    Examples:
         >>> import element_controller as ec
+        >>> from cadwork import point_3d
         >>> ray_start = point_3d(0, 0, 0)
         >>> ray_end = point_3d(1000, 0, 0)
         >>> hit_result = ec.cast_ray_and_get_element_intersections(ec.get_active_identifiable_element_ids(), ray_start, ray_end, 40.0)
