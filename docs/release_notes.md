@@ -1,4 +1,4 @@
-# Newly added functions in cadwork 3D API Build >= 2025.0.274
+# Newly added functions in cadwork 3D API Build >= 2025.0.275
 
 * Added examples to the docstrings for better understanding.
 * Corrected several argument types in function signatures.
