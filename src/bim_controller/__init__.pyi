@@ -2,7 +2,7 @@ from typing import List
 from cadwork.ifc_2x3_element_type import ifc_2x3_element_type
 from cadwork.ifc_options import ifc_options
 from cadwork.ifc_predefined_type import ifc_predefined_type
-from cadwork.element_type import element_type
+
 
 def get_last_error(a0: int) -> str:
     """get last error
@@ -42,12 +42,17 @@ def get_ifc2x3_element_type(element_id: int) -> ifc_2x3_element_type:
     """
 
 
-def set_ifc2x3_element_type(element_i_ds: List[int], element_type: element_type) -> None:
+def set_ifc2x3_element_type(element_i_ds: List[int], ifc_type: ifc_2x3_element_type) -> None:
     """set ifc2x3 element type
 
     Parameters:
         element_i_ds: element_i_ds
-        element_type: element_type
+        ifc_type: element_type
+
+    Examples:
+        >>> ifc_entity_type = cadwork.ifc_2x3_element_type()
+        >>> ifc_entity_type.set_ifc_member()
+        >>> bimc.set_ifc2x3_element_type([element], ifc_entity_type)
 
     Returns:
         None
@@ -243,22 +248,22 @@ def get_storey_height(building: str, storey: str) -> float:
     """
 
 
-def get_ifc2x3_element_type_string(element_type: element_type) -> str:
+def get_ifc2x3_element_type_string(entity_type: ifc_2x3_element_type) -> str:
     """get ifc2x3 element type string
 
     Parameters:
-        element_type: element_type
+        entity_type: entity_type
 
     Returns:
         str
     """
 
 
-def get_ifc2x3_element_type_display_string(element_type: element_type) -> str:
+def get_ifc2x3_element_type_display_string(entity_type: ifc_2x3_element_type) -> str:
     """get ifc2x3 element type display string
 
     Parameters:
-        element_type: element_type
+        entity_type: entity_type
 
     Returns:
         str
@@ -312,7 +317,8 @@ def get_ifc_predefined_type(element_id: int) -> 'ifc_predefined_type':
         IfcPredefinedType Wrapper
     """
 
-def set_ifc_predefined_type(element_i_ds: List[int], predefined_type: None) -> None:
+
+def set_ifc_predefined_type(element_i_ds: List[int], predefined_type: ifc_predefined_type) -> None:
     """Set a predefined type to elements. Attention, if you change the PredefinedType of the elements, you are responsible for ensuring that valid types are set
 
     Parameters:
