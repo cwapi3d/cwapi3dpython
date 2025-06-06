@@ -1,4 +1,4 @@
-# Newly added functions, classes, and enums in cadwork 3D API 2025.0.245
+# Newly added functions in cadwork 3D API Build >= 2025.0.274
 
 * Added examples to the docstrings for better understanding.
 * Corrected several argument types in function signatures.
