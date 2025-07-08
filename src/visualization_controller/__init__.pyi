@@ -481,7 +481,8 @@ def get_camera_data() -> camera_data:
         camera data
     """
 
-def set_camera_data(camera_data: None) -> None:
+
+def set_camera_data(camera_data: camera_data) -> None:
     """Set the camera data - this will override the current camera data
 
     Parameters:
