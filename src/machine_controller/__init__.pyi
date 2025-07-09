@@ -19,6 +19,14 @@ def export_btl(btl_version: int, file_path: str) -> None:
         btl_version: btl_version
         file_path: file_path
 
+    Examples:
+        >>> import cadwork
+        >>> import machine_controller as mc
+
+        >>> btl_version = cadwork.btl_version.btlx_2_1.value
+        >>> output_path = "C:/exports/timber_project.btlx"
+        >>> mc.export_btl(btl_version, output_path)
+
     Returns:
         None
     """
@@ -28,6 +36,12 @@ def export_weinmann_mfb(mfb_version: int) -> None:
 
     Parameters:
         mfb_version: mfb_version
+
+    Examples:
+        >>> import machine_controller as mc
+
+        >>> mfb_version = cadwork.weinmann_mfb_version.wup_3_4.value
+        >>> mc.export_weinmann_mfb(mfb_version)
 
     Returns:
         None
@@ -39,6 +53,13 @@ def export_hundegger(hundeggertype: int) -> None:
     Parameters:
         hundeggertype: hundeggertype
 
+    Examples:
+        >>> import cadwork
+        >>> import machine_controller as mc
+
+        >>> hundegger_type = cadwork.hundegger_machine_type.k2.value
+        >>> mc.export_hundegger(hundegger_type)
+
     Returns:
         None
     """
@@ -49,6 +70,14 @@ def export_hundegger_with_file_path(hundeggertype: int, file_path: str) -> None:
     Parameters:
         hundeggertype: hundeggertype
         file_path: file_path
+
+    Examples:
+        >>> import cadwork
+        >>> import machine_controller as mc
+
+        >>> hundegger_type = cadwork.hundegger_machine_type.k2.value
+        >>> output_path = "C:/exports/hundegger_project.k2"
+        >>> mc.export_hundegger_with_file_path(hundegger_type, output_path)
 
     Returns:
         None
@@ -62,6 +91,15 @@ def export_hundegger_with_file_path_and_presetting(hundeggertype: int, file_path
         file_path: file_path
         presetting: presetting
 
+    Examples:
+        >>> import cadwork
+        >>> import machine_controller as mc
+
+        >>> hundegger_type = cadwork.hundegger_machine_type.k2.value
+        >>> output_path = r"C:/exports/hundegger_project.k2"
+        >>> presetting_file = r"...3d/Machine/Hundegger/K2/hundegger_settings.xml"
+        >>> mc.export_hundegger_with_file_path_and_presetting(hundegger_type, output_path, presetting_file)
+
     Returns:
         None
     """
@@ -74,6 +112,15 @@ def export_btl_with_presetting(btl_version: int, file_path: str, presetting: str
         file_path: file_path
         presetting: presetting
 
+    Examples:
+        >>> import cadwork
+        >>> import machine_controller as mc
+
+        >>> btl_version = cadwork.btl_version.btlx_2_1.value
+        >>> output_path = r"C:/exports/timber_project.btlx"
+        >>> presetting_file = r"...3d/Machine/BTL/btl_settings.xml"
+        >>> mc.export_btl_with_presetting(btl_version, output_path, presetting_file)
+
     Returns:
         None
     """
@@ -85,6 +132,15 @@ def calculate_btl_machine_data(elements: List[int], btl_version: int) -> None:
         elements: elements
         btl_version: btl_version
 
+    Examples:
+        >>> import cadwork
+        >>> import element_controller as ec
+        >>> import machine_controller as mc
+
+        >>> beam_elements = ec.get_all_identifiable_element_ids()
+        >>> btl_version = cadwork.btl_version.btlx_2_1.value
+        >>> mc.calculate_btl_machine_data(beam_elements, btl_version)
+
     Returns:
         None
     """
@@ -95,6 +151,15 @@ def calculate_hundegger_machine_data(elements: List[int], hunderggertype: int) -
     Parameters:
         elements: elements
         hunderggertype: hunderggertype
+
+    Examples:
+        >>> import cadwork
+        >>> import element_controller as ec
+        >>> import machine_controller as mc
+
+        >>> beam_elements = ec.get_all_identifiable_element_ids()
+        >>> hundegger_type = cadwork.hundegger_machine_type.k2.value
+        >>> mc.calculate_hundegger_machine_data(beam_elements, hundegger_type)
 
     Returns:
         None
@@ -118,6 +183,14 @@ def export_hundegger_with_file_path_silent(hundeggertype: int, file_path: str) -
         hundeggertype: hundeggertype
         file_path: file_path
 
+    Examples:
+        >>> import cadwork
+        >>> import machine_controller as mc
+
+        >>> hundegger_type = cadwork.hundegger_machine_type.k2.value
+        >>> output_path = r"C:/exports/hundegger_project.k2"
+        >>> mc.export_hundegger_with_file_path_silent(hundegger_type, output_path)
+
     Returns:
         None
     """
@@ -129,6 +202,15 @@ def export_hundegger_with_file_path_and_presetting_silent(hundeggertype: int, fi
         hundeggertype: hundeggertype
         file_path: file_path
         presetting: presetting
+
+    Examples:
+        >>> import cadwork
+        >>> import machine_controller as mc
+
+        >>> hundegger_type = cadwork.hundegger_machine_type.k2.value
+        >>> output_path = r"C:/exports/hundegger_project.k2"
+        >>> presetting_file = r"...3d/Machine/Hundegger/K2/hundegger_settings.xml"
+        >>> mc.export_hundegger_with_file_path_and_presetting_silent(hundegger_type, output_path, presetting_file)
 
     Returns:
         None
@@ -142,6 +224,16 @@ def get_element_hundegger_processings(element_id: int, hundeggertype: int) -> Li
         element_id: The element ID.
         hundeggertype: The Hundegger type.
 
+    Examples:
+        >>> import cadwork
+        >>> import element_controller as ec
+        >>> import machine_controller as mc
+
+        >>> element: int = 123456789
+        >>> hundegger_type = cadwork.hundegger_machine_type.k2.value
+        >>> processings = mc.get_element_hundegger_processings(element, hundegger_type)
+        >>> print(f"Found {len(processings)} Hundegger processings")
+
     Returns:
         List of processing IDs.
     """
@@ -153,6 +245,16 @@ def get_element_btl_processings(element_id: int, btl_version: int) -> List[int]:
     Parameters:
         element_id: The element ID.
         btl_version: The BTL version.
+
+    Examples:
+        >>> import cadwork
+        >>> import element_controller as ec
+        >>> import machine_controller as mc
+
+        >>> element: int = 123456789
+        >>> btl_version = cadwork.btl_version.btlx_2_1.value
+        >>> processings = mc.get_element_btl_processings(element, btl_version)
+        >>> print(f"Found {len(processings)} BTL processings")
 
     Returns:
         List of processing IDs.

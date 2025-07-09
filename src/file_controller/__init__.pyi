@@ -23,6 +23,14 @@ def export_stl_file(element_id_list: List[int], file_path: str) -> None:
         element_id_list: element_id_list
         file_path: file_path
 
+    Examples:
+        >>> import element_controller as ec
+        >>> import file_controller as fc
+
+        >>> selected_elements = ec.get_all_identifiable_element_ids()
+        >>> output_path = r"C:/exports/model.stl"
+        >>> fc.export_stl_file(selected_elements, output_path)
+
     Returns:
         None
     """
@@ -60,6 +68,16 @@ def export_webgl(element_id_list: List[int], file_path: str) -> bool:
         element_id_list: element_id_list
         file_path: file_path
 
+    Examples:
+        >>> import element_controller as ec
+        >>> import file_controller as fc
+
+        >>> selected_elements = ec.get_all_identifiable_element_ids()
+        >>> output_path = r"C:/exports/model.html"
+        >>> success = fc.export_webgl(selected_elements, output_path)
+        >>> if success:
+        >>>     print("WebGL export completed successfully")
+
     Returns:
         did operation succeed
     """
@@ -71,6 +89,16 @@ def export_3d_file(element_id_list: List[int], file_path: str) -> bool:
     Parameters:
         element_id_list: element_id_list
         file_path: file_path
+
+    Examples:
+        >>> import element_controller as ec
+        >>> import file_controller as fc
+
+        >>> selected_elements = ec.get_all_identifiable_element_ids()
+        >>> output_path = r"C:/exports/model.3d"
+        >>> success = fc.export_3d_file(selected_elements, output_path)
+        >>> if success:
+        >>>     print("3D file export completed successfully")
 
     Returns:
         did operation succeed
@@ -124,6 +152,17 @@ def export_step_file(element_list: List[int], file_path: str, scale_factor: floa
         version: version
         text_mode: text_mode
 
+    Examples:
+        >>> import element_controller as ec
+        >>> import file_controller as fc
+
+        >>> selected_elements = ec.get_all_identifiable_element_ids()
+        >>> output_path = r"C:/exports/model.stp"
+        >>> scale_factor = 1_000.0
+        >>> version = 214  # STEP version
+        >>> text_mode = False
+        >>> fc.export_step_file(selected_elements, output_path, scale_factor, version, text_mode)
+
     Returns:
         None
     """
@@ -146,6 +185,14 @@ def export_obj_file(elements: List[int], file_path: str) -> None:
     Parameters:
         elements: elements
         file_path: file_path
+
+    Examples:
+        >>> import element_controller as ec
+        >>> import file_controller as fc
+
+        >>> selected_elements = ec.get_all_identifiable_element_ids()
+        >>> output_path = r"C:/exports/model.obj"
+        >>> fc.export_obj_file(selected_elements, output_path)
 
     Returns:
         None
@@ -172,6 +219,27 @@ def export_fbx_file(elements: List[int], file_path: str, fbx_format: int) -> Non
         elements: elements
         file_path: file_path
         fbx_format: fbx_format
+            Available formats:
+            - 0 or default: FBX binary(*.fbx)
+            - 1: FBX binary(*.fbx)
+            - 2: FBX ascii(*.fbx)
+            - 3: FBX encrypted(*.fbx)
+            - 4: FBX 6.0 binary(*.fbx)
+            - 5: FBX 6.0 ascii(*.fbx)
+            - 6: FBX 6.0 encrypted(*.fbx)
+
+    Examples:
+        >>> import element_controller as ec
+        >>> import file_controller as fc
+
+        >>> selected_elements = ec.get_all_identifiable_element_ids()
+        >>> output_path = r"C:/exports/model.fbx"
+        >>> fbx_format = 1  # FBX binary format
+        >>> fc.export_fbx_file(selected_elements, output_path, fbx_format)
+
+        >>> # Export as ASCII format
+        >>> fbx_format = 2  # FBX ascii format
+        >>> fc.export_fbx_file(selected_elements, output_path, fbx_format)
 
     Returns:
         None
@@ -215,6 +283,14 @@ def export_3dc_file(element_id_list: List[int], file_path: str) -> None:
         element_id_list: element_id_list
         file_path: file_path
 
+    Examples:
+        >>> import element_controller as ec
+        >>> import file_controller as fc
+
+        >>> selected_elements = ec.get_all_identifiable_element_ids()
+        >>> output_path = r"C:/exports/model.3dc"
+        >>> fc.export_3dc_file(selected_elements, output_path)
+
     Returns:
         None
     """
@@ -237,6 +313,12 @@ def export_btl_file_for_nesting(file_path: str) -> None:
     Parameters:
         file_path: file_path
 
+    Examples:
+        >>> import file_controller as fc
+
+        >>> output_path = r"C:/exports/nesting_project.btl"
+        >>> fc.export_btl_file_for_nesting(output_path)
+
     Returns:
         None
     """
@@ -252,6 +334,17 @@ def export_rhino_file(element_id_list: List[int], file_path: str, version: int, 
         version: version
         use_default_assignment: use_default_assignment
         write_standard_attributes: write_standard_attributes
+
+    Examples:
+        >>> import element_controller as ec
+        >>> import file_controller as fc
+
+        >>> selected_elements = ec.get_all_identifiable_element_ids()
+        >>> output_path = r"C:/exports/model.3dm"
+        >>> version = 8  # Rhino version
+        >>> use_default_assignment = True
+        >>> write_standard_attributes = False
+        >>> fc.export_rhino_file(selected_elements, output_path, version, use_default_assignment, write_standard_attributes)
 
     Returns:
         None
@@ -299,6 +392,17 @@ def export_sat_file(elements: List[int], file_path: str, scale_factor: float, bi
         binary: binary
         version: version
 
+    Examples:
+        >>> import element_controller as ec
+        >>> import file_controller as fc
+
+        >>> selected_elements = ec.get_all_identifiable_element_ids()
+        >>> output_path = r"C:/exports/model.sat"
+        >>> scale_factor = 1.0
+        >>> binary_format = True
+        >>> version = 25000  # SAT version
+        >>> fc.export_sat_file(selected_elements, output_path, scale_factor, binary_format, version)
+
     Returns:
         None
     """
@@ -310,6 +414,14 @@ def export_glb_file(elements: List[int], file_path: str) -> None:
     Parameters:
         elements: elements
         file_path: file_path
+
+    Examples:
+        >>> import element_controller as ec
+        >>> import file_controller as fc
+
+        >>> selected_elements = ec.get_all_identifiable_element_ids()
+        >>> output_path = r"C:/exports/model.glb"
+        >>> fc.export_glb_file(selected_elements, output_path)
 
     Returns:
         None
@@ -352,6 +464,18 @@ def export_rhino_file_with_options(element_id_list: List[int], file_path: str, v
         use_default_assignment: use_default_assignment
         write_standard_attributes: write_standard_attributes
         rhino_options: rhino_options
+
+    Examples:
+        >>> import element_controller as ec
+        >>> import file_controller as fc
+
+        >>> selected_elements = ec.get_all_identifiable_element_ids()
+        >>> output_path = r"C:/exports/model.3dm"
+        >>> version = 8  # Rhino version
+        >>> use_default_assignment = True
+        >>> write_standard_attributes = False
+        >>> rhino_options = None  # Use default options
+        >>> fc.export_rhino_file_with_options(selected_elements, output_path, version, use_default_assignment, write_standard_attributes, rhino_options)
 
     Returns:
         None
@@ -401,6 +525,18 @@ def export_step_file_extrude_drillings(elements: List[int], file_path: str, scal
         text_mode: text_mode
         imperial_units: imperial_units
 
+    Examples:
+        >>> import element_controller as ec
+        >>> import file_controller as fc
+
+        >>> selected_elements = ec.get_all_identifiable_element_ids()
+        >>> output_path = r"C:/exports/model_with_drillings.step"
+        >>> scale_factor = 1.0
+        >>> version = 214  # STEP version
+        >>> text_mode = False
+        >>> imperial_units = False
+        >>> fc.export_step_file_extrude_drillings(selected_elements, output_path, scale_factor, version, text_mode, imperial_units)
+
     Returns:
         None
     """
@@ -417,6 +553,18 @@ def export_step_file_cut_drillings(elements: List[int], file_path: str, scale_fa
         version: version
         text_mode: text_mode
         imperial_units: imperial_units
+
+    Examples:
+        >>> import element_controller as ec
+        >>> import file_controller as fc
+
+        >>> selected_elements = ec.get_all_identifiable_element_ids()
+        >>> output_path = r"C:/exports/model_cut_drillings.step"
+        >>> scale_factor = 1.0
+        >>> version = 214  # STEP version
+        >>> text_mode = False
+        >>> imperial_units = False
+        >>> fc.export_step_file_cut_drillings(selected_elements, output_path, scale_factor, version, text_mode, imperial_units)
 
     Returns:
         None
