@@ -77,20 +77,27 @@
 ### Dimenson base format
 
 ::: cadwork.dimension_base_format
-rendering:
-show_root_heading: false
-show_source: true
+    rendering:
+        show_root_heading: false
+        show_source: true
 
 ### DXF export version
 
 ::: cadwork.dxf_export_version
-rendering:
-show_root_heading: false
-show_source: true
+    rendering:
+        show_root_heading: false
+        show_source: true
 
 ### DXF layer format type
 
 ::: cadwork.dxf_layer_format_type
-rendering:
-show_root_heading: false
-show_source: true
+    rendering:
+        show_root_heading: false
+        show_source: true
+
+## Vba catalog
+
+::: cadwork.vba_catalog_item_type
+    rendering:
+        show_root_heading: false
+        show_source: true
