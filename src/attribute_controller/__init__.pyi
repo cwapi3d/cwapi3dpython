@@ -3,1844 +3,1641 @@ from cadwork.attribute_display_settings import attribute_display_settings
 from cadwork.element_grouping_type import element_grouping_type
 from cadwork.element_type import element_type
 from cadwork.extended_settings import extended_settings
+from cadwork.layer_settings import layer_settings
+from cadwork.node_symbol import node_symbol
 from cadwork.process_type import process_type
+from cadwork.api_types import *
 
-def get_last_error(error_code: int) -> str:
-    """Gets the last error
+def set_name(element_id_list: List[ElementId], name: str) -> None:
+    """Sets the element name.
 
     Parameters:
-        error_code: error_code
-
-    Returns:
-        error string
+        element_id_list: The element id list.
+        name: The element name.
     """
 
-def set_name(element_id_list: List[int], name: str) -> None:
-    """Sets the element name
+def set_group(element_id_list: List[ElementId], group: str) -> None:
+    """Sets the element group.
 
     Parameters:
-        element_id_list: element_id_list
-        name: name
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        group: The element group.
     """
 
-def set_group(element_id_list: List[int], group: str) -> None:
-    """Sets the element group
+def set_subgroup(element_id_list: List[ElementId], subgroup: str) -> None:
+    """Sets the element subgroup.
 
     Parameters:
-        element_id_list: element_id_list
-        group: group
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        subgroup: The element subgroup.
     """
 
-def set_subgroup(element_id_list: List[int], subgroup: str) -> None:
-    """Sets the element subgroup
+def set_comment(element_id_list: List[ElementId], comment: str) -> None:
+    """Sets the element comment.
 
     Parameters:
-        element_id_list: element_id_list
-        subgroup: subgroup
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        comment: The element comment.
     """
 
-def set_comment(element_id_list: List[int], comment: str) -> None:
-    """Sets the element comment
+def set_user_attribute(element_id_list: List[ElementId], number: UserAttributeId, user_attribute: str) -> None:
+    """Sets the element user attribute.
 
     Parameters:
-        element_id_list: element_id_list
-        comment: comment
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        number: The user attribute id.
+        user_attribute: The user attribute.
     """
 
-def set_user_attribute(element_id_list: List[int], number: int, user_attribute: str) -> None:
-    """Sets the element user attribute
+def set_sku(element_id_list: List[ElementId], sku: str) -> None:
+    """Sets the element SKU.
 
     Parameters:
-        element_id_list: element_id_list
-        number: number
-        user_attribute: user_attribute
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        sku: The element SKU.
     """
 
-def set_sku(element_id_list: List[int], sku: str) -> None:
-    """Sets the element SKU
+def set_production_number(element_id_list: List[ElementId], production_number: UnsignedInt) -> None:
+    """Sets the element production number.
 
     Parameters:
-        element_id_list: element_id_list
-        sku: sku
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        production_number: The element production number.
     """
 
-def set_production_number(element_id_list: List[int], production_number: int) -> None:
-    """Sets the element production number
+def set_part_number(element_id_list: List[ElementId], part_number: UnsignedInt) -> None:
+    """Sets the element part number.
 
     Parameters:
-        element_id_list: element_id_list
-        production_number: production_number
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        part_number: The element part number.
     """
 
-def set_part_number(element_id_list: List[int], part_number: int) -> None:
-    """Sets the element part number
+def set_additional_data(element_id_list: List[ElementId], data_id: str, data_text: str) -> None:
+    """Sets the element additional data.
 
     Parameters:
-        element_id_list: element_id_list
-        part_number: part_number
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        data_id: The data id.
+        data_text: The element additional data.
     """
 
-def set_additional_data(element_id_list: List[int], data_id: str, data_text: str) -> None:
-    """Sets the element additional data
+def delete_additional_data(element_id_list: List[ElementId], data_id: str) -> None:
+    """Deletes the element additional data.
 
     Parameters:
-        element_id_list: element_id_list
-        data_id: data_id
-        data_text: data_text
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        data_id: The data id.
     """
 
-def delete_additional_data(element_id_list: List[int], data_id: str) -> None:
-    """Deletes the element additional data
+def set_user_attribute_name(number: UserAttributeId, user_attribute_name: str) -> None:
+    """Sets the user attribute name.
 
     Parameters:
-        element_id_list: element_id_list
-        data_id: data_id
-
-    Returns:
-        None
+        number: The user attribute id.
+        user_attribute_name: The user attribute name.
     """
 
-def set_user_attribute_name(number: int, user_attribute_name: str) -> None:
-    """Sets the user attribute name
+def set_process_type_and_extended_settings_from_name(element_id_list: List[ElementId]) -> None:
+    """Sets the element process type and extended settings from the element name.
 
     Parameters:
-        number: number
-        user_attribute_name: user_attribute_name
-
-    Returns:
-        None
+        element_id_list: The element id list.
     """
 
-def set_process_type_and_extended_settings_from_name(element_id_list: List[int]) -> None:
-    """Sets the element process type and extended settings from the element name
+def set_name_process_type(name: str, process_type: process_type) -> None:
+    """Sets the process type for an element name.
 
     Parameters:
-        element_id_list: element_id_list
-
-    Returns:
-        None
+        name: The element name.
+        process_type: The process type.
     """
 
-def set_name_process_type(name: str, process_type: None) -> None:
-    """Sets the process type for an element name
+def set_name_extended_settings(name: str, extended_settings: extended_settings) -> None:
+    """Sets the extended settings for an element name.
 
     Parameters:
-        name: name
-        process_type: process_type
-
-    Returns:
-        None
+        name: The element name.
+        extended_settings: The extended settings.
     """
 
-def set_name_extended_settings(name: str, extended_settings: None) -> None:
-    """Sets the extended settings for an element name
+def set_output_type(element_id_list: List[ElementId], process_type: process_type) -> None:
+    """Sets the element output type.
 
     Parameters:
-        name: name
-        extended_settings: extended_settings
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        process_type: The process type.
     """
 
-def set_output_type(element_id_list: List[int], process_type: None) -> None:
-    """Sets the element output type
+def set_extended_settings(element_id_list: List[ElementId], extended_settings: extended_settings) -> None:
+    """Sets the element extended settings.
 
     Parameters:
-        element_id_list: element_id_list
-        process_type: process_type
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        extended_settings: The extended settings.
     """
 
-def set_extended_settings(element_id_list: List[int], extended_settings: None) -> None:
-    """Sets the element extended settings
+def set_wall(element_id_list: List[ElementId]) -> None:
+    """Sets the element to wall.
+
+    Deprecated : 
+        Use [set_framed_wall][attribute_controller.set_framed_wall] instead.
 
     Parameters:
-        element_id_list: element_id_list
-        extended_settings: extended_settings
-
-    Returns:
-        None
+        element_id_list: The element id list.
     """
 
 
-def set_wall(element_ids: List[int]) -> None:
-    """set wall
+def set_floor(element_id_list: List[ElementId]) -> None:
+    """Set floor.
 
+    Deprecated : 
+        Use [set_framed_floor][attribute_controller.set_framed_floor] instead.
+    
     Parameters:
-        element_ids: element_ids
-
-    Returns:
-        None
+        element_id_list: The element id list.
     """
 
-
-def set_floor(element_ids: List[int]) -> None:
-    """set floor
+def set_opening(element_id_list: List[ElementId]) -> None:
+    """Sets the element to opening.
 
     Parameters:
-        element_ids: element_ids
-
-    Returns:
-        None
+        element_id_list: The element id list.
     """
 
-def set_opening(element_id_list: List[int]) -> None:
-    """Sets the element to opening
+def set_fastening_attribute(element_id_list: List[ElementId], value: str) -> None:
+    """Sets the element fastening attribute.
 
     Parameters:
-        element_id_list: element_id_list
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        value: The fastening attribute value.
     """
 
-def set_fastening_attribute(element_id_list: List[int], value: str) -> None:
-    """Sets the element fastening attribute
+def set_element_material(element_id_list: List[ElementId], material: MaterialId) -> None:
+    """Sets the element material.
 
     Parameters:
-        element_id_list: element_id_list
-        value: value
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        material: The element material id.
     """
 
-def set_element_material(element_id_list: List[int], material: int) -> None:
-    """Sets the element material
+def set_assembly_number(element_id_list: List[ElementId], assembly_number: str) -> None:
+    """set assembly number.
 
     Parameters:
-        element_id_list: element_id_list
-        material: material
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        assembly_number: The assembly number.
     """
 
-def set_assembly_number(element_id_list: List[int], assembly_number: str) -> None:
-    """set assembly number
+def set_list_quantity(element_id_list: List[ElementId], list_quantity: UnsignedInt) -> None:
+    """Set list quantity.
 
     Parameters:
-        element_id_list: element_id_list
-        assembly_number: assembly_number
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        list_quantity: The list quantity.
     """
 
-def set_list_quantity(element_id_list: List[int], list_quantity: int) -> None:
-    """set list quantity
+def set_layer_settings(element_id_list: List[ElementId], layer_settings: layer_settings) -> None:
+    """Set layer settings.
 
     Parameters:
-        element_id_list: element_id_list
-        list_quantity: list_quantity
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        layer_settings: The layer settings.
     """
 
-def set_layer_settings(element_id_list: List[int], layer_settings: None) -> None:
-    """set layer settings
+def set_ignore_in_vba_calculation(element_id_list: List[ElementId], ignore: bool) -> None:
+    """Sets if the element should be ignored in VBA Calculation.
 
     Parameters:
-        element_id_list: element_id_list
-        layer_settings: layer_settings
-
-    Returns:
-        None
-    """
-
-def set_ignore_in_vba_calculation(elements: List[int], ignore: bool) -> None:
-    """Sets if the element should be ignored in VBA Calculation
-
-    Parameters:
-        elements: elements
-        ignore: ignore
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        ignore: True if the element should be ignored in VBA calculation, false otherwise.
     """
 
 def clear_errors() -> None:
-    """clear errors
-
-    Returns:
-        None
+    """clear all errors.
     """
 
-def set_reference_wall_2dc(elements: List[int], _2dc_file_path: str) -> None:
-    """Applies a new 2dc reference wall to an element
+def set_reference_wall_2dc(element_id_list: List[ElementId], _2dc_file_path: str) -> None:
+    """Applies a new 2dc reference wall to an element.
 
     Parameters:
-        elements: elements
-        _2dc_file_path: _2dc_file_path
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        _2dc_file_path: The 2dc file path.
     """
 
-def get_user_attribute_count() -> int:
-    """get user attribute count
-
+def get_user_attribute_count() -> UnsignedInt:
+    """Get user attribute count.
+    
     Returns:
-        int
+        The count of user attributes.
     """
 
-def set_standard_part(elements: List[int]) -> None:
+def set_standard_part(element_id_list: List[ElementId]) -> None:
     """Sets covers (wall,opening or floor) to standard part.
 
     Parameters:
-        elements: elements
-
-    Returns:
-        None
+        element_id_list: The element id list.
     """
 
-def set_solid_wall(elements: List[int]) -> None:
+def set_solid_wall(element_id_list: List[ElementId]) -> None:
     """Sets elements to solid wall.
 
     Parameters:
-        elements: elements
-
-    Returns:
-        None
+        element_id_list: The element id list.
     """
 
-def set_log_wall(elements: List[int]) -> None:
+def set_log_wall(element_id_list: List[ElementId]) -> None:
     """Sets elements to log wall.
 
     Parameters:
-        elements: elements
-
-    Returns:
-        None
+        element_id_list: The element id list.
     """
 
-def set_solid_floor(elements: List[int]) -> None:
+def set_solid_floor(element_id_list: List[ElementId]) -> None:
     """Sets elements to solid floor.
 
     Parameters:
-        elements: elements
-
-    Returns:
-        None
+        element_id_list: The element id list.
     """
 
 
-def set_roof(elements: List[int]) -> None:
-    """set roof
+def set_roof(element_id_list: List[ElementId]) -> None:
+    """Set roof.
+
+    Deprecated : 
+        Use [set_framed_roof][attribute_controller.set_framed_roof] instead.
 
     Parameters:
-        elements: elements
-
-    Returns:
-        None
+        element_id_list: The element id list.
     """
 
-def set_solid_roof(elements: List[int]) -> None:
+def set_solid_roof(element_id_list: List[ElementId]) -> None:
     """Sets elements to solid roof cover.
 
     Parameters:
-        elements: elements
-
-    Returns:
-        None
+        element_id_list: The element id list.
     """
 
-def get_node_symbol(element: int) -> int:
-    """get node symbol
+def get_node_symbol(element_id: ElementId) -> node_symbol:
+    """Get node symbol.
 
     Parameters:
-        element: element
+        element_id: The element id.
 
     Returns:
-        int
+        The node symbol of the element.
     """
 
-def set_node_symbol(elements: List[int], symbol: int) -> None:
-    """set node symbol
+def set_node_symbol(element_id_list: List[ElementId], symbol: node_symbol) -> None:
+    """Set node symbol.
 
     Parameters:
-        elements: elements
-        symbol: symbol
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        symbol: The node symbol.
     """
 
 def enable_attribute_display() -> None:
-    """enable attribute display
-
-    Returns:
-        None
+    """Enable attribute display.
     """
 
 def disable_attribute_display() -> None:
-    """disable attribute display
-
-    Returns:
-        None
+    """Disable attribute display.
     """
 
 def is_attribute_display_enabled() -> bool:
-    """is attribute display enabled
+    """Is attribute display enabled.
 
     Returns:
-        bool
+        True if attribute display is enabled, false otherwise.
     """
 
 def update_auto_attribute() -> None:
-    """update auto attribute
-
-    Returns:
-        None
+    """Update the auto attribute.
     """
 
 
-def set_additional_guid(elements: List[int], data_id: str, guid: str) -> None:
-    """set additional guid
+def set_additional_guid(element_id_list: List[ElementId], data_id: str, guid: str) -> None:
+    """Set additional guid.
 
     Parameters:
-        elements: elements
-        data_id: data_id
-        guid: guid
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        data_id: The data id.
+        guid: The guid to set.
     """
-
 
 def add_item_to_group_list(item: str) -> None:
-    """add item to group list
+    """Add item to group list.
 
     Parameters:
-        item: item
-
-    Returns:
-        None
+        item: The item to add in the group list.
     """
 
 
 def add_item_to_subgroup_list(item: str) -> None:
-    """add item to subgroup list
+    """Add item to subgroup list.
 
     Parameters:
-        item: item
-
-    Returns:
-        None
+        item: The item to add in the subgroup list.
     """
 
-
 def add_item_to_comment_list(item: str) -> None:
-    """add item to comment list
+    """Add item to comment list.
 
-    Parameters:
-        item: item
-
-    Returns:
-        None
+    Args:
+        item: The item to add in the comment list.
     """
 
 
 def add_item_to_sku_list(item: str) -> None:
-    """add item to sku list
+    """Add item to sku list.
 
     Parameters:
-        item: item
-
-    Returns:
-        None
+        item: The item to add in the sku list.
     """
 
 
-def add_item_to_user_attribute_list(attribute_number: int, item: str) -> None:
-    """add item to user attribute list
+def add_item_to_user_attribute_list(attribute_number: UserAttributeId, item: str) -> None:
+    """Add item to user attribute list.
 
     Parameters:
-        attribute_number: attribute_number
-        item: item
-
-    Returns:
-        None
+        attribute_number: The attribute number.
+        item: The item to add in the user attribute list.
     """
 
 
-def set_container_number(elements: List[int], number: int) -> None:
-    """set container number
+def set_container_number(element_id_list: List[ElementId], number: UnsignedInt) -> None:
+    """Set container number.
 
     Parameters:
-        elements: elements
-        number: number
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        number: The container number.
     """
 
 def get_name_list_items() -> List[str]:
-    """get name list items
+    """Retrieve a list of name for all items
 
     Returns:
-        List[str]
+        A list of names for all items.
     """
 
 
 def add_item_to_name_list(item: str) -> None:
-    """add item to name list
+    """Add item to name list.
 
     Parameters:
-        item: item
-
-    Returns:
-        None
+        item: The item to add in the name list.
     """
 
 
 def delete_item_from_comment_list(item: str) -> bool:
-    """delete item from comment list
+    """Delete item from comment list.
 
     Parameters:
-        item: item
+        item: The item to delete from the comment list.
 
     Returns:
-        bool
+        True if the item was successfully deleted, false otherwise.
     """
 
 
 def delete_item_from_group_list(item: str) -> bool:
-    """delete item from group list
+    """Delete item from group list.
 
     Parameters:
-        item: item
+        item: The item to delete from the group list.
 
     Returns:
-        bool
+        True if the item was successfully deleted, false otherwise.
     """
 
 
 def delete_item_from_sku_list(item: str) -> bool:
-    """delete item from sku list
+    """Delete item from sku list.
 
     Parameters:
-        item: item
+        item: The item to delete from the sku list.
 
     Returns:
-        bool
+        True if the item was successfully deleted, false otherwise.
     """
 
 
 def delete_item_from_subgroup_list(item: str) -> bool:
-    """delete item from subgroup list
+    """Delete item from subgroup list.
 
     Parameters:
-        item: item
+        item: The item to delete from the subgroup list.
 
     Returns:
-        bool
+        True if the item was successfully deleted, false otherwise.
     """
 
 
-def delete_item_from_user_attribute_list(attribute_number: int, item: str) -> bool:
-    """delete item from user attribute list
+def delete_item_from_user_attribute_list(attribute_number: UserAttributeId, item: str) -> bool:
+    """Delete item from user attribute list.
 
     Parameters:
-        attribute_number: attribute_number
-        item: item
+        attribute_number: The attribute number.
+        item: The item to delete from the user attribute list.
 
     Returns:
-        bool
+        True if the item was successfully deleted, false otherwise.
     """
 
 
 def set_attribute_display_settings_for_2d(settings: attribute_display_settings) -> None:
-    """set attribute display settings for 2d
+    """Set attribute display settings for 2d.
 
     Parameters:
-        settings: settings
-
-    Returns:
-        None
+        settings: The display settings to apply.
     """
 
 
 def set_attribute_display_settings_for_2d_with_layout(settings: attribute_display_settings) -> None:
-    """set attribute display settings for 2d with layout
+    """Set attribute display settings for 2d with layout.
 
     Parameters:
-        settings: settings
-
-    Returns:
-        None
+        settings: The display settings to apply.
     """
 
 
 def set_attribute_display_settings_for_2d_without_layout(settings: attribute_display_settings) -> None:
-    """set attribute display settings for 2d without layout
+    """Set attribute display settings for 2d without layout.
 
     Parameters:
-        settings: settings
-
-    Returns:
-        None
+        settings: The display settings to apply.
     """
 
 
 def set_attribute_display_settings_for_3d(settings: attribute_display_settings) -> None:
-    """set attribute display settings for 3d
+    """Set attribute display settings for 3d.
 
     Parameters:
-        settings: settings
+        settings: The display settings to apply.
+    """
 
-    Returns:
-        None
+
+def set_attribute_display_settings_for_3d(settings: attribute_display_settings) -> None:
+    """Set attribute display settings for 3d.
+
+    Parameters:
+        settings: The display settings to apply.
     """
 
 
 def set_attribute_display_settings_for_container(settings: attribute_display_settings) -> None:
-    """set attribute display settings for container
+    """Set attribute display settings for container.
 
     Parameters:
-        settings: settings
-
-    Returns:
-        None
+        settings: The display settings to apply.
     """
 
-
 def set_attribute_display_settings_for_export_solid(settings: attribute_display_settings) -> None:
-    """set attribute display settings for export solid
+    """Set attribute display settings for export solid.
 
     Parameters:
-        settings: settings
-
-    Returns:
-        None
+        settings: The display settings to apply.
     """
 
 
 def set_attribute_display_settings_for_framed_wall_axis(settings: attribute_display_settings) -> None:
-    """set attribute display settings for framed wall axis
+    """Set attribute display settings for framed wall axis.
 
     Parameters:
-        settings: settings
-
-    Returns:
-        None
+        settings: The display settings to apply.
     """
 
 
 def set_attribute_display_settings_for_framed_wall_beam(settings: attribute_display_settings) -> None:
-    """set attribute display settings for framed wall beam
+    """Set attribute display settings for framed wall beam.
 
     Parameters:
-        settings: settings
+        settings: The display settings to apply.
+    """
 
-    Returns:
-        None
+
+def set_attribute_display_settings_for_framed_wall_beam(settings: attribute_display_settings) -> None:
+    """Set attribute display settings for framed wall beam.
+
+    Parameters:
+        settings: The display settings to apply.
     """
 
 
 def set_attribute_display_settings_for_framed_wall_opening(settings: attribute_display_settings) -> None:
-    """set attribute display settings for framed wall opening
+    """Set attribute display settings for framed wall opening.
 
     Parameters:
-        settings: settings
-
-    Returns:
-        None
+        settings: The display settings to apply.
     """
 
 
 def set_attribute_display_settings_for_framed_wall_panel(settings: attribute_display_settings) -> None:
-    """set attribute display settings for framed wall panel
+    """Set attribute display settings for framed wall panel.
 
     Parameters:
-        settings: settings
-
-    Returns:
-        None
+        settings: The display settings to apply.
     """
 
 
 def set_attribute_display_settings_for_log_wall_axis(settings: attribute_display_settings) -> None:
-    """set attribute display settings for log wall axis
+    """Set attribute display settings for log wall axis.
 
     Parameters:
-        settings: settings
-
-    Returns:
-        None
+        settings: The display settings to apply.
     """
 
 
 def set_attribute_display_settings_for_log_wall_beam(settings: attribute_display_settings) -> None:
-    """set attribute display settings for log wall beam
+    """Set attribute display settings for log wall beam.
 
     Parameters:
-        settings: settings
-
-    Returns:
-        None
+        settings: The display settings to apply.
     """
 
 
 def set_attribute_display_settings_for_log_wall_opening(settings: attribute_display_settings) -> None:
-    """set attribute display settings for log wall opening
+    """Set attribute display settings for log wall opening.
 
     Parameters:
-        settings: settings
-
-    Returns:
-        None
+        settings: The display settings to apply.
     """
 
 
 def set_attribute_display_settings_for_log_wall_panel(settings: attribute_display_settings) -> None:
-    """set attribute display settings for log wall panel
+    """Set attribute display settings for log wall panel.
 
     Parameters:
-        settings: settings
-
-    Returns:
-        None
+        settings: The display settings to apply.
     """
 
-
 def set_attribute_display_settings_for_machine(settings: attribute_display_settings) -> None:
-    """set attribute display settings for machine
+    """Set attribute display settings for machine.
 
     Parameters:
-        settings: settings
-
-    Returns:
-        None
+        settings: The display settings to apply.
     """
 
 
 def set_attribute_display_settings_for_nesting_element(settings: attribute_display_settings) -> None:
-    """set attribute display settings for nesting element
+    """Set attribute display settings for nesting element.
 
     Parameters:
-        settings: settings
-
-    Returns:
-        None
+        settings: The display settings to apply.
     """
 
 
 def set_attribute_display_settings_for_nesting_volume(settings: attribute_display_settings) -> None:
-    """set attribute display settings for nesting volume
+    """Set attribute display settings for nesting volume.
 
     Parameters:
-        settings: settings
-
-    Returns:
-        None
+        settings: The display settings to apply.
     """
 
 
 def set_attribute_display_settings_for_solid_wall_axis(settings: attribute_display_settings) -> None:
-    """set attribute display settings for solid wall axis
+    """Set attribute display settings for solid wall axis.
 
     Parameters:
-        settings: settings
-
-    Returns:
-        None
+        settings: The display settings to apply.
     """
 
 
 def set_attribute_display_settings_for_solid_wall_beam(settings: attribute_display_settings) -> None:
-    """set attribute display settings for solid wall beam
+    """Set attribute display settings for solid wall beam.
 
     Parameters:
-        settings: settings
-
-    Returns:
-        None
+        settings: The display settings to apply.
     """
 
 
 def set_attribute_display_settings_for_solid_wall_opening(settings: attribute_display_settings) -> None:
-    """set attribute display settings for solid wall opening
+    """Set attribute display settings for solid wall opening.
 
     Parameters:
-        settings: settings
-
-    Returns:
-        None
+        settings: The display settings to apply.
     """
 
 
 def set_attribute_display_settings_for_solid_wall_panel(settings: attribute_display_settings) -> None:
-    """set attribute display settings for solid wall panel
+    """Set attribute display settings for solid wall panel.
 
     Parameters:
-        settings: settings
-
-    Returns:
-        None
+        settings: The display settings to apply.
     """
 
-def set_framed_floor(element_id_list: List[int]) -> None:
-    """Sets the elements to framed floor
+def set_framed_floor(element_id_list: List[ElementId]) -> None:
+    """Sets the elements to framed floor.
 
     Parameters:
-        element_id_list: element_id_list
-
-    Returns:
-        None
+        element_id_list: The element id list.
     """
 
-def set_framed_roof(element_id_list: List[int]) -> None:
-    """Sets the elements to framed roof
+def set_framed_roof(element_id_list: List[ElementId]) -> None:
+    """Sets the elements to framed roof.
 
     Parameters:
-        element_id_list: element_id_list
-
-    Returns:
-        None
+        element_id_list: The element id list.
     """
 
-def set_framed_wall(element_id_list: List[int]) -> None:
-    """Sets the element to framed wall
+def set_framed_wall(element_id_list: List[ElementId]) -> None:
+    """Sets the element to framed wall.
 
     Parameters:
-        element_id_list: element_id_list
-
-    Returns:
-        None
+        element_id_list: The element id list.
     """
 
 
-def get_name_list_items_by_element_type(element_tpye: element_type) -> List[str]:
-    """get name list items by element type
+def get_name_list_items_by_element_type(element_type: element_type) -> List[str]:
+    """Get name list items by element type.
 
     Parameters:
-        element_tpye: element_tpye
+        element_type: The element type to filter by.
 
     Returns:
-        List[str]
+        The list of names for the specified element type.
     """
 
-def get_name(element_id: int) -> str:
-    """Gets the element name
+def get_name(element_id: ElementId) -> str:
+    """Gets the element name.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        element name
+        The element name.
     """
 
-def get_group(element_id: int) -> str:
-    """Gets the element group
+def get_group(element_id: ElementId) -> str:
+    """Gets the element group.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        element group
+        The element group.
     """
 
-def get_subgroup(element_id: int) -> str:
-    """Gets the element subgroup
+def get_subgroup(element_id: ElementId) -> str:
+    """Gets the element subgroup.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        element subgroup
+        The element subgroup.
     """
 
-def get_comment(element_id: int) -> str:
-    """Gets the element comment
+def get_comment(element_id: ElementId) -> str:
+    """Gets the element comment.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        element comment
+        The element comment.
     """
 
-def get_user_attribute(element_id: int, number: int) -> str:
-    """Gets the element user attribute
+def get_user_attribute(element_id: ElementId, number: UserAttributeId) -> str:
+    """Gets the element user attribute.
 
     Parameters:
-        element_id: element_id
-        number: number
+        element_id: The element id.
+        number: The user attribute number.
 
     Returns:
-        element user attribute
+        The element user attribute.
     """
 
-def get_sku(element_id: int) -> str:
-    """Gets the element SKU
+def get_sku(element_id: ElementId) -> str:
+    """Gets the element SKU.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        element SKU
+        The element SKU.
     """
 
-def get_production_number(element_id: int) -> int:
-    """Gets the element production number
+def get_production_number(element_id: ElementId) -> UnsignedInt:
+    """Gets the element production number.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        element production number
+        The element production number.
     """
 
-def get_part_number(element_id: int) -> int:
-    """Gets the element part number
+def get_part_number(element_id: ElementId) -> UnsignedInt:
+    """Gets the element part number.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        element part number
+        The element part number.
     """
 
-def get_additional_data(element_id: int, data_id: str) -> str:
-    """Gets the element additional data
+def get_additional_data(element_id: ElementId, data_id: str) -> str:
+    """Gets the element additional data.
 
     Parameters:
-        element_id: element_id
-        data_id: data_id
+        element_id: The element id.
+        data_id: The data id.
 
     Returns:
-        element additional data
+        The element additional data.
     """
 
-def get_user_attribute_name(number: int) -> str:
-    """Gets the user attribute name
+def get_user_attribute_name(number: UserAttributeId) -> str:
+    """Gets the user attribute name.
 
     Parameters:
-        number: number
+        number: The user attribute number.
 
     Returns:
-        user attribute name
+        The user attribute name.
     """
 
-def get_wall_situation(element_id: int) -> str:
-    """Gets the element wall situation
+def get_wall_situation(element_id: ElementId) -> str:
+    """Gets the element wall situation.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        element wall situation
+        The element wall situation.
     """
 
-def get_element_material_name(element_id: int) -> str:
-    """Gets the element material name
+def get_element_material_name(element_id: ElementId) -> str:
+    """Gets the element material name.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        element material name
+        The element material name.
     """
 
-def get_prefab_layer(element_id: int) -> str:
-    """Gets the element prefab layer
+def get_prefab_layer(element_id: ElementId) -> str:
+    """Gets the element prefab layer.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        element prefab layer
+        The element prefab layer.
     """
 
-def get_machine_calculation_set(element_id: int) -> str:
-    """Gets the element machine calculation set
+def get_machine_calculation_set(element_id: ElementId) -> str:
+    """Gets the element machine calculation set.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        element machine calculation set
+        The element machine calculation set.
     """
 
-def get_cutting_set(element_id: int) -> str:
-    """Gets the element cutting set
+def get_cutting_set(element_id: ElementId) -> str:
+    """Gets the element cutting set.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        element cutting set
+        The element cutting set.
     """
 
 def get_name_process_type(name: str) -> process_type:
-    """Gets the process type for an element name
+    """Gets the process type for an element name.
 
     Parameters:
-        name: name
+        name: The element name.
 
     Returns:
-        process type
+        The process type.
     """
 
 def get_name_extended_settings(name: str) -> extended_settings:
-    """Gets the extended settings for an element name
+    """Gets the extended settings for an element name.
 
     Parameters:
-        name: name
+        name: The element name.
 
     Returns:
-        extended settings
+        The extended settings.
     """
 
-def get_output_type(element_id: int) -> process_type:
-    """Gets the element output type
+def get_output_type(element_id: ElementId) -> process_type:
+    """Gets the element output type.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        element output type
+        The element output type.
     """
 
-def get_extended_settings(element_id: int) -> extended_settings:
-    """Gets the element extended settings
+def get_extended_settings(element_id: ElementId) -> extended_settings:
+    """Gets the element extended settings.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        element extended settings
+        The element extended settings.
     """
 
-def get_element_type(element_id: int) -> element_type:
-    """Gets the element type
+def get_element_type(element_id: ElementId) -> element_type:
+    """Gets the element type.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        element type
+        The element type.
     """
 
-def get_fastening_attribute(element_id: int) -> str:
-    """Get the element fastening attribute
+def get_fastening_attribute(element_id: ElementId) -> str:
+    """Get the element fastening attribute.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        element fastening attribute
+        The element fastening attribute.
     """
 
-def get_assembly_number(element_id: int) -> str:
-    """get assembly number
+def get_assembly_number(element_id: ElementId) -> str:
+    """Get assembly number.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        str
+        The assembly number.
     """
 
-def get_list_quantity(element_id: int) -> int:
-    """get list quantity
+def get_list_quantity(element_id: ElementId) -> UnsignedInt:
+    """Get list quantity.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        int
+        The list quantity.
     """
 
-def get_ignore_in_vba_calculation(element: int) -> bool:
-    """get ignore in vba calculation
+def get_ignore_in_vba_calculation(element_id: ElementId) -> bool:
+    """Get ignore in vba calculation.
 
     Parameters:
-        element: element
+        element_id: The element id.
 
     Returns:
-        bool
+        True if the element is ignored in VBA calculation, false otherwise.
     """
 
-def get_standard_element_name(element_id: int) -> str:
-    """get standard element name
+def get_standard_element_name(element_id: ElementId) -> str:
+    """Get standard element name.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        str
+        The standard element name.
     """
 
-def get_steel_shape_name(element_id: int) -> str:
-    """get steel shape name
+def get_steel_shape_name(element_id: ElementId) -> str:
+    """Get steel shape name.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        str
+        The steel shape name.
     """
 
-def is_beam(element_id: int) -> bool:
-    """Tests if element is beam
+def is_beam(element_id: ElementId) -> bool:
+    """Tests if element is beam.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        is element beam
+        True if the element is a beam, false otherwise.
     """
 
-def is_panel(element_id: int) -> bool:
-    """Tests if element is panel
+def is_panel(element_id: ElementId) -> bool:
+    """Tests if element is panel.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        is element panel
+        True if the element is a panel, false otherwise.
     """
 
-def is_opening(element_id: int) -> bool:
-    """Tests if element is opening
+def is_opening(element_id: ElementId) -> bool:
+    """Tests if element is opening.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        is element opening
+        True if the element is an opening, false otherwise.
     """
 
-def is_wall(element_id: int) -> bool:
-    """Tests if element is wall
+def is_wall(element_id: ElementId) -> bool:
+    """Tests if element is wall.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        is element wall
+        True if the element is a wall, false otherwise.
     """
 
-def is_floor(element_id: int) -> bool:
-    """Tests if element is floor
+def is_floor(element_id: ElementId) -> bool:
+    """Tests if element is floor.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        is element floor
+        True if the element is a floor, false otherwise.
     """
 
-def is_roof(element_id: int) -> bool:
-    """Tests if element is roof
+def is_roof(element_id: ElementId) -> bool:
+    """Tests if element is roof.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        is element roof
+        True if the element is a roof, false otherwise.
     """
 
-def is_metal(element_id: int) -> bool:
-    """Tests if element is metal
+def is_metal(element_id: ElementId) -> bool:
+    """Tests if element is metal.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        is element metal
+        True if the element is metal, false otherwise.
     """
 
-def is_export_solid(element_id: int) -> bool:
-    """Tests if element is export solid
+def is_export_solid(element_id: ElementId) -> bool:
+    """Tests if element is export solid.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        is element export solid
+        True if the element is an export solid, false otherwise.
     """
 
-def is_container(element_id: int) -> bool:
-    """Tests if element is container
+def is_container(element_id: ElementId) -> bool:
+    """Tests if element is container.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        is element container
+        True if the element is a container, false otherwise.
     """
 
-def is_connector_axis(element_id: int) -> bool:
-    """Tests if element is connector axis
+def is_connector_axis(element_id: ElementId) -> bool:
+    """Tests if element is connector axis.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        is element connector axis
+        True if the element is a connector axis, false otherwise.
     """
 
-def is_drilling(element_id: int) -> bool:
-    """Tests if element is drilling
+def is_drilling(element_id: ElementId) -> bool:
+    """Tests if element is drilling.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        is element drilling
+        True if the element is drilling, false otherwise.
     """
 
-def is_node(element_id: int) -> bool:
-    """Tests if element is node
+def is_node(element_id: ElementId) -> bool:
+    """Tests if element is node.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        is element node
+        True if the element is a node, false otherwise.
     """
 
-def is_auxiliary(element_id: int) -> bool:
-    """Tests if element is auxiliary
+def is_auxiliary(element_id: ElementId) -> bool:
+    """Tests if element is auxiliary.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        is element auxiliary
+        True if the element is auxiliary, false otherwise.
     """
 
-def is_roof_surface(element_id: int) -> bool:
-    """Tests if the element is roof surface
+def is_roof_surface(element_id: ElementId) -> bool:
+    """Tests if the element is roof surface.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        is element roof surface
+        True if the element is a roof surface, false otherwise.
     """
 
-def is_caddy_object(element_id: int) -> bool:
-    """Tests if the element is caddy object
+def is_caddy_object(element_id: ElementId) -> bool:
+    """Tests if the element is caddy object.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        is element caddy object
+        True if the element is a caddy object, false otherwise.
     """
 
-def is_envelope(element_id: int) -> bool:
-    """is envelope
+def is_envelope(element_id: ElementId) -> bool:
+    """Tests if the element is an envelope.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
+        True if the element is an envelope, false otherwise.
     """
 
-def is_architecture_wall_2dc(element: int) -> bool:
-    """Tests if the element has a 2dc reference wall
+def is_architecture_wall_2dc(element_id: ElementId) -> bool:
+    """Tests if the element is a 2dc reference wall.
 
     Parameters:
-        element: element
+        element_id: The element id.
 
     Returns:
-        is architecturewall 2dc
+        True if the element is a 2dc reference wall, false otherwise.
     """
 
-def is_architecture_wall_xml(element: int) -> bool:
-    """Tests if the element has a xml reference wall
+def is_architecture_wall_xml(element_id: ElementId) -> bool:
+    """Tests if the element is a xml reference wall.
 
     Parameters:
-        element: element
+        element_id: The element id.
 
     Returns:
-        is architecturewall xml
+        True if the element is a xml reference wall, false otherwise.
     """
 
-def is_surface(element_id: int) -> bool:
-    """Tests if the element is a Surface
+def is_surface(element_id: ElementId) -> bool:
+    """Tests if the element is a Surface.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        is Surface
+        True if the element is a Surface, false otherwise.
     """
 
-def is_line(element_id: int) -> bool:
-    """Tests if the element is a Line
+def is_line(element_id: ElementId) -> bool:
+    """Tests if the element is a Line.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        is Line
+        True if the element is a Line, false otherwise.
     """
 
-def get_auto_attribute(element_id: int, number: int) -> str:
-    """get auto attribute
+def get_auto_attribute(element_id: ElementId, number: UnsignedInt) -> str:
+    """Get auto attribute.
 
     Parameters:
-        element_id: element_id
-        number: number
+        element_id: The element id.
+        number: The auto attribute number.
 
     Returns:
-        str
+        The auto attribute value.
     """
 
-def get_auto_attribute_name(number: int) -> str:
-    """get auto attribute name
+def get_auto_attribute_name(number: UnsignedInt) -> str:
+    """Get auto attribute name.
 
     Parameters:
-        number: number
+        number: The auto attribute number.
 
     Returns:
-        str
+        The auto attribute name.
     """
 
-def is_framed_wall(element_id: int) -> bool:
-    """is framed wall
+def is_framed_wall(element_id: ElementId) -> bool:
+    """Tests if the element is a framed wall.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
+        True if the element is a framed wall, false otherwise.
     """
 
-def is_solid_wall(element_id: int) -> bool:
-    """is solid wall
+def is_solid_wall(element_id: ElementId) -> bool:
+    """Tests if the element is a solid wall.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
+        True if the element is a solid wall, false otherwise.
     """
 
-def is_log_wall(element_id: int) -> bool:
-    """is log wall
+def is_log_wall(element_id: ElementId) -> bool:
+    """Tests if the element is a log wall.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
+        True if the element is a log wall, false otherwise.
     """
 
-def is_framed_floor(element_id: int) -> bool:
-    """is framed floor
+def is_framed_floor(element_id: ElementId) -> bool:
+    """Tests if the element is a framed floor.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
+        True if the element is a framed floor, false otherwise.
     """
 
-def is_solid_floor(element_id: int) -> bool:
-    """is solid floor
+def is_solid_floor(element_id: ElementId) -> bool:
+    """Tests if the element is a solid floor.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
+        True if the element is a solid floor, false otherwise.
     """
 
-def is_framed_roof(element_id: int) -> bool:
-    """is framed roof
+def is_framed_roof(element_id: ElementId) -> bool:
+    """Tests if the element is a framed roof.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
+        True if the element is a framed roof, false otherwise.
     """
 
-def is_solid_roof(element_id: int) -> bool:
-    """is solid roof
+def is_solid_roof(element_id: ElementId) -> bool:
+    """Tests if the element is a solid roof.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
-    """
-
-
-def get_additional_guid(element_id: int, data_id: str) -> str:
-    """get additional guid
-
-    Parameters:
-        element_id: element_id
-        data_id: data_id
-
-    Returns:
-        str
+        True if the element is a solid roof, false otherwise.
     """
 
 
-def get_prefab_layer_all_assigned(element_id: int) -> List[int]:
-    """get prefab layer all assigned
+def get_additional_guid(element_id: ElementId, data_id: str) -> str:
+    """Get additional guid.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
+        data_id: The data id.
 
     Returns:
-        List[int]
+        The additional guid associated with the element and data id.
     """
 
 
-def get_prefab_layer_with_dimensions(element_id: int) -> List[int]:
-    """get prefab layer with dimensions
+def get_prefab_layer_all_assigned(element_id: ElementId) -> List[int]:
+    """Get all assigned prefab layers.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        List[int]
+        The list of all assigned prefab layers for the element.
     """
 
 
-def get_prefab_layer_without_dimensions(element_id: int) -> List[int]:
-    """get prefab layer without dimensions
+def get_prefab_layer_with_dimensions(element_id: ElementId) -> List[int]:
+    """Get prefab layer with dimensions.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        List[int]
+        The list of prefab layers with dimensions for the element.
     """
 
 
-def is_nesting_parent(element_id: int) -> bool:
-    """is nesting parent
+def get_prefab_layer_without_dimensions(element_id: ElementId) -> List[int]:
+    """Get prefab layer without dimensions.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
+        The list of prefab layers without dimensions for the element.
     """
 
 
-def is_nesting_raw_part(element_id: int) -> bool:
-    """is nesting raw part
+def is_nesting_parent(element_id: ElementId) -> bool:
+    """Tests if the element is a nesting parent.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
+        True if the element is a nesting parent, false otherwise.
     """
 
 
-def get_container_number(element_id: int) -> int:
-    """get container number
+def is_nesting_raw_part(element_id: ElementId) -> bool:
+    """Tests if the element is a nesting raw part.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        int
+        True if the element is a nesting raw part, false otherwise.
     """
 
 
-def get_container_number_with_prefix(element_id: int) -> str:
-    """get container number with prefix
+def get_container_number(element_id: ElementId) -> UnsignedInt:
+    """Get container number.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        str
+        The container number associated with the element.
+    """
+
+
+def get_container_number_with_prefix(element_id: ElementId) -> str:
+    """Get container number with prefix.
+
+    Parameters:
+        element_id: The element id.
+
+    Returns:
+        The container number with prefix associated with the element.
     """
 
 def get_group_list_items() -> List[str]:
-    """get group list items
+    """Get group list items.
 
     Returns:
-        List[str]
+        The list of group list items.
     """
 
 def get_subgroup_list_items() -> List[str]:
-    """get subgroup list items
+    """Get subgroup list items.
 
     Returns:
-        List[str]
+        The list of subgroup list items.
     """
 
 def get_comment_list_items() -> List[str]:
-    """get comment list items
+    """Get comment list items.
 
     Returns:
-        List[str]
+        The list of comment list items.
     """
 
 def get_sku_list_items() -> List[str]:
-    """get sku list items
+    """Get sku list items.
 
     Returns:
-        List[str]
+        The list of sku list items.
     """
 
 
-def get_user_attribute_list_items(element_id: int) -> List[str]:
-    """get user attribute list items
+def get_user_attribute_list_items(element_id: ElementId) -> List[str]:
+    """Get user attribute list items.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        List[str]
+        The list of user attribute list items.
     """
 
 
-def is_circular_mep(element_id: int) -> bool:
-    """is circular mep
+def is_circular_mep(element_id: ElementId) -> bool:
+    """Test if element is circular mep.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
+        True if the element is a circular mep, false otherwise.
     """
 
 
-def is_rectangular_mep(element_id: int) -> bool:
-    """is rectangular mep
+def is_rectangular_mep(element_id: ElementId) -> bool:
+    """Test if element is rectangular mep.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
+        True if the element is a rectangular mep, false otherwise.
+    """
+
+def get_machine_calculation_state(element_id: ElementId) -> str:
+    """Get machine calculation state.
+
+    Parameters:
+        element_id: The element id.
+
+    Returns:
+        The machine calculation state of the element.
     """
 
 
-def get_machine_calculation_state(element_id: int) -> str:
-    """get machine calculation state
+def get_machine_calculation_set_machine_type(element_id: ElementId) -> str:
+    """Get machine calculation set machine type.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        str
+        The machine calculation set machine type of the element.
     """
 
-
-def get_machine_calculation_set_machine_type(element_id: int) -> str:
-    """get machine calculation set machine type
+def is_btl_processing_group(element_id: ElementId) -> bool:
+    """Test if element is btl processing group.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        str
+        True if the element is a btl processing group, false otherwise.
     """
 
-
-def is_btl_processing_group(element_id: int) -> bool:
-    """is btl processing group
-
-    Parameters:
-        element_id: element_id
-
-    Returns:
-        bool
-    """
-
-
-def is_hundegger_processing_group(element_id: int) -> bool:
-    """is hundegger processing group
+def is_hundegger_processing_group(element_id: ElementId) -> bool:
+    """Test if element is hundegger processing group.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
+        True if the element is a hundegger processing group, false otherwise.
     """
 
 def get_element_grouping_type() -> element_grouping_type:
-    """Get the element grouping type (group, subgroup)
+    """Get the element grouping type (group, subgroup).
 
     Returns:
-        element grouping type
+        The element grouping type.
     """
 
 def set_element_grouping_type(element_grouping_type: element_grouping_type) -> None:
-    """Set the element grouping type (group, subgroup)
+    """Set the element grouping type (group, subgroup).
 
     Parameters:
-        element_grouping_type: element_grouping_type
-
-    Returns:
-        None
+        element_grouping_type: The element grouping type to set.
     """
 
-def get_associated_nesting_name(element_id: int) -> str:
-    """get associated nesting name
+def get_associated_nesting_name(element_id: ElementId) -> str:
+    """Get associated nesting name
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        str
+        The associated nesting name.
     """
 
-def get_associated_nesting_number(element_id: int) -> str:
-    """get associated nesting number
+def get_associated_nesting_number(element_id: ElementId) -> str:
+    """Get associated nesting number.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        str
+        The associated nesting number.
     """
 
 def get_attribute_display_settings_for_2d() -> attribute_display_settings:
-    """get attribute display settings for 2d
+    """Get attribute display settings for 2d.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for 2d.
     """
 
 def get_attribute_display_settings_for_2d_with_layout() -> attribute_display_settings:
-    """get attribute display settings for 2d with layout
+    """Get attribute display settings for 2d with layout.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for 2d with layout.
     """
 
 def get_attribute_display_settings_for_2d_without_layout() -> attribute_display_settings:
-    """get attribute display settings for 2d without layout
+    """Get attribute display settings for 2d without layout.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for 2d without layout.
     """
 
 def get_attribute_display_settings_for_3d() -> attribute_display_settings:
-    """get attribute display settings for 3d
+    """Get attribute display settings for 3d.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for 3d.
     """
 
 def get_attribute_display_settings_for_container() -> attribute_display_settings:
-    """get attribute display settings for container
+    """Get attribute display settings for container.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for container.
     """
 
 def get_attribute_display_settings_for_export_solid() -> attribute_display_settings:
-    """get attribute display settings for export solid
+    """Get attribute display settings for export solid.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for export solid.
     """
 
 def get_attribute_display_settings_for_framed_wall_axis() -> attribute_display_settings:
-    """get attribute display settings for framed wall axis
+    """Get attribute display settings for framed wall axis.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for framed wall axis.
     """
 
 def get_attribute_display_settings_for_framed_wall_beam() -> attribute_display_settings:
-    """get attribute display settings for framed wall beam
+    """Get attribute display settings for framed wall beam.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for framed wall beam.
     """
 
 def get_attribute_display_settings_for_framed_wall_opening() -> attribute_display_settings:
-    """get attribute display settings for framed wall opening
+    """Get attribute display settings for framed wall opening.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for framed wall opening.
     """
 
 def get_attribute_display_settings_for_framed_wall_panel() -> attribute_display_settings:
-    """get attribute display settings for framed wall panel
+    """Get attribute display settings for framed wall panel.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for framed wall panel.
     """
 
 def get_attribute_display_settings_for_log_wall_axis() -> attribute_display_settings:
-    """get attribute display settings for log wall axis
+    """Get attribute display settings for log wall axis.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for log wall axis.
     """
 
 def get_attribute_display_settings_for_log_wall_beam() -> attribute_display_settings:
-    """get attribute display settings for log wall beam
+    """Get attribute display settings for log wall beam.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for log wall beam.
     """
 
 def get_attribute_display_settings_for_log_wall_opening() -> attribute_display_settings:
-    """get attribute display settings for log wall opening
+    """Get attribute display settings for log wall opening.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for log wall opening.
     """
 
 def get_attribute_display_settings_for_log_wall_panel() -> attribute_display_settings:
-    """get attribute display settings for log wall panel
+    """Get attribute display settings for log wall panel.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for log wall panel.
     """
 
 def get_attribute_display_settings_for_machine() -> attribute_display_settings:
-    """get attribute display settings for machine
+    """Get attribute display settings for machine.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for machine.
     """
 
 def get_attribute_display_settings_for_nesting_element() -> attribute_display_settings:
-    """get attribute display settings for nesting element
+    """Get attribute display settings for nesting element.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for nesting element.
     """
 
 def get_attribute_display_settings_for_nesting_volume() -> attribute_display_settings:
-    """get attribute display settings for nesting volume
+    """Get attribute display settings for nesting volume.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for nesting volume.
     """
 
 def get_attribute_display_settings_for_solid_wall_axis() -> attribute_display_settings:
-    """get attribute display settings for solid wall axis
+    """Get attribute display settings for solid wall axis.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for solid wall axis.
     """
 
 def get_attribute_display_settings_for_solid_wall_beam() -> attribute_display_settings:
-    """get attribute display settings for solid wall beam
+    """Get attribute display settings for solid wall beam.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for solid wall beam.
     """
 
 def get_attribute_display_settings_for_solid_wall_opening() -> attribute_display_settings:
-    """get attribute display settings for solid wall opening
+    """Get attribute display settings for solid wall opening.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for solid wall opening.
     """
 
 def get_attribute_display_settings_for_solid_wall_panel() -> attribute_display_settings:
-    """get attribute display settings for solid wall panel
+    """Get attribute display settings for solid wall panel.
 
     Returns:
-        attribute_display_settings
+        The attribute display settings for solid wall panel.
     """
 
-def is_processing(element_id: int) -> bool:
-    """is processing
+def is_processing(element_id: ElementId) -> bool:
+    """Tests if element is processing.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
+        True if the element is processing, false otherwise.
     """
 
-def delete_user_attribute(number: int) -> bool:
+def delete_user_attribute(number: UserAttributeId) -> bool:
     """Delete user attribute from attribute list. The attribute is only deleted when the attribute is not used.
 
     Parameters:
-        number: number
+        number: The attribute number.
 
     Returns:
-        bool deletion successfully
+        True if the attribute was successfully deleted, false otherwise.
     """
 
-def is_attribute_visible_in_modify_window(number: int) -> bool:
-    """is attribute visible in modify window
+def is_attribute_visible_in_modify_window(number: UnsignedInt) -> bool:
+    """Test if attribute is visible in modify window.
 
     Parameters:
-        number: number
+        number: The attribute number.
 
     Returns:
-        bool
+        True if the attribute is visible in the modify window, false otherwise.
     """
 
-def set_attribute_visibility_in_modify_window(number: int, visibility: bool) -> None:
-    """set attribute visibility in modify window
+def set_attribute_visibility_in_modify_window(number: UnsignedInt, visibility: bool) -> None:
+    """Set attribute visibility in modify window.
 
     Parameters:
-        number: number
-        visibility: visibility
-
-    Returns:
-        None
+        number: The attribute number.
+        visibility: The visibility state.
     """
 
-def set_cutting_set(element_id_list: List[int], cutting_set_name: str) -> bool:
-    """set cutting set
+def set_cutting_set(element_id_list: List[ElementId], cutting_set_name: str) -> bool:
+    """Set cutting set.
 
     Parameters:
-        element_id_list: element_id_list
-        cutting_set_name: cutting_set_name
+        element_id_list: The list of element ids.
+        cutting_set_name: The name of the cutting set.
 
     Returns:
-        bool
+        True if the cutting set was successfully set, false otherwise.
     """
 
-def get_standard_element_material_id(element_id: int) ->int:
-    """get standard element material id
+def get_standard_element_material_id(element_id: ElementId) -> int:
+    """Get standard element material id.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        int
+        The standard element material id.
     """
