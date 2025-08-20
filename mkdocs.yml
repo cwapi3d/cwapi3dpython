@@ -50,6 +50,7 @@ nav:
           - BREP data: documentation/brep_data.md
           - IFC:
               - IFC2x3 Element Type: documentation/ifc_2x3_element_type.md
+              - IFC Predefined Type: documentation/ifc_predefined_type.md
               - IFC Options: documentation/ifc_options.md
           - Camera: documentation/camera_data.md
           - Layer Settings: documentation/layer_settings.md
