@@ -2,23 +2,13 @@ from typing import List
 from cadwork.ifc_2x3_element_type import ifc_2x3_element_type
 from cadwork.ifc_options import ifc_options
 from cadwork.ifc_predefined_type import ifc_predefined_type
+from cadwork.api_types import *
 
-
-def get_last_error(a0: int) -> str:
-    """get last error
-
-    Parameters:
-        a0: a0
-
-    Returns:
-        str
-    """
-
-def get_ifc_guid(element_id: int) -> str:
-    """get ifc guid
+def get_ifc_guid(element_id: ElementId) -> str:
+    """Get the IFC GUID of an element.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Examples:
         >>> import element_controller as ec
@@ -30,14 +20,14 @@ def get_ifc_guid(element_id: int) -> str:
         >>> print(f"IFC GUID: {ifc_guid}")
 
     Returns:
-        str
+        A string representing the IFC GUID.
     """
 
-def get_ifc2x3_element_type(element_id: int) -> ifc_2x3_element_type:
-    """get ifc2x3 element type
+def get_ifc2x3_element_type(element_id: ElementId) -> ifc_2x3_element_type:
+    """Get ifc2x3 element type.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Examples:
         >>> import element_controller as ec
@@ -49,17 +39,17 @@ def get_ifc2x3_element_type(element_id: int) -> ifc_2x3_element_type:
         >>> ifc_type = bc.get_ifc2x3_element_type(element)
 
     Returns:
-        ifc_2x3_element_type
+        The ifc_2x3_element_type of the element.
     """
 
 
-def set_ifc2x3_element_type(element_i_ds: List[int], ifc_type: ifc_2x3_element_type) -> None:
-    """set ifc2x3 element type
+def set_ifc2x3_element_type(element_id_list: List[ElementId], ifc_type: ifc_2x3_element_type) -> None:
+    """Set ifc2x3 element type.
 
     Parameters:
-        element_i_ds: element_i_ds
-        ifc_type: element_type
-
+        element_id_list: The list of element ids.
+        ifc_type: The ifc_2x3_element_type to set.
+        
     Examples:
         >>> import element_controller as ec
         >>> import bim_controller as bc
@@ -69,16 +59,13 @@ def set_ifc2x3_element_type(element_i_ds: List[int], ifc_type: ifc_2x3_element_t
         >>> ifc_entity_type = cadwork.ifc_2x3_element_type()
         >>> ifc_entity_type.set_ifc_member()
         >>> bc.set_ifc2x3_element_type(selected_elements, ifc_entity_type)
-
-    Returns:
-        None
     """
 
 def import_ifc_as_graphical_object(file_path: str) -> bool:
-    """import ifc as graphical object
+    """Imports ifc as graphical object.
 
     Parameters:
-        file_path: file_path
+        file_path: The path to the IFC file.
 
     Examples:
         >>> import bim_controller as bc
@@ -89,14 +76,14 @@ def import_ifc_as_graphical_object(file_path: str) -> bool:
         >>>     print("IFC imported as graphical object successfully")
 
     Returns:
-        bool
+        True if the import was successful, false otherwise.
     """
 
 def import_bcf(file_path: str) -> bool:
-    """import bcf
+    """Imports a BCF file.
 
     Parameters:
-        file_path: file_path
+        file_path: The path to the BCF file.
 
     Examples:
         >>> import bim_controller as bc
@@ -107,14 +94,14 @@ def import_bcf(file_path: str) -> bool:
         >>>     print("BCF file imported successfully")
 
     Returns:
-        bool
+        True if the import was successful, false otherwise.
     """
 
 def export_bcf(file_path: str) -> bool:
-    """export bcf
+    """Exports a BCF file.
 
     Parameters:
-        file_path: file_path
+        file_path: The path where the BCF file will be exported.
 
     Examples:
         >>> import bim_controller as bc
@@ -125,15 +112,15 @@ def export_bcf(file_path: str) -> bool:
         >>>     print("BCF file exported successfully")
 
     Returns:
-        bool
+        True if the export was successful, false otherwise.
     """
 
-def export_ifc(element_i_ds: List[int], file_path: str) -> bool:
-    """export ifc
+def export_ifc(element_id_list: List[ElementId], file_path: str) -> bool:
+    """Export IFC file.
 
     Parameters:
-        element_i_ds: element_i_ds
-        file_path: file_path
+        element_id_list: The list of element ids.
+        file_path: The path where the IFC file will be exported.
 
     Examples:
         >>> import element_controller as ec
@@ -146,26 +133,26 @@ def export_ifc(element_i_ds: List[int], file_path: str) -> bool:
         >>>     print("IFC file exported successfully")
 
     Returns:
-        bool
+        True if the export was successful, false otherwise.
     """
 
-def import_ifc_return_exchange_objects(file_path: str) -> List[int]:
-    """imports an IFC File and returns the ids of the Exchange Objects
+def import_ifc_return_exchange_objects(file_path: str) -> List[ElementId]:
+    """Imports an IFC File and returns the ids of the Exchange Objects.
 
     Parameters:
-        file_path: file_path
+        file_path: The path to the IFC file.
 
     Returns:
-        List[int]
+        The ids of the exchange objects.
     """
 
 def set_storey_height(building: str, storey: str, height: float) -> None:
-    """set storey height
+    """Set storey height.
 
     Parameters:
-        building: building
-        storey: storey
-        height: height
+        building: The name of the building.
+        storey: The name of the storey.
+        height: The height of the storey.
 
     Examples:
         >>> import bim_controller as bc
@@ -174,101 +161,92 @@ def set_storey_height(building: str, storey: str, height: float) -> None:
         >>> storey_name = "Ground Floor"
         >>> height_millimeters = 3_500
         >>> bc.set_storey_height(building_name, storey_name, height_millimeters)
-
-    Returns:
-        None
     """
 
-def convert_exchange_objects(exchange_objects: List[int]) -> List[int]:
-    """converts a list of Exchange Objects to Cadwork Elements
+def convert_exchange_objects(exchange_objects: List[ElementId]) -> List[ElementId]:
+    """Converts a list of Exchange Objects to Cadwork Elements.
 
     Parameters:
-        exchange_objects: exchange_objects
+        exchange_objects: A list of Exchange Object id to convert.
 
     Returns:
-        List[int]
+        The list of Cadwork Element ids.
     """
 
-def export_ifc2x3_silently(element_i_ds: List[int], file_path: str) -> bool:
-    """export ifc2x3 silently
+def export_ifc2x3_silently(element_id_list: List[ElementId], file_path: str) -> bool:
+    """Export IFC2x3 silently.
 
     Parameters:
-        element_i_ds: element_i_ds
-        file_path: file_path
+        element_id_list: The list of element ids.
+        file_path: The path where the IFC file will be exported.
 
     Returns:
-        bool
+        True if the export was successful, false otherwise.
     """
 
-def export_ifc4_silently(element_i_ds: List[int], file_path: str) -> bool:
-    """export ifc4 silently
+def export_ifc4_silently(element_id_list: List[ElementId], file_path: str) -> bool:
+    """Exports IFC4 silently.
 
     Parameters:
-        element_i_ds: element_i_ds
-        file_path: file_path
+        element_id_list: The list of element ids.
+        file_path: The path where the IFC file will be exported.
 
     Returns:
-        bool
+        True if the export was successful, false otherwise.
     """
 
-def export_ifc2x3_silently_with_options(element_i_ds: List[int], file_path: str, options: ifc_options) -> bool:
-    """export ifc2x3 silently with options
+def export_ifc2x3_silently_with_options(element_id_list: List[ElementId], file_path: str, options: ifc_options) -> bool:
+    """Exports IFC2x3 silently with options.
 
     Parameters:
-        element_i_ds: element_i_ds
-        file_path: file_path
-        options: options
+        element_id_list: The list of element ids.
+        file_path: The path where the IFC file will be exported.
+        options: The export options.
 
     Returns:
-        bool
+        True if the export was successful, false otherwise.
     """
 
-def export_ifc4_silently_with_options(element_i_ds: List[int], file_path: str, options: ifc_options) -> bool:
-    """export ifc4 silently with options
+def export_ifc4_silently_with_options(element_id_list: List[ElementId], file_path: str, options: ifc_options) -> bool:
+    """Exports IFC4 silently with options.
 
     Parameters:
-        element_i_ds: element_i_ds
-        file_path: file_path
-        options: options
+        element_id_list: The list of element ids.
+        file_path: The path where the IFC file will be exported.
+        options: The export options.
 
     Returns:
-        bool
+        True if the export was successful, false otherwise.
     """
 
-def update_bmt_structure_created_elements(element_i_ds: List[int]) -> None:
+def update_bmt_structure_created_elements(element_id_list: List[ElementId]) -> None:
     """This function takes the specified elements and inserts them into the BMT structure and adds them to the active building and storey.
 
     Parameters:
-        element_i_ds: element_i_ds
-
-    Returns:
-        None
+        element_id_list: The list of element ids to be updated in the BMT structure.
     """
 
-def update_bmt_structure_building_storey(element_i_ds: List[int]) -> None:
+def update_bmt_structure_building_storey(element_id_list: List[ElementId]) -> None:
     """This function takes the specified elements and inserts them into the BMT structure and adds them to the assigned Building and Storey.
 
     Parameters:
-        element_i_ds: element_i_ds
-
-    Returns:
-        None
+        element_id_list: The list of element ids to be updated in the BMT structure.
     """
 
 def get_ifc_options() -> ifc_options:
-    """Get the IfcOptions with the settings used in the document
+    """Get the IfcOptions with the settings used in the document.
 
     Returns:
-        ifc_options
+        The IfcOptions object containing the current settings.
     """
 
-def set_building_and_storey(element_id_list: List[int], building: str, storey: str) -> None:
-    """set building and storey
+def set_building_and_storey(element_id_list: List[ElementId], building: str, storey: str) -> None:
+    """Set building and storey.
 
     Parameters:
-        element_id_list: element_id_list
-        building: building
-        storey: storey
+        element_id_list: The list of element ids.
+        building: The building name.
+        storey: The storey name.
 
     Examples:
         >>> import element_controller as ec
@@ -278,119 +256,116 @@ def set_building_and_storey(element_id_list: List[int], building: str, storey: s
         >>> building_name = "Building A"
         >>> storey_name = "Ground Floor"
         >>> bc.set_building_and_storey(selected_elements, building_name, storey_name)
-
-    Returns:
-        None
     """
 
-def get_building(element: int) -> str:
-    """get building
+def get_building(element_id: ElementId) -> str:
+    """Get building name for a given element.
 
     Parameters:
-        element: element
+        element_id: The element id.
 
     Returns:
-        str
+        The name of the building.
     """
 
-def get_storey(element: int) -> str:
-    """get storey
+def get_storey(element_id: ElementId) -> str:
+    """Get storey name for a given element.
 
     Parameters:
-        element: element
+        element_id: The element id.
 
     Returns:
-        str
+        The name of the storey.
     """
 
 def get_storey_height(building: str, storey: str) -> float:
-    """get storey height
+    """Get storey height for a given building and storey.
 
     Parameters:
-        building: building
-        storey: storey
+        building: The building name.
+        storey: The storey name.
 
     Returns:
-        float
+        The height of the storey.
     """
 
 
 def get_ifc2x3_element_type_string(entity_type: ifc_2x3_element_type) -> str:
-    """get ifc2x3 element type string
+    """Get IFC2x3 element type string.
 
     Parameters:
-        entity_type: entity_type
+        entity_type: The entity type.
 
     Returns:
-        str
+        The string representation of the IFC2x3 element type.
     """
 
 
 def get_ifc2x3_element_type_display_string(entity_type: ifc_2x3_element_type) -> str:
-    """get ifc2x3 element type display string
+    """Get IFC2x3 element type display string.
 
     Parameters:
-        entity_type: entity_type
+        entity_type: The entity type.
 
     Returns:
-        str
+        The display string representation of the IFC2x3 element type.
     """
 
 def get_all_buildings() -> List[str]:
-    """get all buildings
+    """Get all buildings.
 
     Returns:
-        List[str]
+        A list of all building.
     """
 
 def get_all_storeys(building: str) -> List[str]:
-    """get all storeys
+    """Get all storeys.
 
     Parameters:
-        building: building
+        building: The building name.
 
     Returns:
-        List[str]
+        A list of all storeys in the building.
     """
 
 
-def get_element_id_from_base64_ifc_guid(base_64_ifc_guid: str) -> int:
-    """get element id from base64 ifc guid
+def get_element_id_from_base64_ifc_guid(base_64_ifc_guid: str) -> ElementId:
+    """Get element id from base64 ifc guid.
 
     Parameters:
-        base_64_ifc_guid: base_64_ifc_guid
+        base_64_ifc_guid: The base64 IFC GUID.
 
     Returns:
-        int
+        The element id corresponding to the base64 IFC GUID.
     """
 
-def get_ifc_base64_guid(element_id: int) -> str:
-    """Get IFC base64 Guid from element ID
+def get_ifc_base64_guid(element_id: ElementId) -> str:
+    """Get IFC base64 Guid from element id.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
         The IFC GUID in base64 string format ("28kif20KPEuBjk2m1N3ep$").
     """
 
-def get_ifc_predefined_type(element_id: int) -> 'ifc_predefined_type':
+def get_ifc_predefined_type(element_id: ElementId) -> 'ifc_predefined_type':
     """Get the IfcPredefinedType of an element.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        IfcPredefinedType Wrapper
+        The IfcPredefinedType of the element.
     """
 
 
-def set_ifc_predefined_type(element_i_ds: List[int], predefined_type: ifc_predefined_type) -> None:
-    """Set a predefined type to elements. Attention, if you change the PredefinedType of the elements, you are responsible for ensuring that valid types are set
+def set_ifc_predefined_type(element_id_list: List[ElementId], predefined_type: ifc_predefined_type) -> None:
+    """Set a predefined type to elements. Attention, if you change the PredefinedType of the elements, you are responsible for ensuring that valid types are set.
 
     Parameters:
-        element_i_ds: element_i_ds
-        predefined_type: predefined_type
+        element_id_list: The list of element ids.
+        predefined_type: The predefined type to set.
 
     Examples:
         >>> import element_controller as ec
@@ -401,7 +376,4 @@ def set_ifc_predefined_type(element_i_ds: List[int], predefined_type: ifc_predef
         >>> predefined_type = cadwork.ifc_predefined_type()
         >>> predefined_type.set_member()
         >>> bc.set_ifc_predefined_type(selected_elements, predefined_type)
-
-    Returns:
-        None
     """
