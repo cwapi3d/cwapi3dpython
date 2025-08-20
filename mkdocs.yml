@@ -38,6 +38,8 @@ nav:
       - Attribute Controller: documentation/attribute_controller.md
       - BIM Controller: documentation/bim_controller.md
       - Cadwork:
+          - Api Types: documentation/api_types.md 
+          - Attribute Display Settings: documentation/attribute_display_settings.md
           - Element Module Properties: documentation/element_module_properties.md
           - Element Type: documentation/element_type.md
           - Process Type: documentation/process_type.md
@@ -133,8 +135,18 @@ extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
 
 plugins:
-  - mkdocstrings
   - search
+  - autorefs # Automatically generate references for known types and functions
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src] # Directory containing Python modules
+          options:
+            show_signature_annotations: true 
+            show_type_annotations: true
+            docstring_style: google # Set the docstring style
+            cross_reference: true # Enable cross-referencing to make links to classes, methods, and functions
+            show_source: false # Disable source code display
 
 extra:
   social:
