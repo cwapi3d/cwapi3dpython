@@ -2,12 +2,12 @@ from typing import List
 
 
 def display_simple_menu(menu_items: List[str]) -> str:
-    """display simple menu
+    """Displays a simple menu.
 
     Parameters:
-        menu_items: menu_items
+        menu_items: The menu items.
 
     Returns:
-        str
+        The selected menu item.
     """
 
