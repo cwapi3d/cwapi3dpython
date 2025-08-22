@@ -1,37 +1,71 @@
 from typing import List
+from cadwork.api_types import ElementId
 
-def get_profile_length(element_id: int) -> float:
-    """Gets the profile length
-
-    Parameters:
-        element_id: element_id
-
-    Returns:
-        profile length
-    """
-
-def get_edge_length(element_id: int, edge_type: str) -> float:
-    """Gets the edge length
+def get_profile_length(element_id: ElementId) -> float:
+    """Gets the profile length.
 
     Parameters:
-        element_id: element_id
-        edge_type: edge_type
+        element_id: The element id.
 
     Returns:
-        edge length
+        The profile length.
     """
 
-def get_all_caddy_element_ids() -> List[int]:
+def get_edge_length(element_id: ElementId, edge_type: str) -> float:
+    """Gets the edge length.
+
+    Parameters:
+        element_id: The element id.
+        edge_type: The edge type : 
+
+        
+            - "none"
+
+            - "ridge"
+
+            - "eave"
+
+            - "vergeright"
+            - "vergeleft"
+            - "vergeoblique"
+
+            - "hip"
+
+            - "valley"
+
+            - "userdefined1"
+            - "userdefined2"
+
+            - "userdefinedmitrejoint1"
+            - "userdefinedmitrejoint2"
+
+            - "wallconnection"
+            - "wallconnectionright"
+            - "wallconnectionleft"
+            - "wallconnectiontop"
+            - "wallconnectionbottom"
+
+            - "roofcutout"
+            - "roofcutoutright"
+            - "roofcutoutleft"
+            - "roofcutouttop"
+            - "roofcutoutbottom"
+
+            - "roofedgeontoproofsurface"
+            - "roofedgeonbottomroofsurface"
+
+    Returns:
+        The edge length.
+    """
+
+def get_all_caddy_element_ids() -> List[ElementId]:
     """Gets all caddy elements
 
     Returns:
-        element ID list
+        The list of all caddy element id.
     """
 
 def clear_errors() -> None:
-    """clear errors
-
-    Returns:
-        None
+    """Clears all errors.
     """
 
