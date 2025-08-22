@@ -1,5 +1,6 @@
 from typing import List
 from typing import Tuple
+from cadwork.api_types import ElementId
 from cadwork.point_3d import point_3d
 from cadwork.window_geometry import window_geometry
 from cadwork.shortcut_key import shortcut_key
@@ -7,346 +8,278 @@ from cadwork.shortcut_key_modifier import shortcut_key_modifier
 
 
 def get_last_error(error_code: int) -> str:
-    """Gets the last error
+    """Gets the last error.
 
     Parameters:
-        error_code: error_code
+        error_code: The error code.
 
     Returns:
-        error string
+        The error string.
     """
-
 
 def get_3d_version() -> int:
-    """Gets the 3D version
+    """Gets the 3D version.
 
     Returns:
-        3D version
+        The 3D version.
     """
-
 
 def get_3d_build() -> int:
-    """Gets the 3D build
+    """Gets the 3D build.
 
     Returns:
-        3D build
+        The 3D build.
     """
-
 
 def get_3d_file_path() -> str:
-    """Gets the 3D file path
+    """Gets the 3D file path.
 
     Returns:
-        3D file path
+        The 3D file path.
     """
 
-
-def set_project_data(element_id: str, data: str) -> None:
-    """Sets the project data
+def set_project_data(project_data_id: str, data: str) -> None:
+    """Sets the project data.
 
     Parameters:
-        element_id: element_id
-        data: data
-
-    Returns:
-        None
+        project_data_id: The project data id.
+        data: The data to set.
     """
 
 
 def print_error(message: str) -> None:
-    """Prints an error
+    """Prints an error.
 
     Parameters:
-        message: message
-
-    Returns:
-        None
+        message: The error message.
     """
 
 
 def get_language() -> str:
-    """Gets the 3D language
+    """Gets the 3D language.
 
     Returns:
-        3D language
+        The language.
     """
 
 
 def print_message(message: str, row: int, column: int) -> None:
-    """Prints a message
+    """Prints a message.
 
     Parameters:
-        message: message
-        row: row
-        column: column
-
-    Returns:
-        None
+        message: The message to print.
+        row: The row to print the message in.
+        column: The column to print the message in.
     """
 
 
 def get_user_int(message: str) -> int:
-    """Prompts the user for an integer
+    """Prompts the user for an integer.
 
     Parameters:
-        message: message
+        message: The message to display.
 
     Returns:
-        user integer
+        The user input integer.
     """
 
 
 def get_user_double(message: str) -> float:
-    """Prompts the user for a double
+    """Prompts the user for a double.
 
     Parameters:
-        message: message
+        message: The message to display.
 
     Returns:
-        user double
+        The user input double.
     """
 
 
 def get_user_bool(message: str, default_yes: bool) -> bool:
-    """Prompts the user for a boolean
+    """Prompts the user for a boolean.
 
     Parameters:
-        message: message
-        default_yes: default_yes
+        message: The message to display.
+        default_yes: The default value, True by default.
 
     Returns:
-        user boolean
+        The user input boolean.
     """
 
 
 def get_user_string(message: str) -> str:
-    """Prompts the user for a string
+    """Prompts the user for a string.
 
     Parameters:
-        message: message
+        message: The message to display.
 
     Returns:
-        user string
+        The user input string.
     """
 
 
 def set_project_name(project_name: str) -> None:
-    """Sets the project name
+    """Sets the project name.
 
     Parameters:
-        project_name: project_name
-
-    Returns:
-        None
+        project_name: The project name.
     """
 
 
 def set_project_number(project_number: str) -> None:
-    """Sets the project number
+    """Sets the project number.
 
     Parameters:
-        project_number: project_number
-
-    Returns:
-        None
+        project_number: The project number.
     """
 
 
 def set_project_part(project_part: str) -> None:
-    """Sets the project part
+    """Sets the project part.
 
     Parameters:
-        project_part: project_part
-
-    Returns:
-        None
+        project_part: The project part.
     """
 
 
 def set_project_architect(project_architect: str) -> None:
-    """Sets the project architect
+    """Sets the project architect.
 
     Parameters:
-        project_architect: project_architect
-
-    Returns:
-        None
+        project_architect: The project architect.
     """
 
 
 def set_project_customer(project_customer: str) -> None:
-    """Sets the project customer
+    """Sets the project customer.
 
     Parameters:
-        project_customer: project_customer
-
-    Returns:
-        None
+        project_customer: The project customer.
     """
 
 
 def set_project_designer(project_designer: str) -> None:
-    """Sets the project designer
+    """Sets the project designer.
 
     Parameters:
-        project_designer: project_designer
-
-    Returns:
-        None
+        project_designer: The project designer.
     """
 
 
 def set_project_deadline(project_deadline: str) -> None:
-    """Sets the project deadline
+    """Sets the project deadline.
 
     Parameters:
-        project_deadline: project_deadline
-
-    Returns:
-        None
+        project_deadline: The project deadline.
     """
 
 
 def set_project_user_attribute(number: int, user_attribute: str) -> None:
-    """Sets the project user attribute
+    """Sets the project user attribute.
 
     Parameters:
-        number: number
-        user_attribute: user_attribute
-
-    Returns:
-        None
+        number: The project user attribute number.
+        user_attribute: The project user attribute.
     """
 
 
 def set_project_user_attribute_name(number: int, user_attribute_name: str) -> None:
-    """Sets the project user attribute name
+    """Sets the project user attribute name.
 
     Parameters:
-        number: number
-        user_attribute_name: user_attribute_name
-
-    Returns:
-        None
+        number: The project user attribute number.
+        user_attribute_name: The project user attribute name.
     """
 
 
 def set_project_latitude(latitude: float) -> None:
-    """Sets the project latitude
+    """Sets the project latitude.
 
     Parameters:
-        latitude: latitude
-
-    Returns:
-        None
+        latitude: The project latitude.
     """
 
 
 def set_project_longitude(longitude: float) -> None:
-    """Sets the project longitude
+    """Sets the project longitude.
 
     Parameters:
-        longitude: longitude
-
-    Returns:
-        None
+        longitude: The project longitude.
     """
 
 
 def set_project_address(address: str) -> None:
-    """Sets the project address
+    """Sets the project address.
 
     Parameters:
-        address: address
-
-    Returns:
-        None
+        address: The project address.
     """
 
 
 def set_project_postal_code(postal_code: str) -> None:
-    """Sets the project postal code
+    """Sets the project postal code.
 
     Parameters:
-        postal_code: postal_code
-
-    Returns:
-        None
+        postal_code: The project postal code.
     """
 
 
 def set_project_city(city: str) -> None:
-    """Sets the project city
+    """Sets the project city.
 
     Parameters:
-        city: city
-
-    Returns:
-        None
+        city: The project city.
     """
 
 
 def set_project_country(country: str) -> None:
-    """Sets the project country
+    """Sets the project country.
 
     Parameters:
-        country: country
-
-    Returns:
-        None
+        country: The project country.
     """
 
 
 def get_user_file_from_dialog(name_filter: str) -> str:
-    """Gets a file with a dialog
+    """Gets a file with a dialog.
 
     Parameters:
-        name_filter: name_filter
+        name_filter: The dialog file filter.
 
     Returns:
-        file path
+        The file path.
     """
 
 
 def get_client_number() -> str:
-    """Gets the client number
+    """Gets the client number.
 
     Returns:
-        client number
+        The client number.
     """
 
 
 def get_user_point() -> point_3d:
-    """Gets a point from the user
+    """Gets a point from the user.
 
     Returns:
-        user point
+        The user point.
     """
 
 
 def disable_auto_display_refresh() -> None:
-    """
-    Disables the automatic refresh of the display.
-
-    This function prevents the display from updating automatically, which can
-    significantly improve performance during operations that involve multiple
-    changes or computations. The display will remain static until explicitly
-    refreshed by the user.
-
-    Returns:
-        None
+    """Disables automatic display refresh.
+       This function prevents the display from updating automatically,
+       which can significantly improve performance during operations that involve multiple changes or computations.
+       The display will remain static until explicitly refreshed by the user.
     """
 
 
 def enable_auto_display_refresh() -> None:
-    """
-    Enables the automatic refresh of the display.
-    This function restores the default behavior where the display updates
-    automatically after each operation. Use this function to resume normal
-    display updates after previously disabling them with disable_auto_display_refresh().
-    It's recommended to call this function after completing operations that required
-    disabled display refreshing.
-
+    """Enables automatic display refresh.
+       This function restores the default behavior where the display updates automatically after each operation. 
+       Use this function to resume normal display updates after previously disabling them with disable_auto_display_refresh().
+       It's recommended to call this function after completing operations that required disabled display refreshing.
 
     Examples:
         >>> import cadwork
@@ -358,65 +291,56 @@ def enable_auto_display_refresh() -> None:
         >>> uc.enable_auto_display_refresh()
         >>> ec.recreate_elements(your_list_of_elements)
 
-
     Note:
         If elements were created while display refresh was disabled, it's important
         to recreate these elements after enabling the display refresh to ensure they
         are properly visualized in cadwork.
-
-    Returns:
-        None
     """
 
 
 def create_new_guid() -> str:
-    """Creates a new GUID
+    """Creates a new GUID.
 
     Returns:
-        GUID
+        The new GUID.
     """
 
 
 def print_to_console(message: str) -> None:
-    """Prints a message to the console
+    """Prints a message to the console.
 
     Parameters:
-        message: message
-
-    Returns:
-        None
+        message: The message.
     """
 
 
 def export_screen_to_image(file_path: str, factor: int) -> None:
-    """Exports the screen to an image
+    """Exports the screen to an image.
 
     Parameters:
-        file_path: file_path
-        factor: factor
-
-    Returns:
-        None
+        file_path: The file path.
+        factor: The image factor.
     """
 
 
 def get_new_user_file_from_dialog(name_filter: str) -> str:
-    """Gets a new file with a dialog
+    """Gets a new file with a dialog.
 
     Parameters:
-        name_filter: name_filter
+        name_filter: The dialog file filter.
 
     Returns:
-        file path
+        The file path.
     """
 
-
+ 
 def api_autostart(api_name: str, option: int) -> int:
-    """Manages the autostart configuration for a specified API.
+    """Sets an API autostart option.
 
     Parameters:
-        api_name: Name of the API to be managed.
-        option: Determines the operation mode:
+        api_name: The name of the API be managed.
+        option: The autostart option to use.
+
 
             - -1: Checks if API is configured for autostart without making changes. Returns 1 if API is found, 0 if not, or -1 in case of errors.
             - 1: Enables autostart for the specified API.
@@ -427,7 +351,6 @@ def api_autostart(api_name: str, option: int) -> int:
     to manage the autostart state of the API.
 
     Examples:
-
         >>> api_autostart("my_api", 1)  # Enable autostart
         >>> api_autostart("my_api", 0)  # Disable autostart
         >>> api_autostart("my_api", -1)  # Check current autostart state
@@ -438,846 +361,744 @@ def api_autostart(api_name: str, option: int) -> int:
 
 
 def enable_autostart(api_name: str) -> None:
-    """enable autostart
+    """Enables autostart for a given API.
 
     Parameters:
-        api_name: api_name
-
-    Returns:
-        None
+        api_name: The name of the API for which to enable autostart.
     """
 
 
 def disable_autostart(api_name: str) -> None:
-    """disable autostart
+    """Disables autostart for a given API.
 
     Parameters:
-        api_name: api_name
-
-    Returns:
-        None
+        api_name: The name of the API for which to disable autostart.
     """
 
 
 def check_autostart(api_name: str) -> bool:
-    """check autostart
+    """Checks if autostart is enabled for a given API.
 
     Parameters:
-        api_name: api_name
+        api_name: The name of the API to check.
 
     Returns:
-        bool
+        True if autostart is enabled, false otherwise.
     """
 
 
 def delete_project_data(element_id: str) -> None:
-    """Deletes the project data
+    """Deletes the project data.
 
     Parameters:
-        element_id: element_id
-
-    Returns:
-        None
+        element_id: The project data id.
     """
 
 
 def run_external_program(name: str) -> bool:
-    """Runs a 3D external program
+    """Runs a 3D external program.
 
     Parameters:
-        name: name
+        name: The external program name.
 
     Returns:
-        external program return
+        False if the program could not be run, true otherwise.
     """
 
 
 def save_3d_file_silently() -> None:
-    """Saves the 3D file silently
-
-    Returns:
-        None
+    """Saves the 3D file silently.
     """
 
 
 def get_licence_first_part() -> str:
-    """Gets the first part of the license
+    """Gets the first part of the licence.
 
     Returns:
-        first part of license
+        The first part of the licence.
     """
 
 
 def get_licence_second_part() -> str:
-    """Gets the second part of the license
+    """Gets the second part of the licence.
 
     Returns:
-        second part of license
+        The second part of the licence.
     """
 
 
 def show_progress_bar() -> None:
-    """Shows a ProgressBar in the CommandBar
-
-    Returns:
-        None
+    """Shows a ProgressBar in the CommandBar.
     """
 
 
 def update_progress_bar(value: int) -> None:
-    """Updates the ProgressBar with a value
+    """Updates the ProgressBar with a value.
 
     Parameters:
-        value: value
-
-    Returns:
-        None
+        value: A value between 0 and 100.
     """
 
 
 def hide_progress_bar() -> None:
-    """Hides the ProgressBar
-
-    Returns:
-        None
+    """Hides the ProgressBar.
     """
 
 
 def get_user_color(initial_color: int) -> int:
-    """Gets a color choosen by the user
+    """Gets a color choosen by the user.
 
     Parameters:
-        initial_color: initial_color
+        initial_color: The initial color.
 
     Returns:
-        the colornumber
+        The color number.
     """
 
 
 def get_3d_linear_units() -> str:
-    """Gets the current linear units
+    """Gets the current linear units.
 
     Returns:
-        str
+        The current linear units.
     """
 
 
 def get_3d_linear_display_units() -> str:
-    """Gets the current display units
+    """Gets the current display units.
 
     Returns:
-        str
+        The current display units.
     """
 
 
 def get_3d_angular_units() -> str:
-    """Gets the current angular units
+    """Gets the current angular units.
 
     Returns:
-        str
+        The current angular units.
     """
 
 
 def get_3d_angular_display_units() -> str:
-    """Gets the current angular display units
+    """Gets the current angular display units.
 
     Returns:
-        str
+        The current angular display units.
     """
 
 
 def get_3d_build_date() -> str:
-    """Gets the current build date
+    """Gets the current build date.
 
     Returns:
-        str
+        The current build date.
     """
 
 
 def set_project_elevation(elevation: float) -> None:
-    """Sets the project elevation
+    """Sets the project elevation.
 
     Parameters:
-        elevation: elevation
-
-    Returns:
-        None
+        elevation: The project elevation.
     """
 
 
 def clear_errors() -> None:
-    """clear errors
-
-    Returns:
-        None
+    """Clears all errors.
     """
 
 
 def push_check_and_query_data() -> None:
-    """push check and query data
-
-    Returns:
-        None
+    """Pushes the current state of check and query data onto a stack.
     """
 
 
 def pop_check_and_query_data() -> None:
-    """pop check and query data
-
-    Returns:
-        None
+    """Pops the most recent state of check and query data from the stack.
     """
 
 
 def change_check_and_query_data_to_no_queries() -> None:
-    """change check and query data to no queries
-
-    Returns:
-        None
+    """Changes the current state of check and query data to no queries.
     """
 
 
 def change_check_and_query_data_to_queries() -> None:
-    """change check and query data to queries
-
-    Returns:
-        None
+    """Changes the current state of check and query data to allow queries.
     """
 
 
 def is_direct_info_enabled() -> bool:
-    """is direct info enabled
+    """Checks if Direct Info is enabled.
 
     Returns:
-        bool
+        True if Direct Info is enabled, false otherwise.
     """
 
 
 def enable_direct_info() -> None:
-    """enable direct info
-
-    Returns:
-        None
+    """Enables Direct Info.
     """
 
 
 def disable_direct_info() -> None:
-    """disable direct info
-
-    Returns:
-        None
+    """Disables Direct Info.
     """
 
 
 def load_attribute_display_settings(file_path: str) -> None:
-    """load attribute display settings
+    """Loads attribute display settings from a file.
 
     Parameters:
-        file_path: file_path
-
-    Returns:
-        None
+        file_path: The path to the file containing the settings.
     """
 
 
 def set_project_description(description: str) -> None:
-    """set project description
+    """Sets the project description.
 
     Parameters:
-        description: description
-
-    Returns:
-        None
+        description: The new description for the project.
     """
 
 
 def start_project_data_dialog() -> None:
-    """start project data dialog
-
-    Returns:
-        None
+    """Starts the project data dialog.
     """
 
 
 def init_LxSDK() -> None:
-    """init LxSDK
-
-    Returns:
-        None
+    """Initializes the LxSDK.
     """
 
 
-def load_element_attribute_display_settings(file_path: str, elements: List[int]) -> None:
-    """load element attribute display settings
+def load_element_attribute_display_settings(file_path: str, elements: List[ElementId]) -> None:
+    """Loads element attribute display settings from a file.
 
     Parameters:
-        file_path: file_path
-        elements: elements
-
-    Returns:
-        None
+        file_path: The path to the file containing the settings.
+        elements: The element list for which to load the settings.
     """
 
 
 def get_global_x_offset() -> float:
-    """get global x offset
+    """Gets the global X offset.
 
     Returns:
-        float
+        The global X offset.
     """
 
 
 def set_global_x_offset(offset: float) -> None:
-    """set global x offset
+    """Sets the global X offset.
 
     Parameters:
-        offset: offset
-
-    Returns:
-        None
+        offset: The new global X offset.
     """
 
 
 def get_global_y_offset() -> float:
-    """get global y offset
+    """Gets the global Y offset.
 
     Returns:
-        float
+        The global Y offset.
     """
 
 
 def set_global_y_offset(offset: float) -> None:
-    """set global y offset
+    """Sets the global Y offset.
 
     Parameters:
-        offset: offset
-
-    Returns:
-        None
+        offset: The new global Y offset.
     """
 
 
 def get_global_z_offset() -> float:
-    """get global z offset
+    """Gets the global Z offset.
 
     Returns:
-        float
+        The global Z offset.
     """
 
 
 def set_global_z_offset(offset: float) -> None:
-    """set global z offset
+    """Sets the global Z offset.
 
     Parameters:
-        offset: offset
-
-    Returns:
-        None
+        offset: The new global Z offset.
     """
 
 
 def show_north_arrow() -> None:
-    """show north arrow
-
-    Returns:
-        None
+    """Shows the north arrow on the 3D view.
     """
 
 
 def hide_north_arrow() -> None:
-    """hide north arrow
-
-    Returns:
-        None
+    """Hides the north arrow on the 3D view.
     """
 
 
 def is_north_arrow_visible() -> bool:
-    """is north arrow visible
+    """Checks if the north arrow is visible on the 3D view.
 
     Returns:
-        bool
+        True if the north arrow is visible, false otherwise.
     """
 
 
 def get_north_angle() -> float:
-    """get north angle
+    """Gets the angle of the north direction.
 
     Returns:
-        float
+        The angle of the north direction in degrees.
     """
 
 
 def set_north_angle(north_angle: float) -> None:
-    """set north angle
+    """Sets the angle of the north direction.
 
     Parameters:
-        north_angle: north_angle
-
-    Returns:
-        None
+        north_angle: The angle of the north direction in degrees.
     """
 
 
 def get_user_file_from_dialog_in_path(name_filter: str, path: str) -> str:
-    """get user file from dialog in path
+    """Gets a user file from a dialog in a specified path.
 
     Parameters:
-        name_filter: name_filter
-        path: path
+        name_filter: The filter for the dialog.
+        path: The path in which to get the user file.
 
     Returns:
-        str
+        A string containing the user file.
     """
 
 
 def get_new_user_file_from_dialog_in_path(name_filter: str, path: str) -> str:
-    """get new user file from dialog in path
+    """Gets a new user file from a dialog in a specified path.
 
     Parameters:
-        name_filter: name_filter
-        path: path
+        name_filter: The filter for the dialog.
+        path: The path in which to get the new user file.
 
     Returns:
-        str
+        A string containing the new user file.
     """
 
 
 def enable_update_variant() -> None:
-    """enable update variant
-
-    Returns:
-        None
+    """Enables the update variant.
     """
 
 
 def disable_update_variant() -> None:
-    """disable update variant
-
-    Returns:
-        None
+    """Disables the update variant.
     """
 
 
 def get_user_points() -> List[point_3d]:
-    """get user points
+    """Gets user points.
 
     Returns:
-        List[point_3d]
+        A list of user points.
     """
 
 
 def get_user_points_with_count(count: int) -> List[point_3d]:
-    """get user points with count
+    """Gets user points with a specified count.
 
     Parameters:
-        count: count
+        count: The number of user points to get.
 
     Returns:
-        List[point_3d]
+        A list of user points.
     """
 
 
 def get_user_path_from_dialog() -> str:
-    """get user path from dialog
+    """Gets the user path from a dialog.
 
     Returns:
-        str
+        A string containing the user path.
     """
 
 
 def get_user_path_from_dialog_in_path(path: str) -> str:
-    """get user path from dialog in path
+    """Gets the user path from a dialog in a specified path.
 
     Parameters:
-        path: path
+        path: The path in which to get the user path.
 
     Returns:
-        str
+        A string containing the user path.
     """
 
 
 def execute_shortcut(shortcut_key_modifier: shortcut_key_modifier, shortcut_key: shortcut_key) -> None:
-    """execute shortcut
+    """Executes a shortcut.
 
     Parameters:
-        shortcut_key_modifier: shortcut_key_modifier
-        shortcut_key: shortcut_key
-
-    Returns:
-        None
+        shortcut_key_modifier: The modifier key for the shortcut.
+        shortcut_key: The key for the shortcut.
     """
 
 
 def run_external_program_from_custom_directory(file_path: str) -> bool:
-    """Runs a 3D external program from a custom file path
+    """Runs a 3D external program from a custom directory.
 
     Parameters:
-        file_path: file_path
+        file_path: The external program file path.
 
     Returns:
-        external program return
+        False if error, true otherwise.
     """
 
 
 def get_3d_file_name() -> str:
-    """Gets the 3D file name
+    """Gets the 3D file name.
 
     Returns:
-        3D file name
+        The 3D file name.
     """
 
 
 def get_project_data(element_id: str) -> str:
-    """Gets the project data
+    """Gets the project data.
 
     Parameters:
-        element_id: element_id
+        element_id: The project data id.
 
     Returns:
-        project data
+        The project data.
     """
 
 
 def get_project_name() -> str:
-    """Gets the project name
+    """Gets the project name.
 
     Returns:
-        project name
+        The project name.
     """
 
 
 def get_project_part() -> str:
-    """Sets the project part
+    """Gets the project part.
 
     Returns:
-        project part
+        The project part.
     """
 
 
 def get_project_architect() -> str:
-    """Gets the project architect
+    """Gets the project architect.
 
     Returns:
-        project architect
+        The project architect.
     """
 
 
 def get_project_number() -> str:
-    """Gets the project number
+    """Gets the project number.
 
     Returns:
-        project number
+        The project number.
     """
 
 
 def get_project_customer() -> str:
-    """Gets the project customer
+    """Gets the project customer.
 
     Returns:
-        project customer
+        The project customer.
     """
 
 
 def get_project_designer() -> str:
-    """Gets the project designer
+    """Gets the project designer.
 
     Returns:
-        project designer
+        The project designer.
     """
 
 
 def get_project_deadline() -> str:
-    """Gets the project deadline
+    """Gets the project deadline.
 
     Returns:
-        project deadline
+        The project deadline.
     """
 
 
 def get_project_user_attribute(number: int) -> str:
-    """Gets the project user attribute
+    """Gets the project user attribute.
 
     Parameters:
-        number: number
+        number: The project user attribute number.
 
     Returns:
-        project user attribute
+        The project user attribute.
     """
 
 
 def get_project_user_attribute_name(number: int) -> str:
-    """Gets the project user attribute name
+    """Gets the project user attribute name.
 
     Parameters:
-        number: number
+        number: The project user attribute number.
 
     Returns:
-        project user attribute name
+        The project user attribute name.
     """
 
 
 def get_project_latitude() -> float:
-    """Gets the project latitude
+    """Gets the project latitude.
 
     Returns:
-        project latitude
+        The project latitude.
     """
 
 
 def get_project_longitude() -> float:
-    """Gets the project longitude
+    """Gets the project longitude.
 
     Returns:
-        project longitude
+        The project longitude.
     """
 
 
 def get_project_postal_code() -> str:
-    """Gets the project postal code
+    """Gets the project postal code.
 
     Returns:
-        project postal code
+        The project postal code.
     """
 
 
 def get_project_address() -> str:
-    """Gets the project address
+    """Gets the project address.
 
     Returns:
-        project address
+        The project address.
     """
 
 
 def get_project_city() -> str:
-    """Gets the project city
+    """Gets the project city.
 
     Returns:
-        project city
+        The project city.
     """
 
 
 def get_project_country() -> str:
-    """Gets the project country
+    """Gets the project country.
 
     Returns:
-        project country
+        The project country.
     """
 
 
 def get_project_elevation() -> float:
-    """Gets the project elevation
+    """Gets the project elevation.
 
     Returns:
-        project elevation
+        The project elevation.
     """
 
 
 def get_project_description() -> str:
-    """get project description
+    """Gets the project description.
 
     Returns:
-        str
+        A string containing the project description.
     """
 
 
 def get_project_guid() -> str:
-    """Gets the project GUID
+    """Gets the project GUID.
 
     Returns:
-        project GUID
+        The project GUID.
     """
 
 
 def get_3d_userprofil_path() -> str:
-    """Gets the 3D userprofil path
+    """Gets the 3D userprofil path.
 
     Returns:
-        the 3D userprofil path
+        The 3D userprofil path.
     """
 
 
 def get_plugin_path() -> str:
-    """get plugin path
+    """Gets the plugin path.
 
     Returns:
-        str
+        A string containing the plugin path.
     """
 
 
 def get_millimetre_from_imperial_string(value: str) -> float:
-    """get millimetre from imperial string
+    """Converts an imperial string to millimetres.
 
     Parameters:
-        value: value
+        value: The imperial string to convert.
 
     Returns:
-        float
+        The value in millimetres.
     """
 
 
 def get_imperial_string_from_millimetre(value: float) -> str:
-    """get imperial string from millimetre
+    """Converts a value in millimetres to an imperial string.
 
     Parameters:
-        value: value
+        value: The value in millimetres to convert.
 
     Returns:
-        str
+        The value as an imperial string.
     """
 
 
 def get_user_catalog_path() -> str:
-    """get user catalog path
+    """Gets the user catalog path.
 
     Returns:
-        str
+        A string containing the user catalog path.
     """
 
 
 def get_3d_hwnd() -> int:
-    """Gets the 3D HWND
+    """Gets the 3D HWND.
 
     Returns:
-        3D HWND
+        The 3D HWND.
     """
 
 
 def close_cadwork_document_saved() -> None:
-    """close cadwork saved
-
-    Returns:
-        None
+    """close cadwork saved.
     """
 
 
 def close_cadwork_document_unsaved() -> None:
-    """close cadwork document unsaved
-
-    Returns:
-        None
+    """close cadwork unsaved.
     """
 
 
 def get_use_of_global_coordinates() -> bool:
-    """get use of global coordinates
+    """Gets the use of global coordinates.
 
     Returns:
-        bool
+        True if global coordinates are used, false otherwise.
     """
 
 
 def set_use_of_global_coordinates(use_of_global_coordinates: bool) -> None:
-    """Sets the use of global coordinates
+    """Sets the use of global coordinates.
 
     Parameters:
-        use_of_global_coordinates: use_of_global_coordinates
-
-    Returns:
-        None
+        use_of_global_coordinates: True to use global coordinates, false otherwise.
     """
 
 
 def get_global_origin() -> point_3d:
-    """Gets the global origin
+    """Gets the global origin.
 
     Returns:
-        global origin
+        The global origin.
     """
 
 
 def set_global_origin(global_origin: point_3d) -> None:
-    """Sets the global origin
+    """Sets the global origin.
 
     Parameters:
-        global_origin: global_origin
-
-    Returns:
-        None
+        global_origin: The global origin.
     """
 
 
 def create_snapshot() -> str:
-    """get snapshot from screen
+    """Get snapshot from screen.
 
     Returns:
-        snapshot
+        The snapshot as a string.
     """
 
 
 def get_3d_gui_upper_left_screen_coordinates() -> Tuple[int, int]:
-    """get 3d gui upper left screen coordinates
+    """Get the coordinates of the upper left corner of the 3D GUI.
 
     Returns:
-        coordinates of the upper left corner of the 3D GUI
+        The coordinates of the upper left corner of the 3D GUI.
     """
 
 
 def get_3d_main_window_geometry() -> 'window_geometry':
-    """get 3d main window geometry
+    """Get the geometry of 3d main window.
 
     Returns:
-        window geometry
+        The geometry of the 3D main window.
     """
 
 
 def get_project_data_keys() -> List[str]:
-    """get project data keys
+    """Gets all keys for project data.
 
     Returns:
-        List[str]
+        The list of project data keys.
     """
 
 
 def get_user_int_with_default_value(message: str, default_value: int) -> int:
-    """get user int with default value
+    """Prompts the user for an integer with a default value.
 
     Parameters:
-        message: message
-        default_value: default_value
+        message: The message to display.
+        default_value: The default value.
 
     Returns:
-        int
+        The user integer.
     """
 
 
 def get_user_double_with_default_value(message: str, default_value: float) -> float:
-    """get user double with default value
+    """Prompts the user for a double with a default value.
 
     Parameters:
-        message: message
-        default_value: default_value
+        message: The message to display.
+        default_value: The default value.
 
     Returns:
-        float
+        The user double.
     """
 
 
 def get_user_string_with_default_value(message: str, default_value: str) -> str:
-    """get user string with default value
+    """Prompts the user for a string with a default value.
 
     Parameters:
-        message: message
-        default_value: default_value
+        message: The message to display.
+        default_value: The default value.
 
     Returns:
-        str
+        The user string.
     """
 
 
 def get_3d_version_name() -> str:
-    """get 3d version name
+    """Gets the 3D version name.
 
     Returns:
-        str
+        The 3D version name.
     """
 
 
 def redirect_python_output_to_logger() -> None:
-    """redirect python output to logger.
-    This function is used to redirect the output of the Python interpreter to the logger.
-    This is useful for debugging and logging purposes.
-
-    Returns:
-        None
+    """Redirects output from Python's print function to the cadwork logger.
+       This function is used to redirect the output of the Python interpreter to the logger. 
+       This is useful for debugging and logging purposes.
     """
