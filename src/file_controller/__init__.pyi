@@ -6,18 +6,6 @@ from cadwork.dxf_layer_format_type import dxf_layer_format_type
 from cadwork.dxf_export_version import dxf_export_version
 from cadwork.api_types import *
 
-
-def get_last_error(error_code: int) -> str:
-    """Gets the last error.
-
-    Parameters:
-        error_code: The error code.
-
-    Returns:
-        The error string.
-    """
-
-
 def export_stl_file(element_id_list: List[ElementId], file_path: str) -> None:
     """Exports an STL file.
 

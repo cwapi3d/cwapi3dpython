@@ -28,16 +28,6 @@ def get_all_caddy_element_ids() -> List[int]:
         element ID list
     """
 
-def get_last_error(a0: int) -> str:
-    """get last error
-
-    Parameters:
-        a0: a0
-
-    Returns:
-        str
-    """
-
 def clear_errors() -> None:
     """clear errors
 

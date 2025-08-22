@@ -1,15 +1,6 @@
 from typing import List
 from cadwork.point_3d import point_3d
 
-def get_last_error(error_code: int) -> str:
-    """Gets the last error
-
-    Parameters:
-        error_code: error_code
-
-    Returns:
-        error string
-    """
 
 def export_2d_wireframe_with_clipboard(clipboard_number: int, with_layout: bool) -> None:
     """Exports a 2D wireframe to the clipboard

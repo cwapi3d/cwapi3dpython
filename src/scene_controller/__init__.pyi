@@ -1,15 +1,5 @@
 from typing import List
 
-def get_last_error(error_code: int) -> str:
-    """Gets the last error
-
-    Parameters:
-        error_code: error_code
-
-    Returns:
-        error string
-    """
-
 def add_scene(name: str) -> bool:
     """Adds a new scene
 

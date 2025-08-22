@@ -7,16 +7,6 @@ from cadwork.shortcut_key import shortcut_key
 from cadwork.shortcut_key_modifier import shortcut_key_modifier
 
 
-def get_last_error(error_code: int) -> str:
-    """Gets the last error.
-
-    Parameters:
-        error_code: The error code.
-
-    Returns:
-        The error string.
-    """
-
 def get_3d_version() -> int:
     """Gets the 3D version.
 

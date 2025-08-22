@@ -2,16 +2,6 @@ from typing import List
 from cadwork import vertex_list
 
 
-def get_last_error(error_code: int) -> str:
-    """Gets the last error
-
-    Parameters:
-        error_code: error_code
-
-    Returns:
-        error string
-    """
-
 def export_btl(btl_version: int, file_path: str) -> None:
     """Exports a BTL file
 

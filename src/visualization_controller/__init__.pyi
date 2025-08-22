@@ -2,16 +2,6 @@ from typing import List
 from cadwork.camera_data import camera_data
 from cadwork.point_3d import point_3d
 
-def get_last_error(error_code: int) -> str:
-    """Gets the last error
-
-    Parameters:
-        error_code: error_code
-
-    Returns:
-        error string
-    """
-
 def set_color(element_id_list: List[int], color_id: int) -> None:
     """Sets the element color
 

@@ -1,16 +1,6 @@
 from typing import List
 from cadwork.api_types import *
 
-def get_last_error(error_code: int) -> str:
-    """Gets the last error message.
-
-    Parameters:
-        error_code: A pointer to an integer where the error code will be stored.
-
-    Returns:
-        A string containing the last error message.
-    """
-
 def get_endtype_id(name: str) -> EndtypeId:
     """Gets the endtype id by endtype name.
 

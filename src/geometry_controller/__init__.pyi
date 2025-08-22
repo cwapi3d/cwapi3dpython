@@ -1111,14 +1111,3 @@ def get_standard_element_length_from_name(standard_element_name: str) -> float:
     Returns:
         float
     """
-
-
-def get_last_error(error_code: int) -> str:
-    """get last error
-
-    Parameters:
-        error_code: error_code
-
-    Returns:
-        str
-    """

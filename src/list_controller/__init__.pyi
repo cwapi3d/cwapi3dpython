@@ -1,17 +1,6 @@
 from typing import List
 
 
-def get_last_error(error_code: int) -> str:
-    """Gets the last error
-
-    Parameters:
-        error_code: error_code
-
-    Returns:
-        error string
-    """
-
-
 def export_production_list(element_id_list: List[int], file_path: str) -> None:
     """Exports a production list
 
