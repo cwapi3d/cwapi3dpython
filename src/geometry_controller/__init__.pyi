@@ -1,1113 +1,914 @@
 from typing import List
+from cadwork.api_types import ElementId, UnsignedInt
 from cadwork.facet_list import facet_list
 from cadwork.point_3d import point_3d
 
 
-def rotate_height_axis_90(element_id_list: List[int]) -> None:
-    """rotate height axis 90
+def rotate_height_axis_90(element_id_list: List[ElementId]) -> None:
+    """Rotates the element height axis 90 degrees.
 
     Parameters:
-        element_id_list: element_id_list
-
-    Returns:
-        None
+        element_id_list: The element id list.
     """
 
-
-def rotate_height_axis_180(element_id_list: List[int]) -> None:
-    """rotate height axis 180
+def rotate_height_axis_180(element_id_list: List[ElementId]) -> None:
+    """Rotates the element height axis 180 degrees.
 
     Parameters:
-        element_id_list: element_id_list
-
-    Returns:
-        None
+        element_id_list: The element id list.
     """
 
-
-def set_over_width(element_id_list: List[int], value: float) -> None:
-    """set over width
+def set_over_width(element_id_list: List[ElementId], value: float) -> None:
+    """Sets the element overwidth.
 
     Parameters:
-        element_id_list: element_id_list
-        value: value
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        value: The element overwidth.
     """
 
-
-def set_over_height(element_id_list: List[int], value: float) -> None:
-    """set over height
+def set_over_height(element_id_list: List[ElementId], value: float) -> None:
+    """Sets the element overheight.
 
     Parameters:
-        element_id_list: element_id_list
-        value: value
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        value: The element overheight.
     """
 
-
-def set_over_length(element_id_list: List[int], value: float) -> None:
-    """set over length
+def set_over_length(element_id_list: List[ElementId], value: float) -> None:
+    """Sets the element overlength.
 
     Parameters:
-        element_id_list: element_id_list
-        value: value
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        value: The element overlength.
     """
 
-
-def set_rounding_width(element_id_list: List[int], value: float) -> None:
-    """set rounding width
+def set_rounding_width(element_id_list: List[ElementId], value: float) -> None:
+    """Sets the element rounding width.
 
     Parameters:
-        element_id_list: element_id_list
-        value: value
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        value: The element rounding width.
     """
 
-
-def set_rounding_height(element_id_list: List[int], value: float) -> None:
-    """set rounding height
+def set_rounding_height(element_id_list: List[ElementId], value: float) -> None:
+    """Sets the element rounding height.
 
     Parameters:
-        element_id_list: element_id_list
-        value: value
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        value: The element rounding height.
     """
 
-
-def set_rounding_length(element_id_list: List[int], value: float) -> None:
-    """set rounding length
+def set_rounding_length(element_id_list: List[ElementId], value: float) -> None:
+    """Sets the element rounding length.
 
     Parameters:
-        element_id_list: element_id_list
-        value: value
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        value: The element rounding length.
     """
 
-
-def set_cross_correction_negative_width(element_id_list: List[int], value: float) -> None:
-    """set cross correction negative width
+def set_cross_correction_negative_width(element_id_list: List[ElementId], value: float) -> None:
+    """Sets the element negative width cross correction.
 
     Parameters:
-        element_id_list: element_id_list
-        value: value
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        value: The element negative width cross correction.
     """
 
-
-def set_cross_correction_positive_width(element_id_list: List[int], value: float) -> None:
-    """set cross correction positive width
+def set_cross_correction_positive_width(element_id_list: List[ElementId], value: float) -> None:
+    """Sets the element positive width cross correction.
 
     Parameters:
-        element_id_list: element_id_list
-        value: value
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        value: The element positive width cross correction.
     """
 
-
-def set_cross_correction_negative_height(element_id_list: List[int], value: float) -> None:
-    """set cross correction negative height
+def set_cross_correction_negative_height(element_id_list: List[ElementId], value: float) -> None:
+    """Sets the element negative height cross correction.
 
     Parameters:
-        element_id_list: element_id_list
-        value: value
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        value: The element negative height cross correction.
     """
 
-
-def set_cross_correction_positive_height(element_id_list: List[int], value: float) -> None:
-    """set cross correction positive height
+def set_cross_correction_positive_height(element_id_list: List[ElementId], value: float) -> None:
+    """Sets the element positive height cross correction.
 
     Parameters:
-        element_id_list: element_id_list
-        value: value
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        value: The element positive height cross correction.
     """
 
-
-def set_cross_correction_negative_length(element_id_list: List[int], value: float) -> None:
-    """set cross correction negative length
+def set_cross_correction_negative_length(element_id_list: List[ElementId], value: float) -> None:
+    """Sets the element negative length cross correction.
 
     Parameters:
-        element_id_list: element_id_list
-        value: value
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        value: The element negative length cross correction.
     """
 
-
-def set_cross_correction_positive_length(element_id_list: List[int], value: float) -> None:
-    """set cross correction positive length
+def set_cross_correction_positive_length(element_id_list: List[ElementId], value: float) -> None:
+    """Sets the element positive length cross correction.
 
     Parameters:
-        element_id_list: element_id_list
-        value: value
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        value: The element positive length cross correction.
     """
 
-
-def apply_global_scale(element_id_list: List[int], scale: float, origin: point_3d) -> None:
-    """apply global scale
+def apply_global_scale(element_id_list: List[ElementId], scale: float, origin: point_3d) -> None:
+    """Applies a global scale to element.
 
     Parameters:
-        element_id_list: element_id_list
-        scale: scale
-        origin: origin
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        scale: The global scale.
+        origin: The scaling origin.
     """
 
-
-def auto_regenerate_axes(element_id_list: List[int]) -> None:
-    """auto regenerate axes
+def auto_regenerate_axes(element_id_list: List[ElementId]) -> None:
+    """Automatically regenerates axes on element.
 
     Parameters:
-        element_id_list: element_id_list
-
-    Returns:
-        None
+        element_id_list: The element id list.
     """
 
-
-def rotate_length_axis_90(element_id_list: List[int]) -> None:
-    """rotate length axis 90
+def rotate_length_axis_90(element_id_list: List[ElementId]) -> None:
+    """Rotates element length axis 90 degrees.
 
     Parameters:
-        element_id_list: element_id_list
-
-    Returns:
-        None
+        element_id_list: The element id list.
     """
 
-
-def rotate_length_axis_180(element_id_list: List[int]) -> None:
-    """rotate length axis 180
+def rotate_length_axis_180(element_id_list: List[ElementId]) -> None:
+    """Rotates element length axis 180 degrees.
 
     Parameters:
-        element_id_list: element_id_list
-
-    Returns:
-        None
+        element_id_list: The element id list.
     """
 
-
-def invert_model(element_id_list: List[int]) -> None:
-    """invert model
+def invert_model(element_id_list: List[ElementId]) -> None:
+    """Inverts element model.
 
     Parameters:
-        element_id_list: element_id_list
-
-    Returns:
-        None
+        element_id_list: The element id list.
     """
 
-
-def set_width_real(elements: List[int], width: float) -> None:
-    """set width real
+def set_width_real(element_id_list: List[ElementId], width: float) -> None:
+    """Sets the element real width.
 
     Parameters:
-        elements: elements
-        width: width
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        width: The element real width.
     """
 
-
-def set_height_real(elements: List[int], height: float) -> None:
-    """set height real
+def set_height_real(element_id_list: List[ElementId], height: float) -> None:
+    """Sets the element real height.
 
     Parameters:
-        elements: elements
-        height: height
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        height: The element real height.
     """
 
-
-def set_length_real(elements: List[int], length: float) -> None:
-    """set length real
+def set_length_real(element_id_list: List[ElementId], length: float) -> None:
+    """Sets the element real length.
 
     Parameters:
-        elements: elements
-        length: length
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        length: The element real length.
     """
 
-
-def rotate_height_axis_2_points(elements: List[int], point1: point_3d, point2: point_3d) -> None:
-    """rotate height axis 2 points
+def rotate_height_axis_2_points(element_id_list: List[ElementId], point1: point_3d, point2: point_3d) -> None:
+    """Rotates the element height axis via 2 points.
 
     Parameters:
-        elements: elements
-        point1: point1
-        point2: point2
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        point1: The first point.
+        point2: The second point.
     """
-
 
 def clear_errors() -> None:
-    """clear errors
-
-    Returns:
-        None
+    """Clears all errors.
     """
 
-
-def set_drilling_tolerance(elements: List[int], tolerance: float) -> None:
-    """set drilling tolerance
+def set_drilling_tolerance(element_id_list: List[ElementId], tolerance: float) -> None:
+    """Sets the drilling tolerance of the axis.
 
     Parameters:
-        elements: elements
-        tolerance: tolerance
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        tolerance: The new drilling tolerance.
     """
 
-
-def auto_regenerate_axes_silently(element_id_list: List[int]) -> None:
-    """auto regenerate axes silently
+def auto_regenerate_axes_silently(element_id_list: List[ElementId]) -> None:
+    """Automatically regenerates axes on elements without any user interaction.
 
     Parameters:
-        element_id_list: element_id_list
-
-    Returns:
-        None
+        element_id_list: The list of element IDs for which the axes will be regenerated.
     """
 
-
-def rotate_length_axis_2_points(elements: List[int], point1: point_3d, point2: point_3d) -> None:
-    """rotate length axis 2 points
+def rotate_length_axis_2_points(element_id_list: List[ElementId], point1: point_3d, point2: point_3d) -> None:
+    """Rotates the element length axis via 2 points.
 
     Parameters:
-        elements: elements
-        point1: point1
-        point2: point2
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        point1: The first point.
+        point2: The second point.
     """
 
-
-def get_width(element_id: int) -> float:
-    """get width
+def get_width(element_id: ElementId) -> float:
+    """Gets the element width.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element width.
     """
 
-
-def get_height(element_id: int) -> float:
-    """get height
+def get_height(element_id: ElementId) -> float:
+    """Gets the element height.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element height.
     """
 
-
-def get_length(element_id: int) -> float:
-    """get length
+def get_length(element_id: ElementId) -> float:
+    """Gets the element length.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element length.
     """
 
-
-def get_p1(element_id: int) -> point_3d:
-    """get p1
+def get_p1(element_id: ElementId) -> point_3d:
+    """Gets the element P1.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        point_3d
+        The element P1.
     """
 
-
-def get_p2(element_id: int) -> point_3d:
-    """get p2
+def get_p2(element_id: ElementId) -> point_3d:
+    """Gets the element P2.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        point_3d
+        The element P2.
     """
 
-
-def get_p3(element_id: int) -> point_3d:
-    """get p3
+def get_p3(element_id: ElementId) -> point_3d:
+    """Gets the element P3.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        point_3d
+        The element P3.
     """
 
-
-def get_start_height_cut_angle(element_id: int) -> float:
-    """get start height cut angle
+def get_start_height_cut_angle(element_id: ElementId) -> float:
+    """Gets the element start height cut angle.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element start height cut angle.
     """
 
-
-def get_start_width_cut_angle(element_id: int) -> float:
-    """get start width cut angle
+def get_start_width_cut_angle(element_id: ElementId) -> float:
+    """Gets the element start width cut angle.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element start width cut angle.
     """
 
-
-def get_end_height_cut_angle(element_id: int) -> float:
-    """get end height cut angle
+def get_end_height_cut_angle(element_id: ElementId) -> float:
+    """Gets the element end height cut angle.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element end height cut angle.
     """
 
-
-def get_end_width_cut_angle(element_id: int) -> float:
-    """get end width cut angle
+def get_end_width_cut_angle(element_id: ElementId) -> float:
+    """Gets the element end width cut angle.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element end width cut angle.
     """
 
-
-def get_over_width(element_id: int) -> float:
-    """get over width
+def get_over_width(element_id: ElementId) -> float:
+    """Gets the element overwidth.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element overwidth.
     """
 
-
-def get_over_height(element_id: int) -> float:
-    """get over height
+def get_over_height(element_id: ElementId) -> float:
+    """Gets the element overheight.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element overheight.
     """
 
-
-def get_over_length(element_id: int) -> float:
-    """get over length
+def get_over_length(element_id: ElementId) -> float:
+    """Gets the element overlength.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element overlength.
     """
 
-
-def get_rounding_width(element_id: int) -> float:
-    """get rounding width
+def get_rounding_width(element_id: ElementId) -> float:
+    """Gets the element rounding width.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element rounding width.
     """
 
-
-def get_rounding_height(element_id: int) -> float:
-    """get rounding height
+def get_rounding_height(element_id: ElementId) -> float:
+    """Gets the element rounding height.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element rounding height.
     """
 
-
-def get_rounding_length(element_id: int) -> float:
-    """get rounding length
+def get_rounding_length(element_id: ElementId) -> float:
+    """Gets the element rounding length.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element rounding length.
     """
 
-
-def get_cross_correction_negative_width(element_id: int) -> float:
-    """get cross correction negative width
+def get_cross_correction_negative_width(element_id: ElementId) -> float:
+    """Gets the element negative width cross correction.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element negative width cross correction.
     """
 
-
-def get_cross_correction_positive_width(element_id: int) -> float:
-    """get cross correction positive width
+def get_cross_correction_positive_width(element_id: ElementId) -> float:
+    """Gets the element positive width cross correction.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element positive width cross correction.
     """
 
-
-def get_cross_correction_negative_height(element_id: int) -> float:
-    """get cross correction negative height
+def get_cross_correction_negative_height(element_id: ElementId) -> float:
+    """Gets the element negative height cross correction.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element negative height cross correction.
     """
 
-
-def get_cross_correction_positive_height(element_id: int) -> float:
-    """get cross correction positive height
+def get_cross_correction_positive_height(element_id: ElementId) -> float:
+    """Gets the element positive height cross correction.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element positive height cross correction.
     """
 
-
-def get_cross_correction_negative_length(element_id: int) -> float:
-    """get cross correction negative length
+def get_cross_correction_negative_length(element_id: ElementId) -> float:
+    """Gets the element negative length cross correction.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element negative length cross correction.
     """
 
-
-def get_cross_correction_positive_length(element_id: int) -> float:
-    """get cross correction positive length
+def get_cross_correction_positive_length(element_id: ElementId) -> float:
+    """Gets the element positive length cross correction.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element positive length cross correction.
     """
 
-
-def get_weight(element_id: int) -> float:
-    """get weight
+def get_weight(element_id: ElementId) -> float:
+    """Gets the element real weight.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element real weight.
     """
 
-
-def get_list_weight(element_id: int) -> float:
-    """get list weight
+def get_list_weight(element_id: ElementId) -> float:
+    """Gets the element list weight.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element list weight.
     """
 
-
-def get_volume(element_id: int) -> float:
-    """get volume
+def get_volume(element_id: ElementId) -> float:
+    """Gets the element rough volume (does not include negative geometry operations, such as end-types, drillings, connectors, openings, and MEP elements).
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element rough volume.
     """
 
-
-def get_list_volume(element_id: int) -> float:
-    """get list volume
+def get_list_volume(element_id: ElementId) -> float:
+    """Gets the element list volume.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element list volume.
     """
 
-
-def get_xl(element_id: int) -> point_3d:
-    """get xl
+def get_xl(element_id: ElementId) -> point_3d:
+    """Gets the element length axis direction (direction from P1 to P2).
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        point_3d
+        The element XL vector.
     """
 
-
-def get_yl(element_id: int) -> point_3d:
-    """get yl
+def get_yl(element_id: ElementId) -> point_3d:
+    """Gets the element width axis direction (ZL cross XL).
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        point_3d
+        The element YL vector.
     """
 
-
-def get_zl(element_id: int) -> point_3d:
-    """get zl
+def get_zl(element_id: ElementId) -> point_3d:
+    """Gets the element height/thickness axis direction (direction from P1 to P3).
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        point_3d
+        The element ZL vector.
     """
 
-
-def get_center_of_gravity(element_id: int) -> point_3d:
-    """get center of gravity
+def get_center_of_gravity(element_id: ElementId) -> point_3d:
+    """Gets the element center of gravity.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        point_3d
+        The element center of gravity position.
     """
 
-
-def get_reference_side(element_id: int) -> int:
-    """get reference side
+def get_reference_side(element_id: ElementId) -> int:
+    """Gets the element reference side.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        int
+        The element reference side.
     """
 
-
-def get_element_vertices(element_id: int) -> List[point_3d]:
-    """get element vertices
+def get_element_vertices(element_id: ElementId) -> List[point_3d]:
+    """Gets the element vertices.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        List[point_3d]
+        The element vertice list.
     """
 
-
-def get_element_facets(element_id: int) -> facet_list:
-    """get element facets
+def get_element_facets(element_id: ElementId) -> facet_list:
+    """Gets the element facet list.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        facet_list
+        The element facet list.
     """
 
-
-def get_list_width(element_id: int) -> float:
-    """get list width
+def get_list_width(element_id: ElementId) -> float:
+    """Gets the element list width.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element list width.
     """
 
-
-def get_list_height(element_id: int) -> float:
-    """get list height
+def get_list_height(element_id: ElementId) -> float:
+    """Gets the element list height.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element list height.
     """
 
-
-def get_list_length(element_id: int) -> float:
-    """get list length
+def get_list_length(element_id: ElementId) -> float:
+    """Gets the element list length.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The element list length.
     """
 
-
-def get_minimum_distance_between_elements(first_id: int, second_id: int) -> float:
-    """get minimum distance between elements
+def get_minimum_distance_between_elements(first_id: ElementId, second_id: ElementId) -> float:
+    """Gets the minimum distance between 2 elements.
 
     Parameters:
-        first_id: first_id
-        second_id: second_id
+        first_id: The first element id.
+        second_id: The second element id.
 
     Returns:
-        float
+        The minimum distance.
     """
 
-
-def get_total_area_of_all_faces(element: int) -> float:
-    """get total area of all faces
+def get_total_area_of_all_faces(element_id: ElementId) -> float:
+    """Gets the total area of all faces for element.
 
     Parameters:
-        element: element
+        element_id: The element Id.
 
     Returns:
-        float
+        The element total faces area.
     """
 
-
-def get_area_of_front_face(element: int) -> float:
-    """get area of front face
+def get_area_of_front_face(element_id: ElementId) -> float:
+    """Gets the front face area for element.
 
     Parameters:
-        element: element
+        element_id: The element Id.
 
     Returns:
-        float
+        The element front face area.
     """
 
-
-def get_door_surface(elements: List[int]) -> float:
-    """get door surface
+def get_door_surface(element_id_list: List[ElementId]) -> float:
+    """Gets the element door surface.
 
     Parameters:
-        elements: elements
+        element_id_list: The element id list.
 
     Returns:
-        float
+        The element door surface.
     """
 
-
-def get_window_surface(elements: List[int]) -> float:
-    """get window surface
+def get_window_surface(element_id_list: List[ElementId]) -> float:
+    """Gets the element window surface.
 
     Parameters:
-        elements: elements
+        element_id_list: The element id list.
 
     Returns:
-        float
+        The element window surface.
     """
-
 
 def get_local_x() -> point_3d:
-    """get local x
+    """Gets the rotated global coordinate direction (X').
 
     Returns:
-        point_3d
+        The local X vector.
     """
-
 
 def get_local_z() -> point_3d:
-    """get local z
+    """Gets the rotated global coordinate direction (Z').
 
     Returns:
-        point_3d
+        The local Y vector.
     """
-
 
 def get_local_y() -> point_3d:
-    """get local y
+    """Gets the rotated global coordinate direction (Y').
 
     Returns:
-        point_3d
+        The local Z vector.
     """
 
-
-def get_drilling_tolerance(element: int) -> float:
-    """get drilling tolerance
+def get_drilling_tolerance(element_id: ElementId) -> float:
+    """Gets the drilling tolerance of an axis.
 
     Parameters:
-        element: element
+        element_id: The element Id.
 
     Returns:
-        float
+        The drilling tolerance.
     """
 
-
-def get_element_reference_face_vertices(element_id: int) -> List[point_3d]:
-    """get element reference face vertices
+def get_element_reference_face_vertices(element_id: ElementId) -> List[point_3d]:
+    """Gets the vertices of the reference side.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        List[point_3d]
+        The vertexlist of all points.
     """
 
-
-def get_element_reference_face_area(element_id: int) -> float:
-    """get element reference face area
+def get_element_reference_face_area(element_id: ElementId) -> float:
+    """Gets the area of the reference side.
 
     Parameters:
-        element_id: element_id
+        element_id: The element Id.
 
     Returns:
-        float
+        The area(size) of reference face.
     """
 
-
-def get_center_of_gravity_for_list(elements: List[int]) -> point_3d:
-    """get center of gravity for list
+def get_center_of_gravity_for_list(element_id_list: List[ElementId]) -> point_3d:
+    """Gets the center of gravity for a list of elements.
 
     Parameters:
-        elements: elements
+        element_id_list: The list of element IDs.
 
     Returns:
-        point_3d
+        The center of gravity as a vector3D.
     """
 
-
-def get_center_of_gravity_for_list_considering_materials(elements: List[int]) -> point_3d:
-    """get center of gravity for list considering materials
+def get_center_of_gravity_for_list_considering_materials(element_id_list: List[ElementId]) -> point_3d:
+    """Gets the center of gravity for a list of elements, considering their materials.
 
     Parameters:
-        elements: elements
+        element_id_list: The list of element IDs.
 
     Returns:
-        point_3d
+        The center of gravity as a vector3D.
     """
 
-
-def get_element_facet_count(element_id: int) -> int:
-    """get element facet count
+def get_element_facet_count(element_id: ElementId) -> UnsignedInt:
+    """Gets the count of facets for a specific element.
 
     Parameters:
-        element_id: element_id
+        element_id: The ID of the element.
 
     Returns:
-        int
+        The count of facets.
     """
 
-
-def get_weight_real(element_id: int) -> float:
-    """get weight real
+def get_weight_real(element_id: ElementId) -> float:
+    """Gets the real weight of the element.
 
     Parameters:
-        element_id: element_id
+        element_id: The ID of the element.
 
     Returns:
-        float
+        The real weight of the element.
     """
 
-
-def get_actual_physical_weight(element: int) -> float:
-    """get actual physical weight
+def get_actual_physical_weight(element_id: ElementId) -> float:
+    """Gets the actual physical weight.
 
     Parameters:
-        element: element
+        element_id: The element id.
 
     Returns:
-        float
+        The actual physical weight.
     """
 
-
-def get_actual_physical_volume(element_id: int) -> float:
-    """Gets actual physical volume (includes negative geometry operations, such as end-types, drillings, connectors,
-    openings, and MEP elements) (it might also take into account different drilling
-    bodies and counterbores in a connector)
-
+def get_actual_physical_volume(element_id: ElementId) -> float:
+    """Gets actual physical volume (includes negative geometry operations, such as end-types, drillings, connectors, openings, and MEP elements; it might also take into account different drilling bodies and counterbores in a connector).
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        float
+        The actual physical volume.
     """
-
 
 def are_facets_coplanar(first_facet: List[point_3d], second_facet: List[point_3d]) -> bool:
-    """are facets coplanar
+    """Tests if facets are coplanar.
 
     Parameters:
-        first_facet: first_facet
-        second_facet: second_facet
+        first_facet: The first facet.
+        second_facet: The second facet.
 
     Returns:
-        bool
+        True if facets are coplanar, false otherwise.
     """
 
-
-def get_round_machine_rough_part_negative_width(element_id: int) -> bool:
-    """get round machine rough part negative width
+def get_round_machine_rough_part_negative_width(element_id: ElementId) -> bool:
+    """Gets the value of option RoundMachineRoughPartNegativeWidth.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
+        The option RoundMachineRoughPartNegativeWidth value.
     """
 
-
-def set_round_machine_rough_part_negative_width(elements: List[int], value: bool) -> None:
-    """set round machine rough part negative width
+def set_round_machine_rough_part_negative_width(element_id_list: List[ElementId], value: bool) -> None:
+    """Sets the value of option RoundMachineRoughPartNegativeWidth.
 
     Parameters:
-        elements: elements
-        value: value
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        value: The new option RoundMachineRoughPartNegativeWidth value.
     """
 
-
-def get_round_machine_rough_part_positive_width(element_id: int) -> bool:
-    """get round machine rough part positive width
+def get_round_machine_rough_part_positive_width(element_id: ElementId) -> bool:
+    """Gets the value of option RoundMachineRoughPartPositiveWidth.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
+        The option RoundMachineRoughPartPositiveWidth value.
     """
 
-
-def set_round_machine_rough_part_positive_width(elements: List[int], value: bool) -> None:
-    """set round machine rough part positive width
+def set_round_machine_rough_part_positive_width(element_id_list: List[ElementId], value: bool) -> None:
+    """Sets the value of option RoundMachineRoughPartPositiveWidth.
 
     Parameters:
-        elements: elements
-        value: value
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        value: The new option RoundMachineRoughPartPositiveWidth value.
     """
 
-
-def get_round_machine_rough_part_negative_height(element_id: int) -> bool:
-    """get round machine rough part negative height
+def get_round_machine_rough_part_negative_height(element_id: ElementId) -> bool:
+    """Gets the value of option RoundMachineRoughPartNegativeHeight.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
+        The option RoundMachineRoughPartNegativeHeight value.
     """
 
-
-def set_round_machine_rough_part_negative_height(elements: List[int], value: bool) -> None:
-    """set round machine rough part negative height
+def set_round_machine_rough_part_negative_height(element_id_list: List[ElementId], value: bool) -> None:
+    """Sets the value of option RoundMachineRoughPartNegativeHeight.
 
     Parameters:
-        elements: elements
-        value: value
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        value: The new option RoundMachineRoughPartNegativeHeight value.
     """
 
-
-def get_round_machine_rough_part_positive_height(element_id: int) -> bool:
-    """get round machine rough part positive height
+def get_round_machine_rough_part_positive_height(element_id: ElementId) -> bool:
+    """Gets the value of option RoundMachineRoughPartPositiveHeight.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
+        The option RoundMachineRoughPartPositiveHeight value.
     """
 
-
-def set_round_machine_rough_part_positive_height(elements: List[int], value: bool) -> None:
-    """set round machine rough part positive height
+def set_round_machine_rough_part_positive_height(element_id_list: List[ElementId], value: bool) -> None:
+    """Sets the value of option RoundMachineRoughPartPositiveHeight.
 
     Parameters:
-        elements: elements
-        value: value
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        value: The new option RoundMachineRoughPartPositiveHeight options.
     """
 
-
-def get_round_machine_rough_part_negative_length(element_id: int) -> bool:
-    """get round machine rough part negative length
+def get_round_machine_rough_part_negative_length(element_id: ElementId) -> bool:
+    """Gets the value of option RoundMachineRoughPartNegativeLength.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
+        The option RoundMachineRoughPartNegativeLength value.
     """
 
-
-def set_round_machine_rough_part_negative_length(elements: List[int], value: bool) -> None:
-    """set round machine rough part negative length
+def set_round_machine_rough_part_negative_length(element_id_list: List[ElementId], value: bool) -> None:
+    """Sets the value of option RoundMachineRoughPartNegativeLength.
 
     Parameters:
-        elements: elements
-        value: value
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        value: The new option RoundMachineRoughPartNegativeLength value.
     """
 
-
-def get_round_machine_rough_part_positive_length(element_id: int) -> bool:
-    """get round machine rough part positive length
+def get_round_machine_rough_part_positive_length(element_id: ElementId) -> bool:
+    """Gets the value of option RoundMachineRoughPartPositiveLength.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Returns:
-        bool
+        The option RoundMachineRoughPartPositiveLength value.
     """
 
-
-def set_round_machine_rough_part_positive_length(elements: List[int], value: bool) -> None:
-    """set round machine rough part positive length
+def set_round_machine_rough_part_positive_length(element_id_list: List[ElementId], value: bool) -> None:
+    """Sets the value of option RoundMachineRoughPartPositiveLength.
 
     Parameters:
-        elements: elements
-        value: value
-
-    Returns:
-        None
+        element_id_list: The element id list.
+        value: The new option RoundMachineRoughPartPositiveLength value.
     """
-
 
 def get_standard_element_width_from_guid(standard_element_guid: str) -> float:
-    """get standard element width from guid
+    """Gets the standard element width from guid.
 
     Parameters:
-        standard_element_guid: standard_element_guid
+        standard_element_guid: The standard element guid.
 
     Returns:
-        float
+        The standard element width.
     """
-
 
 def get_standard_element_height_from_guid(standard_element_guid: str) -> float:
-    """get standard element height from guid
+    """Gets the standard element height from guid.
 
     Parameters:
-        standard_element_guid: standard_element_guid
+        standard_element_guid: The standard element guid.
 
     Returns:
-        float
+        The standard element height.
     """
-
 
 def get_standard_element_length_from_guid(standard_element_guid: str) -> float:
-    """get standard element length from guid
+    """Gets the standard element length from guid.
 
     Parameters:
-        standard_element_guid: standard_element_guid
+        standard_element_guid: The standard element guid.
 
     Returns:
-        float
+        The standard element length.
     """
-
 
 def get_standard_element_width_from_name(standard_element_name: str) -> float:
-    """get standard element width from name
+    """Gets the standard element width from name.
 
     Parameters:
-        standard_element_name: standard_element_name
+        standard_element_name: The standard element name.
 
     Returns:
-        float
+        The standard element width.
     """
-
 
 def get_standard_element_height_from_name(standard_element_name: str) -> float:
-    """get standard element height from name
+    """Gets the standard element height from name.
 
     Parameters:
-        standard_element_name: standard_element_name
+        standard_element_name: The standard element name.
 
     Returns:
-        float
+        The standard element height.
     """
 
-
 def get_standard_element_length_from_name(standard_element_name: str) -> float:
-    """get standard element length from name
+    """Gets the standard element length from name.
 
     Parameters:
-        standard_element_name: standard_element_name
+        standard_element_name: The standard element name.
 
     Returns:
-        float
+        The standard element length.
     """
