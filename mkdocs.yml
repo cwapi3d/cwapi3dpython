@@ -56,6 +56,7 @@ nav:
           - Camera: documentation/camera_data.md
           - Layer Settings: documentation/layer_settings.md
           - Text Object Options: documentation/text_object_options.md
+          - Import 3DC Options: documentation/import_3dc_options.md
           - Window Geometry: documentation/window_geometry.md
           - BIMteam Upload Result: documentation/bim_team_upload_result.md
           - Shoulder cut options: documentation/shoulder_options.md
