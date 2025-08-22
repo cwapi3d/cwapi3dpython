@@ -1,6 +1,6 @@
-# hit_result
+# coordinate_system_data
 
-::: cadwork.hit_result
+::: cadwork.coordinate_system_data
     rendering:
         show_root_heading: false
         show_source: true

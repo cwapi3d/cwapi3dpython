@@ -42,6 +42,7 @@ nav:
           - Attribute Display Settings: documentation/attribute_display_settings.md
           - Element Module Properties: documentation/element_module_properties.md
           - Element Type: documentation/element_type.md
+          - Standard Element Type: documentation/standard_element_type.md
           - Process Type: documentation/process_type.md
           - Point 3D: documentation/point_3d.md
           - Enumerations: documentation/enums.md
@@ -61,6 +62,7 @@ nav:
           - Element Filter: documentation/element_filter.md
           - Element Map Query: documentation/element_map_query.md
           - Hit Result: documentation/hit_result.md
+          - Coordinate System Data: documentation/coordinate_system_data.md
       - Connector Axis Controller: documentation/connector_axis_controller.md
       - Dimension Controller: documentation/dimension_controller.md
       - Element Controller: documentation/element_controller.md
