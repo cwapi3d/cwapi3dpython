@@ -112,8 +112,7 @@ def is_scene_present(name: str) -> bool:
         True if the scene is present, false otherwise.
     """
 
-def set_group_tab_color(scene_group_name: str, red: int, green: int, blue: int) -> None:
-    # TODO : Missing alpha parameter
+def set_group_tab_color(scene_group_name: str, red: int, green: int, blue: int, alpha: int) -> None:
     """Sets the group tab color.
 
     Parameters:

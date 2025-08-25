@@ -331,8 +331,7 @@ def get_standard_connector_list() -> List[str]:
     """
 
 
-def get_counterbore_diameter_for_start_side(axis_id: ElementId, section_index: UnsignedInt, diameter: float, depth: float,
-                                            is_conical: bool) -> float:
+def get_counterbore_diameter_for_start_side(axis_id: ElementId, section_index: UnsignedInt) -> float:
     """Gets the counterbore diameter for the start side.
 
     Parameters:
