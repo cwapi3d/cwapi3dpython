@@ -1,6 +1,6 @@
-# ifc_2x3_element_type
+# Api Types
 
-::: cadwork.ifc_2x3_element_type
+::: cadwork.api_types
     rendering:
         show_root_heading: false
         show_source: true

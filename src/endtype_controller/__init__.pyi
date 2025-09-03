@@ -1,20 +1,11 @@
 from typing import List
+from cadwork.api_types import *
 
-def get_last_error(error_code: int) -> str:
-    """get last error
-
-    Parameters:
-        error_code: error_code
-
-    Returns:
-        str
-    """
-
-def get_endtype_id(name: str) -> int:
-    """Gets the endtypeID by endtypename
+def get_endtype_id(name: str) -> EndtypeId:
+    """Gets the endtype id by endtype name.
 
     Parameters:
-        name: name
+        name: The endtype name.
 
     Examples:
         >>> import endtype_controller as etc
@@ -24,14 +15,14 @@ def get_endtype_id(name: str) -> int:
         >>> print(f"Endtype ID: {endtype_id}")
 
     Returns:
-        int
+        The wanted endtype id.
     """
 
-def get_endtype_id_start(element_id: int) -> int:
-    """Gets the endtypeID of the start face
+def get_endtype_id_start(element_id: ElementId) -> EndtypeId:
+    """Gets the endtype id of the start face.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Examples:
         >>> import element_controller as ec
@@ -43,14 +34,14 @@ def get_endtype_id_start(element_id: int) -> int:
         >>> print(f"Start endtype ID: {start_endtype_id}")
 
     Returns:
-        int
+        The wanted endtype id.
     """
 
-def get_endtype_id_end(element_id: int) -> int:
-    """Gets the endtypeID of the end face
+def get_endtype_id_end(element_id: ElementId) -> EndtypeId:
+    """Gets the endtype id of the end face.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Examples:
         >>> import element_controller as ec
@@ -62,16 +53,16 @@ def get_endtype_id_end(element_id: int) -> int:
         >>> print(f"End endtype ID: {end_endtype_id}")
 
     Returns:
-        int
+        The wanted endtype id.
     """
 
 
-def get_endtype_id_facet(element_id: int, face_number: int) -> int:
-    """get endtype id facet
+def get_endtype_id_facet(element_id: ElementId, face_number: int) -> EndtypeId:
+    """Gets the endtype id of a face with the face number.
 
     Parameters:
-        element_id: element_id
-        face_number: face_number
+        element_id: The element id.
+        face_number: The face number. 0 <= aFaceNumber < element face count.
 
     Note:
         Endtypes can only be set on faces that are placed at start or end points.
@@ -88,15 +79,15 @@ def get_endtype_id_facet(element_id: int, face_number: int) -> int:
         >>> print(f"Facet endtype ID: {facet_endtype_id}")
 
     Returns:
-        int
+        The wanted endtype id.
     """
 
-def set_endtype_name_start(element_id: int, name: str) -> None:
-    """Sets the endtype to start face by endtypename
+def set_endtype_name_start(element_id: ElementId, name: str) -> None:
+    """Sets the endtype to start face by endtype name.
 
     Parameters:
-        element_id: element_id
-        name: name
+        element_id: The element id.
+        name: The endtype name.
 
     Examples:
         >>> import element_controller as ec
@@ -106,17 +97,14 @@ def set_endtype_name_start(element_id: int, name: str) -> None:
         >>> element = selected_elements[0]
         >>> endtype_name = "Tenon_100x50"
         >>> etc.set_endtype_name_start(element, endtype_name)
-
-    Returns:
-        None
     """
 
-def set_endtype_name_end(element_id: int, name: str) -> None:
-    """Sets the endtype to end face by endtypename
+def set_endtype_name_end(element_id: ElementId, name: str) -> None:
+    """Sets the endtype to end face by endtype name.
 
     Parameters:
-        element_id: element_id
-        name: name
+        element_id: The element id.
+        name: The endtype name.
 
     Examples:
         >>> import element_controller as ec
@@ -126,19 +114,16 @@ def set_endtype_name_end(element_id: int, name: str) -> None:
         >>> element = selected_elements[0]
         >>> endtype_name = "Mortise_100x50"
         >>> etc.set_endtype_name_end(element, endtype_name)
-
-    Returns:
-        None
     """
 
 
-def set_endtype_name_facet(element_id: int, name: str, face_number: int) -> None:
-    """set endtype name facet
+def set_endtype_name_facet(element_id: ElementId, name: str, face_number: int) -> None:
+    """Sets the endtype to a face by endtype name.
 
     Parameters:
-        element_id: element_id
-        name: name
-        face_number: face_number
+        element_id: The element id.
+        name: The endtype name.
+        face_number: The face number. 0 <= aFaceNumber < element face count.
 
     Note:
         Endtypes can only be set on faces that are placed at start or end points.
@@ -153,17 +138,14 @@ def set_endtype_name_facet(element_id: int, name: str, face_number: int) -> None
         >>> endtype_name = "Dovetail_60x30"
         >>> face_number = 2
         >>> etc.set_endtype_name_facet(element, endtype_name, face_number)
-
-    Returns:
-        None
     """
 
-def set_endtype_id_start(element_id: int, endtype_id: int) -> None:
-    """Sets the endtype to start face by endtypeID
+def set_endtype_id_start(element_id: ElementId, endtype_id: EndtypeId) -> None:
+    """Sets the endtype to start face by endtype id.
 
     Parameters:
-        element_id: element_id
-        endtype_id: endtype_id
+        element_id: The element id.
+        endtype_id: The endtype id.
 
     Examples:
         >>> import element_controller as ec
@@ -173,17 +155,14 @@ def set_endtype_id_start(element_id: int, endtype_id: int) -> None:
         >>> element = selected_elements[0]
         >>> endtype_id = 12345
         >>> etc.set_endtype_id_start(element, endtype_id)
-
-    Returns:
-        None
     """
 
-def set_endtype_id_end(element_id: int, endtype_id: int) -> None:
-    """Sets the endtype to end face by endtypeID
+def set_endtype_id_end(element_id: ElementId, endtype_id: EndtypeId) -> None:
+    """Sets the endtype to end face by endtype id.
 
     Parameters:
-        element_id: element_id
-        endtype_id: endtype_id
+        element_id: The element id.
+        endtype_id: The endtype id.
 
     Examples:
         >>> import element_controller as ec
@@ -193,19 +172,16 @@ def set_endtype_id_end(element_id: int, endtype_id: int) -> None:
         >>> element = selected_elements[0]
         >>> endtype_id = 54321
         >>> etc.set_endtype_id_end(element, endtype_id)
-
-    Returns:
-        None
     """
 
 
-def set_endtype_id_facet(element_id: int, endtype_id: int, face_number: int) -> None:
-    """set endtype id facet
+def set_endtype_id_facet(element_id: ElementId, endtype_id: EndtypeId, face_number: int) -> None:
+    """Sets the endtype to a face by endtype id.
 
     Parameters:
-        element_id: element_id
-        endtype_id: endtype_id
-        face_number: face_number
+        element_id: The element id.
+        endtype_id: The endtype id.
+        face_number: The face number. 0 <= aFaceNumber < element face count.
 
     Note:
         Endtypes can only be set on faces that are placed at start or end points.
@@ -220,18 +196,15 @@ def set_endtype_id_facet(element_id: int, endtype_id: int, face_number: int) -> 
         >>> endtype_id = 67890
         >>> face_number = 3
         >>> etc.set_endtype_id_facet(element, endtype_id, face_number)
-
-    Returns:
-        None
     """
 
-def create_new_endtype(endtype_name: str, endtype_id: int, folder_name: str) -> int:
-    """Creates a new Endtype
+def create_new_endtype(endtype_name: str, endtype_id: EndtypeId, folder_name: str) -> EndtypeId:
+    """Creates a new Endtype.
 
     Parameters:
-        endtype_name: endtype_name
-        endtype_id: endtype_id
-        folder_name: folder_name
+        endtype_name: The new endtype name.
+        endtype_id: The new endtype id.
+        folder_name: The new endtype folder.
 
     Examples:
         >>> import endtype_controller as etc
@@ -243,14 +216,14 @@ def create_new_endtype(endtype_name: str, endtype_id: int, folder_name: str) -> 
         >>> print(f"Created endtype with ID: {new_id}")
 
     Returns:
-        int
+        The ID of the created endtype.
     """
 
-def get_endtype_name(element_id: int) -> str:
-    """Gets the endtypename by endtypeID
+def get_endtype_name(element_id: ElementId) -> str:
+    """Gets the endtype name by endtype id.
 
     Parameters:
-        element_id: element_id
+        element_id: The endtype id.
 
     Examples:
         >>> import endtype_controller as etc
@@ -260,14 +233,14 @@ def get_endtype_name(element_id: int) -> str:
         >>> print(f"Endtype name: {endtype_name}")
 
     Returns:
-        str
+        The endtype name.
     """
 
-def get_endtype_name_start(element_id: int) -> str:
-    """Gets the endtypename of the start face
+def get_endtype_name_start(element_id: ElementId) -> str:
+    """Gets the endtype name of the start face.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Examples:
         >>> import element_controller as ec
@@ -279,14 +252,14 @@ def get_endtype_name_start(element_id: int) -> str:
         >>> print(f"Start endtype name: {start_name}")
 
     Returns:
-        str
+        The endtype name of the start face.
     """
 
-def get_endtype_name_end(element_id: int) -> str:
-    """Gets the endtypename of the end face
+def get_endtype_name_end(element_id: ElementId) -> str:
+    """Gets the endtype name of the end face.
 
     Parameters:
-        element_id: element_id
+        element_id: The element id.
 
     Examples:
         >>> import element_controller as ec
@@ -298,15 +271,15 @@ def get_endtype_name_end(element_id: int) -> str:
         >>> print(f"End endtype name: {end_name}")
 
     Returns:
-        str
+        The endtype name of the end face.
     """
 
-def get_endtype_name_facet(element_id: int, face_number: int) -> str:
-    """get endtype name facet
+def get_endtype_name_facet(element_id: ElementId, face_number: int) -> str:
+    """Gets the endtype name of the face with a number.
 
     Parameters:
-        element_id: element_id
-        face_number: face_number
+        element_id: The element id.
+        face_number: The face number. 0 <= aFaceNumber < element face count.
 
     Note:
         Endtypes can only be set on faces that are placed at start or end points.
@@ -323,11 +296,11 @@ def get_endtype_name_facet(element_id: int, face_number: int) -> str:
         >>> print(f"Facet endtype name: {facet_name}")
 
     Returns:
-        str
+        The endtype name of the face.
     """
 
-def get_existing_tenon_ids() -> List[int]:
-    """Get the existing tenon endtypeIDs
+def get_existing_tenon_ids() -> List[EndtypeId]:
+    """Get the existing tenon endtype id list.
 
     Examples:
         >>> import endtype_controller as etc
@@ -336,11 +309,11 @@ def get_existing_tenon_ids() -> List[int]:
         >>> print(f"Available tenon endtype IDs: {tenon_ids}")
 
     Returns:
-        list of existing tenon endtypeIDs
+        List of existing tenon endtype id.
     """
 
-def get_existing_lengthening_ids() -> List[int]:
-    """Get the existing lengthening endtypeIDs
+def get_existing_lengthening_ids() -> List[EndtypeId]:
+    """Get the existing lengthening endtype id list.
 
     Examples:
         >>> import endtype_controller as etc
@@ -349,11 +322,11 @@ def get_existing_lengthening_ids() -> List[int]:
         >>> print(f"Available lengthening endtype IDs: {lengthening_ids}")
 
     Returns:
-        list of existing lengthening endtypeIDs
+        List of existing lengthening endtype id.
     """
 
-def get_existing_dovetail_ids() -> List[int]:
-    """Get the existing dovetail endtypeIDs
+def get_existing_dovetail_ids() -> List[EndtypeId]:
+    """Get the existing dovetail endtype id list.
 
     Examples:
         >>> import endtype_controller as etc
@@ -362,11 +335,11 @@ def get_existing_dovetail_ids() -> List[int]:
         >>> print(f"Available dovetail endtype IDs: {dovetail_ids}")
 
     Returns:
-        list of existing dovetail endtypeIDs
+        List of existing dovetail endtype id.
     """
 
-def get_existing_dovetail_dado_ids() -> List[int]:
-    """Get the existing dado endtypeIDs
+def get_existing_dovetail_dado_ids() -> List[EndtypeId]:
+    """Get the existing dado endtype id list.
 
     Examples:
         >>> import endtype_controller as etc
@@ -375,11 +348,11 @@ def get_existing_dovetail_dado_ids() -> List[int]:
         >>> print(f"Available dado endtype IDs: {dado_ids}")
 
     Returns:
-        list of existing dado endtypeIDs
+        List of existing dado endtype id.
     """
 
-def get_existing_japanese_tenon_ids() -> List[int]:
-    """Get the existing japanese-tenon endtypeIDs
+def get_existing_japanese_tenon_ids() -> List[EndtypeId]:
+    """Get the existing japanese-tenon endtype id list.
 
     Examples:
         >>> import endtype_controller as etc
@@ -388,11 +361,11 @@ def get_existing_japanese_tenon_ids() -> List[int]:
         >>> print(f"Available japanese-tenon endtype IDs: {japanese_tenon_ids}")
 
     Returns:
-        list of existing japanese-tenon endtypeIDs
+        List of existing japanese-tenon endtype id.
     """
 
 def start_endtype_dialog() -> int:
-    """Start endtype dialog
+    """Start endtype dialog.
 
     Examples:
         >>> import endtype_controller as etc
@@ -401,5 +374,5 @@ def start_endtype_dialog() -> int:
         >>> print(f"User selected endtype ID: {selected_endtype_id}")
 
     Returns:
-        Selected endtypeID
+        Selected endtype id.
     """

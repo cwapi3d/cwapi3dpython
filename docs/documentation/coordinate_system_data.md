@@ -1,6 +1,6 @@
-# ifc_2x3_element_type
+# coordinate_system_data
 
-::: cadwork.ifc_2x3_element_type
+::: cadwork.coordinate_system_data
     rendering:
         show_root_heading: false
         show_source: true
