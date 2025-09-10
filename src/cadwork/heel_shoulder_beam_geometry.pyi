@@ -10,9 +10,11 @@ class heel_shoulder_beam_geometry(IntEnum):
         normal
     """
     normal = 0
-    """"""
-    straight = 1
-    """"""
+    """NormalHeel
+    """
+    straight = 3
+    """StraightHeel
+    """
 
     def __int__(self) -> int:
         return self.value
