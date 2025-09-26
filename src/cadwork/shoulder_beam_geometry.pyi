@@ -9,14 +9,19 @@ class shoulder_beam_geometry(IntEnum):
         >>> cadwork.shoulder_beam_geometry.bisector
         bisector
     """
+
     bisector = 0
-    """"""
-    perpendicular_to_strut = 1
-    """"""
-    perpendicular_to_counter_part = 2
-    """"""
-    birdsmouth = 3
-    """"""
+    """Bisector
+    """
+    birdsmouth = 2
+    """PerpBirdmouth
+    """
+    perpendicular_to_strut = 3
+    """PerpShoulder
+    """
+    perpendicular_to_counter_part = 4
+    """PerpChord
+    """
 
     def __int__(self) -> int:
         return self.value
