@@ -618,12 +618,12 @@ def clear_errors() -> None:
     """Clears all errors.
     """
 
-def glide_elements(element_id_list: List[ElementId], glide_point: point_3d) -> None:
+def glide_elements(element_id_list: List[ElementId], glide_origin_point: point_3d) -> None:
     """Glides elements to a specified point.
 
     Parameters:
         element_id_list: The elements to glide.
-        glide_point: The glide destination point.
+        glide_origin_point: The glide origin point.
     """
 
 def cut_elements_with_miter(first_id: ElementId, second_id: ElementId) -> bool:
