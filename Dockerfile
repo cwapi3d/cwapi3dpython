@@ -14,5 +14,5 @@ EXPOSE 8080
 
 CMD ["mkdocs", "serve", "--dev-addr=0.0.0.0:8080"]
 
-# docker build -t cwapi3d-py .   
+# docker build -t cwapi3d-py .
 # docker run --rm -p 8080:8080 cwapi3d-py

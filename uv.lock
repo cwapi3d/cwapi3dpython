@@ -1,0 +1,8 @@
+version = 1
+revision = 3
+requires-python = ">=3.12"
+
+[[package]]
+name = "cwapi3d"
+version = "32.299.0"
+source = { editable = "." }
