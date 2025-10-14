@@ -107,7 +107,9 @@ nav:
       - auto_attributes.md
   - About:
       - About Guide: about.md
-  - Release Notes: release_notes.md
+  - Release Notes:
+      - Minor Release Notes: release_notes.md
+      - Major Release Notes: release_notes_major.md
 
 markdown_extensions:
   - admonition
