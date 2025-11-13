@@ -4,13 +4,37 @@ from cadwork.dimension_base_format import dimension_base_format
 from cadwork.api_types import *
 
 def create_dimension(xl: point_3d, plane_normal: point_3d, distance: point_3d, dimension_points: List[point_3d]) -> ElementId:
-    """Creates a dimension element.
+    """Creates a dimension element to measure distances on 3D parts.
+       The dimension is drawn on a plane 
+       defined by its normal and offset distance. Points added to the dimension are projected 
+       onto this plane, and dimension segments are automatically created between consecutive points.
 
     Parameters:
-        xl: The x direction of the dimension.
-        plane_normal: The normal vector of the dimension plane.
-        distance: The distance vector from the anchor point to the dimension reference point.
-        dimension_points: A list of dimension points.
+        xl: The direction vector defining the dimension line axis (the direction of the measurement arrow). Can be aligned with X, Y, Z axes or any 3D direction.
+        plane_normal: The normal vector defining the orientation of the dimension plane.
+        distance: The offset vector from the dimensioned geometry to where the dimension line is drawn. Can offset in any direction.
+        dimension_points:  A list of dimension points to measure. At least 2 points are needed for a valid dimension measurement, but the points can be added later using addSegment(). Points are projected onto the dimension plane.
+        
+    Examples: 
+        >>> import cadwork
+        >>> import dimension_controller as dc
+ 
+        >>> # Create a list of dimension points
+        >>> list_points = []
+        >>> list_points.append(cadwork.point_3d(0., 0., 0.))
+        >>> list_points.append(cadwork.point_3d(1000., 0., 0.))
+        >>> list_points.append(cadwork.point_3d(2000., 500., 0.))
+        >>> list_points.append(cadwork.point_3d(3000., 200., 0.))
+        >>> list_points.append(cadwork.point_3d(4000., 360., 0.))
+        >>> list_points.append(cadwork.point_3d(6000., 451., 0.))
+
+        >>> # Create the dimension element
+        >>> id_dimension = dc.create_dimension(
+        >>>     cadwork.point_3d(1., 0., 0.),  # xl - dimension arrow direction
+        >>>     cadwork.point_3d(0., 1., 0.),  # plane_normal
+        >>>     cadwork.point_3d(0., 0., 500.),  # distance - offset from geometry
+        >>>     list_points  # dimension_points
+        >>> )
 
     Returns:
         The element id of the created dimension element.
@@ -26,11 +50,13 @@ def set_orientation(element_id_list: List[ElementId], view_dir: point_3d, view_d
     """
 
 def add_segment(element_id: ElementId, segment: point_3d) -> None:
-    """Adds a segment to a dimension element.
+    """Adds a new point to a dimension's point list. A dimension segment is automatically 
+       created between this point and the previous point. This method can be called multiple times 
+       to progressively add more measurement points to the dimension.
 
     Parameters:
         element_id: The element id. 
-        segment: The segment to add.
+        segment: The point to add to the dimension (despite the parameter name, this is a point, not a segment).
     """
 
 def set_precision(element_id_list: List[ElementId], precision: UnsignedInt) -> None:
