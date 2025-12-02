@@ -60,9 +60,23 @@
         show_root_heading: false
         show_source: true
 
-## Multi Layer Cover Type
+## Multi Layer Type
 
 ::: cadwork.multi_layer_type
+    rendering:
+        show_root_heading: false
+        show_source: true
+
+## Multi Layer Cover Subtype
+
+::: cadwork.multi_layer_subtype
+    rendering:
+        show_root_heading: false
+        show_source: true
+
+## Multi Layer Cover Type
+
+::: cadwork.multi_layer_cover_type
     rendering:
         show_root_heading: false
         show_source: true

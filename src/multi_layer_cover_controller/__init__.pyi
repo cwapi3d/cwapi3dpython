@@ -1,4 +1,5 @@
 from typing import List
+from cadwork import multi_layer_cover_type
 from cadwork.api_types import *
 from cadwork.multi_layer_type import multi_layer_type
 
@@ -170,6 +171,7 @@ def set_cover_color(set_id: MultiLayerSetId, cover_color: ColorId) -> None:
 
 def get_multi_layer_walls() -> List[MultiLayerSetId]:
     """Gets all multi layer wall ids.
+       This function is not ABI stable. Use getMultiLayerWallsEx() for ABI stable code.
 
     Examples:
         >>> wall_ids = mlc.get_multi_layer_walls()
@@ -367,4 +369,242 @@ def get_cover_color(set_id: MultiLayerSetId) -> ColorId:
 
     Returns:
         The cover color.
+    """
+
+def get_multi_layer_framed_floors() -> List[MultiLayerSetId]:
+    """Gets all framed multi layer floor ids.
+
+    Examples:
+        >>> floor_ids = mlc.get_multi_layer_framed_floors()
+        >>> print(f"Found {len(floor_ids)} multi-layer floor definitions")
+        >>> for floor_id in floor_ids:
+        ...     name = mlc.get_multi_layer_set_name(floor_id)
+        ...     print(f"Floor ID: {floor_id}, Name: {name}")
+
+    Returns:
+        The multi layer floor ids.
+    """
+
+def create_multi_layer_framed_floor(set_name: str) -> MultiLayerSetId:
+    """Creates a new multi layer floor with given name and default values.
+
+    Parameters:
+        set_name: The multi layer set name.
+
+    Examples:
+        >>> set_id = mlc.create_multi_layer_framed_floor("Standard Floor")
+        >>> print(f"Created new multi-layer floor with ID: {set_id}")
+
+    Returns:
+        The multi layer set id.
+    """
+
+def get_multi_layer_framed_roofs() -> List[MultiLayerSetId]:
+    """Gets all multi layer roof ids.
+
+    Examples:
+        >>> roof_ids = mlc.get_multi_layer_framed_roofs()
+        >>> print(f"Found {len(roof_ids)} multi-layer roof definitions")
+        >>> for roof_id in roof_ids:
+        ...     name = mlc.get_multi_layer_set_name(roof_id)
+        ...     print(f"Roof ID: {roof_id}, Name: {name}")
+
+    Returns:
+        The multi layer roof ids.
+    """
+
+def get_multi_layer_solid_floors() -> List[MultiLayerSetId]:
+    """Gets all solid multi layer floor ids.
+
+    Examples:
+        >>> floor_ids = mlc.get_multi_layer_solid_floors()
+        >>> print(f"Found {len(floor_ids)} multi-layer floor definitions")
+        >>> for floor_id in floor_ids:
+        ...     name = mlc.get_multi_layer_set_name(floor_id)
+        ...     print(f"Floor ID: {floor_id}, Name: {name}")
+
+    Returns:
+        The multi layer floor ids.
+    """
+
+def create_multi_layer_solid_floor(set_name: str) -> MultiLayerSetId:
+    """Creates a new multi layer solid floor with given name and default values.
+
+    Parameters:
+        set_name: The multi layer set name.
+
+    Examples:
+        >>> set_id = mlc.create_multi_layer_solid_floor("Standard Solid Floor")
+        >>> print(f"Created new multi-layer solid floor with ID: {set_id}")
+
+    Returns:
+        The multi layer set id.
+    """
+
+def create_multi_layer_framed_roof(set_name: str) -> MultiLayerSetId:
+    """Creates a new multi layer roof with given name and default values.
+
+    Parameters:
+        set_name: The multi layer set name.
+
+    Examples:
+        >>> set_id = mlc.create_multi_layer_framed_roof("Pitched Roof")
+        >>> print(f"Created new multi-layer roof with ID: {set_id}")
+
+    Returns:
+        The multi layer set id.
+    """
+
+def create_multi_layer_framed_wall(set_name: str) -> MultiLayerSetId:
+    """Creates a new multi layer wall with given name and default values.
+
+    Parameters:
+        set_name: The multi layer set name.
+
+    Examples:
+        >>> set_id = mlc.create_multi_layer_framed_wall("Standard Wall")
+        >>> print(f"Created new multi-layer wall with ID: {set_id}")
+
+    Returns:
+        The multi layer set id.
+    """
+
+def get_multi_layer_sets() -> List[MultiLayerSetId]:
+    """Gets all multi layer set ids of all types.
+
+    Examples:
+        >>> all_ids = mlc.get_multi_layer_sets()
+        >>> print(f"Found {len(all_ids)} multi-layer definitions in total")
+        >>> for set_id in all_ids:
+        ...     name = mlc.get_multi_layer_set_name(set_id)
+        ...     print(f"Set ID: {set_id}, Name: {name}")
+
+    Returns:
+        The multi layer set ids.
+    """
+
+def create_multi_layer_by_cover_type(set_name: str, cover_type: multi_layer_cover_type) -> MultiLayerSetId:
+    """Creates a new multi layer set of specified type with given name and default values.
+
+    Parameters:
+        set_name: The multi layer set name.
+        cover_type: The cover type.
+
+    Examples:
+        >>> set_id = mlc.create_multi_layer_by_cover_type("Custom Solid Wall", cadwork.multi_layer_cover_type.solidWall)
+        >>> print(f"Created new multi-layer set with ID: {set_id}")
+
+    Returns:
+        The multi layer set id.
+    """
+
+def get_multi_layer_sets_for_cover_type(cover_type: multi_layer_cover_type) -> List[MultiLayerSetId]:
+    """Gets all multi layer set ids of specified cover type.
+
+    Parameters:
+        cover_type: The cover type.
+
+    Examples:
+        >>> set_ids = mlc.get_multi_layer_sets_for_cover_type(cadwork.multi_layer_cover_type.solidWall)
+
+    Returns:
+        The multi layer set ids.
+    """
+
+def get_multi_layer_walls_ex() -> List[MultiLayerSetId]:
+    """Gets all multi layer wall ids (ABI stable).
+
+    Examples:
+        >>> wall_ids = mlc.get_multi_layer_walls_ex()
+        >>> print(f"Found {len(wall_ids)} multi-layer wall definitions")
+        >>> for wall_id in wall_ids:
+        ...     name = mlc.get_multi_layer_set_name(wall_id)
+        ...     print(f"Wall ID: {wall_id}, Name: {name}")
+
+    Returns:
+        The multi layer wall ids.
+    """
+
+def get_multi_layer_log_walls() -> List[MultiLayerSetId]:
+    """Gets all multi layer log wall ids.
+
+    Examples:
+        >>> log_wall_ids = mlc.get_multi_layer_log_walls()
+        >>> print(f"Found {len(log_wall_ids)} multi-layer log wall definitions")
+        >>> for log_wall_id in log_wall_ids:
+        ...     name = mlc.get_multi_layer_set_name(log_wall_id)
+        ...     print(f"Log Wall ID: {log_wall_id}, Name: {name}")
+
+    Returns:
+        The multi layer log wall ids.
+    """
+
+def create_multi_layer_log_wall(set_name: str) -> MultiLayerSetId:
+    """Creates a new multi layer log wall with given name and default values.
+
+    Parameters:
+        set_name: The multi layer set name.
+
+    Examples:
+        >>> set_id = mlc.create_multi_layer_log_wall("Standard Log Wall")
+        >>> print(f"Created new multi-layer log wall with ID: {set_id}")
+
+    Returns:
+        The multi layer set id.
+    """
+
+def get_multi_layer_solid_roofs() -> List[MultiLayerSetId]:
+    """Gets all multi layer solid roof ids.
+
+    Examples:
+        >>> solid_roof_ids = mlc.get_multi_layer_solid_roofs()
+        >>> print(f"Found {len(solid_roof_ids)} multi-layer solid roof definitions")
+        >>> for solid_roof_id in solid_roof_ids:
+        ...     name = mlc.get_multi_layer_set_name(solid_roof_id)
+        ...     print(f"Solid Roof ID: {solid_roof_id}, Name: {name}")
+
+    Returns:
+        The multi layer solid roof ids.
+    """
+
+def create_multi_layer_solid_roof(set_name: str) -> MultiLayerSetId:
+    """Creates a new multi layer solid roof with given name and default values.
+
+    Parameters:
+        set_name: The multi layer set name.
+
+    Examples:
+        >>> set_id = mlc.create_multi_layer_solid_roof("Standard Solid Roof")
+        >>> print(f"Created new multi-layer solid roof with ID: {set_id}")
+
+    Returns:
+        The multi layer set id.
+    """
+
+def get_multi_layer_solid_walls() -> List[MultiLayerSetId]:
+    """Gets all multi layer solid wall ids.
+
+    Examples:
+        >>> solid_wall_ids = mlc.get_multi_layer_solid_walls()
+        >>> print(f"Found {len(solid_wall_ids)} multi-layer solid wall definitions")
+        >>> for solid_wall_id in solid_wall_ids:
+        ...     name = mlc.get_multi_layer_set_name(solid_wall_id)
+        ...     print(f"Solid Wall ID: {solid_wall_id}, Name: {name}")
+
+    Returns:
+        The multi layer solid wall ids.
+    """
+
+def create_multi_layer_solid_wall(set_name: str) -> MultiLayerSetId:
+    """Creates a new multi layer solid wall with given name and default values.
+
+    Parameters:
+        set_name: The multi layer set name.
+
+    Examples:
+        >>> set_id = mlc.create_multi_layer_solid_wall("Standard Solid Wall")
+        >>> print(f"Created new multi-layer solid wall with ID: {set_id}")
+
+    Returns:
+        The multi layer set id.
     """
