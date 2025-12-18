@@ -171,7 +171,6 @@ def set_cover_color(set_id: MultiLayerSetId, cover_color: ColorId) -> None:
 
 def get_multi_layer_walls() -> List[MultiLayerSetId]:
     """Gets all multi layer wall ids.
-       This function is not ABI stable. Use getMultiLayerWallsEx() for ABI stable code.
 
     Examples:
         >>> wall_ids = mlc.get_multi_layer_walls()
@@ -511,19 +510,6 @@ def get_multi_layer_sets_for_cover_type(cover_type: multi_layer_cover_type) -> L
         The multi layer set ids.
     """
 
-def get_multi_layer_walls_ex() -> List[MultiLayerSetId]:
-    """Gets all multi layer wall ids (ABI stable).
-
-    Examples:
-        >>> wall_ids = mlc.get_multi_layer_walls_ex()
-        >>> print(f"Found {len(wall_ids)} multi-layer wall definitions")
-        >>> for wall_id in wall_ids:
-        ...     name = mlc.get_multi_layer_set_name(wall_id)
-        ...     print(f"Wall ID: {wall_id}, Name: {name}")
-
-    Returns:
-        The multi layer wall ids.
-    """
 
 def get_multi_layer_log_walls() -> List[MultiLayerSetId]:
     """Gets all multi layer log wall ids.
