@@ -105,6 +105,8 @@ nav:
       - videos.md
   - Auto Attributes:
       - auto_attributes.md
+  - MCP:
+      - mcp.md
   - About:
       - About Guide: about.md
   - Release Notes:
@@ -113,6 +115,7 @@ nav:
 
 markdown_extensions:
   - admonition
+  - pymdownx.details
   - attr_list
   - footnotes
   - md_in_html
