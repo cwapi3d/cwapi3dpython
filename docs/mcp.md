@@ -6,7 +6,7 @@ hide:
 
 # ![mcp_icon](img/mcp/mcp.svg){: style="height: 32px; vertical-align: middle;" } MCP Cadwork Python API Server
 
-**MCP URL:** `https://cadwork-mcp-pyapi.com/mcp`
+**MCP URL:** `https://pyapi.mcp.cadwork.dev/mcp`
 
 ## What is MCP?
 
@@ -39,7 +39,7 @@ To use the Cadwork Python API documentation as an MCP server, you need to config
     Claude Code supports MCP servers natively. Add the server using:
 
     ```bash
-    claude mcp add cadwork-pyapi https://cadwork-mcp-pyapi.com/mcp
+    claude mcp add cadwork-pyapi https://pyapi.mcp.cadwork.dev/mcp
     ```
 
     [Claude Code MCP Guide](https://docs.anthropic.com/en/docs/claude-code/mcp){target=_blank}
@@ -63,7 +63,7 @@ To use the Cadwork Python API documentation as an MCP server, you need to config
       "servers": {
         "cadwork-pyapi": {
           "type": "http",
-          "url": "https://cadwork-mcp-pyapi.com/mcp"
+          "url": "https://pyapi.mcp.cadwork.dev/mcp"
         }
       }
     }
