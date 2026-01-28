@@ -9,6 +9,7 @@ from cadwork.coordinate_system_data import coordinate_system_data
 from cadwork.element_map_query import element_map_query
 from cadwork.element_filter import element_filter
 from cadwork.hit_result import hit_result
+from cadwork.active_point_result import active_point_result
 from cadwork.vertex_list import vertex_list
 from cadwork.shoulder_options import shoulder_options
 from cadwork.heel_shoulder_options import heel_shoulder_options
@@ -2277,4 +2278,25 @@ def cast_ray_and_get_element_intersections(element_id_list: List[ElementId], ray
 
     Returns:
         Contains list of elements that were hit by the ray and list of vertices that are queried via ElementID.
+    """
+
+
+def get_element_active_point(element_id: ElementId) -> active_point_result:
+    """Gets the active point associated with an element.
+
+    Parameters:
+        element_id: The element id.
+
+    Examples:
+        >>> import cadwork
+        >>> import element_controller as ec
+        >>> [element_id] = ec.get_active_identifiable_element_ids()
+        >>> result = ec.get_element_active_point(element_id)
+        >>> if result:
+        ...     ec.create_node(result.point)
+        ... else:
+        ...     print("No active point set for element.")
+
+    Returns:
+        True/False plus point data when available.
     """

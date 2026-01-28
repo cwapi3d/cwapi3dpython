@@ -64,6 +64,7 @@ nav:
           - Element Map Query: documentation/element_map_query.md
           - Hit Result: documentation/hit_result.md
           - Coordinate System Data: documentation/coordinate_system_data.md
+          - Active Point Result: documentation/active_point_result.md
       - Connector Axis Controller: documentation/connector_axis_controller.md
       - Dimension Controller: documentation/dimension_controller.md
       - Element Controller: documentation/element_controller.md
