@@ -39,7 +39,7 @@ To use the Cadwork Python API documentation as an MCP server, you need to config
     Claude Code supports MCP servers natively. Add the server using:
 
     ```bash
-    claude mcp add cadwork-pyapi https://pyapi.mcp.cadwork.dev/mcp
+    claude mcp add --transport http cadwork-pyapi https://pyapi.mcp.cadwork.dev/mcp
     ```
 
     [Claude Code MCP Guide](https://docs.anthropic.com/en/docs/claude-code/mcp){target=_blank}
