@@ -71,6 +71,31 @@ To use the Cadwork Python API documentation as an MCP server, you need to config
 
     [VS Code MCP Documentation](https://code.visualstudio.com/docs/copilot/chat/mcp-servers){target=_blank}
 
-## Usage
+??? note "Gemini CLI"
+    Gemini CLI supports MCP servers natively through its command-line interface. 
+    
+    **Prerequisites**: Install the Gemini CLI first:
+    
+    ```bash
+    npm install -g @google/gemini-cli@latest
+    ```
+    
+    **Add the server**:
 
-Once configured, prompt your request to your AI coding assistant and it will automatically query the Cadwork Python API documentation to help you write grounded scripts to our Cadwork Python API.
+    ```bash
+    gemini mcp add --transport http cadwork-pyapi https://pyapi.mcp.cadwork.dev/mcp
+    ```
+
+    **Verify the connection**:
+
+    ```bash
+    gemini mcp list
+    ```
+
+    Once added, the Cadwork Python API documentation will be automatically available when you interact with Gemini CLI.
+
+    <figure markdown="1">
+    ![Gemini MCP Demo](img/mcp/gemini-mcp.gif){width=600}
+    </figure>
+
+    [Gemini MCP Guide](https://geminicli.com/docs/tools/mcp-server){target=_blank}
