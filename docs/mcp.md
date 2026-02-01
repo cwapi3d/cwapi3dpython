@@ -37,14 +37,16 @@ To use the Cadwork Python API documentation as an MCP server, you need to config
 Here are the most common ai code assistants and how to configure them:
 
 ??? note "Claude Desktop"
-Add the following to your Claude Desktop configuration file via the UI:
+
+    Add the following to your Claude Desktop configuration file via the UI:
 
     `Settings` > `Connectors` > `Add custom connectors`
 
     [Claude MCP Documentation](https://modelcontextprotocol.io/docs/develop/connect-remote-servers){target=_blank}
 
 ??? note "Claude Code (CLI)"
-Claude Code supports MCP servers natively. Add the server using:
+
+    Claude Code supports MCP servers natively. Add the server using:
 
     ```bash
     claude mcp add --transport http cadwork-pyapi https://pyapi.mcp.cadwork.dev/mcp
@@ -53,8 +55,9 @@ Claude Code supports MCP servers natively. Add the server using:
     [Claude Code MCP Guide](https://docs.anthropic.com/en/docs/claude-code/mcp){target=_blank}
 
 ??? note "ChatGPT"
-ChatGPT does support MCP servers connector (they are called App) but only on *developer mode*. You need to activate it
-first and then:
+
+    ChatGPT does support MCP servers connector (they are called App) but only on *developer mode*. You need to activate it
+    first and then:
 
     `Settings` > `Apps` > `Create app` (Developer mode: on) > `Create app`
 
@@ -65,7 +68,8 @@ first and then:
     [OpenAI Plugins Documentation](https://help.openai.com/en/articles/11487775-apps-in-chatgpt#building-your-own-app){target=_blank}
 
 ??? note "VS Code (GitHub Copilot)"
-Add the following to your VS Code settings file (`.vscode/mcp.json` in your workspace or user settings):
+
+    Add the following to your VS Code settings file (`.vscode/mcp.json` in your workspace or user settings):
 
     ```json
     {
@@ -81,14 +85,15 @@ Add the following to your VS Code settings file (`.vscode/mcp.json` in your work
     [VS Code MCP Documentation](https://code.visualstudio.com/docs/copilot/chat/mcp-servers){target=_blank}
 
 ??? note "Gemini CLI"
-Gemini CLI supports MCP servers natively through its command-line interface.
+
+    Gemini CLI supports MCP servers natively through its command-line interface.
 
     **Prerequisites**: Install the Gemini CLI first:
-    
+
     ```bash
     npm install -g @google/gemini-cli@latest
     ```
-    
+
     **Add the server**:
 
     ```bash
@@ -103,11 +108,15 @@ Gemini CLI supports MCP servers natively through its command-line interface.
 
     Once added, the Cadwork Python API documentation will be automatically available when you interact with Gemini CLI.
 
-    <figure markdown="1">
-    ![Gemini MCP Demo](img/mcp/gemini-mcp.gif){width=600}
-    </figure>
-
     [Gemini MCP Guide](https://geminicli.com/docs/tools/mcp-server){target=_blank}
+
+## Demo
+
+See how easy it is to use the Cadwork Python API with an MCP-enabled AI assistant:
+
+<figure markdown="1">
+![MCP Demo with Gemini CLI](img/mcp/gemini-mcp.gif){width=600}
+</figure>
 
 ## Usage
 
