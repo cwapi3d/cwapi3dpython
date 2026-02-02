@@ -17,11 +17,13 @@ training data.
 When you connect an AI assistant to an MCP server, it gains the ability to query that server for relevant context,
 making responses more accurate and up-to-date.
 
+![Screenshot](img/mcp/mcp_python_api_v1.drawio.png){width="1200" style="display: block; margin: 0 auto;"}
+
 ## Demo
 
 See how easy it is to use the Cadwork Python API with an MCP-enabled AI assistant:
 
-<img src="img/mcp/gemini-mcp.gif" alt="MCP Demo with Gemini CLI" width="700">
+![MCP Demo with Gemini CLI](img/mcp/gemini-mcp.gif){width=900}
 
 You can use the Cadwork Python MCP for:
 
