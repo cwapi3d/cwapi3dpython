@@ -23,7 +23,7 @@ making responses more accurate and up-to-date.
 
 See how easy it is to use the Cadwork Python API with an MCP-enabled AI assistant:
 
-<img src="img/mcp/gemini-mcp.gif" alt="MCP Demo with Gemini CLI" width="900">
+<img src="/img/mcp/gemini-mcp.gif" alt="MCP Demo with Gemini CLI" width="900">
 
 You can use the Cadwork Python MCP for:
 
