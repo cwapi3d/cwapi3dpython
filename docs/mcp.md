@@ -114,9 +114,7 @@ Here are the most common ai code assistants and how to configure them:
 
 See how easy it is to use the Cadwork Python API with an MCP-enabled AI assistant:
 
-<figure markdown="1">
-![MCP Demo with Gemini CLI](img/mcp/gemini-mcp.gif){width=600}
-</figure>
+<img src="img/mcp/gemini-mcp.gif" alt="MCP Demo with Gemini CLI" width="700">
 
 ## Usage
 
