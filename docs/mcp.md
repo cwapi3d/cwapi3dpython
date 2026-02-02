@@ -17,10 +17,13 @@ training data.
 When you connect an AI assistant to an MCP server, it gains the ability to query that server for relevant context,
 making responses more accurate and up-to-date.
 
-## How MCP helps you learn and use the Cadwork Python API
+## Demo
 
-The Cadwork Python API documentation is available as an MCP server, which transforms how you can learn and work with the
-API:
+See how easy it is to use the Cadwork Python API with an MCP-enabled AI assistant:
+
+<img src="img/mcp/gemini-mcp.gif" alt="MCP Demo with Gemini CLI" width="700">
+
+You can use the Cadwork Python MCP for:
 
 - **Contextual Answers**: Ask questions in natural language and get responses that reference the actual API
   documentation, including function signatures, parameters, and code examples.
@@ -35,6 +38,8 @@ API:
 
 To use the Cadwork Python API documentation as an MCP server, you need to configure your AI assistant to connect to it.
 Here are the most common ai code assistants and how to configure them:
+
+
 
 ??? note "Claude Desktop"
 
@@ -109,14 +114,3 @@ Here are the most common ai code assistants and how to configure them:
     Once added, the Cadwork Python API documentation will be automatically available when you interact with Gemini CLI.
 
     [Gemini MCP Guide](https://geminicli.com/docs/tools/mcp-server){target=_blank}
-
-## Demo
-
-See how easy it is to use the Cadwork Python API with an MCP-enabled AI assistant:
-
-<img src="img/mcp/gemini-mcp.gif" alt="MCP Demo with Gemini CLI" width="700">
-
-## Usage
-
-Once configured, prompt your request to your AI coding assistant and it will automatically query the Cadwork Python API
-documentation to help you write grounded scripts to our Cadwork Python API.
