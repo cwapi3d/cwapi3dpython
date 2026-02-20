@@ -1,21 +1,20 @@
-from cadwork import point_3d
+from cadwork import vertex_list
+
 
 class polygon_list:
-    
+
     def count(self) -> int:
         """count
 
-        Returns:
-            int
+        Returns: int
         """
 
-    def at(self, index: int) -> point_3d:
+    def at(self, index: int) -> vertex_list:
         """at
 
         Parameters:
             index: index
 
         Returns:
-            point_3d
+            vertex_list: vertex_list
         """
-
