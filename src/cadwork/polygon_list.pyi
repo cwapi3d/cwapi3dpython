@@ -4,17 +4,17 @@ from cadwork import vertex_list
 class polygon_list:
 
     def count(self) -> int:
-        """count
+        """Returns the number of polygons in the list.
 
         Returns: int
         """
 
     def at(self, index: int) -> vertex_list:
-        """at
+        """Returns the polygon vertices at the given index.
 
         Parameters:
-            index: index
+            index: The zero-based polygon index.
 
         Returns:
-            vertex_list: vertex_list
+            vertex_list: The ordered vertices defining the polygon.
         """
