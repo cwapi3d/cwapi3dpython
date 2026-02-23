@@ -1,21 +1,20 @@
-from cadwork import point_3d
+from cadwork import vertex_list
+
 
 class polygon_list:
-    
-    def count(self) -> int:
-        """count
 
-        Returns:
-            int
+    def count(self) -> int:
+        """Returns the number of polygons in the list.
+
+        Returns: int
         """
 
-    def at(self, index: int) -> point_3d:
-        """at
+    def at(self, index: int) -> vertex_list:
+        """Returns the polygon vertices at the given index.
 
         Parameters:
-            index: index
+            index: The zero-based polygon index.
 
         Returns:
-            point_3d
+            vertex_list: The ordered vertices defining the polygon.
         """
-
