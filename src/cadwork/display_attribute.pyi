@@ -1,8 +1,14 @@
 class display_attribute:
     """
-    A wrapper class for managing element display states.
-    These methods update the internal state of the attribute
-    object without requiring external parameters.
+    A wrapper class for managing element display states for WebGL hierarchy display settings (not in Cadwork 3d).
+    These methods update the internal state of the attribute object without requiring external parameters.
+
+    Used exclusively with `set_webgl_hierarchy` to define visibility and display
+    properties for elements in the WebGL.
+
+    .. deprecated::
+        This class supports legacy local WebGL workflows.
+        It will be deprecated.
     """
 
     def __init__(self) -> None:
