@@ -4,6 +4,7 @@ from cadwork.point_3d import point_3d
 from cadwork.bim_team_upload_result import bim_team_upload_result
 from cadwork.dxf_layer_format_type import dxf_layer_format_type
 from cadwork.dxf_export_version import dxf_export_version
+from cadwork.display_attribute import display_attribute
 from cadwork.api_types import *
 
 def export_stl_file(element_id_list: List[ElementId], file_path: str) -> None:
@@ -583,4 +584,13 @@ def export_dstv_file(file_path: str) -> bool:
 
     Returns:
         True on successful export, false otherwise.
+    """
+
+
+def set_webgl_hierarchy(stage: int, attribute: display_attribute) -> None:
+    """Sets the WebGL hierarchy based on the given stage and attribute.
+
+    Parameters:
+        stage: The hierarchy stage to set.
+        attribute: The display attribute to use for the hierarchy.
     """

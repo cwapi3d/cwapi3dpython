@@ -52,6 +52,7 @@ from .hit_result import hit_result
 from .dimension_base_format import dimension_base_format
 from .dxf_layer_format_type import dxf_layer_format_type
 from .dxf_export_version import dxf_export_version
+from .display_attribute import display_attribute
 from typing import List
 
 # These assignments make each type accessible through both import styles:
@@ -114,6 +115,7 @@ dimension_base_format = dimension_base_format
 dxf_layer_format_type = dxf_layer_format_type
 dxf_export_version = dxf_export_version
 rgb_color = rgb_color
+display_attribute = display_attribute
 
 
 def get_auto_attribute_elements() -> List[int]:
