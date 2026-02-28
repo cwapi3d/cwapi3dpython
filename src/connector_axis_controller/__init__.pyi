@@ -190,8 +190,11 @@ def get_section_diameter(axis_id: ElementId, section_index: UnsignedInt) -> floa
 
 
 def get_axis_items_guids(axis_id: ElementId) -> List[str]:
-    """Returns a list of GUIDs of all axis items.
-
+    """Returns a list of GUIDs of all items contained by this connector axis.
+    
+    Axis items include nuts, washers, bolts, and other hardware components 
+    defined in cadwork.vba_catalog_item_type.
+    
     Parameters:
         axis_id: The id of the axis.
 
