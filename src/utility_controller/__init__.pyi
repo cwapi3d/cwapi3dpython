@@ -38,7 +38,11 @@ def set_project_data(project_data_id: str, data: str) -> None:
 
 
 def print_error(message: str) -> None:
-    """Prints an error.
+    """Prints an error to the bottom toolbar of Cadwork 3d.
+
+    Notes:
+        Attention, this function is blocking. User will need to click to
+        continue the process.
 
     Parameters:
         message: The error message.
@@ -54,7 +58,12 @@ def get_language() -> str:
 
 
 def print_message(message: str, row: int, column: int) -> None:
-    """Prints a message.
+    """Prints a message that will be visualized in the bottom toolbar of the
+    3D view. You can arrange the message in the desired position by specifying the row and column.
+
+    Examples:
+        >>> import utility_controller as uc
+        >>> uc.print_message("Hello World!", 1, 1)
 
     Parameters:
         message: The message to print.
@@ -297,7 +306,7 @@ def create_new_guid() -> str:
 
 
 def print_to_console(message: str) -> None:
-    """Prints a message to the console.
+    """Prints a message to the Cadwork debug console.
 
     Parameters:
         message: The message.
