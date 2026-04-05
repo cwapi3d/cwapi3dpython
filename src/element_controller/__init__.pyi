@@ -1084,7 +1084,7 @@ def create_bounding_box_local(reference_element: ElementId, element_id_list: Lis
 
     Parameters:
         reference_element: The ID of the reference element.
-        element_id_list: The list of elements for which to create the bounding box. 
+        element_id_list: The list of elements for which to create the bounding box.
 
     Returns:
         The ID of the created bounding box element.
@@ -1787,24 +1787,49 @@ def get_element_cadwork_guid(element_id: ElementId) -> str:
     """
 
 def get_bounding_box_vertices_local(reference_element: ElementId, element_id_list: List[ElementId]) -> List[point_3d]:
-    """Retrieves the local bounding box vertices for a list of elements relative to a reference element.
+    """Retrieve the local bounding box vertices for a list of elements relative to a reference element.
+
+    Returns a list of 8 point_3d vertices representing the corners of the bounding box in the
+    coordinate system of a reference element (local coordinates). The vertex ordering follows
+    the same pattern as get_bounding_box_vertices_global, but all coordinates are relative to
+    the reference element's local axis system (origin at reference element's P1, X-axis along
+    reference direction, etc.).
+
+    Use this function when you need to perform calculations relative to a specific element's
+    orientation rather than in global world coordinates.
 
     Parameters:
-        reference_element: The ID of the reference element.
+        reference_element: The ID of the reference element defining the local coordinate system.
         element_id_list: The list of elements for which to retrieve the bounding box vertices.
 
     Returns:
-        The list of vertices representing the local bounding box of the elements.
+        A list of 8 point_3d vertices representing the local bounding box corners.
     """
 
 def get_bounding_box_vertices_global(element_id_list: List[ElementId]) -> List[point_3d]:
     """Get the global bounding box vertices for a list of elements.
 
+    Returns a list of 8 point_3d vertices representing the corners of an axis-aligned
+    bounding box in global (world) coordinates. The vertices are ordered as follows:
+        0: (min_x, min_y, min_z) — bottom-front-left
+        1: (max_x, min_y, min_z) — bottom-front-right
+        2: (max_x, max_y, min_z) — bottom-back-right
+        3: (min_x, max_y, min_z) — bottom-back-left
+        4: (min_x, min_y, max_z) — top-front-left
+        5: (max_x, min_y, max_z) — top-front-right
+        6: (max_x, max_y, max_z) — top-back-right
+        7: (min_x, max_y, max_z) — top-back-left
+
+    This ordering allows edges to be constructed by connecting:
+        - Bottom square: (0→1→2→3→0)
+        - Top square: (4→5→6→7→4)
+        - Vertical edges: (0-4), (1-5), (2-6), (3-7)
+
     Parameters:
         element_id_list: The list of elements for which to retrieve the bounding box vertices.
 
     Returns:
-        The list of vertices representing the global bounding box of the elements.
+        A list of 8 point_3d vertices representing the global bounding box corners.
     """
 
 def get_all_nesting_raw_parts() -> List[ElementId]:
