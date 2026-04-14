@@ -1,4 +1,3 @@
-from typing import List
 from cadwork.point_3d import point_3d
 from cadwork.api_types import *
 from cadwork.vba_catalog_item_type import vba_catalog_item_type
@@ -69,7 +68,7 @@ def clear_errors() -> None:
     """
 
 
-def update_axis_cutting_ability(axis_id_list: List[ElementId]) -> None:
+def update_axis_cutting_ability(axis_id_list: list[ElementId]) -> None:
     """Updates the Connection Config (CuttingAbility) of Axis/VBAs.
 
     Parameters:
@@ -189,7 +188,7 @@ def get_section_diameter(axis_id: ElementId, section_index: UnsignedInt) -> floa
     """
 
 
-def get_axis_items_guids(axis_id: ElementId) -> List[str]:
+def get_axis_items_guids(axis_id: ElementId) -> list[str]:
     """Returns a list of GUIDs of all axis items.
 
     Parameters:
@@ -323,7 +322,7 @@ def get_bolt_diameter(axis_id: ElementId) -> float:
         The bolt diameter.
     """
 
-def get_standard_connector_list() -> List[str]:
+def get_standard_connector_list() -> list[str]:
     """Returns a list of all standard connectors.
 
     Returns:
@@ -441,7 +440,7 @@ def get_intersection_count(intersection_index: UnsignedInt) -> int:
         The intersection count.
     """
 
-def get_item_guids_at_intersection(axis_id: ElementId, intersection_index: UnsignedInt) -> List[str]:
+def get_item_guids_at_intersection(axis_id: ElementId, intersection_index: UnsignedInt) -> list[str]:
     """Get item GUIDs at intersection.
 
     Parameters:
@@ -453,7 +452,7 @@ def get_item_guids_at_intersection(axis_id: ElementId, intersection_index: Unsig
     """
 
 
-def set_item_guids_at_intersection(axis_id: ElementId, intersection_index: UnsignedInt, item_guids: List[str]) -> None:
+def set_item_guids_at_intersection(axis_id: ElementId, intersection_index: UnsignedInt, item_guids: list[str]) -> None:
     """Sets item GUIDs at intersection.
 
     Parameters:

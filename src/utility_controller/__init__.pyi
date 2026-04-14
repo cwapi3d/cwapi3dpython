@@ -1,5 +1,3 @@
-from typing import List
-from typing import Tuple
 from cadwork.api_types import ElementId
 from cadwork.point_3d import point_3d
 from cadwork.window_geometry import window_geometry
@@ -286,7 +284,7 @@ def enable_auto_display_refresh() -> None:
         >>> import element_controller as ec
         >>> uc.disable_auto_display_refresh()
         >>> # Perform operations that require disabled display refresh
-        >>> your_list_of_elements: List[int] = []
+        >>> your_list_of_elements: list[int] = []
         >>> uc.enable_auto_display_refresh()
         >>> ec.recreate_elements(your_list_of_elements)
 
@@ -572,7 +570,7 @@ def init_LxSDK() -> None:
     """
 
 
-def load_element_attribute_display_settings(file_path: str, elements: List[ElementId]) -> None:
+def load_element_attribute_display_settings(file_path: str, elements: list[ElementId]) -> None:
     """Loads element attribute display settings from a file.
 
     Parameters:
@@ -697,7 +695,7 @@ def disable_update_variant() -> None:
     """
 
 
-def get_user_points() -> List[point_3d]:
+def get_user_points() -> list[point_3d]:
     """Gets user points.
 
     Returns:
@@ -705,7 +703,7 @@ def get_user_points() -> List[point_3d]:
     """
 
 
-def get_user_points_with_count(count: int) -> List[point_3d]:
+def get_user_points_with_count(count: int) -> list[point_3d]:
     """Gets user points with a specified count.
 
     Parameters:
@@ -1028,7 +1026,7 @@ def create_snapshot() -> str:
     """
 
 
-def get_3d_gui_upper_left_screen_coordinates() -> Tuple[int, int]:
+def get_3d_gui_upper_left_screen_coordinates() -> tuple[int, int]:
     """Get the coordinates of the upper left corner of the 3D GUI.
 
     Returns:
@@ -1044,7 +1042,7 @@ def get_3d_main_window_geometry() -> 'window_geometry':
     """
 
 
-def get_project_data_keys() -> List[str]:
+def get_project_data_keys() -> list[str]:
     """Gets all keys for project data.
 
     Returns:

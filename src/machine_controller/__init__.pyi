@@ -1,4 +1,3 @@
-from typing import List
 from cadwork import vertex_list
 from cadwork.api_types import ElementId
 from cadwork.btl_version import btl_version
@@ -101,7 +100,7 @@ def export_btl_with_presetting(btl_version: btl_version, file_path: str, presett
         >>> mc.export_btl_with_presetting(btl_version, output_path, presetting_file)
     """
 
-def calculate_btl_machine_data(element_id_list: List[ElementId], btl_version: btl_version) -> None:
+def calculate_btl_machine_data(element_id_list: list[ElementId], btl_version: btl_version) -> None:
     """Calculates the Machine Data for BTL.
 
     Parameters:
@@ -118,7 +117,7 @@ def calculate_btl_machine_data(element_id_list: List[ElementId], btl_version: bt
         >>> mc.calculate_btl_machine_data(beam_elements, btl_version)
     """
 
-def calculate_hundegger_machine_data(element_id_list: List[ElementId], hundeggertype: hundegger_machine_type) -> None:
+def calculate_hundegger_machine_data(element_id_list: list[ElementId], hundeggertype: hundegger_machine_type) -> None:
     """Calculates the Machine Data for Hundegger.
 
     Parameters:
@@ -178,7 +177,7 @@ def export_hundegger_with_file_path_and_presetting_silent(hundeggertype: hundegg
     """
 
 
-def get_element_hundegger_processings(element_id: ElementId, hundeggertype: hundegger_machine_type) -> List[ElementId]:
+def get_element_hundegger_processings(element_id: ElementId, hundeggertype: hundegger_machine_type) -> list[ElementId]:
     """Gets the list of Hundegger processings for a specific element.
 
     Parameters:
@@ -200,7 +199,7 @@ def get_element_hundegger_processings(element_id: ElementId, hundeggertype: hund
     """
 
 
-def get_element_btl_processings(element_id: ElementId, btl_version: btl_version) -> List[ElementId]:
+def get_element_btl_processings(element_id: ElementId, btl_version: btl_version) -> list[ElementId]:
     """Gets the list of BTL processings for a specific element.
 
     Parameters:
@@ -288,7 +287,7 @@ def get_processing_points(reference_element_id: ElementId, processing_id: Elemen
     """
 
 
-def get_processing_btl_parameter_set(reference_element_id: ElementId, processing_id: ElementId) -> List[str]:
+def get_processing_btl_parameter_set(reference_element_id: ElementId, processing_id: ElementId) -> list[str]:
     """Gets the BTL parameter set of a specific processing.
 
     Parameters:

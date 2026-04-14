@@ -1,6 +1,6 @@
 [project]
 name = "cwapi3d"
-version = "32.443.5"
+version = "32.443.6"
 authors = [{ name = "Cadwork", email = "it@cadwork.ca" }]
 requires-python = ">= 3.12"
 description = 'Python bindings for CwAPI3D'
@@ -49,5 +49,8 @@ packages = [
 ]
 package-dir = { "" = "src" }
 
+[tool.setuptools.package-data]
+"*" = ["*.pyi", "py.typed"]
+
 [tool.setuptools.exclude-package-data]
-"*" = [".py"]
+"*" = ["*.py"]
