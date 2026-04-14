@@ -1,4 +1,3 @@
-from typing import List
 from cadwork import multi_layer_cover_type
 from cadwork.api_types import *
 from cadwork.multi_layer_type import multi_layer_type
@@ -169,7 +168,7 @@ def set_cover_color(set_id: MultiLayerSetId, cover_color: ColorId) -> None:
         >>> mlc.set_cover_color(multi_layer_set_id, blue_color_id)
     """
 
-def get_multi_layer_walls() -> List[MultiLayerSetId]:
+def get_multi_layer_walls() -> list[MultiLayerSetId]:
     """Gets all multi layer wall ids.
 
     Examples:
@@ -370,7 +369,7 @@ def get_cover_color(set_id: MultiLayerSetId) -> ColorId:
         The cover color.
     """
 
-def get_multi_layer_framed_floors() -> List[MultiLayerSetId]:
+def get_multi_layer_framed_floors() -> list[MultiLayerSetId]:
     """Gets all framed multi layer floor ids.
 
     Examples:
@@ -398,7 +397,7 @@ def create_multi_layer_framed_floor(set_name: str) -> MultiLayerSetId:
         The multi layer set id.
     """
 
-def get_multi_layer_framed_roofs() -> List[MultiLayerSetId]:
+def get_multi_layer_framed_roofs() -> list[MultiLayerSetId]:
     """Gets all multi layer roof ids.
 
     Examples:
@@ -412,7 +411,7 @@ def get_multi_layer_framed_roofs() -> List[MultiLayerSetId]:
         The multi layer roof ids.
     """
 
-def get_multi_layer_solid_floors() -> List[MultiLayerSetId]:
+def get_multi_layer_solid_floors() -> list[MultiLayerSetId]:
     """Gets all solid multi layer floor ids.
 
     Examples:
@@ -468,7 +467,7 @@ def create_multi_layer_framed_wall(set_name: str) -> MultiLayerSetId:
         The multi layer set id.
     """
 
-def get_multi_layer_sets() -> List[MultiLayerSetId]:
+def get_multi_layer_sets() -> list[MultiLayerSetId]:
     """Gets all multi layer set ids of all types.
 
     Examples:
@@ -497,7 +496,7 @@ def create_multi_layer_by_cover_type(set_name: str, cover_type: multi_layer_cove
         The multi layer set id.
     """
 
-def get_multi_layer_sets_for_cover_type(cover_type: multi_layer_cover_type) -> List[MultiLayerSetId]:
+def get_multi_layer_sets_for_cover_type(cover_type: multi_layer_cover_type) -> list[MultiLayerSetId]:
     """Gets all multi layer set ids of specified cover type.
 
     Parameters:
@@ -511,7 +510,7 @@ def get_multi_layer_sets_for_cover_type(cover_type: multi_layer_cover_type) -> L
     """
 
 
-def get_multi_layer_log_walls() -> List[MultiLayerSetId]:
+def get_multi_layer_log_walls() -> list[MultiLayerSetId]:
     """Gets all multi layer log wall ids.
 
     Examples:
@@ -539,7 +538,7 @@ def create_multi_layer_log_wall(set_name: str) -> MultiLayerSetId:
         The multi layer set id.
     """
 
-def get_multi_layer_solid_roofs() -> List[MultiLayerSetId]:
+def get_multi_layer_solid_roofs() -> list[MultiLayerSetId]:
     """Gets all multi layer solid roof ids.
 
     Examples:
@@ -567,7 +566,7 @@ def create_multi_layer_solid_roof(set_name: str) -> MultiLayerSetId:
         The multi layer set id.
     """
 
-def get_multi_layer_solid_walls() -> List[MultiLayerSetId]:
+def get_multi_layer_solid_walls() -> list[MultiLayerSetId]:
     """Gets all multi layer solid wall ids.
 
     Examples:

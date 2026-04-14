@@ -1,10 +1,9 @@
-from typing import List
 from cadwork.camera_data import camera_data
 from cadwork.point_3d import point_3d
 from cadwork.api_types import *
 from cadwork.rgb_color import rgb_color
 
-def set_color(element_id_list: List[ElementId], color_id: ColorId) -> None:
+def set_color(element_id_list: list[ElementId], color_id: ColorId) -> None:
     """Sets the element color.
 
     Parameters:
@@ -12,7 +11,7 @@ def set_color(element_id_list: List[ElementId], color_id: ColorId) -> None:
         color_id: The color ID to set.
     """
 
-def set_opengl_color(element_id_list: List[ElementId], color: rgb_color) -> None:
+def set_opengl_color(element_id_list: list[ElementId], color: rgb_color) -> None:
     """Sets the element OpenGL color.
 
     Parameters:
@@ -30,14 +29,14 @@ def is_active(element_id: ElementId) -> bool:
         True if the element is active, false otherwise.
     """
 
-def set_active(element_id_list: List[ElementId]) -> None:
+def set_active(element_id_list: list[ElementId]) -> None:
     """Sets element active.
 
     Parameters:
         element_id_list: The list of element id.
     """
 
-def set_inactive(element_id_list: List[ElementId]) -> None:
+def set_inactive(element_id_list: list[ElementId]) -> None:
     """Sets the element inactive.
 
     Parameters:
@@ -54,14 +53,14 @@ def is_visible(element_id: ElementId) -> bool:
         True if the element is visible, false otherwise.
     """
 
-def set_visible(element_id_list: List[ElementId]) -> None:
+def set_visible(element_id_list: list[ElementId]) -> None:
     """Sets the element visible.
 
     Parameters:
         element_id_list: The list of element id.
     """
 
-def set_invisible(element_id_list: List[ElementId]) -> None:
+def set_invisible(element_id_list: list[ElementId]) -> None:
     """Sets the element invisible.
 
     Parameters:
@@ -78,14 +77,14 @@ def is_immutable(element_id: ElementId) -> bool:
         True if the element is immutable, false otherwise.
     """
 
-def set_immutable(element_id_list: List[ElementId]) -> None:
+def set_immutable(element_id_list: list[ElementId]) -> None:
     """Sets the element immutable.
 
     Parameters:
         element_id_list: The list of element id.
     """
 
-def set_mutable(element_id_list: List[ElementId]) -> None:
+def set_mutable(element_id_list: list[ElementId]) -> None:
     """Sets the element mutable.
 
     Parameters:
@@ -112,7 +111,7 @@ def refresh() -> None:
     """Refresh the drawing area.
     """
 
-def set_material(element_id_list: List[ElementId], element_id: ElementId) -> None:
+def set_material(element_id_list: list[ElementId], element_id: ElementId) -> None:
     """Sets the element material.
 
     Parameters:
@@ -206,14 +205,14 @@ def is_selectable(element_id: ElementId) -> bool:
         True if the element is selectable, false otherwise.
     """
 
-def set_unselectable(element_id_list: List[ElementId]) -> None:
+def set_unselectable(element_id_list: list[ElementId]) -> None:
     """Sets a list of elements unselectable.
 
     Parameters:
         element_id_list: The list of element id.
     """
 
-def set_selectable(element_id_list: List[ElementId]) -> None:
+def set_selectable(element_id_list: list[ElementId]) -> None:
     """Sets a list of elements selectable.
 
     Parameters:
@@ -251,7 +250,7 @@ def show_perspective_central() -> None:
     """
 
 
-def set_color_without_material(element_id_list: List[ElementId], color_id: ColorId) -> None:
+def set_color_without_material(element_id_list: list[ElementId], color_id: ColorId) -> None:
     """Sets the color of a list of elements without changing their material.
 
     Parameters:
@@ -260,7 +259,7 @@ def set_color_without_material(element_id_list: List[ElementId], color_id: Color
     """
 
 
-def set_texture_rotated(element_id_list: List[ElementId], flag: bool) -> None:
+def set_texture_rotated(element_id_list: list[ElementId], flag: bool) -> None:
     """Sets the rotation of the texture for a list of elements.
 
     Parameters:
@@ -393,7 +392,7 @@ def get_element_transparency(element_id: ElementId) ->int:
         Transparency value as percentage.
     """
 
-def set_element_transparency(element_id_list: List[ElementId], value: int) -> None:
+def set_element_transparency(element_id_list: list[ElementId], value: int) -> None:
     """Sets the element transparency.
 
     Parameters:
@@ -411,7 +410,7 @@ def get_use_material_texture(element_id: ElementId) -> bool:
         True if the element is using material texture, false otherwise.
     """
 
-def set_use_material_texture(element_id_list: List[ElementId], value: bool) -> None:
+def set_use_material_texture(element_id_list: list[ElementId], value: bool) -> None:
     """Sets element to use material texture.
 
     Parameters:

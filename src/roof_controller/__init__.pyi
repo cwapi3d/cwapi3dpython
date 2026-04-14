@@ -1,4 +1,3 @@
-from typing import List
 from cadwork.api_types import ElementId
 
 def get_profile_length(element_id: ElementId) -> float:
@@ -58,7 +57,7 @@ def get_edge_length(element_id: ElementId, edge_type: str) -> float:
         The edge length.
     """
 
-def get_all_caddy_element_ids() -> List[ElementId]:
+def get_all_caddy_element_ids() -> list[ElementId]:
     """Gets all caddy elements
 
     Returns:
