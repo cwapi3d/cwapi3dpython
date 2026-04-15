@@ -1,4 +1,3 @@
-from typing import List
 from cadwork.api_types import MaterialId, UnsignedInt
 
 def create_material(name: str) -> MaterialId:
@@ -412,7 +411,7 @@ def get_weight_type(material_id: MaterialId) -> str:
         The material weight type.
     """
 
-def get_all_materials() -> List[MaterialId]:
+def get_all_materials() -> list[MaterialId]:
     """Retrieves a list of all materials.
 
     Returns:
@@ -463,7 +462,7 @@ def get_short_name(material_id: MaterialId) -> str:
         The short name of the material.
     """
 
-def get_all_material_groups() -> List[MaterialId]:
+def get_all_material_groups() -> list[MaterialId]:
     """Retrieves a list of all material groups.
 
     Returns:

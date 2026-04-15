@@ -1,9 +1,8 @@
-from typing import List
 from cadwork.point_3d import point_3d
 from cadwork.dimension_base_format import dimension_base_format
 from cadwork.api_types import *
 
-def create_dimension(xl: point_3d, plane_normal: point_3d, distance: point_3d, dimension_points: List[point_3d]) -> ElementId:
+def create_dimension(xl: point_3d, plane_normal: point_3d, distance: point_3d, dimension_points: list[point_3d]) -> ElementId:
     """Creates a dimension element to measure distances on 3D parts.
        The dimension is drawn on a plane 
        defined by its normal and offset distance. Points added to the dimension are projected 
@@ -40,7 +39,7 @@ def create_dimension(xl: point_3d, plane_normal: point_3d, distance: point_3d, d
         The element id of the created dimension element.
     """
 
-def set_orientation(element_id_list: List[ElementId], view_dir: point_3d, view_dir_up: point_3d) -> None:
+def set_orientation(element_id_list: list[ElementId], view_dir: point_3d, view_dir_up: point_3d) -> None:
     """Sets the orientation of dimension elements.
 
     Parameters:
@@ -59,7 +58,7 @@ def add_segment(element_id: ElementId, segment: point_3d) -> None:
         segment: The point to add to the dimension (despite the parameter name, this is a point, not a segment).
     """
 
-def set_precision(element_id_list: List[ElementId], precision: UnsignedInt) -> None:
+def set_precision(element_id_list: list[ElementId], precision: UnsignedInt) -> None:
     """Sets the precision/decimal places of a dimension element.
 
     Parameters:
@@ -67,7 +66,7 @@ def set_precision(element_id_list: List[ElementId], precision: UnsignedInt) -> N
         precision: The precision/decimal places to set.
     """
 
-def set_text_size(element_id_list: List[ElementId], text_size: float) -> None:
+def set_text_size(element_id_list: list[ElementId], text_size: float) -> None:
     """Sets the text size of a dimension element.
 
     Parameters:
@@ -75,7 +74,7 @@ def set_text_size(element_id_list: List[ElementId], text_size: float) -> None:
         text_size: The text size to set.
     """
 
-def set_line_thickness(element_id_list: List[ElementId], thickness: float) -> None:
+def set_line_thickness(element_id_list: list[ElementId], thickness: float) -> None:
     """Sets the line thickness of a dimension element.
 
     Parameters:
@@ -83,7 +82,7 @@ def set_line_thickness(element_id_list: List[ElementId], thickness: float) -> No
         thickness: The line thickness to set.
     """
 
-def set_total_dimension(element_id_list: List[ElementId], total: bool) -> None:
+def set_total_dimension(element_id_list: list[ElementId], total: bool) -> None:
     """Set whether the visualisation of the overall dimension is set for a dimension element.
 
     Parameters:
@@ -91,7 +90,7 @@ def set_total_dimension(element_id_list: List[ElementId], total: bool) -> None:
         total: True if the visualisation is set, false otherwise.
     """
 
-def set_text_color(element_id_list: List[ElementId], color_id: ColorId) -> None:
+def set_text_color(element_id_list: list[ElementId], color_id: ColorId) -> None:
     """Sets the text color of a dimension element.
 
     Parameters:
@@ -99,7 +98,7 @@ def set_text_color(element_id_list: List[ElementId], color_id: ColorId) -> None:
         color_id: The color id to set.
     """
 
-def set_line_color(element_id_list: List[ElementId], color_id: ColorId) -> None:
+def set_line_color(element_id_list: list[ElementId], color_id: ColorId) -> None:
     """Sets the line color of a dimension element.
 
     Parameters:
@@ -107,7 +106,7 @@ def set_line_color(element_id_list: List[ElementId], color_id: ColorId) -> None:
         color_id: The color id to set.
         """
 
-def set_default_anchor_length(element_id_list: List[ElementId], length: float) -> None:
+def set_default_anchor_length(element_id_list: list[ElementId], length: float) -> None:
     """Sets the default anchor length of a dimension element.
 
     Parameters:
@@ -115,7 +114,7 @@ def set_default_anchor_length(element_id_list: List[ElementId], length: float) -
         length: The default anchor length to set.
     """
 
-def set_distance(element_id_list: List[ElementId], distance: point_3d) -> None:
+def set_distance(element_id_list: list[ElementId], distance: point_3d) -> None:
     """Sets the distance vector between the points and the line.
 
     Parameters:
@@ -123,7 +122,7 @@ def set_distance(element_id_list: List[ElementId], distance: point_3d) -> None:
         distance: The distance vector to set.
     """
 
-def shift_distance_and_texts(element_id_list: List[ElementId], shifted: bool) -> None:
+def shift_distance_and_texts(element_id_list: list[ElementId], shifted: bool) -> None:
     """Sets if distance and texts are shifted.
 
     Parameters:
@@ -131,7 +130,7 @@ def shift_distance_and_texts(element_id_list: List[ElementId], shifted: bool) ->
         shifted: True if distance and texts are shifted, false otherwise.
     """
 
-def get_dimension_points(element_id: ElementId) -> List[point_3d]:
+def get_dimension_points(element_id: ElementId) -> list[point_3d]:
     """Gets all dimension points ordered by dimension direction.
 
     Parameters:

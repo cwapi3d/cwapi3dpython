@@ -1,4 +1,3 @@
-from typing import List
 from cadwork.ifc_2x3_element_type import ifc_2x3_element_type
 from cadwork.ifc_options import ifc_options
 from cadwork.ifc_predefined_type import ifc_predefined_type
@@ -43,7 +42,7 @@ def get_ifc2x3_element_type(element_id: ElementId) -> ifc_2x3_element_type:
     """
 
 
-def set_ifc2x3_element_type(element_id_list: List[ElementId], ifc_type: ifc_2x3_element_type) -> None:
+def set_ifc2x3_element_type(element_id_list: list[ElementId], ifc_type: ifc_2x3_element_type) -> None:
     """Set ifc2x3 element type.
 
     Parameters:
@@ -115,7 +114,7 @@ def export_bcf(file_path: str) -> bool:
         True if the export was successful, false otherwise.
     """
 
-def export_ifc(element_id_list: List[ElementId], file_path: str) -> bool:
+def export_ifc(element_id_list: list[ElementId], file_path: str) -> bool:
     """Export IFC file.
 
     Parameters:
@@ -136,7 +135,7 @@ def export_ifc(element_id_list: List[ElementId], file_path: str) -> bool:
         True if the export was successful, false otherwise.
     """
 
-def import_ifc_return_exchange_objects(file_path: str) -> List[ElementId]:
+def import_ifc_return_exchange_objects(file_path: str) -> list[ElementId]:
     """Imports an IFC File and returns the ids of the Exchange Objects.
 
     Parameters:
@@ -163,7 +162,7 @@ def set_storey_height(building: str, storey: str, height: float) -> None:
         >>> bc.set_storey_height(building_name, storey_name, height_millimeters)
     """
 
-def convert_exchange_objects(exchange_objects: List[ElementId]) -> List[ElementId]:
+def convert_exchange_objects(exchange_objects: list[ElementId]) -> list[ElementId]:
     """Converts a list of Exchange Objects to Cadwork Elements.
 
     Parameters:
@@ -173,7 +172,7 @@ def convert_exchange_objects(exchange_objects: List[ElementId]) -> List[ElementI
         The list of Cadwork Element ids.
     """
 
-def export_ifc2x3_silently(element_id_list: List[ElementId], file_path: str) -> bool:
+def export_ifc2x3_silently(element_id_list: list[ElementId], file_path: str) -> bool:
     """Export IFC2x3 silently.
 
     Parameters:
@@ -184,7 +183,7 @@ def export_ifc2x3_silently(element_id_list: List[ElementId], file_path: str) -> 
         True if the export was successful, false otherwise.
     """
 
-def export_ifc4_silently(element_id_list: List[ElementId], file_path: str) -> bool:
+def export_ifc4_silently(element_id_list: list[ElementId], file_path: str) -> bool:
     """Exports IFC4 silently.
 
     Parameters:
@@ -195,7 +194,7 @@ def export_ifc4_silently(element_id_list: List[ElementId], file_path: str) -> bo
         True if the export was successful, false otherwise.
     """
 
-def export_ifc2x3_silently_with_options(element_id_list: List[ElementId], file_path: str, options: ifc_options) -> bool:
+def export_ifc2x3_silently_with_options(element_id_list: list[ElementId], file_path: str, options: ifc_options) -> bool:
     """Exports IFC2x3 silently with options.
 
     Parameters:
@@ -207,7 +206,7 @@ def export_ifc2x3_silently_with_options(element_id_list: List[ElementId], file_p
         True if the export was successful, false otherwise.
     """
 
-def export_ifc4_silently_with_options(element_id_list: List[ElementId], file_path: str, options: ifc_options) -> bool:
+def export_ifc4_silently_with_options(element_id_list: list[ElementId], file_path: str, options: ifc_options) -> bool:
     """Exports IFC4 silently with options.
 
     Parameters:
@@ -219,14 +218,14 @@ def export_ifc4_silently_with_options(element_id_list: List[ElementId], file_pat
         True if the export was successful, false otherwise.
     """
 
-def update_bmt_structure_created_elements(element_id_list: List[ElementId]) -> None:
+def update_bmt_structure_created_elements(element_id_list: list[ElementId]) -> None:
     """This function takes the specified elements and inserts them into the BMT structure and adds them to the active building and storey.
 
     Parameters:
         element_id_list: The list of element ids to be updated in the BMT structure.
     """
 
-def update_bmt_structure_building_storey(element_id_list: List[ElementId]) -> None:
+def update_bmt_structure_building_storey(element_id_list: list[ElementId]) -> None:
     """This function takes the specified elements and inserts them into the BMT structure and adds them to the assigned Building and Storey.
 
     Parameters:
@@ -240,7 +239,7 @@ def get_ifc_options() -> ifc_options:
         The IfcOptions object containing the current settings.
     """
 
-def set_building_and_storey(element_id_list: List[ElementId], building: str, storey: str) -> None:
+def set_building_and_storey(element_id_list: list[ElementId], building: str, storey: str) -> None:
     """Set building and storey.
 
     Parameters:
@@ -311,14 +310,14 @@ def get_ifc2x3_element_type_display_string(entity_type: ifc_2x3_element_type) ->
         The display string representation of the IFC2x3 element type.
     """
 
-def get_all_buildings() -> List[str]:
+def get_all_buildings() -> list[str]:
     """Get all buildings.
 
     Returns:
         A list of all building.
     """
 
-def get_all_storeys(building: str) -> List[str]:
+def get_all_storeys(building: str) -> list[str]:
     """Get all storeys.
 
     Parameters:
@@ -360,7 +359,7 @@ def get_ifc_predefined_type(element_id: ElementId) -> 'ifc_predefined_type':
     """
 
 
-def set_ifc_predefined_type(element_id_list: List[ElementId], predefined_type: ifc_predefined_type) -> None:
+def set_ifc_predefined_type(element_id_list: list[ElementId], predefined_type: ifc_predefined_type) -> None:
     """Set a predefined type to elements. Attention, if you change the PredefinedType of the elements, you are responsible for ensuring that valid types are set.
 
     Parameters:

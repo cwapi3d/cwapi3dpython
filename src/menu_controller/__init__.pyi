@@ -1,7 +1,4 @@
-from typing import List
-
-
-def display_simple_menu(menu_items: List[str]) -> str:
+def display_simple_menu(menu_items: list[str]) -> str:
     """Displays a simple menu.
 
     Parameters:

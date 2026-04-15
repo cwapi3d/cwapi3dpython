@@ -1,4 +1,3 @@
-from typing import List
 from cadwork.api_types import *
 
 def add_scene(name: str) -> bool:
@@ -32,7 +31,7 @@ def delete_scene(name: str) -> bool:
         True if the operation succeeded, false otherwise.
     """
 
-def add_elements_to_scene(name: str, element_id_list: List[ElementId]) -> bool:
+def add_elements_to_scene(name: str, element_id_list: list[ElementId]) -> bool:
     """Adds elements to a scene.
 
     Parameters:
@@ -43,7 +42,7 @@ def add_elements_to_scene(name: str, element_id_list: List[ElementId]) -> bool:
         True if the operation succeeded, false otherwise.
     """
 
-def remove_elements_from_scene(name: str, element_id_list: List[ElementId]) -> bool:
+def remove_elements_from_scene(name: str, element_id_list: list[ElementId]) -> bool:
     """Removes elements from a scene.
 
     Parameters:
@@ -54,7 +53,7 @@ def remove_elements_from_scene(name: str, element_id_list: List[ElementId]) -> b
         True if the operation succeeded, false otherwise.
     """
 
-def get_elements_from_scene(name: str) -> List[ElementId]:
+def get_elements_from_scene(name: str) -> list[ElementId]:
     """Gets the elements from a scene.
 
     Parameters:
@@ -78,14 +77,14 @@ def clear_errors() -> None:
     """Clears all errors.
     """
 
-def get_scene_list() -> List[str]:
+def get_scene_list() -> list[str]:
     """Gets the list of scenes.
 
     Returns:
         The list of scene names.
     """
 
-def group_scences(scene_names: List[str]) -> UnsignedInt:
+def group_scences(scene_names: list[str]) -> UnsignedInt:
     """Groups the scenes to a scene group.
 
     Parameters:
@@ -148,7 +147,7 @@ def rename_scene_group_by_index(group_index: UnsignedInt, new_name: str) -> None
         new_name: The new scene group name.
     """
 
-def group_scences_with_name(scene_names: List[str], group_name: str) -> UnsignedInt:
+def group_scences_with_name(scene_names: list[str], group_name: str) -> UnsignedInt:
     """Groups the scenes to a scene group and sets the name of the new group.
 
     Parameters:
