@@ -1,3 +1,5 @@
+from typing import Iterator
+
 from cadwork import point_3d
 from cadwork import polygon_list
 from cadwork import vertex_list
@@ -81,4 +83,10 @@ class facet_list:
         Returns:
             float
         """
+
+    def __len__(self) -> int: ...
+
+    def __iter__(self) -> Iterator[vertex_list]: ...
+
+    def __getitem__(self, index: int) -> vertex_list: ...
 
