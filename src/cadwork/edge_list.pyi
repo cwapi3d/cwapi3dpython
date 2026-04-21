@@ -1,7 +1,9 @@
+from typing import Iterator
+
 from cadwork import point_3d
 
 class edge_list:
-    
+
     def count(self) -> int:
         """count
 
@@ -18,4 +20,10 @@ class edge_list:
         Returns:
             point_3d
         """
+
+    def __len__(self) -> int: ...
+
+    def __iter__(self) -> Iterator[point_3d]: ...
+
+    def __getitem__(self, index: int) -> point_3d: ...
 
