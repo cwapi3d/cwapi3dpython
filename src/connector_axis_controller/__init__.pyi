@@ -1,3 +1,12 @@
+"""Fastener and connector axes.
+
+Domain of the linear assemblies that represent bolts, screws, dowels
+and similar connectors: their creation, validation, the catalog items
+attached to them (bolt, nut, washer, ...), per-item user fields, and
+the configuration UI for connector axes. Distinct from connector
+*nodes* and from drillings, which live in element_controller.
+"""
+
 from cadwork.point_3d import point_3d
 from cadwork.api_types import *
 from cadwork.vba_catalog_item_type import vba_catalog_item_type

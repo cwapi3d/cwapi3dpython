@@ -1,3 +1,13 @@
+"""Multi-layer build-ups for walls, roofs and floors.
+
+Covers the definition and management of layered cover assemblies
+(walls — solid, framed, log; floors — solid, framed; roofs and
+generic cover types): creating sets, naming them, and composing
+them from ordered layers with type, material and thickness. The
+template/library side of multi-layer construction; instantiation
+of these covers as elements is done elsewhere in the API.
+"""
+
 from cadwork import multi_layer_cover_type
 from cadwork.api_types import *
 from cadwork.multi_layer_type import multi_layer_type

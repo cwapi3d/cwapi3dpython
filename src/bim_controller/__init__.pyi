@@ -1,3 +1,13 @@
+"""Building Information Modeling (BIM) workflows.
+
+Covers the IFC ecosystem and the building-structural metadata that
+goes with it: IFC import/export in its supported schema versions,
+configuration of IFC export options (properties, project data,
+aggregation, element combination), and assignment of building and
+storey information to elements. The module to use whenever the model
+needs to interoperate with IFC-based BIM tooling.
+"""
+
 from cadwork.ifc_2x3_element_type import ifc_2x3_element_type
 from cadwork.ifc_options import ifc_options
 from cadwork.ifc_predefined_type import ifc_predefined_type

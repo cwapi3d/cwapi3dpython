@@ -1,3 +1,13 @@
+"""Spatial and metric properties of elements.
+
+Concerned with the pure geometry of an element: its dimensions,
+volumes, areas, weights, local coordinate system (axes and reference
+points), facets and edges, and rigid transformations applied to the
+element's own frame (axis flips and rotations). Use this module to
+*measure* or *reorient* an element's geometry; use element_controller
+to create or destroy it.
+"""
+
 from cadwork.api_types import ElementId, UnsignedInt
 from cadwork.facet_list import facet_list
 from cadwork.point_3d import point_3d

@@ -1,3 +1,12 @@
+"""Interchange with external 3D and CAD file formats.
+
+Handles import and export of geometry between cadwork and third-party
+formats (3DC, STEP, SAT, Rhino, BTL, BXF, DXF, DSTV, FBX, OBJ, STL,
+GLB, WebGL, variants, ...). Concerned only with neutral-format data
+exchange — BIM-specific (IFC) workflows live in bim_controller, and
+shop-drawing 2D exports live in shop_drawing_controller.
+"""
+
 from cadwork.import_3dc_options import import_3dc_options
 from cadwork.point_3d import point_3d
 from cadwork.bim_team_upload_result import bim_team_upload_result

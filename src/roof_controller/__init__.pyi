@@ -1,3 +1,13 @@
+"""Roof-surface specific queries and operations.
+
+Concerned with information that only makes sense for roof
+surfaces: roof-specific edge classifications (ridge, eave, hip,
+valley, ...), profile and edge measurements, and other
+analyses that depend on a surface having been designated as a
+roof. Conversion of generic surfaces into roof surfaces lives in
+element_controller.
+"""
+
 from cadwork.api_types import ElementId
 
 def get_profile_length(element_id: ElementId) -> float:
