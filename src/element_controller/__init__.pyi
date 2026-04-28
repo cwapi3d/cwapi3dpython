@@ -1,3 +1,14 @@
+"""Lifecycle and structural manipulation of model elements.
+
+Domain of element existence: creation of every kind of element from
+parameters or geometry, duplication and mirroring, deletion, type
+conversion between element kinds, selection and identification, GUID
+management, grouping into details/containers, and high-level structural
+edits (processes, end-profile cuts, joinery operations). This is the
+entry point for any operation that adds, removes, or fundamentally
+transforms what exists in the model.
+"""
+
 from cadwork.edge_list import edge_list
 from cadwork.element_module_properties import element_module_properties
 from cadwork.facet_list import facet_list

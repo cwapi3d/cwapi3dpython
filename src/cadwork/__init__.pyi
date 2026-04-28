@@ -1,14 +1,12 @@
-"""cadwork Python API type definitions.
+"""Core data model of the cadwork API.
 
-This module re-exports all cadwork data types, enumerations, and utility classes.
-
-Usage::
-
-    from cadwork import point_3d, element_type
-
-    # or
-    import cadwork
-    p = cadwork.point_3d(0.0, 0.0, 0.0)
+Defines the foundational types, enums, and value objects shared across
+all controller modules: geometric primitives, identifier types (elements,
+materials, end-types, multi-layer sets, etc.), classification enums
+(element types, IFC types, machine and BTL versions, multi-layer kinds,
+display options), and the configurable option/property objects passed
+into controllers. This module describes *what things are* in cadwork;
+the controller modules describe *what you can do with them*.
 """
 
 # --- Type aliases ---

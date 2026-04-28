@@ -1,3 +1,12 @@
+"""Scenes: named, organisable views of element subsets.
+
+Manages the collection of saved scenes in the project — their
+creation and removal, their membership of elements, their grouping
+into folders/tabs, and their activation. Scenes are persistent
+named selections; transient visibility belongs to
+visualization_controller.
+"""
+
 from cadwork.api_types import *
 
 def add_scene(name: str) -> bool:

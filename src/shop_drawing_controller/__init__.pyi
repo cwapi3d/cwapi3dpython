@@ -1,3 +1,12 @@
+"""2D shop and workshop drawing generation.
+
+Covers the production of 2D drawings from the 3D model: wireframe
+and hidden-line views, layout-based and clipboard-based outputs,
+section and detail generation (wall sections and similar), and
+export-solid handling for shop-drawing workflows. The 2D-output
+counterpart to file_controller's neutral 3D exports.
+"""
+
 from cadwork.point_3d import point_3d
 from cadwork.api_types import *
 

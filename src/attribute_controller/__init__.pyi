@@ -1,3 +1,13 @@
+"""Non-geometric properties and classification of elements.
+
+Covers everything that describes an element without changing its shape:
+identification and labelling (name, group, comment, production data),
+user-defined attributes and their lists, element-type classification
+(beam, panel, auxiliary, wall, roof, floor, drilling, export-solid, ...),
+and the configuration of how these attributes are displayed in the
+different views of the application.
+"""
+
 from cadwork.api_types import *
 from cadwork.attribute_display_settings import attribute_display_settings
 from cadwork.element_grouping_type import element_grouping_type

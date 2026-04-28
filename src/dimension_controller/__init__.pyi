@@ -1,3 +1,12 @@
+"""3D dimension annotations on the model.
+
+Domain of dimension elements as first-class objects in the model:
+their creation on a defined plane, the points they measure, their
+formatting and orientation, and visualisation options such as
+overall dimensions. Distinct from shop-drawing dimensions, which
+are produced as part of 2D output.
+"""
+
 from cadwork.point_3d import point_3d
 from cadwork.dimension_base_format import dimension_base_format
 from cadwork.api_types import *
