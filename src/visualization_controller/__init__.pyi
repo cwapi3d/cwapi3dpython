@@ -1,3 +1,12 @@
+"""On-screen presentation and viewing state.
+
+Controls how the model is displayed without altering the underlying
+data: visibility and activation of elements, view modes and camera
+orientation, color overrides, and the saving/restoring of viewing
+states. Strictly visual — nothing in this module changes element
+properties or geometry persistently.
+"""
+
 from cadwork.camera_data import camera_data
 from cadwork.point_3d import point_3d
 from cadwork.api_types import *

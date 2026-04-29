@@ -1,3 +1,13 @@
+"""Application environment and user interaction.
+
+The bridge between scripts and the surrounding cadwork application:
+filesystem and version information, language and locale, user-facing
+dialogs and prompts, status messages and progress indicators, GUID
+generation, project metadata, and access to the host window itself.
+General-purpose helpers that don't belong to any specific modelling
+domain.
+"""
+
 from cadwork.api_types import ElementId
 from cadwork.point_3d import point_3d
 from cadwork.window_geometry import window_geometry

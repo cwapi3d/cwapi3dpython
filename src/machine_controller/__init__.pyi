@@ -1,3 +1,12 @@
+"""CNC and woodworking-machine output.
+
+Covers the calculation and export of machine data for fabrication:
+BTL / BTLx in their supported versions, the Hundegger family and
+its variants (with optional preset files and silent operation),
+and the inspection of per-element machine processings. The bridge
+between the cadwork model and the shop floor.
+"""
+
 from cadwork import vertex_list
 from cadwork.api_types import ElementId
 from cadwork.btl_version import btl_version

@@ -1,3 +1,12 @@
+"""Tabular list exports for production and quantity takeoff.
+
+Generates the structured lists used in fabrication and project
+management: production lists, part lists, and cover (wall / roof /
+floor) lists, with optional external settings files to control
+formatting and content. Concerned with *aggregated tabular data*
+about the model, not with geometric or drawing exports.
+"""
+
 from cadwork.api_types import ElementId, UnsignedInt
 
 def export_production_list(element_id_list: list[ElementId], file_path: str) -> None:

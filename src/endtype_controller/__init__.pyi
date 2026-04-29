@@ -1,3 +1,12 @@
+"""End-type joinery: profiled cuts at element faces.
+
+Domain of named joinery profiles (tenons, mortises, dovetails,
+custom shapes, ...) applied to the start, end or arbitrary faces
+of an element. Covers the catalog (creation, lookup by name and
+id), assignment to specific element faces, retrieval of currently
+applied end-types, and the interactive selection dialog.
+"""
+
 from cadwork.api_types import *
 
 def get_endtype_id(name: str) -> EndtypeId:
