@@ -435,14 +435,18 @@ def rotate_elements(element_id_list: list[ElementId], origin: point_3d, rotation
     """
 
 def subtract_elements(hard_elements: list[ElementId], soft_elements: list[ElementId]) -> list[ElementId]:
-    """Subtracts a list of "soft" elements from a list of "hard" elements.
+    """Subtracts the volume of `hard_elements` from `soft_elements` (boolean
+    difference). Soft elements are cut in place and keep their IDs.
 
     Parameters:
-        hard_elements: The list of "hard" elements.
-        soft_elements: The list of "soft" elements.
+        hard_elements (list[ElementId]): The cutter elements. Not modified.
+        soft_elements (list[ElementId]): The elements to be cut. Modified
+            in place.
 
     Returns:
-        The list of resulting elements.
+        list[ElementId]: Additional element IDs produced when a soft
+            element is split into multiple disconnected pieces by the
+            subtraction. Does not include the IDs from `soft_elements`.
     """
 
 def check_element_id(element_id: ElementId) -> bool:
@@ -1179,15 +1183,19 @@ def add_elements_to_detail(element_id_list: list[ElementId], detail: int) -> Non
     """
 
 def subtract_elements_with_undo(hard_element_id_list: list[ElementId], soft_element_id_list: list[ElementId], with_undo: bool) -> list[ElementId]:
-    """Subtracts a list of "soft" elements from a list of "hard" elements with undo functionality.
+    """Subtracts the volume of `hard_elements` from `soft_elements` (boolean difference)
+    with undo functionality. Soft elements are cut in place and keep their IDs.
 
     Parameters:
-        hard_element_id_list: The list of "hard" elements.
-        soft_element_id_list: The list of "soft" elements.
-        with_undo: Indicate whether the operation should be added to the undo stack.
+        hard_element_id_list (list[ElementId]): The cutter elements. Not modified.
+        soft_element_id_list (list[ElementId]): The elements to be cut. Modified
+            in place.
+        with_undo (bool): Indicate whether the operation should be added to the undo stack.
 
     Returns:
-        The list of elements resulting from the subtraction.
+        list[ElementId]: Additional element IDs produced when a soft
+            element is split into multiple disconnected pieces by the
+            subtraction. Does not include the IDs from `soft_elements`.
     """
 
 def create_linear_optimization(element_id_list: list[ElementId], optimization_number: int, total_length: float, start_cut: float, end_cut: float, saw_kerf: float, is_production_list: bool) -> ElementId:
