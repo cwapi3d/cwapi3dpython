@@ -472,7 +472,7 @@ def get_short_name(material_id: MaterialId) -> str:
         The short name of the material.
     """
 
-def get_all_material_groups() -> list[MaterialId]:
+def get_all_material_groups() -> list[str]:
     """Retrieves a list of all material groups.
 
     Returns:
