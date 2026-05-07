@@ -26,6 +26,7 @@ from .active_point_result import active_point_result as active_point_result
 from .attribute_display_settings import attribute_display_settings as attribute_display_settings
 from .bim_team_upload_result import bim_team_upload_result as bim_team_upload_result
 from .camera_data import camera_data as camera_data
+from .connector_axis_item import connector_axis_item as connector_axis_item
 from .coordinate_system_data import coordinate_system_data as coordinate_system_data
 from .double_shoulder_options import double_shoulder_options as double_shoulder_options
 from .edge_list import edge_list as edge_list
@@ -102,6 +103,7 @@ __all__ = [
     "attribute_display_settings",
     "bim_team_upload_result",
     "camera_data",
+    "connector_axis_item",
     "coordinate_system_data",
     "double_shoulder_options",
     "edge_list",
