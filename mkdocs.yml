@@ -66,6 +66,7 @@ nav:
           - Coordinate System Data: documentation/coordinate_system_data.md
           - Active Point Result: documentation/active_point_result.md
           - Display Attribute: documentation/display_attribute.md
+          - Connector Axis Item: documentation/connector_axis_item.md
       - Connector Axis Controller: documentation/connector_axis_controller.md
       - Dimension Controller: documentation/dimension_controller.md
       - Element Controller: documentation/element_controller.md
@@ -153,11 +154,9 @@ plugins:
         python:
           paths: [src] # Directory containing Python modules
           options:
-            show_signature_annotations: true 
-            show_type_annotations: true
-            docstring_style: google # Set the docstring style
-            cross_reference: true # Enable cross-referencing to make links to classes, methods, and functions
-            show_source: false # Disable source code display
+            show_signature_annotations: true
+            docstring_style: google
+            show_source: false
 
 extra:
   social:
