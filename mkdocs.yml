@@ -3,7 +3,7 @@ site_name: Cadwork Python Documentation
 repo_name: cwapi3d/cwapi3dpython
 repo_url: https://github.com/cwapi3d/cwapi3dpython
 
-copyright: Copyright 2024 Cadwork
+copyright: Copyright 2026 Cadwork
 
 site_url: https://python.cadwork.dev/
 
@@ -11,7 +11,7 @@ theme:
   name: material
   logo: cw_logo.svg
   favicon: cw_logo.svg
-  version: V2025
+  version: V2026
   palette:
     - scheme: default
       toggle:
