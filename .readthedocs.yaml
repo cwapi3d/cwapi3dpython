@@ -4,6 +4,10 @@ build:
   os: ubuntu-lts-latest
   tools:
     python: "3.14"
+  jobs:
+    post_checkout:
+      - git lfs install
+      - git lfs pull
 
 mkdocs:
   configuration: mkdocs.yml
