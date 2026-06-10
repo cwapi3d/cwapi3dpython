@@ -8,8 +8,8 @@ Combined with a PowerShell loop, this turns cadwork into a tool you can drive ov
 of files at once** (batch processing) for exports, printing or any custom Python automation.
 
 !!! note
-    Exact paths (drive letter, version folder name) depend on your local installation. Replace the
-    paths in the examples below with the ones on your machine.
+Exact paths (drive letter, version folder name) depend on your local installation. Replace the
+paths in the examples below with the ones on your machine.
 
 ## Locating `ci_start.exe`
 
@@ -43,8 +43,8 @@ Start-Process "C:\Users\Me\Downloads\timber-framed-elements_2027.3d" -ArgumentLi
 ```
 
 !!! note
-    `/EXE=` is especially useful when several cadwork versions are installed side by side — it
-    decides whether the file opens in, for example, the 2026 or the 2027 program.
+`/EXE=` is especially useful when several cadwork versions are installed side by side — it
+decides whether the file opens in, for example, the 2026 or the 2027 program.
 
 ## Auto-running a Python script (`/PLUGIN=`)
 
@@ -59,9 +59,9 @@ and script name you set up for the plugin bar). See [Getting Started](get_starte
 create and place a plugin.
 
 !!! tip
-    For unattended processing, let the script do its work and then save or export the result — for
-    example `file_controller.save_3d_file()` or an export controller call — so each file is
-    processed start to finish without any clicks.
+For unattended processing, let the script do its work and then save or export the result — for
+example `file_controller.save_3d_file()` or an export controller call — so each file is
+processed start to finish without any clicks.
 
 ## Batch printing / export
 
@@ -74,12 +74,12 @@ ci_start.exe "C:\path\plan.2d" /L A         :: print all laser frames to the def
 ci_start.exe "C:\path\plan.2d" /L PDF       :: print all laser frames to the default PDF driver
 ```
 
-| Argument        | Effect                                                   |
-| --------------- | -------------------------------------------------------- |
-| `/P A`          | Print **all** plotter frames to the default plotter      |
-| `/P 1-2;5;7`    | Print the **selected** plotter frames                    |
-| `/L A`          | Print **all** laser frames to the default laser          |
-| `/L PDF`        | Print **all** laser frames to the default PDF driver     |
+| Argument     | Effect                                               |
+| ------------ | ---------------------------------------------------- |
+| `/P A`       | Print **all** plotter frames to the default plotter  |
+| `/P 1-2;5;7` | Print the **selected** plotter frames                |
+| `/L A`       | Print **all** laser frames to the default laser      |
+| `/L PDF`     | Print **all** laser frames to the default PDF driver |
 
 ## Batch processing with PowerShell
 
@@ -100,18 +100,21 @@ foreach ($file in $files) {
 ```
 
 !!! warning
-    The `-Wait` flag is important: it makes PowerShell wait until cadwork closes before opening the
-    next file, so the files are processed **one at a time** instead of launching dozens of cadwork
-    instances at once. For a fully unattended run, the plugin should save/export its result and
-    then close the file.
+The `-Wait` flag is important: it makes PowerShell wait until cadwork closes before opening the
+next file, so the files are processed **one at a time** instead of launching dozens of cadwork
+instances at once. For a fully unattended run, the plugin should save/export its result and
+then close the file.
 
 ## Other useful arguments
 
 A few additional arguments that are handy for everyday use:
 
-| Argument            | Effect                                              |
-| ------------------- | --------------------------------------------------- |
-| `/GET_LICENCE`      | Print the currently selected default licence type   |
+| Argument       | Effect                                            |
+| -------------- | ------------------------------------------------- |
+| `/GET_LICENCE` | Print the currently selected default licence type |
+| `/USP`         | Define the directory for the Userprofile          |
+| `/CATDIR`      | Define the directory for the Catalog              |
+| `/WORKDIR`     | Define the directory for the Work folder          |
 
 ## See also
 
