@@ -1,22 +1,25 @@
-from typing import Annotated
+from typing import TypeAlias
 
-UnsignedInt = Annotated[int, "Must be >= 0"]
-""""""
-MaterialId = Annotated[int, "Must be >= 0"]
-""""""
-ColorId = Annotated[int, "Must be >= 0"]
-""""""
-EndtypeId = Annotated[int, "Must be >= 0"]
-""""""
-AxisId = Annotated[int, "Must be >= 0"]
-""""""
-MenuIndex = Annotated[int, "Normal int"]
-""""""
-ReferenceSide = Annotated[int, "Must be >= 0"]
-""""""
-MultiLayerSetId = Annotated[int, "Must be >= 0"]
-""""""
-UserAttributeId = Annotated[int, "Must be >= 0"]
-""""""
-ElementId = Annotated[int, "Must be >= 0"]
-""""""
+UnsignedInt: TypeAlias = int
+MaterialId: TypeAlias = int
+ColorId: TypeAlias = int
+EndtypeId: TypeAlias = int
+AxisId: TypeAlias = int
+MenuIndex: TypeAlias = int
+ReferenceSide: TypeAlias = int
+MultiLayerSetId: TypeAlias = int
+UserAttributeId: TypeAlias = int
+ElementId: TypeAlias = int
+
+__all__ = [
+    "UnsignedInt",
+    "MaterialId",
+    "ColorId",
+    "EndtypeId",
+    "AxisId",
+    "MenuIndex",
+    "ReferenceSide",
+    "MultiLayerSetId",
+    "UserAttributeId",
+    "ElementId",
+]

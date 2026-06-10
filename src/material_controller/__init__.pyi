@@ -1,4 +1,13 @@
-from typing import List
+"""Materials and the color-to-material mapping system.
+
+Covers the catalog of materials available in the project — creation,
+naming, grouping, and physical/structural properties — and the
+mapping table that ties cadwork's color numbers to materials per
+element category (beams, panels, drillings, surfaces, nodes,
+standard and MEP axes, auxiliaries). Element-level material
+*assignment* by name lives in attribute_controller.
+"""
+
 from cadwork.api_types import MaterialId, UnsignedInt
 
 def create_material(name: str) -> MaterialId:
@@ -412,7 +421,7 @@ def get_weight_type(material_id: MaterialId) -> str:
         The material weight type.
     """
 
-def get_all_materials() -> List[MaterialId]:
+def get_all_materials() -> list[MaterialId]:
     """Retrieves a list of all materials.
 
     Returns:
@@ -463,7 +472,7 @@ def get_short_name(material_id: MaterialId) -> str:
         The short name of the material.
     """
 
-def get_all_material_groups() -> List[MaterialId]:
+def get_all_material_groups() -> list[str]:
     """Retrieves a list of all material groups.
 
     Returns:

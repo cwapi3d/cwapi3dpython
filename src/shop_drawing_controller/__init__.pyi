@@ -1,4 +1,12 @@
-from typing import List
+"""2D shop and workshop drawing generation.
+
+Covers the production of 2D drawings from the 3D model: wireframe
+and hidden-line views, layout-based and clipboard-based outputs,
+section and detail generation (wall sections and similar), and
+export-solid handling for shop-drawing workflows. The 2D-output
+counterpart to file_controller's neutral 3D exports.
+"""
+
 from cadwork.point_3d import point_3d
 from cadwork.api_types import *
 
@@ -35,7 +43,7 @@ def export_2d_hidden_lines_with_2dc(file_path: str, with_layout: bool) -> None:
         with_layout: Use layout, false by default.
     """
 
-def export_wall_with_clipboard(clipboard_number: UnsignedInt, element_id_list: List[ElementId]) -> None:
+def export_wall_with_clipboard(clipboard_number: UnsignedInt, element_id_list: list[ElementId]) -> None:
     """Exports a wall to the clipboard.
 
     Parameters:
@@ -43,7 +51,7 @@ def export_wall_with_clipboard(clipboard_number: UnsignedInt, element_id_list: L
         element_id_list: The elements to export.
     """
 
-def export_export_solid_with_clipboard(clipboard_number: UnsignedInt, element_id_list: List[ElementId]) -> None:
+def export_export_solid_with_clipboard(clipboard_number: UnsignedInt, element_id_list: list[ElementId]) -> None:
     """Exports an export solid to the clipboard.
 
     Parameters:
@@ -51,7 +59,7 @@ def export_export_solid_with_clipboard(clipboard_number: UnsignedInt, element_id
         element_id_list: The elements to export.
     """
 
-def export_piece_by_piece_with_clipboard(clipboard_number: UnsignedInt, element_id_list: List[ElementId]) -> None:
+def export_piece_by_piece_with_clipboard(clipboard_number: UnsignedInt, element_id_list: list[ElementId]) -> None:
     """Exports a piece-by-piece to the clipboard.
 
     Parameters:
@@ -59,7 +67,7 @@ def export_piece_by_piece_with_clipboard(clipboard_number: UnsignedInt, element_
         element_id_list: The elements to export.
     """
 
-def assign_export_solid(ceo_element_id_list: List[ElementId], element_id_list: List[ElementId]) -> None:
+def assign_export_solid(ceo_element_id_list: list[ElementId], element_id_list: list[ElementId]) -> None:
     """Assigns elements to an export solid.
 
     Parameters:
@@ -67,7 +75,7 @@ def assign_export_solid(ceo_element_id_list: List[ElementId], element_id_list: L
         element_id_list: The elements to assign.
     """
 
-def export_container_with_clipboard(clipboard_number: UnsignedInt, element_id_list: List[ElementId]) -> None:
+def export_container_with_clipboard(clipboard_number: UnsignedInt, element_id_list: list[ElementId]) -> None:
     """Export a container to the clipboard.
 
     Parameters:
@@ -91,7 +99,7 @@ def add_wall_section_vertical(element_id: ElementId, position: point_3d) -> None
         position: The section position.
     """
 
-def export_wall_with_clipboard_and_presetting(clipboard_number: UnsignedInt, element_id_list: List[ElementId], presetting_file: str) -> None:
+def export_wall_with_clipboard_and_presetting(clipboard_number: UnsignedInt, element_id_list: list[ElementId], presetting_file: str) -> None:
     """Exports a wall to the clipboard.
 
     Parameters:

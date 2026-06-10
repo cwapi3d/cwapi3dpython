@@ -1,5 +1,13 @@
-from typing import List
-from typing import Tuple
+"""Application environment and user interaction.
+
+The bridge between scripts and the surrounding cadwork application:
+filesystem and version information, language and locale, user-facing
+dialogs and prompts, status messages and progress indicators, GUID
+generation, project metadata, and access to the host window itself.
+General-purpose helpers that don't belong to any specific modelling
+domain.
+"""
+
 from cadwork.api_types import ElementId
 from cadwork.point_3d import point_3d
 from cadwork.window_geometry import window_geometry
@@ -38,7 +46,11 @@ def set_project_data(project_data_id: str, data: str) -> None:
 
 
 def print_error(message: str) -> None:
-    """Prints an error.
+    """Prints an error to the bottom toolbar of Cadwork 3d.
+
+    Notes:
+        Attention, this function is blocking. User will need to click to
+        continue the process.
 
     Parameters:
         message: The error message.
@@ -54,7 +66,12 @@ def get_language() -> str:
 
 
 def print_message(message: str, row: int, column: int) -> None:
-    """Prints a message.
+    """Prints a message that will be visualized in the bottom toolbar of the
+    3D view. You can arrange the message in the desired position by specifying the row and column.
+
+    Examples:
+        >>> import utility_controller as uc
+        >>> uc.print_message("Hello World!", 1, 1)
 
     Parameters:
         message: The message to print.
@@ -277,7 +294,7 @@ def enable_auto_display_refresh() -> None:
         >>> import element_controller as ec
         >>> uc.disable_auto_display_refresh()
         >>> # Perform operations that require disabled display refresh
-        >>> your_list_of_elements: List[int] = []
+        >>> your_list_of_elements: list[int] = []
         >>> uc.enable_auto_display_refresh()
         >>> ec.recreate_elements(your_list_of_elements)
 
@@ -297,7 +314,7 @@ def create_new_guid() -> str:
 
 
 def print_to_console(message: str) -> None:
-    """Prints a message to the console.
+    """Prints a message to the Cadwork debug console.
 
     Parameters:
         message: The message.
@@ -563,7 +580,7 @@ def init_LxSDK() -> None:
     """
 
 
-def load_element_attribute_display_settings(file_path: str, elements: List[ElementId]) -> None:
+def load_element_attribute_display_settings(file_path: str, elements: list[ElementId]) -> None:
     """Loads element attribute display settings from a file.
 
     Parameters:
@@ -688,7 +705,7 @@ def disable_update_variant() -> None:
     """
 
 
-def get_user_points() -> List[point_3d]:
+def get_user_points() -> list[point_3d]:
     """Gets user points.
 
     Returns:
@@ -696,7 +713,7 @@ def get_user_points() -> List[point_3d]:
     """
 
 
-def get_user_points_with_count(count: int) -> List[point_3d]:
+def get_user_points_with_count(count: int) -> list[point_3d]:
     """Gets user points with a specified count.
 
     Parameters:
@@ -1019,7 +1036,7 @@ def create_snapshot() -> str:
     """
 
 
-def get_3d_gui_upper_left_screen_coordinates() -> Tuple[int, int]:
+def get_3d_gui_upper_left_screen_coordinates() -> tuple[int, int]:
     """Get the coordinates of the upper left corner of the 3D GUI.
 
     Returns:
@@ -1035,7 +1052,7 @@ def get_3d_main_window_geometry() -> 'window_geometry':
     """
 
 
-def get_project_data_keys() -> List[str]:
+def get_project_data_keys() -> list[str]:
     """Gets all keys for project data.
 
     Returns:

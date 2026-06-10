@@ -1,4 +1,12 @@
-from typing import List
+"""End-type joinery: profiled cuts at element faces.
+
+Domain of named joinery profiles (tenons, mortises, dovetails,
+custom shapes, ...) applied to the start, end or arbitrary faces
+of an element. Covers the catalog (creation, lookup by name and
+id), assignment to specific element faces, retrieval of currently
+applied end-types, and the interactive selection dialog.
+"""
+
 from cadwork.api_types import *
 
 def get_endtype_id(name: str) -> EndtypeId:
@@ -299,7 +307,7 @@ def get_endtype_name_facet(element_id: ElementId, face_number: int) -> str:
         The endtype name of the face.
     """
 
-def get_existing_tenon_ids() -> List[EndtypeId]:
+def get_existing_tenon_ids() -> list[EndtypeId]:
     """Get the existing tenon endtype id list.
 
     Examples:
@@ -312,7 +320,7 @@ def get_existing_tenon_ids() -> List[EndtypeId]:
         List of existing tenon endtype id.
     """
 
-def get_existing_lengthening_ids() -> List[EndtypeId]:
+def get_existing_lengthening_ids() -> list[EndtypeId]:
     """Get the existing lengthening endtype id list.
 
     Examples:
@@ -325,7 +333,7 @@ def get_existing_lengthening_ids() -> List[EndtypeId]:
         List of existing lengthening endtype id.
     """
 
-def get_existing_dovetail_ids() -> List[EndtypeId]:
+def get_existing_dovetail_ids() -> list[EndtypeId]:
     """Get the existing dovetail endtype id list.
 
     Examples:
@@ -338,7 +346,7 @@ def get_existing_dovetail_ids() -> List[EndtypeId]:
         List of existing dovetail endtype id.
     """
 
-def get_existing_dovetail_dado_ids() -> List[EndtypeId]:
+def get_existing_dovetail_dado_ids() -> list[EndtypeId]:
     """Get the existing dado endtype id list.
 
     Examples:
@@ -351,7 +359,7 @@ def get_existing_dovetail_dado_ids() -> List[EndtypeId]:
         List of existing dado endtype id.
     """
 
-def get_existing_japanese_tenon_ids() -> List[EndtypeId]:
+def get_existing_japanese_tenon_ids() -> list[EndtypeId]:
     """Get the existing japanese-tenon endtype id list.
 
     Examples:

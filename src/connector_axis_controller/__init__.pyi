@@ -1,5 +1,14 @@
-from typing import List
+"""Fastener and connector axes.
+
+Domain of the linear assemblies that represent bolts, screws, dowels
+and similar connectors: their creation, validation, the catalog items
+attached to them (bolt, nut, washer, ...), per-item user fields, and
+the configuration UI for connector axes. Distinct from connector
+*nodes* and from drillings, which live in element_controller.
+"""
+
 from cadwork.point_3d import point_3d
+from cadwork.connector_axis_item import connector_axis_item
 from cadwork.api_types import *
 from cadwork.vba_catalog_item_type import vba_catalog_item_type
 
@@ -69,7 +78,7 @@ def clear_errors() -> None:
     """
 
 
-def update_axis_cutting_ability(axis_id_list: List[ElementId]) -> None:
+def update_axis_cutting_ability(axis_id_list: list[ElementId]) -> None:
     """Updates the Connection Config (CuttingAbility) of Axis/VBAs.
 
     Parameters:
@@ -189,7 +198,7 @@ def get_section_diameter(axis_id: ElementId, section_index: UnsignedInt) -> floa
     """
 
 
-def get_axis_items_guids(axis_id: ElementId) -> List[str]:
+def get_axis_items_guids(axis_id: ElementId) -> list[str]:
     """Returns a list of GUIDs of all axis items.
 
     Parameters:
@@ -323,7 +332,7 @@ def get_bolt_diameter(axis_id: ElementId) -> float:
         The bolt diameter.
     """
 
-def get_standard_connector_list() -> List[str]:
+def get_standard_connector_list() -> list[str]:
     """Returns a list of all standard connectors.
 
     Returns:
@@ -441,7 +450,7 @@ def get_intersection_count(intersection_index: UnsignedInt) -> int:
         The intersection count.
     """
 
-def get_item_guids_at_intersection(axis_id: ElementId, intersection_index: UnsignedInt) -> List[str]:
+def get_item_guids_at_intersection(axis_id: ElementId, intersection_index: UnsignedInt) -> list[str]:
     """Get item GUIDs at intersection.
 
     Parameters:
@@ -453,7 +462,7 @@ def get_item_guids_at_intersection(axis_id: ElementId, intersection_index: Unsig
     """
 
 
-def set_item_guids_at_intersection(axis_id: ElementId, intersection_index: UnsignedInt, item_guids: List[str]) -> None:
+def set_item_guids_at_intersection(axis_id: ElementId, intersection_index: UnsignedInt, item_guids: list[str]) -> None:
     """Sets item GUIDs at intersection.
 
     Parameters:
@@ -541,4 +550,14 @@ def set_section_oblong_drilling_is_enabled(axis_id: ElementId, section_index: Un
         positive_value: The positive value of the section oblong drilling.
         negative_value: The negative value of the section oblong drilling.
         angle: The angle of the section oblong drilling.
+    """
+
+
+def set_items_at_intersection(axis_id: ElementId, intersection_index: UnsignedInt, items: list[connector_axis_item]) -> None:
+    """Sets item at intersection.
+
+    Parameters:
+        axis_id: The id of the axis.
+        intersection_index: The index of the intersection. (0-based index)
+        items: The items to set.
     """
