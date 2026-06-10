@@ -259,7 +259,7 @@ def create_drilling_vectors(diameter: float, length: float, starting_point: poin
         diameter: The diameter of the drilling.
         length: The length of the drilling.
         starting_point: The starting point of the drilling.
-        drilling_direction: The direction of the drilling.
+        drilling_direction: The direction of the drilling. (The vector needs to be normalized beforehand)
 
     Examples:
         >>> drill_diameter = 12.
@@ -431,7 +431,7 @@ def rotate_elements(element_id_list: list[ElementId], origin: point_3d, rotation
         element_id_list: The element id list.
         origin: The origin point of the rotation.
         rotation_axis: The axis around which to rotate the elements.
-        rotation_angle: The angle by which to rotate the elements un degree.
+        rotation_angle: The angle by which to rotate the elements in radians.
     """
 
 def subtract_elements(hard_elements: list[ElementId], soft_elements: list[ElementId]) -> list[ElementId]:
@@ -2317,4 +2317,35 @@ def get_element_active_point(element_id: ElementId) -> active_point_result:
 
     Returns:
         True/False plus point data when available.
+    """
+
+def get_standard_beam_guid_list() -> list[str]:
+    """Retrieves a list of standard beam GUIDs.
+
+    Returns:
+        The list of GUIDs of standard beams.
+    """
+
+
+def get_standard_panel_guid_list() -> list[str]:
+    """Retrieves a list of standard panel GUIDs.
+
+    Returns:
+        The list of GUIDs of standard panels.
+    """
+
+
+def import_standard_beam_from_file(file_path: str) -> None:
+    """Imports a standard beam from a file.
+
+    Parameters:
+        file_path: The path to the file to be imported.
+    """
+
+
+def import_standard_panel_from_file(file_path: str) -> None:
+    """Imports a standard panel from a file.
+
+    Parameters:
+        file_path: The path to the file to be imported.
     """
