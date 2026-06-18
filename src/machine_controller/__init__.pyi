@@ -11,6 +11,8 @@ from cadwork import vertex_list
 from cadwork.api_types import ElementId
 from cadwork.btl_version import btl_version
 from cadwork.hundegger_machine_type import hundegger_machine_type
+from cadwork.panel_prefab_element_data import panel_prefab_element_data
+from cadwork.panel_prefab_element_settings import panel_prefab_element_settings
 from cadwork.weinmann_mfb_version import weinmann_mfb_version
 
 
@@ -315,4 +317,54 @@ def get_processing_btl_parameter_set(reference_element_id: ElementId, processing
 
     Returns:
         A list of strings representing the BTL parameter set of the processing.
+    """
+
+
+def get_panel_prefab_element_data(element_id: ElementId) -> panel_prefab_element_data:
+    """Gets the machine panel prefabrication data of an element.
+
+    Returns the element type, layer location and MFB prefab config
+    (machine calculation set) of an element.
+
+    Parameters:
+        element_id: The element id.
+
+    Examples:
+        >>> import cadwork
+        >>> import machine_controller as mc
+
+        >>> element: int = 123456789
+        >>> data = mc.get_panel_prefab_element_data(element)
+        >>> element_type = data.get_element_type()
+        >>> if data.has_layer():
+        >>>     layer = data.get_layer()
+        >>> config = data.get_machine_calculation_set()
+
+    Returns:
+        The panel prefab element data.
+    """
+
+
+def set_panel_prefab_element_data(element_id_list: list[ElementId], settings: panel_prefab_element_settings) -> None:
+    """Sets the machine panel prefabrication data on a list of elements.
+
+    Only the fields explicitly set on the settings object are applied; unset
+    fields are left untouched. Elements without a panel prefabrication
+    interface are skipped.
+
+    Parameters:
+        element_id_list: The list of element ids.
+        settings: The panel prefab settings to apply.
+
+    Examples:
+        >>> import cadwork
+        >>> import element_controller as ec
+        >>> import machine_controller as mc
+
+        >>> elements = ec.get_active_identifiable_element_ids()
+        >>> settings = cadwork.panel_prefab_element_settings()
+        >>> settings.set_element_type(cadwork.panel_prefab_element_type.batten)
+        >>> settings.set_layer(2)
+        >>> settings.set_machine_calculation_set("MyMfbConfig")
+        >>> mc.set_panel_prefab_element_data(elements, settings)
     """

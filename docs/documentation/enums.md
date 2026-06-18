@@ -53,6 +53,11 @@
         show_root_heading: false
         show_source: true
 
+::: cadwork.panel_prefab_element_type
+    rendering:
+        show_root_heading: false
+        show_source: true
+
 ## IFC Aggregation Behaviour
 
 ::: cadwork.ifc_element_combine_behaviour
