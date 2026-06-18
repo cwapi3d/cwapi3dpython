@@ -104,6 +104,8 @@ nav:
       - Visualization Controller: examples/visualization_example.md
       - GUI: examples/tk_gui.md
       - Compare: examples/compare.md
+  - Command Line:
+      - command_line.md
   - Videos:
       - videos.md
   - Auto Attributes:
