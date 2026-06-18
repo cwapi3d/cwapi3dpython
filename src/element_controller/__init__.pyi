@@ -1533,9 +1533,6 @@ Parameters:
         (e.g. 20.0 for a 20 mm bolt).
     drilling_tolerance (float): Extra diameter added to each hole for
         clearance, in mm (e.g. 1.0 for bolt play or 3.0 for bolt head).
-
-Returns:
-    None: Modifies the elements in place via the Cadwork API.
 """
 
 def get_coordinate_system_data_nesting_child(nesting_parent_id: ElementId, nesting_child_id: ElementId) -> coordinate_system_data:
