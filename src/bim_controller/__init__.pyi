@@ -386,3 +386,100 @@ def set_ifc_predefined_type(element_id_list: list[ElementId], predefined_type: i
         >>> predefined_type.set_member()
         >>> bc.set_ifc_predefined_type(selected_elements, predefined_type)
     """
+
+def delete_storey(building: str, storey: str) -> bool:
+    """Deletes a storey from a building.
+
+    Parameters:
+        building: The name of the building.
+        storey: The name of the storey to delete.
+
+    Returns:
+        True if the storey was deleted successfully, false otherwise.
+    """
+
+def delete_building(building: str) -> bool:
+    """Deletes a building.
+
+    Parameters:
+        building: The name of the building to delete.
+
+    Returns:
+        True if the building was deleted successfully, false otherwise.
+    """
+
+def rename_storey(building: str, storey: str, new_storey: str) -> bool:
+    """Renames a storey in a building.
+
+    Parameters:
+        building: The name of the building.
+        storey: The current name of the storey.
+        new_storey: The new name for the storey.
+
+    Returns:
+        True if the storey was renamed successfully, false otherwise.
+    """
+
+def rename_building(building: str, new_building: str) -> bool:
+    """Renames a building.
+
+    Parameters:
+        building: The current name of the building.
+        new_building: The new name for the building.
+
+    Returns:
+        True if the building was renamed successfully, false otherwise.
+    """
+
+def set_active_storey(building: str, storey: str) -> None:
+    """Sets the active building and storey.
+
+    Parameters:
+        building: The name of the building.
+        storey: The name of the storey.
+    """
+
+def get_active_storey() -> str:
+    """Gets the active storey.
+
+    Returns:
+        A string containing the active storey name.
+    """
+
+def get_active_building() -> str:
+    """Gets the active building.
+
+    Returns:
+        A string containing the active building name.
+    """
+
+def get_finished_floor_thickness(building: str, storey: str) -> float:
+    """Gets the finished floor thickness for a specific storey in a building.
+
+    Parameters:
+        building: The name of the building.
+        storey: The name of the storey.
+
+    Returns:
+        The finished floor thickness or -1.0 if not found.
+    """
+
+def set_finished_floor_thickness(building: str, storey: str, finished_floor_thickness: float) -> None:
+    """Sets the finished floor thickness for a specific storey in a building.
+
+    Parameters:
+        building: The name of the building.
+        storey: The name of the storey.
+        finished_floor_thickness: The finished floor thickness to set.
+    """
+
+def get_elements_for_storey(building: str, storey: str) -> list[ElementId]:
+    """Gets all elements assigned to a specific storey in a building.
+
+    Parameters:
+        building: The name of the building.
+        storey: The name of the storey.
+
+    Returns:
+        The list of element ids assigned to the storey.
+    """
