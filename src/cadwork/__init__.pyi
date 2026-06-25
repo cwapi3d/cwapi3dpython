@@ -47,6 +47,8 @@ from .ifc_options_project_data import ifc_options_project_data as ifc_options_pr
 from .ifc_options_properties import ifc_options_properties as ifc_options_properties
 from .import_3dc_options import import_3dc_options as import_3dc_options
 from .layer_settings import layer_settings as layer_settings
+from .panel_prefab_element_data import panel_prefab_element_data as panel_prefab_element_data
+from .panel_prefab_element_settings import panel_prefab_element_settings as panel_prefab_element_settings
 from .point import point as point
 from .point_3d import point_3d as point_3d
 from .polygon_list import polygon_list as polygon_list
@@ -76,6 +78,7 @@ from .multi_layer_cover_type import multi_layer_cover_type as multi_layer_cover_
 from .multi_layer_subtype import multi_layer_subtype as multi_layer_subtype
 from .multi_layer_type import multi_layer_type as multi_layer_type
 from .node_symbol import node_symbol as node_symbol
+from .panel_prefab_element_type import panel_prefab_element_type as panel_prefab_element_type
 from .process_type import process_type as process_type
 from .projection_type import projection_type as projection_type
 from .shortcut_key import shortcut_key as shortcut_key
@@ -124,6 +127,8 @@ __all__ = [
     "ifc_options_properties",
     "import_3dc_options",
     "layer_settings",
+    "panel_prefab_element_data",
+    "panel_prefab_element_settings",
     "point",
     "point_3d",
     "polygon_list",
@@ -152,6 +157,7 @@ __all__ = [
     "multi_layer_subtype",
     "multi_layer_type",
     "node_symbol",
+    "panel_prefab_element_type",
     "process_type",
     "projection_type",
     "shortcut_key",
