@@ -921,3 +921,13 @@ def get_standard_element_length_from_name(standard_element_name: str) -> float:
     Returns:
         The standard element length.
     """
+
+def get_length_including_end_types(element_id: ElementId) -> float:
+    """Gets the length of an element including end-types.
+
+    Parameters:
+        element_id: The element id.
+
+    Returns:
+        The element length including end-types.
+    """
