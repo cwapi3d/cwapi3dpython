@@ -488,7 +488,7 @@ def add_elements_to_undo(element_id_list: list[ElementId], cmd: int) -> None:
 
     Parameters:
         element_id_list: The elements to add.
-        cmd: The command associated with the undo.
+        cmd: The command associated with the undo. Possible values: 1 = Add, 2 = Modify.
     """
 
 def make_undo() -> None:
