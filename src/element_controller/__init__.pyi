@@ -1448,18 +1448,38 @@ def cut_corner_lap(element_id_list: list[ElementId], depth: float, clearance_bas
     """
 
 def cut_t_lap(element_id_list: list[ElementId], depth: float, clearance_base: float, clearance_side: float, backcut: float, drilling_count: UnsignedInt, drilling_diameter: float, drilling_tolerance: float) -> None:
-    """Cuts a T-lap joint with specific parameters.
-
-    Parameters:
-        element_id_list: The list of elements to be cut.
-        depth: The vertical depth of the cut where the intersecting element will be placed.
-        clearance_base: Additional clearance at the base (bottom) of the cut to ensure a proper fit.
-        clearance_side: Additional clearance on the side faces of the cut to avoid tight fitting.
-        backcut: A small offset or undercut applied inward to improve fitting during assembly.
-        drilling_count: The number of drill holes to create for fasteners (e.g., bolts or dowels).
-        drilling_diameter: The diameter of each drill hole.
-        drilling_tolerance: The tolerance applied to the hole size for bolt head clearance or easier insertion.
-    """
+    """Cut a T-lap joint into a pair of elements for one main beam and one crossing element.
+ 
+    A T-lap (also called a notched T-joint) is used where one element intersects
+    the middle (not the end) of another at 90°. A rectangular notch is cut from
+    the top face of the main beam so the crossing element sits flush into it.
+    The result is a T-shape when viewed from the side.
+ 
+Parameters:
+    element_id_list (list[ElementId]): List of exactly 2 element IDs in the form
+        [main_beam_id, crossing_element_id]. The first element receives
+        the notch cut.
+    depth (float): Depth of the notch cut into the main beam, measured
+        along its local Z-axis (height direction), in mm. Typically half
+        the beam height for equal load distribution.
+    clearance_base (float): Extra clearance added at the bottom of the
+        notch (between the bearing face and the crossing element), in mm.
+        Allows for timber tolerances and prevents binding.
+    clearance_side (float): Extra clearance on each side wall of the
+        notch, in mm. Allows for lateral tolerances and easier assembly.
+    backcut (float): Relief undercut applied to the rear bearing face of
+        the notch, in mm. Prevents rocking on the bearing surface and
+        ensures full contact.
+    drilling_count (int): Number of fastener holes to drill through the
+        joint (0 = no drilling). Holes are placed symmetrically.
+    drilling_diameter (float): Diameter of each fastener hole in mm
+        (e.g. 20.0 for a 20 mm bolt).
+    drilling_tolerance (float): Extra diameter added to each hole for
+        clearance, in mm (e.g. 1.0 for bolt play or 3.0 for bolt head).
+ 
+Returns:
+    None: Modifies the elements in place via the Cadwork API.
+"""
 
 def cut_cross_lap(element_id_list: list[ElementId], depth: float, clearance_base: float, clearance_side: float, drilling_count: UnsignedInt, drilling_diameter: float, drilling_tolerance: float) -> None:
     """Cuts a cross-lap joint with specific parameters.
@@ -1486,18 +1506,34 @@ def delete_processes_keep_cutting_bodies(element_id_list: list[ElementId], keep_
     """
 
 def cut_double_tenon(element_id_list: list[ElementId], depth1: float, depth2: float, clearance: float, backcut: float, drilling_count: UnsignedInt, drilling_diameter: float, drilling_tolerance: float) -> None:
-    """Cut a double tenon joint with specific parameters.
+    """Cut a double tenon joint into a pair of elements.
 
-    Parameters:
-        element_id_list: The list of elements to be cut.
-        depth1: The depth of the first tenon shoulder.
-        depth2: The depth of the second tenon shoulder.
-        clearance: Additional clearance applied around the tenons for fitting tolerance during assembly.
-        backcut: A small undercut or inward offset to ensure the tenons fit without surface interference.
-        drilling_count: The number of drill holes to create for fasteners (e.g., bolts or dowels).
-        drilling_diameter: The diameter of each drill hole.
-        drilling_tolerance: The tolerance applied to the hole size for bolt head clearance or easier insertion.
-    """
+    A double tenon is used where one beam end is too wide for a single tenon
+    to be practical. Two parallel tenons are cut at the end of one element,
+    separated by a central haunch, fitting into two corresponding mortises
+    in the receiving element. Provides more gluing surface and better twist
+    resistance than a single tenon.
+
+Parameters:
+    element_id_list (list[ElementId]): List of exactly 2 element IDs in the
+        form [tenon_element_id, mortise_element_id]. The first element
+        receives the double tenon cut.
+    depth1 (float): Depth of the first tenon shoulder, measured from the
+        top face of the element along its local Z-axis, in mm.
+    depth2 (float): Depth of the second tenon shoulder, measured from the
+        bottom face of the element along its local Z-axis, in mm. Together
+        with depth1, the remaining gap between them forms the central haunch.
+    clearance (float): Uniform clearance applied around both tenons, in mm.
+        Slightly enlarges the mortises to allow assembly without forcing.
+    backcut (float): Relief undercut applied to the tenon shoulder faces,
+        in mm. Prevents rocking on the bearing surface and ensures full contact.
+    drilling_count (int): Number of fastener holes to drill through the
+        joint (0 = no drilling). Holes are placed symmetrically.
+    drilling_diameter (float): Diameter of each fastener hole in mm
+        (e.g. 20.0 for a 20 mm bolt).
+    drilling_tolerance (float): Extra diameter added to each hole for
+        clearance, in mm (e.g. 1.0 for bolt play or 3.0 for bolt head).
+"""
 
 def get_coordinate_system_data_nesting_child(nesting_parent_id: ElementId, nesting_child_id: ElementId) -> coordinate_system_data:
     """Get the coordinate system of nesting child
