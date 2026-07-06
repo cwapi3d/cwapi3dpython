@@ -63,6 +63,25 @@ For unattended processing, let the script do its work and then save or export th
 example `file_controller.save_3d_file()` or an export controller call — so each file is
 processed start to finish without any clicks.
 
+## Running a script from anywhere (`/RUNPROGRAM=`)
+
+Where `/PLUGIN=` runs a plugin by its folder name in `API.x64`, `/RUNPROGRAM=` runs a **`.py` or
+`.dll` from any location** — the file does not have to be installed as a plugin. Pass the full path
+to the script:
+
+```powershell
+D:\cadwork.dir\ci_start.exe ".\Downloads\test_elements_walls.3d" /EXE=D:\cadwork.dir\exe_2026 /RUNPROGRAM="C:\Users\MichaelBrunner\Downloads\export_elements_jsonl.py"
+```
+
+!!! tip
+Quote the path if it contains spaces. As with `/PLUGIN=`, have the script save or export its
+result so each file is processed start to finish without any clicks.
+
+!!! warning
+The full `/RUNPROGRAM=` token is subject to the 127-character switch limit described in
+[Switch argument length limit](#switch-argument-length-limit-127-characters) below — a long
+script path can be silently truncated.
+
 ## Batch printing / export
 
 For `.2d` files you can print plotter or laser frames directly from the command line:
@@ -115,6 +134,39 @@ A few additional arguments that are handy for everyday use:
 | `/USP`         | Define the directory for the Userprofile          |
 | `/CATDIR`      | Define the directory for the Catalog              |
 | `/WORKDIR`     | Define the directory for the Work folder          |
+
+## Switch argument length limit (127 characters)
+
+`ci_start.exe` forwards each switch argument to the detached `3d.exe` through a fixed **128-byte
+buffer**, so every switch token is **silently truncated to 127 characters**. The bare model path
+is passed through intact — only the switch tokens (`/EXE=…`, `/PLUGIN=…`, and the like) are
+affected.
+
+The truncation is silent: there is no error message. When an over-long token is cut mid-value —
+for example a `/RUNPROGRAM=` or `/PLUGIN=` script path that ends up pointing at a nonexistent
+script — `3d.exe` finds nothing to run and cadwork simply **closes about 3 seconds after
+starting**, without having done anything. This was verified on 2026-07-06 by capturing the spawned
+`3d.exe` command line: a 128-character `/RUNPROGRAM=` token arrived cut mid-filename, while the
+bare model path passed through intact.
+
+!!! warning
+Keep every switch token at or below **127 characters**. This includes the `/EXE=` and
+`/PLUGIN=` prefixes themselves, not just the path or name after them. If a token would be too
+long, shorten the path (for example by installing to a shorter directory, or by using the plugin
+folder name rather than a long absolute path) so the whole token fits.
+
+If you drive `ci_start.exe` from a script, validate the length before launching:
+
+```powershell
+$MaxSwitchLength = 127   # ci_start.exe truncates each switch token to 127 characters
+
+$switches = @("/EXE=$exeDir", "/RUNPROGRAM=$scriptPath")
+foreach ($switch in $switches) {
+    if ($switch.Length -gt $MaxSwitchLength) {
+        throw "Switch token exceeds $MaxSwitchLength characters and will be truncated: $switch"
+    }
+}
+```
 
 ## See also
 
