@@ -70,7 +70,7 @@ Where `/PLUGIN=` runs a plugin by its folder name in `API.x64`, `/RUNPROGRAM=` r
 to the script:
 
 ```powershell
-D:\cadwork.dir\ci_start.exe ".\Downloads\test_elements_walls.3d" /EXE=D:\cadwork.dir\exe_2026 /RUNPROGRAM="C:\Users\MichaelBrunner\Downloads\export_elements_jsonl.py"
+D:\cadwork.dir\ci_start.exe ".\Downloads\test_elements_walls.3d" /EXE=D:\cadwork.dir\exe_2026 /RUNPROGRAM="C:\Users\JonDoe\Downloads\export_elements_jsonl.py"
 ```
 
 !!! tip
