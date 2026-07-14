@@ -3,9 +3,9 @@ from enum import IntEnum, unique
 
 @unique
 class language(IntEnum):
-    """ Available cadwork UI languages for set_language().
+    """Available cadwork UI languages for set_language().
 
-    The values match the ISO codes returned by get_language().
+    The numeric values are cadwork language IDs; each member is documented with the ISO code returned by get_language().
 
     Examples:
         >>> cadwork.language.german
