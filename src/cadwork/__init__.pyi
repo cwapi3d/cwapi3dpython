@@ -74,6 +74,7 @@ from .hundegger_machine_type import hundegger_machine_type as hundegger_machine_
 from .ifc_2x3_element_type import ifc_2x3_element_type as ifc_2x3_element_type
 from .ifc_element_combine_behaviour import ifc_element_combine_behaviour as ifc_element_combine_behaviour
 from .ifc_predefined_type import ifc_predefined_type as ifc_predefined_type
+from .language import language as language
 from .multi_layer_cover_type import multi_layer_cover_type as multi_layer_cover_type
 from .multi_layer_subtype import multi_layer_subtype as multi_layer_subtype
 from .multi_layer_type import multi_layer_type as multi_layer_type
@@ -153,6 +154,7 @@ __all__ = [
     "ifc_2x3_element_type",
     "ifc_element_combine_behaviour",
     "ifc_predefined_type",
+    "language",
     "multi_layer_cover_type",
     "multi_layer_subtype",
     "multi_layer_type",
