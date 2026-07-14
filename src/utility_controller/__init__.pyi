@@ -66,7 +66,7 @@ def get_language() -> str:
     """
 
 
-def set_language(language: language) -> None:
+def set_language(lang: language) -> None:
     """Sets the 3D language and refreshes the UI.
 
     Examples:
@@ -75,7 +75,7 @@ def set_language(language: language) -> None:
         >>> uc.set_language(cadwork.language.german)
 
     Parameters:
-        language: The language to set.
+        lang: The language to set.
     """
 
 
