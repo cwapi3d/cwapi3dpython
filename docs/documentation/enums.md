@@ -120,3 +120,10 @@
     rendering:
         show_root_heading: false
         show_source: true
+
+## Language
+
+::: cadwork.language
+    rendering:
+        show_root_heading: false
+        show_source: true

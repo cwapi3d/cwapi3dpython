@@ -13,6 +13,7 @@ from cadwork.point_3d import point_3d
 from cadwork.window_geometry import window_geometry
 from cadwork.shortcut_key import shortcut_key
 from cadwork.shortcut_key_modifier import shortcut_key_modifier
+from cadwork.language import language
 
 
 def get_3d_version() -> int:
@@ -62,6 +63,27 @@ def get_language() -> str:
 
     Returns:
         The language.
+    """
+
+
+def set_language(language: language) -> None:
+    """Sets the 3D language and refreshes the UI.
+
+    Examples:
+        >>> import utility_controller as uc
+        >>> import cadwork
+        >>> uc.set_language(cadwork.language.german)
+
+    Parameters:
+        language: The language to set.
+    """
+
+
+def get_language_enum() -> language:
+    """Gets the 3D language as a typed enum.
+
+    Returns:
+        The active language.
     """
 
 
