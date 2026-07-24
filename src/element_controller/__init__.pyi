@@ -2349,3 +2349,52 @@ def import_standard_panel_from_file(file_path: str) -> None:
     Parameters:
         file_path: The path to the file to be imported.
     """
+
+
+def export_as_standard_element(element_id: ElementId, name: str) -> str:
+    """Exports an existing element as a standard element.
+
+    In case of duplicated names, a count suffix will be appended (e.g., (2)).
+    Note that creating elements of standard element type Metal is not supported by this function.
+
+    Parameters:
+        element_id: The element to export as a standard element.
+        name: The name of the standard element.
+
+    Returns:
+        The GUID of the new standard element on success, an empty string on error.
+    """
+
+
+def create_rotation_element(surface_element_id: ElementId, axis_point: point_3d, axis_direction: point_3d, angle_rad: float, segmentation: int) -> ElementId:
+    """Creates a rotation element from a surface element by rotating it around an axis.
+
+    Parameters:
+        surface_element_id: The ID of the source surface element to rotate. The element must be a surface.
+        axis_point: A point on the rotation axis.
+        axis_direction: The direction vector of the rotation axis.
+        angle_rad: The rotation angle in radians.
+        segmentation: Number of division steps used to tessellate the generated rotation element. (0 for smooth ACIS solid, >0 for faceted)
+
+    Examples:
+        >>> import math
+        >>> # Create a rectangular surface and rotate it 360° around an axis to form a cylinder
+        >>> radius = 200.0
+        >>> height = 1000.0
+        >>> # Define a rectangular surface profile in the XZ plane
+        >>> vertices = cadwork.vertex_list()
+        >>> vertices.append(cadwork.point_3d(0.0, 0.0, 0.0))
+        >>> vertices.append(cadwork.point_3d(0.0, 0.0, height))
+        >>> vertices.append(cadwork.point_3d(radius, 0.0, height))
+        >>> vertices.append(cadwork.point_3d(radius, 0.0, 0.0))
+        >>> surface_id = ec.create_surface(vertices)
+        >>> # Rotate the surface 360° around the Z axis to create a cylinder
+        >>> axis_point = cadwork.point_3d(0.0, 0.0, 0.0)
+        >>> axis_direction = cadwork.point_3d(0.0, 0.0, 1.0)
+        >>> full_rotation = 2.0 * math.pi  # 360 degrees
+        >>> discretization_steps = 0  # automatic
+        >>> cylinder_id = ec.create_rotation_element(surface_id, axis_point, axis_direction, full_rotation, discretization_steps)
+
+    Returns:
+        The ID of the created rotation element.
+    """
