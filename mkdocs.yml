@@ -44,6 +44,7 @@ nav:
           - Element Type: documentation/element_type.md
           - Standard Element Type: documentation/standard_element_type.md
           - Process Type: documentation/process_type.md
+          - Point 2D: documentation/point_2d.md
           - Point 3D: documentation/point_3d.md
           - Enumerations: documentation/enums.md
           - Extended Settings: documentation/extended_settings.md

@@ -12,6 +12,7 @@ transforms what exists in the model.
 from cadwork.edge_list import edge_list
 from cadwork.element_module_properties import element_module_properties
 from cadwork.facet_list import facet_list
+from cadwork.point_2d import point_2d
 from cadwork.point_3d import point_3d
 from cadwork.standard_element_type import standard_element_type
 from cadwork.text_object_options import text_object_options
@@ -386,6 +387,35 @@ def create_polygon_beam(polygon_vertices: vertex_list, thickness: float, x_local
         >>> extrusion_vector = cadwork.point_3d(0., 0., 1.)  # Direction of extrusion
         >>> z_vector = cadwork.point_3d(1., 0., 0.)  # Orientation vector
         >>> polygon_beam_id = ec.create_polygon_beam(vertices, beam_thickness, extrusion_vector, z_vector)
+
+    Returns:
+        The ID of the created polygon beam.
+    """
+
+
+def create_polygon_beam_vectors(polygon_vertices: list[point_2d | tuple[float, float]], thickness: float, starting_point: point_3d, x_local_direction: point_3d, z_local_direction: point_3d) -> ElementId:
+    """Creates a polygon beam from a 2D profile using vectors.
+
+    The profile is defined in the local uv-plane of the beam and extruded from
+    the starting point along the x local direction.
+
+    Parameters:
+        polygon_vertices: The vertices of the 2D profile. Each vertex is a point_2d or a (u, v) tuple.
+        thickness: The thickness (extrusion length) of the beam.
+        starting_point: The starting point of the beam.
+        x_local_direction: The x local direction of the beam.
+        z_local_direction: The z local direction of the beam.
+
+    Examples:
+        >>> # Create a triangular beam from a 2D profile
+        >>> profile = [cadwork.point_2d(0., 0.), cadwork.point_2d(200., 0.), cadwork.point_2d(100., 173.2)]
+        >>> beam_thickness = 1000.  # Length of the beam
+        >>> start_point = cadwork.point_3d(0., 0., 0.)
+        >>> extrusion_vector = cadwork.point_3d(1., 0., 0.)  # Direction of extrusion
+        >>> z_vector = cadwork.point_3d(0., 0., 1.)  # Orientation vector
+        >>> polygon_beam_id = ec.create_polygon_beam_vectors(profile, beam_thickness, start_point, extrusion_vector, z_vector)
+        >>> # Tuples are implicitly converted to point_2d
+        >>> polygon_beam_id = ec.create_polygon_beam_vectors([(0., 0.), (200., 0.), (100., 173.2)], beam_thickness, start_point, extrusion_vector, z_vector)
 
     Returns:
         The ID of the created polygon beam.
@@ -1318,6 +1348,36 @@ def create_polygon_panel(polygon_vertices: vertex_list, thickness: float, x_loca
         >>> extrusion_vector = cadwork.point_3d(0., 0., 1.)  # Normal direction
         >>> z_vector = cadwork.point_3d(1., 0., 0.)  # Orientation vector
         >>> polygon_panel_id = ec.create_polygon_panel(vertices, panel_thickness, extrusion_vector, z_vector)
+
+    Returns:
+        The ID of the created polygon panel element.
+    """
+
+
+def create_polygon_panel_vectors(polygon_vertices: list[point_2d | tuple[float, float]], thickness: float, starting_point: point_3d, x_local_direction: point_3d, z_local_direction: point_3d) -> ElementId:
+    """Creates a polygon panel from a 2D profile using vectors.
+
+    The profile is defined in the local uv-plane of the panel and extruded from
+    the starting point along the x local direction.
+
+    Parameters:
+        polygon_vertices: The vertices of the 2D profile. Each vertex is a point_2d or a (u, v) tuple.
+        thickness: The thickness (extrusion length) of the panel.
+        starting_point: The starting point of the panel.
+        x_local_direction: The X-axis direction of the panel.
+        z_local_direction: The Z-axis direction of the panel.
+
+    Examples:
+        >>> # Create a hexagonal panel from a 2D profile
+        >>> import math
+        >>> radius = 500.
+        >>> sides = 6
+        >>> profile = [cadwork.point_2d(radius * math.cos(2 * math.pi * i / sides), radius * math.sin(2 * math.pi * i / sides)) for i in range(sides)]
+        >>> panel_thickness = 20.
+        >>> start_point = cadwork.point_3d(0., 0., 0.)
+        >>> extrusion_vector = cadwork.point_3d(0., 0., 1.)  # Normal direction
+        >>> z_vector = cadwork.point_3d(1., 0., 0.)  # Orientation vector
+        >>> polygon_panel_id = ec.create_polygon_panel_vectors(profile, panel_thickness, start_point, extrusion_vector, z_vector)
 
     Returns:
         The ID of the created polygon panel element.
