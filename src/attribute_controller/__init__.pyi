@@ -1811,3 +1811,13 @@ def set_machine_calculation_set(element_ids: list[ElementId], name: str) -> bool
     Returns:
         True if the machine calculation set was successfully applied, false otherwise.
     """
+
+def delete_item_from_name_list(item: str) -> bool:
+    """Delete item from name list.
+
+    Parameters:
+        item: The item to delete from the name list.
+
+    Returns:
+        True if the item was successfully deleted, false otherwise.
+    """
