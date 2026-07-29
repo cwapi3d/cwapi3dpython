@@ -50,6 +50,7 @@ from .layer_settings import layer_settings as layer_settings
 from .panel_prefab_element_data import panel_prefab_element_data as panel_prefab_element_data
 from .panel_prefab_element_settings import panel_prefab_element_settings as panel_prefab_element_settings
 from .point import point as point
+from .point_2d import point_2d as point_2d
 from .point_3d import point_3d as point_3d
 from .polygon_list import polygon_list as polygon_list
 from .rhino_options import rhino_options as rhino_options
@@ -131,6 +132,7 @@ __all__ = [
     "panel_prefab_element_data",
     "panel_prefab_element_settings",
     "point",
+    "point_2d",
     "point_3d",
     "polygon_list",
     "rhino_options",
