@@ -14,6 +14,7 @@ from cadwork.hundegger_machine_type import hundegger_machine_type
 from cadwork.panel_prefab_element_data import panel_prefab_element_data
 from cadwork.panel_prefab_element_settings import panel_prefab_element_settings
 from cadwork.weinmann_mfb_version import weinmann_mfb_version
+from cadwork.btl_version import btl_version
 
 
 def export_btl(btl_version: btl_version, file_path: str) -> None:
@@ -367,4 +368,14 @@ def set_panel_prefab_element_data(element_id_list: list[ElementId], settings: pa
         >>> settings.set_layer(2)
         >>> settings.set_machine_calculation_set("MyMfbConfig")
         >>> mc.set_panel_prefab_element_data(elements, settings)
+    """
+    
+    
+
+def load_btl_calculation_set(btl_type: btl_version, file_path: str) -> None:
+    """Loads the BTL calculation set.
+
+    Parameters:
+        btl_type: The BTL machine type (cadwork.btl_version).
+        file_path: The file path of the calculation set.
     """
