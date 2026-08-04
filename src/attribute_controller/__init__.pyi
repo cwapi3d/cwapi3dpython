@@ -1443,11 +1443,11 @@ def get_sku_list_items() -> list[str]:
     """
 
 
-def get_user_attribute_list_items(element_id: ElementId) -> list[str]:
+def get_user_attribute_list_items(number: UserAttributeId) -> list[str]:
     """Get user attribute list items.
 
     Parameters:
-        element_id: The element id.
+        number: The user attribute number.
 
     Returns:
         The list of user attribute list items.
