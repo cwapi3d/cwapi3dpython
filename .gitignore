@@ -102,3 +102,6 @@ cython_debug/
 
 .idea/
 .vscode/
+
+# sync-cwapi3d-stubs: machine paths only, never shared
+.claude/skills/sync-cwapi3d-stubs/config.personal.toml
