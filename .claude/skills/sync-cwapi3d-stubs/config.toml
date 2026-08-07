@@ -1,0 +1,106 @@
+# Shared stub-sync config (committed). Machine paths go in the git-ignored
+# config.personal.toml, which is deep-merged over this file.
+# Env overrides: CWSTUBS_CONFIG / CWSTUBS_PERSONAL_CONFIG.
+
+[source]
+# Relative to [paths].cadlib_root.
+python_controller = "CwAPI3D/CCwAPI3DPythonController.cpp"
+interface_include_dir = "CwAPI3D/include"
+
+[target]
+# Relative to [paths].stub_repo (defaults to this repo's git root).
+src_dir = "src"
+docs_dir = "docs/documentation"
+mkdocs = "mkdocs.yml"
+pyproject = "pyproject.toml"
+compare_branch = "main"
+
+[emit]
+# New enums are appended to this shared page instead of getting their own.
+enums_page = "enums.md"
+# Publish runs on every push touching src/**, so a stale version collides.
+bump_version = true
+
+[blacklist]
+# Whole modules: neither functions nor the package are created.
+modules = ["event_controller"]
+
+# Per-controller error plumbing; the int32_t out-param does not survive pybind11.
+methods = ["get_last_error", "clear_errors"]
+
+# <module>.<python_name> one-offs.
+qualified = [
+  "utility_controller.init_LxSDK",
+  "utility_controller.redirect_python_output_to_logger",
+  "utility_controller.print_error",
+  "utility_controller.print_message",
+  "utility_controller.print_to_console",
+  # "utility_controller.get_3d_hwnd",
+  # Unregistered C++ structs; trampolines return nullptr.
+  "visualization_controller.save_visibility_state",
+  "visualization_controller.restore_visibility_state",
+  "visualization_controller.save_activation_state",
+  "visualization_controller.restore_activation_state",
+  # Only bound in auto-attribute mode.
+  "cadwork.get_auto_attribute_elements",
+  "cadwork.set_auto_attribute",
+]
+
+types = ["PythonLogger", "visibility_state", "activation_state"]
+
+# camelCase duplicates of the snake_case methods on cadwork.element_type.
+class_method_patterns = ["^is[A-Z]"]
+
+[type_map]
+# C++ (as written in the cwp_* trampoline) -> Python annotation.
+# Registered cadwork types and enums are mapped automatically.
+"void" = "None"
+"bool" = "bool"
+"double" = "float"
+"float" = "float"
+"int" = "int"
+"int32_t" = "int"
+"uint32_t" = "int"
+"int64_t" = "int"
+"size_t" = "int"
+"uintptr_t" = "int"
+"uint64_t" = "ElementId"
+"std::string" = "str"
+"CwAPI3D::character*" = "str"
+"std::vector<uint64_t>" = "list[ElementId]"
+"std::vector<std::string>" = "list[str]"
+"std::vector<int32_t>" = "list[int]"
+"std::vector<int>" = "list[int]"
+"std::vector<double>" = "list[float]"
+"std::vector<bool>" = "list[bool]"
+"std::tuple<int, int>" = "tuple[int, int]"
+"py::function" = "Callable[..., None]"
+"py::dict" = "dict"
+"py::object" = "object"
+"CwAPI3D::materialID" = "MaterialId"
+"CwAPI3D::elementID" = "ElementId"
+
+[doxygen_hint_map]
+# `@param[in] aSetId [@ref multiLayerSetID]` -> annotation, recovering the
+# specific type the trampoline flattened to uint64_t. Unlisted hints fall back to
+# a registered cadwork type of the same name, then a snake_case src/cadwork/*.pyi.
+elementID = "ElementId"
+materialID = "MaterialId"
+colorID = "ColorId"
+endtypeID = "EndtypeId"
+axisID = "AxisId"
+multiLayerSetID = "MultiLayerSetId"
+userAttributeID = "UserAttributeId"
+menuIndex = "MenuIndex"
+referenceSide = "ReferenceSide"
+# A bare integer hint is a count/index -- ids are spelled @ref elementID etc.
+uint64_t = "UnsignedInt"
+uint32_t = "UnsignedInt"
+"ICwAPI3DElementIDList*" = "list[ElementId]"
+"ICwAPI3DString*" = "str"
+
+[param_names]
+# Fallback parameter names by annotation, when the interface has no @param.
+"list[ElementId]" = "element_id_list"
+"ElementId" = "element_id"
+"MaterialId" = "material_id"
