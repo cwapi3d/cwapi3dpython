@@ -21,7 +21,7 @@ the full binding inventory from the C++ source and writes what is missing.
 | `src/cadwork/<type>.pyi` | a registered `py::class_` / `py::enum_` with no stub |
 | `src/cadwork/__init__.pyi` | re-export line + `__all__` entry for a new type |
 | `docs/documentation/*.md`, `mkdocs.yml` | docs page + nav entry for a new module/type |
-| `pyproject.toml` | `packages` entry for a new module, and the version bump |
+| `pyproject.toml` | `packages` entry for a new module, and `[project].version` |
 
 ## Invocation
 
@@ -49,8 +49,13 @@ Exit `2` means a config or parse error — read the message on stderr and stop:
   Tell them to copy `config.personal.toml.example` next to it and set `cadlib_root`
   to their cadwork 3d source root (e.g. `D:\source\cadlib\v_33.0\3d`). Do not guess
   the path and do not write the file for them without asking.
-- **`binding source not found`** → `cadlib_root` points somewhere without
-  `CwAPI3D/CCwAPI3DPythonController.cpp`. Ask which checkout to use.
+- **`binding source not found`** / **`version header not found`** → `cadlib_root`
+  points somewhere without `CwAPI3D/CCwAPI3DPythonController.cpp` or
+  `CwAPI3D/include/CwAPI3DVersion.h`. Ask which checkout to use.
+
+The first line of the report echoes the `versionMinor` the run read out of that
+header. Sanity-check it against the checkout the operator meant to sync against —
+it is what the published version will carry (step 5).
 
 Then check the working tree:
 
@@ -112,15 +117,41 @@ error is reported as a `SYNTAX ERROR` warning and exits `2`. Nothing else in thi
 repo catches a broken stub — there are no tests, and setuptools does not compile
 `.pyi`, so treat that exit as a hard failure and report it verbatim.
 
-Re-running is safe: the tool is additive and idempotent, and the version bumps only
-when something under `src/` actually changed.
+Re-running is safe: the tool is additive and idempotent, and the version only moves
+when something under `src/` actually changed — no `src/**` change means no publish
+run, so no new version is needed.
+
+### The version comes from the C++ header
+
+`[project].version` in `pyproject.toml` is never invented and never carried over by
+hand. Every run reads the `versionMinor` tag out of `[source].version_header`
+(`CwAPI3D/include/CwAPI3DVersion.h`) and derives the new version from it:
+
+| `versionMinor` vs. the version in `pyproject.toml` | New version |
+| -------------------------------------------------- | ----------- |
+| higher — the stubs have not shipped for this build yet | `<major>.<versionMinor>.0` (`33.322.7` → `33.328.0`) |
+| **the same** — another sync against a build already shipped for | patch + 1 (`33.328.0` → `33.328.1`) |
+
+The major is **never** taken from the header. `versionMajor` there is the marketing
+year (2026) while the package's major is the cadwork product major (`33`), and PyPI
+accepts no version sorting below one already uploaded. Two cases produce a warning
+instead of following the header, and both need a human:
+
+- **`versionMinor` is *lower* than the packaged minor** — the run is pointed at an
+  older cadlib checkout. The higher minor is kept and the patch bumped; fix
+  `[paths].cadlib_root` if that was not intended.
+- **no `versionMinor` found** — the header moved or was reshaped. The run falls back
+  to a patch bump; the version is a guess until someone confirms it.
 
 ## Step 6 — Hand off
 
 Leave the changes **uncommitted** on the working branch. Report:
 
-1. The files written and the version bump (`33.322.0` → `33.322.1`).
+1. The files written, and the version change with the `versionMinor` it came from
+   (`33.322.0` → `33.328.0`, from `versionMinor = 328`).
 2. Every warning, in full. The ones that need a human are:
+   - the two version warnings from step 5 — a `versionMinor` below the packaged
+     minor, or no `versionMinor` at all.
    - *"no Doxygen @brief — docstring is a placeholder"* — the C++ side has no
      documentation to derive from. The stub is syntactically fine but the prose is
      a stand-in.
@@ -145,6 +176,8 @@ Do not commit, push, or open a PR unless the operator asks.
   the other direction is reported, not resolved.
 - **Never hand-edit the stubs to "fix" a generator gap.** Fix `config.toml` and
   re-run, so the next sync stays correct.
+- **Never hand-write `[project].version`.** It is derived from the C++
+  `versionMinor` (step 5). If it looks wrong, the checkout or the header is wrong.
 - Do not reformat, re-sort, or re-serialise `mkdocs.yml`, `pyproject.toml`, or
   `src/cadwork/__init__.pyi`. The script splices single lines and preserves each
   file's CRLF endings; a whole-file rewrite buries the real change.

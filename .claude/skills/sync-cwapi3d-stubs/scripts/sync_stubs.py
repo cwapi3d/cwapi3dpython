@@ -57,6 +57,7 @@ class Report:
     warnings: list[str] = field(default_factory=list)
     written: list[str] = field(default_factory=list)
     version_bump: tuple[str, str] | None = None
+    api_version_minor: int | None = None
 
     def as_dict(self) -> dict:
         def rows(items: list[Gap]) -> list[dict]:
@@ -77,6 +78,7 @@ class Report:
             "warnings": self.warnings,
             "written": self.written,
             "version_bump": list(self.version_bump) if self.version_bump else None,
+            "api_version_minor": self.api_version_minor,
         }
 
 
@@ -290,13 +292,15 @@ def apply_changes(
         )
 
     if touched_src and config.bump_version:
-        bump = _emit.bump_patch_version(config.pyproject)
-        if bump is not None:
-            report.version_bump = bump
+        change = _emit.sync_version(config.pyproject, report.api_version_minor)
+        if change is not None:
+            report.version_bump = (change.old, change.new)
             report.written.append(str(config.pyproject.relative_to(config.stub_repo)))
+            if change.warning:
+                report.warnings.append(change.warning)
         else:
             report.warnings.append(
-                "could not bump [project].version -- the publish workflow will reject "
+                "could not set [project].version -- the publish workflow will reject "
                 "a duplicate upload"
             )
 
@@ -319,6 +323,8 @@ def syntax_check(paths: list[Path]) -> list[str]:
 
 
 def print_report(report: Report, applied: bool) -> None:
+    if report.api_version_minor is not None:
+        print(f"CwAPI3D versionMinor: {report.api_version_minor}\n")
     by_module: dict[str, list[Gap]] = {}
     for gap in report.missing:
         by_module.setdefault(gap.module, []).append(gap)
@@ -417,6 +423,7 @@ def main(argv: list[str] | None = None) -> int:
         return EXIT_ERROR
 
     report = build_report(config, inventory, stubs, only)
+    report.api_version_minor = _emit.read_api_version_minor(config.version_header)
 
     if args.apply:
         apply_changes(config, inventory, stubs, doxygen, enum_definitions, report)

@@ -609,17 +609,79 @@ def patch_pyproject_packages(path: Path, package: str) -> bool:
     return True
 
 
-def bump_patch_version(path: Path) -> tuple[str, str] | None:
+_VERSION_MINOR_RE = re.compile(
+    r"^[^\S\n]*(?:const\s+)?(?:uint32_t|unsigned\s+int|int)\s+versionMinor\s*=\s*(\d+)",
+    re.M,
+)
+
+
+def read_api_version_minor(path: Path) -> int | None:
+    """The ``versionMinor`` tag in CwAPI3DVersion.h -- the cadwork build number.
+
+    ``versionMajor`` is deliberately ignored: it carries the marketing year (2026)
+    while the published package's major is the cadwork product major (33), and PyPI
+    accepts no version that sorts below one already uploaded.
+    """
+    try:
+        source = _files.read_text(path)
+    except OSError:
+        return None
+    match = _VERSION_MINOR_RE.search(source)
+    return int(match.group(1)) if match else None
+
+
+@dataclass
+class VersionChange:
+    old: str
+    new: str
+    warning: str | None = None
+
+
+def sync_version(path: Path, api_minor: int | None) -> VersionChange | None:
+    """Set ``[project].version`` from the C++ ``versionMinor``, keeping the major.
+
+    A build number the stubs have not shipped for yet resets the patch
+    (``33.322.7`` -> ``33.328.0``). The same build number means this is another sync
+    against an API the package already ships for, so only the patch moves
+    (``33.328.0`` -> ``33.328.1``). Either way the version has to move: PyPI never
+    accepts a re-upload, and the publish workflow fires on every push touching
+    ``src/**``.
+
+    Returns None when ``[project].version`` could not be found -- the caller warns.
+    """
     source = _files.read_text(path)
     match = re.search(r'^(version\s*=\s*")(\d+)\.(\d+)\.(\d+)(")', source, re.M)
     if match is None:
         return None
-    major, minor, patch = match.group(2), match.group(3), int(match.group(4))
+    major, minor, patch = match.group(2), int(match.group(3)), int(match.group(4))
     old = f"{major}.{minor}.{patch}"
-    new = f"{major}.{minor}.{patch + 1}"
-    source = source[: match.start()] + f'{match.group(1)}{new}{match.group(5)}' + source[match.end() :]
+    warning: str | None = None
+    if api_minor is None:
+        new = f"{major}.{minor}.{patch + 1}"
+        warning = (
+            "no versionMinor found in the CwAPI3D version header -- fell back to a "
+            f"patch bump ({old} -> {new}); confirm the version is right before release"
+        )
+    elif api_minor > minor:
+        new = f"{major}.{api_minor}.0"
+    else:
+        new = f"{major}.{minor}.{patch + 1}"
+        if api_minor < minor:
+            # Syncing against an older cadlib checkout. Following it down would
+            # produce a version PyPI has already seen.
+            warning = (
+                f"CwAPI3D versionMinor is {api_minor} but the package is already at "
+                f"{old} -- kept the higher minor and bumped the patch instead "
+                f"({old} -> {new}). Point [paths].cadlib_root at the newer source if "
+                "that is not intended."
+            )
+    source = (
+        source[: match.start()]
+        + f"{match.group(1)}{new}{match.group(5)}"
+        + source[match.end() :]
+    )
     _files.write_text(path, source)
-    return (old, new)
+    return VersionChange(old=old, new=new, warning=warning)
 
 
 def create_controller_package(src_dir: Path, module: str) -> Path:

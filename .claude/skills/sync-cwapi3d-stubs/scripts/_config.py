@@ -98,6 +98,7 @@ class Config:
     # --- resolved source files ------------------------------------------
     python_controller: Path
     interface_include_dir: Path
+    version_header: Path
     enum_search_dirs: tuple[Path, ...]
 
     # --- resolved targets ------------------------------------------------
@@ -201,10 +202,17 @@ def load() -> Config:
     interface_include_dir = cadlib_root / source.get(
         "interface_include_dir", "CwAPI3D/include"
     )
+    version_header = cadlib_root / source.get(
+        "version_header", "CwAPI3D/include/CwAPI3DVersion.h"
+    )
     if not python_controller.is_file():
         raise ConfigError(f"binding source not found: {python_controller}")
     if not interface_include_dir.is_dir():
         raise ConfigError(f"interface include dir not found: {interface_include_dir}")
+    # The package version is derived from this header, so a wrong path is a config
+    # error rather than something to discover halfway through --apply.
+    if not version_header.is_file():
+        raise ConfigError(f"version header not found: {version_header}")
 
     configured_enum_dirs = source.get("enum_search_dirs")
     if configured_enum_dirs:
@@ -226,6 +234,7 @@ def load() -> Config:
         stub_repo=stub_repo,
         python_controller=python_controller,
         interface_include_dir=interface_include_dir,
+        version_header=version_header,
         enum_search_dirs=enum_dirs,
         src_dir=stub_repo / target.get("src_dir", "src"),
         docs_dir=stub_repo / target.get("docs_dir", "docs/documentation"),
