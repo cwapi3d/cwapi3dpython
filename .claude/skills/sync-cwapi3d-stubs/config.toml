@@ -6,6 +6,8 @@
 # Relative to [paths].cadlib_root.
 python_controller = "CwAPI3D/CCwAPI3DPythonController.cpp"
 interface_include_dir = "CwAPI3D/include"
+# `versionMinor` here is the cadwork build number the package version tracks.
+version_header = "CwAPI3D/include/CwAPI3DVersion.h"
 
 [target]
 # Relative to [paths].stub_repo (defaults to this repo's git root).
@@ -18,7 +20,9 @@ compare_branch = "main"
 [emit]
 # New enums are appended to this shared page instead of getting their own.
 enums_page = "enums.md"
-# Publish runs on every push touching src/**, so a stale version collides.
+# Publish runs on every push touching src/**, so a stale version collides. The new
+# version comes from [source].version_header: a fresh versionMinor resets the patch,
+# the same one bumps it. The major is never taken from the header.
 bump_version = true
 
 [blacklist]
