@@ -23,6 +23,106 @@ the full binding inventory from the C++ source and writes what is missing.
 | `docs/documentation/*.md`, `mkdocs.yml` | docs page + nav entry for a new module/type |
 | `pyproject.toml` | `packages` entry for a new module, and `[project].version` |
 
+## The roundtrip — how one function reaches Python
+
+Four layers, three of them C++. `attribute_controller.get_name` end to end:
+
+**1. The contract** — `CwAPI3D/include/ICwAPI3DAttributeController.h`. The interface
+headers are the documentation surface plugin authors read, and the only place a
+parameter still has a real name, a prose description, and the *specific* type it
+carries. Everything below flattens all three away.
+
+```cpp
+/// @brief Gets the element name.
+/// @param[in] aElementId [@ref elementID] The element id.
+/// @return [@ref ICwAPI3DString*] The element name.
+/// @par Example :
+/// @code{.cpp}
+/// ICwAPI3DElementIDList* activeElements = aFactory->getElementController()->getActiveIdentifiableElementIDs();
+/// elementID element = activeElements->at(0);
+///
+/// ICwAPI3DString* name = aFactory->getAttributeController()->getName(element);
+/// @endcode
+virtual ICwAPI3DString* getName(elementID aElementId) = 0;
+```
+
+(`getName` carries no `@par Example` today — the block above is what one looks like
+when it does, e.g. on `setMachineCalculationSet` in the same header.) It is parsed
+and kept, but **never emitted**: the example is C++ against `aFactory`, and the
+mechanical translation to `attribute_controller.get_name(element_id)` is wrong often
+enough that a missing example beats a misleading one. That is the *carries a C++
+`@par Example` that was NOT translated* warning in step 6 — the `Examples:` block in
+layer 4 below is a **hand** port, done after the run, not something the tool wrote.
+
+**2. The trampoline** — `CwAPI3D/CCwAPI3DPythonController.cpp`. Plain C++ in, plain
+C++ out: `elementID` is an anonymous `uint64_t a0`, the `ICwAPI3DString*` is a
+`std::string`. The `getAttributeController()->getName(...)` in the body is the join
+key back to layer 1 — accessor plus method name, nothing else connects them.
+
+```cpp
+std::string cwp_attribute_controller_get_name(uint64_t a0)
+{
+  return get_string_from_istring(CwAPI3DPythonController().getFactory()->getAttributeController()->getName(a0));
+}
+```
+
+**3. The binding** — same file, further down. The module name and the Python name
+are literals here and nowhere else; `get_name` is not derivable from `getName`
+without this line (`set_framed_floor` binds `cwp_attribute_controller_set_floor`).
+
+```cpp
+PYBIND11_EMBEDDED_MODULE(attribute_controller, m)
+{
+  ...
+  m.def("get_name", &cwp_attribute_controller_get_name);
+  ...
+}
+```
+
+**4. The stub** — `src/attribute_controller/__init__.pyi`, the only layer this skill
+writes. Nothing at runtime enforces that it matches; that is the whole problem.
+
+```python
+def get_name(element_id: ElementId) -> str:
+    """Gets the element name.
+
+    Parameters:
+        element_id: The element id.
+
+    Examples:
+        >>> import attribute_controller as ac
+        >>> import element_controller as ec
+        >>> [element] = ec.get_active_identifiable_element_ids()
+        >>> name = ac.get_name(element)
+
+    Returns:
+        The element name.
+    """
+```
+
+Everything there except the `Examples:` block is generated. The block follows the
+convention already in the repo — `>>>` lines, module aliases, sitting between
+`Parameters:` and `Returns:`; see `set_machine_calculation_set` in the same file for
+a real one, ported from the C++ example quoted above. Adding one by hand is fine and
+expected; it is documentation the C++ side has and the generator cannot carry over,
+not a generator gap being papered over (see the constraints).
+
+Which layer each piece of that declaration came from:
+
+| Piece | Source |
+| ----- | ------ |
+| `src/attribute_controller/` | the module name in `PYBIND11_EMBEDDED_MODULE` (3) |
+| `def get_name` | the `"get_name"` literal in `m.def` (3) |
+| the arity | the `cwp_*` signature (2) — never the header, which has overloads pybind11 dropped |
+| `: ElementId` | `uint64_t` (2) through `[type_map]`, then upgraded by the trampoline's `static_cast` or the `[@ref elementID]` hint (1) through `[doxygen_hint_map]`. Both agree here; for `[@ref multiLayerSetID]` only the hint knows it is not a plain int |
+| `-> str` | `std::string` (2) through `[type_map]` |
+| `element_id` | `aElementId` (1), snake_cased — a `py::arg` on the `m.def` would win, and `[param_names]` is the last resort |
+| every line of prose | `@brief`, `@param`, `@return` (1) |
+
+So a binding whose interface method carries no Doxygen still emits — layers 2 and 3
+carry the signature — but with a placeholder docstring, positional-ish parameter
+names and coarser annotations. That is the *no Doxygen `@brief`* warning in step 6.
+
 ## Invocation
 
 ```
