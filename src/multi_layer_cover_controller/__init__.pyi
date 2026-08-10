@@ -603,3 +603,93 @@ def create_multi_layer_solid_wall(set_name: str) -> MultiLayerSetId:
     Returns:
         The multi layer set id.
     """
+
+def get_multi_layer_set_component_type(set_id: MultiLayerSetId) -> int:
+    """Gets the multi layer set component type.
+
+    Parameters:
+        set_id: The multi layer set id.
+
+    Returns:
+        The multi layer set component type.
+    """
+
+def set_multi_layer_set_component_type(set_id: MultiLayerSetId, type: int) -> None:
+    """Sets the multi layer set component type.
+
+    Parameters:
+        set_id: The multi layer set id.
+        type: The multi layer set component type.
+    """
+
+def get_layer_sub_type(set_id: MultiLayerSetId, layer_index: UnsignedInt) -> int:
+    """Gets the layer sub type.
+
+    Parameters:
+        set_id: The multi layer set id.
+        layer_index: The layer index.
+
+    Returns:
+        The layer sub type.
+    """
+
+def set_layer_sub_type(set_id: MultiLayerSetId, layer_index: UnsignedInt, sub_type: int) -> None:
+    """Sets the layer sub type.
+
+    Parameters:
+        set_id: The multi layer set id.
+        layer_index: The layer index.
+        sub_type: The layer sub type.
+    """
+
+def get_layer_standard_panel_guid(set_id: MultiLayerSetId, layer_index: UnsignedInt) -> str:
+    """Gets the layer standard panel guid.
+
+    Parameters:
+        set_id: The multi layer set id.
+        layer_index: The layer index.
+
+    Returns:
+        The layer standard panel guid.
+    """
+
+def set_layer_standard_panel_guid(set_id: MultiLayerSetId, layer_index: UnsignedInt, guid: str) -> None:
+    """Sets the layer standard panel guid.
+
+    Parameters:
+        set_id: The multi layer set id.
+        layer_index: The layer index.
+        guid: The layer standard panel guid.
+    """
+
+def get_layer_standard_beam_guid(set_id: MultiLayerSetId, layer_index: UnsignedInt) -> str:
+    """Gets the layer standard beam guid.
+
+    Parameters:
+        set_id: The multi layer set id.
+        layer_index: The layer index.
+
+    Returns:
+        The layer standard beam guid.
+    """
+
+def set_layer_standard_beam_guid(set_id: MultiLayerSetId, layer_index: UnsignedInt, guid: str) -> None:
+    """Sets the layer standard beam guid.
+
+    Parameters:
+        set_id: The multi layer set id.
+        layer_index: The layer index.
+        guid: The layer standard beam guid.
+    """
+
+def add_layer_by_standard_elements(set_id: MultiLayerSetId, type: multi_layer_type, name: str, panel_guid: str, beam_guid: str, thickness: float) -> None:
+    """Adds layer by standard element.
+
+    Parameters:
+        set_id: The multi layer set id.
+        type: The multi layer set component type.
+        name: The layer name.
+        panel_guid: The layer standard panel guid.
+        beam_guid: The layer standard beam guid.
+        thickness: The layer thickness.
+    """
