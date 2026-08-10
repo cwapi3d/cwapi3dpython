@@ -30,7 +30,7 @@ def get_endtype_id_start(element_id: ElementId) -> EndtypeId:
     """Gets the endtype id of the start face.
 
     Parameters:
-        element_id: The element id.
+        element_id: The cadwork element id.
 
     Examples:
         >>> import element_controller as ec
@@ -42,14 +42,14 @@ def get_endtype_id_start(element_id: ElementId) -> EndtypeId:
         >>> print(f"Start endtype ID: {start_endtype_id}")
 
     Returns:
-        The wanted endtype id.
+        The wanted endtype element id.
     """
 
 def get_endtype_id_end(element_id: ElementId) -> EndtypeId:
     """Gets the endtype id of the end face.
 
     Parameters:
-        element_id: The element id.
+        element_id: The cadwork element id.
 
     Examples:
         >>> import element_controller as ec
@@ -61,7 +61,7 @@ def get_endtype_id_end(element_id: ElementId) -> EndtypeId:
         >>> print(f"End endtype ID: {end_endtype_id}")
 
     Returns:
-        The wanted endtype id.
+        The wanted endtype element id.
     """
 
 
@@ -69,7 +69,7 @@ def get_endtype_id_facet(element_id: ElementId, face_number: int) -> EndtypeId:
     """Gets the endtype id of a face with the face number.
 
     Parameters:
-        element_id: The element id.
+        element_id: The cadwork element id.
         face_number: The face number. 0 <= aFaceNumber < element face count.
 
     Note:
@@ -87,14 +87,14 @@ def get_endtype_id_facet(element_id: ElementId, face_number: int) -> EndtypeId:
         >>> print(f"Facet endtype ID: {facet_endtype_id}")
 
     Returns:
-        The wanted endtype id.
+        The wanted endtype element id.
     """
 
 def set_endtype_name_start(element_id: ElementId, name: str) -> None:
     """Sets the endtype to start face by endtype name.
 
     Parameters:
-        element_id: The element id.
+        element_id: The cadwork element id.
         name: The endtype name.
 
     Examples:
@@ -111,7 +111,7 @@ def set_endtype_name_end(element_id: ElementId, name: str) -> None:
     """Sets the endtype to end face by endtype name.
 
     Parameters:
-        element_id: The element id.
+        element_id: The cadwork element id.
         name: The endtype name.
 
     Examples:
@@ -129,7 +129,7 @@ def set_endtype_name_facet(element_id: ElementId, name: str, face_number: int) -
     """Sets the endtype to a face by endtype name.
 
     Parameters:
-        element_id: The element id.
+        element_id: The cadwork element id.
         name: The endtype name.
         face_number: The face number. 0 <= aFaceNumber < element face count.
 
@@ -152,8 +152,8 @@ def set_endtype_id_start(element_id: ElementId, endtype_id: EndtypeId) -> None:
     """Sets the endtype to start face by endtype id.
 
     Parameters:
-        element_id: The element id.
-        endtype_id: The endtype id.
+        element_id: The cadwork element id.
+        endtype_id: The endtype element id.
 
     Examples:
         >>> import element_controller as ec
@@ -169,8 +169,8 @@ def set_endtype_id_end(element_id: ElementId, endtype_id: EndtypeId) -> None:
     """Sets the endtype to end face by endtype id.
 
     Parameters:
-        element_id: The element id.
-        endtype_id: The endtype id.
+        element_id: The cadwork element id.
+        endtype_id: The endtype element id.
 
     Examples:
         >>> import element_controller as ec
@@ -187,8 +187,8 @@ def set_endtype_id_facet(element_id: ElementId, endtype_id: EndtypeId, face_numb
     """Sets the endtype to a face by endtype id.
 
     Parameters:
-        element_id: The element id.
-        endtype_id: The endtype id.
+        element_id: The cadwork element id.
+        endtype_id: The endtype element id.
         face_number: The face number. 0 <= aFaceNumber < element face count.
 
     Note:
@@ -206,32 +206,32 @@ def set_endtype_id_facet(element_id: ElementId, endtype_id: EndtypeId, face_numb
         >>> etc.set_endtype_id_facet(element, endtype_id, face_number)
     """
 
-def create_new_endtype(endtype_name: str, endtype_id: EndtypeId, folder_name: str) -> EndtypeId:
+def create_new_endtype(endtype_name: str, end_type_id: int, folder_name: str) -> EndtypeId:
     """Creates a new Endtype.
 
     Parameters:
         endtype_name: The new endtype name.
-        endtype_id: The new endtype id.
+        end_type_id: The type of end you want to create. Use [cadwork.end_type][cadwork.end_type] enum.
         folder_name: The new endtype folder.
 
     Examples:
         >>> import endtype_controller as etc
 
         >>> endtype_name = "Custom_Joint_80x40"
-        >>> endtype_id = 99999
+        >>> end_type_id = cadwork.end_type.Tenon
         >>> folder_name = "Custom_Joints"
-        >>> new_id = etc.create_new_endtype(endtype_name, endtype_id, folder_name)
+        >>> new_id = etc.create_new_endtype(endtype_name, end_type_id, folder_name)
         >>> print(f"Created endtype with ID: {new_id}")
 
     Returns:
-        The ID of the created endtype.
+        The ID of the created endtype. Or 0 if error.
     """
 
 def get_endtype_name(element_id: ElementId) -> str:
     """Gets the endtype name by endtype id.
 
     Parameters:
-        element_id: The endtype id.
+        element_id: The endtype element id.
 
     Examples:
         >>> import endtype_controller as etc
@@ -248,7 +248,7 @@ def get_endtype_name_start(element_id: ElementId) -> str:
     """Gets the endtype name of the start face.
 
     Parameters:
-        element_id: The element id.
+        element_id: The cadwork element id.
 
     Examples:
         >>> import element_controller as ec
@@ -267,7 +267,7 @@ def get_endtype_name_end(element_id: ElementId) -> str:
     """Gets the endtype name of the end face.
 
     Parameters:
-        element_id: The element id.
+        element_id: The cadwork element id.
 
     Examples:
         >>> import element_controller as ec
@@ -286,7 +286,7 @@ def get_endtype_name_facet(element_id: ElementId, face_number: int) -> str:
     """Gets the endtype name of the face with a number.
 
     Parameters:
-        element_id: The element id.
+        element_id: The cadwork element id.
         face_number: The face number. 0 <= aFaceNumber < element face count.
 
     Note:

@@ -127,3 +127,11 @@ def export_cover_list_with_settings(element_id_list: list[ElementId], file_path:
         file_path: The path of the target file for the export.
         settings_file_path: The path to the settings file to be used for export.
     """
+
+def export_container_list(element_id_list: list[ElementId], export_file_path: str) -> None:
+    """Exports a container list.
+
+    Parameters:
+        element_id_list: The element list id.
+        export_file_path: The exported file path.
+    """
