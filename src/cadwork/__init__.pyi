@@ -71,6 +71,7 @@ from .dxf_export_version import dxf_export_version as dxf_export_version
 from .dxf_layer_format_type import dxf_layer_format_type as dxf_layer_format_type
 from .element_grouping_type import element_grouping_type as element_grouping_type
 from .element_type import element_type as element_type
+from .end_type import end_type as end_type
 from .hundegger_machine_type import hundegger_machine_type as hundegger_machine_type
 from .ifc_2x3_element_type import ifc_2x3_element_type as ifc_2x3_element_type
 from .ifc_element_combine_behaviour import ifc_element_combine_behaviour as ifc_element_combine_behaviour
@@ -153,6 +154,7 @@ __all__ = [
     "dxf_layer_format_type",
     "element_grouping_type",
     "element_type",
+    "end_type",
     "hundegger_machine_type",
     "ifc_2x3_element_type",
     "ifc_element_combine_behaviour",
