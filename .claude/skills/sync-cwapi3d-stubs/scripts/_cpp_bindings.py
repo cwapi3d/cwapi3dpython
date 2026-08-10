@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Extract the full pybind11 inventory from CCwAPI3DPythonController.cpp.
+"""Extract the full pybind11 inventory.
 
-Three passes over the single 14k-line translation unit:
+Three passes over the translation unit:
 
   A  trampoline index  -- every ``<ret> cwp_<name>(<params>)`` free function, plus
                           the C++ interface accessor + method its body forwards to.
