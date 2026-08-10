@@ -91,6 +91,7 @@ from .standard_element_type import standard_element_type as standard_element_typ
 from .text_element_type import text_element_type as text_element_type
 from .vba_catalog_item_type import vba_catalog_item_type as vba_catalog_item_type
 from .weinmann_mfb_version import weinmann_mfb_version as weinmann_mfb_version
+from .working_plane_exit_view import working_plane_exit_view as working_plane_exit_view
 
 __all__ = [
     # Type aliases
@@ -173,6 +174,7 @@ __all__ = [
     "text_element_type",
     "vba_catalog_item_type",
     "weinmann_mfb_version",
+    "working_plane_exit_view",
     # Module-level functions
     "get_auto_attribute_elements",
     "set_auto_attribute",
