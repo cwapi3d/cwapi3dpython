@@ -602,3 +602,14 @@ def set_webgl_hierarchy(stage: int, attribute: display_attribute) -> None:
         stage: The hierarchy stage to set.
         attribute: The display attribute to use for the hierarchy.
     """
+
+
+def export_step_file_ex(element_list: list[ElementId], file_path: str, scale_factor: float, substract_drillings: bool) -> None:
+    """Exports a STEP file with new algorithm.
+
+    Parameters:
+        element_list: The list of element id to export.
+        file_path: The output file path.
+        scale_factor: The file scale factor.
+        substract_drillings: Substract drillings.
+    """

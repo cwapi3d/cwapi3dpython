@@ -2458,3 +2458,19 @@ def create_rotation_element(surface_element_id: ElementId, axis_point: point_3d,
     Returns:
         The ID of the created rotation element.
     """
+
+def apply_image_to_surface(element: ElementId, image_file_path: str, alignment_start: point_3d, alignment_end: point_3d) -> bool:
+    """Applies an image texture to a specified surface element. This function allows you to set an image as a texture on a given surface element. The image is mapped to the surface between two specified points that define the alignment and scaling.
+
+    Parameters:
+        element: Surface element
+        image_file_path: The file path to the image to be applied. Supported formats include `.jpg`, `.png`, `.bmp`, and `.tif`. Path example: `LR"(C:/path/to/Image.png)"`.
+        alignment_start: The starting alignment point for mapping the image on the surface.
+        alignment_end: The ending alignment point for mapping the image on the surface.
+
+    Note:
+        Ensure that the file path is valid and accessible, and that the surface element exists Proper error handling for invalid inputs is recommended.
+
+    Returns:
+        Returns `true` if the image was successfully applied to the surface; otherwise, returns `false` in case of failure. Failures can occur due to invalid file paths, unsupported formats, or issues with the surface element.
+    """
