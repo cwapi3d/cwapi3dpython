@@ -1,0 +1,14 @@
+# cwapi3d stub-sync — PERSONAL config. GIT-IGNORED.
+#
+# Copy to config.personal.toml (same directory) and edit the paths.
+# Machine paths only: no secrets, no shared settings. Anything set here
+# deep-merges OVER config.toml and wins on conflict.
+
+[paths]
+# Root of the cadwork 3d source tree that contains CwAPI3D/.
+# The [source] paths in config.toml are resolved relative to this.
+cadlib_root = "D:\\source\\cadlib\\v_33.0\\3d"
+
+# Root of this repo (the cwapi3d stub checkout). Optional — when omitted the
+# tool uses the git root discovered from the config file's location.
+stub_repo = "D:\\MkDocs\\cwapi3dpython"
