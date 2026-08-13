@@ -53,6 +53,11 @@
         show_root_heading: false
         show_source: true
 
+::: cadwork.panel_prefab_element_type
+    rendering:
+        show_root_heading: false
+        show_source: true
+
 ## IFC Aggregation Behaviour
 
 ::: cadwork.ifc_element_combine_behaviour
@@ -112,6 +117,27 @@
 ## Vba catalog
 
 ::: cadwork.vba_catalog_item_type
+    rendering:
+        show_root_heading: false
+        show_source: true
+
+## Language
+
+::: cadwork.language
+    rendering:
+        show_root_heading: false
+        show_source: true
+
+## End Type
+
+::: cadwork.end_type
+    rendering:
+        show_root_heading: false
+        show_source: true
+        
+## working_plane_exit_view
+
+::: cadwork.working_plane_exit_view
     rendering:
         show_root_heading: false
         show_source: true

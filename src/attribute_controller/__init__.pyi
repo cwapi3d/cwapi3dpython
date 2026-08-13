@@ -1443,11 +1443,11 @@ def get_sku_list_items() -> list[str]:
     """
 
 
-def get_user_attribute_list_items(element_id: ElementId) -> list[str]:
+def get_user_attribute_list_items(number: UserAttributeId) -> list[str]:
     """Get user attribute list items.
 
     Parameters:
-        element_id: The element id.
+        number: The user attribute number.
 
     Returns:
         The list of user attribute list items.
@@ -1810,4 +1810,14 @@ def set_machine_calculation_set(element_ids: list[ElementId], name: str) -> bool
 
     Returns:
         True if the machine calculation set was successfully applied, false otherwise.
+    """
+
+def delete_item_from_name_list(item: str) -> bool:
+    """Delete item from name list.
+
+    Parameters:
+        item: The item to delete from the name list.
+
+    Returns:
+        True if the item was successfully deleted, false otherwise.
     """

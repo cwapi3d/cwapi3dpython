@@ -10,9 +10,7 @@ In the console you will see the screen output or errors.
 
 User Test -> Userprofile -> Test Options... -> Console
 
-<figure markdown="1">
-![GIF](img/console.gif){width=700}
-</figure>
+![Console](img/console.gif){width="900"}
 
 ## Console
 
@@ -94,4 +92,3 @@ while True:
 
 
 ```
-

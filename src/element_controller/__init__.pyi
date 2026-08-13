@@ -12,6 +12,7 @@ transforms what exists in the model.
 from cadwork.edge_list import edge_list
 from cadwork.element_module_properties import element_module_properties
 from cadwork.facet_list import facet_list
+from cadwork.point_2d import point_2d
 from cadwork.point_3d import point_3d
 from cadwork.standard_element_type import standard_element_type
 from cadwork.text_object_options import text_object_options
@@ -259,7 +260,7 @@ def create_drilling_vectors(diameter: float, length: float, starting_point: poin
         diameter: The diameter of the drilling.
         length: The length of the drilling.
         starting_point: The starting point of the drilling.
-        drilling_direction: The direction of the drilling.
+        drilling_direction: The direction of the drilling. (The vector needs to be normalized beforehand)
 
     Examples:
         >>> drill_diameter = 12.
@@ -391,6 +392,35 @@ def create_polygon_beam(polygon_vertices: vertex_list, thickness: float, x_local
         The ID of the created polygon beam.
     """
 
+
+def create_polygon_beam_vectors(polygon_vertices: list[point_2d | tuple[float, float]], thickness: float, starting_point: point_3d, x_local_direction: point_3d, z_local_direction: point_3d) -> ElementId:
+    """Creates a polygon beam from a 2D profile using vectors.
+
+    The profile is defined in the local uv-plane of the beam and extruded from
+    the starting point along the x local direction.
+
+    Parameters:
+        polygon_vertices: The vertices of the 2D profile. Each vertex is a point_2d or a (u, v) tuple.
+        thickness: The thickness (extrusion length) of the beam.
+        starting_point: The starting point of the beam.
+        x_local_direction: The x local direction of the beam.
+        z_local_direction: The z local direction of the beam.
+
+    Examples:
+        >>> # Create a triangular beam from a 2D profile
+        >>> profile = [cadwork.point_2d(0., 0.), cadwork.point_2d(200., 0.), cadwork.point_2d(100., 173.2)]
+        >>> beam_thickness = 1000.  # Length of the beam
+        >>> start_point = cadwork.point_3d(0., 0., 0.)
+        >>> extrusion_vector = cadwork.point_3d(1., 0., 0.)  # Direction of extrusion
+        >>> z_vector = cadwork.point_3d(0., 0., 1.)  # Orientation vector
+        >>> polygon_beam_id = ec.create_polygon_beam_vectors(profile, beam_thickness, start_point, extrusion_vector, z_vector)
+        >>> # Tuples are implicitly converted to point_2d
+        >>> polygon_beam_id = ec.create_polygon_beam_vectors([(0., 0.), (200., 0.), (100., 173.2)], beam_thickness, start_point, extrusion_vector, z_vector)
+
+    Returns:
+        The ID of the created polygon beam.
+    """
+
 def create_text_object(text: str, position: point_3d, x_local_direction: point_3d, z_local_direction: point_3d, size: float) -> ElementId:
     """Creates a text object.
 
@@ -431,7 +461,7 @@ def rotate_elements(element_id_list: list[ElementId], origin: point_3d, rotation
         element_id_list: The element id list.
         origin: The origin point of the rotation.
         rotation_axis: The axis around which to rotate the elements.
-        rotation_angle: The angle by which to rotate the elements un degree.
+        rotation_angle: The angle by which to rotate the elements in radians.
     """
 
 def subtract_elements(hard_elements: list[ElementId], soft_elements: list[ElementId]) -> list[ElementId]:
@@ -1318,6 +1348,36 @@ def create_polygon_panel(polygon_vertices: vertex_list, thickness: float, x_loca
         >>> extrusion_vector = cadwork.point_3d(0., 0., 1.)  # Normal direction
         >>> z_vector = cadwork.point_3d(1., 0., 0.)  # Orientation vector
         >>> polygon_panel_id = ec.create_polygon_panel(vertices, panel_thickness, extrusion_vector, z_vector)
+
+    Returns:
+        The ID of the created polygon panel element.
+    """
+
+
+def create_polygon_panel_vectors(polygon_vertices: list[point_2d | tuple[float, float]], thickness: float, starting_point: point_3d, x_local_direction: point_3d, z_local_direction: point_3d) -> ElementId:
+    """Creates a polygon panel from a 2D profile using vectors.
+
+    The profile is defined in the local uv-plane of the panel and extruded from
+    the starting point along the x local direction.
+
+    Parameters:
+        polygon_vertices: The vertices of the 2D profile. Each vertex is a point_2d or a (u, v) tuple.
+        thickness: The thickness (extrusion length) of the panel.
+        starting_point: The starting point of the panel.
+        x_local_direction: The X-axis direction of the panel.
+        z_local_direction: The Z-axis direction of the panel.
+
+    Examples:
+        >>> # Create a hexagonal panel from a 2D profile
+        >>> import math
+        >>> radius = 500.
+        >>> sides = 6
+        >>> profile = [cadwork.point_2d(radius * math.cos(2 * math.pi * i / sides), radius * math.sin(2 * math.pi * i / sides)) for i in range(sides)]
+        >>> panel_thickness = 20.
+        >>> start_point = cadwork.point_3d(0., 0., 0.)
+        >>> extrusion_vector = cadwork.point_3d(0., 0., 1.)  # Normal direction
+        >>> z_vector = cadwork.point_3d(1., 0., 0.)  # Orientation vector
+        >>> polygon_panel_id = ec.create_polygon_panel_vectors(profile, panel_thickness, start_point, extrusion_vector, z_vector)
 
     Returns:
         The ID of the created polygon panel element.
@@ -2317,4 +2377,100 @@ def get_element_active_point(element_id: ElementId) -> active_point_result:
 
     Returns:
         True/False plus point data when available.
+    """
+
+def get_standard_beam_guid_list() -> list[str]:
+    """Retrieves a list of standard beam GUIDs.
+
+    Returns:
+        The list of GUIDs of standard beams.
+    """
+
+
+def get_standard_panel_guid_list() -> list[str]:
+    """Retrieves a list of standard panel GUIDs.
+
+    Returns:
+        The list of GUIDs of standard panels.
+    """
+
+
+def import_standard_beam_from_file(file_path: str) -> None:
+    """Imports a standard beam from a file.
+
+    Parameters:
+        file_path: The path to the file to be imported.
+    """
+
+
+def import_standard_panel_from_file(file_path: str) -> None:
+    """Imports a standard panel from a file.
+
+    Parameters:
+        file_path: The path to the file to be imported.
+    """
+
+
+def export_as_standard_element(element_id: ElementId, name: str) -> str:
+    """Exports an existing element as a standard element.
+
+    In case of duplicated names, a count suffix will be appended (e.g., (2)).
+    Note that creating elements of standard element type Metal is not supported by this function.
+
+    Parameters:
+        element_id: The element to export as a standard element.
+        name: The name of the standard element.
+
+    Returns:
+        The GUID of the new standard element on success, an empty string on error.
+    """
+
+
+def create_rotation_element(surface_element_id: ElementId, axis_point: point_3d, axis_direction: point_3d, angle_rad: float, segmentation: int) -> ElementId:
+    """Creates a rotation element from a surface element by rotating it around an axis.
+
+    Parameters:
+        surface_element_id: The ID of the source surface element to rotate. The element must be a surface.
+        axis_point: A point on the rotation axis.
+        axis_direction: The direction vector of the rotation axis.
+        angle_rad: The rotation angle in radians.
+        segmentation: Number of division steps used to tessellate the generated rotation element. (0 for smooth ACIS solid, >0 for faceted)
+
+    Examples:
+        >>> import math
+        >>> # Create a rectangular surface and rotate it 360° around an axis to form a cylinder
+        >>> radius = 200.0
+        >>> height = 1000.0
+        >>> # Define a rectangular surface profile in the XZ plane
+        >>> vertices = cadwork.vertex_list()
+        >>> vertices.append(cadwork.point_3d(0.0, 0.0, 0.0))
+        >>> vertices.append(cadwork.point_3d(0.0, 0.0, height))
+        >>> vertices.append(cadwork.point_3d(radius, 0.0, height))
+        >>> vertices.append(cadwork.point_3d(radius, 0.0, 0.0))
+        >>> surface_id = ec.create_surface(vertices)
+        >>> # Rotate the surface 360° around the Z axis to create a cylinder
+        >>> axis_point = cadwork.point_3d(0.0, 0.0, 0.0)
+        >>> axis_direction = cadwork.point_3d(0.0, 0.0, 1.0)
+        >>> full_rotation = 2.0 * math.pi  # 360 degrees
+        >>> discretization_steps = 0  # automatic
+        >>> cylinder_id = ec.create_rotation_element(surface_id, axis_point, axis_direction, full_rotation, discretization_steps)
+
+    Returns:
+        The ID of the created rotation element.
+    """
+
+def apply_image_to_surface(element: ElementId, image_file_path: str, alignment_start: point_3d, alignment_end: point_3d) -> bool:
+    """Applies an image texture to a specified surface element. This function allows you to set an image as a texture on a given surface element. The image is mapped to the surface between two specified points that define the alignment and scaling.
+
+    Parameters:
+        element: Surface element
+        image_file_path: The file path to the image to be applied. Supported formats include `.jpg`, `.png`, `.bmp`, and `.tif`. Path example: `LR"(C:/path/to/Image.png)"`.
+        alignment_start: The starting alignment point for mapping the image on the surface.
+        alignment_end: The ending alignment point for mapping the image on the surface.
+
+    Note:
+        Ensure that the file path is valid and accessible, and that the surface element exists Proper error handling for invalid inputs is recommended.
+
+    Returns:
+        Returns `true` if the image was successfully applied to the surface; otherwise, returns `false` in case of failure. Failures can occur due to invalid file paths, unsupported formats, or issues with the surface element.
     """

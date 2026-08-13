@@ -8,6 +8,7 @@ the configuration UI for connector axes. Distinct from connector
 """
 
 from cadwork.point_3d import point_3d
+from cadwork.connector_axis_item import connector_axis_item
 from cadwork.api_types import *
 from cadwork.vba_catalog_item_type import vba_catalog_item_type
 
@@ -549,4 +550,14 @@ def set_section_oblong_drilling_is_enabled(axis_id: ElementId, section_index: Un
         positive_value: The positive value of the section oblong drilling.
         negative_value: The negative value of the section oblong drilling.
         angle: The angle of the section oblong drilling.
+    """
+
+
+def set_items_at_intersection(axis_id: ElementId, intersection_index: UnsignedInt, items: list[connector_axis_item]) -> None:
+    """Sets item at intersection.
+
+    Parameters:
+        axis_id: The id of the axis.
+        intersection_index: The index of the intersection. (0-based index)
+        items: The items to set.
     """

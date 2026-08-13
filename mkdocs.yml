@@ -3,7 +3,7 @@ site_name: Cadwork Python Documentation
 repo_name: cwapi3d/cwapi3dpython
 repo_url: https://github.com/cwapi3d/cwapi3dpython
 
-copyright: Copyright 2024 Cadwork
+copyright: Copyright 2026 Cadwork
 
 site_url: https://python.cadwork.dev/
 
@@ -11,7 +11,7 @@ theme:
   name: material
   logo: cw_logo.svg
   favicon: cw_logo.svg
-  version: V2025
+  version: V2026
   palette:
     - scheme: default
       toggle:
@@ -44,6 +44,7 @@ nav:
           - Element Type: documentation/element_type.md
           - Standard Element Type: documentation/standard_element_type.md
           - Process Type: documentation/process_type.md
+          - Point 2D: documentation/point_2d.md
           - Point 3D: documentation/point_3d.md
           - Enumerations: documentation/enums.md
           - Extended Settings: documentation/extended_settings.md
@@ -57,6 +58,8 @@ nav:
           - Layer Settings: documentation/layer_settings.md
           - Text Object Options: documentation/text_object_options.md
           - Import 3DC Options: documentation/import_3dc_options.md
+          - Panel Prefab Element Data: documentation/panel_prefab_element_data.md
+          - Panel Prefab Element Settings: documentation/panel_prefab_element_settings.md
           - Window Geometry: documentation/window_geometry.md
           - BIMteam Upload Result: documentation/bim_team_upload_result.md
           - Shoulder cut options: documentation/shoulder_options.md
@@ -66,6 +69,7 @@ nav:
           - Coordinate System Data: documentation/coordinate_system_data.md
           - Active Point Result: documentation/active_point_result.md
           - Display Attribute: documentation/display_attribute.md
+          - Connector Axis Item: documentation/connector_axis_item.md
       - Connector Axis Controller: documentation/connector_axis_controller.md
       - Dimension Controller: documentation/dimension_controller.md
       - Element Controller: documentation/element_controller.md
@@ -103,6 +107,8 @@ nav:
       - Visualization Controller: examples/visualization_example.md
       - GUI: examples/tk_gui.md
       - Compare: examples/compare.md
+  - Command Line:
+      - command_line.md
   - Videos:
       - videos.md
   - Auto Attributes:
@@ -153,11 +159,9 @@ plugins:
         python:
           paths: [src] # Directory containing Python modules
           options:
-            show_signature_annotations: true 
-            show_type_annotations: true
-            docstring_style: google # Set the docstring style
-            cross_reference: true # Enable cross-referencing to make links to classes, methods, and functions
-            show_source: false # Disable source code display
+            show_signature_annotations: true
+            docstring_style: google
+            show_source: false
 
 extra:
   social:

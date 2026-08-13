@@ -168,6 +168,27 @@ class ifc_predefined_type:
             bool
         """
 
+    def is_hollowcore(self) -> bool:
+        """is hollowcore
+
+        Returns:
+            bool
+        """
+
+    def is_joist(self) -> bool:
+        """is joist
+
+        Returns:
+            bool
+        """
+
+    def is_lintel(self) -> bool:
+        """is lintel
+
+        Returns:
+            bool
+        """
+
     def is_spandrel(self) -> bool:
         """is spandrel
 
