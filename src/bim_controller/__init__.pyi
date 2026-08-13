@@ -483,3 +483,25 @@ def get_elements_for_storey(building: str, storey: str) -> list[ElementId]:
     Returns:
         The list of element ids assigned to the storey.
     """
+
+def export_ifc4(element_id_list: list[ElementId], file_path: str) -> bool:
+    """Exports an IFC 4 file.
+
+    Parameters:
+        element_id_list: A list of element ids to be included in the export.
+        file_path: The path where the IFC file will be exported.
+
+    Returns:
+        True if the export was successful, false otherwise.
+    """
+
+def export_ifc2x3(element_id_list: list[ElementId], file_path: str) -> bool:
+    """Exports an IFC 2x3.
+
+    Parameters:
+        element_id_list: A list of element ids to be included in the export.
+        file_path: The path where the IFC file will be exported.
+
+    Returns:
+        True if the export was successful, false otherwise.
+    """

@@ -120,3 +120,24 @@
     rendering:
         show_root_heading: false
         show_source: true
+
+## Language
+
+::: cadwork.language
+    rendering:
+        show_root_heading: false
+        show_source: true
+
+## End Type
+
+::: cadwork.end_type
+    rendering:
+        show_root_heading: false
+        show_source: true
+        
+## working_plane_exit_view
+
+::: cadwork.working_plane_exit_view
+    rendering:
+        show_root_heading: false
+        show_source: true

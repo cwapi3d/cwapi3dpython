@@ -11,6 +11,7 @@ from cadwork.camera_data import camera_data
 from cadwork.point_3d import point_3d
 from cadwork.api_types import *
 from cadwork.rgb_color import rgb_color
+from cadwork.working_plane_exit_view import working_plane_exit_view
 
 def set_color(element_id_list: list[ElementId], color_id: ColorId) -> None:
     """Sets the element color.
@@ -441,4 +442,45 @@ def display_bitmaps_as_texture_representation_in_shaded2(flag: bool) -> None:
 
     Parameters:
         flag: True to display bitmaps as textures in shaded 2, false otherwise.
+    """
+
+def leave_working_plane(exit_view: working_plane_exit_view) -> None:
+    """Leaves the 2d working plane and restores a 3d view. Does nothing when the 2d working plane is not currently active.
+
+    Parameters:
+        exit_view: The 3d view to restore on leaving.
+
+    Note:
+        When the working plane was entered from inside a container block, only workingPlaneExitView::previous_view returns into that container block; every other value leaves it and switches to the plain 3d model view.
+    """
+
+def is_permanently_hidden(element_id: ElementId) -> bool:
+    """Tests whether an element is permanently hidden.
+
+    Parameters:
+        element_id: The element id.
+
+    Returns:
+        True if the element is permanently hidden, false otherwise, and false when the id does not resolve to an element.
+    """
+
+def hide_permanently(element_id_list: list[ElementId]) -> None:
+    """Takes elements out of the model's working set and keeps them there.
+
+    Parameters:
+        element_id_list: The elements to hide permanently.
+    """
+
+def show_permanently_hidden(element_id_list: list[ElementId]) -> None:
+    """Brings elements this API hid permanently back into the working set.
+
+    Parameters:
+        element_id_list: The elements to show again.
+    """
+
+def get_permanently_hidden_elements() -> list[ElementId]:
+    """Gets the elements this API hid permanently and has not shown again.
+
+    Returns:
+        The permanently hidden elements owned by this API, empty when there are none.
     """

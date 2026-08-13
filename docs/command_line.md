@@ -63,6 +63,43 @@ For unattended processing, let the script do its work and then save or export th
 example `file_controller.save_3d_file()` or an export controller call — so each file is
 processed start to finish without any clicks.
 
+## Running a plugin from any directory (`/RUNPROGRAM`)
+
+Where `/PLUGIN=` only runs plugins that are **registered in the `API.x64` directory**, the
+`/RUNPROGRAM` argument runs a plugin from **any directory you define**. The plugin does **not**
+have to be registered in `API.x64` — you point directly at the file you want to run:
+
+```cmd
+...\cadwork.dir\ci_start.exe "C:\path\to\myFile.3d" /RUNPROGRAM="C:\my_plugins\export.py"
+```
+
+The target can be either a **`.py`** (Python) or a **`.dll`** (compiled) plugin:
+
+```cmd
+ci_start.exe "C:\path\to\myFile.3d" /RUNPROGRAM="D:\tools\my_plugin.py"    :: run a Python plugin
+ci_start.exe "C:\path\to\myFile.3d" /RUNPROGRAM="D:\tools\my_plugin.dll"   :: run a compiled C++ plugin
+```
+
+!!! note
+Because `/RUNPROGRAM` takes a full path, you can keep plugins **anywhere** — on a network share,
+in a project folder, or in a development directory — without copying them into `API.x64` first.
+This is handy for testing a plugin during development or for running project-specific scripts.
+
+### Running headless (`/NO-GUI`)
+
+Combine `/RUNPROGRAM` with `/NO-GUI` to run the plugin **without the graphical user interface**.
+cadwork starts, executes the plugin, and no window is shown — ideal for fully unattended and
+server-side automation:
+
+```cmd
+ci_start.exe "C:\path\to\myFile.3d" /RUNPROGRAM="C:\my_plugins\export.py" /NO-GUI
+```
+
+!!! warning
+In headless mode there is no UI to interact with, so the plugin must do all of its work on its
+own and save/export the result or an export controller call. 
+Avoid any dialogs or calls that wait for user input, as there is no window to answer them.
+
 ## Batch printing / export
 
 For `.2d` files you can print plotter or laser frames directly from the command line:

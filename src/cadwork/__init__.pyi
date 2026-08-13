@@ -50,6 +50,7 @@ from .layer_settings import layer_settings as layer_settings
 from .panel_prefab_element_data import panel_prefab_element_data as panel_prefab_element_data
 from .panel_prefab_element_settings import panel_prefab_element_settings as panel_prefab_element_settings
 from .point import point as point
+from .point_2d import point_2d as point_2d
 from .point_3d import point_3d as point_3d
 from .polygon_list import polygon_list as polygon_list
 from .rhino_options import rhino_options as rhino_options
@@ -70,10 +71,12 @@ from .dxf_export_version import dxf_export_version as dxf_export_version
 from .dxf_layer_format_type import dxf_layer_format_type as dxf_layer_format_type
 from .element_grouping_type import element_grouping_type as element_grouping_type
 from .element_type import element_type as element_type
+from .end_type import end_type as end_type
 from .hundegger_machine_type import hundegger_machine_type as hundegger_machine_type
 from .ifc_2x3_element_type import ifc_2x3_element_type as ifc_2x3_element_type
 from .ifc_element_combine_behaviour import ifc_element_combine_behaviour as ifc_element_combine_behaviour
 from .ifc_predefined_type import ifc_predefined_type as ifc_predefined_type
+from .language import language as language
 from .multi_layer_cover_type import multi_layer_cover_type as multi_layer_cover_type
 from .multi_layer_subtype import multi_layer_subtype as multi_layer_subtype
 from .multi_layer_type import multi_layer_type as multi_layer_type
@@ -88,6 +91,7 @@ from .standard_element_type import standard_element_type as standard_element_typ
 from .text_element_type import text_element_type as text_element_type
 from .vba_catalog_item_type import vba_catalog_item_type as vba_catalog_item_type
 from .weinmann_mfb_version import weinmann_mfb_version as weinmann_mfb_version
+from .working_plane_exit_view import working_plane_exit_view as working_plane_exit_view
 
 __all__ = [
     # Type aliases
@@ -130,6 +134,7 @@ __all__ = [
     "panel_prefab_element_data",
     "panel_prefab_element_settings",
     "point",
+    "point_2d",
     "point_3d",
     "polygon_list",
     "rhino_options",
@@ -149,10 +154,12 @@ __all__ = [
     "dxf_layer_format_type",
     "element_grouping_type",
     "element_type",
+    "end_type",
     "hundegger_machine_type",
     "ifc_2x3_element_type",
     "ifc_element_combine_behaviour",
     "ifc_predefined_type",
+    "language",
     "multi_layer_cover_type",
     "multi_layer_subtype",
     "multi_layer_type",
@@ -167,6 +174,7 @@ __all__ = [
     "text_element_type",
     "vba_catalog_item_type",
     "weinmann_mfb_version",
+    "working_plane_exit_view",
     # Module-level functions
     "get_auto_attribute_elements",
     "set_auto_attribute",

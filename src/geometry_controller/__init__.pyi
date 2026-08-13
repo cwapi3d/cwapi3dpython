@@ -11,6 +11,7 @@ to create or destroy it.
 from cadwork.api_types import ElementId, UnsignedInt
 from cadwork.facet_list import facet_list
 from cadwork.point_3d import point_3d
+from cadwork.division_zone_direction import division_zone_direction
 
 
 def rotate_height_axis_90(element_id_list: list[ElementId]) -> None:
@@ -930,4 +931,42 @@ def get_length_including_end_types(element_id: ElementId) -> float:
 
     Returns:
         The element length including end-types.
+    """
+
+def create_division_zone(element_id: ElementId, point: point_3d, direction: division_zone_direction) -> None:
+    """Creates a division zone.
+
+    Parameters:
+        element_id: The element Id.
+        point: The division zone point.
+        direction: The division zone direction.
+    """
+
+def delete_division_zone(element_id: ElementId) -> None:
+    """Deletes a division zone.
+
+    Parameters:
+        element_id: The element Id.
+    """
+
+def get_division_zone_points(element_id: ElementId) -> list[point_3d]:
+    """Gets the division zone points.
+
+    Parameters:
+        element_id: The element Id.
+
+    Returns:
+        The division zone points.
+    """
+
+def stretch_facet(element_id: ElementId, facet_index: UnsignedInt, distance: float) -> bool:
+    """Moves one facet of an element along its own plane normal, growing or shrinking the body at that face.
+
+    Parameters:
+        element_id: The element to modify.
+        facet_index: Index into the element's facet list in the same order getElementFacets An element with no facets fails. The index is only valid against a facet table read from the element in its CURRENT state: a successful stretch renumbers the list, because the geometry kernel rebuilds the body's face order after every local operation. To move several facets of one element, re-read getElementFacets after each call and re-locate the next facet by its normal - carrying indices 0..count-1 across a loop will address the same facet twice and miss others.
+        distance: Signed travel in model units (mm) along the normal getElementFacets reports for this facet index: positive grows the body at that face, negative shrinks it, zero is a successful no-op that leaves the geometry untouched.
+
+    Returns:
+        Whether the facet was moved. - true: the facet moved (or the distance was zero) and the element is marked modified - false: nothing was modified — a distinct code and message are on the error stack, readable via getLastError, and logged to the cadwork API log
     """
