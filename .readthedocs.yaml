@@ -9,5 +9,8 @@ mkdocs:
   configuration: mkdocs.yml
 
 python:
-   install:
-   - requirements: requirements.txt
+  install:
+    - method: uv
+      command: sync
+      groups:
+        - dev
