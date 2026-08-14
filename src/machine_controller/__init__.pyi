@@ -16,7 +16,6 @@ from cadwork.panel_prefab_element_settings import panel_prefab_element_settings
 from cadwork.weinmann_mfb_version import weinmann_mfb_version
 from cadwork.btl_version import btl_version
 
-
 def export_btl(btl_version: btl_version, file_path: str) -> None:
     """Exports a BTL file.
 
@@ -76,7 +75,9 @@ def export_hundegger_with_file_path(hundeggertype: hundegger_machine_type, file_
         >>> mc.export_hundegger_with_file_path(hundegger_type, output_path)
     """
 
-def export_hundegger_with_file_path_and_presetting(hundeggertype: hundegger_machine_type, file_path: str, presetting: str) -> None:
+def export_hundegger_with_file_path_and_presetting(
+    hundeggertype: hundegger_machine_type, file_path: str, presetting: str
+) -> None:
     """Exports a Hundegger file.
 
     Parameters:
@@ -170,7 +171,9 @@ def export_hundegger_with_file_path_silent(hundeggertype: hundegger_machine_type
         >>> mc.export_hundegger_with_file_path_silent(hundegger_type, output_path)
     """
 
-def export_hundegger_with_file_path_and_presetting_silent(hundeggertype: hundegger_machine_type, file_path: str, presetting: str) -> None:
+def export_hundegger_with_file_path_and_presetting_silent(
+    hundeggertype: hundegger_machine_type, file_path: str, presetting: str
+) -> None:
     """Exports a Hundegger file silently.
 
     Parameters:
@@ -187,7 +190,6 @@ def export_hundegger_with_file_path_and_presetting_silent(hundeggertype: hundegg
         >>> presetting_file = r"...3d/Machine/Hundegger/K2/hundegger_settings.xml"
         >>> mc.export_hundegger_with_file_path_and_presetting_silent(hundegger_type, output_path, presetting_file)
     """
-
 
 def get_element_hundegger_processings(element_id: ElementId, hundeggertype: hundegger_machine_type) -> list[ElementId]:
     """Gets the list of Hundegger processings for a specific element.
@@ -210,7 +212,6 @@ def get_element_hundegger_processings(element_id: ElementId, hundeggertype: hund
         A list of element IDs representing the processings.
     """
 
-
 def get_element_btl_processings(element_id: ElementId, btl_version: btl_version) -> list[ElementId]:
     """Gets the list of BTL processings for a specific element.
 
@@ -231,7 +232,6 @@ def get_element_btl_processings(element_id: ElementId, btl_version: btl_version)
     Returns:
         A list of element IDs representing the processings.
     """
-
 
 def get_processing_name(reference_element_id: ElementId, processing_id: ElementId) -> str:
     """Gets the name of a specific processing.
@@ -254,7 +254,6 @@ def get_processing_name(reference_element_id: ElementId, processing_id: ElementI
         The name of the processing.
     """
 
-
 def get_processing_code(reference_element_id: ElementId, processing_id: ElementId) -> str:
     """Gets the code of a specific processing.
 
@@ -275,7 +274,6 @@ def get_processing_code(reference_element_id: ElementId, processing_id: ElementI
     Returns:
         The code of the processing.
     """
-
 
 def get_processing_points(reference_element_id: ElementId, processing_id: ElementId) -> vertex_list:
     """Gets the points of a specific processing.
@@ -298,7 +296,6 @@ def get_processing_points(reference_element_id: ElementId, processing_id: Elemen
         A list of vertices representing the points of the processing.
     """
 
-
 def get_processing_btl_parameter_set(reference_element_id: ElementId, processing_id: ElementId) -> list[str]:
     """Gets the BTL parameter set of a specific processing.
 
@@ -319,7 +316,6 @@ def get_processing_btl_parameter_set(reference_element_id: ElementId, processing
     Returns:
         A list of strings representing the BTL parameter set of the processing.
     """
-
 
 def get_panel_prefab_element_data(element_id: ElementId) -> panel_prefab_element_data:
     """Gets the machine panel prefabrication data of an element.
@@ -345,7 +341,6 @@ def get_panel_prefab_element_data(element_id: ElementId) -> panel_prefab_element
         The panel prefab element data.
     """
 
-
 def set_panel_prefab_element_data(element_id_list: list[ElementId], settings: panel_prefab_element_settings) -> None:
     """Sets the machine panel prefabrication data on a list of elements.
 
@@ -369,8 +364,6 @@ def set_panel_prefab_element_data(element_id_list: list[ElementId], settings: pa
         >>> settings.set_machine_calculation_set("MyMfbConfig")
         >>> mc.set_panel_prefab_element_data(elements, settings)
     """
-    
-    
 
 def load_btl_calculation_set(btl_type: btl_version, file_path: str) -> None:
     """Loads the BTL calculation set.

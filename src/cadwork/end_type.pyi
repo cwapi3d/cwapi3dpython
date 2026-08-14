@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class end_type(IntEnum):
     """end type

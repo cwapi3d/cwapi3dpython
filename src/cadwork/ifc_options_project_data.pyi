@@ -1,5 +1,4 @@
 class ifc_options_project_data:
-    
     def get_export_coordinates_in_ifc_site(self) -> bool:
         """get export coordinates in ifc site
 
@@ -67,4 +66,3 @@ class ifc_options_project_data:
         Returns:
             None
         """
-

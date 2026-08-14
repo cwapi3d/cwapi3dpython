@@ -51,14 +51,13 @@ def get_ifc2x3_element_type(element_id: ElementId) -> ifc_2x3_element_type:
         The ifc_2x3_element_type of the element.
     """
 
-
 def set_ifc2x3_element_type(element_id_list: list[ElementId], ifc_type: ifc_2x3_element_type) -> None:
     """Set ifc2x3 element type.
 
     Parameters:
         element_id_list: The list of element ids.
         ifc_type: The ifc_2x3_element_type to set.
-        
+
     Examples:
         >>> import element_controller as ec
         >>> import bim_controller as bc
@@ -298,7 +297,6 @@ def get_storey_height(building: str, storey: str) -> float:
         The height of the storey.
     """
 
-
 def get_ifc2x3_element_type_string(entity_type: ifc_2x3_element_type) -> str:
     """Get IFC2x3 element type string.
 
@@ -308,7 +306,6 @@ def get_ifc2x3_element_type_string(entity_type: ifc_2x3_element_type) -> str:
     Returns:
         The string representation of the IFC2x3 element type.
     """
-
 
 def get_ifc2x3_element_type_display_string(entity_type: ifc_2x3_element_type) -> str:
     """Get IFC2x3 element type display string.
@@ -336,7 +333,6 @@ def get_all_storeys(building: str) -> list[str]:
     Returns:
         A list of all storeys in the building.
     """
-
 
 def get_element_id_from_base64_ifc_guid(base_64_ifc_guid: str) -> ElementId:
     """Get element id from base64 ifc guid.
@@ -367,7 +363,6 @@ def get_ifc_predefined_type(element_id: ElementId) -> 'ifc_predefined_type':
     Returns:
         The IfcPredefinedType of the element.
     """
-
 
 def set_ifc_predefined_type(element_id_list: list[ElementId], predefined_type: ifc_predefined_type) -> None:
     """Set a predefined type to elements. Attention, if you change the PredefinedType of the elements, you are responsible for ensuring that valid types are set.

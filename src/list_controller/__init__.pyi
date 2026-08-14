@@ -40,10 +40,11 @@ def check_position_numbers_part_list() -> list[ElementId]:
     """
 
 def clear_errors() -> None:
-    """Clears all errors.
-    """
+    """Clears all errors."""
 
-def export_production_list_with_settings(element_id_list: list[ElementId], file_path: str, settings_file_path: str) -> None:
+def export_production_list_with_settings(
+    element_id_list: list[ElementId], file_path: str, settings_file_path: str
+) -> None:
     """Exports a production list using an additional settings file.
 
     Parameters:
@@ -89,8 +90,9 @@ def load_part_list_calculation_settings(settings_file_path: str) -> None:
         settings_file_path: The path to the settings file to be loaded.
     """
 
-def generate_new_production_list_silently(element_id_list: list[ElementId], starting_number: UnsignedInt, keep_existing_numbers: bool,
-                                          with_containers: bool) -> None:
+def generate_new_production_list_silently(
+    element_id_list: list[ElementId], starting_number: UnsignedInt, keep_existing_numbers: bool, with_containers: bool
+) -> None:
     """Generates new production list numbers silently starting from a given number, optionally keeping existing numbers and considering container elements.
 
     Parameters:
@@ -100,8 +102,9 @@ def generate_new_production_list_silently(element_id_list: list[ElementId], star
         with_containers: Whether to include container elements in the number generation.
     """
 
-def generate_new_part_list_silently(element_id_list: list[ElementId], starting_number: UnsignedInt, keep_existing_numbers: bool,
-                                    with_containers: bool) -> None:
+def generate_new_part_list_silently(
+    element_id_list: list[ElementId], starting_number: UnsignedInt, keep_existing_numbers: bool, with_containers: bool
+) -> None:
     """Generates new part list numbers silently starting from a given number, optionally keeping existing numbers and considering container elements.
 
     Parameters:

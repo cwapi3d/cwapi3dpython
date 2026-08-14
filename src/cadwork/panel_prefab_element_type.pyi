@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class panel_prefab_element_type(IntEnum):
     """panel prefab element type
@@ -11,6 +10,7 @@ class panel_prefab_element_type(IntEnum):
         >>> cadwork.panel_prefab_element_type.batten
         batten
     """
+
     none = 0
     """"""
     frame = 1

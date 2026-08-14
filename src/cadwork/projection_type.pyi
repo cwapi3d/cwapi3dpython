@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class projection_type(IntEnum):
     """projection type
@@ -9,6 +8,7 @@ class projection_type(IntEnum):
         >>> cadwork.projection_type.Perspective
         Perspective
     """
+
     Perspective = 1
     """"""
     Orthographic = 2
@@ -16,4 +16,3 @@ class projection_type(IntEnum):
 
     def __int__(self) -> int:
         return self.value
-

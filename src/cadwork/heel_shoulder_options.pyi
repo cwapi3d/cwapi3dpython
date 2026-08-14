@@ -1,5 +1,4 @@
 class heel_shoulder_options:
-    
     def get_beam_geometry(self) -> 'shoulder_beam_geometry':
         """get beam geometry
 
@@ -203,4 +202,3 @@ class heel_shoulder_options:
         Returns:
             None
         """
-

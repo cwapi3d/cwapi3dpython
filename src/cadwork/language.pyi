@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class language(IntEnum):
     """Available cadwork UI languages for set_language().
@@ -11,6 +10,7 @@ class language(IntEnum):
         >>> cadwork.language.german
         german
     """
+
     english = 0
     """en"""
     german = 1

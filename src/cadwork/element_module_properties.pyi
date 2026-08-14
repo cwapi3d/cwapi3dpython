@@ -1,5 +1,4 @@
 class element_module_properties:
-    
     def is_stretch_with_top_of_wall(self) -> bool:
         """is stretch with top of wall
 
@@ -672,4 +671,3 @@ class element_module_properties:
         Returns:
             None
         """
-

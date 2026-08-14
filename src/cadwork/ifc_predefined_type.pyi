@@ -1,5 +1,4 @@
 class ifc_predefined_type:
-    
     def is_none(self) -> bool:
         """is none
 
@@ -2253,4 +2252,3 @@ class ifc_predefined_type:
         Returns:
             None
         """
-

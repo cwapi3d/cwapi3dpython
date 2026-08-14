@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class standard_element_type(IntEnum):
     """standard element type
@@ -9,6 +8,7 @@ class standard_element_type(IntEnum):
         >>> cadwork.standard_element_type.beam
         beam
     """
+
     beam = 0
     """"""
     panel = 2
@@ -24,4 +24,3 @@ class standard_element_type(IntEnum):
 
     def __int__(self) -> int:
         return self.value
-

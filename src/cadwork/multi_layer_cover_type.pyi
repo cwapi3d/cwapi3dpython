@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class multi_layer_cover_type(IntEnum):
     """multi layer cover type
@@ -9,6 +8,7 @@ class multi_layer_cover_type(IntEnum):
         >>> cadwork.multi_layer_cover_type.framedWall
         framedWall
     """
+
     framedWall = 0
     """"""
     solidWall = 1
@@ -26,4 +26,3 @@ class multi_layer_cover_type(IntEnum):
 
     def __int__(self) -> int:
         return self.value
-

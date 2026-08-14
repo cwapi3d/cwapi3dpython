@@ -102,24 +102,19 @@ def set_mutable(element_id_list: list[ElementId]) -> None:
     """
 
 def show_all_elements() -> None:
-    """Shows all elements.
-    """
+    """Shows all elements."""
 
 def hide_all_elements() -> None:
-    """Hides all elements.
-    """
+    """Hides all elements."""
 
 def zoom_all_elements() -> None:
-    """Zooms on all elements.
-    """
+    """Zooms on all elements."""
 
 def zoom_active_elements() -> None:
-    """Zooms on all active elements.
-    """
+    """Zooms on all active elements."""
 
 def refresh() -> None:
-    """Refresh the drawing area.
-    """
+    """Refresh the drawing area."""
 
 def set_material(element_id_list: list[ElementId], element_id: ElementId) -> None:
     """Sets the element material.
@@ -129,7 +124,7 @@ def set_material(element_id_list: list[ElementId], element_id: ElementId) -> Non
         element_id: The material ID to set.
     """
 
-def save_visibility_state() -> "visibility_state":
+def save_visibility_state() -> 'visibility_state':
     """Saves the visibility state.
 
     Returns:
@@ -143,7 +138,7 @@ def restore_visibility_state(state: None) -> None:
         state: The visibility state to restore.
     """
 
-def save_activation_state() -> "activation_state":
+def save_activation_state() -> 'activation_state':
     """Saves the activation state.
 
     Returns:
@@ -158,52 +153,40 @@ def restore_activation_state(state: None) -> None:
     """
 
 def show_view_positive_x() -> None:
-    """Sets the view to +X.
-    """
+    """Sets the view to +X."""
 
 def show_view_negative_x() -> None:
-    """Sets the view to -X.
-    """
+    """Sets the view to -X."""
 
 def show_view_positive_y() -> None:
-    """Sets the view to +Y.
-    """
+    """Sets the view to +Y."""
 
 def show_view_negative_y() -> None:
-    """Sets the view to -Y.
-    """
+    """Sets the view to -Y."""
 
 def show_view_positive_z() -> None:
-    """Sets the view to +Z.
-    """
+    """Sets the view to +Z."""
 
 def show_view_negative_z() -> None:
-    """Sets the view to -Z.
-    """
+    """Sets the view to -Z."""
 
 def show_view_standard_axo() -> None:
-    """Sets the view to standard axonometry.
-    """
+    """Sets the view to standard axonometry."""
 
 def show_view_wireframe() -> None:
-    """Sets the view to wireframe.
-    """
+    """Sets the view to wireframe."""
 
 def show_view_hidden_lines() -> None:
-    """Sets the view to hidden lines.
-    """
+    """Sets the view to hidden lines."""
 
 def show_view_dashed_hidden_lines() -> None:
-    """Sets the view to dashed hidden lines.
-    """
+    """Sets the view to dashed hidden lines."""
 
 def show_view_shaded2() -> None:
-    """Sets the view to shaded 2.
-    """
+    """Sets the view to shaded 2."""
 
 def show_view_shaded1() -> None:
-    """Sets the view to shaded 1.
-    """
+    """Sets the view to shaded 1."""
 
 def is_selectable(element_id: ElementId) -> bool:
     """Returns if the element is selectable.
@@ -230,8 +213,7 @@ def set_selectable(element_id_list: list[ElementId]) -> None:
     """
 
 def clear_errors() -> None:
-    """Clears all errors.
-    """
+    """Clears all errors."""
 
 def load_marking_settings(settings_file_path: str) -> None:
     """Loads marking settings file.
@@ -256,9 +238,7 @@ def set_camera(position: point_3d, target: point_3d) -> None:
     """
 
 def show_perspective_central() -> None:
-    """changes the viewmode to Perspective.
-    """
-
+    """changes the viewmode to Perspective."""
 
 def set_color_without_material(element_id_list: list[ElementId], color_id: ColorId) -> None:
     """Sets the color of a list of elements without changing their material.
@@ -267,7 +247,6 @@ def set_color_without_material(element_id_list: list[ElementId], color_id: Color
         element_id_list: A list of element id.
         color_id: The color ID to set.
     """
-
 
 def set_texture_rotated(element_id_list: list[ElementId], flag: bool) -> None:
     """Sets the rotation of the texture for a list of elements.
@@ -299,8 +278,7 @@ def show_reference_side_wall(show: bool) -> None:
     """
 
 def show_view_axo() -> None:
-    """changes the viewmode to Axo.
-    """
+    """changes the viewmode to Axo."""
 
 def get_color(element_id: ElementId) -> int:
     """Gets the element color.
@@ -311,7 +289,6 @@ def get_color(element_id: ElementId) -> int:
     Returns:
         The color ID of the element.
     """
-
 
 def get_opengl_color(element_id: ElementId) -> rgb_color:
     """Gets the element OpenGL color.
@@ -333,7 +310,6 @@ def get_material(element_id: ElementId) -> MaterialId:
         The material id.
     """
 
-
 def get_rgb_from_cadwork_color_id(color_id: ColorId) -> rgb_color:
     """Gets the RGB color from a Cadwork color ID.
 
@@ -343,7 +319,6 @@ def get_rgb_from_cadwork_color_id(color_id: ColorId) -> rgb_color:
     Returns:
         The RGB color corresponding to the Cadwork color ID.
     """
-
 
 def is_texture_rotated(element_id: ElementId) -> bool:
     """Checks if the texture of an element is rotated.
@@ -361,7 +336,6 @@ def get_camera_data() -> camera_data:
     Returns:
         The camera data.
     """
-
 
 def set_camera_data(camera_data: camera_data) -> None:
     """Set the camera data - this will override the current camera data.
@@ -384,7 +358,7 @@ def is_cadwork_window_in_dark_mode() -> bool:
         True if the window is in dark mode, false otherwise.
     """
 
-def enter_working_plane(plane_normal: point_3d, plane_origin: point_3d) ->None:
+def enter_working_plane(plane_normal: point_3d, plane_origin: point_3d) -> None:
     """Enter 2d working plane.
 
     Parameters:
@@ -392,7 +366,7 @@ def enter_working_plane(plane_normal: point_3d, plane_origin: point_3d) ->None:
         plane_origin: A plane origin.
     """
 
-def get_element_transparency(element_id: ElementId) ->int:
+def get_element_transparency(element_id: ElementId) -> int:
     """Gets the element transparency.
 
     Parameters:
@@ -428,14 +402,12 @@ def set_use_material_texture(element_id_list: list[ElementId], value: bool) -> N
         value: True to use material texture, false otherwise.
     """
 
-
 def display_bitmaps_as_texture_representation_in_shaded1(flag: bool) -> None:
     """Set the graphic option to display bitmaps as textures in shaded 1.
 
     Parameters:
         flag: True to display bitmaps as textures in shaded 1, false otherwise.
     """
-
 
 def display_bitmaps_as_texture_representation_in_shaded2(flag: bool) -> None:
     """Set the graphic option to display bitmaps as textures in shaded 2.

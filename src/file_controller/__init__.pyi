@@ -31,7 +31,6 @@ def export_stl_file(element_id_list: list[ElementId], file_path: str) -> None:
         >>> fc.export_stl_file(selected_elements, output_path)
     """
 
-
 def import_step_file(file_path: str, scale_factor: float) -> list[ElementId]:
     """Imports a STEP file.
 
@@ -42,7 +41,6 @@ def import_step_file(file_path: str, scale_factor: float) -> list[ElementId]:
     Returns:
         The imported list of element id.
     """
-
 
 def import_step_file_with_message_option(file_path: str, scale_factor: float, hide_message: bool) -> list[ElementId]:
     """Imports a STEP file with message option.
@@ -55,7 +53,6 @@ def import_step_file_with_message_option(file_path: str, scale_factor: float, hi
     Returns:
         The imported list of element id.
     """
-
 
 def export_webgl(element_id_list: list[ElementId], file_path: str) -> bool:
     """Exports a WebGL file.
@@ -78,7 +75,6 @@ def export_webgl(element_id_list: list[ElementId], file_path: str) -> bool:
         True on successful export, false otherwise.
     """
 
-
 def export_3d_file(element_id_list: list[ElementId], file_path: str) -> bool:
     """Exports a 3D file.
 
@@ -100,7 +96,6 @@ def export_3d_file(element_id_list: list[ElementId], file_path: str) -> bool:
         True on successful export, false otherwise.
     """
 
-
 def import_sat_file(file_path: str, scale_factor: float, binary: bool) -> list[ElementId]:
     """Imports an SAT file.
 
@@ -113,7 +108,6 @@ def import_sat_file(file_path: str, scale_factor: float, binary: bool) -> list[E
         The imported list of element id.
     """
 
-
 def import_3dc_file(file_path: str) -> list[ElementId]:
     """Imports a 3DC file.
 
@@ -123,7 +117,6 @@ def import_3dc_file(file_path: str) -> list[ElementId]:
     Returns:
         The imported list of element id.
     """
-
 
 def import_rhino_file(file_path: str, without_dialog: bool) -> list[ElementId]:
     """Imports a Rhino file.
@@ -136,9 +129,9 @@ def import_rhino_file(file_path: str, without_dialog: bool) -> list[ElementId]:
         The imported list of element id.
     """
 
-
-def export_step_file(element_id_list: list[ElementId], file_path: str, scale_factor: float, version: int,
-                     text_mode: bool) -> None:
+def export_step_file(
+    element_id_list: list[ElementId], file_path: str, scale_factor: float, version: int, text_mode: bool
+) -> None:
     """Exports a STEP file.
 
     Parameters:
@@ -162,14 +155,12 @@ def export_step_file(element_id_list: list[ElementId], file_path: str, scale_fac
         >>> fc.export_step_file(selected_elements, output_path, scale_factor, version, text_mode)
     """
 
-
 def import_3dz_file(file_path: str) -> None:
     """Imports a 3DZ file.
 
     Parameters:
         file_path: The input file path.
     """
-
 
 def export_obj_file(element_id_list: list[ElementId], file_path: str) -> None:
     """Exports a OBJ file.
@@ -187,7 +178,6 @@ def export_obj_file(element_id_list: list[ElementId], file_path: str) -> None:
         >>> fc.export_obj_file(selected_elements, output_path)
     """
 
-
 def import_sat_file_silently(file_path: str, scale_factor: float, binary: bool) -> list[ElementId]:
     """Imports a SAT File without messages.
 
@@ -200,18 +190,17 @@ def import_sat_file_silently(file_path: str, scale_factor: float, binary: bool) 
         The imported list of element id.
     """
 
-
 def export_fbx_file(element_id_list: list[ElementId], file_path: str, fbx_format: int) -> None:
     """Exports a FBX file.
 
     Parameters:
         element_id_list: The list of element id to export.
         file_path: The output file path.
-        fbx_format: The FBX format. 
-        
+        fbx_format: The FBX format.
+
             Available values :
-            
-            
+
+
             - 1 = "FBX binary(*.fbx)";
             - 2 = "FBX ascii(*.fbx)";
             - 3 = "FBX encrypted(*.fbx)";
@@ -233,11 +222,8 @@ def export_fbx_file(element_id_list: list[ElementId], file_path: str, fbx_format
         >>> fc.export_fbx_file(selected_elements, output_path, fbx_format)
     """
 
-
 def clear_errors() -> None:
-    """Clears all errors.
-    """
-
+    """Clears all errors."""
 
 def import_3dc_file_with_glide(file_path: str) -> list[ElementId]:
     """Imports a 3DC file with glide.
@@ -249,14 +235,12 @@ def import_3dc_file_with_glide(file_path: str) -> list[ElementId]:
         The imported list of element id.
     """
 
-
 def import_btl_file(file_path: str) -> None:
     """Imports a BTL file.
 
     Parameters:
         file_path: The input file path.
     """
-
 
 def export_3dc_file(element_id_list: list[ElementId], file_path: str) -> None:
     """Exports a 3D file.
@@ -274,14 +258,12 @@ def export_3dc_file(element_id_list: list[ElementId], file_path: str) -> None:
         >>> fc.export_3dc_file(selected_elements, output_path)
     """
 
-
 def import_btl_file_for_nesting(file_path: str) -> None:
     """Imports a BTL file for nesting.
 
     Parameters:
         file_path: The input file path.
     """
-
 
 def export_btl_file_for_nesting(file_path: str) -> None:
     """Exports a BTL file for nesting.
@@ -296,9 +278,13 @@ def export_btl_file_for_nesting(file_path: str) -> None:
         >>> fc.export_btl_file_for_nesting(output_path)
     """
 
-
-def export_rhino_file(element_id_list: list[ElementId], file_path: str, version: int, use_default_assignment: bool,
-                      write_standard_attributes: bool) -> None:
+def export_rhino_file(
+    element_id_list: list[ElementId],
+    file_path: str,
+    version: int,
+    use_default_assignment: bool,
+    write_standard_attributes: bool,
+) -> None:
     """Exports a 3dm rhino file.
 
     Parameters:
@@ -326,7 +312,6 @@ def export_rhino_file(element_id_list: list[ElementId], file_path: str, version:
         >>> fc.export_rhino_file(selected_elements, output_path, version, use_default_assignment, write_standard_attributes)
     """
 
-
 def import_bxf_file(file_path: str, insert_position: point_3d) -> list[ElementId]:
     """Imports a BXF file.
 
@@ -338,14 +323,12 @@ def import_bxf_file(file_path: str, insert_position: point_3d) -> list[ElementId
         The list of IDs of the imported elements.
     """
 
-
 def get_blum_export_path() -> str:
     """Gets the path of the Blum export.
 
     Returns:
         The path of the Blum export.
     """
-
 
 def set_blum_export_path(path: str) -> None:
     """Sets the path of the Blum export.
@@ -354,8 +337,9 @@ def set_blum_export_path(path: str) -> None:
         path: The new path for the Blum export.
     """
 
-
-def export_sat_file(element_id_list: list[ElementId], file_path: str, scale_factor: float, binary: bool, version: int) -> None:
+def export_sat_file(
+    element_id_list: list[ElementId], file_path: str, scale_factor: float, binary: bool, version: int
+) -> None:
     """Exports a SAT File.
 
     Parameters:
@@ -382,7 +366,6 @@ def export_sat_file(element_id_list: list[ElementId], file_path: str, scale_fact
         >>> fc.export_sat_file(selected_elements, output_path, scale_factor, binary_format, version)
     """
 
-
 def export_glb_file(element_id_list: list[ElementId], file_path: str) -> None:
     """Exports a GLB File.
 
@@ -399,7 +382,6 @@ def export_glb_file(element_id_list: list[ElementId], file_path: str) -> None:
         >>> fc.export_glb_file(selected_elements, output_path)
     """
 
-
 def import_variant_file(file_path: str, insert_position: point_3d) -> list[ElementId]:
     """Imports a variant (.val-File).
 
@@ -410,7 +392,6 @@ def import_variant_file(file_path: str, insert_position: point_3d) -> list[Eleme
     Returns:
         The imported list of element id.
     """
-
 
 def import_element_light(file_path: str, insert_position: point_3d) -> int:
     """Imports a light element from a file.
@@ -423,10 +404,14 @@ def import_element_light(file_path: str, insert_position: point_3d) -> int:
         The ID of the imported light element.
     """
 
-
-def export_rhino_file_with_options(element_id_list: list[ElementId], file_path: str, version: int,
-                                   use_default_assignment: bool, write_standard_attributes: bool,
-                                   rhino_options: None) -> None:
+def export_rhino_file_with_options(
+    element_id_list: list[ElementId],
+    file_path: str,
+    version: int,
+    use_default_assignment: bool,
+    write_standard_attributes: bool,
+    rhino_options: None,
+) -> None:
     """Exports elements to a rhino 3dm file based on the export options.
 
     Parameters:
@@ -456,7 +441,6 @@ def export_rhino_file_with_options(element_id_list: list[ElementId], file_path: 
         >>> fc.export_rhino_file_with_options(selected_elements, output_path, version, use_default_assignment, write_standard_attributes, rhino_options)
     """
 
-
 def import_3dc_file_with_options(file_path: str, import_3dc_options: import_3dc_options) -> list[ElementId]:
     """Imports a 3d or a 3dc file depending on the import options.
 
@@ -468,14 +452,12 @@ def import_3dc_file_with_options(file_path: str, import_3dc_options: import_3dc_
         The imported list of element id.
     """
 
-
 def get_import_3dc_options() -> import_3dc_options:
     """Get the 3dc import options.
 
     Returns:
         The 3dc import options.
     """
-
 
 def load_webgl_preset_file(file_path: str) -> None:
     """Loads a preset file for the WebGl export.
@@ -484,9 +466,14 @@ def load_webgl_preset_file(file_path: str) -> None:
         file_path: The preset file path.
     """
 
-
-def export_step_file_extrude_drillings(element_id_list: list[ElementId], file_path: str, scale_factor: float, version: int,
-                                       text_mode: bool, imperial_units: bool) -> None:
+def export_step_file_extrude_drillings(
+    element_id_list: list[ElementId],
+    file_path: str,
+    scale_factor: float,
+    version: int,
+    text_mode: bool,
+    imperial_units: bool,
+) -> None:
     """Exports a STEP file with extruded drillings.
 
     Parameters:
@@ -512,9 +499,14 @@ def export_step_file_extrude_drillings(element_id_list: list[ElementId], file_pa
         >>> fc.export_step_file_extrude_drillings(selected_elements, output_path, scale_factor, version, text_mode, imperial_units)
     """
 
-
-def export_step_file_cut_drillings(element_id_list: list[ElementId], file_path: str, scale_factor: float, version: int,
-                                   text_mode: bool, imperial_units: bool) -> None:
+def export_step_file_cut_drillings(
+    element_id_list: list[ElementId],
+    file_path: str,
+    scale_factor: float,
+    version: int,
+    text_mode: bool,
+    imperial_units: bool,
+) -> None:
     """Exports a STEP file with extruded drillings.
 
     Parameters:
@@ -540,9 +532,9 @@ def export_step_file_cut_drillings(element_id_list: list[ElementId], file_path: 
         >>> fc.export_step_file_cut_drillings(selected_elements, output_path, scale_factor, version, text_mode, imperial_units)
     """
 
-
-def export_sat_file_cut_drillings(element_id_list: list[ElementId], file_path: str,
-                                  scale_factor: float, binary: bool, version: int) -> None:
+def export_sat_file_cut_drillings(
+    element_id_list: list[ElementId], file_path: str, scale_factor: float, binary: bool, version: int
+) -> None:
     """Exports a SAT File with extruded drillings (cut drilling holes into bodies).
 
     Parameters:
@@ -558,7 +550,6 @@ def export_sat_file_cut_drillings(element_id_list: list[ElementId], file_path: s
             - 2100 = v21.0
     """
 
-
 def upload_to_bim_team_and_create_share_link(element_id_list: list[ElementId]) -> bim_team_upload_result:
     """Exports the elements to BIMteam and creates a share link.
 
@@ -569,9 +560,9 @@ def upload_to_bim_team_and_create_share_link(element_id_list: list[ElementId]) -
         The result object with a result code and a share link. If the code is not ok (0), the share link string is empty.
     """
 
-
-def export_dxf_file(file_path: str, dxf_layer_format_type: dxf_layer_format_type,
-                    dxf_export_version: dxf_export_version) -> bool:
+def export_dxf_file(
+    file_path: str, dxf_layer_format_type: dxf_layer_format_type, dxf_export_version: dxf_export_version
+) -> bool:
     """Exports visible elements in the scene to a DXF file.
 
     Parameters:
@@ -583,7 +574,6 @@ def export_dxf_file(file_path: str, dxf_layer_format_type: dxf_layer_format_type
         True on successful export, false otherwise.
     """
 
-
 def export_dstv_file(file_path: str) -> bool:
     """Exports active elements in the scene to a DSTV (.stp) file.
 
@@ -594,7 +584,6 @@ def export_dstv_file(file_path: str) -> bool:
         True on successful export, false otherwise.
     """
 
-
 def set_webgl_hierarchy(stage: int, attribute: display_attribute) -> None:
     """Sets the WebGL hierarchy based on the given stage and attribute.
 
@@ -603,8 +592,9 @@ def set_webgl_hierarchy(stage: int, attribute: display_attribute) -> None:
         attribute: The display attribute to use for the hierarchy.
     """
 
-
-def export_step_file_ex(element_list: list[ElementId], file_path: str, scale_factor: float, substract_drillings: bool) -> None:
+def export_step_file_ex(
+    element_list: list[ElementId], file_path: str, scale_factor: float, substract_drillings: bool
+) -> None:
     """Exports a STEP file with new algorithm.
 
     Parameters:

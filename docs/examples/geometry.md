@@ -84,7 +84,7 @@ print(point.z)  # prints z coordinate
 
 ### point_3d Methods
 
-```python 
+```python
 point_3d + point_3d
 point_3d - point_3d
 point_3d * float
@@ -97,7 +97,7 @@ point_3d /= float
 point_3d == point_3d
 point_3d != point_3d
 point_3d.dot(point_3d)  # dot product or scalar product
-point_3d.cross(point_3d)  # cross product or vector product 
+point_3d.cross(point_3d)  # cross product or vector product
 point_3d.magnitude()  # vector magnitude or length
 point_3d.normalized()  # a normalized vector maintains its direction but its length becomes 1
 point_3d.distance(point_3d)  # distance between two points
@@ -109,13 +109,13 @@ point_3d.distance(point_3d)  # distance between two points
 ![Move Point](../img/move_pt.png){width=300}
 </figure>
 
-```python 
+```python
 import cadwork  # import module
 
-vector_x = cadwork.point_3d(1., 0., 0.)  # define vector
+vector_x = cadwork.point_3d(1.0, 0.0, 0.0)  # define vector
 distance = 1500.0  # moving distance
 
-moved_point = point + (vector_x * distance)    
+moved_point = point + (vector_x * distance)
 ```
 
 ### cross product
@@ -127,8 +127,8 @@ moved_point = point + (vector_x * distance)
 ```python
 import cadwork
 
-a = cadwork.point_3d(1., 0., 0.)
-b = cadwork.point_3d(0., 1., 0.)
+a = cadwork.point_3d(1.0, 0.0, 0.0)
+b = cadwork.point_3d(0.0, 1.0, 0.0)
 
 ab = a.cross(b)
 # ab = [0.000000, 0.000000, 1.000000]
@@ -141,11 +141,10 @@ $$
 $$
 
 ```python
-import math as m  # import module 
+import math as m  # import module
 import cadwork as cw
 
 
 def angle_between_vectors(v1: cw.point_3d, v2: cw.point_3d) -> float:
     return m.acos(v1.dot(v2) / (v1.magnitude() * v2.magnitude())) * (180 / m.pi)
-``` 
-
+```

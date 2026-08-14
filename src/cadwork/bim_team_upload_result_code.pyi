@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class bim_team_upload_result_code(IntEnum):
     """bim team upload result code
@@ -9,6 +8,7 @@ class bim_team_upload_result_code(IntEnum):
         >>> cadwork.bim_team_upload_result_code.ok
         ok
     """
+
     ok = 0
     """"""
     error_general_error = 1

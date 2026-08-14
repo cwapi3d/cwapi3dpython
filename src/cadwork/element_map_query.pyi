@@ -1,5 +1,4 @@
 class element_map_query:
-
     def set_by_name(self) -> None:
         """set by name
 

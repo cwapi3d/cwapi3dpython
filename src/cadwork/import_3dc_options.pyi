@@ -1,5 +1,4 @@
 class import_3dc_options:
-    
     def set_import_saved_2d_planes(self, value: bool) -> None:
         """set import saved 2d planes
 
@@ -67,4 +66,3 @@ class import_3dc_options:
         Returns:
             bool
         """
-

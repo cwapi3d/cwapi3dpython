@@ -25,9 +25,9 @@ def get_edge_length(element_id: ElementId, edge_type: str) -> float:
 
     Parameters:
         element_id: The element id.
-        edge_type: The edge type : 
+        edge_type: The edge type :
 
-        
+
             - "none"
 
             - "ridge"
@@ -75,6 +75,4 @@ def get_all_caddy_element_ids() -> list[ElementId]:
     """
 
 def clear_errors() -> None:
-    """Clears all errors.
-    """
-
+    """Clears all errors."""

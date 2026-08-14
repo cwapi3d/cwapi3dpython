@@ -1,5 +1,4 @@
 class rhino_options:
-    
     def get_materialize_end_types(self) -> bool:
         """get materialize end types
 
@@ -84,4 +83,3 @@ class rhino_options:
         Returns:
             None
         """
-

@@ -21,19 +21,19 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
-_MODULE_RE = re.compile(r"^PYBIND11_EMBEDDED_MODULE\(\s*(\w+)\s*,\s*\w+\s*\)", re.M)
-_TRAMPOLINE_START_RE = re.compile(r"^([A-Za-z_][\w:<>,*&\s]*?)\s+(cwp_\w+)\s*\(", re.M)
-_FORWARD_RE = re.compile(r"getFactory\(\)\s*->\s*(\w+)\(\)\s*->\s*(\w+)\s*\(")
+_MODULE_RE = re.compile(r'^PYBIND11_EMBEDDED_MODULE\(\s*(\w+)\s*,\s*\w+\s*\)', re.M)
+_TRAMPOLINE_START_RE = re.compile(r'^([A-Za-z_][\w:<>,*&\s]*?)\s+(cwp_\w+)\s*\(', re.M)
+_FORWARD_RE = re.compile(r'getFactory\(\)\s*->\s*(\w+)\(\)\s*->\s*(\w+)\s*\(')
 # Some trampolines cache the controller in a local first:
 #   auto* lController = ...getFactory()->getElementController();
 #   const auto lResult = lController->getElementActivePoint(a0);
-_ACCESSOR_RE = re.compile(r"getFactory\(\)\s*->\s*(get\w+Controller)\(\)")
-_LOCAL_CALL_RE = re.compile(r"\bl[A-Z]\w*\s*->\s*(\w+)\s*\(")
-_STATIC_CAST_RE = re.compile(r"static_cast\s*<\s*([\w:]+)\s*>\s*\(\s*(\w+)\s*\)")
-_CLASS_RE = re.compile(r"py::class_\s*<")
-_ENUM_RE = re.compile(r"py::enum_\s*<")
+_ACCESSOR_RE = re.compile(r'getFactory\(\)\s*->\s*(get\w+Controller)\(\)')
+_LOCAL_CALL_RE = re.compile(r'\bl[A-Z]\w*\s*->\s*(\w+)\s*\(')
+_STATIC_CAST_RE = re.compile(r'static_cast\s*<\s*([\w:]+)\s*>\s*\(\s*(\w+)\s*\)')
+_CLASS_RE = re.compile(r'py::class_\s*<')
+_ENUM_RE = re.compile(r'py::enum_\s*<')
 _ATTR_ALIAS_RE = re.compile(r'^\s*m\.attr\("(\w+)"\)\s*=\s*(\w+)\s*;', re.M)
-_ENUM_VAR_RE = re.compile(r"^\s*auto\s+(\w+)\s*=\s*$|^\s*auto\s+(\w+)\s*=\s*py::enum_")
+_ENUM_VAR_RE = re.compile(r'^\s*auto\s+(\w+)\s*=\s*$|^\s*auto\s+(\w+)\s*=\s*py::enum_')
 
 
 @dataclass(frozen=True)
@@ -105,7 +105,7 @@ def _skip_string(text: str, index: int) -> int:
     quote = text[index]
     index += 1
     while index < len(text):
-        if text[index] == "\\":
+        if text[index] == '\\':
             index += 2
             continue
         if text[index] == quote:
@@ -120,20 +120,20 @@ def _match_parens(text: str, open_index: int) -> int:
     index = open_index
     while index < len(text):
         char = text[index]
-        if char in "\"'":
+        if char in '"\'':
             index = _skip_string(text, index)
             continue
-        if char == "(":
+        if char == '(':
             depth += 1
-        elif char == ")":
+        elif char == ')':
             depth -= 1
             if depth == 0:
                 return index
         index += 1
-    raise ValueError(f"unbalanced parentheses from offset {open_index}")
+    raise ValueError(f'unbalanced parentheses from offset {open_index}')
 
 
-def _split_top_level(text: str, separator: str = ",") -> list[str]:
+def _split_top_level(text: str, separator: str = ',') -> list[str]:
     """Split on `separator` at nesting depth 0 of ``()``, ``<>``, ``[]``, ``{}``."""
     parts: list[str] = []
     depth = 0
@@ -141,23 +141,23 @@ def _split_top_level(text: str, separator: str = ",") -> list[str]:
     index = 0
     while index < len(text):
         char = text[index]
-        if char in "\"'":
+        if char in '"\'':
             end = _skip_string(text, index)
             current.append(text[index:end])
             index = end
             continue
-        if char in "(<[{":
+        if char in '(<[{':
             depth += 1
-        elif char in ")>]}":
+        elif char in ')>]}':
             depth -= 1
         elif char == separator and depth == 0:
-            parts.append("".join(current).strip())
+            parts.append(''.join(current).strip())
             current = []
             index += 1
             continue
         current.append(char)
         index += 1
-    tail = "".join(current).strip()
+    tail = ''.join(current).strip()
     if tail:
         parts.append(tail)
     return parts
@@ -166,26 +166,26 @@ def _split_top_level(text: str, separator: str = ",") -> list[str]:
 def _normalize_type(raw: str) -> str:
     """Strip cv/ref decoration and collapse whitespace on a C++ type."""
     text = raw.strip()
-    text = re.sub(r"\bconst\b", " ", text)
-    text = text.replace("&", " ")
-    text = re.sub(r"\s*([<>,*])\s*", r"\1", text)
-    text = re.sub(r",", ", ", text)
-    text = re.sub(r"\s+", " ", text).strip()
+    text = re.sub(r'\bconst\b', ' ', text)
+    text = text.replace('&', ' ')
+    text = re.sub(r'\s*([<>,*])\s*', r'\1', text)
+    text = re.sub(r',', ', ', text)
+    text = re.sub(r'\s+', ' ', text).strip()
     return text
 
 
 def _split_param(raw: str) -> tuple[str, str]:
     """Split one C++ parameter declaration into (type, name)."""
     text = raw.strip()
-    if not text or text == "void":
-        return ("", "")
-    text = text.split("=", 1)[0].strip()
-    match = re.search(r"(\w+)\s*$", text)
-    if match and not re.fullmatch(r"[\w:]+", text):
+    if not text or text == 'void':
+        return ('', '')
+    text = text.split('=', 1)[0].strip()
+    match = re.search(r'(\w+)\s*$', text)
+    if match and not re.fullmatch(r'[\w:]+', text):
         name = match.group(1)
         type_part = text[: match.start(1)]
         return (_normalize_type(type_part), name)
-    return (_normalize_type(text), "")
+    return (_normalize_type(text), '')
 
 
 # ---------------------------------------------------------------------------
@@ -205,7 +205,7 @@ def _parse_trampolines(text: str) -> dict[str, Trampoline]:
             continue
         # A declaration ends in ';', a definition in '{'. Only definitions carry a body.
         tail = text[close_index + 1 : close_index + 200].lstrip()
-        if not tail.startswith("{"):
+        if not tail.startswith('{'):
             continue
         params_raw = text[open_index + 1 : close_index]
         types: list[str] = []
@@ -217,8 +217,8 @@ def _parse_trampolines(text: str) -> dict[str, Trampoline]:
             types.append(param_type)
             names.append(param_name)
 
-        body_start = text.index("{", close_index)
-        body_end = text.find("\n}", body_start)
+        body_start = text.index('{', close_index)
+        body_end = text.find('\n}', body_start)
         body = text[body_start : body_end if body_end != -1 else body_start + 4000]
         forward = _FORWARD_RE.search(body)
         if forward is not None:
@@ -230,9 +230,7 @@ def _parse_trampolines(text: str) -> dict[str, Trampoline]:
             accessor = accessor_match.group(1) if accessor_match else None
             cpp_method = local_match.group(1) if local_match else None
 
-        casts = {
-            cast.group(2): cast.group(1) for cast in _STATIC_CAST_RE.finditer(body)
-        }
+        casts = {cast.group(2): cast.group(1) for cast in _STATIC_CAST_RE.finditer(body)}
         result[symbol] = Trampoline(
             symbol=symbol,
             return_type=return_type,
@@ -255,17 +253,17 @@ def _module_spans(text: str) -> list[tuple[str, int, int]]:
     spans: list[tuple[str, int, int]] = []
     for match in _MODULE_RE.finditer(text):
         name = match.group(1)
-        brace = text.index("{", match.end())
+        brace = text.index('{', match.end())
         # Inner braces are always indented in this file; the body terminator is the
         # first '}' at column 0 after the opening brace.
-        end = text.find("\n}", brace)
+        end = text.find('\n}', brace)
         end = len(text) if end == -1 else end + 1
         spans.append((name, brace, end))
     return spans
 
 
 def _parse_def_call(module: str, body: str, offset: int, base_line: int) -> Binding | None:
-    open_index = body.index("(", offset)
+    open_index = body.index('(', offset)
     close_index = _match_parens(body, open_index)
     inner = body[open_index + 1 : close_index]
     parts = _split_top_level(inner)
@@ -280,15 +278,15 @@ def _parse_def_call(module: str, body: str, offset: int, base_line: int) -> Bind
     is_lambda = False
     if len(parts) > 1:
         target = parts[1].strip()
-        if target.startswith("[") or "->" in target[:3]:
+        if target.startswith('[') or '->' in target[:3]:
             is_lambda = True
-            inner_call = re.search(r"\b(cwp_\w+)\s*\(", target)
+            inner_call = re.search(r'\b(cwp_\w+)\s*\(', target)
             if inner_call:
                 symbol = inner_call.group(1)
         else:
-            symbol_match = re.match(r"^&?\s*([\w:]+)\s*$", target)
+            symbol_match = re.match(r'^&?\s*([\w:]+)\s*$', target)
             if symbol_match:
-                symbol = symbol_match.group(1).split("::")[-1]
+                symbol = symbol_match.group(1).split('::')[-1]
 
     arg_names: list[str] = []
     arg_defaults: list[str | None] = []
@@ -299,7 +297,7 @@ def _parse_def_call(module: str, body: str, offset: int, base_line: int) -> Bind
             default = arg_match.group(2)
             arg_defaults.append(default.strip() if default else None)
 
-    line = base_line + body.count("\n", 0, offset)
+    line = base_line + body.count('\n', 0, offset)
     return Binding(
         module=module,
         python_name=python_name,
@@ -315,8 +313,8 @@ def _parse_bindings(text: str, spans: list[tuple[str, int, int]]) -> list[Bindin
     bindings: list[Binding] = []
     for module, start, end in spans:
         body = text[start:end]
-        base_line = text.count("\n", 0, start) + 1
-        for match in re.finditer(r"\bm\.def\s*\(", body):
+        base_line = text.count('\n', 0, start) + 1
+        for match in re.finditer(r'\bm\.def\s*\(', body):
             try:
                 binding = _parse_def_call(module, body, match.start(), base_line)
             except ValueError:
@@ -337,14 +335,14 @@ def _chain_end(text: str, start: int) -> int:
     index = start
     while index < len(text):
         char = text[index]
-        if char in "\"'":
+        if char in '"\'':
             index = _skip_string(text, index)
             continue
-        if char in "([{":
+        if char in '([{':
             depth += 1
-        elif char in ")]}":
+        elif char in ')]}':
             depth -= 1
-        elif char == ";" and depth <= 0:
+        elif char == ';' and depth <= 0:
             return index
         index += 1
     return len(text)
@@ -354,32 +352,32 @@ def _template_arg(text: str, open_angle: int) -> tuple[str, int]:
     depth = 0
     index = open_angle
     while index < len(text):
-        if text[index] == "<":
+        if text[index] == '<':
             depth += 1
-        elif text[index] == ">":
+        elif text[index] == '>':
             depth -= 1
             if depth == 0:
                 return (text[open_angle + 1 : index], index)
         index += 1
-    raise ValueError("unbalanced template brackets")
+    raise ValueError('unbalanced template brackets')
 
 
 def _parse_types(text: str, span: tuple[str, int, int]) -> list[CadworkType]:
     _, start, end = span
     body = text[start:end]
-    base_line = text.count("\n", 0, start) + 1
+    base_line = text.count('\n', 0, start) + 1
     types: list[CadworkType] = []
     by_variable: dict[str, CadworkType] = {}
 
-    for kind, pattern in (("class", _CLASS_RE), ("enum", _ENUM_RE)):
+    for kind, pattern in (('class', _CLASS_RE), ('enum', _ENUM_RE)):
         for match in pattern.finditer(body):
-            angle = body.index("<", match.start())
+            angle = body.index('<', match.start())
             try:
                 template_args, close_angle = _template_arg(body, angle)
             except ValueError:
                 continue
             cpp_type = _split_top_level(template_args)[0].strip()
-            paren = body.index("(", close_angle)
+            paren = body.index('(', close_angle)
             call_end = _match_parens(body, paren)
             call_args = _split_top_level(body[paren + 1 : call_end])
             if len(call_args) < 2:
@@ -391,16 +389,16 @@ def _parse_types(text: str, span: tuple[str, int, int]) -> list[CadworkType]:
                 python_name=name_match.group(1),
                 cpp_type=cpp_type,
                 kind=kind,
-                line=base_line + body.count("\n", 0, match.start()),
+                line=base_line + body.count('\n', 0, match.start()),
             )
             chain = body[call_end : _chain_end(body, call_end)]
             _fill_chain(entry, chain)
             types.append(entry)
 
             # `auto <var> = py::enum_<...>` -- remember for m.attr alias resolution.
-            line_start = body.rfind("\n", 0, match.start()) + 1
+            line_start = body.rfind('\n', 0, match.start()) + 1
             prefix = body[line_start : match.start()]
-            var_match = re.search(r"\bauto\s+(\w+)\s*=\s*$", prefix)
+            var_match = re.search(r'\bauto\s+(\w+)\s*=\s*$', prefix)
             if var_match:
                 by_variable[var_match.group(1)] = entry
 
@@ -415,8 +413,8 @@ def _parse_types(text: str, span: tuple[str, int, int]) -> list[CadworkType]:
 
 
 def _fill_chain(entry: CadworkType, chain: str) -> None:
-    for match in re.finditer(r"\.def_(readwrite|readonly)\s*\(", chain):
-        open_index = chain.index("(", match.start())
+    for match in re.finditer(r'\.def_(readwrite|readonly)\s*\(', chain):
+        open_index = chain.index('(', match.start())
         args = _split_top_level(chain[open_index + 1 : _match_parens(chain, open_index)])
         if len(args) >= 2:
             name_match = re.match(r'^"([^"]+)"$', args[0].strip())
@@ -424,41 +422,35 @@ def _fill_chain(entry: CadworkType, chain: str) -> None:
                 entry.fields.append(
                     (
                         name_match.group(1),
-                        args[1].strip().lstrip("&"),
-                        match.group(1) == "readwrite",
+                        args[1].strip().lstrip('&'),
+                        match.group(1) == 'readwrite',
                     )
                 )
 
-    for match in re.finditer(r"\.def\s*\(", chain):
-        open_index = chain.index("(", match.start())
+    for match in re.finditer(r'\.def\s*\(', chain):
+        open_index = chain.index('(', match.start())
         try:
-            args = _split_top_level(
-                chain[open_index + 1 : _match_parens(chain, open_index)]
-            )
+            args = _split_top_level(chain[open_index + 1 : _match_parens(chain, open_index)])
         except ValueError:
             continue
         if not args:
             continue
         first = args[0].strip()
-        if first.startswith("py::init"):
-            init_angle = first.find("<")
+        if first.startswith('py::init'):
+            init_angle = first.find('<')
             if init_angle != -1:
                 try:
                     template_args, _ = _template_arg(first, init_angle)
                 except ValueError:
                     continue
                 entry.init_signatures.append(
-                    tuple(
-                        _normalize_type(part)
-                        for part in _split_top_level(template_args)
-                        if part.strip()
-                    )
+                    tuple(_normalize_type(part) for part in _split_top_level(template_args) if part.strip())
                 )
             continue
         name_match = re.match(r'^"([^"]+)"$', first)
         if name_match is None:
             continue
-        member = args[1].strip().lstrip("&") if len(args) > 1 else ""
+        member = args[1].strip().lstrip('&') if len(args) > 1 else ''
         entry.methods.append((name_match.group(1), member))
 
     for match in re.finditer(r'\.value\s*\(\s*"(\w+)"\s*,\s*([\w:]+)', chain):
@@ -469,9 +461,7 @@ def _fill_chain(entry: CadworkType, chain: str) -> None:
 # C++ enum definitions -- the real numeric values and their trailing ///< docs
 # ---------------------------------------------------------------------------
 
-_ENUM_DEF_RE = re.compile(
-    r"\benum\s+(?:class\s+|struct\s+)?(\w+)\s*(?::\s*[\w:]+\s*)?\{", re.M
-)
+_ENUM_DEF_RE = re.compile(r'\benum\s+(?:class\s+|struct\s+)?(\w+)\s*(?::\s*[\w:]+\s*)?\{', re.M)
 
 
 @dataclass(frozen=True)
@@ -494,15 +484,13 @@ def parse_enum_definitions(search_dirs: list[Path]) -> dict[str, list[EnumMember
     ICwAPI3DEventObserver.h.
     """
     result: dict[str, list[EnumMember]] = {}
-    headers = sorted(
-        {header for directory in search_dirs for header in directory.glob("*.h")}
-    )
+    headers = sorted({header for directory in search_dirs for header in directory.glob('*.h')})
     for header in headers:
-        text = header.read_text(encoding="utf-8", errors="replace")
+        text = header.read_text(encoding='utf-8', errors='replace')
         for match in _ENUM_DEF_RE.finditer(text):
             name = match.group(1)
-            brace = text.index("{", match.start())
-            close = text.find("};", brace)
+            brace = text.index('{', match.start())
+            close = text.find('};', brace)
             if close == -1:
                 continue
             members: list[EnumMember] = []
@@ -511,30 +499,30 @@ def parse_enum_definitions(search_dirs: list[Path]) -> dict[str, list[EnumMember
             failed = False
             for raw_line in text[brace + 1 : close].splitlines():
                 line = raw_line.strip()
-                doc = ""
-                doc_match = re.search(r"///<\s*(.*)$", line)
+                doc = ''
+                doc_match = re.search(r'///<\s*(.*)$', line)
                 if doc_match:
                     doc = doc_match.group(1).strip()
                     line = line[: doc_match.start()].strip()
-                line = re.sub(r"//.*$", "", line).strip().rstrip(",").strip()
-                if not line or line.startswith("/"):
+                line = re.sub(r'//.*$', '', line).strip().rstrip(',').strip()
+                if not line or line.startswith('/'):
                     continue
-                if "=" in line:
-                    member, _, expression = line.partition("=")
+                if '=' in line:
+                    member, _, expression = line.partition('=')
                     member = member.strip()
                     expression = expression.strip()
-                    if re.fullmatch(r"-?0[xX][0-9a-fA-F]+", expression):
+                    if re.fullmatch(r'-?0[xX][0-9a-fA-F]+', expression):
                         counter = int(expression, 16)
-                    elif re.fullmatch(r"-?\d+", expression):
+                    elif re.fullmatch(r'-?\d+', expression):
                         counter = int(expression)
-                    elif expression.split("::")[-1] in by_name:
-                        counter = by_name[expression.split("::")[-1]]
+                    elif expression.split('::')[-1] in by_name:
+                        counter = by_name[expression.split('::')[-1]]
                     else:
                         failed = True
                         break
                 else:
                     member = line
-                if not re.fullmatch(r"\w+", member):
+                if not re.fullmatch(r'\w+', member):
                     failed = True
                     break
                 members.append(EnumMember(name=member, value=counter, doc=doc))
@@ -551,9 +539,9 @@ def parse_enum_definitions(search_dirs: list[Path]) -> dict[str, list[EnumMember
 
 
 def parse(path: Path) -> Inventory:
-    text = path.read_text(encoding="utf-8", errors="replace")
+    text = path.read_text(encoding='utf-8', errors='replace')
     spans = _module_spans(text)
-    cadwork_span = next((span for span in spans if span[0] == "cadwork"), None)
+    cadwork_span = next((span for span in spans if span[0] == 'cadwork'), None)
     return Inventory(
         trampolines=_parse_trampolines(text),
         bindings=_parse_bindings(text, spans),

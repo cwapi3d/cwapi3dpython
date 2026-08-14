@@ -1,14 +1,14 @@
 from enum import IntEnum, unique
 
-
 @unique
 class dimension_base_format(IntEnum):
-    """ Enumeration for dimension base format.
+    """Enumeration for dimension base format.
 
     Examples:
         >>> cadwork.dimension_base_format.sum_only
 
     """
+
     none = 0
     """"""
     distance_only = 1

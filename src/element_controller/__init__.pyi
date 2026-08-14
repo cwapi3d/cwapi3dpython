@@ -36,7 +36,7 @@ def delete_elements(element_id_list: list[ElementId]) -> None:
 
 def join_elements(element_id_list: list[ElementId]) -> None:
     """Joins the specified elements together.
-    
+
     Parameters:
         element_id_list: The element id list.
     """
@@ -48,7 +48,9 @@ def join_top_level_elements(element_id_list: list[ElementId]) -> None:
         element_id_list: The element id list.
     """
 
-def create_rectangular_beam_points(width: float, height: float, first_point: point_3d, second_point: point_3d, third_point: point_3d) -> ElementId:
+def create_rectangular_beam_points(
+    width: float, height: float, first_point: point_3d, second_point: point_3d, third_point: point_3d
+) -> ElementId:
     """Creates a rectangular beam using points.
 
     Parameters:
@@ -73,7 +75,9 @@ def create_rectangular_beam_points(width: float, height: float, first_point: poi
         The ID of the created rectangular beam.
     """
 
-def create_circular_beam_points(diameter: float, first_point: point_3d, second_point: point_3d, third_point: point_3d) -> ElementId:
+def create_circular_beam_points(
+    diameter: float, first_point: point_3d, second_point: point_3d, third_point: point_3d
+) -> ElementId:
     """Creates a circular beam using points.
 
     Parameters:
@@ -96,7 +100,9 @@ def create_circular_beam_points(diameter: float, first_point: point_3d, second_p
         The ID of the created circular beam.
     """
 
-def create_square_beam_points(width: float, first_point: point_3d, second_point: point_3d, third_point: point_3d) -> ElementId:
+def create_square_beam_points(
+    width: float, first_point: point_3d, second_point: point_3d, third_point: point_3d
+) -> ElementId:
     """Creates a square beam using points.
 
     Parameters:
@@ -119,7 +125,14 @@ def create_square_beam_points(width: float, first_point: point_3d, second_point:
         The ID of the created square beam.
     """
 
-def create_rectangular_beam_vectors(width: float, height: float, length: float, starting_point: point_3d, x_local_direction: point_3d, z_local_direction: point_3d) -> ElementId:
+def create_rectangular_beam_vectors(
+    width: float,
+    height: float,
+    length: float,
+    starting_point: point_3d,
+    x_local_direction: point_3d,
+    z_local_direction: point_3d,
+) -> ElementId:
     """Creates a rectangular beam using vectors.
 
     Parameters:
@@ -143,7 +156,9 @@ def create_rectangular_beam_vectors(width: float, height: float, length: float, 
         The ID of the created rectangular beam.
     """
 
-def create_circular_beam_vectors(diameter: float, length: float, starting_point: point_3d, x_local_direction: point_3d, z_local_direction: point_3d) -> ElementId:
+def create_circular_beam_vectors(
+    diameter: float, length: float, starting_point: point_3d, x_local_direction: point_3d, z_local_direction: point_3d
+) -> ElementId:
     """Creates a circular beam using vectors.
 
     Parameters:
@@ -165,7 +180,9 @@ def create_circular_beam_vectors(diameter: float, length: float, starting_point:
         The ID of the created circular beam.
     """
 
-def create_square_beam_vectors(width: float, length: float, starting_point: point_3d, x_local_direction: point_3d, z_local_direction: point_3d) -> ElementId:
+def create_square_beam_vectors(
+    width: float, length: float, starting_point: point_3d, x_local_direction: point_3d, z_local_direction: point_3d
+) -> ElementId:
     """Creates a square beam using vectors.
 
     Parameters:
@@ -187,7 +204,9 @@ def create_square_beam_vectors(width: float, length: float, starting_point: poin
         The ID of the created square beam.
     """
 
-def create_rectangular_panel_points(width: float, thickness: float, first_point: point_3d, second_point: point_3d, third_point: point_3d) -> ElementId:
+def create_rectangular_panel_points(
+    width: float, thickness: float, first_point: point_3d, second_point: point_3d, third_point: point_3d
+) -> ElementId:
     """Create a rectangular panel using points.
 
     Parameters:
@@ -211,7 +230,14 @@ def create_rectangular_panel_points(width: float, thickness: float, first_point:
         The ID of the created rectangular panel.
     """
 
-def create_rectangular_panel_vectors(width: float, thickness: float, length: float, starting_point: point_3d, x_local_direction: point_3d, z_local_direction: point_3d) -> ElementId:
+def create_rectangular_panel_vectors(
+    width: float,
+    thickness: float,
+    length: float,
+    starting_point: point_3d,
+    x_local_direction: point_3d,
+    z_local_direction: point_3d,
+) -> ElementId:
     """Create a rectangular panel using vectors.
 
     Parameters:
@@ -253,7 +279,9 @@ def create_drilling_points(diameter: float, first_point: point_3d, second_point:
         The ID of the created drilling.
     """
 
-def create_drilling_vectors(diameter: float, length: float, starting_point: point_3d, drilling_direction: point_3d) -> ElementId:
+def create_drilling_vectors(
+    diameter: float, length: float, starting_point: point_3d, drilling_direction: point_3d
+) -> ElementId:
     """Creates drilling using vectors.
 
     Parameters:
@@ -367,8 +395,9 @@ def move_element(element_id_list: list[ElementId], move_vector: point_3d) -> Non
         move_vector: The vector by which to move the elements.
     """
 
-
-def create_polygon_beam(polygon_vertices: vertex_list, thickness: float, x_local_direction: point_3d, z_local_direction: point_3d) -> ElementId:
+def create_polygon_beam(
+    polygon_vertices: vertex_list, thickness: float, x_local_direction: point_3d, z_local_direction: point_3d
+) -> ElementId:
     """Creates a polygon beam.
 
     Parameters:
@@ -392,8 +421,13 @@ def create_polygon_beam(polygon_vertices: vertex_list, thickness: float, x_local
         The ID of the created polygon beam.
     """
 
-
-def create_polygon_beam_vectors(polygon_vertices: list[point_2d | tuple[float, float]], thickness: float, starting_point: point_3d, x_local_direction: point_3d, z_local_direction: point_3d) -> ElementId:
+def create_polygon_beam_vectors(
+    polygon_vertices: list[point_2d | tuple[float, float]],
+    thickness: float,
+    starting_point: point_3d,
+    x_local_direction: point_3d,
+    z_local_direction: point_3d,
+) -> ElementId:
     """Creates a polygon beam from a 2D profile using vectors.
 
     The profile is defined in the local uv-plane of the beam and extruded from
@@ -421,7 +455,9 @@ def create_polygon_beam_vectors(polygon_vertices: list[point_2d | tuple[float, f
         The ID of the created polygon beam.
     """
 
-def create_text_object(text: str, position: point_3d, x_local_direction: point_3d, z_local_direction: point_3d, size: float) -> ElementId:
+def create_text_object(
+    text: str, position: point_3d, x_local_direction: point_3d, z_local_direction: point_3d, size: float
+) -> ElementId:
     """Creates a text object.
 
     Parameters:
@@ -454,7 +490,9 @@ def copy_elements(element_id_list: list[ElementId], copy_vector: point_3d) -> li
         The IDs of the copied elements.
     """
 
-def rotate_elements(element_id_list: list[ElementId], origin: point_3d, rotation_axis: point_3d, rotation_angle: float) -> None:
+def rotate_elements(
+    element_id_list: list[ElementId], origin: point_3d, rotation_axis: point_3d, rotation_angle: float
+) -> None:
     """Rotate the provided elements around a specified axis.
 
     Parameters:
@@ -522,12 +560,10 @@ def add_elements_to_undo(element_id_list: list[ElementId], cmd: int) -> None:
     """
 
 def make_undo() -> None:
-    """Performs an undo operation, reverting the last change made.
-    """
+    """Performs an undo operation, reverting the last change made."""
 
 def make_redo() -> None:
-    """Performs a redo operation, reapplying the last undone change.
-    """
+    """Performs a redo operation, reapplying the last undone change."""
 
 def split_elements(element_id_list: list[ElementId]) -> None:
     """Splits elements.
@@ -550,7 +586,9 @@ def set_line_to_normal_line(element_id_list: list[ElementId]) -> None:
         element_id_list: The elements to modify.
     """
 
-def create_auto_export_solid_from_standard(element_id_list: list[ElementId], output_name: str, standard_element_name: str) -> ElementId:
+def create_auto_export_solid_from_standard(
+    element_id_list: list[ElementId], output_name: str, standard_element_name: str
+) -> ElementId:
     """Creates an auto export solid from a standard element.
 
     Parameters:
@@ -562,7 +600,9 @@ def create_auto_export_solid_from_standard(element_id_list: list[ElementId], out
         The element ID of the created solid.
     """
 
-def set_element_module_properties_for_elements(element_id_list: list[ElementId], properties: element_module_properties) -> None:
+def set_element_module_properties_for_elements(
+    element_id_list: list[ElementId], properties: element_module_properties
+) -> None:
     """Sets the element module properties for elements.
 
     Parameters:
@@ -570,7 +610,9 @@ def set_element_module_properties_for_elements(element_id_list: list[ElementId],
         properties: The properties to set.
     """
 
-def create_text_object_with_font(text: str, position: point_3d, x_local_direction: point_3d, z_local_direction: point_3d, size: float, font_name: str) -> ElementId:
+def create_text_object_with_font(
+    text: str, position: point_3d, x_local_direction: point_3d, z_local_direction: point_3d, size: float, font_name: str
+) -> ElementId:
     """Creates a text object with a specific font.
 
     Parameters:
@@ -594,7 +636,15 @@ def create_text_object_with_font(text: str, position: point_3d, x_local_directio
         The element ID of the created text object.
     """
 
-def apply_transformation_coordinate(element_id_list: list[ElementId], old_point: point_3d, old_x_local_direction: point_3d, old_y_local_direction: point_3d, new_point: point_3d, new_x_local_direction: point_3d, new_y_local_direction: point_3d) -> None:
+def apply_transformation_coordinate(
+    element_id_list: list[ElementId],
+    old_point: point_3d,
+    old_x_local_direction: point_3d,
+    old_y_local_direction: point_3d,
+    new_point: point_3d,
+    new_x_local_direction: point_3d,
+    new_y_local_direction: point_3d,
+) -> None:
     """Apply transformation coordinate to elements.
 
     Parameters:
@@ -660,8 +710,7 @@ def get_user_element_ids_with_existing(element_id_list: list[ElementId]) -> list
     """
 
 def clear_errors() -> None:
-    """Clears all errors.
-    """
+    """Clears all errors."""
 
 def glide_elements(element_id_list: list[ElementId], glide_origin_point: point_3d) -> None:
     """Glides elements to a specified point.
@@ -682,7 +731,9 @@ def cut_elements_with_miter(first_id: ElementId, second_id: ElementId) -> bool:
         True if the cut operation was successful, false otherwise.
     """
 
-def cut_element_with_plane(element_id: ElementId, cut_plane_normal_vector: point_3d, distance_from_global_origin: float) -> bool:
+def cut_element_with_plane(
+    element_id: ElementId, cut_plane_normal_vector: point_3d, distance_from_global_origin: float
+) -> bool:
     """Cut an element with a plane.
 
     Parameters:
@@ -734,7 +785,9 @@ def create_rectangular_mep(width: float, depth: float, points: list[point_3d]) -
         The ID of the created rectangular MEP element.
     """
 
-def slice_element_with_plane(element_id: ElementId, cut_plane_normal_vector: point_3d, distance_from_global_origin: float) -> bool:
+def slice_element_with_plane(
+    element_id: ElementId, cut_plane_normal_vector: point_3d, distance_from_global_origin: float
+) -> bool:
     """Slice an element with a plane.
 
     Parameters:
@@ -748,9 +801,9 @@ def slice_element_with_plane(element_id: ElementId, cut_plane_normal_vector: poi
         >>> panel_width = 1200.
         >>> panel_thickness = 20.
         >>> panel_length = 2400.
-        >>> panel_id = ec.create_rectangular_panel_vectors(panel_width, panel_thickness, panel_length, 
+        >>> panel_id = ec.create_rectangular_panel_vectors(panel_width, panel_thickness, panel_length,
         ...                                              cadwork.point_3d(0., 0., 0.),
-        ...                                              cadwork.point_3d(1., 0., 0.), 
+        ...                                              cadwork.point_3d(1., 0., 0.),
         ...                                              cadwork.point_3d(0., 0., 1.))
         >>> # Define plane normal vector (45° in XY plane)
         >>> angle_rad = math.radians(45)
@@ -771,7 +824,9 @@ def slice_element_with_plane(element_id: ElementId, cut_plane_normal_vector: poi
         True if the slicing operation was successful, false otherwise.
     """
 
-def create_auto_container_from_standard(element_id_list: list[ElementId], output_name: str, standard_element_name: str) -> ElementId:
+def create_auto_container_from_standard(
+    element_id_list: list[ElementId], output_name: str, standard_element_name: str
+) -> ElementId:
     """Create an auto container from a standard element.
 
     Parameters:
@@ -783,7 +838,9 @@ def create_auto_container_from_standard(element_id_list: list[ElementId], output
         The id of the created auto container element.
     """
 
-def create_auto_export_solid_from_standard_with_reference(element_id_list: list[ElementId], output_name: str, standard_element_name: str, reference_id: ElementId) -> ElementId:
+def create_auto_export_solid_from_standard_with_reference(
+    element_id_list: list[ElementId], output_name: str, standard_element_name: str, reference_id: ElementId
+) -> ElementId:
     """Creates an auto export solid from a standard element with a reference.
 
     Parameters:
@@ -796,7 +853,9 @@ def create_auto_export_solid_from_standard_with_reference(element_id_list: list[
         The id of the created auto export solid element.
     """
 
-def create_auto_container_from_standard_with_reference(element_id_list: list[ElementId], output_name: str, standard_element_name: str, reference_id: ElementId) -> ElementId:
+def create_auto_container_from_standard_with_reference(
+    element_id_list: list[ElementId], output_name: str, standard_element_name: str, reference_id: ElementId
+) -> ElementId:
     """Creates an auto container from a standard element with a reference.
 
     Parameters:
@@ -808,7 +867,6 @@ def create_auto_container_from_standard_with_reference(element_id_list: list[Ele
     Returns:
         The ID of the created auto container element.
     """
-
 
 def create_surface(surface_vertices: vertex_list) -> ElementId:
     """Creates a surface from a list of vertices.
@@ -897,7 +955,9 @@ def reset_element_cadwork_guid(element_id: ElementId) -> None:
         element_id: The element id.
     """
 
-def create_standard_beam_points(standard_element_name: str, first_point: point_3d, second_point: point_3d, third_point: point_3d) -> ElementId:
+def create_standard_beam_points(
+    standard_element_name: str, first_point: point_3d, second_point: point_3d, third_point: point_3d
+) -> ElementId:
     """Creates a standard beam using points.
 
     Parameters:
@@ -921,7 +981,13 @@ def create_standard_beam_points(standard_element_name: str, first_point: point_3
         The ID of the created standard beam.
     """
 
-def create_standard_beam_vectors(standard_element_name: str, length: float, starting_point: point_3d, x_local_direction: point_3d, z_local_direction: point_3d) -> ElementId:
+def create_standard_beam_vectors(
+    standard_element_name: str,
+    length: float,
+    starting_point: point_3d,
+    x_local_direction: point_3d,
+    z_local_direction: point_3d,
+) -> ElementId:
     """Creates a standard beam using vectors.
 
     Parameters:
@@ -943,7 +1009,9 @@ def create_standard_beam_vectors(standard_element_name: str, length: float, star
         The ID of the created standard beam.
     """
 
-def create_standard_panel_points(standard_element_name: str, first_point: point_3d, second_point: point_3d, third_point: point_3d) -> ElementId:
+def create_standard_panel_points(
+    standard_element_name: str, first_point: point_3d, second_point: point_3d, third_point: point_3d
+) -> ElementId:
     """Creates a standard panel using points.
 
     Parameters:
@@ -965,7 +1033,13 @@ def create_standard_panel_points(standard_element_name: str, first_point: point_
         The id of the created standard panel.
     """
 
-def create_standard_panel_vectors(standard_element_name: str, length: float, starting_point: point_3d, x_local_direction: point_3d, z_local_direction: point_3d) -> ElementId:
+def create_standard_panel_vectors(
+    standard_element_name: str,
+    length: float,
+    starting_point: point_3d,
+    x_local_direction: point_3d,
+    z_local_direction: point_3d,
+) -> ElementId:
     """Creates a standard panel using vectors.
 
     Parameters:
@@ -987,7 +1061,9 @@ def create_standard_panel_vectors(standard_element_name: str, length: float, sta
         The id of the created standard panel.
     """
 
-def create_standard_steel_points(standard_element_name: str, first_point: point_3d, second_point: point_3d, third_point: point_3d) -> ElementId:
+def create_standard_steel_points(
+    standard_element_name: str, first_point: point_3d, second_point: point_3d, third_point: point_3d
+) -> ElementId:
     """Creates a standard steel element using points.
 
     Parameters:
@@ -1011,7 +1087,13 @@ def create_standard_steel_points(standard_element_name: str, first_point: point_
         The id of the created standard steel element.
     """
 
-def create_standard_steel_vectors(standard_element_name: str, length: float, starting_point: point_3d, x_local_direction: point_3d, z_local_direction: point_3d) -> ElementId:
+def create_standard_steel_vectors(
+    standard_element_name: str,
+    length: float,
+    starting_point: point_3d,
+    x_local_direction: point_3d,
+    z_local_direction: point_3d,
+) -> ElementId:
     """Creates a standard steel element using vectors.
 
     Parameters:
@@ -1128,7 +1210,7 @@ def create_bounding_box_local(reference_element: ElementId, element_id_list: lis
 
     Parameters:
         reference_element: The ID of the reference element.
-        element_id_list: The list of elements for which to create the bounding box. 
+        element_id_list: The list of elements for which to create the bounding box.
 
     Returns:
         The ID of the created bounding box element.
@@ -1165,7 +1247,9 @@ def auto_set_rough_volume_situation(element_id_list: list[ElementId]) -> None:
         element_id_list: The list of elements to process.
     """
 
-def rough_volume_situation_manual(cover: ElementId, add_partner: list[ElementId], remove_partner: list[ElementId]) -> None:
+def rough_volume_situation_manual(
+    cover: ElementId, add_partner: list[ElementId], remove_partner: list[ElementId]
+) -> None:
     """Manually sets the rough volume situation for a cover element.
 
     Parameters:
@@ -1212,7 +1296,9 @@ def add_elements_to_detail(element_id_list: list[ElementId], detail: int) -> Non
         detail: The ID of the detail.
     """
 
-def subtract_elements_with_undo(hard_element_id_list: list[ElementId], soft_element_id_list: list[ElementId], with_undo: bool) -> list[ElementId]:
+def subtract_elements_with_undo(
+    hard_element_id_list: list[ElementId], soft_element_id_list: list[ElementId], with_undo: bool
+) -> list[ElementId]:
     """Subtracts the volume of `hard_elements` from `soft_elements` (boolean difference)
     with undo functionality. Soft elements are cut in place and keep their IDs.
 
@@ -1228,7 +1314,15 @@ def subtract_elements_with_undo(hard_element_id_list: list[ElementId], soft_elem
             subtraction. Does not include the IDs from `soft_elements`.
     """
 
-def create_linear_optimization(element_id_list: list[ElementId], optimization_number: int, total_length: float, start_cut: float, end_cut: float, saw_kerf: float, is_production_list: bool) -> ElementId:
+def create_linear_optimization(
+    element_id_list: list[ElementId],
+    optimization_number: int,
+    total_length: float,
+    start_cut: float,
+    end_cut: float,
+    saw_kerf: float,
+    is_production_list: bool,
+) -> ElementId:
     """create linear optimization
 
     Parameters:
@@ -1251,7 +1345,9 @@ def start_element_module_calculation_silently(covers: list[ElementId]) -> None:
         covers: The list of covers for which to start the element module calculation.
     """
 
-def replace_physical_drillings_with_drilling_axes(element_id_list: list[ElementId], mininum_diameter: float, maximum_diameter: float) -> list[ElementId]:
+def replace_physical_drillings_with_drilling_axes(
+    element_id_list: list[ElementId], mininum_diameter: float, maximum_diameter: float
+) -> list[ElementId]:
     """Replaces physical drillings with drilling axes based on diameter range.
 
     Parameters:
@@ -1304,7 +1400,9 @@ def create_circular_axis_points(diameter: float, first_point: point_3d, second_p
         The ID of the created circular axis element.
     """
 
-def create_circular_axis_vector(diameter: float, length: float, starting_point: point_3d, axis_direction: point_3d) -> ElementId:
+def create_circular_axis_vector(
+    diameter: float, length: float, starting_point: point_3d, axis_direction: point_3d
+) -> ElementId:
     """Creates a circular axis using a vector.
 
     Parameters:
@@ -1324,8 +1422,9 @@ def create_circular_axis_vector(diameter: float, length: float, starting_point: 
         The ID of the created circular axis element.
     """
 
-
-def create_polygon_panel(polygon_vertices: vertex_list, thickness: float, x_local_direction: point_3d, z_local_direction: point_3d) -> ElementId:
+def create_polygon_panel(
+    polygon_vertices: vertex_list, thickness: float, x_local_direction: point_3d, z_local_direction: point_3d
+) -> ElementId:
     """Creates a polygon panel.
 
     Parameters:
@@ -1353,8 +1452,13 @@ def create_polygon_panel(polygon_vertices: vertex_list, thickness: float, x_loca
         The ID of the created polygon panel element.
     """
 
-
-def create_polygon_panel_vectors(polygon_vertices: list[point_2d | tuple[float, float]], thickness: float, starting_point: point_3d, x_local_direction: point_3d, z_local_direction: point_3d) -> ElementId:
+def create_polygon_panel_vectors(
+    polygon_vertices: list[point_2d | tuple[float, float]],
+    thickness: float,
+    starting_point: point_3d,
+    x_local_direction: point_3d,
+    z_local_direction: point_3d,
+) -> ElementId:
     """Creates a polygon panel from a 2D profile using vectors.
 
     The profile is defined in the local uv-plane of the panel and extruded from
@@ -1419,7 +1523,9 @@ def get_facets_with_lasso(element_id_list: list[ElementId]) -> facet_list:
         The list of facets selected.
     """
 
-def create_standard_element_from_guid_points(guid: str, first_point: point_3d, second_point: point_3d, third_point: point_3d) -> ElementId:
+def create_standard_element_from_guid_points(
+    guid: str, first_point: point_3d, second_point: point_3d, third_point: point_3d
+) -> ElementId:
     """Creates a standard element from GUID points.
 
     Parameters:
@@ -1432,7 +1538,9 @@ def create_standard_element_from_guid_points(guid: str, first_point: point_3d, s
         The id of the created standard element.
     """
 
-def create_standard_element_from_guid_vectors(guid: str, length: float, starting_point: point_3d, x_local_direction: point_3d, z_local_direction: point_3d) -> ElementId:
+def create_standard_element_from_guid_vectors(
+    guid: str, length: float, starting_point: point_3d, x_local_direction: point_3d, z_local_direction: point_3d
+) -> ElementId:
     """Creates a standard element from GUID vectors.
 
     Parameters:
@@ -1493,7 +1601,16 @@ def convert_surfaces_to_volume(element_id_list: list[ElementId]) -> ElementId:
         The ID of the created volume element.
     """
 
-def cut_corner_lap(element_id_list: list[ElementId], depth: float, clearance_base: float, clearance_side: float, backcut: float, drilling_count: UnsignedInt, drilling_diameter: float, drilling_tolerance: float) -> None:
+def cut_corner_lap(
+    element_id_list: list[ElementId],
+    depth: float,
+    clearance_base: float,
+    clearance_side: float,
+    backcut: float,
+    drilling_count: UnsignedInt,
+    drilling_diameter: float,
+    drilling_tolerance: float,
+) -> None:
     """Cuts a corner-lap joint with specific parameters.
 
     Parameters:
@@ -1507,7 +1624,16 @@ def cut_corner_lap(element_id_list: list[ElementId], depth: float, clearance_bas
         drilling_tolerance: The tolerance applied to the hole size for bolt head clearance or easier insertion.
     """
 
-def cut_t_lap(element_id_list: list[ElementId], depth: float, clearance_base: float, clearance_side: float, backcut: float, drilling_count: UnsignedInt, drilling_diameter: float, drilling_tolerance: float) -> None:
+def cut_t_lap(
+    element_id_list: list[ElementId],
+    depth: float,
+    clearance_base: float,
+    clearance_side: float,
+    backcut: float,
+    drilling_count: UnsignedInt,
+    drilling_diameter: float,
+    drilling_tolerance: float,
+) -> None:
     """Cuts a T-lap joint with specific parameters.
 
     Parameters:
@@ -1521,7 +1647,15 @@ def cut_t_lap(element_id_list: list[ElementId], depth: float, clearance_base: fl
         drilling_tolerance: The tolerance applied to the hole size for bolt head clearance or easier insertion.
     """
 
-def cut_cross_lap(element_id_list: list[ElementId], depth: float, clearance_base: float, clearance_side: float, drilling_count: UnsignedInt, drilling_diameter: float, drilling_tolerance: float) -> None:
+def cut_cross_lap(
+    element_id_list: list[ElementId],
+    depth: float,
+    clearance_base: float,
+    clearance_side: float,
+    drilling_count: UnsignedInt,
+    drilling_diameter: float,
+    drilling_tolerance: float,
+) -> None:
     """Cuts a cross-lap joint with specific parameters.
 
     Parameters:
@@ -1534,7 +1668,9 @@ def cut_cross_lap(element_id_list: list[ElementId], depth: float, clearance_base
         drilling_tolerance: The tolerance applied to the hole size for bolt head clearance or easier insertion.
     """
 
-def delete_processes_keep_cutting_bodies(element_id_list: list[ElementId], keep_cutting_elements_only: bool) -> list[ElementId]:
+def delete_processes_keep_cutting_bodies(
+    element_id_list: list[ElementId], keep_cutting_elements_only: bool
+) -> list[ElementId]:
     """Gets the cutting bodies of all processes (and deletes processes), like Ctrl+D Action
 
     Parameters:
@@ -1545,7 +1681,16 @@ def delete_processes_keep_cutting_bodies(element_id_list: list[ElementId], keep_
         The id list of all removed geometry, cuttings bodies.
     """
 
-def cut_double_tenon(element_id_list: list[ElementId], depth1: float, depth2: float, clearance: float, backcut: float, drilling_count: UnsignedInt, drilling_diameter: float, drilling_tolerance: float) -> None:
+def cut_double_tenon(
+    element_id_list: list[ElementId],
+    depth1: float,
+    depth2: float,
+    clearance: float,
+    backcut: float,
+    drilling_count: UnsignedInt,
+    drilling_diameter: float,
+    drilling_tolerance: float,
+) -> None:
     """Cut a double tenon joint with specific parameters.
 
     Parameters:
@@ -1559,7 +1704,9 @@ def cut_double_tenon(element_id_list: list[ElementId], depth1: float, depth2: fl
         drilling_tolerance: The tolerance applied to the hole size for bolt head clearance or easier insertion.
     """
 
-def get_coordinate_system_data_nesting_child(nesting_parent_id: ElementId, nesting_child_id: ElementId) -> coordinate_system_data:
+def get_coordinate_system_data_nesting_child(
+    nesting_parent_id: ElementId, nesting_child_id: ElementId
+) -> coordinate_system_data:
     """Get the coordinate system of nesting child
 
     Parameters:
@@ -1570,7 +1717,15 @@ def get_coordinate_system_data_nesting_child(nesting_parent_id: ElementId, nesti
         A global element coordinate-system of the nested child element consisting of a Point1, a Point2 and a Point3. You can get the local placement by subtracting the parent coordinate - system with child coordinate - system.
     """
 
-def cut_half_lap(element_id_list: list[ElementId], length: float, clearance_length: float, clearance_depth: float, drilling_count: UnsignedInt, drilling_diameter: float, drilling_tolerance: float) -> None:
+def cut_half_lap(
+    element_id_list: list[ElementId],
+    length: float,
+    clearance_length: float,
+    clearance_depth: float,
+    drilling_count: UnsignedInt,
+    drilling_diameter: float,
+    drilling_tolerance: float,
+) -> None:
     """Cut a half-lap joint with specific parameters.
 
     Parameters:
@@ -1583,7 +1738,16 @@ def cut_half_lap(element_id_list: list[ElementId], length: float, clearance_leng
         drilling_tolerance: The tolerance applied to the hole size for bolt head clearance or easier insertion.
     """
 
-def cut_simple_scarf(element_id_list: list[ElementId], length: float, depth: float, clearance_length: float, clearance_depth: float, drilling_count: UnsignedInt, drilling_diameter: float, drilling_tolerance: float) -> None:
+def cut_simple_scarf(
+    element_id_list: list[ElementId],
+    length: float,
+    depth: float,
+    clearance_length: float,
+    clearance_depth: float,
+    drilling_count: UnsignedInt,
+    drilling_diameter: float,
+    drilling_tolerance: float,
+) -> None:
     """Cut a simple scarf joint with specific parameters.
 
     Parameters:
@@ -1597,7 +1761,14 @@ def cut_simple_scarf(element_id_list: list[ElementId], length: float, depth: flo
         drilling_tolerance: The tolerance applied to the hole size, typically for fitting the bolt head or allowing easier assembly.
     """
 
-def cut_diagonal_cut(element_id_list: list[ElementId], length: float, clearance_length: float, drilling_count: UnsignedInt, drilling_diameter: float, drilling_tolerance: float) -> None:
+def cut_diagonal_cut(
+    element_id_list: list[ElementId],
+    length: float,
+    clearance_length: float,
+    drilling_count: UnsignedInt,
+    drilling_diameter: float,
+    drilling_tolerance: float,
+) -> None:
     """Cut a diagonal cut joint with specific parameters.
 
     Parameters:
@@ -1922,7 +2093,9 @@ def get_elements_in_contact(element_id: ElementId) -> list[ElementId]:
         The list of IDs of the elements in contact with the specified element.
     """
 
-def create_text_object_with_options(position: point_3d, x_local_direction: point_3d, z_local_direction: point_3d, text_options: text_object_options) -> ElementId:
+def create_text_object_with_options(
+    position: point_3d, x_local_direction: point_3d, z_local_direction: point_3d, text_options: text_object_options
+) -> ElementId:
     """Creates a text object with the specified options.
 
     Parameters:
@@ -2009,7 +2182,17 @@ def get_user_element_ids_with_count(count: int) -> list[ElementId]:
         The list of user element IDs.
     """
 
-def cut_scarf_straight(element_id_list: list[ElementId], length: float, depth: float, clearance_length: float, clearance_depth: float, clearance_hook: float, drilling_count: UnsignedInt, drilling_diameter: float, drilling_tolerance: float) -> None:
+def cut_scarf_straight(
+    element_id_list: list[ElementId],
+    length: float,
+    depth: float,
+    clearance_length: float,
+    clearance_depth: float,
+    clearance_hook: float,
+    drilling_count: UnsignedInt,
+    drilling_diameter: float,
+    drilling_tolerance: float,
+) -> None:
     """Cuts a straight scarf joint (lengthwise) with specific parameters.
 
     Parameters:
@@ -2024,7 +2207,16 @@ def cut_scarf_straight(element_id_list: list[ElementId], length: float, depth: f
         drilling_tolerance: The tolerance added to the hole size for easier assembly or bolt head fitting.
     """
 
-def cut_scarf_diagonal(element_id_list: list[ElementId], length: float, depth: float, clearance_length: float, clearance_depth: float, drilling_count: UnsignedInt, drilling_diameter: float, drilling_tolerance: float) -> None:
+def cut_scarf_diagonal(
+    element_id_list: list[ElementId],
+    length: float,
+    depth: float,
+    clearance_length: float,
+    clearance_depth: float,
+    drilling_count: UnsignedInt,
+    drilling_diameter: float,
+    drilling_tolerance: float,
+) -> None:
     """Cuts a diagonal scarf joint (lengthwise) with specific parameters.
 
     Parameters:
@@ -2038,7 +2230,17 @@ def cut_scarf_diagonal(element_id_list: list[ElementId], length: float, depth: f
         drilling_tolerance: Tolerance added to the hole diameter for ease of insertion or head fit.
     """
 
-def cut_scarf_with_wedge(element_id_list: list[ElementId], length: float, depth: float, clearance_length: float, clearance_depth: float, wedge_width: float, drilling_count: UnsignedInt, drilling_diameter: float, drilling_tolerance: float) -> None:
+def cut_scarf_with_wedge(
+    element_id_list: list[ElementId],
+    length: float,
+    depth: float,
+    clearance_length: float,
+    clearance_depth: float,
+    wedge_width: float,
+    drilling_count: UnsignedInt,
+    drilling_diameter: float,
+    drilling_tolerance: float,
+) -> None:
     """Cuts a diagonal scarf joint with an added wedge, using specific parameters.
 
     Parameters:
@@ -2053,7 +2255,9 @@ def cut_scarf_with_wedge(element_id_list: list[ElementId], length: float, depth:
         drilling_tolerance: Tolerance applied to the hole size, often used for easier bolt fitting or head clearance.
     """
 
-def cut_beam_end_profile(element_id_list: list[ElementId], profile_name: str, on_start_face: bool, on_end_face: bool) -> None:
+def cut_beam_end_profile(
+    element_id_list: list[ElementId], profile_name: str, on_start_face: bool, on_end_face: bool
+) -> None:
     """Add end profile to beam elements.
 
     Parameters:
@@ -2063,7 +2267,9 @@ def cut_beam_end_profile(element_id_list: list[ElementId], profile_name: str, on
         on_end_face: Cut on the end face?
     """
 
-def create_truncated_cone_beam_points(start_diameter: float, end_diameter: float, first_point: point_3d, second_point: point_3d, third_point: point_3d) -> ElementId:
+def create_truncated_cone_beam_points(
+    start_diameter: float, end_diameter: float, first_point: point_3d, second_point: point_3d, third_point: point_3d
+) -> ElementId:
     """Creates a truncated cone beam using points.
 
     Parameters:
@@ -2089,7 +2295,14 @@ def create_truncated_cone_beam_points(start_diameter: float, end_diameter: float
         The ID of the created beam.
     """
 
-def create_truncated_cone_beam_vectors(start_diameter: float, end_diameter: float, length: float, starting_point: point_3d, x_local_direction: point_3d, z_local_direction: point_3d) -> ElementId:
+def create_truncated_cone_beam_vectors(
+    start_diameter: float,
+    end_diameter: float,
+    length: float,
+    starting_point: point_3d,
+    x_local_direction: point_3d,
+    z_local_direction: point_3d,
+) -> ElementId:
     """Creates a truncated cone beam using vectors.
 
     Parameters:
@@ -2112,7 +2325,6 @@ def create_truncated_cone_beam_vectors(start_diameter: float, end_diameter: floa
     Returns:
         The ID of the created beam.
     """
-
 
 def create_spline_line(spline_points: vertex_list) -> ElementId:
     """Creates a spline line.
@@ -2154,12 +2366,10 @@ def unjoin_top_level_elements(element_id_list: list[ElementId]) -> bool:
     """
 
 def set_element_group_single_select_mode() -> None:
-    """ Switches the current element group selection mode so that single elements of a group are selectable.
-    """
+    """Switches the current element group selection mode so that single elements of a group are selectable."""
 
 def set_element_group_multi_select_mode() -> None:
-    """Switches the current element group selection mode so that all elements of a group are selected when selecting one of it.
-    """
+    """Switches the current element group selection mode so that all elements of a group are selected when selecting one of it."""
 
 def convert_circular_beam_to_drilling(element_id_list: list[ElementId]) -> None:
     """Converts circular beams to drillings.
@@ -2168,7 +2378,9 @@ def convert_circular_beam_to_drilling(element_id_list: list[ElementId]) -> None:
         element_id_list: The list of element IDs to convert.
     """
 
-def slice_elements_with_plane_and_get_new_elements(element_id: ElementId, cut_plane_normal_vector: point_3d, distance_from_global_origin: float) -> list[ElementId]:
+def slice_elements_with_plane_and_get_new_elements(
+    element_id: ElementId, cut_plane_normal_vector: point_3d, distance_from_global_origin: float
+) -> list[ElementId]:
     """Slices an element with a plane and returns the new elements.
 
     Parameters:
@@ -2216,7 +2428,7 @@ def get_elements_in_collision(element_id: ElementId) -> list[ElementId]:
         A list of IDs of the elements in collision with the specified element.
     """
 
-def get_text_object_options(element_id: ElementId) ->'text_object_options':
+def get_text_object_options(element_id: ElementId) -> 'text_object_options':
     """Retrieves the text object options for a specific element e.g. font, text content, etc.
 
     Parameters:
@@ -2226,20 +2438,19 @@ def get_text_object_options(element_id: ElementId) ->'text_object_options':
         The text object options for the specified element.
     """
 
-def get_is_element_group_single_select_mode() ->bool:
+def get_is_element_group_single_select_mode() -> bool:
     """Gets whether the current element group selection mode is setup to select single elements.
 
     Returns:
         True if the current element group selection mode is set to single select, false otherwise.
     """
 
-def get_is_element_group_multi_select_mode() ->bool:
+def get_is_element_group_multi_select_mode() -> bool:
     """Gets whether the current element group selection mode is setup to select multiple elements.
 
     Returns:
         True if the current element group selection mode is set to multi select, false otherwise.
     """
-
 
 def set_shoulder_options(options: shoulder_options) -> None:
     """Sets the shoulder cut options.
@@ -2248,14 +2459,12 @@ def set_shoulder_options(options: shoulder_options) -> None:
         options: The shoulder options to set.
     """
 
-
 def set_heel_shoulder_options(options: heel_shoulder_options) -> None:
     """Sets the heel shoulder cut options.
 
     Parameters:
         options: The heel shoulder options to set.
     """
-
 
 def set_double_shoulder_options(options: double_shoulder_options) -> None:
     """Sets the double shoulder cut options.
@@ -2264,8 +2473,7 @@ def set_double_shoulder_options(options: double_shoulder_options) -> None:
         options: The double shoulder options to set.
     """
 
-def cut_shoulder(element_id_list: list[ElementId], connecting_element_id_list:
-    list[ElementId]) ->None:
+def cut_shoulder(element_id_list: list[ElementId], connecting_element_id_list: list[ElementId]) -> None:
     """Cuts shoulder with current 3D options.
 
     Parameters:
@@ -2273,8 +2481,7 @@ def cut_shoulder(element_id_list: list[ElementId], connecting_element_id_list:
         connecting_element_id_list: The list of elements that intersect or connect with the cut elements, used to determine the cutting geometry.
     """
 
-def cut_heel_shoulder(element_id_list: list[ElementId],
-    connecting_element_id_list: list[ElementId]) ->None:
+def cut_heel_shoulder(element_id_list: list[ElementId], connecting_element_id_list: list[ElementId]) -> None:
     """Cuts heel with current 3D options
 
     Parameters:
@@ -2282,15 +2489,13 @@ def cut_heel_shoulder(element_id_list: list[ElementId],
         connecting_element_id_list: The list of elements that intersect or connect with the cut elements, used to determine the cutting geometry.
     """
 
-def cut_double_shoulder(element_id_list: list[ElementId],
-    connecting_element_id_list: list[ElementId]) ->None:
+def cut_double_shoulder(element_id_list: list[ElementId], connecting_element_id_list: list[ElementId]) -> None:
     """Cuts a double shoulder joint using the current 3D cutting options.
 
     Parameters:
         element_id_list: The element id list.
         connecting_element_id_list: The list of elements that intersect or connect with the cut elements, used to determine the cutting geometry.
     """
-
 
 def filter_elements(element_id_list: list[ElementId], element_filter: element_filter) -> list[ElementId]:
     """Filters a list of elements based on a provided filter.
@@ -2311,7 +2516,6 @@ def filter_elements(element_id_list: list[ElementId], element_filter: element_fi
         The filtered list of element IDs.
     """
 
-
 def map_elements(element_id_list: list[ElementId], map_query: element_map_query) -> dict[str, list[ElementId]]:
     """Maps a list of elements based on a provided map query.
 
@@ -2331,9 +2535,9 @@ def map_elements(element_id_list: list[ElementId], map_query: element_map_query)
         The map of elements that pass the map query.
     """
 
-
-def cast_ray_and_get_element_intersections(element_id_list: list[ElementId], ray_start_position: point_3d,
-                                           ray_end_position: point_3d, radius: float) -> hit_result:
+def cast_ray_and_get_element_intersections(
+    element_id_list: list[ElementId], ray_start_position: point_3d, ray_end_position: point_3d, radius: float
+) -> hit_result:
     """Casts a ray through the 3D model and calculates all intersection points between the ray and specified elements. This function performs ray casting against each specified element to find intersection points.For each element hit by the ray, it returns the element ID and all points where the ray intersects with that element. The ray is defined by a start point, end point, and radius.
 
     Parameters:
@@ -2357,7 +2561,6 @@ def cast_ray_and_get_element_intersections(element_id_list: list[ElementId], ray
     Returns:
         Contains list of elements that were hit by the ray and list of vertices that are queried via ElementID.
     """
-
 
 def get_element_active_point(element_id: ElementId) -> active_point_result:
     """Gets the active point associated with an element.
@@ -2386,14 +2589,12 @@ def get_standard_beam_guid_list() -> list[str]:
         The list of GUIDs of standard beams.
     """
 
-
 def get_standard_panel_guid_list() -> list[str]:
     """Retrieves a list of standard panel GUIDs.
 
     Returns:
         The list of GUIDs of standard panels.
     """
-
 
 def import_standard_beam_from_file(file_path: str) -> None:
     """Imports a standard beam from a file.
@@ -2402,14 +2603,12 @@ def import_standard_beam_from_file(file_path: str) -> None:
         file_path: The path to the file to be imported.
     """
 
-
 def import_standard_panel_from_file(file_path: str) -> None:
     """Imports a standard panel from a file.
 
     Parameters:
         file_path: The path to the file to be imported.
     """
-
 
 def export_as_standard_element(element_id: ElementId, name: str) -> str:
     """Exports an existing element as a standard element.
@@ -2425,8 +2624,9 @@ def export_as_standard_element(element_id: ElementId, name: str) -> str:
         The GUID of the new standard element on success, an empty string on error.
     """
 
-
-def create_rotation_element(surface_element_id: ElementId, axis_point: point_3d, axis_direction: point_3d, angle_rad: float, segmentation: int) -> ElementId:
+def create_rotation_element(
+    surface_element_id: ElementId, axis_point: point_3d, axis_direction: point_3d, angle_rad: float, segmentation: int
+) -> ElementId:
     """Creates a rotation element from a surface element by rotating it around an axis.
 
     Parameters:
@@ -2459,7 +2659,9 @@ def create_rotation_element(surface_element_id: ElementId, axis_point: point_3d,
         The ID of the created rotation element.
     """
 
-def apply_image_to_surface(element: ElementId, image_file_path: str, alignment_start: point_3d, alignment_end: point_3d) -> bool:
+def apply_image_to_surface(
+    element: ElementId, image_file_path: str, alignment_start: point_3d, alignment_end: point_3d
+) -> bool:
     """Applies an image texture to a specified surface element. This function allows you to set an image as a texture on a given surface element. The image is mapped to the surface between two specified points that define the alignment and scaling.
 
     Parameters:

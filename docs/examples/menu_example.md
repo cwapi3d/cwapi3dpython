@@ -4,10 +4,10 @@ hide:
 ---
 
 # menu_controller
-## create a simple cadwork menu 
+## create a simple cadwork menu
 
-```python 
-import menu_controller as mec 
+```python
+import menu_controller as mec
 import utility_controller as uc
 import cadwork
 
@@ -18,16 +18,15 @@ while True:
 
     if menu == 'Foo':
         uc.print_error('You pressed Foo')
-        
+
     elif menu == 'Bar':
         uc.print_error('You pressed Bar')
-        
+
     elif menu == 'Baz':
         uc.print_error('You pressed Baz')
-        
+
     elif menu == 'Return':
         break
-
 ```
 
 Above code generates a menu structure like this.
@@ -38,7 +37,6 @@ Above code generates a menu structure like this.
 ## Process type setter
 
 ```python
-
 import cadwork as cw
 import attribute_controller as ac
 import element_controller as ec
@@ -48,67 +46,70 @@ import menu_controller as mc
 
 
 def list_ele_types(ele_type):
-    l_ele_types = [[cw.element_type.is_additional_element(ele_type), 'is_additional_element'],
-               [cw.element_type.is_auxiliary(ele_type), 'is_auxiliary'],
-               [cw.element_type.is_cadwork(ele_type), 'is_cadwork'],
-               [cw.element_type.is_circular_axis(ele_type), 'is_circular_axis'],
-               [cw.element_type.is_circular_beam(ele_type), 'is_circular_beam'],
-               [cw.element_type.is_connector_axis(ele_type), 'is_connector_axis'],
-               [cw.element_type.is_connector_node(ele_type), 'is_connector_node'],
-               [cw.element_type.is_container(ele_type), 'is_container'],
-               [cw.element_type.is_dimension(ele_type), 'is_dimension'],
-               [cw.element_type.is_drilling_axis(ele_type), 'is_drilling_axis'],
-               [cw.element_type.is_eave_axis(ele_type), 'is_eave_axis'],
-               [cw.element_type.is_export_solid(ele_type), 'is_export_solid'],
-               [cw.element_type.is_export_solid_scene(ele_type), 'is_export_solid_scene'],
-               [cw.element_type.is_floor(ele_type), 'is_floor'],
-               [cw.element_type.is_global_cut(ele_type), 'is_global_cut'],
-               [cw.element_type.is_graphical_object(ele_type), 'is_graphical_object'],
-               [cw.element_type.is_line(ele_type), 'is_line'],
-               [cw.element_type.is_nesting_parent(ele_type), 'is_nesting_parent'],
-               [cw.element_type.is_none(ele_type), 'is_none'],
-               [cw.element_type.is_normal_node(ele_type), 'is_normal_node'],
-               [cw.element_type.is_opening(ele_type), 'is_opening'],
-               [cw.element_type.is_panel(ele_type), 'is_panel'],
-               [cw.element_type.is_rectangular_axis(ele_type), 'is_rectangular_axis'],
-               [cw.element_type.is_rectangular_beam(ele_type), 'is_rectangular_beam'],
-               [cw.element_type.is_roof(ele_type), 'is_roof'],
-               [cw.element_type.is_room(ele_type), 'is_room'],
-               [cw.element_type.is_rotation_element(ele_type), 'is_rotation_element'],
-               [cw.element_type.is_section_trace(ele_type), 'is_section_trace'],
-               [cw.element_type.is_steel_shape(ele_type), 'is_steel_shape'],
-               [cw.element_type.is_surface(ele_type), 'is_surface'],
-               [cw.element_type.is_text_document(ele_type), 'is_text_document'],
-               [cw.element_type.is_wall(ele_type), 'is_wall'],
-               [cw.element_type.is_wire_axis(ele_type), 'is_wire_axis']]
+    l_ele_types = [
+        [cw.element_type.is_additional_element(ele_type), 'is_additional_element'],
+        [cw.element_type.is_auxiliary(ele_type), 'is_auxiliary'],
+        [cw.element_type.is_cadwork(ele_type), 'is_cadwork'],
+        [cw.element_type.is_circular_axis(ele_type), 'is_circular_axis'],
+        [cw.element_type.is_circular_beam(ele_type), 'is_circular_beam'],
+        [cw.element_type.is_connector_axis(ele_type), 'is_connector_axis'],
+        [cw.element_type.is_connector_node(ele_type), 'is_connector_node'],
+        [cw.element_type.is_container(ele_type), 'is_container'],
+        [cw.element_type.is_dimension(ele_type), 'is_dimension'],
+        [cw.element_type.is_drilling_axis(ele_type), 'is_drilling_axis'],
+        [cw.element_type.is_eave_axis(ele_type), 'is_eave_axis'],
+        [cw.element_type.is_export_solid(ele_type), 'is_export_solid'],
+        [cw.element_type.is_export_solid_scene(ele_type), 'is_export_solid_scene'],
+        [cw.element_type.is_floor(ele_type), 'is_floor'],
+        [cw.element_type.is_global_cut(ele_type), 'is_global_cut'],
+        [cw.element_type.is_graphical_object(ele_type), 'is_graphical_object'],
+        [cw.element_type.is_line(ele_type), 'is_line'],
+        [cw.element_type.is_nesting_parent(ele_type), 'is_nesting_parent'],
+        [cw.element_type.is_none(ele_type), 'is_none'],
+        [cw.element_type.is_normal_node(ele_type), 'is_normal_node'],
+        [cw.element_type.is_opening(ele_type), 'is_opening'],
+        [cw.element_type.is_panel(ele_type), 'is_panel'],
+        [cw.element_type.is_rectangular_axis(ele_type), 'is_rectangular_axis'],
+        [cw.element_type.is_rectangular_beam(ele_type), 'is_rectangular_beam'],
+        [cw.element_type.is_roof(ele_type), 'is_roof'],
+        [cw.element_type.is_room(ele_type), 'is_room'],
+        [cw.element_type.is_rotation_element(ele_type), 'is_rotation_element'],
+        [cw.element_type.is_section_trace(ele_type), 'is_section_trace'],
+        [cw.element_type.is_steel_shape(ele_type), 'is_steel_shape'],
+        [cw.element_type.is_surface(ele_type), 'is_surface'],
+        [cw.element_type.is_text_document(ele_type), 'is_text_document'],
+        [cw.element_type.is_wall(ele_type), 'is_wall'],
+        [cw.element_type.is_wire_axis(ele_type), 'is_wire_axis'],
+    ]
     return l_ele_types
 
 
 def list_process_types_is(process_type):
-    l_process_types_i = [[cw.process_type.is_hip_valley(process_type), 'is_hip_valley'],
-                       [cw.process_type.is_jack_rafter(process_type), 'is_jack_rafter'],
-                       [cw.process_type.is_log(process_type), 'is_log'],
-                       [cw.process_type.is_none(process_type), 'is_none'],
-                       [cw.process_type.is_panel_1(process_type), 'is_panel_1'],
-                       [cw.process_type.is_panel_2(process_type), 'is_panel_2'],
-                       [cw.process_type.is_panel_3(process_type), 'is_panel_3'],
-                       [cw.process_type.is_panel_4(process_type), 'is_panel_4'],
-                       [cw.process_type.is_panel_5(process_type), 'is_panel_5'],
-                       [cw.process_type.is_purlin(process_type), 'is_purlin'],
-                       [cw.process_type.is_rafter(process_type), 'is_rafter'],
-                       [cw.process_type.is_rough_volume_framed_wall(process_type), 'is_rough_volume_framed_wall'],
-                       [cw.process_type.is_rough_volume_log_home(process_type), 'is_rough_volume_log_home'],
-                       [cw.process_type.is_rough_volume_solid_wood_wall(process_type),
-                        'is_rough_volume_solid_wood_wall'],
-                       [cw.process_type.is_stud(process_type), 'is_stud'],
-                       [cw.process_type.is_tread(process_type), 'is_tread'],
-                       [cw.process_type.is_truss(process_type), 'is_truss'],
-                       [cw.process_type.is_user_1(process_type), 'is_user_1'],
-                       [cw.process_type.is_user_2(process_type), 'is_user_2'],
-                       [cw.process_type.is_user_3(process_type), 'is_user_3'],
-                       [cw.process_type.is_user_4(process_type), 'is_user_4'],
-                       [cw.process_type.is_user_5(process_type), 'is_user_5'],
-                       [cw.process_type.is_user_5(process_type), 'is_user_5']]
+    l_process_types_i = [
+        [cw.process_type.is_hip_valley(process_type), 'is_hip_valley'],
+        [cw.process_type.is_jack_rafter(process_type), 'is_jack_rafter'],
+        [cw.process_type.is_log(process_type), 'is_log'],
+        [cw.process_type.is_none(process_type), 'is_none'],
+        [cw.process_type.is_panel_1(process_type), 'is_panel_1'],
+        [cw.process_type.is_panel_2(process_type), 'is_panel_2'],
+        [cw.process_type.is_panel_3(process_type), 'is_panel_3'],
+        [cw.process_type.is_panel_4(process_type), 'is_panel_4'],
+        [cw.process_type.is_panel_5(process_type), 'is_panel_5'],
+        [cw.process_type.is_purlin(process_type), 'is_purlin'],
+        [cw.process_type.is_rafter(process_type), 'is_rafter'],
+        [cw.process_type.is_rough_volume_framed_wall(process_type), 'is_rough_volume_framed_wall'],
+        [cw.process_type.is_rough_volume_log_home(process_type), 'is_rough_volume_log_home'],
+        [cw.process_type.is_rough_volume_solid_wood_wall(process_type), 'is_rough_volume_solid_wood_wall'],
+        [cw.process_type.is_stud(process_type), 'is_stud'],
+        [cw.process_type.is_tread(process_type), 'is_tread'],
+        [cw.process_type.is_truss(process_type), 'is_truss'],
+        [cw.process_type.is_user_1(process_type), 'is_user_1'],
+        [cw.process_type.is_user_2(process_type), 'is_user_2'],
+        [cw.process_type.is_user_3(process_type), 'is_user_3'],
+        [cw.process_type.is_user_4(process_type), 'is_user_4'],
+        [cw.process_type.is_user_5(process_type), 'is_user_5'],
+        [cw.process_type.is_user_5(process_type), 'is_user_5'],
+    ]
     return l_process_types_i
 
 
@@ -161,17 +162,36 @@ def list_process_types_set(z, process_type):
     return process_type
 
 
-
 def menu_output_type():
-    menu_items = ['hip_valley', 'jack_rafter', 'log', 'none', 'panel_1', 'panel_2', 'panel_3',
-                'panel_4', 'panel_5', 'purlin', 'rafter', 'rough_volume_framed_wall', 'rough_volume_log_home',
-                'rough_volume_solid_wood_wall', 'stud', 'tread', 'truss', 'user_1', 'user_2', 'user_3',
-                'user_4', 'user_5']
+    menu_items = [
+        'hip_valley',
+        'jack_rafter',
+        'log',
+        'none',
+        'panel_1',
+        'panel_2',
+        'panel_3',
+        'panel_4',
+        'panel_5',
+        'purlin',
+        'rafter',
+        'rough_volume_framed_wall',
+        'rough_volume_log_home',
+        'rough_volume_solid_wood_wall',
+        'stud',
+        'tread',
+        'truss',
+        'user_1',
+        'user_2',
+        'user_3',
+        'user_4',
+        'user_5',
+    ]
 
     menu_select = mc.display_simple_menu(menu_items)
     menu_i = menu_items.index(menu_select)
 
-    return menu_i+1
+    return menu_i + 1
 
 
 def main():
@@ -186,12 +206,12 @@ def main():
 
     for p_type in l_process_types:
         if p_type[0]:
-         for e_type in l_ele_types:
-            if e_type[0]:
-                vc.hide_all_elements()
-                vc.set_visible([element])
-                vc.zoom_all_elements()
-                uc.print_error(f'Elementyp = {e_type[1]} / Ausgabeart = {p_type[1]}')
+            for e_type in l_ele_types:
+                if e_type[0]:
+                    vc.hide_all_elements()
+                    vc.set_visible([element])
+                    vc.zoom_all_elements()
+                    uc.print_error(f'Elementyp = {e_type[1]} / Ausgabeart = {p_type[1]}')
 
     n_process_type = list_process_types_set(menu_output_type(), process_type)
     ac.set_output_type([element], n_process_type)
@@ -204,6 +224,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
 ```
-

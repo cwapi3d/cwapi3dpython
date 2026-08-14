@@ -24,7 +24,6 @@ def create_standard_connector(axis_name: str, point1: point_3d, point2: point_3d
         The element id of the created standard connector axis.
     """
 
-
 def set_bolt_length(axis_id: ElementId, length: float) -> None:
     """Sets the Bolt Length.
 
@@ -32,7 +31,6 @@ def set_bolt_length(axis_id: ElementId, length: float) -> None:
         axis_id: The id of the axis.
         length: The bolt length.
     """
-
 
 def set_bolt_length_automatic(axis_id: ElementId, length_automatic: bool) -> None:
     """Sets the Bolt Length Automatic.
@@ -42,7 +40,6 @@ def set_bolt_length_automatic(axis_id: ElementId, length_automatic: bool) -> Non
         length_automatic: True if the bolt length should be automatic, false otherwise.
     """
 
-
 def set_diameter(axis_id: ElementId, diameter: float) -> None:
     """Sets the Drilling Diameter for all Sections.
 
@@ -50,7 +47,6 @@ def set_diameter(axis_id: ElementId, diameter: float) -> None:
         axis_id: The id of the axis.
         diameter: The drilling diameter to set for all sections.
     """
-
 
 def set_section_diameter(axis_id: ElementId, section_index: UnsignedInt, diameter: float) -> None:
     """Sets the Drilling Diameter for a specific Sections.
@@ -60,7 +56,6 @@ def set_section_diameter(axis_id: ElementId, section_index: UnsignedInt, diamete
         section_index: The index of the section. (0-based index)
         diameter: The drilling diameter to set for the specific section.
     """
-
 
 def check_axis(axis_id: ElementId) -> bool:
     """Returns if the axis is valid.
@@ -72,11 +67,8 @@ def check_axis(axis_id: ElementId) -> bool:
         True if the axis is valid, false otherwise.
     """
 
-
 def clear_errors() -> None:
-    """Clear all errors.
-    """
-
+    """Clear all errors."""
 
 def update_axis_cutting_ability(axis_id_list: list[ElementId]) -> None:
     """Updates the Connection Config (CuttingAbility) of Axis/VBAs.
@@ -85,7 +77,6 @@ def update_axis_cutting_ability(axis_id_list: list[ElementId]) -> None:
         axis_id_list: The axis id list.
     """
 
-
 def set_bolt_item(axis_id: ElementId, item_guid: str) -> None:
     """Sets the Bolt Item.
 
@@ -93,7 +84,6 @@ def set_bolt_item(axis_id: ElementId, item_guid: str) -> None:
         axis_id: The id of the axis.
         item_guid: The bolt item guid to set.
     """
-
 
 def create_blank_connector(diameter: float, start_point: point_3d, end_point: point_3d) -> ElementId:
     """Creates a blank connector between two points.
@@ -107,7 +97,6 @@ def create_blank_connector(diameter: float, start_point: point_3d, end_point: po
         The element id of the created blank connector.
     """
 
-
 def import_from_file(file_path: str) -> None:
     """Import from file.
 
@@ -115,11 +104,8 @@ def import_from_file(file_path: str) -> None:
         file_path: The path to the file to import.
     """
 
-
 def start_configuration_dialog() -> None:
-    """Starts the ConnectorAxis configuration dialog.
-    """
-
+    """Starts the ConnectorAxis configuration dialog."""
 
 def get_item_guid_by_name(name: str, item_type: vba_catalog_item_type) -> str:
     """Get item guid by name.
@@ -132,7 +118,6 @@ def get_item_guid_by_name(name: str, item_type: vba_catalog_item_type) -> str:
         The guid of the item.
     """
 
-
 def get_bolt_length(axis_id: ElementId) -> float:
     """Gets the Bolt Length.
 
@@ -142,7 +127,6 @@ def get_bolt_length(axis_id: ElementId) -> float:
     Returns:
         The bolt length.
     """
-
 
 def get_bolt_over_length(axis_id: ElementId) -> float:
     """Gets the Bolt OverLength.
@@ -154,7 +138,6 @@ def get_bolt_over_length(axis_id: ElementId) -> float:
         The bolt over length.
     """
 
-
 def set_bolt_over_length(axis_id: ElementId, over_length: float) -> None:
     """Sets the Bolt OverLength.
 
@@ -162,7 +145,6 @@ def set_bolt_over_length(axis_id: ElementId, over_length: float) -> None:
         axis_id: The id of the axis.
         over_length: The bolt over length.
     """
-
 
 def get_bolt_length_automatic(axis_id: ElementId) -> bool:
     """Returns if Bolt Length Automatic is set.
@@ -174,7 +156,6 @@ def get_bolt_length_automatic(axis_id: ElementId) -> bool:
         True if the bolt length is automatic, false otherwise.
     """
 
-
 def get_bolt_item_guid(axis_id: ElementId) -> str:
     """Gets the Guid of the Bolt Item.
 
@@ -184,7 +165,6 @@ def get_bolt_item_guid(axis_id: ElementId) -> str:
     Returns:
         The guid of the bolt item.
     """
-
 
 def get_section_diameter(axis_id: ElementId, section_index: UnsignedInt) -> float:
     """Gets the Drilling Diameter of a specific Sections.
@@ -197,7 +177,6 @@ def get_section_diameter(axis_id: ElementId, section_index: UnsignedInt) -> floa
         The drilling diameter of the specified section.
     """
 
-
 def get_axis_items_guids(axis_id: ElementId) -> list[str]:
     """Returns a list of GUIDs of all axis items.
 
@@ -207,7 +186,6 @@ def get_axis_items_guids(axis_id: ElementId) -> list[str]:
     Returns:
         The list of GUIDs of all axis items.
     """
-
 
 def get_axis_item_name(guid: str) -> str:
     """Returns the name of an axis item.
@@ -219,7 +197,6 @@ def get_axis_item_name(guid: str) -> str:
         The name of the axis item.
     """
 
-
 def get_axis_item_material(guid: str) -> str:
     """Returns the material of an axis item.
 
@@ -229,7 +206,6 @@ def get_axis_item_material(guid: str) -> str:
     Returns:
         The material of the axis item.
     """
-
 
 def get_axis_item_norm(guid: str) -> str:
     """Returns the norm of an axis item.
@@ -241,7 +217,6 @@ def get_axis_item_norm(guid: str) -> str:
         The norm of the axis item.
     """
 
-
 def get_axis_item_strength_category(guid: str) -> str:
     """Returns the strength category of an axis item.
 
@@ -251,7 +226,6 @@ def get_axis_item_strength_category(guid: str) -> str:
     Returns:
         The strength category of the axis item.
     """
-
 
 def get_axis_item_user_field(guid: str, user_item_number: int) -> str:
     """Returns an userfield value of an axis item.
@@ -264,7 +238,6 @@ def get_axis_item_user_field(guid: str, user_item_number: int) -> str:
         The user field value.
     """
 
-
 def get_axis_item_order_number(guid: str) -> str:
     """Returns the strength category of an axis item.
 
@@ -274,7 +247,6 @@ def get_axis_item_order_number(guid: str) -> str:
     Returns:
         The strength category of the axis item.
     """
-
 
 def get_bolt_order_number(axis_id: ElementId) -> str:
     """Returns the ordernumber of a bolt item.
@@ -286,7 +258,6 @@ def get_bolt_order_number(axis_id: ElementId) -> str:
         The order number of the bolt item.
     """
 
-
 def get_section_count(axis_id: ElementId) -> int:
     """Returns the number of sections.
 
@@ -296,7 +267,6 @@ def get_section_count(axis_id: ElementId) -> int:
     Returns:
         The number of sections of the axis.
     """
-
 
 def get_section_material_name(axis_id: ElementId, section_index: UnsignedInt) -> str:
     """Returns material of a section contact element.
@@ -309,7 +279,6 @@ def get_section_material_name(axis_id: ElementId, section_index: UnsignedInt) ->
         The material of the section contact element.
     """
 
-
 def get_section_contact_element(axis_id: float, section_index: UnsignedInt) -> ElementId:
     """Gets the section contact element.
 
@@ -320,7 +289,6 @@ def get_section_contact_element(axis_id: float, section_index: UnsignedInt) -> E
     Returns:
         The element id of the section contact element.
     """
-
 
 def get_bolt_diameter(axis_id: ElementId) -> float:
     """Gets the bolt diameter.
@@ -339,7 +307,6 @@ def get_standard_connector_list() -> list[str]:
         The list of standard connector names.
     """
 
-
 def get_counterbore_diameter_for_start_side(axis_id: ElementId, section_index: UnsignedInt) -> float:
     """Gets the counterbore diameter for the start side.
 
@@ -354,7 +321,6 @@ def get_counterbore_diameter_for_start_side(axis_id: ElementId, section_index: U
         The counterbore diameter for the start side.
     """
 
-
 def get_counterbore_diameter_for_end_side(axis_id: ElementId, section_index: UnsignedInt) -> float:
     """Gets the counterbore diameter for the end side of a section.
 
@@ -366,7 +332,6 @@ def get_counterbore_diameter_for_end_side(axis_id: ElementId, section_index: Uns
         The counterbore diameter for the end side.
     """
 
-
 def get_counterbore_depth_for_start_side(axis_id: ElementId, section_index: UnsignedInt) -> float:
     """Gets the counterbore depth for the start side.
 
@@ -377,7 +342,6 @@ def get_counterbore_depth_for_start_side(axis_id: ElementId, section_index: Unsi
     Returns:
         The counterbore depth for the start side.
     """
-
 
 def get_counterbore_depth_for_end_side(axis_id: ElementId, section_index: UnsignedInt) -> float:
     """Gets the counterbore depth for the end side.
@@ -401,7 +365,6 @@ def get_counterbore_is_conical_for_start_side(axis_id: ElementId, section_index:
         True if the counterbore is conical for the start side, false otherwise.
     """
 
-
 def get_counterbore_is_conical_for_end_side(axis_id: ElementId, section_index: UnsignedInt) -> bool:
     """Get if counterbore is conical for end side.
 
@@ -411,11 +374,11 @@ def get_counterbore_is_conical_for_end_side(axis_id: ElementId, section_index: U
 
     Returns:
         True if the counterbore is conical for the end side, false otherwise.
-        """
+    """
 
-
-def set_counterbore_for_start_side(axis_id: ElementId, section_index: UnsignedInt, diameter: float, depth: float,
-                                   is_conical: bool) -> None:
+def set_counterbore_for_start_side(
+    axis_id: ElementId, section_index: UnsignedInt, diameter: float, depth: float, is_conical: bool
+) -> None:
     """Sets the counterbore for the start side.
 
     Parameters:
@@ -426,9 +389,9 @@ def set_counterbore_for_start_side(axis_id: ElementId, section_index: UnsignedIn
         is_conical: True if the counterbore is conical, false otherwise.
     """
 
-
-def set_counterbore_for_end_side(axis_id: ElementId, section_index: UnsignedInt, diameter: float, depth: float,
-                                 is_conical: bool) -> None:
+def set_counterbore_for_end_side(
+    axis_id: ElementId, section_index: UnsignedInt, diameter: float, depth: float, is_conical: bool
+) -> None:
     """Sets the counterbore for the end side.
 
     Parameters:
@@ -438,7 +401,6 @@ def set_counterbore_for_end_side(axis_id: ElementId, section_index: UnsignedInt,
         depth: The depth of the counterbore.
         is_conical: True if the counterbore is conical, false otherwise.
     """
-
 
 def get_intersection_count(intersection_index: UnsignedInt) -> int:
     """Get the intersection count.
@@ -461,7 +423,6 @@ def get_item_guids_at_intersection(axis_id: ElementId, intersection_index: Unsig
         The list of item GUIDs at the intersection.
     """
 
-
 def set_item_guids_at_intersection(axis_id: ElementId, intersection_index: UnsignedInt, item_guids: list[str]) -> None:
     """Sets item GUIDs at intersection.
 
@@ -482,7 +443,6 @@ def get_section_length(axis_id: ElementId, section_index: UnsignedInt) -> float:
         The length of the section.
     """
 
-
 def get_section_oblong_drilling_is_enabled(axis_id: ElementId, section_index: UnsignedInt) -> bool:
     """Get if the section oblong drilling is enabled.
 
@@ -493,7 +453,6 @@ def get_section_oblong_drilling_is_enabled(axis_id: ElementId, section_index: Un
     Returns:
         True if the section oblong drilling is enabled, false otherwise.
     """
-
 
 def get_section_oblong_drilling_positive_value(axis_id: ElementId, section_index: UnsignedInt) -> float:
     """Get section oblong drilling positive value.
@@ -506,7 +465,6 @@ def get_section_oblong_drilling_positive_value(axis_id: ElementId, section_index
         The positive value of the section oblong drilling.
     """
 
-
 def get_section_oblong_drilling_negative_value(axis_id: ElementId, section_index: UnsignedInt) -> float:
     """Get the section oblong drilling negative value
 
@@ -517,7 +475,6 @@ def get_section_oblong_drilling_negative_value(axis_id: ElementId, section_index
     Returns:
         The negative value of the section oblong drilling.
     """
-
 
 def get_section_oblong_drilling_angle(axis_id: ElementId, section_index: UnsignedInt) -> float:
     """Get section oblong drilling angle.
@@ -530,7 +487,6 @@ def get_section_oblong_drilling_angle(axis_id: ElementId, section_index: Unsigne
         The angle of the section oblong drilling.
     """
 
-
 def set_section_oblong_drilling_is_disabled(axis_id: ElementId, section_index: UnsignedInt) -> None:
     """Disable the section oblong drilling.
 
@@ -539,9 +495,9 @@ def set_section_oblong_drilling_is_disabled(axis_id: ElementId, section_index: U
         section_index: The index of the section. (0-based index)
     """
 
-
-def set_section_oblong_drilling_is_enabled(axis_id: ElementId, section_index: UnsignedInt, positive_value: float,
-                                           negative_value: float, angle: float) -> None:
+def set_section_oblong_drilling_is_enabled(
+    axis_id: ElementId, section_index: UnsignedInt, positive_value: float, negative_value: float, angle: float
+) -> None:
     """Enable the section oblong drilling with parameters.
 
     Parameters:
@@ -552,8 +508,9 @@ def set_section_oblong_drilling_is_enabled(axis_id: ElementId, section_index: Un
         angle: The angle of the section oblong drilling.
     """
 
-
-def set_items_at_intersection(axis_id: ElementId, intersection_index: UnsignedInt, items: list[connector_axis_item]) -> None:
+def set_items_at_intersection(
+    axis_id: ElementId, intersection_index: UnsignedInt, items: list[connector_axis_item]
+) -> None:
     """Sets item at intersection.
 
     Parameters:

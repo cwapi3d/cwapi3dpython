@@ -5,7 +5,7 @@ class point_2d:
     passed instead: it is implicitly converted to a point_2d.
     """
 
-    def __init__(self, u: float = 0., v: float = 0.):
+    def __init__(self, u: float = 0.0, v: float = 0.0):
         """
         Initialize an instance of a point_2d.
 

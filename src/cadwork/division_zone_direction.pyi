@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class division_zone_direction(IntEnum):
     """division zone direction
@@ -9,6 +8,7 @@ class division_zone_direction(IntEnum):
         >>> cadwork.division_zone_direction.positive
         positive
     """
+
     positive = 1
     """"""
     negative = 2
@@ -18,4 +18,3 @@ class division_zone_direction(IntEnum):
 
     def __int__(self) -> int:
         return self.value
-

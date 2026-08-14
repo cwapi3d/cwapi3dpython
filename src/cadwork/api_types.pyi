@@ -12,14 +12,14 @@ UserAttributeId: TypeAlias = int
 ElementId: TypeAlias = int
 
 __all__ = [
-    "UnsignedInt",
-    "MaterialId",
-    "ColorId",
-    "EndtypeId",
-    "AxisId",
-    "MenuIndex",
-    "ReferenceSide",
-    "MultiLayerSetId",
-    "UserAttributeId",
-    "ElementId",
+    'UnsignedInt',
+    'MaterialId',
+    'ColorId',
+    'EndtypeId',
+    'AxisId',
+    'MenuIndex',
+    'ReferenceSide',
+    'MultiLayerSetId',
+    'UserAttributeId',
+    'ElementId',
 ]

@@ -181,9 +181,7 @@ def set_weight_type(material_id: MaterialId, weight_type: str) -> None:
     """
 
 def clear_errors() -> None:
-    """Clears all errors.
-    """
-
+    """Clears all errors."""
 
 def set_grade(material_id: MaterialId, grade: str) -> None:
     """Sets the grade of a material.
@@ -193,7 +191,6 @@ def set_grade(material_id: MaterialId, grade: str) -> None:
         grade: The grade to set.
     """
 
-
 def set_quality(material_id: MaterialId, quality: str) -> None:
     """Sets the quality of a material.
 
@@ -201,7 +198,6 @@ def set_quality(material_id: MaterialId, quality: str) -> None:
         material_id: The material id.
         quality: The quality to set.
     """
-
 
 def set_composition(material_id: MaterialId, composition: str) -> None:
     """Sets the composition of a material.
@@ -428,7 +424,6 @@ def get_all_materials() -> list[MaterialId]:
         A list of all material id.
     """
 
-
 def get_grade(material_id: MaterialId) -> str:
     """Gets the grade of a material.
 
@@ -438,7 +433,6 @@ def get_grade(material_id: MaterialId) -> str:
     Returns:
         The grade of the material.
     """
-
 
 def get_quality(material_id: MaterialId) -> str:
     """Gets the quality of a material.
@@ -450,7 +444,6 @@ def get_quality(material_id: MaterialId) -> str:
         The quality of the material.
     """
 
-
 def get_composition(material_id: MaterialId) -> str:
     """Gets the composition of a material.
 
@@ -460,7 +453,6 @@ def get_composition(material_id: MaterialId) -> str:
     Returns:
         The composition of the material.
     """
-
 
 def get_short_name(material_id: MaterialId) -> str:
     """Gets the short name of a material.
@@ -489,7 +481,6 @@ def get_parent_group(group: str) -> str:
         The name of the parent group.
     """
 
-
 def get_material_color_assignment_for_nodes(color_nb: UnsignedInt) -> MaterialId:
     """Gets the material color assignment for nodes.
 
@@ -500,7 +491,6 @@ def get_material_color_assignment_for_nodes(color_nb: UnsignedInt) -> MaterialId
         The material id assigned to the color number for nodes.
     """
 
-
 def set_material_color_assignment_for_nodes(color_nb: UnsignedInt, material_id: MaterialId) -> None:
     """Sets the material color assignment for nodes.
 
@@ -508,7 +498,6 @@ def set_material_color_assignment_for_nodes(color_nb: UnsignedInt, material_id: 
         color_nb: The color number. [1-255]
         material_id: The material ID to assign to the color number for nodes.
     """
-
 
 def get_material_color_assignment_for_standard_axes(color_nb: UnsignedInt) -> MaterialId:
     """Gets the material color assignment for standard axes.
@@ -520,7 +509,6 @@ def get_material_color_assignment_for_standard_axes(color_nb: UnsignedInt) -> Ma
         The material id assigned to the color number for standard axes.
     """
 
-
 def set_material_color_assignment_for_standard_axes(color_nb: UnsignedInt, material_id: MaterialId) -> None:
     """Sets the material color assignment for standard axes.
 
@@ -528,7 +516,6 @@ def set_material_color_assignment_for_standard_axes(color_nb: UnsignedInt, mater
         color_nb: The color number. [1-255]
         material_id: The material ID to assign to the color number for standard axes.
     """
-
 
 def get_material_color_assignment_for_drillings(color_nb: UnsignedInt) -> MaterialId:
     """Gets the material color assignment for drillings.
@@ -540,7 +527,6 @@ def get_material_color_assignment_for_drillings(color_nb: UnsignedInt) -> Materi
         The material id assigned to the color number for drillings.
     """
 
-
 def set_material_color_assignment_for_drillings(color_nb: UnsignedInt, material_id: MaterialId) -> None:
     """Sets the material color assignment for drillings.
 
@@ -548,7 +534,6 @@ def set_material_color_assignment_for_drillings(color_nb: UnsignedInt, material_
         color_nb: The color number. [1-255]
         material_id: The material ID to assign to the color number for drillings.
     """
-
 
 def get_material_color_assignment_for_mep_axes(color_nb: UnsignedInt) -> MaterialId:
     """Gets the material color assignment for MEP axes.
@@ -560,7 +545,6 @@ def get_material_color_assignment_for_mep_axes(color_nb: UnsignedInt) -> Materia
         The material id assigned to the color number for MEP axes.
     """
 
-
 def set_material_color_assignment_for_mep_axes(color_nb: UnsignedInt, material_id: MaterialId) -> None:
     """Sets the material color assignment for MEP axes.
 
@@ -568,7 +552,6 @@ def set_material_color_assignment_for_mep_axes(color_nb: UnsignedInt, material_i
         color_nb: The color number. [1-255]
         material_id: The material ID to assign to the color number for MEP axes.
     """
-
 
 def get_material_color_assignment_for_beams(color_nb: UnsignedInt) -> MaterialId:
     """Gets the material color assignment for beams.
@@ -580,7 +563,6 @@ def get_material_color_assignment_for_beams(color_nb: UnsignedInt) -> MaterialId
         The material id assigned to the color number for beams.
     """
 
-
 def set_material_color_assignment_for_beams(color_nb: UnsignedInt, material_id: MaterialId) -> None:
     """Sets the material color assignment for beams.
 
@@ -588,7 +570,6 @@ def set_material_color_assignment_for_beams(color_nb: UnsignedInt, material_id: 
         color_nb: The color number. [1-255]
         material_id: The material ID to assign to the color number for beams.
     """
-
 
 def get_material_color_assignment_for_panels(color_nb: UnsignedInt) -> MaterialId:
     """Gets the material color assignment for panels.
@@ -600,7 +581,6 @@ def get_material_color_assignment_for_panels(color_nb: UnsignedInt) -> MaterialI
         The material id assigned to the color number for panels.
     """
 
-
 def set_material_color_assignment_for_panels(color_nb: UnsignedInt, material_id: MaterialId) -> None:
     """Sets the material color assignment for panels.
 
@@ -608,7 +588,6 @@ def set_material_color_assignment_for_panels(color_nb: UnsignedInt, material_id:
         color_nb: The color number. [1-255]
         material_id: The material ID to assign to the color number for panels.
     """
-
 
 def get_material_color_assignment_for_auxiliary_elements(color_nb: UnsignedInt) -> MaterialId:
     """Gets the material color assignment for auxiliary elements.
@@ -620,7 +599,6 @@ def get_material_color_assignment_for_auxiliary_elements(color_nb: UnsignedInt) 
         The material id assigned to the color number for auxiliary elements.
     """
 
-
 def set_material_color_assignment_for_auxiliary_elements(color_nb: UnsignedInt, material_id: MaterialId) -> None:
     """Sets the material color assignment for auxiliary elements.
 
@@ -628,7 +606,6 @@ def set_material_color_assignment_for_auxiliary_elements(color_nb: UnsignedInt, 
         color_nb: The color number. [1-255]
         material_id: The material ID to assign to the color number for auxiliary elements.
     """
-
 
 def get_material_color_assignment_for_surfaces(color_nb: UnsignedInt) -> MaterialId:
     """Gets the material color assignment for surfaces.
@@ -640,7 +617,6 @@ def get_material_color_assignment_for_surfaces(color_nb: UnsignedInt) -> Materia
         The material id assigned to the color number for surfaces.
     """
 
-
 def set_material_color_assignment_for_surfaces(color_nb: UnsignedInt, material_id: MaterialId) -> None:
     """Sets the material color assignment for surfaces.
 
@@ -648,7 +624,6 @@ def set_material_color_assignment_for_surfaces(color_nb: UnsignedInt, material_i
         color_nb: The color number. [1-255]
         material_id: The material ID to assign to the color number for surfaces.
     """
-
 
 def get_texture_color(material_id: MaterialId) -> int:
     """Gets the texture color for a given material ID.
@@ -660,7 +635,6 @@ def get_texture_color(material_id: MaterialId) -> int:
         The color of the texture. [1-255]
     """
 
-
 def set_texture_color(color_nb: UnsignedInt, material_id: MaterialId) -> None:
     """Sets the texture color for a given material ID.
 
@@ -668,7 +642,6 @@ def set_texture_color(color_nb: UnsignedInt, material_id: MaterialId) -> None:
         color_nb: The color to set for the texture. [1-255]
         material_id: The material id.
     """
-
 
 def get_texture_transparency(material_id: MaterialId) -> int:
     """Gets the texture transparency for a given material ID.
@@ -680,7 +653,6 @@ def get_texture_transparency(material_id: MaterialId) -> int:
         The transparency of the texture.
     """
 
-
 def set_texture_transparency(color_nb: UnsignedInt, material_id: MaterialId) -> None:
     """Sets the texture transparency for a given material ID.
 
@@ -688,7 +660,6 @@ def set_texture_transparency(color_nb: UnsignedInt, material_id: MaterialId) -> 
         color_nb: The transparency to set for the texture.
         material_id: The material id.
     """
-
 
 def get_texture_rotation_angle(material_id: MaterialId) -> float:
     """Gets the texture rotation angle for a given material ID.
@@ -700,7 +671,6 @@ def get_texture_rotation_angle(material_id: MaterialId) -> float:
         The rotation angle of the texture.
     """
 
-
 def set_texture_rotation_angle(material_id: MaterialId, angle: float) -> None:
     """Sets the texture rotation angle for a given material ID.
 
@@ -708,7 +678,6 @@ def set_texture_rotation_angle(material_id: MaterialId, angle: float) -> None:
         material_id: The material id.
         angle: The rotation angle to set for the texture.
     """
-
 
 def get_texture_length_alignment(material_id: MaterialId) -> bool:
     """Gets the texture length alignment for a given material ID.
@@ -720,7 +689,6 @@ def get_texture_length_alignment(material_id: MaterialId) -> bool:
         True if Texture Random Placement is enabled, false otherwise.
     """
 
-
 def set_texture_length_alignment(material_id: MaterialId, flag: bool) -> None:
     """Sets the texture length alignment for a given material ID.
 
@@ -728,7 +696,6 @@ def set_texture_length_alignment(material_id: MaterialId, flag: bool) -> None:
         material_id: The material id.
         flag: True if Texture Random Placement is enabled, false otherwise.
     """
-
 
 def get_texture_zoom_x(material_id: MaterialId) -> float:
     """Gets the texture zoom factor in the X direction for a given material ID.
@@ -740,7 +707,6 @@ def get_texture_zoom_x(material_id: MaterialId) -> float:
         The zoom factor of the texture in the X direction.
     """
 
-
 def set_texture_zoom_x(material_id: MaterialId, value: float) -> None:
     """Sets the texture zoom factor in the X direction for a given material ID.
 
@@ -748,7 +714,6 @@ def set_texture_zoom_x(material_id: MaterialId, value: float) -> None:
         material_id: The material id.
         value: The zoom factor to set in the X direction.
     """
-
 
 def get_texture_zoom_y(material_id: MaterialId) -> float:
     """Gets the texture zoom factor in the Y direction for a given material ID.
@@ -759,7 +724,6 @@ def get_texture_zoom_y(material_id: MaterialId) -> float:
     Returns:
         The zoom factor of the texture in the Y direction.
     """
-
 
 def set_texture_zoom_y(material_id: MaterialId, value: float) -> None:
     """Sets the texture zoom factor in the Y direction for a given material ID.

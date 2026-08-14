@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class hundegger_machine_type(IntEnum):
     """hundegger machine type
@@ -9,6 +8,7 @@ class hundegger_machine_type(IntEnum):
         >>> cadwork.hundegger_machine_type.p8_10
         p8_10
     """
+
     p8_10 = 1
     """"""
     k1 = 2
@@ -40,4 +40,3 @@ class hundegger_machine_type(IntEnum):
 
     def __int__(self) -> int:
         return self.value
-

@@ -1,14 +1,14 @@
 from enum import IntEnum, unique
 
-
 @unique
 class vba_catalog_item_type(IntEnum):
-    """ Enumeration for vba item types.
+    """Enumeration for vba item types.
 
     Examples:
         >>> cadwork.vba_catalog_item_type.nut
         nut
     """
+
     null = 0
     """"""
     nut = 1

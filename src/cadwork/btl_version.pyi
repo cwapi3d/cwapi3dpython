@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class btl_version(IntEnum):
     """btl version
@@ -9,6 +8,7 @@ class btl_version(IntEnum):
         >>> cadwork.btl_version.btlx_1_0
         btlx_1_0
     """
+
     btlx_1_0 = 110
     """"""
     btlx_1_1 = 111
@@ -46,4 +46,3 @@ class btl_version(IntEnum):
 
     def __int__(self) -> int:
         return self.value
-

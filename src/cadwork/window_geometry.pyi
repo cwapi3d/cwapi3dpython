@@ -1,6 +1,5 @@
 from cadwork import point
 
-
 class window_geometry:
     def __init__(self, bottom_left: point, bottom_right: point, top_left: point, top_right: point):
         """
