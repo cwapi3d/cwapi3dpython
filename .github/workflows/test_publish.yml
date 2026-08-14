@@ -23,6 +23,7 @@ jobs:
           filters: |
             src:
               - 'src/**'
+              - 'pyproject.toml'
       - if: steps.changes.outputs.src == 'true'
         uses: actions/setup-python@v6
         with:
