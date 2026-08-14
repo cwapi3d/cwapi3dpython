@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class shortcut_key_modifier(IntEnum):
     """shortcut key modifier
@@ -9,6 +8,7 @@ class shortcut_key_modifier(IntEnum):
         >>> cadwork.shortcut_key_modifier.shift
         shift
     """
+
     shift = 1
     """"""
     ctrl = 2
@@ -18,4 +18,3 @@ class shortcut_key_modifier(IntEnum):
 
     def __int__(self) -> int:
         return self.value
-

@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class shortcut_key(IntEnum):
     """shortcut key
@@ -9,6 +8,7 @@ class shortcut_key(IntEnum):
         >>> cadwork.shortcut_key.F1
         F1
     """
+
     F1 = 1
     """"""
     F2 = 2
@@ -36,4 +36,3 @@ class shortcut_key(IntEnum):
 
     def __int__(self) -> int:
         return self.value
-

@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class element_module_detail(IntEnum):
     """element module detail
@@ -9,6 +8,7 @@ class element_module_detail(IntEnum):
         >>> cadwork.element_module_detail.no_detail
         no_detail
     """
+
     no_detail = 1
     """"""
     angle_detail = 2
@@ -38,4 +38,3 @@ class element_module_detail(IntEnum):
 
     def __int__(self) -> int:
         return self.value
-

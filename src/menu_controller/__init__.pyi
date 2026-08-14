@@ -7,7 +7,6 @@ dialogs when a list-of-options interaction fits better than a
 modal form.
 """
 
-
 def display_simple_menu(menu_items: list[str]) -> str:
     """Displays a simple menu.
 
@@ -17,4 +16,3 @@ def display_simple_menu(menu_items: list[str]) -> str:
     Returns:
         The selected menu item.
     """
-

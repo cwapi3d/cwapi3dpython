@@ -1,5 +1,4 @@
 class shoulder_options:
-    
     def get_add_drilling_axis(self) -> bool:
         """get add drilling axis
 
@@ -339,4 +338,3 @@ class shoulder_options:
         Returns:
             None
         """
-

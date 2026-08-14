@@ -6,7 +6,7 @@ hide:
 # scene_controller
 ## create and add elements to scene
 
-```python 
+```python
 import element_controller as ec
 import cadwork
 import scene_controller as sc
@@ -17,12 +17,11 @@ new_scene = sc.add_scene('NewScene')
 if new_scene:
     sc.add_elements_to_scene('NewScene', element_ids)
     sc.activate_scene('NewScene')
-
 ```
 
 ## get elements from scene
 
-```python 
+```python
 element_ids_scene = sc.get_elements_from_scene('NewScene')
 
 element_subgroup_scene = []
@@ -33,5 +32,4 @@ for element_id in element_ids_scene:
 
 print(len(element_ids_scene))
 print(set(element_subgroup_scene))
-
 ```

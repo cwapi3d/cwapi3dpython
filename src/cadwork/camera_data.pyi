@@ -2,7 +2,6 @@ from cadwork import point_3d
 from cadwork import projection_type
 
 class camera_data:
-    
     def get_position(self) -> point_3d:
         """get position
 
@@ -121,4 +120,3 @@ class camera_data:
         Returns:
             None
         """
-

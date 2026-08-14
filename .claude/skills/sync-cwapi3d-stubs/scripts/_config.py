@@ -22,8 +22,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-CONFIG_FILENAME = "config.toml"
-PERSONAL_CONFIG_FILENAME = "config.personal.toml"
+CONFIG_FILENAME = 'config.toml'
+PERSONAL_CONFIG_FILENAME = 'config.personal.toml'
 
 _SKILL_DIR = Path(__file__).resolve().parent.parent
 
@@ -45,7 +45,7 @@ def _find(filename: str, env_var: str) -> Path | None:
     if override:
         path = Path(override)
         if not path.is_file():
-            raise ConfigError(f"{env_var} points at a missing file: {path}")
+            raise ConfigError(f'{env_var} points at a missing file: {path}')
         return path
     # The skill dir is checked first: it is where the pair actually lives.
     beside_skill = _SKILL_DIR / filename
@@ -73,14 +73,14 @@ def _deep_merge(base: dict[str, Any], override: dict[str, Any]) -> dict[str, Any
 
 def _read_toml(path: Path) -> dict[str, Any]:
     try:
-        return tomllib.loads(path.read_text(encoding="utf-8"))
+        return tomllib.loads(path.read_text(encoding='utf-8'))
     except (tomllib.TOMLDecodeError, UnicodeDecodeError) as error:
-        raise ConfigError(f"{path}: {error}") from error
+        raise ConfigError(f'{path}: {error}') from error
 
 
 def _git_root(start: Path) -> Path | None:
     for directory in (start, *start.parents):
-        if (directory / ".git").exists():
+        if (directory / '.git').exists():
             return directory
     return None
 
@@ -114,117 +114,103 @@ class Config:
 
     @property
     def blacklist_modules(self) -> set[str]:
-        return set(self.section("blacklist").get("modules", []))
+        return set(self.section('blacklist').get('modules', []))
 
     @property
     def blacklist_methods(self) -> set[str]:
-        return set(self.section("blacklist").get("methods", []))
+        return set(self.section('blacklist').get('methods', []))
 
     @property
     def blacklist_qualified(self) -> set[str]:
-        return set(self.section("blacklist").get("qualified", []))
+        return set(self.section('blacklist').get('qualified', []))
 
     @property
     def blacklist_types(self) -> set[str]:
-        return set(self.section("blacklist").get("types", []))
+        return set(self.section('blacklist').get('types', []))
 
     @property
     def blacklist_class_method_patterns(self) -> list[str]:
-        return list(self.section("blacklist").get("class_method_patterns", []))
+        return list(self.section('blacklist').get('class_method_patterns', []))
 
     @property
     def type_map(self) -> dict[str, str]:
-        return dict(self.section("type_map"))
+        return dict(self.section('type_map'))
 
     @property
     def param_names(self) -> dict[str, str]:
-        return dict(self.section("param_names"))
+        return dict(self.section('param_names'))
 
     @property
     def hint_map(self) -> dict[str, str]:
-        return dict(self.section("doxygen_hint_map"))
+        return dict(self.section('doxygen_hint_map'))
 
     @property
     def enums_page(self) -> str:
-        return str(self.section("emit").get("enums_page", "enums.md"))
+        return str(self.section('emit').get('enums_page', 'enums.md'))
 
     @property
     def bump_version(self) -> bool:
-        return bool(self.section("emit").get("bump_version", True))
+        return bool(self.section('emit').get('bump_version', True))
 
 
 def load() -> Config:
-    config_path = _find(CONFIG_FILENAME, "CWSTUBS_CONFIG")
+    config_path = _find(CONFIG_FILENAME, 'CWSTUBS_CONFIG')
     if config_path is None:
-        raise ConfigError(
-            f"no {CONFIG_FILENAME} found beside the skill or above {Path.cwd()}"
-        )
+        raise ConfigError(f'no {CONFIG_FILENAME} found beside the skill or above {Path.cwd()}')
     raw = _read_toml(config_path)
 
     personal_path: Path | None = None
-    if not os.environ.get("CWSTUBS_CONFIG"):
-        personal_path = _find(PERSONAL_CONFIG_FILENAME, "CWSTUBS_PERSONAL_CONFIG")
+    if not os.environ.get('CWSTUBS_CONFIG'):
+        personal_path = _find(PERSONAL_CONFIG_FILENAME, 'CWSTUBS_PERSONAL_CONFIG')
         if personal_path is not None:
             raw = _deep_merge(raw, _read_toml(personal_path))
 
-    paths = raw.get("paths", {})
-    cadlib_raw = paths.get("cadlib_root")
+    paths = raw.get('paths', {})
+    cadlib_raw = paths.get('cadlib_root')
     if not cadlib_raw:
         raise ConfigError(
-            "[paths].cadlib_root is not set. Copy "
-            f"{PERSONAL_CONFIG_FILENAME}.example to {PERSONAL_CONFIG_FILENAME} "
-            f"in {_SKILL_DIR} and set it."
+            '[paths].cadlib_root is not set. Copy '
+            f'{PERSONAL_CONFIG_FILENAME}.example to {PERSONAL_CONFIG_FILENAME} '
+            f'in {_SKILL_DIR} and set it.'
         )
     cadlib_root = Path(cadlib_raw).resolve()
     if not cadlib_root.is_dir():
-        raise ConfigError(f"[paths].cadlib_root does not exist: {cadlib_root}")
+        raise ConfigError(f'[paths].cadlib_root does not exist: {cadlib_root}')
 
-    stub_raw = paths.get("stub_repo")
+    stub_raw = paths.get('stub_repo')
     if stub_raw:
         stub_repo = Path(stub_raw).resolve()
     else:
         discovered = _git_root(config_path.resolve().parent)
         if discovered is None:
-            raise ConfigError(
-                "[paths].stub_repo is unset and no git root was found above "
-                f"{config_path}"
-            )
+            raise ConfigError(f'[paths].stub_repo is unset and no git root was found above {config_path}')
         stub_repo = discovered
     if not stub_repo.is_dir():
-        raise ConfigError(f"[paths].stub_repo does not exist: {stub_repo}")
+        raise ConfigError(f'[paths].stub_repo does not exist: {stub_repo}')
 
-    source = raw.get("source", {})
-    target = raw.get("target", {})
+    source = raw.get('source', {})
+    target = raw.get('target', {})
 
-    python_controller = cadlib_root / source.get(
-        "python_controller", "CwAPI3D/CCwAPI3DPythonController.cpp"
-    )
-    interface_include_dir = cadlib_root / source.get(
-        "interface_include_dir", "CwAPI3D/include"
-    )
-    version_header = cadlib_root / source.get(
-        "version_header", "CwAPI3D/include/CwAPI3DVersion.h"
-    )
+    python_controller = cadlib_root / source.get('python_controller', 'CwAPI3D/CCwAPI3DPythonController.cpp')
+    interface_include_dir = cadlib_root / source.get('interface_include_dir', 'CwAPI3D/include')
+    version_header = cadlib_root / source.get('version_header', 'CwAPI3D/include/CwAPI3DVersion.h')
     if not python_controller.is_file():
-        raise ConfigError(f"binding source not found: {python_controller}")
+        raise ConfigError(f'binding source not found: {python_controller}')
     if not interface_include_dir.is_dir():
-        raise ConfigError(f"interface include dir not found: {interface_include_dir}")
+        raise ConfigError(f'interface include dir not found: {interface_include_dir}')
     # The package version is derived from this header, so a wrong path is a config
     # error rather than something to discover halfway through --apply.
     if not version_header.is_file():
-        raise ConfigError(f"version header not found: {version_header}")
+        raise ConfigError(f'version header not found: {version_header}')
 
-    configured_enum_dirs = source.get("enum_search_dirs")
+    configured_enum_dirs = source.get('enum_search_dirs')
     if configured_enum_dirs:
         enum_dirs = tuple(cadlib_root / entry for entry in configured_enum_dirs)
     else:
         enum_dirs = (interface_include_dir, interface_include_dir.parent)
     missing_enum_dirs = [str(path) for path in enum_dirs if not path.is_dir()]
     if missing_enum_dirs:
-        raise ConfigError(
-            "[source].enum_search_dirs entries do not exist: "
-            + ", ".join(missing_enum_dirs)
-        )
+        raise ConfigError('[source].enum_search_dirs entries do not exist: ' + ', '.join(missing_enum_dirs))
 
     return Config(
         raw=raw,
@@ -236,9 +222,9 @@ def load() -> Config:
         interface_include_dir=interface_include_dir,
         version_header=version_header,
         enum_search_dirs=enum_dirs,
-        src_dir=stub_repo / target.get("src_dir", "src"),
-        docs_dir=stub_repo / target.get("docs_dir", "docs/documentation"),
-        mkdocs=stub_repo / target.get("mkdocs", "mkdocs.yml"),
-        pyproject=stub_repo / target.get("pyproject", "pyproject.toml"),
-        compare_branch=str(target.get("compare_branch", "main")),
+        src_dir=stub_repo / target.get('src_dir', 'src'),
+        docs_dir=stub_repo / target.get('docs_dir', 'docs/documentation'),
+        mkdocs=stub_repo / target.get('mkdocs', 'mkdocs.yml'),
+        pyproject=stub_repo / target.get('pyproject', 'pyproject.toml'),
+        compare_branch=str(target.get('compare_branch', 'main')),
     )

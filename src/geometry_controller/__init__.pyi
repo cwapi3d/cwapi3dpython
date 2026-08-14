@@ -13,7 +13,6 @@ from cadwork.facet_list import facet_list
 from cadwork.point_3d import point_3d
 from cadwork.division_zone_direction import division_zone_direction
 
-
 def rotate_height_axis_90(element_id_list: list[ElementId]) -> None:
     """Rotates the element height axis 90 degrees.
 
@@ -195,8 +194,7 @@ def rotate_height_axis_2_points(element_id_list: list[ElementId], point1: point_
     """
 
 def clear_errors() -> None:
-    """Clears all errors.
-    """
+    """Clears all errors."""
 
 def set_drilling_tolerance(element_id_list: list[ElementId], tolerance: float) -> None:
     """Sets the drilling tolerance of the axis.

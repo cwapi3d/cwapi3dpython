@@ -1,5 +1,4 @@
 class element_type:
-    
     def is_none(self) -> bool:
         """is none
 
@@ -440,4 +439,3 @@ class element_type:
         Returns:
             None
         """
-

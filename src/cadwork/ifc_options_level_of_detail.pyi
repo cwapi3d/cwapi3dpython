@@ -1,5 +1,4 @@
 class ifc_options_level_of_detail:
-    
     def get_export_vba_drillings(self) -> bool:
         """get export vba drillings
 
@@ -17,7 +16,9 @@ class ifc_options_level_of_detail:
             None
         """
 
-    def set_export_installation_rectangular_materialization(self, export_installation_rectangular_materialization: bool) -> None:
+    def set_export_installation_rectangular_materialization(
+        self, export_installation_rectangular_materialization: bool
+    ) -> None:
         """set export installation rectangular materialization
 
         Parameters:
@@ -169,4 +170,3 @@ class ifc_options_level_of_detail:
         Returns:
             None
         """
-

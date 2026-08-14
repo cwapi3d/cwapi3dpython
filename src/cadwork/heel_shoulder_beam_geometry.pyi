@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class heel_shoulder_beam_geometry(IntEnum):
     """heel shoulder beam geometry
@@ -9,6 +8,7 @@ class heel_shoulder_beam_geometry(IntEnum):
         >>> cadwork.heel_shoulder_beam_geometry.normal
         normal
     """
+
     normal = 0
     """NormalHeel
     """
@@ -18,4 +18,3 @@ class heel_shoulder_beam_geometry(IntEnum):
 
     def __int__(self) -> int:
         return self.value
-

@@ -2,9 +2,7 @@ from typing import Iterator
 
 from cadwork import vertex_list
 
-
 class polygon_list:
-
     def count(self) -> int:
         """Returns the number of polygons in the list.
 
@@ -22,7 +20,5 @@ class polygon_list:
         """
 
     def __len__(self) -> int: ...
-
     def __iter__(self) -> Iterator[vertex_list]: ...
-
     def __getitem__(self, index: int) -> vertex_list: ...

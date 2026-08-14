@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class multi_layer_subtype(IntEnum):
     """multi layer subtype
@@ -8,7 +7,8 @@ class multi_layer_subtype(IntEnum):
     Examples:
         >>> cadwork.multi_layer_subtype.undefined
         undefined
-    """    
+    """
+
     undefined = 0
     """"""
     loadBearingFrameStructure = 1
@@ -30,4 +30,3 @@ class multi_layer_subtype(IntEnum):
 
     def __int__(self) -> int:
         return self.value
-

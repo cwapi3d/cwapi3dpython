@@ -1,5 +1,4 @@
 class element_filter:
-
     def set_name(self, name: str) -> None:
         """set name
 

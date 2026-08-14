@@ -1,5 +1,4 @@
 class ifc_options_properties:
-    
     def get_attriubte_nr_ifc_tag(self) -> int:
         """get attriubte nr ifc tag
 
