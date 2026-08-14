@@ -6,7 +6,7 @@ authors = [{ name = "Cadwork", email = "it@cadwork.ca" }]
 requires-python = ">= 3.14"
 description = 'Python bindings for CwAPI3D'
 readme = "README.md"
-license = { file = "LICENSE" }
+license-files = [ "LICENSE" ]
 keywords = ["cadwork"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
