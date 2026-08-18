@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class working_plane_exit_view(IntEnum):
     """working plane exit view
@@ -9,6 +8,7 @@ class working_plane_exit_view(IntEnum):
         >>> cadwork.working_plane_exit_view.previous_view
         previous_view
     """
+
     previous_view = 0
     """Restores the view and controller active before entering."""
     standard_axonometry = 1

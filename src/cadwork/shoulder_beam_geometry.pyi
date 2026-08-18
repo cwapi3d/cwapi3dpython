@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class shoulder_beam_geometry(IntEnum):
     """shoulder beam geometry
@@ -25,4 +24,3 @@ class shoulder_beam_geometry(IntEnum):
 
     def __int__(self) -> int:
         return self.value
-

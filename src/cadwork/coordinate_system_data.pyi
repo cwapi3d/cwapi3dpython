@@ -1,7 +1,6 @@
 from cadwork import point_3d
 
 class coordinate_system_data:
-    
     def get_p1(self) -> point_3d:
         """get p1
 
@@ -22,4 +21,3 @@ class coordinate_system_data:
         Returns:
             point_3d
         """
-

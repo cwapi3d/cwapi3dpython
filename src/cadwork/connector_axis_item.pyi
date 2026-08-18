@@ -1,5 +1,4 @@
 class connector_axis_item:
-
     def get_guid(self) -> str:
         """get guid
 

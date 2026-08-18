@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class element_grouping_type(IntEnum):
     """element grouping type
@@ -9,6 +8,7 @@ class element_grouping_type(IntEnum):
         >>> cadwork.element_grouping_type.group
         group
     """
+
     group = 1
     """"""
     subgroup = 2
@@ -16,4 +16,3 @@ class element_grouping_type(IntEnum):
 
     def __int__(self) -> int:
         return self.value
-

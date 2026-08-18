@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class node_symbol(IntEnum):
     """node symbol
@@ -9,6 +8,7 @@ class node_symbol(IntEnum):
         >>> cadwork.node_symbol.SmallSquare
         SmallSquare
     """
+
     SmallSquare = 1
     """"""
     Square = 2
@@ -30,4 +30,3 @@ class node_symbol(IntEnum):
 
     def __int__(self) -> int:
         return self.value
-

@@ -1,5 +1,4 @@
 class extended_settings:
-    
     def get_btl_wall_export(self) -> bool:
         """get btl wall export
 
@@ -176,23 +175,23 @@ class extended_settings:
         Returns:
             None
         """
-    
-    def get_ignore_processing(self) ->bool:
+
+    def get_ignore_processing(self) -> bool:
         """get ignore processing
 
-            Returns:
-                bool
-            """
+        Returns:
+            bool
+        """
 
-    def set_ignore_processing(self, value: bool) ->None:
+    def set_ignore_processing(self, value: bool) -> None:
         """set ignore processing
 
-            Parameters:
-                value: value
+        Parameters:
+            value: value
 
-            Returns:
-                None
-            """
+        Returns:
+            None
+        """
 
     def get_single_piece(self) -> bool:
         """get single piece

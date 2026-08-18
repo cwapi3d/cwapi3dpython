@@ -5,7 +5,6 @@ from cadwork import polygon_list
 from cadwork import vertex_list
 
 class facet_list:
-    
     def count(self) -> int:
         """count
 
@@ -85,8 +84,5 @@ class facet_list:
         """
 
     def __len__(self) -> int: ...
-
     def __iter__(self) -> Iterator[vertex_list]: ...
-
     def __getitem__(self, index: int) -> vertex_list: ...
-

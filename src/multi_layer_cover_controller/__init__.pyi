@@ -88,7 +88,9 @@ def create_multi_layer_wall(set_name: str) -> MultiLayerSetId:
         The multi layer set id.
     """
 
-def add_layer(set_id: MultiLayerSetId, layer_type: multi_layer_type, name: str, material_id: MaterialId, thickness: float) -> None:
+def add_layer(
+    set_id: MultiLayerSetId, layer_type: multi_layer_type, name: str, material_id: MaterialId, thickness: float
+) -> None:
     """Adds a new layer to the multi layer set.
 
     Parameters:
@@ -519,7 +521,6 @@ def get_multi_layer_sets_for_cover_type(cover_type: multi_layer_cover_type) -> l
         The multi layer set ids.
     """
 
-
 def get_multi_layer_log_walls() -> list[MultiLayerSetId]:
     """Gets all multi layer log wall ids.
 
@@ -682,7 +683,9 @@ def set_layer_standard_beam_guid(set_id: MultiLayerSetId, layer_index: UnsignedI
         guid: The layer standard beam guid.
     """
 
-def add_layer_by_standard_elements(set_id: MultiLayerSetId, type: multi_layer_type, name: str, panel_guid: str, beam_guid: str, thickness: float) -> None:
+def add_layer_by_standard_elements(
+    set_id: MultiLayerSetId, type: multi_layer_type, name: str, panel_guid: str, beam_guid: str, thickness: float
+) -> None:
     """Adds layer by standard element.
 
     Parameters:

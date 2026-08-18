@@ -1,5 +1,4 @@
 class process_type:
-    
     def set_none(self) -> None:
         """set none
 
@@ -307,4 +306,3 @@ class process_type:
         Returns:
             bool
         """
-

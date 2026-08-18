@@ -2,7 +2,6 @@ from cadwork import element_grouping_type, ifc_material_definition
 from cadwork import ifc_element_combine_behaviour
 
 class ifc_options_aggregation:
-    
     def get_export_cover_geometry(self) -> bool:
         """get export cover geometry
 
@@ -87,4 +86,3 @@ class ifc_options_aggregation:
         Returns:
             ifc_material_definition
         """
-

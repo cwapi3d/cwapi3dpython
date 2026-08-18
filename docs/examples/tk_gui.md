@@ -20,6 +20,7 @@ Tkinter is not a thin wrapper, but adds a fair amount of its own logic to make t
 ```python
 import tkinter as tk
 
+
 class Application(tk.Frame):
     def __init__(self, master=None):
         super().__init__(master)
@@ -29,16 +30,16 @@ class Application(tk.Frame):
 
     def create_widgets(self):
         self.hi_there = tk.Button(self)
-        self.hi_there["text"] = "Hello cadwork World\n(click me)"
-        self.hi_there["command"] = self.say_hi
-        self.hi_there.pack(side="top")
+        self.hi_there['text'] = 'Hello cadwork World\n(click me)'
+        self.hi_there['command'] = self.say_hi
+        self.hi_there.pack(side='top')
 
-        self.quit = tk.Button(self, text="QUIT", fg="blue",
-                              command=self.master.destroy)
-        self.quit.pack(side="bottom")
+        self.quit = tk.Button(self, text='QUIT', fg='blue', command=self.master.destroy)
+        self.quit.pack(side='bottom')
 
     def say_hi(self):
-        print("hi there, everyone!")
+        print('hi there, everyone!')
+
 
 root = tk.Tk()
 app = Application(master=root)
@@ -50,31 +51,33 @@ app.mainloop()
 ```python
 import tkinter as tk
 
+
 class MyApp(tk.Frame):
     def __init__(self, master=None):
         super().__init__(master)
         self.pack()
-        
+
         self.ok = tk.Button(self)
-        self.ok["text"] = "cadwork"
-        self.ok["command"] = self.handler
+        self.ok['text'] = 'cadwork'
+        self.ok['command'] = self.handler
         self.ok.pack()
-        
+
     def handler(self):
-        print("Button clicked")
+        print('Button clicked')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     root = tk.Tk()
-    root.geometry("500x300")
+    root.geometry('500x300')
     app = MyApp(root)
     app.mainloop()
-``` 
+```
 
 ### Coupling Widget Variables
 
 ```python
 import tkinter as tk
+
 
 class App(tk.Frame):
     def __init__(self, master):
@@ -87,18 +90,17 @@ class App(tk.Frame):
         # Create the application variable.
         self.contents = tk.StringVar()
         # Set it to some value.
-        self.contents.set("this is a variable")
+        self.contents.set('this is a variable')
         # Tell the entry widget to watch this variable.
-        self.entrythingy["textvariable"] = self.contents
+        self.entrythingy['textvariable'] = self.contents
 
         # Define a callback for when the user hits return.
         # It prints the current value of the variable.
-        self.entrythingy.bind('<Key-Return>',
-                             self.print_contents)
+        self.entrythingy.bind('<Key-Return>', self.print_contents)
 
     def print_contents(self, event):
-        print("Hi. The current entry content is:",
-              self.contents.get())
+        print('Hi. The current entry content is:', self.contents.get())
+
 
 root = tk.Tk()
 myapp = App(root)
@@ -107,12 +109,10 @@ myapp.mainloop()
 
 # PyQt 5
 ```python
-from PyQt5.QtWidgets import (QWidget, QToolTip,
-                             QPushButton, QApplication,
-                             QLabel)
+from PyQt5.QtWidgets import QWidget, QToolTip, QPushButton, QApplication, QLabel
+
 
 class MyWindow(QWidget):
-
     def __init__(self):
         super().__init__()
         self.initUI()
@@ -125,8 +125,8 @@ class MyWindow(QWidget):
         self.setGeometry(300, 300, 300, 200)
         self.setWindowTitle('Qt5 Button')
 
+
 if __name__ == '__main__':
     window = MyWindow()
     window.show()
 ```
-

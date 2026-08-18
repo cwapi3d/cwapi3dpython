@@ -83,8 +83,7 @@ def activate_scene(name: str) -> bool:
     """
 
 def clear_errors() -> None:
-    """Clears all errors.
-    """
+    """Clears all errors."""
 
 def get_scene_list() -> list[str]:
     """Gets the list of scenes.

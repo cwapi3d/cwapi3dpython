@@ -1,17 +1,16 @@
 [project]
 name = "cwapi3d"
-version = "33.333.1"
+version = "33.265.3"
 authors = [{ name = "Cadwork", email = "it@cadwork.ca" }]
 requires-python = ">= 3.14"
 description = 'Python bindings for CwAPI3D'
 readme = "README.md"
-license = { file = "LICENSE" }
-keywords = ["cadwork"]
+license-files = [ "LICENSE" ]
+keywords = [ "cadwork" ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Plugins",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: Microsoft :: Windows",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.14",
@@ -21,36 +20,57 @@ classifiers = [
 [project.urls]
 Homepage = "https://github.com/cwapi3d/cwapi3dpython"
 
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
-[tool.setuptools]
-packages = [
-    "attribute_controller",
-    "bim_controller",
-    "cadwork",
-    "connector_axis_controller",
-    "dimension_controller",
-    "element_controller",
-    "endtype_controller",
-    "file_controller",
-    "geometry_controller",
-    "list_controller",
-    "machine_controller",
-    "material_controller",
-    "menu_controller",
-    "multi_layer_cover_controller",
-    "roof_controller",
-    "scene_controller",
-    "shop_drawing_controller",
-    "utility_controller",
-    "visualization_controller"
+[dependency-groups]
+dev = [
+    "black>=26.5.1",
+    "mkdocs>=1.6.1",
+    "mkdocs-autorefs>=1.4.4",
+    "mkdocs-material>=9.7.7",
+    "mkdocstrings[python]>=1.0.6",
+    "pre-commit>=4.6.2",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.16.3",
 ]
-package-dir = { "" = "src" }
 
-[tool.setuptools.package-data]
-"*" = ["*.pyi", "py.typed"]
+[tool.ruff]
+line-length = 120
 
-[tool.setuptools.exclude-package-data]
-"*" = ["*.py"]
+[tool.ruff.format]
+quote-style = "single"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src/attribute_controller",
+    "src/bim_controller",
+    "src/cadwork",
+    "src/connector_axis_controller",
+    "src/dimension_controller",
+    "src/element_controller",
+    "src/endtype_controller",
+    "src/file_controller",
+    "src/geometry_controller",
+    "src/list_controller",
+    "src/machine_controller",
+    "src/material_controller",
+    "src/menu_controller",
+    "src/multi_layer_cover_controller",
+    "src/roof_controller",
+    "src/scene_controller",
+    "src/shop_drawing_controller",
+    "src/utility_controller",
+    "src/visualization_controller",
+]
+
+[tool.hatch.build]
+include = [
+    "*.pyi",
+    "py.typed",
+]
+exclude = [
+    "*.py",
+]

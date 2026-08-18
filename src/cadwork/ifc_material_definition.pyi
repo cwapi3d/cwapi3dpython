@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class ifc_material_definition(IntEnum):
     """ifc material definition
@@ -9,6 +8,7 @@ class ifc_material_definition(IntEnum):
         >>> cadwork.ifc_material_definition.ignore
         ignore
     """
+
     ignore = 1
     """"""
     material_layer_set = 2
@@ -18,4 +18,3 @@ class ifc_material_definition(IntEnum):
 
     def __int__(self) -> int:
         return self.value
-

@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class shoulder_drilling_orientation(IntEnum):
     """shoulder drilling orientation
@@ -9,6 +8,7 @@ class shoulder_drilling_orientation(IntEnum):
         >>> cadwork.shoulder_drilling_orientation.perpendicular_to_bisector
         perpendicular_to_bisector
     """
+
     perpendicular_to_bisector = 1
     """"""
     perpendicular_to_counter_part = 2
@@ -20,4 +20,3 @@ class shoulder_drilling_orientation(IntEnum):
 
     def __int__(self) -> int:
         return self.value
-

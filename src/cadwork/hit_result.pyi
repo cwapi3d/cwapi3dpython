@@ -1,8 +1,6 @@
 from cadwork.point_3d import point_3d
 
-
 class hit_result:
-
     def get_hit_element_ids(self) -> list[int]:
         """Get hit element IDs.
 

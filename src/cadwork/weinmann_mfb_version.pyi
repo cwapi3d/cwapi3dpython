@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class weinmann_mfb_version(IntEnum):
     """weinmann mfb version
@@ -9,6 +8,7 @@ class weinmann_mfb_version(IntEnum):
         >>> cadwork.weinmann_mfb_version.wup_2_0
         wup_2_0
     """
+
     wup_2_0 = 20
     """"""
     wup_3_1 = 31
@@ -22,4 +22,3 @@ class weinmann_mfb_version(IntEnum):
 
     def __int__(self) -> int:
         return self.value
-

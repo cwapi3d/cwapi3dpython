@@ -1,6 +1,6 @@
 class attribute_display_settings:
     """attribute display settings"""
-    
+
     def get_text_position_percentage(self) -> int:
         """get text position percentage
 
@@ -68,4 +68,3 @@ class attribute_display_settings:
         Returns:
             None
         """
-

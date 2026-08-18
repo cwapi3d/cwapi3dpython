@@ -1,6 +1,5 @@
 from cadwork.panel_prefab_element_type import panel_prefab_element_type
 
-
 class panel_prefab_element_settings:
     """Machine panel prefabrication settings passed to the setter.
 

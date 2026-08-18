@@ -1,5 +1,4 @@
 class layer_settings:
-    
     def get_layer(self) -> int:
         """get layer
 
@@ -72,4 +71,3 @@ class layer_settings:
         Returns:
             None
         """
-

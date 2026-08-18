@@ -64,7 +64,6 @@ def get_endtype_id_end(element_id: ElementId) -> EndtypeId:
         The wanted endtype element id.
     """
 
-
 def get_endtype_id_facet(element_id: ElementId, face_number: int) -> EndtypeId:
     """Gets the endtype id of a face with the face number.
 
@@ -124,7 +123,6 @@ def set_endtype_name_end(element_id: ElementId, name: str) -> None:
         >>> etc.set_endtype_name_end(element, endtype_name)
     """
 
-
 def set_endtype_name_facet(element_id: ElementId, name: str, face_number: int) -> None:
     """Sets the endtype to a face by endtype name.
 
@@ -181,7 +179,6 @@ def set_endtype_id_end(element_id: ElementId, endtype_id: EndtypeId) -> None:
         >>> endtype_id = 54321
         >>> etc.set_endtype_id_end(element, endtype_id)
     """
-
 
 def set_endtype_id_facet(element_id: ElementId, endtype_id: EndtypeId, face_number: int) -> None:
     """Sets the endtype to a face by endtype id.

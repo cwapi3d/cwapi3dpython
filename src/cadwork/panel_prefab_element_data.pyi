@@ -1,6 +1,5 @@
 from cadwork.panel_prefab_element_type import panel_prefab_element_type
 
-
 class panel_prefab_element_data:
     """Read-only machine panel prefabrication data of an element.
 

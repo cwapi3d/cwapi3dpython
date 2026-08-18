@@ -10,7 +10,6 @@ counterpart to file_controller's neutral 3D exports.
 from cadwork.point_3d import point_3d
 from cadwork.api_types import *
 
-
 def export_2d_wireframe_with_clipboard(clipboard_number: UnsignedInt, with_layout: bool) -> None:
     """Exports a 2D wireframe to the clipboard.
 
@@ -99,7 +98,9 @@ def add_wall_section_vertical(element_id: ElementId, position: point_3d) -> None
         position: The section position.
     """
 
-def export_wall_with_clipboard_and_presetting(clipboard_number: UnsignedInt, element_id_list: list[ElementId], presetting_file: str) -> None:
+def export_wall_with_clipboard_and_presetting(
+    clipboard_number: UnsignedInt, element_id_list: list[ElementId], presetting_file: str
+) -> None:
     """Exports a wall to the clipboard.
 
     Parameters:
@@ -123,8 +124,7 @@ def save_export_piece_by_piece_settings(settings_file_path: str) -> None:
     """
 
 def clear_errors() -> None:
-    """Clears all errors.
-    """
+    """Clears all errors."""
 
 def load_export_wall_settings(settings_file_path: str) -> None:
     """Loads wall export settings.

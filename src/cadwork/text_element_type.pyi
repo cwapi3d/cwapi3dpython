@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class text_element_type(IntEnum):
     """text element type
@@ -9,6 +8,7 @@ class text_element_type(IntEnum):
         >>> cadwork.text_element_type.line
         line
     """
+
     line = 0
     """"""
     surface = 1
@@ -20,4 +20,3 @@ class text_element_type(IntEnum):
 
     def __int__(self) -> int:
         return self.value
-
