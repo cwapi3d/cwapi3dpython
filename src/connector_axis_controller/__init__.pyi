@@ -518,3 +518,13 @@ def set_items_at_intersection(
         intersection_index: The index of the intersection. (0-based index)
         items: The items to set.
     """
+
+def get_connector_axis_guid_by_name(name: str) -> str:
+    """Gets the GUID of a connector axis by its name.
+
+    Parameters:
+        name: The name of the connector axis.
+
+    Returns:
+        The GUID of the connector axis.
+    """
