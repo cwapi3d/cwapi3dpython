@@ -119,6 +119,7 @@ beam = ec.create_rectangular_beam_vectors(120.0, 240.0, start.distance(end), sta
 ## midpoint of an element axis
 
 ```python
+import cadwork
 import element_controller as ec
 import geometry_controller as gc
 
@@ -132,6 +133,7 @@ for element_id in ec.get_active_identifiable_element_ids():
 ```python
 from collections import defaultdict
 
+import cadwork
 import attribute_controller as ac
 import element_controller as ec
 

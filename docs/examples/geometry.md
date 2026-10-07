@@ -85,6 +85,8 @@ print(point.z)  # prints z coordinate
 ### point_3d Methods
 
 ```python
+import cadwork
+
 point_3d + point_3d
 point_3d - point_3d
 point_3d * float
@@ -154,6 +156,7 @@ def angle_between_vectors(v1: cw.point_3d, v2: cw.point_3d) -> float:
 Each element moves in the direction of its own `xl` vector, not along the global x axis.
 
 ```python
+import cadwork
 import element_controller as ec
 import geometry_controller as gc
 import utility_controller as uc
@@ -169,6 +172,7 @@ for element_id in ec.get_active_identifiable_element_ids():
 ```python
 import math
 
+import cadwork
 import element_controller as ec
 import geometry_controller as gc
 import utility_controller as uc
@@ -191,6 +195,7 @@ P' = P_1 + \big((P - P_1) \cdot \hat{x}\big)\,\hat{x}
 $$
 
 ```python
+import cadwork
 import element_controller as ec
 import geometry_controller as gc
 import utility_controller as uc

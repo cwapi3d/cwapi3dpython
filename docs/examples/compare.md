@@ -107,6 +107,7 @@ print(is_same_point(p1, p2))
 Elements whose axis points match within the tolerance are reported as duplicates and activated.
 
 ```python
+import cadwork
 import element_controller as ec
 import geometry_controller as gc
 import visualization_controller as vc

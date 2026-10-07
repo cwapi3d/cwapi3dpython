@@ -131,6 +131,7 @@ for building in bc.get_all_buildings():
 
 ```python
 import bim_controller as bc
+import cadwork
 import element_controller as ec
 import geometry_controller as gc
 

@@ -38,6 +38,7 @@ for element_id in element_ids:
 ## create a standard connector between two points
 
 ```python
+import cadwork
 import connector_axis_controller as ca
 import menu_controller as mec
 import utility_controller as uc

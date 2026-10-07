@@ -45,6 +45,7 @@ sdc.add_wall_section_vertical(*element_id, position_vector)
 
 ```python
 import attribute_controller as ac
+import cadwork
 import element_controller as ec
 import shop_drawing_controller as sdc
 import utility_controller as uc
