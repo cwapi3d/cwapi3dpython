@@ -26,6 +26,7 @@ from cadwork.shoulder_options import shoulder_options
 from cadwork.heel_shoulder_options import heel_shoulder_options
 from cadwork.double_shoulder_options import double_shoulder_options
 from cadwork.api_types import *
+from cadwork.element_segment import element_segment
 
 def delete_elements(element_id_list: list[ElementId]) -> None:
     """Deletes the specified elements.
@@ -2675,4 +2676,24 @@ def apply_image_to_surface(
 
     Returns:
         Returns `true` if the image was successfully applied to the surface; otherwise, returns `false` in case of failure. Failures can occur due to invalid file paths, unsupported formats, or issues with the surface element.
+    """
+
+def create_line_from_segments(segments: list[element_segment]) -> ElementId:
+    """Creates a Line element from a mixed path of straight, arc and natural-cubic-spline segments.
+
+    Parameters:
+        segments: the path, first entry seeds the start point.
+
+    Returns:
+        The ID of the created line, or 0 if @p aSegments has fewer than two entries or its first entry is not `elementSegmentType::Straight`.
+    """
+
+def get_line_segments(element_id: ElementId) -> list[element_segment]:
+    """Gets the defining segments of a Line element, straight, arc, or spline alike.
+
+    Parameters:
+        element_id: The ID of the Line element to query.
+
+    Returns:
+        The line's segments, or an empty list if
     """

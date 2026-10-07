@@ -12,6 +12,7 @@ from cadwork.api_types import ElementId, UnsignedInt
 from cadwork.facet_list import facet_list
 from cadwork.point_3d import point_3d
 from cadwork.division_zone_direction import division_zone_direction
+from typing import Any
 
 def rotate_height_axis_90(element_id_list: list[ElementId]) -> None:
     """Rotates the element height axis 90 degrees.
@@ -967,4 +968,15 @@ def stretch_facet(element_id: ElementId, facet_index: UnsignedInt, distance: flo
 
     Returns:
         Whether the facet was moved. - true: the facet moved (or the distance was zero) and the element is marked modified - false: nothing was modified — a distinct code and message are on the error stack, readable via getLastError, and logged to the cadwork API log
+    """
+
+def get_element_collision_type(first_element_id: ElementId, second_element_id: ElementId) -> Any:
+    """Classifies how two elements' geometry relates (touching, contained, interlocking, ...). No side effects: read-only, does not modify the document, activate, or highlight anything.
+
+    Parameters:
+        first_element_id: The first element id.
+        second_element_id: The second element id.
+
+    Returns:
+        How the two elements' geometry relates. - unknown: either element id is invalid, or one of the elements is a type not supported in v1 (Axis, Line) - none: the bodies do not collide - unclassified: the geometry kernel could not classify the relationship - contained: one body is fully contained within the other, without touching its boundary - containedAndTouching: one body is contained within the other and touches its boundary - touching: the bodies touch (share boundary) without interpenetrating volume - coincident: the bodies coincide - interlocking: the bodies genuinely interpenetrate
     """

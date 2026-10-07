@@ -14,6 +14,7 @@ from cadwork.window_geometry import window_geometry
 from cadwork.shortcut_key import shortcut_key
 from cadwork.shortcut_key_modifier import shortcut_key_modifier
 from cadwork.language import language
+from cadwork.navigation_widget_subwindow_position import navigation_widget_subwindow_position
 
 def get_3d_version() -> int:
     """Gets the 3D version.
@@ -984,4 +985,44 @@ def redirect_python_output_to_logger() -> None:
     """Redirects output from Python's print function to the cadwork logger.
     This function is used to redirect the output of the Python interpreter to the logger.
     This is useful for debugging and logging purposes.
+    """
+
+def set_navigation_widget_enabled(position: navigation_widget_subwindow_position, enabled: bool) -> None:
+    """Enables or disables the navigation widget in the specified position.
+
+    Parameters:
+        position: Which Navigation Widget to modify.
+        enabled: enabled.
+    """
+
+def set_navigation_widget_size(position: navigation_widget_subwindow_position, size: int) -> None:
+    """Sets the size of the navigation widget in the specified position.
+
+    Parameters:
+        position: Which Navigation Widget to modify.
+        size: The size value. The value range configurable via the UI goes from 80 to 200 inclusive.
+    """
+
+def set_navigation_widget_north_arrow(position: navigation_widget_subwindow_position, enabled: bool) -> None:
+    """Enables or disables the north arrow of the navigation widget in the specified position.
+
+    Parameters:
+        position: Which Navigation Widget to modify.
+        enabled: enabled.
+    """
+
+def set_navigation_widget_axis(position: navigation_widget_subwindow_position, enabled: bool) -> None:
+    """Enables or disables the axis triad of the navigation widget in the specified position.
+
+    Parameters:
+        position: Which Navigation Widget to modify.
+        enabled: enabled.
+    """
+
+def set_navigation_widget_cube(position: navigation_widget_subwindow_position, enabled: bool) -> None:
+    """Enables or disables the view cube of the navigation widget in the specified position.
+
+    Parameters:
+        position: Which Navigation Widget to modify.
+        enabled: enabled.
     """

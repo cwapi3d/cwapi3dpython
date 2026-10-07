@@ -70,6 +70,8 @@ nav:
           - Active Point Result: documentation/active_point_result.md
           - Display Attribute: documentation/display_attribute.md
           - Connector Axis Item: documentation/connector_axis_item.md
+          - element_segment: documentation/element_segment.md
+          - prefab_layer_info: documentation/prefab_layer_info.md
       - Connector Axis Controller: documentation/connector_axis_controller.md
       - Dimension Controller: documentation/dimension_controller.md
       - Element Controller: documentation/element_controller.md

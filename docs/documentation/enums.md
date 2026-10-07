@@ -141,3 +141,19 @@
     rendering:
         show_root_heading: false
         show_source: true
+
+## element_segment_type
+
+::: cadwork.element_segment_type
+
+## event_type
+
+::: cadwork.event_type
+
+## prefab_layer_side
+
+::: cadwork.prefab_layer_side
+
+## navigation_widget_subwindow_position
+
+::: cadwork.navigation_widget_subwindow_position

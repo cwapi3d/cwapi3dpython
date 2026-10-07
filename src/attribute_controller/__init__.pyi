@@ -16,6 +16,7 @@ from cadwork.extended_settings import extended_settings
 from cadwork.layer_settings import layer_settings
 from cadwork.node_symbol import node_symbol
 from cadwork.process_type import process_type
+from cadwork.prefab_layer_info import prefab_layer_info
 
 def set_name(element_id_list: list[ElementId], name: str) -> None:
     """Sets the element name.
@@ -1629,4 +1630,47 @@ def delete_item_from_name_list(item: str) -> bool:
 
     Returns:
         True if the item was successfully deleted, false otherwise.
+    """
+
+def get_additional_data_keys(element_id: ElementId) -> list[str]:
+    """Gets the additional data keys set on an element through this API.
+
+    Parameters:
+        element_id: The element id.
+
+    Note:
+        Keys cadwork 3d writes internally on the same element are excluded, so the result only contains data put there via setAdditionalData.
+
+    Returns:
+        The additional data keys, empty if the element is unknown or carries no such key.
+    """
+
+def get_prefab_layer_info_all_assigned(element_id: ElementId) -> list[prefab_layer_info]:
+    """Retrieves every prefab layer assigned to the given element, with or without dimension output.
+
+    Parameters:
+        element_id: The element id. An invalid id yields an empty list, never nullptr.
+
+    Returns:
+        The assigned layers. Owned by the API — do not delete it; it stays valid until the controller is released.
+    """
+
+def get_prefab_layer_info_with_dimensions(element_id: ElementId) -> list[prefab_layer_info]:
+    """Retrieves the prefab layers of the given element that are output with dimensions.
+
+    Parameters:
+        element_id: The element id. An invalid id yields an empty list, never nullptr.
+
+    Returns:
+        The layers output with dimensions. Owned by the API — do not delete it; it stays valid until the controller is released.
+    """
+
+def get_prefab_layer_info_without_dimensions(element_id: ElementId) -> list[prefab_layer_info]:
+    """Retrieves the prefab layers of the given element that are output without dimensions.
+
+    Parameters:
+        element_id: The element id. An invalid id yields an empty list, never nullptr.
+
+    Returns:
+        The layers output without dimensions. Owned by the API — do not delete it; it stays valid until the controller is released.
     """

@@ -696,3 +696,44 @@ def add_layer_by_standard_elements(
         beam_guid: The layer standard beam guid.
         thickness: The layer thickness.
     """
+
+def remove_layer(set_id: MultiLayerSetId, layer_index: UnsignedInt) -> None:
+    """Removes one layer from a multi layer set.
+
+    Parameters:
+        set_id: The multi layer set id.
+        layer_index: Zero-based index of the layer to remove, must be smaller than getLayerCount().
+    """
+
+def remove_all_layers(set_id: MultiLayerSetId) -> None:
+    """Removes all layers from a multi layer set.
+
+    Parameters:
+        set_id: The multi layer set id.
+    """
+
+def insert_layer(
+    set_id: MultiLayerSetId,
+    position: UnsignedInt,
+    type: multi_layer_type,
+    name: str,
+    material_id: MaterialId,
+    thickness: float,
+) -> None:
+    """Inserts a layer into a multi layer set at the given position.
+
+    Parameters:
+        set_id: The multi layer set id.
+        position: Zero-based position the new layer receives; values >= getLayerCount() append the layer.
+        type: The type of the layer.
+        name: The name of the layer.
+        material_id: The material of the layer.
+        thickness: The thickness of the layer in mm, must be greater than zero.
+    """
+
+def unset_element_multi_layer_set(element_id: ElementId) -> None:
+    """Removes the multi layer set from an element, which then is a plain element again.
+
+    Parameters:
+        element_id: The element id of the cover.
+    """
