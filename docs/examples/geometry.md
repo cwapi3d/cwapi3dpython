@@ -85,6 +85,8 @@ print(point.z)  # prints z coordinate
 ### point_3d Methods
 
 ```python
+import cadwork
+
 point_3d + point_3d
 point_3d - point_3d
 point_3d * float
@@ -147,4 +149,63 @@ import cadwork as cw
 
 def angle_between_vectors(v1: cw.point_3d, v2: cw.point_3d) -> float:
     return m.acos(v1.dot(v2) / (v1.magnitude() * v2.magnitude())) * (180 / m.pi)
+```
+
+### move elements along their local axis
+
+Each element moves in the direction of its own `xl` vector, not along the global x axis.
+
+```python
+import cadwork
+import element_controller as ec
+import geometry_controller as gc
+import utility_controller as uc
+
+distance = uc.get_user_double('Move distance along the element axis [mm]')
+
+for element_id in ec.get_active_identifiable_element_ids():
+    ec.move_element([element_id], gc.get_xl(element_id) * distance)
+```
+
+### angle between two elements
+
+```python
+import math
+
+import cadwork
+import element_controller as ec
+import geometry_controller as gc
+import utility_controller as uc
+
+element_ids = ec.get_active_identifiable_element_ids()
+if len(element_ids) != 2:
+    uc.print_error('Please activate exactly two elements')
+    raise SystemExit
+
+u, v = (gc.get_xl(element_id) for element_id in element_ids)
+cos_angle = max(-1.0, min(1.0, u.dot(v) / (u.magnitude() * v.magnitude())))
+
+uc.print_error(f'Angle: {math.degrees(math.acos(cos_angle)):.2f}°')
+```
+
+### project a point onto an element axis
+
+$$
+P' = P_1 + \big((P - P_1) \cdot \hat{x}\big)\,\hat{x}
+$$
+
+```python
+import cadwork
+import element_controller as ec
+import geometry_controller as gc
+import utility_controller as uc
+
+element_id = ec.get_active_identifiable_element_ids()[0]
+point = uc.get_user_point()
+
+p1 = gc.get_p1(element_id)
+x_axis = gc.get_xl(element_id).normalized()
+projected = p1 + x_axis * (point - p1).dot(x_axis)
+
+print(f'Projected point {projected}, distance to axis {point.distance(projected):.1f} mm')
 ```

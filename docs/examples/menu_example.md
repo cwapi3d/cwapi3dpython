@@ -225,3 +225,48 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+## visualization menu
+
+```python
+import element_controller as ec
+import menu_controller as mec
+import utility_controller as uc
+import visualization_controller as vc
+
+element_ids = ec.get_active_identifiable_element_ids()
+
+actions = {
+    'Set color': lambda: vc.set_color(element_ids, uc.get_user_int('Color number')),
+    'Transparent': lambda: vc.set_element_transparency(element_ids, 70),
+    'Opaque': lambda: vc.set_element_transparency(element_ids, 0),
+    'Hide': lambda: vc.set_invisible(element_ids),
+}
+
+choice = mec.display_simple_menu([*actions, '', 'Cancel'])
+if choice in actions:
+    actions[choice]()
+```
+
+## export menu
+
+```python
+import bim_controller as bc
+import element_controller as ec
+import file_controller as fc
+import menu_controller as mec
+import utility_controller as uc
+
+element_ids = ec.get_active_identifiable_element_ids()
+
+exports = {
+    'IFC4': lambda path: bc.export_ifc4_silently(element_ids, path + '.ifc'),
+    'STL': lambda path: fc.export_stl_file(element_ids, path + '.stl'),
+    'GLB': lambda path: fc.export_glb_file(element_ids, path + '.glb'),
+}
+
+choice = mec.display_simple_menu([*exports, '', 'Cancel'])
+if choice in exports:
+    exports[choice](r'C:\Exports\model')
+    uc.print_error(f'{choice} export finished')
+```

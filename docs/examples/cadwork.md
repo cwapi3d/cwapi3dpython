@@ -99,3 +99,58 @@ for element in element_ids:
     element_type = ac.get_element_type(element)
     print(cadwork.element_type.isWall(element_type))
 ```
+
+## local axis system from two points
+
+```python
+import cadwork
+import element_controller as ec
+
+start = cadwork.point_3d(0.0, 0.0, 0.0)
+end = cadwork.point_3d(3000.0, 1500.0, 800.0)
+
+x_dir = (end - start).normalized()
+y_dir = cadwork.point_3d(0.0, 0.0, 1.0).cross(x_dir).normalized()
+z_dir = x_dir.cross(y_dir)
+
+beam = ec.create_rectangular_beam_vectors(120.0, 240.0, start.distance(end), start, x_dir, z_dir)
+```
+
+## midpoint of an element axis
+
+```python
+import cadwork
+import element_controller as ec
+import geometry_controller as gc
+
+for element_id in ec.get_active_identifiable_element_ids():
+    midpoint = (gc.get_p1(element_id) + gc.get_p2(element_id)) / 2.0
+    print(element_id, midpoint)
+```
+
+## classify the selection by element type
+
+```python
+from collections import defaultdict
+
+import cadwork
+import attribute_controller as ac
+import element_controller as ec
+
+checks = {
+    'rectangular beam': lambda t: t.is_rectangular_beam(),
+    'panel': lambda t: t.is_panel(),
+    'drilling': lambda t: t.is_drilling_axis(),
+    'line': lambda t: t.is_line(),
+    'auxiliary': lambda t: t.is_auxiliary(),
+}
+
+groups = defaultdict(list)
+for element_id in ec.get_active_identifiable_element_ids():
+    element_type = ac.get_element_type(element_id)
+    label = next((name for name, check in checks.items() if check(element_type)), 'other')
+    groups[label].append(element_id)
+
+for label, ids in groups.items():
+    print(f'{label}: {len(ids)}')
+```

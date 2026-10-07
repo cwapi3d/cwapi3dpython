@@ -80,3 +80,49 @@ if __name__ == '__main__':
     print(person1 == person2)
     print(person1.__hash__() == person2.__hash__())
 ```
+
+## compare cadwork points with a tolerance
+
+`==` on `point_3d` compares exact coordinates. For computed points, use a distance tolerance instead.
+
+```python
+import cadwork
+
+TOLERANCE = 1e-3
+
+
+def is_same_point(a: cadwork.point_3d, b: cadwork.point_3d, tolerance: float = TOLERANCE) -> bool:
+    return a.distance(b) < tolerance
+
+
+p1 = cadwork.point_3d(100.0, 200.0, 300.0)
+p2 = cadwork.point_3d(100.0, 200.0, 300.0000001)
+
+print(p1 == p2)
+print(is_same_point(p1, p2))
+```
+
+## find duplicate elements
+
+Elements whose axis points match within the tolerance are reported as duplicates and activated.
+
+```python
+import cadwork
+import element_controller as ec
+import geometry_controller as gc
+import visualization_controller as vc
+
+TOLERANCE = 0.1
+
+
+def same_axis(a: int, b: int) -> bool:
+    return gc.get_p1(a).distance(gc.get_p1(b)) < TOLERANCE and gc.get_p2(a).distance(gc.get_p2(b)) < TOLERANCE
+
+
+element_ids = ec.get_active_identifiable_element_ids()
+duplicates = {b for i, a in enumerate(element_ids) for b in element_ids[i + 1 :] if same_axis(a, b)}
+
+vc.set_inactive(element_ids)
+vc.set_active(list(duplicates))
+print(f'{len(duplicates)} duplicate elements found')
+```
