@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class element_segment_type(IntEnum):
     """element segment type
@@ -9,6 +8,7 @@ class element_segment_type(IntEnum):
         >>> cadwork.element_segment_type.straight
         straight
     """
+
     straight = 1
     """straight line from the running point to mPosition"""
     arc = 2

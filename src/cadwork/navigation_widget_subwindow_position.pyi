@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class navigation_widget_subwindow_position(IntEnum):
     """navigation widget subwindow position
@@ -9,6 +8,7 @@ class navigation_widget_subwindow_position(IntEnum):
         >>> cadwork.navigation_widget_subwindow_position.none
         none
     """
+
     none = 0
     """"""
     top_right = 1

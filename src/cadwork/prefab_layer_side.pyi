@@ -1,6 +1,5 @@
 from enum import IntEnum, unique
 
-
 @unique
 class prefab_layer_side(IntEnum):
     """prefab layer side
@@ -9,6 +8,7 @@ class prefab_layer_side(IntEnum):
         >>> cadwork.prefab_layer_side.referenceElement
         referenceElement
     """
+
     referenceElement = 0
     """The reference element's own layer ("Riegelwerk") — the centre column of the dialog."""
     referenceSide = 1

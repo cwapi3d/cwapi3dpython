@@ -1,6 +1,5 @@
 from typing import Any
 
-
 class prefab_layer_info:
     """prefab layer info."""
 

@@ -712,7 +712,14 @@ def remove_all_layers(set_id: MultiLayerSetId) -> None:
         set_id: The multi layer set id.
     """
 
-def insert_layer(set_id: MultiLayerSetId, position: UnsignedInt, type: multi_layer_type, name: str, material_id: MaterialId, thickness: float) -> None:
+def insert_layer(
+    set_id: MultiLayerSetId,
+    position: UnsignedInt,
+    type: multi_layer_type,
+    name: str,
+    material_id: MaterialId,
+    thickness: float,
+) -> None:
     """Inserts a layer into a multi layer set at the given position.
 
     Parameters:

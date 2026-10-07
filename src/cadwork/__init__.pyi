@@ -84,7 +84,9 @@ from .language import language as language
 from .multi_layer_cover_type import multi_layer_cover_type as multi_layer_cover_type
 from .multi_layer_subtype import multi_layer_subtype as multi_layer_subtype
 from .multi_layer_type import multi_layer_type as multi_layer_type
-from .navigation_widget_subwindow_position import navigation_widget_subwindow_position as navigation_widget_subwindow_position
+from .navigation_widget_subwindow_position import (
+    navigation_widget_subwindow_position as navigation_widget_subwindow_position,
+)
 from .node_symbol import node_symbol as node_symbol
 from .panel_prefab_element_type import panel_prefab_element_type as panel_prefab_element_type
 from .prefab_layer_side import prefab_layer_side as prefab_layer_side
@@ -112,8 +114,8 @@ __all__ = [
     'UnsignedInt',
     'UserAttributeId',
     # Data classes
-    "element_segment",
-    "prefab_layer_info",
+    'element_segment',
+    'prefab_layer_info',
     'active_point_result',
     'attribute_display_settings',
     'bim_team_upload_result',
@@ -153,10 +155,10 @@ __all__ = [
     'vertex_list',
     'window_geometry',
     # Enumerations
-    "element_segment_type",
-    "event_type",
-    "navigation_widget_subwindow_position",
-    "prefab_layer_side",
+    'element_segment_type',
+    'event_type',
+    'navigation_widget_subwindow_position',
+    'prefab_layer_side',
     'bim_team_upload_result_code',
     'btl_version',
     'dimension_base_format',
