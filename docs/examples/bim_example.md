@@ -135,15 +135,19 @@ import element_controller as ec
 import geometry_controller as gc
 
 building = 'Building_A'
-storeys = [('Level_0', 0.0), ('Level_1', 3000.0), ('Level_2', 6000.0)]
+# (name, z_from, z_to) -> a storey spans z_from <= z < z_to
+storeys = [
+    ('Level_0', 0.0, 3000.0),
+    ('Level_1', 3000.0, 6000.0),
+    ('Level_2', 6000.0, 9000.0),
+]
 
 for element_id in ec.get_active_identifiable_element_ids():
-    z = min(gc.get_p1(element_id).z, gc.get_p2(element_id).z)
-    storey = storeys[0][0]
-    for name, level in storeys:
-        if z >= level:
-            storey = name
-    bc.set_building_and_storey([element_id], building, storey)
+    z = min(vertex.z for vertex in gc.get_element_vertices(element_id))
+    for name, z_from, z_to in storeys:
+        if z_from <= z < z_to:
+            bc.set_building_and_storey([element_id], building, name)
+            break
 ```
 
 ## export IFC4 per storey
