@@ -51,3 +51,52 @@ if drill_bool:
     length = uc.get_user_double('Enter the drilling length')
     drilling = ec.create_drilling_vectors(40, length, pt, cadwork.point_3d(0.0, 0.0, -1.0))
 ```
+
+## project information
+
+```python
+import utility_controller as uc
+
+info = {
+    'File': uc.get_3d_file_name(),
+    'Project': uc.get_project_name(),
+    'Number': uc.get_project_number(),
+    'Customer': uc.get_project_customer(),
+    'Architect': uc.get_project_architect(),
+    'City': uc.get_project_city(),
+    'cadwork': f'{uc.get_3d_version_name()} (build {uc.get_3d_build()})',
+}
+
+for key, value in info.items():
+    uc.print_to_console(f'{key:10} {value}')
+```
+
+## pick points and create beams between them
+
+```python
+import cadwork
+import element_controller as ec
+import utility_controller as uc
+
+points = uc.get_user_points()
+width = uc.get_user_double('Beam width [mm]')
+height = uc.get_user_double('Beam height [mm]')
+z_dir = cadwork.point_3d(0.0, 0.0, 1.0)
+
+for start, end in zip(points, points[1:]):
+    ec.create_rectangular_beam_points(width, height, start, end, start + z_dir)
+```
+
+## number the active elements
+
+```python
+import attribute_controller as ac
+import element_controller as ec
+import utility_controller as uc
+
+prefix = uc.get_user_string('Name prefix')
+start = uc.get_user_int('Start number')
+
+for number, element_id in enumerate(ec.get_active_identifiable_element_ids(), start=start):
+    ac.set_name([element_id], f'{prefix}{number:03d}')
+```

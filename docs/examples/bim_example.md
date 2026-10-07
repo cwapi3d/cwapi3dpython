@@ -113,3 +113,55 @@ for element in element_ids:
     if cadwork.ifc_2x3_element_type.is_ifc_member(ifc_type):
         # do something
 ```
+
+## list buildings and storeys
+
+```python
+import bim_controller as bc
+
+for building in bc.get_all_buildings():
+    print(building)
+    for storey in bc.get_all_storeys(building):
+        height = bc.get_storey_height(building, storey)
+        count = len(bc.get_elements_for_storey(building, storey))
+        print(f'  {storey}: height {height:.0f} mm, {count} elements')
+```
+
+## assign storeys by element height
+
+```python
+import bim_controller as bc
+import element_controller as ec
+import geometry_controller as gc
+
+building = 'Building_A'
+storeys = [('Level_0', 0.0), ('Level_1', 3000.0), ('Level_2', 6000.0)]
+
+for element_id in ec.get_active_identifiable_element_ids():
+    z = min(gc.get_p1(element_id).z, gc.get_p2(element_id).z)
+    storey = storeys[0][0]
+    for name, level in storeys:
+        if z >= level:
+            storey = name
+    bc.set_building_and_storey([element_id], building, storey)
+```
+
+## export IFC4 per storey
+
+```python
+import os
+
+import bim_controller as bc
+import utility_controller as uc
+
+target_dir = uc.get_user_path_from_dialog()
+
+for building in bc.get_all_buildings():
+    for storey in bc.get_all_storeys(building):
+        element_ids = bc.get_elements_for_storey(building, storey)
+        if not element_ids:
+            continue
+        file_path = os.path.join(target_dir, f'{building}_{storey}.ifc')
+        if not bc.export_ifc4_silently(element_ids, file_path):
+            uc.print_error(f'Export failed: {file_path}')
+```
