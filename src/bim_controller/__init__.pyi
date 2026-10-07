@@ -500,3 +500,13 @@ def export_ifc2x3(element_id_list: list[ElementId], file_path: str) -> bool:
     Returns:
         True if the export was successful, false otherwise.
     """
+
+def load_ifc_export_settings(file_path: str) -> bool:
+    """Loads an IFC export settings file into the active document, exactly as pressing "Load settings" and then "OK" in the IFC export dialog does.
+
+    Parameters:
+        file_path: Absolute path to an XML file saved with "Save settings" in the IFC export dialog (root element IfcExportSettings). The path is not resolved against the user profile. Passing nullptr returns false without setting an error.
+
+    Returns:
+        True if the settings were applied. False if the file does not exist, cannot be opened, is not valid XML, or its root element is not IfcExportSettings; the document's settings are then left untouched and getLastError describes the reason. Only these checks are made: the content of a well-formed IfcExportSettings file is applied as the IFC export dialog applies it, so an option the dialog saves but the file omits is read as unchecked, exactly as in the dialog.
+    """

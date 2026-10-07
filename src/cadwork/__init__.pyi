@@ -34,6 +34,7 @@ from .element_filter import element_filter as element_filter
 from .element_map_query import element_map_query as element_map_query
 from .element_module_detail import element_module_detail as element_module_detail
 from .element_module_properties import element_module_properties as element_module_properties
+from .element_segment import element_segment as element_segment
 from .extended_settings import extended_settings as extended_settings
 from .facet_list import facet_list as facet_list
 from .heel_shoulder_beam_geometry import heel_shoulder_beam_geometry as heel_shoulder_beam_geometry
@@ -53,6 +54,7 @@ from .point import point as point
 from .point_2d import point_2d as point_2d
 from .point_3d import point_3d as point_3d
 from .polygon_list import polygon_list as polygon_list
+from .prefab_layer_info import prefab_layer_info as prefab_layer_info
 from .rhino_options import rhino_options as rhino_options
 from .rgb_color import rgb_color as rgb_color
 from .shoulder_beam_geometry import shoulder_beam_geometry as shoulder_beam_geometry
@@ -70,8 +72,10 @@ from .division_zone_direction import division_zone_direction as division_zone_di
 from .dxf_export_version import dxf_export_version as dxf_export_version
 from .dxf_layer_format_type import dxf_layer_format_type as dxf_layer_format_type
 from .element_grouping_type import element_grouping_type as element_grouping_type
+from .element_segment_type import element_segment_type as element_segment_type
 from .element_type import element_type as element_type
 from .end_type import end_type as end_type
+from .event_type import event_type as event_type
 from .hundegger_machine_type import hundegger_machine_type as hundegger_machine_type
 from .ifc_2x3_element_type import ifc_2x3_element_type as ifc_2x3_element_type
 from .ifc_element_combine_behaviour import ifc_element_combine_behaviour as ifc_element_combine_behaviour
@@ -80,8 +84,10 @@ from .language import language as language
 from .multi_layer_cover_type import multi_layer_cover_type as multi_layer_cover_type
 from .multi_layer_subtype import multi_layer_subtype as multi_layer_subtype
 from .multi_layer_type import multi_layer_type as multi_layer_type
+from .navigation_widget_subwindow_position import navigation_widget_subwindow_position as navigation_widget_subwindow_position
 from .node_symbol import node_symbol as node_symbol
 from .panel_prefab_element_type import panel_prefab_element_type as panel_prefab_element_type
+from .prefab_layer_side import prefab_layer_side as prefab_layer_side
 from .process_type import process_type as process_type
 from .projection_type import projection_type as projection_type
 from .shortcut_key import shortcut_key as shortcut_key
@@ -106,6 +112,8 @@ __all__ = [
     'UnsignedInt',
     'UserAttributeId',
     # Data classes
+    "element_segment",
+    "prefab_layer_info",
     'active_point_result',
     'attribute_display_settings',
     'bim_team_upload_result',
@@ -145,6 +153,10 @@ __all__ = [
     'vertex_list',
     'window_geometry',
     # Enumerations
+    "element_segment_type",
+    "event_type",
+    "navigation_widget_subwindow_position",
+    "prefab_layer_side",
     'bim_team_upload_result_code',
     'btl_version',
     'dimension_base_format',
