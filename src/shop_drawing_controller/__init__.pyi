@@ -186,7 +186,9 @@ def add_export_solid_cut(element: ElementId, name: str, normal: point_3d, origin
         True if the cut was added. False if nothing was added; getLastError then returns the reason and one of these error codes: - 1: the element does not exist or is not an export solid or container. - 2: aNormal is a zero-length vector. - 3: the plane does not lie strictly inside the element's extent along the normal. - 5: the element has no extent along the normal. - 6: aName is empty or consists of whitespace only. - 7: a cut with this name already exists on the element. - 8: the element's extent along the normal could not be determined. - 9: the plane lies inside the extent but does not intersect the element's body (e.g. the empty corner of an L-shaped body). - 10: the cut could not be saved.
     """
 
-def add_export_solid_cut_at_relative_position(element: ElementId, name: str, normal: point_3d, relative_position: float) -> bool:
+def add_export_solid_cut_at_relative_position(
+    element: ElementId, name: str, normal: point_3d, relative_position: float
+) -> bool:
     """Adds a named cut to an export solid or container, defined by a plane normal and a relative position across the element's extent along that normal.
 
     Parameters:

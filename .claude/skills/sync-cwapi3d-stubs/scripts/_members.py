@@ -104,16 +104,10 @@ def missing_members(
         if definitions is not None:
             # A C++ alias (btl_1_0 == btlx_1_0) cannot be added to a @unique stub enum, so
             # it is not a gap -- reporting it would keep every run at "gaps found".
-            stub_values = {
-                int(value) for value in re.findall(r'^\s+\w+ = (-?\d+)\s*$', _read(stub.path), re.M)
-            }
+            stub_values = {int(value) for value in re.findall(r'^\s+\w+ = (-?\d+)\s*$', _read(stub.path), re.M)}
             by_name = {member.name: member.value for member in definitions.get(entry.cpp_type.split('::')[-1], [])}
             cpp_for = dict(entry.values)
-            names = [
-                name
-                for name in names
-                if by_name.get(cpp_for[name].split('::')[-1]) not in stub_values
-            ]
+            names = [name for name in names if by_name.get(cpp_for[name].split('::')[-1]) not in stub_values]
     else:
         names = [name for name, _ in entry.methods if not name.startswith('__')]
         names += [name for name, _member, _writable in entry.fields]
@@ -166,9 +160,7 @@ def render_class_members(
         params: list[str] = []
         if signature is None:
             returns = 'Any'
-            warnings.append(
-                f'cadwork.{entry.python_name}.{name}: no C++ declaration found -- signature annotated Any'
-            )
+            warnings.append(f'cadwork.{entry.python_name}.{name}: no C++ declaration found -- signature annotated Any')
             doc_params: list[str] = []
         else:
             returns, needed = resolver.resolve(signature.return_type)

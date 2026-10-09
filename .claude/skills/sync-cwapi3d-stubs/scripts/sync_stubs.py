@@ -293,8 +293,7 @@ def apply_changes(
         ]
         if entry.kind == 'enum':
             taken = {
-                int(value)
-                for value in re.findall(r'^\s+\w+ = (-?\d+)\s*$', _files.read_text(stub_file.path), re.M)
+                int(value) for value in re.findall(r'^\s+\w+ = (-?\d+)\s*$', _files.read_text(stub_file.path), re.M)
             }
             rendered_members = _members.render_enum_members(entry, names, enum_definitions, taken)
         else:
