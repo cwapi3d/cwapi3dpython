@@ -34,6 +34,9 @@ class TypeStub:
     path: Path
     classes: set[str] = field(default_factory=set)
     members: dict[str, set[str]] = field(default_factory=dict)
+    # class name -> (line of the first method, last line of the class); both 1-based.
+    first_def_line: dict[str, int] = field(default_factory=dict)
+    end_line: dict[str, int] = field(default_factory=dict)
 
 
 @dataclass
@@ -99,6 +102,17 @@ def _parse_type(path: Path) -> TypeStub:
             for child in node.body:
                 if isinstance(child, (ast.FunctionDef, ast.AsyncFunctionDef)):
                     members.add(child.name)
+                    # Hand-written stubs declare fields as `self.x = x` in __init__.
+                    for inner in ast.walk(child):
+                        if isinstance(inner, (ast.Assign, ast.AnnAssign)):
+                            targets = inner.targets if isinstance(inner, ast.Assign) else [inner.target]
+                            for target in targets:
+                                if (
+                                    isinstance(target, ast.Attribute)
+                                    and isinstance(target.value, ast.Name)
+                                    and target.value.id == 'self'
+                                ):
+                                    members.add(target.attr)
                 elif isinstance(child, ast.AnnAssign) and isinstance(child.target, ast.Name):
                     members.add(child.target.id)
                 elif isinstance(child, ast.Assign):
@@ -106,6 +120,10 @@ def _parse_type(path: Path) -> TypeStub:
                         if isinstance(target, ast.Name):
                             members.add(target.id)
             stub.members[node.name] = members
+            stub.end_line[node.name] = node.end_lineno or node.lineno
+            defs = [c.lineno for c in node.body if isinstance(c, (ast.FunctionDef, ast.AsyncFunctionDef))]
+            if defs:
+                stub.first_def_line[node.name] = min(defs)
     return stub
 
 
@@ -157,6 +175,36 @@ def append_block(path: Path, block: str, blank_lines: int) -> None:
     trimmed = existing.rstrip('\n')
     separator = '\n' * (blank_lines + 1) if trimmed else ''
     _files.write_text(path, f'{trimmed}{separator}{block.rstrip()}\n')
+
+
+def insert_members(path: Path, class_name: str, lines: list[str], *, before_first_def: bool) -> None:
+    """Add `lines` (already indented for the class body) to an existing class.
+
+    Enum members go in front of the first method so ``__int__`` stays last; method
+    stubs are appended after the last line of the class.
+    """
+    if not lines:
+        return
+    source = _files.read_text(path)
+    tree = ast.parse(source)
+    node = next(
+        (n for n in tree.body if isinstance(n, ast.ClassDef) and n.name == class_name),
+        None,
+    )
+    if node is None:
+        raise ValueError(f'{path}: class {class_name} not found')
+    existing = source.split('\n')
+    defs = [c.lineno for c in node.body if isinstance(c, (ast.FunctionDef, ast.AsyncFunctionDef))]
+    if before_first_def and defs:
+        # Decorators and the blank line above the def stay attached to it.
+        index = min(defs) - 1
+        while index > 0 and not existing[index - 1].strip():
+            index -= 1
+        existing[index:index] = ['', *lines]
+    else:
+        index = node.end_lineno or node.lineno
+        existing[index:index] = ['', *lines]
+    _files.write_text(path, '\n'.join(existing).rstrip('\n') + '\n')
 
 
 def insert_imports(path: Path, imports: list[str]) -> None:

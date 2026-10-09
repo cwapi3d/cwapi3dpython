@@ -34,6 +34,7 @@ import _cpp_bindings
 import _doxygen
 import _emit
 import _files
+import _members
 import _stubs
 
 EXIT_OK = 0
@@ -43,7 +44,7 @@ EXIT_ERROR = 2
 
 @dataclass
 class Gap:
-    kind: str  # "function" | "module" | "type"
+    kind: str  # "function" | "module" | "type" | "member"
     module: str
     name: str
     detail: str = ''
@@ -95,6 +96,7 @@ def build_report(
     inventory: _cpp_bindings.Inventory,
     stubs: _stubs.StubInventory,
     only: set[str],
+    enum_definitions: dict[str, list[_cpp_bindings.EnumMember]] | None = None,
 ) -> Report:
     report = Report()
 
@@ -144,6 +146,17 @@ def build_report(
             if names & known:
                 continue
             report.missing.append(Gap(kind='type', module='cadwork', name=entry.python_name, detail=entry.kind))
+
+    if not only or 'cadwork' in only:
+        skip = [re.compile(pattern) for pattern in config.blacklist_class_method_patterns]
+        for entry in inventory.types:
+            stub_file = stubs.types.get(entry.python_name)
+            if stub_file is None or entry.python_name in config.blacklist_types:
+                continue
+            for member in _members.missing_members(entry, stub_file, skip, enum_definitions):
+                report.missing.append(
+                    Gap(kind='member', module='cadwork', name=f'{entry.python_name}.{member}', detail=entry.kind)
+                )
 
     for module in bound_by_module:
         if module == 'cadwork' or (only and module not in only):
@@ -260,6 +273,53 @@ def apply_changes(
             report.written.append(str(page.relative_to(config.stub_repo)))
             if _emit.patch_mkdocs_nav(config.mkdocs, entry.python_name, entry.python_name, 'Cadwork'):
                 report.written.append(str(config.mkdocs.relative_to(config.stub_repo)))
+        touched_src = True
+
+    signatures = _members.parse_member_signatures(config.python_controller)
+    skip = [re.compile(pattern) for pattern in config.blacklist_class_method_patterns]
+    wanted_members: dict[str, set[str]] = {}
+    for gap in report.missing:
+        if gap.kind == 'member':
+            type_name, _, member = gap.name.partition('.')
+            wanted_members.setdefault(type_name, set()).add(member)
+    for entry in inventory.types:
+        stub_file = stubs.types.get(entry.python_name)
+        if entry.python_name not in wanted_members or stub_file is None:
+            continue
+        names = [
+            name
+            for name in _members.missing_members(entry, stub_file, skip, enum_definitions)
+            if name in wanted_members[entry.python_name]
+        ]
+        if entry.kind == 'enum':
+            taken = {
+                int(value)
+                for value in re.findall(r'^\s+\w+ = (-?\d+)\s*$', _files.read_text(stub_file.path), re.M)
+            }
+            rendered_members = _members.render_enum_members(entry, names, enum_definitions, taken)
+        else:
+            rendered_members = _members.render_class_members(
+                entry, names, resolver, signatures.get(entry.cpp_type.split('::')[-1], {})
+            )
+        report.warnings.extend(rendered_members.warnings)
+        if not rendered_members.lines:
+            continue
+        source = _files.read_text(stub_file.path)
+        wanted_imports = [
+            f'from cadwork.{name} import {name}'
+            for name in sorted(rendered_members.imports)
+            if not re.search(rf'^(from|import) .*\b{name}\b', source, re.M)
+        ]
+        if 'Any' in '\n'.join(rendered_members.lines) and not re.search(r'^from typing import .*\bAny\b', source, re.M):
+            wanted_imports.insert(0, 'from typing import Any')
+        _stubs.insert_members(
+            stub_file.path,
+            entry.python_name,
+            rendered_members.lines,
+            before_first_def=entry.kind == 'enum',
+        )
+        _stubs.insert_imports(stub_file.path, wanted_imports)
+        report.written.append(str(stub_file.path.relative_to(config.stub_repo)))
         touched_src = True
 
     if resolver.unresolved:
@@ -387,7 +447,7 @@ def main(argv: list[str] | None = None) -> int:
         )
         return EXIT_ERROR
 
-    report = build_report(config, inventory, stubs, only)
+    report = build_report(config, inventory, stubs, only, enum_definitions)
     report.api_version_minor = _emit.read_api_version_minor(config.version_header)
 
     if args.apply:
