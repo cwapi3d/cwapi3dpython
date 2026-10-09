@@ -439,3 +439,185 @@ class element_type:
         Returns:
             None
         """
+
+    def is_exchange_object(self) -> bool:
+        """is exchange object
+
+        Returns:
+            bool
+        """
+
+    def is_point_cloud(self) -> bool:
+        """is point cloud
+
+        Returns:
+            bool
+        """
+
+    def is_element_light(self) -> bool:
+        """is element light
+
+        Returns:
+            bool
+        """
+
+    def is_point_cloud_clipping_box(self) -> bool:
+        """is point cloud clipping box
+
+        Returns:
+            bool
+        """
+
+    def is_pdf_object(self) -> bool:
+        """is pdf object
+
+        Returns:
+            bool
+        """
+
+    def is_roof_surface(self) -> bool:
+        """is roof surface
+
+        Returns:
+            bool
+        """
+
+    def is_roof_lathing_surface(self) -> bool:
+        """is roof lathing surface
+
+        Returns:
+            bool
+        """
+
+    def is_framed_wall(self) -> bool:
+        """is framed wall
+
+        Returns:
+            bool
+        """
+
+    def is_solid_wood_wall(self) -> bool:
+        """is solid wood wall
+
+        Returns:
+            bool
+        """
+
+    def is_log_wall(self) -> bool:
+        """is log wall
+
+        Returns:
+            bool
+        """
+
+    def is_framed_floor(self) -> bool:
+        """is framed floor
+
+        Returns:
+            bool
+        """
+
+    def is_solid_wood_floor(self) -> bool:
+        """is solid wood floor
+
+        Returns:
+            bool
+        """
+
+    def is_framed_roof(self) -> bool:
+        """is framed roof
+
+        Returns:
+            bool
+        """
+
+    def is_solid_wood_roof(self) -> bool:
+        """is solid wood roof
+
+        Returns:
+            bool
+        """
+
+    def is_circular_mep(self) -> bool:
+        """is circular mep
+
+        Returns:
+            bool
+        """
+
+    def is_rectangular_mep(self) -> bool:
+        """is rectangular mep
+
+        Returns:
+            bool
+        """
+
+    def set_roof_surface(self) -> None:
+        """set roof surface
+
+        Returns:
+            None
+        """
+
+    def set_framed_wall(self) -> None:
+        """set framed wall
+
+        Returns:
+            None
+        """
+
+    def set_solid_wood_wall(self) -> None:
+        """set solid wood wall
+
+        Returns:
+            None
+        """
+
+    def set_log_wall(self) -> None:
+        """set log wall
+
+        Returns:
+            None
+        """
+
+    def set_framed_floor(self) -> None:
+        """set framed floor
+
+        Returns:
+            None
+        """
+
+    def set_solid_wood_floor(self) -> None:
+        """set solid wood floor
+
+        Returns:
+            None
+        """
+
+    def set_framed_roof(self) -> None:
+        """set framed roof
+
+        Returns:
+            None
+        """
+
+    def set_solid_wood_roof(self) -> None:
+        """set solid wood roof
+
+        Returns:
+            None
+        """
+
+    def set_circular_mep(self) -> None:
+        """set circular mep
+
+        Returns:
+            None
+        """
+
+    def set_rectangular_mep(self) -> None:
+        """set rectangular mep
+
+        Returns:
+            None
+        """
