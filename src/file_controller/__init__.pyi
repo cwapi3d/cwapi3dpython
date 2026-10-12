@@ -14,6 +14,10 @@ from cadwork.dxf_layer_format_type import dxf_layer_format_type
 from cadwork.dxf_export_version import dxf_export_version
 from cadwork.display_attribute import display_attribute
 from cadwork.api_types import *
+from cadwork.file_export_options import file_export_options
+from cadwork.iges_export_options import iges_export_options
+from cadwork.sat_export_options import sat_export_options
+from cadwork.step_export_options import step_export_options
 
 def export_stl_file(element_id_list: list[ElementId], file_path: str) -> None:
     """Exports an STL file.
@@ -602,4 +606,71 @@ def export_step_file_ex(
         file_path: The output file path.
         scale_factor: The file scale factor.
         substract_drillings: Substract drillings.
+    """
+
+def get_sat_export_options() -> sat_export_options:
+    """Creates a new SAT export options instance with default values.
+
+    Defaults: scale factor 1.0, binary, version `sat_export_options.ACIS_V33_0`,
+    all level-of-detail options disabled.
+
+    Returns:
+        The SAT export options, to be passed to `export_file_with_options`.
+    """
+
+def get_step_export_options() -> step_export_options:
+    """Creates a new STEP export options instance with default values.
+
+    Defaults: scale factor 1.0, version `step_export_options.AP214`, metric units,
+    all level-of-detail options disabled.
+
+    Returns:
+        The STEP export options, to be passed to `export_file_with_options`.
+    """
+
+def get_iges_export_options() -> iges_export_options:
+    """Creates a new IGES export options instance with default values.
+
+    Defaults: scale factor 1.0, all level-of-detail options disabled.
+
+    Returns:
+        The IGES export options, to be passed to `export_file_with_options`.
+    """
+
+def export_file_with_options(element_id_list: list[ElementId], file_path: str, options: file_export_options) -> bool:
+    """Exports a file using format-specific export options decorated with element level-of-detail options.
+
+    The concrete type of `options` (as created by `get_sat_export_options()`,
+    `get_step_export_options()` or `get_iges_export_options()`) determines the exported
+    file format; the extension of `file_path` should match that format.
+
+    Parameters:
+        element_id_list: The list of element id to export.
+        file_path: The output file path.
+        options: The format-specific export options.
+
+    Examples:
+        >>> import element_controller as ec
+        >>> import file_controller as fc
+
+        >>> # Export a STEP file with all level of detail options activated
+        >>> options = fc.get_step_export_options()
+        >>> lod = options.get_level_of_detail_options()
+        >>> lod.set_cut_drillings(True)
+        >>> lod.set_materialize_end_types(True)
+        >>> lod.set_cut_end_type_counterparts(True)
+        >>> lod.set_cut_openings(True)
+        >>> lod.set_materialize_mep_elements(True)
+        >>> lod.set_cut_mep_elements(True)
+
+        >>> options.set_scale_factor(1.0)
+        >>> options.set_version(options.AP214)
+        >>> options.set_imperial_units(False)
+
+        >>> elements = ec.get_all_identifiable_element_ids()
+        >>> success = fc.export_file_with_options(elements, r"C:/exports/model.stp", options)
+
+    Returns:
+        True on successful export, False otherwise (e.g. STEP export without a STEP license,
+        export failed or aborted by the user).
     """
