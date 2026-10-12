@@ -653,12 +653,12 @@ def get_texture_transparency(material_id: MaterialId) -> int:
         The transparency of the texture.
     """
 
-def set_texture_transparency(material_id: MaterialId, color_nb: UnsignedInt) -> None:
+def set_texture_transparency(material_id: MaterialId, texture_transparency: UnsignedInt) -> None:
     """Sets the texture transparency for a given material ID.
 
     Parameters:
         material_id: The material id.
-        color_nb: The transparency to set for the texture.
+        texture_transparency: The transparency to set for the texture.
     """
 
 def get_texture_rotation_angle(material_id: MaterialId) -> float:
