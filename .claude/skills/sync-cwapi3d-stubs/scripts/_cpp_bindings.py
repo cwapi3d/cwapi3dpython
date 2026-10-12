@@ -114,12 +114,32 @@ def _skip_string(text: str, index: int) -> int:
     return index
 
 
+def _skip_comment(text: str, index: int) -> int:
+    """Index just past the ``//`` or ``/* */`` comment at `index`, else `index`.
+
+    Without this an apostrophe in a comment ("caller's list") opens a phantom
+    character literal and swallows everything up to the next quote.
+    """
+    if text.startswith('//', index):
+        end = text.find('\n', index)
+        return len(text) if end == -1 else end
+    if text.startswith('/*', index):
+        end = text.find('*/', index + 2)
+        return len(text) if end == -1 else end + 2
+    return index
+
+
 def _match_parens(text: str, open_index: int) -> int:
     """Index of the ``)`` matching the ``(`` at `open_index`, string/brace aware."""
     depth = 0
     index = open_index
     while index < len(text):
         char = text[index]
+        if char == '/':
+            skipped = _skip_comment(text, index)
+            if skipped != index:
+                index = skipped
+                continue
         if char in '"\'':
             index = _skip_string(text, index)
             continue
@@ -141,6 +161,12 @@ def _split_top_level(text: str, separator: str = ',') -> list[str]:
     index = 0
     while index < len(text):
         char = text[index]
+        if char == '/':
+            skipped = _skip_comment(text, index)
+            if skipped != index:
+                current.append(text[index:skipped])
+                index = skipped
+                continue
         if char in '"\'':
             end = _skip_string(text, index)
             current.append(text[index:end])
@@ -335,6 +361,11 @@ def _chain_end(text: str, start: int) -> int:
     index = start
     while index < len(text):
         char = text[index]
+        if char == '/':
+            skipped = _skip_comment(text, index)
+            if skipped != index:
+                index = skipped
+                continue
         if char in '"\'':
             index = _skip_string(text, index)
             continue

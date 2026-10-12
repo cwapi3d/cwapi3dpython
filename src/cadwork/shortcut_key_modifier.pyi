@@ -16,5 +16,8 @@ class shortcut_key_modifier(IntEnum):
     alt = 3
     """"""
 
+    no_modifier = 0
+    """"""
+
     def __int__(self) -> int:
         return self.value
