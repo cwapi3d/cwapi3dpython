@@ -2,7 +2,6 @@ from typing import ClassVar
 
 from .file_export_options import file_export_options
 
-
 class sat_export_options(file_export_options):
     """SAT export options.
 
@@ -15,7 +14,6 @@ class sat_export_options(file_export_options):
     ACIS_V34_0: ClassVar[int] = 3400
 
     def __init__(self) -> None: ...
-
     def get_scale_factor(self) -> float:
         """Gets the file scale factor.
 

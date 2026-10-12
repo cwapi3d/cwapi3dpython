@@ -1,7 +1,6 @@
 from .element_level_of_detail_options import element_level_of_detail_options
 from .file_export_format import file_export_format
 
-
 class file_export_options:
     """Common base for all format-specific export options (SAT, STEP, IGES, ...).
 

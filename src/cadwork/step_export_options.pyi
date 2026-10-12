@@ -2,7 +2,6 @@ from typing import ClassVar
 
 from .file_export_options import file_export_options
 
-
 class step_export_options(file_export_options):
     """STEP export options.
 
@@ -13,7 +12,6 @@ class step_export_options(file_export_options):
     AP214: ClassVar[int] = 214
 
     def __init__(self) -> None: ...
-
     def get_scale_factor(self) -> float:
         """Gets the file scale factor.
 
