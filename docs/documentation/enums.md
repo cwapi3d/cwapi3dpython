@@ -114,6 +114,13 @@
         show_root_heading: false
         show_source: true
 
+### File export format
+
+::: cadwork.file_export_format
+    rendering:
+        show_root_heading: false
+        show_source: true
+
 ## Vba catalog
 
 ::: cadwork.vba_catalog_item_type
