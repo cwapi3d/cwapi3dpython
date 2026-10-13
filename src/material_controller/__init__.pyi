@@ -650,15 +650,15 @@ def get_texture_transparency(material_id: MaterialId) -> int:
         material_id: The material id.
 
     Returns:
-        The transparency of the texture.
+        The transparency of the texture in percent, 0 means no transparency. [0-100]
     """
 
-def set_texture_transparency(color_nb: UnsignedInt, material_id: MaterialId) -> None:
+def set_texture_transparency(material_id: MaterialId, texture_transparency: UnsignedInt) -> None:
     """Sets the texture transparency for a given material ID.
 
     Parameters:
-        color_nb: The transparency to set for the texture.
         material_id: The material id.
+        texture_transparency: The transparency to set for the texture in percent, 0 means no transparency. [0-100]
     """
 
 def get_texture_rotation_angle(material_id: MaterialId) -> float:
