@@ -27,6 +27,7 @@ from cadwork.heel_shoulder_options import heel_shoulder_options
 from cadwork.double_shoulder_options import double_shoulder_options
 from cadwork.api_types import *
 from cadwork.element_segment import element_segment
+from cadwork.spline_surface_order import spline_surface_order
 
 def delete_elements(element_id_list: list[ElementId]) -> None:
     """Deletes the specified elements.
@@ -2696,4 +2697,27 @@ def get_line_segments(element_id: ElementId) -> list[element_segment]:
 
     Returns:
         The line's segments, or an empty list if
+    """
+
+def create_spline_from_surfaces(surface_ids: list[ElementId], order: spline_surface_order, no_twist: bool) -> ElementId:
+    """Creates a spline volume by skinning a series of surface elements, like the "Spline" command of the GUI.
+
+    Parameters:
+        surface_ids: The section surfaces. At least two; every ID must identify a surface element.
+        order: Whether the sections are arranged along a run (Linear) or around a centre (Circular).
+        no_twist: true to keep the skin from twisting between consecutive sections.
+
+    Returns:
+        The ID of the created volume, or 0 if fewer than two IDs are given, an ID is not a surface, or the geometry kernel cannot skin the sections.
+    """
+
+def create_spline_from_surface_and_line(surface_id: ElementId, line_id: ElementId) -> ElementId:
+    """Creates a spline volume by sweeping a surface element along a line element.
+
+    Parameters:
+        surface_id: The ID of the section surface. Must identify a surface element.
+        line_id: The ID of the path. Must identify a line element.
+
+    Returns:
+        The ID of the created volume, or 0 if @p aSurfaceId is not a surface, @p aLineId is not a line, or the geometry kernel cannot sweep the section along the path.
     """

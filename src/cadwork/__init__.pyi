@@ -36,6 +36,7 @@ from .element_map_query import element_map_query as element_map_query
 from .element_module_detail import element_module_detail as element_module_detail
 from .element_module_properties import element_module_properties as element_module_properties
 from .element_segment import element_segment as element_segment
+from .export_solid_cut import export_solid_cut as export_solid_cut
 from .extended_settings import extended_settings as extended_settings
 from .facet_list import facet_list as facet_list
 from .file_export_options import file_export_options as file_export_options
@@ -66,6 +67,7 @@ from .shoulder_options import shoulder_options as shoulder_options
 from .step_export_options import step_export_options as step_export_options
 from .text_object_options import text_object_options as text_object_options
 from .vertex_list import vertex_list as vertex_list
+from .wall_section import wall_section as wall_section
 from .window_geometry import window_geometry as window_geometry
 
 # --- Enumerations ---
@@ -101,9 +103,11 @@ from .projection_type import projection_type as projection_type
 from .shortcut_key import shortcut_key as shortcut_key
 from .shortcut_key_modifier import shortcut_key_modifier as shortcut_key_modifier
 from .shoulder_drilling_orientation import shoulder_drilling_orientation as shoulder_drilling_orientation
+from .spline_surface_order import spline_surface_order as spline_surface_order
 from .standard_element_type import standard_element_type as standard_element_type
 from .text_element_type import text_element_type as text_element_type
 from .vba_catalog_item_type import vba_catalog_item_type as vba_catalog_item_type
+from .wall_section_type import wall_section_type as wall_section_type
 from .weinmann_mfb_version import weinmann_mfb_version as weinmann_mfb_version
 from .working_plane_exit_view import working_plane_exit_view as working_plane_exit_view
 
@@ -120,6 +124,8 @@ __all__ = [
     'UnsignedInt',
     'UserAttributeId',
     # Data classes
+    'export_solid_cut',
+    'wall_section',
     'element_segment',
     'prefab_layer_info',
     'element_level_of_detail_options',
@@ -166,6 +172,8 @@ __all__ = [
     'vertex_list',
     'window_geometry',
     # Enumerations
+    'spline_surface_order',
+    'wall_section_type',
     'element_segment_type',
     'event_type',
     'navigation_widget_subwindow_position',

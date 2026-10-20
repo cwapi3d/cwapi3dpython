@@ -7,6 +7,25 @@ This page keeps the **last 10 releases**. Older notes are in the
 [git history](https://github.com/cwapi3d/cwapi3dpython/commits/main/docs/release_notes.md).
 For everything that changed between two cadwork major versions, see the [Major Release Notes](release_notes_major.md).
 
+<!-- release:33.384.0 -->
+## 33.384.0 — 2026-10-20
+
+[PR #423](https://github.com/cwapi3d/cwapi3dpython/pull/423) · `pip install cwapi3d==33.384.0`
+
+Spline volumes can now be created from surfaces, and shop drawing wall sections and export solid cuts can be read back as planes.
+
+### Added
+
+- [`element_controller.create_spline_from_surfaces`][element_controller.create_spline_from_surfaces]: creates a spline volume by skinning a series of surface elements, like the "Spline" command of the GUI.
+- [`element_controller.create_spline_from_surface_and_line`][element_controller.create_spline_from_surface_and_line]: creates a spline volume by sweeping a surface element along a line element.
+- [`shop_drawing_controller.get_wall_sections`][shop_drawing_controller.get_wall_sections]: gets the wall sections of a wall, floor or roof as planes.
+- [`shop_drawing_controller.get_export_solid_cuts`][shop_drawing_controller.get_export_solid_cuts]: gets the cuts of an export solid or container as planes.
+- [`cadwork.wall_section`][cadwork.wall_section]: new class with `get_type`, `get_point` and `get_normal`.
+- [`cadwork.export_solid_cut`][cadwork.export_solid_cut]: new class with `get_name`, `get_point`, `get_normal` and `get_up_vector`.
+- [`cadwork.spline_surface_order`][cadwork.spline_surface_order]: new enum with `linear` and `circular`.
+- [`cadwork.wall_section_type`][cadwork.wall_section_type]: new enum with `horizontal` and `vertical`.
+<!-- /release:33.384.0 -->
+
 <!-- release:33.383.0 -->
 ## 33.383.0 — 2026-10-13
 
@@ -162,15 +181,3 @@ Permanent hiding of elements, division zones, IFC 2x3/4 export, multi layer set 
 - [`element_controller.apply_image_to_surface`][element_controller.apply_image_to_surface]: applies an image texture to a surface element.
 - Multi layer sets: [`multi_layer_cover_controller.add_layer_by_standard_elements`][multi_layer_cover_controller.add_layer_by_standard_elements], [`get_layer_standard_beam_guid`][multi_layer_cover_controller.get_layer_standard_beam_guid] / [`set_…`][multi_layer_cover_controller.set_layer_standard_beam_guid], [`get_layer_standard_panel_guid`][multi_layer_cover_controller.get_layer_standard_panel_guid] / [`set_…`][multi_layer_cover_controller.set_layer_standard_panel_guid], [`get_layer_sub_type`][multi_layer_cover_controller.get_layer_sub_type] / [`set_…`][multi_layer_cover_controller.set_layer_sub_type], [`get_multi_layer_set_component_type`][multi_layer_cover_controller.get_multi_layer_set_component_type] / [`set_…`][multi_layer_cover_controller.set_multi_layer_set_component_type].
 <!-- /release:33.330.0 -->
-
-<!-- release:33.328.0 -->
-## 33.328.0 — 2026-08-04
-
-[PR #400](https://github.com/cwapi3d/cwapi3dpython/pull/400) · `pip install cwapi3d==33.328.0`
-
-Corrects the documented parameter of `get_user_attribute_list_items`.
-
-### Fixed
-
-- [`attribute_controller.get_user_attribute_list_items`][attribute_controller.get_user_attribute_list_items]: the parameter was documented as an element ID. It is the user attribute number: `get_user_attribute_list_items(number: UserAttributeId) -> list[str]`.
-<!-- /release:33.328.0 -->
