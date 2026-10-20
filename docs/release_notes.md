@@ -5,7 +5,25 @@ Changes to the `cwapi3d` Python API, newest first. Each version is published to
 
 This page keeps the **last 10 releases**. Older notes are in the
 [git history](https://github.com/cwapi3d/cwapi3dpython/commits/main/docs/release_notes.md).
-For everything that changed between two cadwork major versions, see the [Major Release Notes](release_notes_major.md).
+
+<!-- release:33.384.0 -->
+## 33.384.0 — 2026-10-20
+
+[PR #423](https://github.com/cwapi3d/cwapi3dpython/pull/423) · `pip install cwapi3d==33.384.0`
+
+Spline volumes can now be created from surfaces, and shop drawing wall sections and export solid cuts can be read back as planes.
+
+### Added
+
+- [`element_controller.create_spline_from_surfaces`][element_controller.create_spline_from_surfaces]: creates a spline volume by skinning a series of surface elements, like the "Spline" command of the GUI.
+- [`element_controller.create_spline_from_surface_and_line`][element_controller.create_spline_from_surface_and_line]: creates a spline volume by sweeping a surface element along a line element.
+- [`shop_drawing_controller.get_wall_sections`][shop_drawing_controller.get_wall_sections]: gets the wall sections of a wall, floor or roof as planes.
+- [`shop_drawing_controller.get_export_solid_cuts`][shop_drawing_controller.get_export_solid_cuts]: gets the cuts of an export solid or container as planes.
+- [`cadwork.wall_section`][cadwork.wall_section]: new class with `get_type`, `get_point` and `get_normal`.
+- [`cadwork.export_solid_cut`][cadwork.export_solid_cut]: new class with `get_name`, `get_point`, `get_normal` and `get_up_vector`.
+- [`cadwork.spline_surface_order`][cadwork.spline_surface_order]: new enum with `linear` and `circular`.
+- [`cadwork.wall_section_type`][cadwork.wall_section_type]: new enum with `horizontal` and `vertical`.
+<!-- /release:33.384.0 -->
 
 <!-- release:33.384.0 -->
 ## 33.384.0 — 2026-10-20
