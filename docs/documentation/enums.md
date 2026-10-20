@@ -164,3 +164,11 @@
 ## navigation_widget_subwindow_position
 
 ::: cadwork.navigation_widget_subwindow_position
+
+## spline_surface_order
+
+::: cadwork.spline_surface_order
+
+## wall_section_type
+
+::: cadwork.wall_section_type

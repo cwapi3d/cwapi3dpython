@@ -9,6 +9,8 @@ counterpart to file_controller's neutral 3D exports.
 
 from cadwork.point_3d import point_3d
 from cadwork.api_types import *
+from cadwork.export_solid_cut import export_solid_cut
+from cadwork.wall_section import wall_section
 
 def export_2d_wireframe_with_clipboard(clipboard_number: UnsignedInt, with_layout: bool) -> None:
     """Exports a 2D wireframe to the clipboard.
@@ -207,4 +209,24 @@ def add_export_solid_cut_at_relative_position(
 
     Returns:
         True if the cut was added. False if nothing was added; getLastError then returns the reason and one of these error codes: - 1: the element does not exist or is not an export solid or container. - 2: aNormal is a zero-length vector. - 4: aRelativePosition is not inside the open interval (0,1), or is NaN. - 5: the element has no extent along the normal. - 6: aName is empty or consists of whitespace only. - 7: a cut with this name already exists on the element. - 8: the element's extent along the normal could not be determined. - 9: the plane does not intersect the element's body (e.g. the empty corner of an L-shaped body). - 10: the cut could not be saved.
+    """
+
+def get_wall_sections(element: ElementId) -> list[wall_section]:
+    """Gets the wall sections of a wall, floor or roof as planes.
+
+    Parameters:
+        element: A wall, floor or roof.
+
+    Returns:
+        The element's wall sections; never null. An empty list means the element has none. If the list is empty because of an error, getLastError returns the reason and this error code: - 1: the element does not exist or is not a wall, floor or roof.
+    """
+
+def get_export_solid_cuts(element: ElementId) -> list[export_solid_cut]:
+    """Gets the cuts of an export solid or container as planes.
+
+    Parameters:
+        element: An export solid or container.
+
+    Returns:
+        The element's cuts; never null. An empty list means the element has none. If the list is empty because of an error, getLastError returns the reason and this error code: - 1: the element does not exist or is not an export solid or container.
     """
