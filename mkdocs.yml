@@ -125,7 +125,7 @@ nav:
   - About:
       - About Guide: about.md
   - Release Notes:
-      - Minor Release Notes: release_notes.md
+      - Release Notes (last 10): release_notes.md
       - Major Release Notes: release_notes_major.md
 
 markdown_extensions:

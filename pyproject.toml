@@ -75,3 +75,9 @@ include = [
 exclude = [
     "*.py",
 ]
+
+[tool.coverage.run]
+# Dev tooling under .claude/ is tested but is not part of the package coverage.
+omit = [
+    ".claude/*",
+]

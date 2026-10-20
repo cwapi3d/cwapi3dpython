@@ -265,6 +265,8 @@ Leave the changes **uncommitted** on the working branch. Report:
 3. For a brand-new module, the `TODO` module docstring left in
    `src/<module>/__init__.pyi` — the bindings carry no module-level documentation,
    so that one paragraph has to be written by a human.
+4. When the version was bumped, the next step: run `/release-notes` to add the
+   release to `docs/release_notes.md` (it reads the uncommitted bump as `WORKTREE`).
 
 Do not commit, push, or open a PR unless the operator asks.
 
