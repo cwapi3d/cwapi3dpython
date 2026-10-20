@@ -10,7 +10,7 @@ For everything that changed between two cadwork major versions, see the [Major R
 <!-- release:33.384.0 -->
 ## 33.384.0 — 2026-10-20
 
-`pip install cwapi3d==33.384.0`
+[PR #423](https://github.com/cwapi3d/cwapi3dpython/pull/423) · `pip install cwapi3d==33.384.0`
 
 Spline volumes can now be created from surfaces, and shop drawing wall sections and export solid cuts can be read back as planes.
 
