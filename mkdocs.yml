@@ -126,9 +126,7 @@ nav:
       - mcp.md
   - About:
       - About Guide: about.md
-  - Release Notes:
-      - Release Notes (last 10): release_notes.md
-      - Major Release Notes: release_notes_major.md
+  - Release Notes: release_notes.md
 
 markdown_extensions:
   - admonition
