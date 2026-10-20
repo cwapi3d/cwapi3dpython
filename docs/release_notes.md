@@ -5,7 +5,6 @@ Changes to the `cwapi3d` Python API, newest first. Each version is published to
 
 This page keeps the **last 10 releases**. Older notes are in the
 [git history](https://github.com/cwapi3d/cwapi3dpython/commits/main/docs/release_notes.md).
-For everything that changed between two cadwork major versions, see the [Major Release Notes](release_notes_major.md).
 
 <!-- release:33.384.0 -->
 ## 33.384.0 — 2026-10-20
