@@ -9,7 +9,7 @@ This page keeps the **last 10 releases**. Older notes are in the
 <!-- release:33.392.0 -->
 ## 33.392.0 — 2026-10-27
 
-`pip install cwapi3d==33.392.0`
+[PR #426](https://github.com/cwapi3d/cwapi3dpython/pull/426) · `pip install cwapi3d==33.392.0`
 
 Standard elements can now be looked up by name and their names resolved from a GUID.
 
