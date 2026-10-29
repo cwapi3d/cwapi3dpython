@@ -593,6 +593,10 @@ def create_auto_export_solid_from_standard(
 ) -> ElementId:
     """Creates an auto export solid from a standard element.
 
+    Standard element names are not unique, only GUIDs are: if several standard elements share this name, the
+    first match is used. Folders of the standard element library are not handled by the API and cannot be used
+    to select one.
+
     Parameters:
         element_id_list: The elements to use.
         output_name: The output name.
@@ -831,6 +835,10 @@ def create_auto_container_from_standard(
 ) -> ElementId:
     """Create an auto container from a standard element.
 
+    Standard element names are not unique, only GUIDs are: if several standard elements share this name, the
+    first match is used. Folders of the standard element library are not handled by the API and cannot be used
+    to select one.
+
     Parameters:
         element_id_list: The list of elements to be used in the auto container.
         output_name: The name of the output.
@@ -844,6 +852,10 @@ def create_auto_export_solid_from_standard_with_reference(
     element_id_list: list[ElementId], output_name: str, standard_element_name: str, reference_id: ElementId
 ) -> ElementId:
     """Creates an auto export solid from a standard element with a reference.
+
+    Standard element names are not unique, only GUIDs are: if several standard elements share this name, the
+    first match is used. Folders of the standard element library are not handled by the API and cannot be used
+    to select one.
 
     Parameters:
         element_id_list: The list of elements to be used in the export solid.
@@ -859,6 +871,10 @@ def create_auto_container_from_standard_with_reference(
     element_id_list: list[ElementId], output_name: str, standard_element_name: str, reference_id: ElementId
 ) -> ElementId:
     """Creates an auto container from a standard element with a reference.
+
+    Standard element names are not unique, only GUIDs are: if several standard elements share this name, the
+    first match is used. Folders of the standard element library are not handled by the API and cannot be used
+    to select one.
 
     Parameters:
         element_id_list: The list of elements to be used in the auto container.
@@ -962,6 +978,10 @@ def create_standard_beam_points(
 ) -> ElementId:
     """Creates a standard beam using points.
 
+    Standard element names are not unique, only GUIDs are: if several standard beams share this name, the first
+    match is used. Folders of the standard element library are not handled by the API and cannot be used to
+    select one; to create a specific standard element use `create_standard_element_from_guid_points`.
+
     Parameters:
         standard_element_name: The name of the standard element.
         first_point: The first point.
@@ -992,6 +1012,10 @@ def create_standard_beam_vectors(
 ) -> ElementId:
     """Creates a standard beam using vectors.
 
+    Standard element names are not unique, only GUIDs are: if several standard beams share this name, the first
+    match is used. Folders of the standard element library are not handled by the API and cannot be used to
+    select one; to create a specific standard element use `create_standard_element_from_guid_vectors`.
+
     Parameters:
         standard_element_name: The name of the standard element.
         length: The length of the beam.
@@ -1015,6 +1039,10 @@ def create_standard_panel_points(
     standard_element_name: str, first_point: point_3d, second_point: point_3d, third_point: point_3d
 ) -> ElementId:
     """Creates a standard panel using points.
+
+    Standard element names are not unique, only GUIDs are: if several standard panels share this name, the first
+    match is used. Folders of the standard element library are not handled by the API and cannot be used to
+    select one; to create a specific standard element use `create_standard_element_from_guid_points`.
 
     Parameters:
         standard_element_name: The name of the standard element.
@@ -1044,6 +1072,10 @@ def create_standard_panel_vectors(
 ) -> ElementId:
     """Creates a standard panel using vectors.
 
+    Standard element names are not unique, only GUIDs are: if several standard panels share this name, the first
+    match is used. Folders of the standard element library are not handled by the API and cannot be used to
+    select one; to create a specific standard element use `create_standard_element_from_guid_vectors`.
+
     Parameters:
         standard_element_name: The name of the standard element.
         length: The length of the panel.
@@ -1067,6 +1099,10 @@ def create_standard_steel_points(
     standard_element_name: str, first_point: point_3d, second_point: point_3d, third_point: point_3d
 ) -> ElementId:
     """Creates a standard steel element using points.
+
+    Standard element names are not unique, only GUIDs are: if several standard steel elements share this name,
+    the first match is used. Folders of the standard element library are not handled by the API and cannot be
+    used to select one.
 
     Parameters:
         standard_element_name: The name of the standard element.
@@ -1097,6 +1133,10 @@ def create_standard_steel_vectors(
     z_local_direction: point_3d,
 ) -> ElementId:
     """Creates a standard steel element using vectors.
+
+    Standard element names are not unique, only GUIDs are: if several standard steel elements share this name,
+    the first match is used. Folders of the standard element library are not handled by the API and cannot be
+    used to select one.
 
     Parameters:
         standard_element_name: The name of the standard element.
@@ -1161,6 +1201,10 @@ def create_normal_axis_vectors(length: float, starting_point: point_3d, axis_dir
 
 def convert_bolt_to_standardconnector(element_id_list: list[ElementId], standard_element_name: str) -> None:
     """Converts bolts to standard connectors.
+
+    Standard element names are not unique, only GUIDs are: if several standard elements share this name, the
+    first match is used. Folders of the standard element library are not handled by the API and cannot be used
+    to select one.
 
     Parameters:
         element_id_list: The list of bolts to convert.
@@ -1530,6 +1574,9 @@ def create_standard_element_from_guid_points(
 ) -> ElementId:
     """Creates a standard element from GUID points.
 
+    The GUID identifies the standard element unambiguously, unlike its name. Folders of the standard element
+    library are not handled by the API.
+
     Parameters:
         guid: The GUID of the standard element.
         first_point: The first point.
@@ -1544,6 +1591,9 @@ def create_standard_element_from_guid_vectors(
     guid: str, length: float, starting_point: point_3d, x_local_direction: point_3d, z_local_direction: point_3d
 ) -> ElementId:
     """Creates a standard element from GUID vectors.
+
+    The GUID identifies the standard element unambiguously, unlike its name. Folders of the standard element
+    library are not handled by the API.
 
     Parameters:
         guid: The GUID of the standard element.
@@ -1885,12 +1935,20 @@ def get_standard_container_list() -> list[str]:
 def get_standard_beam_list() -> list[str]:
     """Retrieves a list of standard beam names.
 
+    Names are not unique, only GUIDs are, so the list can contain the same name several times. Folders of the
+    standard element library are not handled by the API and are not part of the names. Use
+    `get_standard_beam_guid_list` to identify standard beams unambiguously.
+
     Returns:
         The list of standard beam names.
     """
 
 def get_standard_panel_list() -> list[str]:
     """Retrieves a list of standard panel names.
+
+    Names are not unique, only GUIDs are, so the list can contain the same name several times. Folders of the
+    standard element library are not handled by the API and are not part of the names. Use
+    `get_standard_panel_guid_list` to identify standard panels unambiguously.
 
     Returns:
         The list of standard panel names.
@@ -2615,7 +2673,12 @@ def import_standard_panel_from_file(file_path: str) -> None:
 def export_as_standard_element(element_id: ElementId, name: str) -> str:
     """Exports an existing element as a standard element.
 
-    In case of duplicated names, a count suffix will be appended (e.g., (2)).
+    Make sure no standard element with this name already exists before calling this function
+    (see `get_standard_element_guid_from_name`): otherwise the name is changed to avoid duplicates
+    by appending a count suffix, e.g. (2). Read the actual name back with
+    `get_standard_element_name_from_guid` on the returned GUID.
+    Folders of the standard element library are not handled by this API. To order standard elements,
+    use separators in the name, e.g. "Walls - Exterior - 160mm".
     Note that creating elements of standard element type Metal is not supported by this function.
 
     Parameters:
