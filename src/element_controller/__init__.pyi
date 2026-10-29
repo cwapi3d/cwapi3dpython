@@ -2721,3 +2721,37 @@ def create_spline_from_surface_and_line(surface_id: ElementId, line_id: ElementI
     Returns:
         The ID of the created volume, or 0 if @p aSurfaceId is not a surface, @p aLineId is not a line, or the geometry kernel cannot sweep the section along the path.
     """
+
+def get_standard_element_guid_from_name(name: str, type: standard_element_type) -> str:
+    """Gets the GUID of a standard element from its name. The name is matched in the current cadwork language. When several standard elements share the name (for example in different directories, or a steel profile available in several locales), the first match is returned: the same standard element the corresponding createStandard* function creates for that name. Steel profile names use cadwork notation, as for createStandardSteelPoints.
+
+    Parameters:
+        name: The name of the standard element.
+        type: The kind of standard element to search: beam, panel, vba, exportSolid, container or metal (steel).
+
+    Examples:
+        >>> import cadwork
+        >>> import element_controller as ec
+        >>> guid = ec.get_standard_element_guid_from_name("KVH 60x120", cadwork.standard_element_type.beam)
+        >>> if guid:
+        ...     print(f"GUID: {guid}")
+
+    Returns:
+        The GUID in braces, e.g. "{1B4E28BA-2FA1-11D2-883F-0016D3CCA427}", or an empty string if the name is empty or no standard element of that kind has this name.
+    """
+
+def get_standard_element_name_from_guid(guid: str) -> str:
+    """Gets the name of a standard element from its GUID. Works for every kind of standard element, steel profiles included. The name is returned in the current cadwork language. Use it to show a GUID obtained from e.g. getStandardBeamGuidList or getStandardElementGuidFromName to the user.
+
+    Parameters:
+        guid: The GUID of the standard element, in braces, e.g. "{1B4E28BA-2FA1-11D2-883F-0016D3CCA427}".
+
+    Examples:
+        >>> import element_controller as ec
+        >>> for guid in ec.get_standard_beam_guid_list():
+        ...     name = ec.get_standard_element_name_from_guid(guid)
+        ...     print(f"{guid}: {name}")
+
+    Returns:
+        The name of the standard element, or an empty string if the GUID is malformed or no standard element has it.
+    """
