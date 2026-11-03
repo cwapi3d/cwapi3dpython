@@ -12,6 +12,8 @@ from cadwork.point_3d import point_3d
 from cadwork.api_types import *
 from cadwork.rgb_color import rgb_color
 from cadwork.working_plane_exit_view import working_plane_exit_view
+from cadwork.background_type import background_type
+from cadwork.render_view_type import render_view_type
 
 def set_color(element_id_list: list[ElementId], color_id: ColorId) -> None:
     """Sets the element color.
@@ -455,4 +457,70 @@ def get_permanently_hidden_elements() -> list[ElementId]:
 
     Returns:
         The permanently hidden elements owned by this API, empty when there are none.
+    """
+
+def get_background_color(render_view: render_view_type) -> rgb_color:
+    """Gets the background color a render view displays.
+
+    Each render view keeps its own background, as set in the graphics options dialog. The result is the color actually shown: black for a [`cadwork.background_type.black`][cadwork.background_type.background_type.black] background, white for [`cadwork.background_type.white`][cadwork.background_type.background_type.white], the stored color for [`cadwork.background_type.user`][cadwork.background_type.background_type.user], and black for [`cadwork.background_type.image`][cadwork.background_type.background_type.image], which has no single color. Use [`get_background_type`][visualization_controller.get_background_type] to tell a user color from a plain black or white background.
+
+    Parameters:
+        render_view: The render view to query. Need not be the render view currently displayed.
+
+    Examples:
+        >>> import cadwork
+        >>> import visualization_controller as vc
+        >>> color = vc.get_background_color(cadwork.render_view_type.shading1)
+        >>> print(f"Shading 1 background: {color.r} {color.g} {color.b}")
+
+    Returns:
+        The displayed background color, components 0 to 255; black when `render_view` is not a defined render view.
+    """
+
+def set_background_color(render_view: render_view_type, color: rgb_color) -> None:
+    """Sets a user background color for a render view.
+
+    Stores the color and switches the render view's background type to [`cadwork.background_type.user`][cadwork.background_type.background_type.user], so the color is shown immediately. When `render_view` is the render view currently displayed, the 3d view is repainted. The background is saved with the drawing, so the active document is marked modified. Setting the color and type the render view already has, or an undefined `render_view`, changes nothing.
+
+    Parameters:
+        render_view: The render view to change.
+        color: The new color, components 0 to 255; larger values are clamped to 255.
+
+    Examples:
+        >>> import cadwork
+        >>> import visualization_controller as vc
+        >>> vc.set_background_color(cadwork.render_view_type.wireframe, cadwork.rgb_color(40, 40, 60))
+    """
+
+def get_background_type(render_view: render_view_type) -> background_type:
+    """Gets how the background of a render view is filled.
+
+    Parameters:
+        render_view: The render view to query. Need not be the render view currently displayed.
+
+    Examples:
+        >>> import cadwork
+        >>> import visualization_controller as vc
+        >>> if vc.get_background_type(cadwork.render_view_type.hidden_line) == cadwork.background_type.image:
+        ...     print("Hidden line view uses a background image")
+
+    Returns:
+        The fill type; [`cadwork.background_type.black`][cadwork.background_type.background_type.black] when `render_view` is not a defined render view.
+    """
+
+def set_background_type(render_view: render_view_type, type: background_type) -> None:
+    """Sets how the background of a render view is filled.
+
+    Switching to [`cadwork.background_type.user`][cadwork.background_type.background_type.user] shows the color last stored for that render view (see [`set_background_color`][visualization_controller.set_background_color]); switching away from it keeps that color for later. When `render_view` is the render view currently displayed, the 3d view is repainted, and the active document is marked modified. Setting the type the render view already has changes nothing.
+
+    **[`cadwork.background_type.image`][cadwork.background_type.background_type.image] cannot be set through the API**: an image background needs an image chosen in the graphics options dialog. Passing it, or an undefined `render_view`, changes nothing.
+
+    Parameters:
+        render_view: The render view to change.
+        type: The new fill type: black, white or user.
+
+    Examples:
+        >>> import cadwork
+        >>> import visualization_controller as vc
+        >>> vc.set_background_type(cadwork.render_view_type.shading2, cadwork.background_type.white)
     """
