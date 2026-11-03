@@ -7,9 +7,9 @@ This page keeps the **last 10 releases**. Older notes are in the
 [git history](https://github.com/cwapi3d/cwapi3dpython/commits/main/docs/release_notes.md).
 
 <!-- release:33.396.0 -->
-## 33.396.0 — 2026-11-02
+## 33.396.0 — 2026-11-03
 
-`pip install cwapi3d==33.396.0`
+[PR #428](https://github.com/cwapi3d/cwapi3dpython/pull/428) · `pip install cwapi3d==33.396.0`
 
 The background of each render view can now be read and set from a plugin: plain black, plain white or a user-defined color, as in the graphics options dialog.
 
