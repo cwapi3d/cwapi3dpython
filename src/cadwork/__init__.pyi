@@ -71,6 +71,7 @@ from .wall_section import wall_section as wall_section
 from .window_geometry import window_geometry as window_geometry
 
 # --- Enumerations ---
+from .background_type import background_type as background_type
 from .bim_team_upload_result_code import bim_team_upload_result_code as bim_team_upload_result_code
 from .btl_version import btl_version as btl_version
 from .dimension_base_format import dimension_base_format as dimension_base_format
@@ -100,6 +101,7 @@ from .panel_prefab_element_type import panel_prefab_element_type as panel_prefab
 from .prefab_layer_side import prefab_layer_side as prefab_layer_side
 from .process_type import process_type as process_type
 from .projection_type import projection_type as projection_type
+from .render_view_type import render_view_type as render_view_type
 from .shortcut_key import shortcut_key as shortcut_key
 from .shortcut_key_modifier import shortcut_key_modifier as shortcut_key_modifier
 from .shoulder_drilling_orientation import shoulder_drilling_orientation as shoulder_drilling_orientation
@@ -172,6 +174,7 @@ __all__ = [
     'vertex_list',
     'window_geometry',
     # Enumerations
+    'background_type',
     'spline_surface_order',
     'wall_section_type',
     'element_segment_type',
@@ -199,6 +202,7 @@ __all__ = [
     'multi_layer_type',
     'node_symbol',
     'panel_prefab_element_type',
+    'render_view_type',
     'process_type',
     'projection_type',
     'shortcut_key',

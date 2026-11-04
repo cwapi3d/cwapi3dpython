@@ -30,6 +30,35 @@ Documents the name and folder limits for standard elements.
 - `element_controller`: documented the standard element name and folder limits in 16 standard element functions, such as [`element_controller.create_standard_beam_points`][element_controller.create_standard_beam_points] and [`element_controller.export_as_standard_element`][element_controller.export_as_standard_element].
 <!-- /release:33.394.0 -->
 
+<!-- release:33.396.0 -->
+## 33.396.0 — 2026-11-03
+
+[PR #428](https://github.com/cwapi3d/cwapi3dpython/pull/428) · `pip install cwapi3d==33.396.0`
+
+The background of each render view can now be read and set from a plugin: plain black, plain white or a user-defined color, as in the graphics options dialog.
+
+### Added
+
+- [`visualization_controller.get_background_color`][visualization_controller.get_background_color]: gets the color a render view actually shows: black or white for those types, the stored color for [`user`][cadwork.background_type.background_type.user], and black for an [`image`][cadwork.background_type.background_type.image] background, which has no single color. The render view need not be the one currently displayed.
+- [`visualization_controller.set_background_color`][visualization_controller.set_background_color]: stores a color for a render view and switches its background type to [`user`][cadwork.background_type.background_type.user], so it shows immediately. Components above 255 are clamped. The background is saved with the drawing, so the active document is marked modified.
+- [`visualization_controller.get_background_type`][visualization_controller.get_background_type]: gets how a render view's background is filled; [`black`][cadwork.background_type.background_type.black] for an undefined render view.
+- [`visualization_controller.set_background_type`][visualization_controller.set_background_type]: switches a render view between [`black`][cadwork.background_type.background_type.black], [`white`][cadwork.background_type.background_type.white] and [`user`][cadwork.background_type.background_type.user]; switching away from `user` keeps the stored color for later. [`image`][cadwork.background_type.background_type.image] cannot be set through the API, because it needs an image chosen in the graphics options dialog; passing it changes nothing.
+- [`cadwork.render_view_type`][cadwork.render_view_type]: new enum for the render views of the 3d window, each with its own background: `wireframe`, `shading1`, `shading2`, `hidden_line`, `hidden_line_dashed`, `drawing2d`.
+- [`cadwork.background_type`][cadwork.background_type]: new enum for how a render view's background is filled: `black`, `white`, `user`, `image`.
+<!-- /release:33.396.0 -->
+
+<!-- release:33.394.0 -->
+## 33.394.0 — 2026-10-29
+
+[PR #427](https://github.com/cwapi3d/cwapi3dpython/pull/427) · `pip install cwapi3d==33.394.0`
+
+Documentation-only release: no API changes.
+
+### Documentation
+
+- `element_controller`: documents the name and folder limits of standard elements in the docstrings of 16 standard element functions, such as [`create_standard_beam_points`][element_controller.create_standard_beam_points], [`export_as_standard_element`][element_controller.export_as_standard_element] and [`get_standard_beam_list`][element_controller.get_standard_beam_list].
+<!-- /release:33.394.0 -->
+
 <!-- release:33.392.0 -->
 ## 33.392.0 — 2026-10-27
 
