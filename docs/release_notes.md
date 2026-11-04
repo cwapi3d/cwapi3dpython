@@ -6,6 +6,35 @@ Changes to the `cwapi3d` Python API, newest first. Each version is published to
 This page keeps the **last 10 releases**. Older notes are in the
 [git history](https://github.com/cwapi3d/cwapi3dpython/commits/main/docs/release_notes.md).
 
+<!-- release:33.396.0 -->
+## 33.396.0 — 2026-11-03
+
+[PR #428](https://github.com/cwapi3d/cwapi3dpython/pull/428) · `pip install cwapi3d==33.396.0`
+
+The background of each render view can now be read and set from a plugin: plain black, plain white or a user-defined color, as in the graphics options dialog.
+
+### Added
+
+- [`visualization_controller.get_background_color`][visualization_controller.get_background_color]: gets the color a render view actually shows: black or white for those types, the stored color for [`user`][cadwork.background_type.background_type.user], and black for an [`image`][cadwork.background_type.background_type.image] background, which has no single color. The render view need not be the one currently displayed.
+- [`visualization_controller.set_background_color`][visualization_controller.set_background_color]: stores a color for a render view and switches its background type to [`user`][cadwork.background_type.background_type.user], so it shows immediately. Components above 255 are clamped. The background is saved with the drawing, so the active document is marked modified.
+- [`visualization_controller.get_background_type`][visualization_controller.get_background_type]: gets how a render view's background is filled; [`black`][cadwork.background_type.background_type.black] for an undefined render view.
+- [`visualization_controller.set_background_type`][visualization_controller.set_background_type]: switches a render view between [`black`][cadwork.background_type.background_type.black], [`white`][cadwork.background_type.background_type.white] and [`user`][cadwork.background_type.background_type.user]; switching away from `user` keeps the stored color for later. [`image`][cadwork.background_type.background_type.image] cannot be set through the API, because it needs an image chosen in the graphics options dialog; passing it changes nothing.
+- [`cadwork.render_view_type`][cadwork.render_view_type]: new enum for the render views of the 3d window, each with its own background: `wireframe`, `shading1`, `shading2`, `hidden_line`, `hidden_line_dashed`, `drawing2d`.
+- [`cadwork.background_type`][cadwork.background_type]: new enum for how a render view's background is filled: `black`, `white`, `user`, `image`.
+<!-- /release:33.396.0 -->
+
+<!-- release:33.394.0 -->
+## 33.394.0 — 2026-10-29
+
+[PR #427](https://github.com/cwapi3d/cwapi3dpython/pull/427) · `pip install cwapi3d==33.394.0`
+
+Documentation-only release: no API changes.
+
+### Documentation
+
+- `element_controller`: documents the name and folder limits of standard elements in the docstrings of 16 standard element functions, such as [`create_standard_beam_points`][element_controller.create_standard_beam_points], [`export_as_standard_element`][element_controller.export_as_standard_element] and [`get_standard_beam_list`][element_controller.get_standard_beam_list].
+<!-- /release:33.394.0 -->
+
 <!-- release:33.392.0 -->
 ## 33.392.0 — 2026-10-27
 
@@ -137,38 +166,3 @@ Look up a connector axis by name.
 
 Packaging-only release: no API changes.
 <!-- /release:33.333.2 -->
-
-<!-- release:33.333.1 -->
-## 33.333.1 — 2026-08-14
-
-[PR #407](https://github.com/cwapi3d/cwapi3dpython/pull/407) · `pip install cwapi3d==33.333.1`
-
-Packaging-only release: no API changes.
-<!-- /release:33.333.1 -->
-
-<!-- release:33.333.0 -->
-## 33.333.0 — 2026-08-10
-
-[PR #404](https://github.com/cwapi3d/cwapi3dpython/pull/404) · `pip install cwapi3d==33.333.0`
-
-Corrects how the end type is passed to `create_new_endtype`, and documents the end type controller.
-
-### Added
-
-- [`cadwork.end_type`][cadwork.end_type]: new enum for the kind of end type: `Tenon`, `JapaneseTenon`, `DovetailTenon`, `DovetailMortise`, `FrontSlot`, `Lengthening`, `GMIWithCounterpart`, `Unknown`.
-
-### Fixed
-
-- [`endtype_controller.create_new_endtype`][endtype_controller.create_new_endtype]: the second argument was documented as an existing end type ID (`endtype_id: EndtypeId`). It is the kind of end type to create: `end_type_id: int`, taking a [`cadwork.end_type`][cadwork.end_type] value.
-
-    ```python
-    import cadwork
-    import endtype_controller as etc
-
-    new_id = etc.create_new_endtype('Custom_Joint_80x40', cadwork.end_type.Tenon, 'Custom_Joints')
-    ```
-
-### Documentation
-
-- `endtype_controller`: improved docstrings for 13 getters and setters of end type names and IDs.
-<!-- /release:33.333.0 -->

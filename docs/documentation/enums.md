@@ -172,3 +172,11 @@
 ## wall_section_type
 
 ::: cadwork.wall_section_type
+
+## render_view_type
+
+::: cadwork.render_view_type
+
+## background_type
+
+::: cadwork.background_type
