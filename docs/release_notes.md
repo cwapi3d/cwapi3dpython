@@ -6,6 +6,30 @@ Changes to the `cwapi3d` Python API, newest first. Each version is published to
 This page keeps the **last 10 releases**. Older notes are in the
 [git history](https://github.com/cwapi3d/cwapi3dpython/commits/main/docs/release_notes.md).
 
+<!-- release:33.397.0 -->
+## 33.397.0 — 2026-11-03
+
+`pip install cwapi3d==33.397.0`
+
+Plugins can now ask the user to pick an edge in the 3D view.
+
+### Added
+
+- [`utility_controller.get_user_edge`][utility_controller.get_user_edge]: asks the user to pick an edge in the 3D view, either by clicking an existing edge or by clicking 2 points, and returns its two end points in global coordinates (an empty list if the user aborted with Esc). The point order is not guaranteed.
+<!-- /release:33.397.0 -->
+
+<!-- release:33.394.0 -->
+## 33.394.0 — 2026-10-29
+
+[PR #427](https://github.com/cwapi3d/cwapi3dpython/pull/427) · `pip install cwapi3d==33.394.0`
+
+Documents the name and folder limits for standard elements.
+
+### Documentation
+
+- `element_controller`: documented the standard element name and folder limits in 16 standard element functions, such as [`element_controller.create_standard_beam_points`][element_controller.create_standard_beam_points] and [`element_controller.export_as_standard_element`][element_controller.export_as_standard_element].
+<!-- /release:33.394.0 -->
+
 <!-- release:33.392.0 -->
 ## 33.392.0 — 2026-10-27
 
@@ -137,38 +161,3 @@ Look up a connector axis by name.
 
 Packaging-only release: no API changes.
 <!-- /release:33.333.2 -->
-
-<!-- release:33.333.1 -->
-## 33.333.1 — 2026-08-14
-
-[PR #407](https://github.com/cwapi3d/cwapi3dpython/pull/407) · `pip install cwapi3d==33.333.1`
-
-Packaging-only release: no API changes.
-<!-- /release:33.333.1 -->
-
-<!-- release:33.333.0 -->
-## 33.333.0 — 2026-08-10
-
-[PR #404](https://github.com/cwapi3d/cwapi3dpython/pull/404) · `pip install cwapi3d==33.333.0`
-
-Corrects how the end type is passed to `create_new_endtype`, and documents the end type controller.
-
-### Added
-
-- [`cadwork.end_type`][cadwork.end_type]: new enum for the kind of end type: `Tenon`, `JapaneseTenon`, `DovetailTenon`, `DovetailMortise`, `FrontSlot`, `Lengthening`, `GMIWithCounterpart`, `Unknown`.
-
-### Fixed
-
-- [`endtype_controller.create_new_endtype`][endtype_controller.create_new_endtype]: the second argument was documented as an existing end type ID (`endtype_id: EndtypeId`). It is the kind of end type to create: `end_type_id: int`, taking a [`cadwork.end_type`][cadwork.end_type] value.
-
-    ```python
-    import cadwork
-    import endtype_controller as etc
-
-    new_id = etc.create_new_endtype('Custom_Joint_80x40', cadwork.end_type.Tenon, 'Custom_Joints')
-    ```
-
-### Documentation
-
-- `endtype_controller`: improved docstrings for 13 getters and setters of end type names and IDs.
-<!-- /release:33.333.0 -->

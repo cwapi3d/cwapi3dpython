@@ -1026,3 +1026,10 @@ def set_navigation_widget_cube(position: navigation_widget_subwindow_position, e
         position: Which Navigation Widget to modify.
         enabled: enabled.
     """
+
+def get_user_edge() -> list[point_3d]:
+    """Asks the user to pick an edge in the 3D view, either by clicking an existing edge or by clicking 2 points. The call blocks until the user has picked an edge or aborted with Esc. For a curved edge (e.g. an arc) only its start and end points are returned. The direction is not guaranteed: picking the same edge twice can return start and end swapped. Do not rely on the point order; compare or sort the points yourself if direction matters.
+
+    Returns:
+        Two points, the two ends of the edge, in global coordinates. The list is empty if the user aborted.
+    """
