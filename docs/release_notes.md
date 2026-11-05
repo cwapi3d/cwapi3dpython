@@ -6,6 +6,18 @@ Changes to the `cwapi3d` Python API, newest first. Each version is published to
 This page keeps the **last 10 releases**. Older notes are in the
 [git history](https://github.com/cwapi3d/cwapi3dpython/commits/main/docs/release_notes.md).
 
+<!-- release:33.397.0 -->
+## 33.397.0 — 2026-11-04
+
+[PR #430](https://github.com/cwapi3d/cwapi3dpython/pull/430) · `pip install cwapi3d==33.397.0`
+
+Plugins can now ask the user to pick an edge in the 3D view.
+
+### Added
+
+- [`utility_controller.get_user_edge`][utility_controller.get_user_edge]: asks the user to pick an edge in the 3D view, either by clicking an existing edge or by clicking 2 points, and returns its two end points in global coordinates (an empty list if the user aborted with Esc). The point order is not guaranteed.
+<!-- /release:33.397.0 -->
+
 <!-- release:33.396.0 -->
 ## 33.396.0 — 2026-11-03
 
@@ -158,11 +170,3 @@ Look up a connector axis by name.
 
 - [`connector_axis_controller.get_connector_axis_guid_by_name`][connector_axis_controller.get_connector_axis_guid_by_name]: gets the GUID of a connector axis by its name.
 <!-- /release:33.343.2 -->
-
-<!-- release:33.333.2 -->
-## 33.333.2 — 2026-08-14
-
-[PR #408](https://github.com/cwapi3d/cwapi3dpython/pull/408) · `pip install cwapi3d==33.333.2`
-
-Packaging-only release: no API changes.
-<!-- /release:33.333.2 -->
