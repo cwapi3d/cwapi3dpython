@@ -9,6 +9,7 @@
 [![Pulls](https://img.shields.io/github/issues-pr/cwapi3d/cwapi3dpython)](https://github.com/cwapi3d/cwapi3dpython/pulls)
 [![GitHub](https://img.shields.io/github/license/cwapi3d/cwapi3dpython)](https://choosealicense.com/licenses/mit/)
 [![codecov](https://codecov.io/gh/cwapi3d/cwapi3dpython/graph/badge.svg?token=RALJATCN6Y)](https://codecov.io/gh/cwapi3d/cwapi3dpython)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/cwapi3d/cwapi3dpython/badge)](https://scorecard.dev/viewer/?uri=github.com/cwapi3d/cwapi3dpython)
 
 This is the Cadwork 3D CwAPI3D plugin architecture in Python.
 
