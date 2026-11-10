@@ -14,16 +14,20 @@ from cadwork.api_types import *
 def create_dimension(
     xl: point_3d, plane_normal: point_3d, distance: point_3d, dimension_points: list[point_3d]
 ) -> ElementId:
-    """Creates a dimension element to measure distances on 3D parts.
-       The dimension is drawn on a plane
-       defined by its normal and offset distance. Points added to the dimension are projected
-       onto this plane, and dimension segments are automatically created between consecutive points.
+    """Create a dimension element on a plane and return its element ID.
+
+    Each point in dimension_points becomes a measuring point, sorted along xl. The dimension uses
+    default display settings. The display is refreshed if automatic refresh is enabled. Further
+    points can be added with add_segment.
 
     Parameters:
-        xl: The direction vector defining the dimension line axis (the direction of the measurement arrow). Can be aligned with X, Y, Z axes or any 3D direction.
-        plane_normal: The normal vector defining the orientation of the dimension plane.
-        distance: The offset vector from the dimensioned geometry to where the dimension line is drawn. Can offset in any direction.
-        dimension_points:  A list of dimension points to measure. At least 2 points are needed for a valid dimension measurement, but the points can be added later using addSegment(). Points are projected onto the dimension plane.
+        xl: Direction of the dimension line (local X of the dimension plane).
+        plane_normal: Normal of the dimension plane. The plane's local Y direction is derived as the
+            cross product of xl and plane_normal.
+        distance: Point on the dimension line, in model coordinates (mm); it sets the line's offset
+            from the measured points along the plane's local Y direction.
+        dimension_points: Points to measure, in model coordinates (mm). An empty list creates a
+            dimension without measuring points.
 
     Examples:
         >>> import cadwork
@@ -47,198 +51,239 @@ def create_dimension(
         >>> )
 
     Returns:
-        The element id of the created dimension element.
+        The element ID of the new dimension.
     """
 
 def set_orientation(element_id_list: list[ElementId], view_dir: point_3d, view_dir_up: point_3d) -> None:
-    """Sets the orientation of dimension elements.
+    """Orient dimension elements so that their texts read correctly from a given view.
+
+    The dimension plane is not changed; its normal and local Y direction are flipped where needed
+    to face the view. Elements in the list that are invalid IDs or not dimension elements are
+    skipped; an empty list does nothing. The display is refreshed if automatic refresh is enabled.
 
     Parameters:
-        element_id_list: The element id list.
-        view_dir: The view direction vector.
-        view_dir_up: The view direction up vector.
+        element_id_list: List of dimension element IDs.
+        view_dir: Viewing direction of the view the dimensions are read from.
+        view_dir_up: Up direction of that view.
     """
 
 def add_segment(element_id: ElementId, segment: point_3d) -> None:
-    """Adds a new point to a dimension's point list. A dimension segment is automatically
-       created between this point and the previous point. This method can be called multiple times
-       to progressively add more measurement points to the dimension.
+    """Add a measuring point to a dimension element.
+
+    The points are re-sorted and segments between consecutive points are updated. Does nothing if
+    element_id is invalid or not a dimension.
 
     Parameters:
-        element_id: The element id.
-        segment: The point to add to the dimension (despite the parameter name, this is a point, not a segment).
+        element_id: Element ID of the dimension.
+        segment: Point to add, in model coordinates (mm).
     """
 
 def set_precision(element_id_list: list[ElementId], precision: UnsignedInt) -> None:
-    """Sets the precision/decimal places of a dimension element.
+    """Set the number of decimal places shown in dimension texts.
+
+    Elements in the list that are invalid IDs or not dimension elements are skipped; an empty list
+    does nothing.
 
     Parameters:
-        element_id_list: The element id list.
-        precision: The precision/decimal places to set.
+        element_id_list: List of dimension element IDs.
+        precision: Number of decimal places (non-negative integer).
     """
 
 def set_text_size(element_id_list: list[ElementId], text_size: float) -> None:
-    """Sets the text size of a dimension element.
+    """Set the text size of dimension elements.
+
+    Elements in the list that are invalid IDs or not dimension elements are skipped; an empty list
+    does nothing.
 
     Parameters:
-        element_id_list: The element id list.
-        text_size: The text size to set.
+        element_id_list: List of dimension element IDs.
+        text_size: Text size value.
     """
 
 def set_line_thickness(element_id_list: list[ElementId], thickness: float) -> None:
-    """Sets the line thickness of a dimension element.
+    """Set the line thickness of dimension elements.
+
+    Elements in the list that are invalid IDs or not dimension elements are skipped; an empty list
+    does nothing.
 
     Parameters:
-        element_id_list: The element id list.
-        thickness: The line thickness to set.
+        element_id_list: List of dimension element IDs.
+        thickness: Line thickness value.
     """
 
 def set_total_dimension(element_id_list: list[ElementId], total: bool) -> None:
-    """Set whether the visualisation of the overall dimension is set for a dimension element.
+    """Show or hide the overall (total) dimension of dimension elements.
+
+    Elements in the list that are invalid IDs or not dimension elements are skipped; an empty list
+    does nothing.
 
     Parameters:
-        element_id_list: The element id list.
-        total: True if the visualisation is set, false otherwise.
+        element_id_list: List of dimension element IDs.
+        total: True to show the overall dimension, False to hide it.
     """
 
 def set_text_color(element_id_list: list[ElementId], color_id: ColorId) -> None:
-    """Sets the text color of a dimension element.
+    """Set the text color of dimension elements.
+
+    Elements in the list that are invalid IDs or not dimension elements are skipped; an empty list
+    does nothing.
 
     Parameters:
-        element_id_list: The element id list.
-        color_id: The color id to set.
+        element_id_list: List of dimension element IDs.
+        color_id: Cadwork color ID from the color palette.
     """
 
 def set_line_color(element_id_list: list[ElementId], color_id: ColorId) -> None:
-    """Sets the line color of a dimension element.
+    """Set the line color of dimension elements.
+
+    Elements in the list that are invalid IDs or not dimension elements are skipped; an empty list
+    does nothing.
 
     Parameters:
-        element_id_list: The element id list.
-        color_id: The color id to set.
+        element_id_list: List of dimension element IDs.
+        color_id: Cadwork color ID from the color palette.
     """
 
 def set_default_anchor_length(element_id_list: list[ElementId], length: float) -> None:
-    """Sets the default anchor length of a dimension element.
+    """Set the default anchor length of dimension elements.
+
+    Elements in the list that are invalid IDs or not dimension elements are skipped; an empty list
+    does nothing. The anchors are updated immediately.
 
     Parameters:
-        element_id_list: The element id list.
-        length: The default anchor length to set.
+        element_id_list: List of dimension element IDs.
+        length: Anchor length in mm.
     """
 
 def set_distance(element_id_list: list[ElementId], distance: point_3d) -> None:
-    """Sets the distance vector between the points and the line.
+    """Set the offset of the dimension line from the measured points.
+
+    Elements in the list that are invalid IDs or not dimension elements are skipped; an empty list
+    does nothing. The given point is projected onto the dimension's plane before being stored.
 
     Parameters:
-        element_id_list: The element id list.
-        distance: The distance vector to set.
+        element_id_list: List of dimension element IDs.
+        distance: Point on the dimension line, in model coordinates (mm); it is projected onto the
+            dimension plane.
     """
 
 def shift_distance_and_texts(element_id_list: list[ElementId], shifted: bool) -> None:
-    """Sets if distance and texts are shifted.
+    """Set whether the distance and texts of dimension elements are shifted.
+
+    Elements in the list that are invalid IDs or not dimension elements are skipped; an empty list
+    does nothing. Sets the moved-text flag of the dimension labeling.
 
     Parameters:
-        element_id_list: The element id list.
-        shifted: True if distance and texts are shifted, false otherwise.
+        element_id_list: List of dimension element IDs.
+        shifted: True to mark the texts as shifted, False otherwise.
     """
 
 def get_dimension_points(element_id: ElementId) -> list[point_3d]:
-    """Gets all dimension points ordered by dimension direction.
+    """Get the measuring points of a dimension element.
+
+    For segments attached to an edge, only one point per edge is returned (its cross position).
+    Returns an empty list if element_id is invalid or not a dimension.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID of the dimension.
 
     Returns:
-        A list of dimension points.
+        List of point_3d in segment order; empty list on failure.
     """
 
 def get_default_anchor_length(element_id: ElementId) -> float:
-    """Gets the default anchor length.
+    """Get the default anchor length of a dimension element.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID of the dimension.
 
     Returns:
-        The default anchor length.
+        Anchor length; 0.0 if element_id is invalid or not a dimension.
     """
 
 def get_distance(element_id: ElementId) -> point_3d:
-    """Get the distance to the dimension reference point. The point is in the plane of the dimensioning.
+    """Get the offset of the dimension line from the measured points.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID of the dimension.
 
     Returns:
-        The distance vector.
+        Point on the dimension line, in model coordinates (mm); a default point_3d (0, 0, 0) if
+        element_id is invalid or not a dimension.
     """
 
 def get_plane_normal(element_id: ElementId) -> point_3d:
-    """Get the plane normal.
+    """Get the normal of the dimension plane.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID of the dimension.
 
     Returns:
-        The plane normal vector.
+        point_3d normal; default point_3d (0, 0, 0) if element_id is invalid or not a dimension.
     """
 
 def get_plane_xl(element_id: ElementId) -> point_3d:
-    """Get the plane x direction.
+    """Get the direction of the dimension line (local X of the plane).
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID of the dimension.
 
     Returns:
-        The plane x direction vector.
+        point_3d direction; default point_3d (0, 0, 0) if element_id is invalid or not a dimension.
     """
 
 def get_segment_count(element_id: ElementId) -> int:
-    """Get count of segments.
+    """Get the number of segments of a dimension element.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID of the dimension.
 
     Returns:
-        The number of segments.
+        Number of segments; 0 if element_id is invalid or not a dimension.
     """
 
 def get_segment_distance(element_id: ElementId, segment_index: int) -> float:
-    """Get the distance from the anchor point to the dimension segment.
+    """Get the distance from the measured point to the dimension line for a segment.
 
     Parameters:
-        element_id: The element id.
-        segment_index: The segment index.
+        element_id: Element ID of the dimension.
+        segment_index: Zero-based segment index (non-negative).
 
     Returns:
-        The distance from the anchor point to the dimension segment.
+        Signed distance in mm, measured along the dimension's local Y direction; 0.0 if element_id is invalid, not a dimension, or segment_index is out of
+        range.
     """
 
 def get_segment_direction(element_id: ElementId, segment_index: int) -> point_3d:
-    """Get the normalized direction from the anchor point to the point on the dimension.
+    """Get the unit direction from the measured point toward the dimension line for a segment.
 
     Parameters:
-        element_id: The element id.
-        segment_index: The segment index.
+        element_id: Element ID of the dimension.
+        segment_index: Zero-based segment index (non-negative).
 
     Returns:
-        The segment direction vector.
+        Normalized point_3d; default point_3d (0, 0, 0) if element_id is invalid, not a dimension,
+        or segment_index is out of range.
     """
 
 def get_total_dimension(element_id: ElementId) -> bool:
-    """Query whether the visualisation of the overall dimension is set for a dimension element.
+    """Check whether the overall (total) dimension is shown.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID of the dimension.
 
     Returns:
-        True if the visualisation is set, false otherwise. For elements that are not of type dimension, the return value is per default false.
+        True if the overall dimension is shown; False otherwise, including if element_id is invalid
+        or not a dimension.
     """
 
 def get_dimension_base_format(element_id: ElementId) -> dimension_base_format:
-    """Get the dimension base format.
+    """Get the base format (distance, sum or both) of a dimension element.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID of the dimension.
 
     Returns:
-        The format used for the dimension. Enum value `None` may indicate that something went wrong while retrieving the value due to e.g. the element not being a valid dimension.
+        A dimension_base_format value (distance_only, sum_only, distance_and_sum, sum_moved);
+        dimension_base_format.none if element_id is invalid or not a dimension.
     """
