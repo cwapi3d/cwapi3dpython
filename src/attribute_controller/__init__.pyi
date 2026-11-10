@@ -19,1597 +19,2131 @@ from cadwork.process_type import process_type
 from cadwork.prefab_layer_info import prefab_layer_info
 
 def set_name(element_id_list: list[ElementId], name: str) -> None:
-    """Sets the element name.
+    """Set the name of the given elements.
+
+    A name that is not yet in the document's name list is added to it. Assigning a name also applies
+    the machine, cutting-set and IFC settings stored for that name to each element.
 
     Parameters:
-        element_id_list: The element id list.
-        name: The element name.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        name: The name to assign to every element.
     """
 
 def set_group(element_id_list: list[ElementId], group: str) -> None:
-    """Sets the element group.
+    """Set the group of the given elements.
 
     Parameters:
-        element_id_list: The element id list.
-        group: The element group.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        group: The group text to assign to every element.
     """
 
 def set_subgroup(element_id_list: list[ElementId], subgroup: str) -> None:
-    """Sets the element subgroup.
+    """Set the subgroup of the given elements.
 
     Parameters:
-        element_id_list: The element id list.
-        subgroup: The element subgroup.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        subgroup: The subgroup text to assign to every element.
     """
 
 def set_comment(element_id_list: list[ElementId], comment: str) -> None:
-    """Sets the element comment.
+    """Set the comment of the given elements.
 
     Parameters:
-        element_id_list: The element id list.
-        comment: The element comment.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        comment: The comment text to assign to every element.
     """
 
 def set_user_attribute(element_id_list: list[ElementId], number: UserAttributeId, user_attribute: str) -> None:
-    """Sets the element user attribute.
+    """Set one user attribute of the given elements.
+
+    Nothing is changed if number is greater than 999.
 
     Parameters:
-        element_id_list: The element id list.
-        number: The user attribute id.
-        user_attribute: The user attribute.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        number: User attribute number, 1 to 999.
+        user_attribute: The text to store in that user attribute.
     """
 
 def set_sku(element_id_list: list[ElementId], sku: str) -> None:
-    """Sets the element SKU.
+    """Set the SKU (article code) of the given elements.
 
     Parameters:
-        element_id_list: The element id list.
-        sku: The element SKU.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        sku: The SKU text to assign to every element.
     """
 
 def set_production_number(element_id_list: list[ElementId], production_number: UnsignedInt) -> None:
-    """Sets the element production number.
+    """Set the production list number of the given elements.
+
+    Elements that have no production number data are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        production_number: The element production number.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        production_number: The production list number to assign to every element.
     """
 
 def set_part_number(element_id_list: list[ElementId], part_number: UnsignedInt) -> None:
-    """Sets the element part number.
+    """Set the part list number of the given elements.
+
+    Elements that have no part number data are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        part_number: The element part number.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        part_number: The part list number to assign to every element.
     """
 
 def set_additional_data(element_id_list: list[ElementId], data_id: str, data_text: str) -> None:
-    """Sets the element additional data.
+    """Store a text under a data ID on the given elements.
+
+    An existing entry with the same data ID on an element is overwritten. The data is written
+    directly to the document database.
 
     Parameters:
-        element_id_list: The element id list.
-        data_id: The data id.
-        data_text: The element additional data.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        data_id: Key identifying the data entry (acts as owner of the entry).
+        data_text: The text to store.
     """
 
 def delete_additional_data(element_id_list: list[ElementId], data_id: str) -> None:
-    """Deletes the element additional data.
+    """Delete the data stored under a data ID from the given elements.
+
+    Elements that have no entry for the data ID are left unchanged.
 
     Parameters:
-        element_id_list: The element id list.
-        data_id: The data id.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        data_id: Key of the data entry to delete.
     """
 
 def set_user_attribute_name(number: UserAttributeId, user_attribute_name: str) -> None:
-    """Sets the user attribute name.
+    """Set the display name (title) of a user attribute.
+
+    This is a document-wide label, not a value on elements. Nothing is changed if number is greater
+    than 999.
 
     Parameters:
-        number: The user attribute id.
-        user_attribute_name: The user attribute name.
+        number: User attribute number, 1 to 999.
+        user_attribute_name: The new title of the user attribute.
     """
 
 def set_process_type_and_extended_settings_from_name(element_id_list: list[ElementId]) -> None:
-    """Sets the element process type and extended settings from the element name.
+    """Apply the process type and extended settings defined for each element's name.
+
+    For each element, the settings stored for its current name (process type, extended settings,
+    related machine and cutting-set settings, IFC type) are copied onto the element. Elements
+    without a name are skipped. The change is not added to the undo history.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
     """
 
 def set_name_process_type(name: str, process_type: process_type) -> None:
-    """Sets the process type for an element name.
+    """Set the process type stored for an element name in the name list.
+
+    Only the name list entry is changed; existing elements keep their current process type until
+    set_process_type_and_extended_settings_from_name is called. Nothing happens if the name is not
+    in the list.
 
     Parameters:
-        name: The element name.
-        process_type: The process type.
+        name: Exact name of an existing entry in the name list.
+        process_type: The process type to store for that name.
     """
 
 def set_name_extended_settings(name: str, extended_settings: extended_settings) -> None:
-    """Sets the extended settings for an element name.
+    """Set the extended settings stored for an element name in the name list.
+
+    Only the name list entry is changed; existing elements keep their current settings until
+    set_process_type_and_extended_settings_from_name is called. Nothing happens if the name is not
+    in the list.
 
     Parameters:
-        name: The element name.
-        extended_settings: The extended settings.
+        name: Exact name of an existing entry in the name list.
+        extended_settings: The extended settings to store for that name; all flags are written.
     """
 
 def set_output_type(element_id_list: list[ElementId], process_type: process_type) -> None:
-    """Sets the element output type.
+    """Set the output (process) type of the given elements.
+
+    Elements without production data are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        process_type: The process type.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        process_type: The process type to assign to every element.
     """
 
 def set_extended_settings(element_id_list: list[ElementId], extended_settings: extended_settings) -> None:
-    """Sets the element extended settings.
+    """Write the extended settings to the given elements.
+
+    All flags of extended_settings are written to every element, overwriting flags you did not
+    touch; start from get_extended_settings. Not added to the undo history.
 
     Parameters:
-        element_id_list: The element id list.
-        extended_settings: The extended settings.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        extended_settings: The settings to write; take them from get_extended_settings and modify.
     """
 
 def set_wall(element_id_list: list[ElementId]) -> None:
-    """Sets the element to wall.
+    """Mark the given elements as framed wall.
 
-    Deprecated :
-        Use [set_framed_wall][attribute_controller.set_framed_wall] instead.
+    Only beam-class elements (beams, panels and other elements with a beam-like cross-section) are
+    changed; other elements are skipped. The output type is set to match, and a previous floor, roof
+    or wall classification is replaced.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
     """
 
 def set_floor(element_id_list: list[ElementId]) -> None:
-    """Set floor.
+    """Mark the given elements as framed floor.
 
-    Deprecated :
-        Use [set_framed_floor][attribute_controller.set_framed_floor] instead.
+    Only beam-class elements (beams, panels and other elements with a beam-like cross-section) are
+    changed; other elements are skipped. The output type is set to match, and a previous wall, roof
+    or floor classification is replaced.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
     """
 
 def set_opening(element_id_list: list[ElementId]) -> None:
-    """Sets the element to opening.
+    """Mark the given elements as openings.
+
+    Only beam-class elements (beams, panels and other elements with a beam-like cross-section) are
+    changed; other elements are skipped. If an element was a wall, floor or roof, its wall cuts and
+    related wall data are removed and its output type is cleared.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
     """
 
 def set_fastening_attribute(element_id_list: list[ElementId], value: str) -> None:
-    """Sets the element fastening attribute.
+    """Set the fastening attribute of the given elements.
+
+    The value is only written if the panel prefabrication analysis configuration can be loaded;
+    otherwise the call has no effect.
 
     Parameters:
-        element_id_list: The element id list.
-        value: The fastening attribute value.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        value: The fastening attribute text to assign to every element.
     """
 
 def set_element_material(element_id_list: list[ElementId], material: MaterialId) -> None:
-    """Sets the element material.
+    """Set the material of the given elements.
+
+    Elements that cannot carry a material (for example auxiliary objects, containers, export solids,
+    dimensions, lines other than installations) are skipped, unless material is 0, which clears the
+    material of any element.
 
     Parameters:
-        element_id_list: The element id list.
-        material: The element material id.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        material: Material ID, or 0 to remove the material. The ID is not checked against the
+            material list.
     """
 
 def set_assembly_number(element_id_list: list[ElementId], assembly_number: str) -> None:
-    """set assembly number.
+    """Set the assembly number of the given elements.
+
+    Elements without production data are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        assembly_number: The assembly number.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        assembly_number: The assembly number text to assign to every element.
     """
 
 def set_list_quantity(element_id_list: list[ElementId], list_quantity: UnsignedInt) -> None:
-    """Set list quantity.
+    """Set the quantity used in lists for the given elements.
+
+    Elements without production data are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        list_quantity: The list quantity.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        list_quantity: The quantity to assign to every element.
     """
 
 def set_layer_settings(element_id_list: list[ElementId], layer_settings: layer_settings) -> None:
-    """Set layer settings.
+    """Set the prefab-layer output behavior of one layer on the given elements.
+
+    The layer number and output mode are taken from layer_settings. Without-output wins over
+    with-dimensions, which wins over without-dimensions; attributes output is applied for both
+    dimension modes. Nothing changes if no mode was set or the layer number is out of range. Not
+    added to the undo history.
 
     Parameters:
-        element_id_list: The element id list.
-        layer_settings: The layer settings.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        layer_settings: Layer number (0 = the element's own layer, 1 to 14 = reference side, -1 to
+            -14 = opposite side) plus the output mode and attributes flag.
     """
 
 def set_ignore_in_vba_calculation(element_id_list: list[ElementId], ignore: bool) -> None:
-    """Sets if the element should be ignored in VBA Calculation.
+    """Set whether the given elements are ignored in the VBA calculation.
+
+    All IDs must refer to existing elements. Elements without production data are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        ignore: True if the element should be ignored in VBA calculation, false otherwise.
+        element_id_list: List of element IDs; all must exist. An empty list does nothing.
+        ignore: True to ignore the elements in the VBA calculation, False to include them.
     """
 
 def clear_errors() -> None:
-    """clear all errors."""
+    """Clear the stored error messages of the attribute controller."""
 
 def set_reference_wall_2dc(element_id_list: list[ElementId], _2dc_file_path: str) -> None:
-    """Applies a new 2dc reference wall to an element.
+    """Replace the wall definition of the given walls with one read from a 2dc file.
+
+    Only wall elements in the list are changed; if there is none, nothing happens. Each wall also
+    takes the name, color and material from the file's bounding wall rectangle, and the wall
+    thickness is changed to that rectangle's width.
 
     Parameters:
-        element_id_list: The element id list.
-        _2dc_file_path: The 2dc file path.
+        element_id_list: List of element IDs; IDs that do not exist or are not walls are skipped.
+        _2dc_file_path: Path to the 2dc file that defines the wall.
     """
 
 def get_user_attribute_count() -> UnsignedInt:
-    """Get user attribute count.
+    """Return the number of user attributes in the document.
 
     Returns:
-        The count of user attributes.
+        Number of user attributes, 0 if the attribute data is unavailable.
     """
 
 def set_standard_part(element_id_list: list[ElementId]) -> None:
-    """Sets covers (wall,opening or floor) to standard part.
+    """Remove the wall, floor, roof or opening classification from the given elements.
+
+    Only beam-class elements (beams, panels and other elements with a beam-like cross-section) are
+    changed; other elements are skipped. If an element was a wall, floor or roof, its wall cuts and
+    related wall data are removed and its output type is cleared.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
     """
 
 def set_solid_wall(element_id_list: list[ElementId]) -> None:
-    """Sets elements to solid wall.
+    """Mark the given elements as solid wood wall.
+
+    Only beam-class elements (beams, panels and other elements with a beam-like cross-section) are
+    changed; other elements are skipped. The output type is set to match, and a previous
+    classification is replaced.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
     """
 
 def set_log_wall(element_id_list: list[ElementId]) -> None:
-    """Sets elements to log wall.
+    """Mark the given elements as log wall.
+
+    Only beam-class elements (beams, panels and other elements with a beam-like cross-section) are
+    changed; other elements are skipped. The output type is set to match, and a previous
+    classification is replaced.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
     """
 
 def set_solid_floor(element_id_list: list[ElementId]) -> None:
-    """Sets elements to solid floor.
+    """Mark the given elements as solid wood floor.
+
+    Only beam-class elements (beams, panels and other elements with a beam-like cross-section) are
+    changed; other elements are skipped. The output type is set to match, and a previous
+    classification is replaced.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
     """
 
 def set_roof(element_id_list: list[ElementId]) -> None:
-    """Set roof.
+    """Mark the given elements as framed roof.
 
-    Deprecated :
-        Use [set_framed_roof][attribute_controller.set_framed_roof] instead.
+    Only beam-class elements (beams, panels and other elements with a beam-like cross-section) are
+    changed; other elements are skipped. The output type is set to match, and a previous
+    classification is replaced.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
     """
 
 def set_solid_roof(element_id_list: list[ElementId]) -> None:
-    """Sets elements to solid roof cover.
+    """Mark the given elements as solid wood roof.
+
+    Only beam-class elements (beams, panels and other elements with a beam-like cross-section) are
+    changed; other elements are skipped. The output type is set to match, and a previous
+    classification is replaced.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
     """
 
 def get_node_symbol(element_id: ElementId) -> node_symbol:
-    """Get node symbol.
+    """Return the node symbol of an element.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element to query.
 
     Returns:
-        The node symbol of the element.
+        The node symbol of the element, or -1 if the element does not exist or has no node symbol
+        data.
     """
 
 def set_node_symbol(element_id_list: list[ElementId], symbol: node_symbol) -> None:
-    """Set node symbol.
+    """Set the node symbol of the given elements.
+
+    Elements without node data are skipped. The value is not range-checked.
 
     Parameters:
-        element_id_list: The element id list.
-        symbol: The node symbol.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        symbol: The node symbol to assign.
     """
 
 def enable_attribute_display() -> None:
-    """Enable attribute display."""
+    """Turn on the display of element attributes in the view.
+
+    Rebuilds the attribute labels of all construction elements, updates the toolbar and redraws the
+    view.
+    """
 
 def disable_attribute_display() -> None:
-    """Disable attribute display."""
+    """Turn off the display of element attributes in the view.
+
+    Rebuilds the attribute labels of all construction elements, updates the toolbar and redraws the
+    view.
+    """
 
 def is_attribute_display_enabled() -> bool:
-    """Is attribute display enabled.
+    """Check whether element attributes are displayed in the view.
 
     Returns:
-        True if attribute display is enabled, false otherwise.
+        True if attribute display is on, False otherwise.
     """
 
 def update_auto_attribute() -> None:
-    """Update the auto attribute."""
+    """Recalculate the auto-filled attributes of all visible elements.
+
+    Hidden elements are not updated. Both manually and automatically configured auto attributes are
+    recalculated.
+    """
 
 def set_additional_guid(element_id_list: list[ElementId], data_id: str, guid: str) -> None:
-    """Set additional guid.
+    """Store a GUID under a data ID on the given elements.
+
+    An existing GUID with the same data ID on an element is overwritten. The data is written
+    directly to the document database.
 
     Parameters:
-        element_id_list: The element id list.
-        data_id: The data id.
-        guid: The guid to set.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        data_id: Key identifying the GUID entry (acts as owner of the entry).
+        guid: The GUID as text.
     """
 
 def add_item_to_group_list(item: str) -> None:
-    """Add item to group list.
+    """Add an entry to the document's list of group values.
+
+    Only the list is changed; no element is modified.
 
     Parameters:
-        item: The item to add in the group list.
+        item: The group text to add.
     """
 
 def add_item_to_subgroup_list(item: str) -> None:
-    """Add item to subgroup list.
+    """Add an entry to the document's list of subgroup values.
+
+    Only the list is changed; no element is modified.
 
     Parameters:
-        item: The item to add in the subgroup list.
+        item: The subgroup text to add.
     """
 
 def add_item_to_comment_list(item: str) -> None:
-    """Add item to comment list.
+    """Add an entry to the document's list of comment values.
 
-    Args:
-        item: The item to add in the comment list.
+    Only the list is changed; no element is modified.
+
+    Parameters:
+        item: The comment text to add.
     """
 
 def add_item_to_sku_list(item: str) -> None:
-    """Add item to sku list.
+    """Add an entry to the document's list of SKU values.
+
+    Only the list is changed; no element is modified.
 
     Parameters:
-        item: The item to add in the sku list.
+        item: The SKU text to add.
     """
 
 def add_item_to_user_attribute_list(attribute_number: UserAttributeId, item: str) -> None:
-    """Add item to user attribute list.
+    """Add an entry to the list of values of one user attribute.
+
+    Only the list is changed; no element is modified.
 
     Parameters:
-        attribute_number: The attribute number.
-        item: The item to add in the user attribute list.
+        attribute_number: User attribute number (1-based).
+        item: The text to add.
     """
 
 def set_container_number(element_id_list: list[ElementId], number: UnsignedInt) -> None:
-    """Set container number.
+    """Set the container number of the given elements.
+
+    The number is stored in the element's production list number, so it replaces the production
+    number. Elements without production data are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        number: The container number.
+        element_id_list: List of element IDs; IDs that do not exist are skipped. An empty list does
+            nothing.
+        number: The container number to assign.
     """
 
 def get_name_list_items() -> list[str]:
-    """Retrieve a list of name for all items
+    """Return all names in the document's name list.
+
+    An empty first entry (the blank name) is left out.
 
     Returns:
-        A list of names for all items.
+        List of name strings; an empty list if there are none or the attribute data is unavailable.
     """
 
 def add_item_to_name_list(item: str) -> None:
-    """Add item to name list.
+    """Add a name to the document's name list.
+
+    The name is added with default element type and settings, no process type. No element is
+    modified.
 
     Parameters:
-        item: The item to add in the name list.
+        item: The name to add.
     """
 
 def delete_item_from_comment_list(item: str) -> bool:
-    """Delete item from comment list.
+    """Delete an entry from the document's list of comment values.
+
+    Fails if the entry does not exist or is still used as comment by at least one element. The
+    reason is recorded in the controller's error messages (see clear_errors).
 
     Parameters:
-        item: The item to delete from the comment list.
+        item: The comment text to delete.
 
     Returns:
-        True if the item was successfully deleted, false otherwise.
+        True if the entry was deleted, False if it was not found, is in use or the attribute data is
+        unavailable.
     """
 
 def delete_item_from_group_list(item: str) -> bool:
-    """Delete item from group list.
+    """Delete an entry from the group list of the document.
+
+    Fails if the entry does not exist or is still assigned to any element in the document; the
+    failure is also written to the API log.
 
     Parameters:
-        item: The item to delete from the group list.
+        item: Exact text of the group list entry to delete.
 
     Returns:
-        True if the item was successfully deleted, false otherwise.
+        True if the entry was deleted, False if it was not found, is still in use or the attribute
+        database is unavailable.
     """
 
 def delete_item_from_sku_list(item: str) -> bool:
-    """Delete item from sku list.
+    """Delete an entry from the SKU list of the document.
+
+    Fails if the entry does not exist or is still assigned to any element in the document; the
+    failure is also written to the API log.
 
     Parameters:
-        item: The item to delete from the sku list.
+        item: Exact text of the SKU list entry to delete.
 
     Returns:
-        True if the item was successfully deleted, false otherwise.
+        True if the entry was deleted, False if it was not found, is still in use or the attribute
+        database is unavailable.
     """
 
 def delete_item_from_subgroup_list(item: str) -> bool:
-    """Delete item from subgroup list.
+    """Delete an entry from the subgroup list of the document.
+
+    Fails if the entry does not exist or is still assigned to any element in the document; the
+    failure is also written to the API log.
 
     Parameters:
-        item: The item to delete from the subgroup list.
+        item: Exact text of the subgroup list entry to delete.
 
     Returns:
-        True if the item was successfully deleted, false otherwise.
+        True if the entry was deleted, False if it was not found, is still in use or the attribute
+        database is unavailable.
     """
 
 def delete_item_from_user_attribute_list(attribute_number: UserAttributeId, item: str) -> bool:
-    """Delete item from user attribute list.
+    """Delete an entry from the list of one user attribute.
+
+    Fails if the entry does not exist or is still assigned to any element in the document; the
+    failure is also written to the API log.
 
     Parameters:
-        attribute_number: The attribute number.
-        item: The item to delete from the user attribute list.
+        attribute_number: Number of the user attribute whose list the entry is removed from.
+        item: Exact text of the list entry to delete.
 
     Returns:
-        True if the item was successfully deleted, false otherwise.
+        True if the entry was deleted, False if it was not found, is still in use or the attribute
+        database is unavailable.
     """
 
 def set_attribute_display_settings_for_2d(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for 2d.
+    """Set where attribute text is placed for normal 2D exports.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_2d_with_layout(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for 2d with layout.
+    """Set where attribute text is placed for 2D exports with layout frame.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_2d_without_layout(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for 2d without layout.
+    """Set where attribute text is placed for 2D exports without layout frame.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_3d(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for 3d.
+    """Set where attribute text is placed for the 3D view.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_3d(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for 3d.
+    """Set where attribute text is placed for the 3D view.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_container(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for container.
+    """Set where attribute text is placed for containers.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_export_solid(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for export solid.
+    """Set where attribute text is placed for solid exports.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_framed_wall_axis(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for framed wall axis.
+    """Set where attribute text is placed for framed wall axes.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_framed_wall_beam(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for framed wall beam.
+    """Set where attribute text is placed for framed wall beams.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_framed_wall_beam(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for framed wall beam.
+    """Set where attribute text is placed for framed wall beams.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_framed_wall_opening(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for framed wall opening.
+    """Set where attribute text is placed for framed wall openings.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_framed_wall_panel(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for framed wall panel.
+    """Set where attribute text is placed for framed wall panels.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_log_wall_axis(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for log wall axis.
+    """Set where attribute text is placed for log wall axes.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_log_wall_beam(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for log wall beam.
+    """Set where attribute text is placed for log wall beams.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_log_wall_opening(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for log wall opening.
+    """Set where attribute text is placed for log wall openings.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_log_wall_panel(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for log wall panel.
+    """Set where attribute text is placed for log wall panels.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_machine(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for machine.
+    """Set where attribute text is placed for machine output.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_nesting_element(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for nesting element.
+    """Set where attribute text is placed for nesting elements.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_nesting_volume(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for nesting volume.
+    """Set where attribute text is placed for nesting volumes.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_solid_wall_axis(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for solid wall axis.
+    """Set where attribute text is placed for solid wall axes.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_solid_wall_beam(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for solid wall beam.
+    """Set where attribute text is placed for solid wall beams.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_solid_wall_opening(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for solid wall opening.
+    """Set where attribute text is placed for solid wall openings.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_attribute_display_settings_for_solid_wall_panel(settings: attribute_display_settings) -> None:
-    """Set attribute display settings for solid wall panel.
+    """Set where attribute text is placed for solid wall panels.
+
+    Applies the position type (percentage or absolute) and both position values of the settings
+    object, stores them as a global setting for this target and refreshes the display if automatic
+    refresh is on.
 
     Parameters:
-        settings: The display settings to apply.
+        settings: Settings object; its position type decides whether the percentage or the absolute
+            value (mm) is used.
     """
 
 def set_framed_floor(element_id_list: list[ElementId]) -> None:
-    """Sets the elements to framed floor.
+    """Mark elements as framed floor.
+
+    Sets the wall/floor/roof type of each element. Invalid element IDs are skipped; an empty list
+    does nothing. Same function as set_floor.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs to mark.
     """
 
 def set_framed_roof(element_id_list: list[ElementId]) -> None:
-    """Sets the elements to framed roof.
+    """Mark elements as framed roof.
+
+    Sets the wall/floor/roof type of each element. Invalid element IDs are skipped; an empty list
+    does nothing. Same function as set_roof.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs to mark.
     """
 
 def set_framed_wall(element_id_list: list[ElementId]) -> None:
-    """Sets the element to framed wall.
+    """Mark elements as framed wall.
+
+    Sets the wall/floor/roof type of each element. Invalid element IDs are skipped; an empty list
+    does nothing. Same function as set_wall.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs to mark.
     """
 
 def get_name_list_items_by_element_type(element_type: element_type) -> list[str]:
-    """Get name list items by element type.
+    """Get the entries of the element name list for an element type.
+
+    Reads the name list of the document, filtered by element type.
 
     Parameters:
-        element_type: The element type to filter by.
+        element_type: Element type (for example beam or panel) to filter the names by.
 
     Returns:
-        The list of names for the specified element type.
+        List of name strings; empty if there are none.
     """
 
 def get_name(element_id: ElementId) -> str:
-    """Gets the element name.
+    """Get the name of an element.
+
+    For imported exchange objects the name is taken from the imported product structure.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element to read.
 
     Returns:
-        The element name.
+        Name of the element. Empty string if the element ID is invalid.
     """
 
 def get_group(element_id: ElementId) -> str:
-    """Gets the element group.
+    """Get the group of an element.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element to read.
 
     Returns:
-        The element group.
+        Group text of the element. Empty string if the element ID is invalid.
     """
 
 def get_subgroup(element_id: ElementId) -> str:
-    """Gets the element subgroup.
+    """Get the subgroup of an element.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element to read.
 
     Returns:
-        The element subgroup.
+        Subgroup text of the element. Empty string if the element ID is invalid.
     """
 
 def get_comment(element_id: ElementId) -> str:
-    """Gets the element comment.
+    """Get the comment of an element.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element to read.
 
     Returns:
-        The element comment.
+        Comment text of the element. Empty string if the element ID is invalid.
     """
 
 def get_user_attribute(element_id: ElementId, number: UserAttributeId) -> str:
-    """Gets the element user attribute.
+    """Get the value of one user attribute of an element.
+
+    Numbers above 999 return an empty string.
 
     Parameters:
-        element_id: The element id.
-        number: The user attribute number.
+        element_id: ID of the element to read.
+        number: Number of the user attribute to read.
 
     Returns:
-        The element user attribute.
+        Value of the user attribute. Empty string if the element ID is invalid, the number is above
+        999 or the attribute is not set.
     """
 
 def get_sku(element_id: ElementId) -> str:
-    """Gets the element SKU.
+    """Get the SKU (article code) of an element.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element to read.
 
     Returns:
-        The element SKU.
+        SKU text of the element. Empty string if the element ID is invalid.
     """
 
 def get_production_number(element_id: ElementId) -> UnsignedInt:
-    """Gets the element production number.
+    """Get the production list number of an element.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element to read.
 
     Returns:
-        The element production number.
+        Production list number of the element. 0 if the element ID is invalid or the element has
+        none.
     """
 
 def get_part_number(element_id: ElementId) -> UnsignedInt:
-    """Gets the element part number.
+    """Get the part number (timber list number) of an element.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element to read.
 
     Returns:
-        The element part number.
+        Part number of the element. 0 if the element ID is invalid or the element has none.
     """
 
 def get_additional_data(element_id: ElementId, data_id: str) -> str:
-    """Gets the element additional data.
+    """Get the additional data stored on an element under a key.
+
+    Additional data is custom text stored per element with set_additional_data.
 
     Parameters:
-        element_id: The element id.
-        data_id: The data id.
+        element_id: ID of the element to read.
+        data_id: Key under which the data is stored.
 
     Returns:
-        The element additional data.
+        Stored text. Empty string if the element ID is invalid or nothing is stored under the key.
     """
 
 def get_user_attribute_name(number: UserAttributeId) -> str:
-    """Gets the user attribute name.
+    """Get the display name of a user attribute.
+
+    The name is a document-wide title, not a value of an element.
 
     Parameters:
-        number: The user attribute number.
+        number: Number of the user attribute.
 
     Returns:
-        The user attribute name.
+        Name of the user attribute. Empty string if the number has no name.
     """
 
 def get_wall_situation(element_id: ElementId) -> str:
-    """Gets the element wall situation.
+    """Get the wall situation text of an element.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element to read.
 
     Returns:
-        The element wall situation.
+        Wall situation text. Empty string if the element ID is invalid.
     """
 
 def get_element_material_name(element_id: ElementId) -> str:
-    """Gets the element material name.
+    """Get the name of the material assigned to an element.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element to read.
 
     Returns:
-        The element material name.
+        Material name. Empty string if the element ID is invalid.
     """
 
 def get_prefab_layer(element_id: ElementId) -> str:
-    """Gets the element prefab layer.
+    """Get the prefab layer assignment of an element as text.
+
+    Layer 0 is the framework layer, positive numbers are layers on the reference side and negative
+    numbers layers on the opposite side.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element to read.
 
     Returns:
-        The element prefab layer.
+        String of the form WithDimensions[2,1,0] WithoutDimensions[] ShowAttributes[], layer numbers
+        sorted in descending order. Empty string if the element ID is invalid or the element has no
+        layer data.
     """
 
 def get_machine_calculation_set(element_id: ElementId) -> str:
-    """Gets the element machine calculation set.
+    """Get the name of the machine calculation set of an element.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element to read.
 
     Returns:
-        The element machine calculation set.
+        Name of the machine calculation set. Empty string if the element ID is invalid.
     """
 
 def get_cutting_set(element_id: ElementId) -> str:
-    """Gets the element cutting set.
+    """Get the name of the cutting set of an element.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element to read.
 
     Returns:
-        The element cutting set.
+        Name of the cutting set. Empty string if the element ID is invalid.
     """
 
 def get_name_process_type(name: str) -> process_type:
-    """Gets the process type for an element name.
+    """Get the process type stored for an element name.
+
+    The name is looked up in the name list of the document, across all element types.
 
     Parameters:
-        name: The element name.
+        name: Exact name from the name list.
 
     Returns:
-        The process type.
+        Process type of the name. A default-constructed process type (value 0) if the name is not
+        found.
     """
 
 def get_name_extended_settings(name: str) -> extended_settings:
-    """Gets the extended settings for an element name.
+    """Get the extended settings stored for an element name.
+
+    The name is looked up in the name list of the document, across all element types.
 
     Parameters:
-        name: The element name.
+        name: Exact name from the name list.
 
     Returns:
-        The extended settings.
+        Extended settings of the name. A default-constructed extended_settings (value 0) if the name
+        is not found.
     """
 
 def get_output_type(element_id: ElementId) -> process_type:
-    """Gets the element output type.
+    """Get the output (process) type of an element.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element to read.
 
     Returns:
-        The element output type.
+        Process type of the element. A default-constructed process type (value 0) if the element ID
+        is invalid.
     """
 
 def get_extended_settings(element_id: ElementId) -> extended_settings:
-    """Gets the element extended settings.
+    """Get the extended settings of an element.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element to read.
 
     Returns:
-        The element extended settings.
+        Extended settings of the element. A default-constructed extended_settings (value 0) if the
+        element ID is invalid.
     """
 
 def get_element_type(element_id: ElementId) -> element_type:
-    """Gets the element type.
+    """Get the element type of an element.
+
+    Returns an element_type object; use its is_*() methods to test the kind. An invalid ID gives an
+    element_type for which is_none() is True.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID.
 
     Returns:
-        The element type.
+        The element_type of the element.
     """
 
 def get_fastening_attribute(element_id: ElementId) -> str:
-    """Get the element fastening attribute.
+    """Get the prefab fastening attribute text of an element.
+
+    The value comes from the document attribute table. Returns an empty string if the element ID is
+    invalid or no value is set.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID.
 
     Returns:
-        The element fastening attribute.
+        The fastening attribute text, or an empty string.
     """
 
 def get_assembly_number(element_id: ElementId) -> str:
-    """Get assembly number.
+    """Get the assembly list number of an element.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID.
 
     Returns:
-        The assembly number.
+        The assembly number as text, or an empty string if the element ID is invalid.
     """
 
 def get_list_quantity(element_id: ElementId) -> UnsignedInt:
-    """Get list quantity.
+    """Get the list quantity of an element.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID.
 
     Returns:
-        The list quantity.
+        The quantity used in lists, or 0 if the element ID is invalid.
     """
 
 def get_ignore_in_vba_calculation(element_id: ElementId) -> bool:
-    """Get ignore in vba calculation.
+    """Check whether an element is excluded from the connector (VBA) calculation.
+
+    Pass a valid element ID; invalid IDs are not handled safely.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID of an existing element.
 
     Returns:
-        True if the element is ignored in VBA calculation, false otherwise.
+        True if the element is ignored in the connector calculation, False otherwise.
     """
 
 def get_standard_element_name(element_id: ElementId) -> str:
-    """Get standard element name.
+    """Get the standard element name assigned to an element.
+
+    Returns an empty string if the element has no standard element assigned or the ID is invalid.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID.
 
     Returns:
-        The standard element name.
+        The standard element name, or an empty string.
     """
 
 def get_steel_shape_name(element_id: ElementId) -> str:
-    """Get steel shape name.
+    """Get the steel shape (profile) name of an element.
+
+    The name is returned in the current program language. Returns an empty string if the element has
+    no steel shape assigned or the ID is invalid.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID.
 
     Returns:
-        The steel shape name.
+        The steel shape name, or an empty string.
     """
 
 def is_beam(element_id: ElementId) -> bool:
-    """Tests if element is beam.
+    """Check whether an element belongs to the beam class.
+
+    Beams, panels and other elements with a beam-like cross-section all count; use is_panel to tell
+    panels apart.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a beam, false otherwise.
+        True if it is a beam-class element (beam, panel or other beam-like element), False otherwise
+        (including an invalid element ID).
     """
 
 def is_panel(element_id: ElementId) -> bool:
-    """Tests if element is panel.
+    """Check whether an element is a panel.
+
+    True only for elements with a rectangular panel cross-section.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a panel, false otherwise.
+        True if the element is a panel, False otherwise (including an invalid element ID).
     """
 
 def is_opening(element_id: ElementId) -> bool:
-    """Tests if element is opening.
+    """Check whether an element is an opening.
+
+    True for elements marked as an opening.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is an opening, false otherwise.
+        True if the element is an opening, False otherwise (including an invalid element ID).
     """
 
 def is_wall(element_id: ElementId) -> bool:
-    """Tests if element is wall.
+    """Check whether an element is a wall.
+
+    True for framed, solid and log walls.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a wall, false otherwise.
+        True if the element is a wall, False otherwise (including an invalid element ID).
     """
 
 def is_floor(element_id: ElementId) -> bool:
-    """Tests if element is floor.
+    """Check whether an element is a floor.
+
+    True for framed and solid floors.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a floor, false otherwise.
+        True if the element is a floor, False otherwise (including an invalid element ID).
     """
 
 def is_roof(element_id: ElementId) -> bool:
-    """Tests if element is roof.
+    """Check whether an element is a roof.
+
+    True for framed and solid roofs.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a roof, false otherwise.
+        True if the element is a roof, False otherwise (including an invalid element ID).
     """
 
 def is_metal(element_id: ElementId) -> bool:
-    """Tests if element is metal.
+    """Check whether an element has a steel (metal) cross-section.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is metal, false otherwise.
+        True if the element has a metal cross-section, False otherwise (including an invalid element
+        ID).
     """
 
 def is_export_solid(element_id: ElementId) -> bool:
-    """Tests if element is export solid.
+    """Check whether an element is an export solid.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is an export solid, false otherwise.
+        True if the element is an export solid, False otherwise (including an invalid element ID).
     """
 
 def is_container(element_id: ElementId) -> bool:
-    """Tests if element is container.
+    """Check whether an element is a container.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a container, false otherwise.
+        True if the element is a container, False otherwise (including an invalid element ID).
     """
 
 def is_connector_axis(element_id: ElementId) -> bool:
-    """Tests if element is connector axis.
+    """Check whether an element is a connector axis.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a connector axis, false otherwise.
+        True if the element is a connector axis, False otherwise (including an invalid element ID).
     """
 
 def is_drilling(element_id: ElementId) -> bool:
-    """Tests if element is drilling.
+    """Check whether an element is a drilling.
+
+    True for axis elements of the drilling (bolt) kind.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is drilling, false otherwise.
+        True if the element is a drilling, False otherwise (including an invalid element ID).
     """
 
 def is_node(element_id: ElementId) -> bool:
-    """Tests if element is node.
+    """Check whether an element is a node.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a node, false otherwise.
+        True if the element is a node, False otherwise (including an invalid element ID).
     """
 
 def is_auxiliary(element_id: ElementId) -> bool:
-    """Tests if element is auxiliary.
+    """Check whether an element is an auxiliary element.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is auxiliary, false otherwise.
+        True if the element is an auxiliary element, False otherwise (including an invalid element
+        ID).
     """
 
 def is_roof_surface(element_id: ElementId) -> bool:
-    """Tests if the element is roof surface.
+    """Check whether an element is a roof surface.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a roof surface, false otherwise.
+        True if the element is a roof surface, False otherwise (including an invalid element ID).
     """
 
 def is_caddy_object(element_id: ElementId) -> bool:
-    """Tests if the element is caddy object.
+    """Check whether an element is a caddy object.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a caddy object, false otherwise.
+        True if the element is a caddy object, False otherwise (including an invalid element ID).
     """
 
 def is_envelope(element_id: ElementId) -> bool:
-    """Tests if the element is an envelope.
+    """Check whether an element has a building envelope type assigned.
+
+    True if any envelope type (for example wall, floor, roof or opening) is set on the element.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is an envelope, false otherwise.
+        True if an envelope type is assigned, False otherwise (including an invalid element ID).
     """
 
 def is_architecture_wall_2dc(element_id: ElementId) -> bool:
-    """Tests if the element is a 2dc reference wall.
+    """Check whether an element is a wall linked to a 2dc architecture wall.
+
+    Only walls can be true.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a 2dc reference wall, false otherwise.
+        True if the element is a wall linked to a 2dc architecture wall, False otherwise (including
+        an invalid element ID).
     """
 
 def is_architecture_wall_xml(element_id: ElementId) -> bool:
-    """Tests if the element is a xml reference wall.
+    """Check whether an element is a wall linked to XML architecture wall data.
+
+    Only walls can be true.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a xml reference wall, false otherwise.
+        True if the element is a wall with XML architecture wall data, False otherwise (including an
+        invalid element ID).
     """
 
 def is_surface(element_id: ElementId) -> bool:
-    """Tests if the element is a Surface.
+    """Check whether an element is a surface.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a Surface, false otherwise.
+        True if the element is a surface, False otherwise (including an invalid element ID).
     """
 
 def is_line(element_id: ElementId) -> bool:
-    """Tests if the element is a Line.
+    """Check whether an element is a line.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a Line, false otherwise.
+        True if the element is a line, False otherwise (including an invalid element ID).
     """
 
 def get_auto_attribute(element_id: ElementId, number: UnsignedInt) -> str:
-    """Get auto attribute.
+    """Get the value of an auto attribute of an element.
+
+    Auto attributes are calculated texts; call update_auto_attribute first if values may be stale.
+    Returns an empty string for an invalid element ID or a number above 999.
 
     Parameters:
-        element_id: The element id.
-        number: The auto attribute number.
+        element_id: Element ID.
+        number: Auto attribute number, counted from 1. Numbers above 999 return an empty string.
 
     Returns:
-        The auto attribute value.
+        The auto attribute value, or an empty string.
     """
 
 def get_auto_attribute_name(number: UnsignedInt) -> str:
-    """Get auto attribute name.
+    """Get the display name of an auto attribute.
 
     Parameters:
-        number: The auto attribute number.
+        number: Auto attribute number, counted from 1.
 
     Returns:
         The auto attribute name.
     """
 
 def is_framed_wall(element_id: ElementId) -> bool:
-    """Tests if the element is a framed wall.
+    """Check whether an element is a framed wall.
+
+    True only if the envelope type of the element is exactly framed wall.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a framed wall, false otherwise.
+        True if the element is a framed wall, False otherwise (including an invalid element ID).
     """
 
 def is_solid_wall(element_id: ElementId) -> bool:
-    """Tests if the element is a solid wall.
+    """Check whether an element is a solid wall.
+
+    True only if the envelope type of the element is exactly solid wall.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a solid wall, false otherwise.
+        True if the element is a solid wall, False otherwise (including an invalid element ID).
     """
 
 def is_log_wall(element_id: ElementId) -> bool:
-    """Tests if the element is a log wall.
+    """Check whether an element is a log wall.
+
+    True only if the envelope type of the element is exactly log wall.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a log wall, false otherwise.
+        True if the element is a log wall, False otherwise (including an invalid element ID).
     """
 
 def is_framed_floor(element_id: ElementId) -> bool:
-    """Tests if the element is a framed floor.
+    """Check whether an element is a framed floor.
+
+    True only if the envelope type of the element is exactly framed floor.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a framed floor, false otherwise.
+        True if the element is a framed floor, False otherwise (including an invalid element ID).
     """
 
 def is_solid_floor(element_id: ElementId) -> bool:
-    """Tests if the element is a solid floor.
+    """Check whether an element is a solid floor.
+
+    True only if the envelope type of the element is exactly solid floor.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a solid floor, false otherwise.
+        True if the element is a solid floor, False otherwise (including an invalid element ID).
     """
 
 def is_framed_roof(element_id: ElementId) -> bool:
-    """Tests if the element is a framed roof.
+    """Check whether an element is a framed roof.
+
+    True only if the envelope type of the element is exactly framed roof.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a framed roof, false otherwise.
+        True if the element is a framed roof, False otherwise (including an invalid element ID).
     """
 
 def is_solid_roof(element_id: ElementId) -> bool:
-    """Tests if the element is a solid roof.
+    """Check whether an element is a solid roof.
+
+    True only if the envelope type of the element is exactly solid roof.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a solid roof, false otherwise.
+        True if the element is a solid roof, False otherwise (including an invalid element ID).
     """
 
 def get_additional_guid(element_id: ElementId, data_id: str) -> str:
-    """Get additional guid.
+    """Get the external GUID stored on an element for a given data ID.
+
+    Returns an empty string if the element ID is invalid.
 
     Parameters:
-        element_id: The element id.
-        data_id: The data id.
+        element_id: Element ID.
+        data_id: Identifier of the external data set the GUID belongs to.
 
     Returns:
-        The additional guid associated with the element and data id.
+        The GUID as text, or an empty string.
     """
 
 def get_prefab_layer_all_assigned(element_id: ElementId) -> list[int]:
-    """Get all assigned prefab layers.
+    """Get the prefab layer numbers assigned to an element, with and without dimensions.
+
+    Deprecated: emits a DeprecationWarning, use get_prefab_layer_info_all_assigned instead. Layers
+    are returned in descending order. Pass a valid element ID; invalid IDs are not handled safely.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID of an existing element.
 
     Returns:
-        The list of all assigned prefab layers for the element.
+        List of layer numbers, highest first; empty if none are assigned.
     """
 
 def get_prefab_layer_with_dimensions(element_id: ElementId) -> list[int]:
-    """Get prefab layer with dimensions.
+    """Get the prefab layer numbers of an element that output dimensions.
+
+    Deprecated: emits a DeprecationWarning, use get_prefab_layer_info_with_dimensions instead.
+    Layers are returned in descending order. Pass a valid element ID; invalid IDs are not handled
+    safely.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID of an existing element.
 
     Returns:
-        The list of prefab layers with dimensions for the element.
+        List of layer numbers with dimension output, highest first; empty if none.
     """
 
 def get_prefab_layer_without_dimensions(element_id: ElementId) -> list[int]:
-    """Get prefab layer without dimensions.
+    """Get the prefab layer numbers of an element that output without dimensions.
+
+    Deprecated: emits a DeprecationWarning, use get_prefab_layer_info_without_dimensions instead.
+    Layers are returned in descending order. Pass a valid element ID; invalid IDs are not handled
+    safely.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID of an existing element.
 
     Returns:
-        The list of prefab layers without dimensions for the element.
+        List of layer numbers without dimension output, highest first; empty if none.
     """
 
 def is_nesting_parent(element_id: ElementId) -> bool:
-    """Tests if the element is a nesting parent.
+    """Check whether an element is a nesting parent.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a nesting parent, false otherwise.
+        True if the element is a nesting parent, False otherwise (including an invalid element ID).
     """
 
 def is_nesting_raw_part(element_id: ElementId) -> bool:
-    """Tests if the element is a nesting raw part.
+    """Check whether an element is a nesting raw part.
+
+    True for nesting parents and for optimization bar elements used as raw stock.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a nesting raw part, false otherwise.
+        True if the element is a nesting raw part, False otherwise (including an invalid element
+        ID).
     """
 
 def get_container_number(element_id: ElementId) -> UnsignedInt:
-    """Get container number.
+    """Get the container number of a container element.
+
+    Returns 0 for non-container elements, invalid IDs, or containers without a valid container
+    number.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID of a container.
 
     Returns:
-        The container number associated with the element.
+        The container number, or 0.
     """
 
 def get_container_number_with_prefix(element_id: ElementId) -> str:
-    """Get container number with prefix.
+    """Get the container number of a container element including its prefix.
+
+    Returns an empty string for non-container elements, invalid IDs, or containers without a valid
+    container number.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID of a container.
 
     Returns:
-        The container number with prefix associated with the element.
+        Prefix followed by the container number, or an empty string.
     """
 
 def get_group_list_items() -> list[str]:
-    """Get group list items.
+    """Get the entries of the group list.
+
+    Reads the list of the open document.
 
     Returns:
-        The list of group list items.
+        List of the entries, empty if there are none.
     """
 
 def get_subgroup_list_items() -> list[str]:
-    """Get subgroup list items.
+    """Get the entries of the subgroup list.
+
+    Reads the list of the open document.
 
     Returns:
-        The list of subgroup list items.
+        List of the entries, empty if there are none.
     """
 
 def get_comment_list_items() -> list[str]:
-    """Get comment list items.
+    """Get the entries of the comment list.
+
+    Reads the list of the open document.
 
     Returns:
-        The list of comment list items.
+        List of the entries, empty if there are none.
     """
 
 def get_sku_list_items() -> list[str]:
-    """Get sku list items.
+    """Get the entries of the SKU list.
+
+    Reads the list of the open document.
 
     Returns:
-        The list of sku list items.
+        List of the entries, empty if there are none.
     """
 
 def get_user_attribute_list_items(number: UserAttributeId) -> list[str]:
-    """Get user attribute list items.
+    """Get the list entries of a user attribute.
+
+    Reads the list of the open document.
 
     Parameters:
-        number: The user attribute number.
+        number: User attribute number, counted from 1.
 
     Returns:
-        The list of user attribute list items.
+        List of the entries, empty if there are none.
     """
 
 def is_circular_mep(element_id: ElementId) -> bool:
-    """Test if element is circular mep.
+    """Check whether an element is a circular MEP (installation) line.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID. An invalid or deleted ID returns False.
 
     Returns:
-        True if the element is a circular mep, false otherwise.
+        True if the element is a circular MEP line, False otherwise (including an invalid element
+        ID).
     """
 
 def is_rectangular_mep(element_id: ElementId) -> bool:
-    """Test if element is rectangular mep.
+    """Check whether an element is a rectangular MEP (installation) element.
+
+    Returns False for an invalid or deleted element ID.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID.
 
     Returns:
-        True if the element is a rectangular mep, false otherwise.
+        True if the element is a rectangular MEP element, otherwise False.
     """
 
 def get_machine_calculation_state(element_id: ElementId) -> str:
-    """Get machine calculation state.
+    """Get the machine calculation state of an element as a display text.
+
+    The text describes whether the position is calculated, checked or confirmed as OK, optionally
+    followed by locked and blocked-for-export markers. The wording follows the cadwork UI language.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID.
 
     Returns:
-        The machine calculation state of the element.
+        State text, or an empty string for an invalid element ID or an element without machine data.
     """
 
 def get_machine_calculation_set_machine_type(element_id: ElementId) -> str:
-    """Get machine calculation set machine type.
+    """Get the machine type of an element's machine calculation set as a display text.
+
+    The text is the machine name as shown in cadwork 3D (localized).
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID.
 
     Returns:
-        The machine calculation set machine type of the element.
+        Machine name, or an empty string for an invalid element ID or when no machine type is set.
     """
 
 def is_btl_processing_group(element_id: ElementId) -> bool:
-    """Test if element is btl processing group.
+    """Check whether an element is a BTL processing group.
+
+    An element qualifies when it has the BTL processing group attribute and the BTL processing group
+    reference points. Returns False for an invalid element ID.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID.
 
     Returns:
-        True if the element is a btl processing group, false otherwise.
+        True if the element is a BTL processing group, otherwise False.
     """
 
 def is_hundegger_processing_group(element_id: ElementId) -> bool:
-    """Test if element is hundegger processing group.
+    """Check whether an element is a Hundegger processing group.
+
+    An element qualifies when it has the Hundegger processing group attribute and the Hundegger
+    processing group reference points. Returns False for an invalid element ID.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID.
 
     Returns:
-        True if the element is a hundegger processing group, false otherwise.
+        True if the element is a Hundegger processing group, otherwise False.
     """
 
 def get_element_grouping_type() -> element_grouping_type:
-    """Get the element grouping type (group, subgroup).
+    """Get whether the element builder uses the group or subgroup attribute.
+
+    Reads an application option; it is not tied to a single element.
 
     Returns:
-        The element grouping type.
+        element_grouping_type.group or element_grouping_type.subgroup.
     """
 
 def set_element_grouping_type(element_grouping_type: element_grouping_type) -> None:
-    """Set the element grouping type (group, subgroup).
+    """Set whether the element builder uses the group or subgroup attribute.
+
+    Changes an application option, not a single element. Any value other than group is treated as
+    subgroup.
 
     Parameters:
-        element_grouping_type: The element grouping type to set.
+        element_grouping_type: element_grouping_type.group or element_grouping_type.subgroup.
     """
 
 def get_associated_nesting_name(element_id: ElementId) -> str:
-    """Get associated nesting name
+    """Get the name of the nesting group an element belongs to.
+
+    Returns an empty string for an invalid element ID or an element that is not part of a nesting
+    group.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID.
 
     Returns:
-        The associated nesting name.
+        Nesting group name, or an empty string.
     """
 
 def get_associated_nesting_number(element_id: ElementId) -> str:
-    """Get associated nesting number.
+    """Get the production list number of the nesting parent of an element.
+
+    The parent is looked up as nesting parent first, then as linear optimization parent. The number
+    is returned as text.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID.
 
     Returns:
-        The associated nesting number.
+        Production list number of the parent as a string, or an empty string if the element is
+        invalid or has no such parent.
     """
 
 def get_attribute_display_settings_for_2d() -> attribute_display_settings:
-    """Get attribute display settings for 2d.
+    """Get the attribute text position settings for 2D export (normal).
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for 2d.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_2d_with_layout() -> attribute_display_settings:
-    """Get attribute display settings for 2d with layout.
+    """Get the attribute text position settings for 2D export with frame.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for 2d with layout.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_2d_without_layout() -> attribute_display_settings:
-    """Get attribute display settings for 2d without layout.
+    """Get the attribute text position settings for 2D export without frame.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for 2d without layout.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_3d() -> attribute_display_settings:
-    """Get attribute display settings for 3d.
+    """Get the attribute text position settings for the 3D view.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for 3d.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_container() -> attribute_display_settings:
-    """Get attribute display settings for container.
+    """Get the attribute text position settings for containers.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for container.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_export_solid() -> attribute_display_settings:
-    """Get attribute display settings for export solid.
+    """Get the attribute text position settings for solid export.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for export solid.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_framed_wall_axis() -> attribute_display_settings:
-    """Get attribute display settings for framed wall axis.
+    """Get the attribute text position settings for framed wall axes.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for framed wall axis.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_framed_wall_beam() -> attribute_display_settings:
-    """Get attribute display settings for framed wall beam.
+    """Get the attribute text position settings for framed wall beams.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for framed wall beam.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_framed_wall_opening() -> attribute_display_settings:
-    """Get attribute display settings for framed wall opening.
+    """Get the attribute text position settings for framed wall openings.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for framed wall opening.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_framed_wall_panel() -> attribute_display_settings:
-    """Get attribute display settings for framed wall panel.
+    """Get the attribute text position settings for framed wall panels.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for framed wall panel.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_log_wall_axis() -> attribute_display_settings:
-    """Get attribute display settings for log wall axis.
+    """Get the attribute text position settings for log wall axes.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for log wall axis.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_log_wall_beam() -> attribute_display_settings:
-    """Get attribute display settings for log wall beam.
+    """Get the attribute text position settings for log wall beams.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for log wall beam.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_log_wall_opening() -> attribute_display_settings:
-    """Get attribute display settings for log wall opening.
+    """Get the attribute text position settings for log wall openings.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for log wall opening.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_log_wall_panel() -> attribute_display_settings:
-    """Get attribute display settings for log wall panel.
+    """Get the attribute text position settings for log wall panels.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for log wall panel.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_machine() -> attribute_display_settings:
-    """Get attribute display settings for machine.
+    """Get the attribute text position settings for machine output.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for machine.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_nesting_element() -> attribute_display_settings:
-    """Get attribute display settings for nesting element.
+    """Get the attribute text position settings for nesting elements.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for nesting element.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_nesting_volume() -> attribute_display_settings:
-    """Get attribute display settings for nesting volume.
+    """Get the attribute text position settings for nesting volumes.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for nesting volume.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_solid_wall_axis() -> attribute_display_settings:
-    """Get attribute display settings for solid wall axis.
+    """Get the attribute text position settings for solid wall axes.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for solid wall axis.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_solid_wall_beam() -> attribute_display_settings:
-    """Get attribute display settings for solid wall beam.
+    """Get the attribute text position settings for solid wall beams.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for solid wall beam.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_solid_wall_opening() -> attribute_display_settings:
-    """Get attribute display settings for solid wall opening.
+    """Get the attribute text position settings for solid wall openings.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for solid wall opening.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def get_attribute_display_settings_for_solid_wall_panel() -> attribute_display_settings:
-    """Get attribute display settings for solid wall panel.
+    """Get the attribute text position settings for solid wall panels.
+
+    The result is a snapshot of the stored settings; changing it does not write back. It tells
+    whether the text position is given in mm or in percent, and holds both values.
 
     Returns:
-        The attribute display settings for solid wall panel.
+        attribute_display_settings with the text position type (absolute in mm, or percentage) and
+        both position values.
     """
 
 def is_processing(element_id: ElementId) -> bool:
-    """Tests if element is processing.
+    """Check whether a processing with the given ID exists on a visible element.
+
+    Despite the parameter name, the value is compared with the ID of a processing (machining), not
+    an element ID. Only processings of currently visible elements are searched.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the processing to look for.
 
     Returns:
-        True if the element is processing, false otherwise.
+        True if a visible element carries a processing with this ID, otherwise False.
     """
 
 def delete_user_attribute(number: UserAttributeId) -> bool:
-    """Delete user attribute from attribute list. The attribute is only deleted when the attribute is not used.
+    """Delete a user attribute definition from the attribute list.
+
+    Deleted only if its list has no items; otherwise nothing is deleted and False is returned.
 
     Parameters:
-        number: The attribute number.
+        number: User attribute number (1-based).
 
     Returns:
-        True if the attribute was successfully deleted, false otherwise.
+        True if the attribute was deleted, False if it still has list items or could not be deleted.
     """
 
 def is_attribute_visible_in_modify_window(number: UnsignedInt) -> bool:
-    """Test if attribute is visible in modify window.
+    """Check whether a user attribute is shown in the Modify window.
+
+    Returns False for a number outside the user attribute range.
 
     Parameters:
-        number: The attribute number.
+        number: User attribute number (1 to 10000).
 
     Returns:
-        True if the attribute is visible in the modify window, false otherwise.
+        True if the attribute is visible in the Modify window, otherwise False.
     """
 
 def set_attribute_visibility_in_modify_window(number: UnsignedInt, visibility: bool) -> None:
-    """Set attribute visibility in modify window.
+    """Show or hide a user attribute in the Modify window.
+
+    Silently does nothing for a number outside the user attribute range.
 
     Parameters:
-        number: The attribute number.
-        visibility: The visibility state.
+        number: User attribute number (1 to 10000).
+        visibility: True to show the attribute, False to hide it.
     """
 
 def set_cutting_set(element_id_list: list[ElementId], cutting_set_name: str) -> bool:
-    """Set cutting set.
+    """Assign a cutting set to elements by name.
+
+    The name is matched case-insensitively. Per element, the document sets are searched first, then
+    the user profile sets (timber) or the standard sets (steel and round beams). Sets found outside
+    the document are copied into it once. Invalid IDs are skipped.
 
     Parameters:
-        element_id_list: The list of element ids.
-        cutting_set_name: The name of the cutting set.
+        element_id_list: List of element IDs to assign to.
+        cutting_set_name: Name of the cutting set.
 
     Returns:
-        True if the cutting set was successfully set, false otherwise.
+        True if the set was assigned to at least one element, False if no element resolved or the
+        name matches no applicable set.
     """
 
 def get_standard_element_material_id(element_id: ElementId) -> int:
-    """Get standard element material id.
+    """Get the material ID of a standard element.
+
+    Returns 0 for an invalid element ID or an element that is not a standard element.
 
     Parameters:
-        element_id: The element id.
+        element_id: Element ID.
 
     Returns:
-        The standard element material id.
+        Material ID, or 0.
     """
 
 def set_machine_calculation_set(element_ids: list[ElementId], name: str) -> bool:
-    """Set machine calculation set for a list of elements.
+    """Assign a machine calculation set to elements by name.
 
-    Note:
-        If multiple sets share the same name, the first matching set is used.
+    If several sets share the name, the first one is used. Invalid IDs and elements without machine
+    data are skipped; an empty list is a no-op that still returns True when the set exists.
 
     Parameters:
-        element_ids: The list of element ids.
-        name: The name of the machine calculation set to apply.
+        element_ids: List of element IDs to assign to.
+        name: Name of the machine calculation set.
 
     Examples:
         >>> import attribute_controller as ac
@@ -1619,58 +2153,68 @@ def set_machine_calculation_set(element_ids: list[ElementId], name: str) -> bool
         >>> success = ac.set_machine_calculation_set([element], "xyz_hundegger K2_BVN")
 
     Returns:
-        True if the machine calculation set was successfully applied, false otherwise.
+        True if a set with this name exists, False if no set with this name is found.
     """
 
 def delete_item_from_name_list(item: str) -> bool:
-    """Delete item from name list.
+    """Delete an entry from the Name attribute list.
+
+    Not deleted when the item does not exist or is still used by elements.
 
     Parameters:
-        item: The item to delete from the name list.
+        item: Text of the list entry to delete.
 
     Returns:
-        True if the item was successfully deleted, false otherwise.
+        True if deleted, False otherwise.
     """
 
 def get_additional_data_keys(element_id: ElementId) -> list[str]:
-    """Gets the additional data keys set on an element through this API.
+    """List the additional data keys set on an element through this API.
+
+    Keys written internally by cadwork 3D are excluded.
 
     Parameters:
-        element_id: The element id.
-
-    Note:
-        Keys cadwork 3d writes internally on the same element are excluded, so the result only contains data put there via setAdditionalData.
+        element_id: Element ID.
 
     Returns:
-        The additional data keys, empty if the element is unknown or carries no such key.
+        List of keys, empty if the element is invalid or has no such keys.
     """
 
 def get_prefab_layer_info_all_assigned(element_id: ElementId) -> list[prefab_layer_info]:
-    """Retrieves every prefab layer assigned to the given element, with or without dimension output.
+    """Get all prefab layers assigned to an element.
+
+    Contains the layers output with dimensions followed by the layers output without dimensions.
+    Each item holds a layer number and a side (element itself, reference side or opposite side).
 
     Parameters:
-        element_id: The element id. An invalid id yields an empty list, never nullptr.
+        element_id: Element ID.
 
     Returns:
-        The assigned layers. Owned by the API — do not delete it; it stays valid until the controller is released.
+        List of prefab_layer_info; empty for an invalid element ID or an element without layers.
     """
 
 def get_prefab_layer_info_with_dimensions(element_id: ElementId) -> list[prefab_layer_info]:
-    """Retrieves the prefab layers of the given element that are output with dimensions.
+    """Get the prefab layers of an element that are output with dimensions.
+
+    Items are in ascending layer order; each holds a layer number and a side (element itself,
+    reference side or opposite side).
 
     Parameters:
-        element_id: The element id. An invalid id yields an empty list, never nullptr.
+        element_id: Element ID.
 
     Returns:
-        The layers output with dimensions. Owned by the API — do not delete it; it stays valid until the controller is released.
+        List of prefab_layer_info; empty for an invalid element ID or an element without layers.
     """
 
 def get_prefab_layer_info_without_dimensions(element_id: ElementId) -> list[prefab_layer_info]:
-    """Retrieves the prefab layers of the given element that are output without dimensions.
+    """Get the prefab layers of an element that are output without dimensions.
+
+    Items are in ascending layer order; each holds a layer number and a side (element itself,
+    reference side or opposite side).
 
     Parameters:
-        element_id: The element id. An invalid id yields an empty list, never nullptr.
+        element_id: Element ID.
 
     Returns:
-        The layers output without dimensions. Owned by the API — do not delete it; it stays valid until the controller is released.
+        List of prefab_layer_info; empty for an invalid element ID or an element without layers.
     """
