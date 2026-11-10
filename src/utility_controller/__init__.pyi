@@ -17,269 +17,292 @@ from cadwork.language import language
 from cadwork.navigation_widget_subwindow_position import navigation_widget_subwindow_position
 
 def get_3d_version() -> int:
-    """Gets the 3D version.
+    """Return the major version number of the running cadwork 3D.
 
     Returns:
-        The 3D version.
+        Major version number, for example 33.
     """
 
 def get_3d_build() -> int:
-    """Gets the 3D build.
+    """Return the build number of the running cadwork 3D.
 
     Returns:
-        The 3D build.
+        Build number.
     """
 
 def get_3d_file_path() -> str:
-    """Gets the 3D file path.
+    """Return the full path of the currently open 3D file.
 
     Returns:
-        The 3D file path.
+        File path as a string.
     """
 
 def set_project_data(project_data_id: str, data: str) -> None:
-    """Sets the project data.
+    """Store a text value under an ID in the project data of the open document.
+
+    The data is saved with the document. Use delete_project_data to remove an entry.
 
     Parameters:
-        project_data_id: The project data id.
-        data: The data to set.
+        project_data_id: Key under which the data is stored.
+        data: Text value to store.
     """
 
 def print_error(message: str) -> None:
-    """Prints an error to the bottom toolbar of Cadwork 3d.
+    """Show an error message in the command bar at the bottom of the 3D window.
 
-    Notes:
-        Attention, this function is blocking. User will need to click to
-        continue the process.
+    The command bar is cleared first and the message is shown as an error.
 
     Parameters:
-        message: The error message.
+        message: Error text to display.
     """
 
 def get_language() -> str:
-    """Gets the 3D language.
+    """Return the language of cadwork 3D as a two-letter code.
 
     Returns:
-        The language.
+        Code such as 'de', 'en', 'fr', 'it', 'es', 'cs', 'fi', 'ru', 'pl', 'ro', 'no', 'zh', 'pt',
+        'et', 'ja', 'nl', 'sv'; empty string if undefined.
     """
 
 def set_language(lang: language) -> None:
-    """Sets the 3D language and refreshes the UI.
+    """Set the user interface language of cadwork 3D and refresh the UI.
+
+    Parameters:
+        lang: Language to switch to, a member of cadwork.language.
 
     Examples:
         >>> import utility_controller as uc
         >>> import cadwork
         >>> uc.set_language(cadwork.language.german)
-
-    Parameters:
-        lang: The language to set.
     """
 
 def get_language_enum() -> language:
-    """Gets the 3D language as a typed enum.
+    """Return the language of cadwork 3D as a cadwork.language member.
 
     Returns:
-        The active language.
+        Active language; english if the language is undefined.
     """
 
 def print_message(message: str, row: int, column: int) -> None:
-    """Prints a message that will be visualized in the bottom toolbar of the
-    3D view. You can arrange the message in the desired position by specifying the row and column.
+    """Show a message in a cell of the command bar at the bottom of the 3D window.
+
+    The addressed cell is cleared and replaced. The command bar has two rows and two columns; other
+    row or column values address cell 1/1.
+
+    Parameters:
+        message: Text to display.
+        row: Row of the cell, 1 or 2.
+        column: Column of the cell, 1 or 2.
 
     Examples:
         >>> import utility_controller as uc
         >>> uc.print_message("Hello World!", 1, 1)
-
-    Parameters:
-        message: The message to print.
-        row: The row to print the message in.
-        column: The column to print the message in.
     """
 
 def get_user_int(message: str) -> int:
-    """Prompts the user for an integer.
+    """Ask the user for an integer in the command bar and wait for the input.
+
+    The script is blocked until the user answers. In unattended runs (/PLUGIN or /RUNPROGRAM) no
+    prompt is shown and 0 is returned.
 
     Parameters:
-        message: The message to display.
+        message: Prompt text shown to the user.
 
     Returns:
-        The user input integer.
+        The entered integer; 0 if the input was cancelled or invalid.
     """
 
 def get_user_double(message: str) -> float:
-    """Prompts the user for a double.
+    """Ask the user for a decimal number in the command bar and wait for the input.
+
+    The script is blocked until the user answers. In unattended runs (/PLUGIN or /RUNPROGRAM) no
+    prompt is shown and 0.0 is returned.
 
     Parameters:
-        message: The message to display.
+        message: Prompt text shown to the user.
 
     Returns:
-        The user input double.
+        The entered number; 0.0 if the input was cancelled or invalid.
     """
 
 def get_user_bool(message: str, default_yes: bool) -> bool:
-    """Prompts the user for a boolean.
+    """Ask the user a yes/no question in the command bar and wait for the answer.
+
+    The script is blocked until the user answers. Cancelling returns False. In unattended runs
+    (/PLUGIN or /RUNPROGRAM) no prompt is shown and False is returned.
 
     Parameters:
-        message: The message to display.
-        default_yes: The default value, True by default.
+        message: Question text shown to the user.
+        default_yes: If True the preselected answer is yes, otherwise no.
 
     Returns:
-        The user input boolean.
+        True if the user answered yes, otherwise False.
     """
 
 def get_user_string(message: str) -> str:
-    """Prompts the user for a string.
+    """Ask the user for a text in the command bar and wait for the input.
+
+    The script is blocked until the user answers. In unattended runs (/PLUGIN or /RUNPROGRAM) no
+    prompt is shown and an empty string is returned.
 
     Parameters:
-        message: The message to display.
+        message: Prompt text shown to the user.
 
     Returns:
-        The user input string.
+        The entered text; empty string if the input was cancelled.
     """
 
 def set_project_name(project_name: str) -> None:
-    """Sets the project name.
+    """Set the project name in the project data of the open document.
 
     Parameters:
         project_name: The project name.
     """
 
 def set_project_number(project_number: str) -> None:
-    """Sets the project number.
+    """Set the project number in the project data of the open document.
 
     Parameters:
         project_number: The project number.
     """
 
 def set_project_part(project_part: str) -> None:
-    """Sets the project part.
+    """Set the project part in the project data of the open document.
 
     Parameters:
         project_part: The project part.
     """
 
 def set_project_architect(project_architect: str) -> None:
-    """Sets the project architect.
+    """Set the architect in the project data of the open document.
 
     Parameters:
-        project_architect: The project architect.
+        project_architect: The architect.
     """
 
 def set_project_customer(project_customer: str) -> None:
-    """Sets the project customer.
+    """Set the customer in the project data of the open document.
 
     Parameters:
-        project_customer: The project customer.
+        project_customer: The customer.
     """
 
 def set_project_designer(project_designer: str) -> None:
-    """Sets the project designer.
+    """Set the designer in the project data of the open document.
 
     Parameters:
-        project_designer: The project designer.
+        project_designer: The designer.
     """
 
 def set_project_deadline(project_deadline: str) -> None:
-    """Sets the project deadline.
+    """Set the project deadline in the project data of the open document.
+
+    The deadline is stored as free text.
 
     Parameters:
-        project_deadline: The project deadline.
+        project_deadline: The deadline as text.
     """
 
 def set_project_user_attribute(number: int, user_attribute: str) -> None:
-    """Sets the project user attribute.
+    """Set the value of a project user attribute in the project data.
 
     Parameters:
-        number: The project user attribute number.
-        user_attribute: The project user attribute.
+        number: Index of the project user attribute.
+        user_attribute: The value to store.
     """
 
 def set_project_user_attribute_name(number: int, user_attribute_name: str) -> None:
-    """Sets the project user attribute name.
+    """Set the title of a project user attribute in the project data.
 
     Parameters:
-        number: The project user attribute number.
-        user_attribute_name: The project user attribute name.
+        number: Index of the project user attribute.
+        user_attribute_name: The title to store.
     """
 
 def set_project_latitude(latitude: float) -> None:
-    """Sets the project latitude.
+    """Set the geographic latitude of the project.
 
     Parameters:
-        latitude: The project latitude.
+        latitude: Latitude of the project location.
     """
 
 def set_project_longitude(longitude: float) -> None:
-    """Sets the project longitude.
+    """Set the geographic longitude of the project.
 
     Parameters:
-        longitude: The project longitude.
+        longitude: Longitude of the project location.
     """
 
 def set_project_address(address: str) -> None:
-    """Sets the project address.
+    """Set the project address in the project data of the open document.
 
     Parameters:
         address: The project address.
     """
 
 def set_project_postal_code(postal_code: str) -> None:
-    """Sets the project postal code.
+    """Set the project postal code in the project data of the open document.
 
     Parameters:
         postal_code: The project postal code.
     """
 
 def set_project_city(city: str) -> None:
-    """Sets the project city.
+    """Set the project city in the project data of the open document.
 
     Parameters:
         city: The project city.
     """
 
 def set_project_country(country: str) -> None:
-    """Sets the project country.
+    """Set the project country in the project data of the open document.
 
     Parameters:
         country: The project country.
     """
 
 def get_user_file_from_dialog(name_filter: str) -> str:
-    """Gets a file with a dialog.
+    """Show an open-file dialog and return the selected existing file.
+
+    The script is blocked until the dialog is closed. The dialog starts in the folder of the current
+    3D file.
 
     Parameters:
-        name_filter: The dialog file filter.
+        name_filter: File filter in Qt syntax, for example 'Text files (*.txt)'.
 
     Returns:
-        The file path.
+        Full path of the selected file; empty string if the dialog was cancelled.
     """
 
 def get_client_number() -> str:
-    """Gets the client number.
+    """Return the cadwork client number of the licence.
 
     Returns:
-        The client number.
+        Client number as a string.
     """
 
 def get_user_point() -> point_3d:
-    """Gets a point from the user.
+    """Let the user pick a point in the 3D view and return it.
+
+    The script is blocked until the user picks a point; midpoints can be snapped. In unattended runs
+    (/PLUGIN or /RUNPROGRAM) no prompt is shown.
 
     Returns:
-        The user point.
+        The picked point in model units (mm); point (0, 0, 0) if the pick was cancelled or the run
+        is unattended.
     """
 
 def disable_auto_display_refresh() -> None:
-    """Disables automatic display refresh.
-    This function prevents the display from updating automatically,
-    which can significantly improve performance during operations that involve multiple changes or computations.
-    The display will remain static until explicitly refreshed by the user.
+    """Stop the 3D view from refreshing automatically after each operation.
+
+    Speeds up scripts that make many changes. Always pair with enable_auto_display_refresh.
     """
 
 def enable_auto_display_refresh() -> None:
-    """Enables automatic display refresh.
-       This function restores the default behavior where the display updates automatically after each operation.
-       Use this function to resume normal display updates after previously disabling them with disable_auto_display_refresh().
-       It's recommended to call this function after completing operations that required disabled display refreshing.
+    """Resume automatic refresh of the 3D view after disable_auto_display_refresh.
+
+    Elements created while refresh was disabled must be recreated (for example with
+    element_controller.recreate_elements) to be displayed correctly.
 
     Examples:
         >>> import cadwork
@@ -290,60 +313,60 @@ def enable_auto_display_refresh() -> None:
         >>> your_list_of_elements: list[int] = []
         >>> uc.enable_auto_display_refresh()
         >>> ec.recreate_elements(your_list_of_elements)
-
-    Note:
-        If elements were created while display refresh was disabled, it's important
-        to recreate these elements after enabling the display refresh to ensure they
-        are properly visualized in cadwork.
     """
 
 def create_new_guid() -> str:
-    """Creates a new GUID.
+    """Create a new random GUID.
 
     Returns:
-        The new GUID.
+        GUID string in registry format including braces, for example
+        '{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}'.
     """
 
 def print_to_console(message: str) -> None:
-    """Prints a message to the Cadwork debug console.
+    """Write a message to the cadwork debug console log.
+
+    The message is logged at info level.
 
     Parameters:
-        message: The message.
+        message: Text to log.
     """
 
 def export_screen_to_image(file_path: str, factor: int) -> None:
-    """Exports the screen to an image.
+    """Save the current 3D view as an image file.
+
+    The image has the size of the 3D view, enlarged by factor, with the current background colour.
+    The format is derived from the file extension.
 
     Parameters:
-        file_path: The file path.
-        factor: The image factor.
+        file_path: Target file path including extension.
+        factor: Enlargement factor applied to the view size, 1 for original size.
     """
 
 def get_new_user_file_from_dialog(name_filter: str) -> str:
-    """Gets a new file with a dialog.
+    """Show a save-file dialog and return the chosen path.
+
+    The script is blocked until the dialog is closed. The file is not created. The dialog starts in
+    the user home folder.
 
     Parameters:
-        name_filter: The dialog file filter.
+        name_filter: File filter in Qt syntax, for example 'Text files (*.txt)'.
 
     Returns:
-        The file path.
+        Full path chosen by the user; empty string if the dialog was cancelled.
     """
 
 def api_autostart(api_name: str, option: int) -> int:
-    """Sets an API autostart option.
+    """Enable or disable autostart of a Python API module for the current user.
+
+    Reads and writes the user-profile alias and module configuration files, creating them if
+    missing. Takes effect at the next start of cadwork 3D. Prefer enable_autostart,
+    disable_autostart and check_autostart.
 
     Parameters:
-        api_name: The name of the API be managed.
-        option: The autostart option to use.
-
-
-            - -1: Checks if API is configured for autostart without making changes. Returns 1 if API is found, 0 if not, or -1 in case of errors.
-            - 1: Enables autostart for the specified API.
-            - 0: Disables autostart for the specified API.
-
-    Note:
-    This function reads and updates alias and module configuration files
-    to manage the autostart state of the API.
+        api_name: Name of the API to manage; an empty name is an error.
+        option: 1 enables autostart, 0 disables it. The value is unsigned, so negative values
+            are rejected with a TypeError; use check_autostart to query.
 
     Examples:
         >>> api_autostart("my_api", 1)  # Enable autostart
@@ -351,685 +374,837 @@ def api_autostart(api_name: str, option: int) -> int:
         >>> api_autostart("my_api", -1)  # Check current autostart state
 
     Returns:
-        The value of option if the operation is successful, or -1 in case of errors.
+        The option value on success; 4294967295 on error.
     """
 
 def enable_autostart(api_name: str) -> None:
-    """Enables autostart for a given API.
+    """Enable autostart of a Python API module for the current user.
+
+    Writes the user-profile configuration files; takes effect at the next start of cadwork 3D.
+    Errors are not reported.
 
     Parameters:
-        api_name: The name of the API for which to enable autostart.
+        api_name: Name of the API to enable.
     """
 
 def disable_autostart(api_name: str) -> None:
-    """Disables autostart for a given API.
+    """Disable autostart of a Python API module for the current user.
+
+    Writes the user-profile configuration files; takes effect at the next start of cadwork 3D.
+    Errors are not reported.
 
     Parameters:
-        api_name: The name of the API for which to disable autostart.
+        api_name: Name of the API to disable.
     """
 
 def check_autostart(api_name: str) -> bool:
-    """Checks if autostart is enabled for a given API.
+    """Check whether autostart is enabled for a Python API module.
+
+    An error, for example an empty name, is also reported as True.
 
     Parameters:
-        api_name: The name of the API to check.
+        api_name: Name of the API to check.
 
     Returns:
-        True if autostart is enabled, false otherwise.
+        True if autostart is enabled or an error occurred, False otherwise.
     """
 
 def delete_project_data(element_id: str) -> None:
-    """Deletes the project data.
+    """Delete an entry from the project data of the open document.
 
     Parameters:
-        element_id: The project data id.
+        element_id: ID of the project data entry, as used with set_project_data.
     """
 
 def run_external_program(name: str) -> bool:
-    """Runs a 3D external program.
+    """Run an external program from the cadwork API folder.
+
+    The name is appended to the API folder path of cadwork 3D.
 
     Parameters:
-        name: The external program name.
+        name: File name of the program, relative to the API folder.
 
     Returns:
-        False if the program could not be run, true otherwise.
+        True if the program was started, False otherwise.
     """
 
 def save_3d_file_silently() -> None:
-    """Saves the 3D file silently."""
+    """Save the open 3D file without showing a dialog.
+
+    Waits until saving has finished before returning.
+    """
 
 def get_licence_first_part() -> str:
-    """Gets the first part of the licence.
+    """Return the first part of the licence (dongle) ID.
 
     Returns:
-        The first part of the licence.
+        First part of the licence ID as a string.
     """
 
 def get_licence_second_part() -> str:
-    """Gets the second part of the licence.
+    """Return the second part of the licence (dongle) ID.
 
     Returns:
-        The second part of the licence.
+        Second part of the licence ID as a string.
     """
 
 def show_progress_bar() -> None:
-    """Shows a ProgressBar in the CommandBar."""
+    """Show the progress bar in the command bar, reset to its minimum.
+
+    Update it with update_progress_bar and remove it with hide_progress_bar.
+    """
 
 def update_progress_bar(value: int) -> None:
-    """Updates the ProgressBar with a value.
+    """Set the value of the progress bar in the command bar.
+
+    Show the bar first with show_progress_bar.
 
     Parameters:
-        value: A value between 0 and 100.
+        value: Progress value, 0 to 100.
     """
 
 def hide_progress_bar() -> None:
-    """Hides the ProgressBar."""
+    """Hide the progress bar in the command bar."""
 
 def get_user_color(initial_color: int) -> int:
-    """Gets a color choosen by the user.
+    """Let the user choose a colour from the colour palette dialog.
+
+    The script is blocked until the dialog is closed. In unattended runs (/PLUGIN or /RUNPROGRAM) no
+    dialog is shown and initial_color is returned.
 
     Parameters:
-        initial_color: The initial color.
+        initial_color: Colour number preselected in the dialog.
 
     Returns:
-        The color number.
+        The chosen colour number.
     """
 
 def get_3d_linear_units() -> str:
-    """Gets the current linear units.
+    """Get the abbreviation of the document's linear unit.
 
     Returns:
-        The current linear units.
+        One of mm, cm, m, in or ft; empty string if the unit is none of these.
     """
 
 def get_3d_linear_display_units() -> str:
-    """Gets the current display units.
+    """Get the abbreviation of the linear unit used for display.
+
+    This is the display unit setting, which can differ from the document unit.
 
     Returns:
-        The current display units.
+        One of mm, cm, m, in or ft; empty string if the unit is none of these.
     """
 
 def get_3d_angular_units() -> str:
-    """Gets the current angular units.
+    """Get the abbreviation of the document's angular unit.
 
     Returns:
-        The current angular units.
+        One of deg, gon, rad or pct; empty string if the unit is none of these.
     """
 
 def get_3d_angular_display_units() -> str:
-    """Gets the current angular display units.
+    """Get the abbreviation of the angular unit used for display.
+
+    This is the display unit setting, which can differ from the document unit.
 
     Returns:
-        The current angular display units.
+        One of deg, gon, rad or pct; empty string if the unit is none of these.
     """
 
 def get_3d_build_date() -> str:
-    """Gets the current build date.
+    """Get the build date of the running cadwork 3D version.
 
     Returns:
-        The current build date.
+        The build date as a string.
     """
 
 def set_project_elevation(elevation: float) -> None:
-    """Sets the project elevation.
+    """Set the project elevation in the project data.
+
+    Updates the project data of the open document; the value is stored as the project height.
 
     Parameters:
-        elevation: The project elevation.
+        elevation: New project elevation.
     """
 
 def clear_errors() -> None:
-    """Clears all errors."""
+    """Clear the list of errors collected by the API."""
 
 def push_check_and_query_data() -> None:
-    """Pushes the current state of check and query data onto a stack."""
+    """Save the current confirmation-dialog settings on a stack.
+
+    Use together with pop_check_and_query_data to restore the settings after temporarily suppressing
+    dialogs.
+    """
 
 def pop_check_and_query_data() -> None:
-    """Pops the most recent state of check and query data from the stack."""
+    """Restore the confirmation-dialog settings saved by the last push.
+
+    Does nothing if nothing was pushed.
+    """
 
 def change_check_and_query_data_to_no_queries() -> None:
-    """Changes the current state of check and query data to no queries."""
+    """Suppress confirmation dialogs by answering them automatically.
+
+    Dialogs set to ask with default Yes are switched to always yes, those with default No to never.
+    Changes the document settings until reverted, for example with pop_check_and_query_data.
+    """
 
 def change_check_and_query_data_to_queries() -> None:
-    """Changes the current state of check and query data to allow queries."""
+    """Re-enable confirmation dialogs that were set to answer automatically.
+
+    Dialogs set to always yes are switched back to ask with default Yes, those set to never back to
+    ask with default No.
+    """
 
 def is_direct_info_enabled() -> bool:
-    """Checks if Direct Info is enabled.
+    """Check whether the Direct Info tooltip is enabled.
 
     Returns:
-        True if Direct Info is enabled, false otherwise.
+        True if Direct Info (element tooltip on hover) is enabled, False otherwise.
     """
 
 def enable_direct_info() -> None:
-    """Enables Direct Info."""
+    """Enable the Direct Info tooltip for elements."""
 
 def disable_direct_info() -> None:
-    """Disables Direct Info."""
+    """Disable the Direct Info tooltip for elements."""
 
 def load_attribute_display_settings(file_path: str) -> None:
-    """Loads attribute display settings from a file.
+    """Load attribute display settings from a settings file and apply them.
+
+    Overwrites the current attribute display settings of all supported display types and formats
+    with those found in the file.
 
     Parameters:
-        file_path: The path to the file containing the settings.
+        file_path: Path to the settings file.
     """
 
 def set_project_description(description: str) -> None:
-    """Sets the project description.
+    """Set the project description in the project data.
 
     Parameters:
-        description: The new description for the project.
+        description: New project description.
     """
 
 def start_project_data_dialog() -> None:
-    """Starts the project data dialog."""
+    """Open the project data dialog.
+
+    Shows the dialog to the user.
+    """
 
 def init_LxSDK() -> None:
-    """Initializes the LxSDK."""
+    """Initialize the LxSDK of the open document."""
 
 def load_element_attribute_display_settings(file_path: str, elements: list[ElementId]) -> None:
-    """Loads element attribute display settings from a file.
+    """Load attribute display settings from a file for the given elements.
+
+    Same as load_attribute_display_settings but scoped to the given elements; IDs that do not exist
+    are skipped. Also applies the file's use-global flag to each loaded setting.
 
     Parameters:
-        file_path: The path to the file containing the settings.
-        elements: The element list for which to load the settings.
+        file_path: Path to the settings file.
+        elements: List of element IDs the settings apply to.
     """
 
 def get_global_x_offset() -> float:
-    """Gets the global X offset.
+    """Get the X coordinate of the document's global origin.
 
     Returns:
-        The global X offset.
+        Global X offset in model units (mm).
     """
 
 def set_global_x_offset(offset: float) -> None:
-    """Sets the global X offset.
+    """Set the X coordinate of the document's global origin.
+
+    The other two coordinates are unchanged.
 
     Parameters:
-        offset: The new global X offset.
+        offset: New global X offset in model units (mm).
     """
 
 def get_global_y_offset() -> float:
-    """Gets the global Y offset.
+    """Get the Y coordinate of the document's global origin.
 
     Returns:
-        The global Y offset.
+        Global Y offset in model units (mm).
     """
 
 def set_global_y_offset(offset: float) -> None:
-    """Sets the global Y offset.
+    """Set the Y coordinate of the document's global origin.
+
+    The other two coordinates are unchanged.
 
     Parameters:
-        offset: The new global Y offset.
+        offset: New global Y offset in model units (mm).
     """
 
 def get_global_z_offset() -> float:
-    """Gets the global Z offset.
+    """Get the Z coordinate of the document's global origin.
 
     Returns:
-        The global Z offset.
+        Global Z offset in model units (mm).
     """
 
 def set_global_z_offset(offset: float) -> None:
-    """Sets the global Z offset.
+    """Set the Z coordinate of the document's global origin.
+
+    The other two coordinates are unchanged.
 
     Parameters:
-        offset: The new global Z offset.
+        offset: New global Z offset in model units (mm).
     """
 
 def show_north_arrow() -> None:
-    """Shows the north arrow on the 3D view."""
+    """Show the north arrow (deprecated, does nothing).
+
+    Deprecated: logs a warning and has no effect. Use the navigation widget functions instead.
+    """
 
 def hide_north_arrow() -> None:
-    """Hides the north arrow on the 3D view."""
+    """Hide the north arrow (deprecated, does nothing).
+
+    Deprecated: logs a warning and has no effect. Use the navigation widget functions instead.
+    """
 
 def is_north_arrow_visible() -> bool:
-    """Checks if the north arrow is visible on the 3D view.
+    """Check whether the north arrow is visible (deprecated).
+
+    Deprecated: logs a warning and always returns False. Use the navigation widget functions
+    instead.
 
     Returns:
-        True if the north arrow is visible, false otherwise.
+        Always False.
     """
 
 def get_north_angle() -> float:
-    """Gets the angle of the north direction.
+    """Get the north direction angle stored in the program options.
 
     Returns:
-        The angle of the north direction in degrees.
+        North angle in degrees.
     """
 
 def set_north_angle(north_angle: float) -> None:
-    """Sets the angle of the north direction.
+    """Set the north direction angle in the program options.
 
     Parameters:
-        north_angle: The angle of the north direction in degrees.
+        north_angle: North angle in degrees.
     """
 
 def get_user_file_from_dialog_in_path(name_filter: str, path: str) -> str:
-    """Gets a user file from a dialog in a specified path.
+    """Show an open-file dialog starting in a folder and return the chosen file.
+
+    Blocks the script until the user closes the dialog.
 
     Parameters:
-        name_filter: The filter for the dialog.
-        path: The path in which to get the user file.
+        name_filter: File filter in Qt dialog format, for example Text files (*.txt).
+        path: Folder in which the dialog starts.
 
     Returns:
-        A string containing the user file.
+        Full path of the selected existing file; empty string if the dialog is cancelled.
     """
 
 def get_new_user_file_from_dialog_in_path(name_filter: str, path: str) -> str:
-    """Gets a new user file from a dialog in a specified path.
+    """Show a save-file dialog starting in a folder and return the chosen file name.
+
+    Blocks the script until the user closes the dialog. The file does not need to exist and is not
+    created.
 
     Parameters:
-        name_filter: The filter for the dialog.
-        path: The path in which to get the new user file.
+        name_filter: File filter in Qt dialog format, for example Text files (*.txt).
+        path: Folder in which the dialog starts.
 
     Returns:
-        A string containing the new user file.
+        Full path of the chosen file; empty string if the dialog is cancelled.
     """
 
 def enable_update_variant() -> None:
-    """Enables the update variant."""
+    """Enable automatic updating of variants.
+
+    Reverses disable_update_variant.
+    """
 
 def disable_update_variant() -> None:
-    """Disables the update variant."""
+    """Disable automatic updating of variants.
+
+    Call enable_update_variant to turn it on again.
+    """
 
 def get_user_points() -> list[point_3d]:
-    """Gets user points.
+    """Let the user pick any number of points in the 3D view.
+
+    Blocks the script while the user picks points. In unattended plugin runs (/PLUGIN or /RUNPROGRAM
+    mode) no interaction takes place and an empty list is returned.
 
     Returns:
-        A list of user points.
+        List of picked points in picking order; empty list if nothing was picked or the interaction
+        is skipped.
     """
 
 def get_user_points_with_count(count: int) -> list[point_3d]:
-    """Gets user points with a specified count.
+    """Let the user pick a given number of points in the 3D view.
+
+    Blocks the script while the user picks points. Returns an empty list for count 0 and in
+    unattended plugin runs (/PLUGIN or /RUNPROGRAM mode).
 
     Parameters:
-        count: The number of user points to get.
+        count: Maximum number of points to pick; 1 asks for a single point.
 
     Returns:
-        A list of user points.
+        List of picked points in picking order; empty list if count is 0, nothing was picked or the
+        interaction is skipped.
     """
 
 def get_user_path_from_dialog() -> str:
-    """Gets the user path from a dialog.
+    """Show a folder-selection dialog and return the chosen folder.
+
+    Blocks the script until the user closes the dialog. In unattended plugin runs (/PLUGIN or
+    /RUNPROGRAM mode) no dialog is shown.
 
     Returns:
-        A string containing the user path.
+        Full path of the selected folder; empty string if cancelled or skipped.
     """
 
 def get_user_path_from_dialog_in_path(path: str) -> str:
-    """Gets the user path from a dialog in a specified path.
+    """Show a folder-selection dialog starting in a folder and return the chosen folder.
+
+    Blocks the script until the user closes the dialog. In unattended plugin runs (/PLUGIN or
+    /RUNPROGRAM mode) no dialog is shown.
 
     Parameters:
-        path: The path in which to get the user path.
+        path: Folder in which the dialog starts.
 
     Returns:
-        A string containing the user path.
+        Full path of the selected folder; empty string if cancelled or skipped.
     """
 
 def execute_shortcut(shortcut_key_modifier: shortcut_key_modifier, shortcut_key: shortcut_key) -> None:
-    """Executes a shortcut.
+    """Trigger the main window action bound to a keyboard shortcut.
+
+    Only function keys F1 to F12 are supported, optionally combined with one modifier. Every action
+    with a matching shortcut is triggered; nothing happens if none match.
 
     Parameters:
-        shortcut_key_modifier: The modifier key for the shortcut.
-        shortcut_key: The key for the shortcut.
+        shortcut_key_modifier: Modifier key: none, Shift, Control or Alt.
+        shortcut_key: Function key F1 to F12.
     """
 
 def run_external_program_from_custom_directory(file_path: str) -> bool:
-    """Runs a 3D external program from a custom directory.
+    """Run a 3D external program from a file path.
+
+    The program is launched through the external program manager of the open document.
 
     Parameters:
-        file_path: The external program file path.
+        file_path: Path of the external program file.
 
     Returns:
-        False if error, true otherwise.
+        True if the program was started, False on error.
     """
 
 def get_3d_file_name() -> str:
-    """Gets the 3D file name.
+    """Get the file name of the open 3D document.
 
     Returns:
-        The 3D file name.
+        File name without folder, including extension.
     """
 
 def get_project_data(element_id: str) -> str:
-    """Gets the project data.
+    """Get a project data value by its ID.
 
     Parameters:
-        element_id: The project data id.
+        element_id: ID (name) of the project data entry. Not an element ID.
 
     Returns:
-        The project data.
+        The stored value; empty string if the ID does not exist.
     """
 
 def get_project_name() -> str:
-    """Gets the project name.
+    """Get the project name from the project data.
 
     Returns:
-        The project name.
+        The project name as text; empty string if not set.
     """
 
 def get_project_part() -> str:
-    """Gets the project part.
+    """Get the project part from the project data.
 
     Returns:
-        The project part.
+        The project part as text; empty string if not set.
     """
 
 def get_project_architect() -> str:
-    """Gets the project architect.
+    """Get the project architect from the project data.
 
     Returns:
-        The project architect.
+        The project architect as text; empty string if not set.
     """
 
 def get_project_number() -> str:
-    """Gets the project number.
+    """Get the project number from the project data.
 
     Returns:
-        The project number.
+        The project number as text; empty string if not set.
     """
 
 def get_project_customer() -> str:
-    """Gets the project customer.
+    """Get the project customer from the project data.
 
     Returns:
-        The project customer.
+        The project customer as text; empty string if not set.
     """
 
 def get_project_designer() -> str:
-    """Gets the project designer.
+    """Get the project designer from the project data.
 
     Returns:
-        The project designer.
+        The project designer as text; empty string if not set.
     """
 
 def get_project_deadline() -> str:
-    """Gets the project deadline.
+    """Get the project deadline from the project data.
 
     Returns:
-        The project deadline.
+        The project deadline as text; empty string if not set.
     """
 
 def get_project_user_attribute(number: int) -> str:
-    """Gets the project user attribute.
+    """Get a project user attribute value by its number.
 
     Parameters:
-        number: The project user attribute number.
+        number: Number of the project user attribute.
 
     Returns:
-        The project user attribute.
+        The value of the attribute; empty string if not set.
     """
 
 def get_project_user_attribute_name(number: int) -> str:
-    """Gets the project user attribute name.
+    """Return the name of a project user attribute slot.
+
+    The name is the title defined in the project data settings, not an attribute value.
 
     Parameters:
-        number: The project user attribute number.
+        number: Number of the project user attribute slot.
 
     Returns:
-        The project user attribute name.
+        The slot name, or an empty string if none is set.
     """
 
 def get_project_latitude() -> float:
-    """Gets the project latitude.
+    """Return the project latitude from the project data.
 
     Returns:
-        The project latitude.
+        The latitude as a float.
     """
 
 def get_project_longitude() -> float:
-    """Gets the project longitude.
+    """Return the project longitude from the project data.
 
     Returns:
-        The project longitude.
+        The longitude as a float.
     """
 
 def get_project_postal_code() -> str:
-    """Gets the project postal code.
+    """Return the project postal code from the project data.
 
     Returns:
-        The project postal code.
+        The postal code, or an empty string if not set.
     """
 
 def get_project_address() -> str:
-    """Gets the project address.
+    """Return the project address from the project data.
 
     Returns:
-        The project address.
+        The address, or an empty string if not set.
     """
 
 def get_project_city() -> str:
-    """Gets the project city.
+    """Return the project city from the project data.
 
     Returns:
-        The project city.
+        The city, or an empty string if not set.
     """
 
 def get_project_country() -> str:
-    """Gets the project country.
+    """Return the project country from the project data.
 
     Returns:
-        The project country.
+        The country, or an empty string if not set.
     """
 
 def get_project_elevation() -> float:
-    """Gets the project elevation.
+    """Return the project elevation (height) from the project data.
 
     Returns:
-        The project elevation.
+        The elevation as a float.
     """
 
 def get_project_description() -> str:
-    """Gets the project description.
+    """Return the project description from the project data.
 
     Returns:
-        A string containing the project description.
+        The description, or an empty string if not set.
     """
 
 def get_project_guid() -> str:
-    """Gets the project GUID.
+    """Return the GUID of the current project.
 
     Returns:
-        The project GUID.
+        The project GUID as a string.
     """
 
 def get_3d_userprofil_path() -> str:
-    """Gets the 3D userprofil path.
+    """Return the path of the cadwork user profile directory.
 
     Returns:
-        The 3D userprofil path.
+        The directory path as a string.
     """
 
 def get_plugin_path() -> str:
-    """Gets the plugin path.
+    """Return the path of the cadwork plugin directory.
 
     Returns:
-        A string containing the plugin path.
+        The directory path as a string.
     """
 
 def get_millimetre_from_imperial_string(value: str) -> float:
-    """Converts an imperial string to millimetres.
+    """Convert an imperial length string to millimetres.
+
+    Parsing is done by the cadwork unit converter.
 
     Parameters:
-        value: The imperial string to convert.
+        value: Imperial length as text, for example a feet-and-inches or inches string.
 
     Returns:
-        The value in millimetres.
+        The length in millimetres as a float.
     """
 
 def get_imperial_string_from_millimetre(value: float) -> str:
-    """Converts a value in millimetres to an imperial string.
+    """Convert a length in millimetres to an imperial length string.
 
     Parameters:
-        value: The value in millimetres to convert.
+        value: Length in millimetres.
 
     Returns:
-        The value as an imperial string.
+        The length as an imperial text string.
     """
 
 def get_user_catalog_path() -> str:
-    """Gets the user catalog path.
+    """Return the path of the cadwork user catalog directory.
 
     Returns:
-        A string containing the user catalog path.
+        The directory path as a string.
     """
 
 def get_3d_hwnd() -> int:
-    """Gets the 3D HWND.
+    """Return the native window handle of the cadwork 3D main window.
 
     Returns:
-        The 3D HWND.
+        The Windows window handle as an integer, or 0 if there is no main window.
     """
 
 def close_cadwork_document_saved() -> None:
-    """close cadwork saved."""
+    """Save the document silently, then close cadwork.
+
+    Terminates the cadwork application, so the script ends with it. Ignored (with a log warning)
+    when cadwork runs unattended via a plugin or program start parameter, because cadwork closes
+    itself after the script.
+    """
 
 def close_cadwork_document_unsaved() -> None:
-    """close cadwork unsaved."""
+    """Close cadwork without saving the document.
+
+    Unsaved changes are lost and the script ends with the application. Ignored (with a log warning)
+    when cadwork runs unattended via a plugin or program start parameter, because cadwork closes
+    itself after the script.
+    """
 
 def get_use_of_global_coordinates() -> bool:
-    """Gets the use of global coordinates.
+    """Return whether global coordinates are used.
+
+    This is a cadwork application option.
 
     Returns:
-        True if global coordinates are used, false otherwise.
+        True if global coordinates are enabled, False otherwise.
     """
 
 def set_use_of_global_coordinates(use_of_global_coordinates: bool) -> None:
-    """Sets the use of global coordinates.
+    """Enable or disable the use of global coordinates.
+
+    This is a cadwork application option; it does not change the global origin.
 
     Parameters:
-        use_of_global_coordinates: True to use global coordinates, false otherwise.
+        use_of_global_coordinates: True to use global coordinates, False to use local ones.
     """
 
 def get_global_origin() -> point_3d:
-    """Gets the global origin.
+    """Return the global origin of the document.
 
     Returns:
-        The global origin.
+        The global origin as a point_3d in model units (mm).
     """
 
 def set_global_origin(global_origin: point_3d) -> None:
-    """Sets the global origin.
+    """Set the global origin of the document.
 
     Parameters:
-        global_origin: The global origin.
+        global_origin: New global origin as a point_3d in model units (mm).
     """
 
 def create_snapshot() -> str:
-    """Get snapshot from screen.
+    """Capture the 3D view as a Base64-encoded image string.
+
+    Captures the current 3D view with a white background and returns the PNG data encoded as Base64
+    text. Decode it with base64 to get the image bytes.
 
     Returns:
-        The snapshot as a string.
+        The Base64-encoded PNG image.
     """
 
 def get_3d_gui_upper_left_screen_coordinates() -> tuple[int, int]:
-    """Get the coordinates of the upper left corner of the 3D GUI.
+    """Return the screen position of the upper left corner of the 3D main window.
 
     Returns:
-        The coordinates of the upper left corner of the 3D GUI.
+        A tuple (x, y) in screen pixels.
     """
 
 def get_3d_main_window_geometry() -> 'window_geometry':
-    """Get the geometry of 3d main window.
+    """Return the screen geometry of the cadwork 3D main window.
 
     Returns:
-        The geometry of the 3D main window.
+        A window_geometry with the four corner points bottom_left, bottom_right, top_left and
+        top_right, each with x and y in screen pixels.
     """
 
 def get_project_data_keys() -> list[str]:
-    """Gets all keys for project data.
+    """Return the keys of the project data entries stored in the document.
+
+    Keys reserved for internal use by cadwork are left out.
 
     Returns:
-        The list of project data keys.
+        List of project data keys, empty if there are none.
     """
 
 def get_user_int_with_default_value(message: str, default_value: int) -> int:
-    """Prompts the user for an integer with a default value.
+    """Ask the user to enter an integer in the command bar, with a default.
+
+    Blocks the script until the user answers. Returns the default value without asking when cadwork
+    runs unattended via a plugin or program start parameter.
 
     Parameters:
-        message: The message to display.
-        default_value: The default value.
+        message: Prompt text shown to the user.
+        default_value: Value pre-filled in the input field, also returned in unattended runs.
 
     Returns:
-        The user integer.
+        The value entered by the user. 0 (and an error message in cadwork) if the user cancels the
+        input.
     """
 
 def get_user_double_with_default_value(message: str, default_value: float) -> float:
-    """Prompts the user for a double with a default value.
+    """Ask the user to enter a number in the command bar, with a default.
+
+    Blocks the script until the user answers. Returns the default value without asking when cadwork
+    runs unattended via a plugin or program start parameter.
 
     Parameters:
-        message: The message to display.
-        default_value: The default value.
+        message: Prompt text shown to the user.
+        default_value: Value pre-filled in the input field, also returned in unattended runs.
 
     Returns:
-        The user double.
+        The value entered by the user. 0.0 (and an error message in cadwork) if the user cancels the
+        input.
     """
 
 def get_user_string_with_default_value(message: str, default_value: str) -> str:
-    """Prompts the user for a string with a default value.
+    """Ask the user to enter text in the command bar, with a default.
+
+    Blocks the script until the user answers. Returns the default value without asking when cadwork
+    runs unattended via a plugin or program start parameter.
 
     Parameters:
-        message: The message to display.
-        default_value: The default value.
+        message: Prompt text shown to the user.
+        default_value: Text pre-filled in the input field, also returned in unattended runs.
 
     Returns:
-        The user string.
+        The text entered by the user. Empty string (and an error message in cadwork) if the user
+        cancels the input.
     """
 
 def get_3d_version_name() -> str:
-    """Gets the 3D version name.
+    """Return the cadwork 3D version name.
 
     Returns:
-        The 3D version name.
+        The version name as a string.
     """
 
 def redirect_python_output_to_logger() -> None:
-    """Redirects output from Python's print function to the cadwork logger.
-    This function is used to redirect the output of the Python interpreter to the logger.
-    This is useful for debugging and logging purposes.
+    """Send Python print output and errors to the cadwork logger.
+
+    Replaces sys.stdout and sys.stderr with logger objects and sets the cadwork API log level to
+    Info. Safe to call more than once.
     """
 
 def set_navigation_widget_enabled(position: navigation_widget_subwindow_position, enabled: bool) -> None:
-    """Enables or disables the navigation widget in the specified position.
+    """Show or hide the navigation widget in one corner of the 3D view.
+
+    The widget is recreated and the view updated.
 
     Parameters:
-        position: Which Navigation Widget to modify.
-        enabled: enabled.
+        position: Navigation widget corner. None is rejected: nothing changes and an error is
+            logged.
+        enabled: True to show the widget, False to hide it.
     """
 
 def set_navigation_widget_size(position: navigation_widget_subwindow_position, size: int) -> None:
-    """Sets the size of the navigation widget in the specified position.
+    """Set the size of the navigation widget in one corner of the 3D view.
+
+    The widget is recreated and the view updated.
 
     Parameters:
-        position: Which Navigation Widget to modify.
-        size: The size value. The value range configurable via the UI goes from 80 to 200 inclusive.
+        position: Navigation widget corner. None is rejected: nothing changes and an error is
+            logged.
+        size: Widget size. The UI allows 80 to 200 inclusive; the code does not clamp other values.
     """
 
 def set_navigation_widget_north_arrow(position: navigation_widget_subwindow_position, enabled: bool) -> None:
-    """Enables or disables the north arrow of the navigation widget in the specified position.
+    """Show or hide the north arrow of a navigation widget.
+
+    The widget is recreated and the view updated.
 
     Parameters:
-        position: Which Navigation Widget to modify.
-        enabled: enabled.
+        position: Navigation widget corner. None is rejected: nothing changes and an error is
+            logged.
+        enabled: True to show the north arrow, False to hide it.
     """
 
 def set_navigation_widget_axis(position: navigation_widget_subwindow_position, enabled: bool) -> None:
-    """Enables or disables the axis triad of the navigation widget in the specified position.
+    """Show or hide the axis triad of a navigation widget.
+
+    The widget is recreated and the view updated.
 
     Parameters:
-        position: Which Navigation Widget to modify.
-        enabled: enabled.
+        position: Navigation widget corner. None is rejected: nothing changes and an error is
+            logged.
+        enabled: True to show the axis triad, False to hide it.
     """
 
 def set_navigation_widget_cube(position: navigation_widget_subwindow_position, enabled: bool) -> None:
-    """Enables or disables the view cube of the navigation widget in the specified position.
+    """Show or hide the view cube of a navigation widget.
+
+    The widget is recreated and the view updated.
 
     Parameters:
-        position: Which Navigation Widget to modify.
-        enabled: enabled.
+        position: Navigation widget corner. None is rejected: nothing changes and an error is
+            logged.
+        enabled: True to show the view cube, False to hide it.
     """
 
 def get_user_edge() -> list[point_3d]:
-    """Asks the user to pick an edge in the 3D view, either by clicking an existing edge or by clicking 2 points. The call blocks until the user has picked an edge or aborted with Esc. For a curved edge (e.g. an arc) only its start and end points are returned. The direction is not guaranteed: picking the same edge twice can return start and end swapped. Do not rely on the point order; compare or sort the points yourself if direction matters.
+    """Ask the user to pick an edge or two points in the 3D view.
+
+    Blocks until the user picks or aborts. Returns an empty list without asking in unattended
+    runs (/PLUGIN or /RUNPROGRAM).
 
     Returns:
-        Two points, the two ends of the edge, in global coordinates. The list is empty if the user aborted.
+        List of two point_3d, the start and end of the picked edge. Empty list if the user
+        aborted or no valid edge was picked.
     """
