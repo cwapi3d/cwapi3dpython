@@ -13,518 +13,602 @@ from cadwork.api_types import *
 from cadwork.vba_catalog_item_type import vba_catalog_item_type
 
 def create_standard_connector(axis_name: str, point1: point_3d, point2: point_3d) -> ElementId:
-    """Creates a standard connector axis between two points.
+    """Create a connector axis from a named standard connector between two points.
+
+    The new axis starts at point1, runs towards point2 and has the length of their distance. It is
+    added to the model, made visible and the display is refreshed if auto refresh is on. Returns 0
+    if no standard connector with that name exists or creation fails.
 
     Parameters:
-        axis_name: Name of the standard connector axis.
-        point1: The first point defining the connector axis.
-        point2: The second point defining the connector axis.
+        axis_name: Name of the standard connector, as listed by get_standard_connector_list (looked
+            up in the current cadwork language); the first match is used.
+        point1: Start point of the axis in model units (mm).
+        point2: End point of the axis in model units (mm); only gives the direction and length.
 
     Returns:
-        The element id of the created standard connector axis.
+        Element ID of the created connector axis, or 0 on failure.
     """
 
 def set_bolt_length(axis_id: ElementId, length: float) -> None:
-    """Sets the Bolt Length.
+    """Set the bolt length of a connector axis and switch off automatic bolt length.
+
+    Silently does nothing if the element ID is invalid.
 
     Parameters:
-        axis_id: The id of the axis.
-        length: The bolt length.
+        axis_id: Element ID of the connector axis.
+        length: Bolt length in model units (mm).
     """
 
 def set_bolt_length_automatic(axis_id: ElementId, length_automatic: bool) -> None:
-    """Sets the Bolt Length Automatic.
+    """Switch automatic bolt length of a connector axis on or off.
+
+    Does nothing if the element ID is invalid or the element is not a connector axis.
 
     Parameters:
-        axis_id: The id of the axis.
-        length_automatic: True if the bolt length should be automatic, false otherwise.
+        axis_id: Element ID of the connector axis.
+        length_automatic: True to let cadwork determine the bolt length, False to use the manually
+            set length.
     """
 
 def set_diameter(axis_id: ElementId, diameter: float) -> None:
-    """Sets the Drilling Diameter for all Sections.
+    """Set the drilling diameter of all sections of a connector axis.
+
+    Silently does nothing if the element ID is invalid.
 
     Parameters:
-        axis_id: The id of the axis.
-        diameter: The drilling diameter to set for all sections.
+        axis_id: Element ID of the connector axis.
+        diameter: Drilling diameter in model units (mm), applied as an absolute value to every
+            section.
     """
 
 def set_section_diameter(axis_id: ElementId, section_index: UnsignedInt, diameter: float) -> None:
-    """Sets the Drilling Diameter for a specific Sections.
+    """Set the drilling diameter of one section of a connector axis.
+
+    Silently does nothing if the element ID is invalid. An out-of-range section index changes
+    nothing.
 
     Parameters:
-        axis_id: The id of the axis.
-        section_index: The index of the section. (0-based index)
-        diameter: The drilling diameter to set for the specific section.
+        axis_id: Element ID of the connector axis.
+        section_index: 0-based index of the section; see get_section_count.
+        diameter: Drilling diameter in model units (mm), as an absolute value.
     """
 
 def check_axis(axis_id: ElementId) -> bool:
-    """Returns if the axis is valid.
+    """Check whether a connector axis has a valid cutting ability (connection config).
 
     Parameters:
-        axis_id: The id of the axis.
+        axis_id: Element ID of the connector axis.
 
     Returns:
-        True if the axis is valid, false otherwise.
+        True if the element is a connector axis with valid cutting ability. False if it is invalid,
+        not a connector axis, or the ID is invalid.
     """
 
 def clear_errors() -> None:
-    """Clear all errors."""
+    """Clear the stored connector axis error messages."""
 
 def update_axis_cutting_ability(axis_id_list: list[ElementId]) -> None:
-    """Updates the Connection Config (CuttingAbility) of Axis/VBAs.
+    """Re-evaluate the cutting ability (connection config) of connector axes.
+
+    Invalid IDs and elements that are not connector axes are skipped. Axes that are still valid are
+    only recreated when auto display refresh is on; axes whose cutting ability is invalid are handed
+    to cadwork's cutting ability check.
 
     Parameters:
-        axis_id_list: The axis id list.
+        axis_id_list: List of element IDs of connector axes.
     """
 
 def set_bolt_item(axis_id: ElementId, item_guid: str) -> None:
-    """Sets the Bolt Item.
+    """Set the bolt catalog item of a connector axis.
+
+    The item is looked up in the user catalog. Silently does nothing if the element ID is invalid.
 
     Parameters:
-        axis_id: The id of the axis.
-        item_guid: The bolt item guid to set.
+        axis_id: Element ID of the connector axis.
+        item_guid: GUID of a bolt item from the user catalog, e.g. from get_item_guid_by_name.
     """
 
 def create_blank_connector(diameter: float, start_point: point_3d, end_point: point_3d) -> ElementId:
-    """Creates a blank connector between two points.
+    """Create an empty connector axis with a given diameter between two points.
+
+    The axis is added to the model, made visible and the display is refreshed if auto refresh is on.
+    Returns 0 if creation fails or the result is out of range.
 
     Parameters:
-        diameter: The diameter of the connector.
-        start_point: The start point of the connector.
-        end_point: The end point of the connector.
+        diameter: Drilling diameter in model units (mm).
+        start_point: Start point of the axis in model units (mm).
+        end_point: End point of the axis in model units (mm).
 
     Returns:
-        The element id of the created blank connector.
+        Element ID of the created connector axis, or 0 on failure.
     """
 
 def import_from_file(file_path: str) -> None:
-    """Import from file.
+    """Import standard connector definitions from a file.
+
+    Entries whose name already exists are ignored, not overwritten.
 
     Parameters:
-        file_path: The path to the file to import.
+        file_path: Path of the file to import.
     """
 
 def start_configuration_dialog() -> None:
-    """Starts the ConnectorAxis configuration dialog."""
+    """Open the connector axis configuration dialog."""
 
 def get_item_guid_by_name(name: str, item_type: vba_catalog_item_type) -> str:
-    """Get item guid by name.
+    """Find a catalog item of a given type by name and return its GUID.
+
+    Searches the user catalog; the name comparison ignores case and the first match is returned.
 
     Parameters:
-        name: The name of the item.
-        item_type: The type of the item.
+        name: Name of the catalog item.
+        item_type: Item type to search in, e.g. vba_catalog_item_type.nut.
 
     Returns:
-        The guid of the item.
+        GUID of the first matching item, or an empty string if none matches.
     """
 
 def get_bolt_length(axis_id: ElementId) -> float:
-    """Gets the Bolt Length.
+    """Get the bolt length of a connector axis.
 
     Parameters:
-        axis_id: The id of the axis.
+        axis_id: Element ID of the connector axis.
 
     Returns:
-        The bolt length.
+        Bolt length in model units (mm); 0.0 if the element ID is invalid.
     """
 
 def get_bolt_over_length(axis_id: ElementId) -> float:
-    """Gets the Bolt OverLength.
+    """Get the bolt over-length of a connector axis.
 
     Parameters:
-        axis_id: The id of the axis.
+        axis_id: Element ID of the connector axis.
 
     Returns:
-        The bolt over length.
+        Bolt over-length in model units (mm); 0.0 if the element ID is invalid.
     """
 
 def set_bolt_over_length(axis_id: ElementId, over_length: float) -> None:
-    """Sets the Bolt OverLength.
+    """Set the bolt over-length of a connector axis.
+
+    Silently does nothing if the element ID is invalid.
 
     Parameters:
-        axis_id: The id of the axis.
-        over_length: The bolt over length.
+        axis_id: Element ID of the connector axis.
+        over_length: Bolt over-length in model units (mm).
     """
 
 def get_bolt_length_automatic(axis_id: ElementId) -> bool:
-    """Returns if Bolt Length Automatic is set.
+    """Check whether the bolt length of a connector axis is determined automatically.
 
     Parameters:
-        axis_id: The id of the axis.
+        axis_id: Element ID of the connector axis.
 
     Returns:
-        True if the bolt length is automatic, false otherwise.
+        True if automatic bolt length is on; False if it is off or the element ID is invalid.
     """
 
 def get_bolt_item_guid(axis_id: ElementId) -> str:
-    """Gets the Guid of the Bolt Item.
+    """Get the GUID of the bolt catalog item of a connector axis.
 
     Parameters:
-        axis_id: The id of the axis.
+        axis_id: Element ID of the connector axis.
 
     Returns:
-        The guid of the bolt item.
+        GUID of the bolt item; an empty string if the element ID is invalid.
     """
 
 def get_section_diameter(axis_id: ElementId, section_index: UnsignedInt) -> float:
-    """Gets the Drilling Diameter of a specific Sections.
+    """Get the drilling diameter of one section of a connector axis.
 
     Parameters:
-        axis_id: The id of the axis.
-        section_index: The index of the section. (0-based index)
+        axis_id: Element ID of the connector axis.
+        section_index: 0-based index of the section; see get_section_count.
 
     Returns:
-        The drilling diameter of the specified section.
+        Drilling diameter in model units (mm); 0.0 if the element ID or section index is invalid.
     """
 
 def get_axis_items_guids(axis_id: ElementId) -> list[str]:
-    """Returns a list of GUIDs of all axis items.
+    """Get the GUIDs of the catalog items attached to a connector axis.
+
+    The bolt item is not included. Returns an empty list if the element ID is invalid.
 
     Parameters:
-        axis_id: The id of the axis.
+        axis_id: Element ID of the connector axis.
 
     Returns:
-        The list of GUIDs of all axis items.
+        List of item GUIDs (nuts, washers, etc., without the bolt); empty list on failure.
     """
 
 def get_axis_item_name(guid: str) -> str:
-    """Returns the name of an axis item.
+    """Get the name of a catalog item attached to an axis.
+
+    The item is read from the items stored in the current document.
 
     Parameters:
-        guid: The guid of the axis item.
+        guid: GUID of the item, e.g. from get_axis_items_guids or get_bolt_item_guid.
 
     Returns:
-        The name of the axis item.
+        Name of the item.
     """
 
 def get_axis_item_material(guid: str) -> str:
-    """Returns the material of an axis item.
+    """Get the material of a catalog item attached to an axis.
+
+    The item is read from the items stored in the current document.
 
     Parameters:
-        guid: The guid of the axis item.
+        guid: GUID of the item, e.g. from get_axis_items_guids or get_bolt_item_guid.
 
     Returns:
-        The material of the axis item.
+        Material of the item.
     """
 
 def get_axis_item_norm(guid: str) -> str:
-    """Returns the norm of an axis item.
+    """Get the standard (norm) designation of a catalog item attached to an axis.
+
+    The item is read from the items stored in the current document.
 
     Parameters:
-        guid: The guid of the axis item.
+        guid: GUID of the item, e.g. from get_axis_items_guids or get_bolt_item_guid.
 
     Returns:
-        The norm of the axis item.
+        Norm of the item.
     """
 
 def get_axis_item_strength_category(guid: str) -> str:
-    """Returns the strength category of an axis item.
+    """Get the strength category of a catalog item attached to an axis.
+
+    The item is read from the items stored in the current document.
 
     Parameters:
-        guid: The guid of the axis item.
+        guid: GUID of the item, e.g. from get_axis_items_guids or get_bolt_item_guid.
 
     Returns:
-        The strength category of the axis item.
+        Strength category of the item.
     """
 
 def get_axis_item_user_field(guid: str, user_item_number: int) -> str:
-    """Returns an userfield value of an axis item.
+    """Get one of the five user fields of a catalog item attached to an axis.
+
+    The item is read from the items stored in the current document.
 
     Parameters:
-        guid: The guid of the axis item.
-        user_item_number: The user item number.
+        guid: GUID of the item, e.g. from get_axis_items_guids or get_bolt_item_guid.
+        user_item_number: Number of the user field, 1 to 5.
 
     Returns:
-        The user field value.
+        Value of the user field; empty string if the field is empty, the number is outside 1-5, or
+        the item is not found.
     """
 
 def get_axis_item_order_number(guid: str) -> str:
-    """Returns the strength category of an axis item.
+    """Get the order number of a catalog item attached to an axis.
+
+    The item is read from the items stored in the current document.
 
     Parameters:
-        guid: The guid of the axis item.
+        guid: GUID of the item, e.g. from get_axis_items_guids or get_bolt_item_guid.
 
     Returns:
-        The strength category of the axis item.
+        Order number of the item.
     """
 
 def get_bolt_order_number(axis_id: ElementId) -> str:
-    """Returns the ordernumber of a bolt item.
+    """Get the order number of the bolt in its current length.
+
+    Looks up the length entry of the bolt item that matches the axis' bolt length.
 
     Parameters:
-        axis_id: The id of the axis.
+        axis_id: Element ID of the connector axis.
 
     Returns:
-        The order number of the bolt item.
+        Order number of the bolt; empty string if the element ID is invalid or no catalog length
+        matches the bolt length.
     """
 
 def get_section_count(axis_id: ElementId) -> int:
-    """Returns the number of sections.
+    """Get the number of sections of a connector axis.
 
     Parameters:
-        axis_id: The id of the axis.
+        axis_id: Element ID of the connector axis.
 
     Returns:
-        The number of sections of the axis.
+        Number of sections; 0 if the element ID is invalid.
     """
 
 def get_section_material_name(axis_id: ElementId, section_index: UnsignedInt) -> str:
-    """Returns material of a section contact element.
+    """Get the material name of the element in contact with a section of a connector axis.
 
     Parameters:
-        axis_id: The id of the axis.
-        section_index: The index of the section. (0-based index)
+        axis_id: Element ID of the connector axis.
+        section_index: 0-based index of the section; see get_section_count.
 
     Returns:
-        The material of the section contact element.
+        Material name; empty string if the element ID or section index is invalid.
     """
 
 def get_section_contact_element(axis_id: float, section_index: UnsignedInt) -> ElementId:
-    """Gets the section contact element.
+    """Get the element in contact with a section of a connector axis.
 
     Parameters:
-        axis_id: The id of the axis.
-        section_index: The index of the section. (0-based index)
+        axis_id: Element ID of the connector axis.
+        section_index: 0-based index of the section; see get_section_count.
 
     Returns:
-        The element id of the section contact element.
+        Element ID of the first element in that section; 0 if the axis ID or section index is
+        invalid or the section has no element.
     """
 
 def get_bolt_diameter(axis_id: ElementId) -> float:
-    """Gets the bolt diameter.
+    """Get the bolt diameter of a connector axis.
+
+    Uses the inner diameter of the bolt item if one is set, otherwise the axis diameter.
 
     Parameters:
-        axis_id: The id of the axis.
+        axis_id: Element ID of the connector axis.
 
     Returns:
-        The bolt diameter.
+        Bolt diameter in model units (mm); 0.0 if the element ID is invalid.
     """
 
 def get_standard_connector_list() -> list[str]:
-    """Returns a list of all standard connectors.
+    """Get the names of all available standard connectors.
+
+    Names are those of the current cadwork language and can be used with create_standard_connector.
 
     Returns:
-        The list of standard connector names.
+        List of standard connector names.
     """
 
 def get_counterbore_diameter_for_start_side(axis_id: ElementId, section_index: UnsignedInt) -> float:
-    """Gets the counterbore diameter for the start side.
+    """Get the counterbore diameter at the start side of a section.
 
     Parameters:
-        axis_id: The id of the axis.
-        section_index: The index of the section. (0-based index)
-        diameter: [UNUSED PARAMETER]
-        depth: [UNUSED PARAMETER]
-        is_conical: [UNUSED PARAMETER]
+        axis_id: Element ID of the connector axis.
+        section_index: 0-based index of the section; see get_section_count.
 
     Returns:
-        The counterbore diameter for the start side.
+        Counterbore diameter in model units (mm); 0.0 if the element ID is invalid.
     """
 
 def get_counterbore_diameter_for_end_side(axis_id: ElementId, section_index: UnsignedInt) -> float:
-    """Gets the counterbore diameter for the end side of a section.
+    """Get the counterbore diameter at the end side of a section.
 
     Parameters:
-        axis_id: The id of the axis.
-        section_index: The index of the section.
+        axis_id: Element ID of the connector axis.
+        section_index: 0-based index of the section; see get_section_count.
 
     Returns:
-        The counterbore diameter for the end side.
+        Counterbore diameter in model units (mm); 0.0 if the element ID is invalid.
     """
 
 def get_counterbore_depth_for_start_side(axis_id: ElementId, section_index: UnsignedInt) -> float:
-    """Gets the counterbore depth for the start side.
+    """Get the counterbore depth at the start side of a section.
 
     Parameters:
-        axis_id: The id of the axis.
-        section_index: The index of the section.
+        axis_id: Element ID of the connector axis.
+        section_index: 0-based index of the section; see get_section_count.
 
     Returns:
-        The counterbore depth for the start side.
+        Counterbore depth in model units (mm); 0.0 if the element ID is invalid.
     """
 
 def get_counterbore_depth_for_end_side(axis_id: ElementId, section_index: UnsignedInt) -> float:
-    """Gets the counterbore depth for the end side.
+    """Get the counterbore depth at the end side of a section.
 
     Parameters:
-        axis_id: The id of the axis.
-        section_index: The index of the section.
+        axis_id: Element ID of the connector axis.
+        section_index: 0-based index of the section; see get_section_count.
 
     Returns:
-        The counterbore depth for the end side.
+        Counterbore depth in model units (mm); 0.0 if the element ID is invalid.
     """
 
 def get_counterbore_is_conical_for_start_side(axis_id: ElementId, section_index: UnsignedInt) -> bool:
-    """Get if counterbore is conical for start side.
+    """Check whether the counterbore at the start side of a section is conical.
 
     Parameters:
-        axis_id: The id of the axis.
-        section_index: The index of the section
+        axis_id: Element ID of the connector axis.
+        section_index: 0-based index of the section; see get_section_count.
 
     Returns:
-        True if the counterbore is conical for the start side, false otherwise.
+        True if conical; False if not or if the element ID is invalid.
     """
 
 def get_counterbore_is_conical_for_end_side(axis_id: ElementId, section_index: UnsignedInt) -> bool:
-    """Get if counterbore is conical for end side.
+    """Check whether the counterbore at the end side of a section is conical.
 
     Parameters:
-        axis_id: The id of the axis.
-        section_index: The index of the section.
+        axis_id: Element ID of the connector axis.
+        section_index: 0-based index of the section; see get_section_count.
 
     Returns:
-        True if the counterbore is conical for the end side, false otherwise.
+        True if conical; False if not or if the element ID is invalid.
     """
 
 def set_counterbore_for_start_side(
     axis_id: ElementId, section_index: UnsignedInt, diameter: float, depth: float, is_conical: bool
 ) -> None:
-    """Sets the counterbore for the start side.
+    """Set the counterbore at the start side of a section of a connector axis.
+
+    Silently does nothing if the element ID is invalid or the section index is out of range.
 
     Parameters:
-        axis_id: The id of the axis.
-        section_index: The index of the section. (0-based index)
-        diameter: The diameter of the counterbore.
-        depth: The depth of the counterbore.
-        is_conical: True if the counterbore is conical, false otherwise.
+        axis_id: Element ID of the connector axis.
+        section_index: 0-based index of the section; see get_section_count.
+        diameter: Counterbore diameter in model units (mm).
+        depth: Counterbore depth in model units (mm).
+        is_conical: True for a conical counterbore, False for a non-conical one.
     """
 
 def set_counterbore_for_end_side(
     axis_id: ElementId, section_index: UnsignedInt, diameter: float, depth: float, is_conical: bool
 ) -> None:
-    """Sets the counterbore for the end side.
+    """Set the counterbore at the end side of a section of a connector axis.
+
+    Silently does nothing if the element ID is invalid or the section index is out of range.
 
     Parameters:
-        axis_id: The id of the axis.
-        section_index: The index of the section. (0-based index)
-        diameter: The diameter of the counterbore.
-        depth: The depth of the counterbore.
-        is_conical: True if the counterbore is conical, false otherwise.
+        axis_id: Element ID of the connector axis.
+        section_index: 0-based index of the section; see get_section_count.
+        diameter: Counterbore diameter in model units (mm).
+        depth: Counterbore depth in model units (mm).
+        is_conical: True for a conical counterbore, False for a non-conical one.
     """
 
 def get_intersection_count(intersection_index: UnsignedInt) -> int:
-    """Get the intersection count.
+    """Get the number of intersection points of a connector axis.
+
+    Note that the single argument is the element ID of the connector axis.
 
     Parameters:
-        intersection_index: The index of the intersection. (0-based index)
+        intersection_index: Element ID of the connector axis (despite its name, this is not an
+            index).
 
     Returns:
-        The intersection count.
+        Number of intersection points; 0 if the element ID is invalid.
     """
 
 def get_item_guids_at_intersection(axis_id: ElementId, intersection_index: UnsignedInt) -> list[str]:
-    """Get item GUIDs at intersection.
+    """Get the GUIDs of the catalog items at an intersection of a connector axis.
 
     Parameters:
-        axis_id: The id of the axis.
-        intersection_index: The index of the intersection. (0-based index)
+        axis_id: Element ID of the connector axis.
+        intersection_index: 0-based index of the intersection; see get_intersection_count.
 
     Returns:
-        The list of item GUIDs at the intersection.
+        List of item GUIDs; empty list if the element ID or intersection index is invalid.
     """
 
 def set_item_guids_at_intersection(axis_id: ElementId, intersection_index: UnsignedInt, item_guids: list[str]) -> None:
-    """Sets item GUIDs at intersection.
+    """Replace the items at an intersection of a connector axis by items with the given GUIDs.
+
+    Prefer set_items_at_intersection, which is the reliable way to set items and their positions.
 
     Parameters:
-        axis_id: The id of the axis.
-        intersection_index: The index of the intersection. (0-based index)
-        item_guids: The item GUIDs to set.
+        axis_id: Element ID of the connector axis.
+        intersection_index: 0-based index of the intersection; see get_intersection_count.
+        item_guids: List of GUIDs of the items to set.
     """
 
 def get_section_length(axis_id: ElementId, section_index: UnsignedInt) -> float:
-    """Get section length.
+    """Get the length of a section of a connector axis.
+
+    An out-of-range section index is clamped to the nearest valid section.
 
     Parameters:
-        axis_id: The id of the axis.
-        section_index: The index of the section. (0-based index)
+        axis_id: Element ID of the connector axis.
+        section_index: 0-based index of the section; see get_section_count.
 
     Returns:
-        The length of the section.
+        Section length in model units (mm); 0.0 if the element ID is invalid, 1.0 if the axis has no
+        sections.
     """
 
 def get_section_oblong_drilling_is_enabled(axis_id: ElementId, section_index: UnsignedInt) -> bool:
-    """Get if the section oblong drilling is enabled.
+    """Check whether a section of a connector axis has an oblong (slotted) drilling.
 
     Parameters:
-        axis_id: The id of the axis.
-        section_index: The index of the section. (0-based index)
+        axis_id: Element ID of the connector axis.
+        section_index: 0-based index of the section; see get_section_count.
 
     Returns:
-        True if the section oblong drilling is enabled, false otherwise.
+        True if oblong drilling is enabled; False if not or if the element ID or section index is
+        invalid.
     """
 
 def get_section_oblong_drilling_positive_value(axis_id: ElementId, section_index: UnsignedInt) -> float:
-    """Get section oblong drilling positive value.
+    """Get the positive oblong drilling extension of a section of a connector axis.
+
+    Only meaningful while oblong drilling is enabled for the section.
 
     Parameters:
-        axis_id: The id of the axis.
-        section_index: The index of the section. (0-based index)
+        axis_id: Element ID of the connector axis.
+        section_index: 0-based index of the section; see get_section_count.
 
     Returns:
-        The positive value of the section oblong drilling.
+        Positive oblong value; 0.0 if oblong drilling is not enabled, or the element ID or section
+        index is invalid.
     """
 
 def get_section_oblong_drilling_negative_value(axis_id: ElementId, section_index: UnsignedInt) -> float:
-    """Get the section oblong drilling negative value
+    """Get the negative oblong drilling extension of a section of a connector axis.
+
+    Only meaningful while oblong drilling is enabled for the section.
 
     Parameters:
-        axis_id: The id of the axis.
-        section_index: The index of the section. (0-based index)
+        axis_id: Element ID of the connector axis.
+        section_index: 0-based index of the section; see get_section_count.
 
     Returns:
-        The negative value of the section oblong drilling.
+        Negative oblong value; 0.0 if oblong drilling is not enabled, or the element ID or section
+        index is invalid.
     """
 
 def get_section_oblong_drilling_angle(axis_id: ElementId, section_index: UnsignedInt) -> float:
-    """Get section oblong drilling angle.
+    """Get the orientation angle of the oblong drilling of a section of a connector axis.
+
+    Only meaningful while oblong drilling is enabled for the section.
 
     Parameters:
-        axis_id: The id of the axis.
-        section_index: The index of the section. (0-based index)
+        axis_id: Element ID of the connector axis.
+        section_index: 0-based index of the section; see get_section_count.
 
     Returns:
-        The angle of the section oblong drilling.
+        Oblong drilling angle; 0.0 if oblong drilling is not enabled, or the element ID or section
+        index is invalid.
     """
 
 def set_section_oblong_drilling_is_disabled(axis_id: ElementId, section_index: UnsignedInt) -> None:
-    """Disable the section oblong drilling.
+    """Disable the oblong drilling of a section of a connector axis.
+
+    Silently does nothing if the element ID is invalid or the section index is out of range.
 
     Parameters:
-        axis_id: The id of the axis.
-        section_index: The index of the section. (0-based index)
+        axis_id: Element ID of the connector axis.
+        section_index: 0-based index of the section; see get_section_count.
     """
 
 def set_section_oblong_drilling_is_enabled(
     axis_id: ElementId, section_index: UnsignedInt, positive_value: float, negative_value: float, angle: float
 ) -> None:
-    """Enable the section oblong drilling with parameters.
+    """Enable the oblong drilling of a section of a connector axis with the given values.
+
+    Silently does nothing if the element ID is invalid or the section index is out of range.
 
     Parameters:
-        axis_id: The id of the axis.
-        section_index: The index of the section. (0-based index)
-        positive_value: The positive value of the section oblong drilling.
-        negative_value: The negative value of the section oblong drilling.
-        angle: The angle of the section oblong drilling.
+        axis_id: Element ID of the connector axis.
+        section_index: 0-based index of the section; see get_section_count.
+        positive_value: Oblong extension in the positive direction.
+        negative_value: Oblong extension in the negative direction.
+        angle: Orientation angle of the oblong drilling.
     """
 
 def set_items_at_intersection(
     axis_id: ElementId, intersection_index: UnsignedInt, items: list[connector_axis_item]
 ) -> None:
-    """Sets item at intersection.
+    """Replace the catalog items at an intersection of a connector axis.
+
+    All existing items at the intersection are removed first. Each connector_axis_item is looked up
+    by its GUID in the user catalog and placed at its position. Silently does nothing if the element
+    ID is invalid.
 
     Parameters:
-        axis_id: The id of the axis.
-        intersection_index: The index of the intersection. (0-based index)
-        items: The items to set.
+        axis_id: Element ID of the connector axis.
+        intersection_index: 0-based index of the intersection; see get_intersection_count.
+        items: Items to set, each a connector_axis_item with a GUID and a position.
     """
 
 def get_connector_axis_guid_by_name(name: str) -> str:
-    """Gets the GUID of a connector axis by its name.
+    """Get the GUID of a standard connector by its name.
+
+    The name is looked up in the current cadwork language; the first match is used.
 
     Parameters:
-        name: The name of the connector axis.
+        name: Name of the standard connector, as listed by get_standard_connector_list.
 
     Returns:
-        The GUID of the connector axis.
+        GUID of the standard connector, or an empty string if no connector has that name.
     """
