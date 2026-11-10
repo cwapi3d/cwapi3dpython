@@ -1090,24 +1090,26 @@ def create_surface(surface_vertices: vertex_list) -> ElementId:
     """
 
 def stretch_start_facet(element_id_list: list[ElementId], stretch_vector: point_3d) -> None:
-    """Move the start face of beams by a vector.
+    """Move the start face of linear elements such as beams and panels by a vector.
 
-    Only beams are affected; other element types and invalid IDs are skipped. Elements are modified
-    in place.
+    Works on all elements with a beam-like cross-section along their axis (beams, panels, ...);
+    elements without a start face, such as free volumes, and invalid IDs are left unchanged.
+    Elements are modified in place; end types are kept and the element axis is updated.
 
     Parameters:
-        element_id_list: IDs of the beams to stretch.
+        element_id_list: IDs of the elements to stretch.
         stretch_vector: Displacement applied to the start face (direction and distance, mm).
     """
 
 def stretch_end_facet(element_id_list: list[ElementId], stretch_vector: point_3d) -> None:
-    """Move the end face of beams by a vector.
+    """Move the end face of linear elements such as beams and panels by a vector.
 
-    Only beams are affected; other element types and invalid IDs are skipped. Elements are modified
-    in place.
+    Works on all elements with a beam-like cross-section along their axis (beams, panels, ...);
+    elements without an end face, such as free volumes, and invalid IDs are left unchanged. Elements
+    are modified in place; end types are kept and the element axis is updated.
 
     Parameters:
-        element_id_list: IDs of the beams to stretch.
+        element_id_list: IDs of the elements to stretch.
         stretch_vector: Displacement applied to the end face (direction and distance, mm).
     """
 
@@ -1526,8 +1528,9 @@ def convert_auxiliary_to_panel(element_id_list: list[ElementId]) -> None:
 def convert_auxiliary_to_beam(element_id_list: list[ElementId]) -> None:
     """Convert auxiliary elements into beams.
 
-    Elements are converted in place and keep their ID. Elements that are not auxiliary and invalid
-    IDs are skipped.
+    Elements are converted in place and keep their ID; the auxiliary flag is removed. The shape is
+    converted only for elements without a beam-like cross-section, so an auxiliary panel becomes a
+    regular panel. Elements that are not auxiliary and invalid IDs are skipped.
 
     Parameters:
         element_id_list: IDs of the auxiliary elements to convert.
@@ -1633,19 +1636,19 @@ def create_linear_optimization(
     saw_kerf: float,
     is_production_list: bool,
 ) -> ElementId:
-    """Create a linear optimization bar (nesting raw part) holding the given beams in order.
+    """Create a linear optimization bar (nesting raw part) holding the given elements in order.
 
-    The beams are laid out in list order along the bar, starting start_cut from its start, each
-    followed by saw_kerf. The bar takes its cross-section and material from the first beam and is
+    The elements are laid out in list order along the bar, starting start_cut from its start, each
+    followed by saw_kerf. The bar takes its cross-section and material from the first element and is
     added to the matching nesting group (created if missing). The bar element is hidden.
 
     Parameters:
-        element_id_list: IDs of the beams placed on the bar, in order; invalid IDs are skipped.
+        element_id_list: IDs of the elements placed on the bar, in order; invalid IDs are skipped.
         optimization_number: Number of the optimization bar.
         total_length: Total length of the bar (mm).
-        start_cut: Length cut off at the start of the bar before the first beam (mm).
+        start_cut: Length cut off at the start of the bar before the first element (mm).
         end_cut: Length cut off at the end of the bar (mm); only reduces the remaining length.
-        saw_kerf: Saw kerf between consecutive beams (mm).
+        saw_kerf: Saw kerf between consecutive elements (mm).
         is_production_list: Currently ignored; the list type follows the global cadwork setting.
 
     Returns:
@@ -1666,14 +1669,16 @@ def start_element_module_calculation_silently(covers: list[ElementId]) -> None:
 def replace_physical_drillings_with_drilling_axes(
     element_id_list: list[ElementId], mininum_diameter: float, maximum_diameter: float
 ) -> list[ElementId]:
-    """Replace drillings in beams with drilling axes (bolt elements).
+    """Replace drillings in beams, panels and other linear elements with drilling axes (bolt
+    elements).
 
-    Only beams are processed; drillings whose diameter lies in the given range are removed from the
-    beam and replaced by new axis elements, which are inserted and shown. All active elements are
+    Works on all elements with a beam-like cross-section (beams, panels, ...); other elements are
+    skipped. Drillings whose diameter lies in the given range are removed from the element and
+    replaced by new axis elements, which are inserted and shown. All active elements are
     deactivated. If the two diameters are swapped they are reordered.
 
     Parameters:
-        element_id_list: IDs of the beams to process.
+        element_id_list: IDs of the elements to process.
         mininum_diameter: Smallest drilling diameter to replace (mm); must not be negative.
         maximum_diameter: Largest drilling diameter to replace (mm); must not be negative.
 
@@ -1848,7 +1853,7 @@ def cut_elements_with_overmeasure(hard_element_id_list: list[ElementId], soft_el
 
     Parameters:
         hard_element_id_list: Element IDs of the cutting (hard) elements.
-        soft_element_id_list: Element IDs of the elements to be cut (soft elements).
+        soft_element_id_list: IDs of the elements to be cut (soft elements).
     """
 
 def cut_log_corner_joint(settings_name: str, element_id_list: list[ElementId]) -> None:
@@ -2010,13 +2015,13 @@ def cut_corner_lap(
     drilling_diameter: float,
     drilling_tolerance: float,
 ) -> None:
-    """Cut a corner lap joint between beams.
+    """Cut a corner lap joint between linear elements (beams, panels, ...).
 
     Joint partners are detected automatically among the listed elements. Invalid IDs are skipped;
     nothing happens if no partners are found. All dimensions are in mm.
 
     Parameters:
-        element_id_list: Element IDs of the beams to join; they must meet in a corner.
+        element_id_list: IDs of the elements to join; they must meet in a corner.
         depth: Depth of the lap cut in each element.
         clearance_base: Extra clearance at the bottom of the cut.
         clearance_side: Extra clearance at the side faces of the cut.
@@ -2036,14 +2041,13 @@ def cut_t_lap(
     drilling_diameter: float,
     drilling_tolerance: float,
 ) -> None:
-    """Cut a T lap joint between beams.
+    """Cut a T lap joint between linear elements (beams, panels, ...).
 
     Joint partners are detected automatically among the listed elements. Invalid IDs are skipped;
     nothing happens if no partners are found. All dimensions are in mm.
 
     Parameters:
-        element_id_list: Element IDs of the beams to join; one beam ends against the side of
-            another.
+        element_id_list: IDs of the elements to join; one element ends against the side of another.
         depth: Depth of the lap cut where the intersecting element is placed.
         clearance_base: Extra clearance at the bottom of the cut.
         clearance_side: Extra clearance at the side faces of the cut.
@@ -2062,14 +2066,14 @@ def cut_cross_lap(
     drilling_diameter: float,
     drilling_tolerance: float,
 ) -> None:
-    """Cut a cross lap joint between crossing beams.
+    """Cut a cross lap joint between crossing linear elements (beams, panels, ...).
 
     Joint partners are detected automatically among the listed elements. Invalid IDs are skipped;
     nothing happens if no partners are found. All dimensions are in mm.
 
     Parameters:
-        element_id_list: Element IDs of the crossing beams.
-        depth: Depth of the lap cut in each element, typically half the beam thickness.
+        element_id_list: IDs of the crossing elements.
+        depth: Depth of the lap cut in each element, typically half the element thickness.
         clearance_base: Extra clearance at the bottom of the cut.
         clearance_side: Extra clearance at the side walls of the cut.
         drilling_count: Number of drill holes for fasteners.
@@ -2104,13 +2108,13 @@ def cut_double_tenon(
     drilling_diameter: float,
     drilling_tolerance: float,
 ) -> None:
-    """Cut a double tenon joint between beams.
+    """Cut a double tenon joint between linear elements (beams, panels, ...).
 
     Joint partners are detected automatically among the listed elements. Invalid IDs are skipped.
     All dimensions are in mm.
 
     Parameters:
-        element_id_list: Element IDs of the beams to join.
+        element_id_list: IDs of the elements to join.
         depth1: Depth of the first tenon shoulder.
         depth2: Depth of the second tenon shoulder.
         clearance: Extra clearance around the tenons.
@@ -2147,14 +2151,14 @@ def cut_half_lap(
     drilling_diameter: float,
     drilling_tolerance: float,
 ) -> None:
-    """Cut a half lap joint between beams.
+    """Cut a half lap joint between linear elements (beams, panels, ...).
 
     Joint partners are detected automatically among the listed elements. Invalid IDs are skipped.
     All dimensions are in mm.
 
     Parameters:
-        element_id_list: Element IDs of the beams to join.
-        length: Length of the half lap along the beam axis.
+        element_id_list: IDs of the elements to join.
+        length: Length of the half lap along the element axis.
         clearance_length: Extra clearance along the length of the cut.
         clearance_depth: Extra clearance in the depth direction.
         drilling_count: Number of drill holes for fasteners.
@@ -2172,14 +2176,14 @@ def cut_simple_scarf(
     drilling_diameter: float,
     drilling_tolerance: float,
 ) -> None:
-    """Cut a simple scarf joint between beams.
+    """Cut a simple scarf joint between linear elements (beams, panels, ...).
 
     Joint partners are detected automatically among the listed elements. Invalid IDs are skipped.
     All dimensions are in mm. Machine data of the elements is deleted first (a confirmation may be
     requested) and the cut is added to undo.
 
     Parameters:
-        element_id_list: Element IDs of the beams to join end to end.
+        element_id_list: IDs of the elements to join end to end.
         length: Distance between the two starting points of the cut.
         depth: Depth of the initial straight cut before the diagonal cut begins.
         clearance_length: Extra length clearance applied along the initial (depth) cut.
@@ -2197,14 +2201,14 @@ def cut_diagonal_cut(
     drilling_diameter: float,
     drilling_tolerance: float,
 ) -> None:
-    """Cut a diagonal (mitre-like) cut joint between beams.
+    """Cut a diagonal (mitre-like) cut joint between linear elements (beams, panels, ...).
 
     Joint partners are detected automatically among the listed elements. Invalid IDs are skipped.
     All dimensions are in mm. Machine data of the elements is deleted first (a confirmation may be
     requested) and the cut is added to undo.
 
     Parameters:
-        element_id_list: Element IDs of the beams to join end to end.
+        element_id_list: IDs of the elements to join end to end.
         length: Length of the diagonal cut along the element.
         clearance_length: Extra clearance along the cut length.
         drilling_count: Number of drill holes for fasteners.
@@ -2804,16 +2808,16 @@ def cut_scarf_with_wedge(
 def cut_beam_end_profile(
     element_id_list: list[ElementId], profile_name: str, on_start_face: bool, on_end_face: bool
 ) -> None:
-    """Apply a named end profile to the start and/or end face of beams.
+    """Apply a named end profile to the start and/or end face of elements such as beams and panels.
 
     The profile is looked up by name in the profile library; if no profile has that name, nothing
-    changes. Invalid IDs and elements that are not beams are skipped.
+    changes. Invalid IDs are skipped.
 
     Parameters:
-        element_id_list: List of beam element IDs to modify.
+        element_id_list: IDs of the elements to modify.
         profile_name: Name of the end profile, matched exactly (compared in natural sort order).
-        on_start_face: True to apply the profile on the start face of each beam.
-        on_end_face: True to apply the profile on the end face of each beam.
+        on_start_face: True to apply the profile on the start face of each element.
+        on_end_face: True to apply the profile on the end face of each element.
     """
 
 def create_truncated_cone_beam_points(
