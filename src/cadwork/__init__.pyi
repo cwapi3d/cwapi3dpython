@@ -219,18 +219,50 @@ __all__ = [
 ]
 
 def get_auto_attribute_elements() -> list[int]:
-    """Get only the elements of the selected types in the attribute manager dialog.
+    """Get the element IDs an auto attribute script has to compute a value for.
 
-    All other elements will get an empty attribute value.
+    Only meaningful inside an auto attribute script, i.e. a script that cadwork runs to calculate
+    the value of an auto-filled user attribute. The list contains the elements of the types selected
+    for that attribute in the attribute manager dialog; the script should compute one value per
+    element and pass them to `cadwork.set_auto_attribute()`. Elements that never receive a value
+    through `cadwork.set_auto_attribute()` end up with an empty attribute value. The list is not
+    cleared when a run ends, so outside a run it is empty or still holds the elements of the
+    previous run.
+
+    Examples:
+        >>> import cadwork
+        >>> import attribute_controller as ac
+
+        >>> for element_id in cadwork.get_auto_attribute_elements():
+        ...     name = ac.get_name(element_id)
+        ...     cadwork.set_auto_attribute([element_id], name.upper())
 
     Returns:
-        list[int]: element IDs
+        List of element IDs to calculate the attribute for. Outside an auto attribute run, an empty
+        list or the elements of the previous run.
     """
 
 def set_auto_attribute(elements: list[int], value: str) -> None:
-    """Set the auto attribute to the selected element types.
+    """Set the auto attribute value of elements from within an auto attribute script.
+
+    Only meaningful inside an auto attribute script. Stores the given text as the result for each
+    listed element; when the script finishes successfully, cadwork writes the stored text into the
+    auto-filled attribute of the elements from `cadwork.get_auto_attribute_elements()`. Values for
+    other element IDs are ignored, and nothing is written if the script fails. Calling it again for
+    the same element replaces the earlier value; elements that never get a value receive an empty
+    string. Outside an auto attribute run the value is not written to any element.
 
     Parameters:
-        elements: element IDs
-        value: attribute value
+        elements: List of element IDs that receive the value, normally taken from
+            `cadwork.get_auto_attribute_elements()`.
+        value: Attribute value as text. Numbers must be converted with `str()` or formatted by the
+            script.
+
+    Examples:
+        >>> import cadwork
+        >>> import geometry_controller as gc
+
+        >>> for element_id in cadwork.get_auto_attribute_elements():
+        ...     length = gc.get_length(element_id)
+        ...     cadwork.set_auto_attribute([element_id], f'{length:.0f}')
     """
