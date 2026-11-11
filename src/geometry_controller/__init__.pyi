@@ -12,7 +12,35 @@ from cadwork.api_types import ElementId, UnsignedInt
 from cadwork.facet_list import facet_list
 from cadwork.point_3d import point_3d
 from cadwork.division_zone_direction import division_zone_direction
-from typing import Any
+from enum import IntEnum, unique
+
+@unique
+class element_collision_type(IntEnum):
+    """How the geometry of two elements relates, as returned by get_element_collision_type.
+
+    Examples:
+        >>> geometry_controller.element_collision_type.touching
+        touching
+    """
+
+    unknown = 0
+    """Invalid element ID, or an axis or line element."""
+    none = 1
+    """No collision."""
+    unclassified = 2
+    """The geometry kernel could not classify the relation."""
+    contained = 3
+    """One body is fully inside the other without touching its boundary."""
+    contained_and_touching = 4
+    """One body is inside the other and touches its boundary."""
+    touching = 5
+    """The bodies share a boundary but no volume."""
+    coincident = 6
+    """The bodies coincide."""
+    interlocking = 7
+    """The bodies interpenetrate."""
+
+    def __int__(self) -> int: ...
 
 def rotate_height_axis_90(element_id_list: list[ElementId]) -> None:
     """Rotate the local height axis of the elements by 90 degrees.
@@ -1248,7 +1276,7 @@ def stretch_facet(element_id: ElementId, facet_index: UnsignedInt, distance: flo
         failure). The reason is available via get_last_error.
     """
 
-def get_element_collision_type(first_element_id: ElementId, second_element_id: ElementId) -> Any:
+def get_element_collision_type(first_element_id: ElementId, second_element_id: ElementId) -> element_collision_type:
     """Classify how the geometry of two elements relates.
 
     Read-only: does not modify, activate or highlight anything. Axis and line elements are not

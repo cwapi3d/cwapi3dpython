@@ -10,7 +10,6 @@ of these covers as elements is done elsewhere in the API.
 
 from cadwork import multi_layer_cover_type
 from cadwork.api_types import *
-from cadwork.multi_layer_type import multi_layer_type
 
 def set_element_multi_layer_set(element_id: ElementId, set_id: MultiLayerSetId) -> None:
     """Assign a multi layer set to a cover element.
@@ -106,9 +105,7 @@ def create_multi_layer_wall(set_name: str) -> MultiLayerSetId:
         ID of the new multi layer set, or 0 if the name is empty.
     """
 
-def add_layer(
-    set_id: MultiLayerSetId, layer_type: multi_layer_type, name: str, material_id: MaterialId, thickness: float
-) -> None:
+def add_layer(set_id: MultiLayerSetId, layer_type: int, name: str, material_id: MaterialId, thickness: float) -> None:
     """Append a layer to a multi layer set.
 
     The layer is added at the end and the cover thickness becomes the sum of all layer thicknesses.
@@ -182,7 +179,7 @@ def set_layer_thickness(set_id: MultiLayerSetId, layer_index: UnsignedInt, thick
         >>> mlc.set_layer_thickness(multi_layer_set_id, 1, 120.0)  # Set second layer to 120mm
     """
 
-def set_layer_type(set_id: MultiLayerSetId, layer_index: UnsignedInt, layer_type: multi_layer_type) -> None:
+def set_layer_type(set_id: MultiLayerSetId, layer_index: UnsignedInt, layer_type: int) -> None:
     """Set the type of a layer in a multi layer set.
 
     Does nothing for an unknown set ID or an out-of-range layer index. Saved to the document.
@@ -386,7 +383,7 @@ def get_layer_material(set_id: MultiLayerSetId, layer_index: UnsignedInt) -> Mat
         Material ID, or 0 if the set ID is unknown or the layer index is out of range.
     """
 
-def get_layer_type(set_id: MultiLayerSetId, layer_index: UnsignedInt) -> multi_layer_type:
+def get_layer_type(set_id: MultiLayerSetId, layer_index: UnsignedInt) -> int:
     """Get the type of a layer in a multi layer set.
 
     Parameters:
@@ -779,7 +776,7 @@ def set_layer_standard_beam_guid(set_id: MultiLayerSetId, layer_index: UnsignedI
     """
 
 def add_layer_by_standard_elements(
-    set_id: MultiLayerSetId, type: multi_layer_type, name: str, panel_guid: str, beam_guid: str, thickness: float
+    set_id: MultiLayerSetId, type: int, name: str, panel_guid: str, beam_guid: str, thickness: float
 ) -> None:
     """Append a layer defined by standard panel and beam elements.
 
@@ -821,7 +818,7 @@ def remove_all_layers(set_id: MultiLayerSetId) -> None:
 def insert_layer(
     set_id: MultiLayerSetId,
     position: UnsignedInt,
-    type: multi_layer_type,
+    type: int,
     name: str,
     material_id: MaterialId,
     thickness: float,
@@ -837,7 +834,7 @@ def insert_layer(
         set_id: ID of the multi layer set.
         position: Zero-based position of the new layer; values at or beyond the layer count append
             it.
-        type: Type of the layer.
+        type: Layer type as integer value (1 structure, 2 panel, 3 lathing, 4 air, 5 covering).
         name: Name of the layer.
         material_id: Material ID of the layer.
         thickness: Layer thickness in mm; must be greater than zero.

@@ -792,15 +792,12 @@ def get_texture_color(material_id: MaterialId) -> int:
         Color as a packed RGB integer, not a palette number.
     """
 
-def set_texture_color(color_nb: UnsignedInt, material_id: MaterialId) -> None:
+def set_texture_color(material_id: MaterialId, color: int) -> None:
     """Set the texture color of a material.
 
-    At runtime the arguments are positional only and read as (material ID, color), the reverse
-    of the order shown in the signature: call `set_texture_color(material_id, color)`.
-
     Parameters:
-        color_nb: Color as a packed RGB integer, not a palette number.
         material_id: Material ID.
+        color: Color as a packed RGB integer, not a palette number.
     """
 
 def get_texture_transparency(material_id: MaterialId) -> int:
