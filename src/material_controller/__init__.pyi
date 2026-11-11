@@ -11,724 +11,886 @@ standard and MEP axes, auxiliaries). Element-level material
 from cadwork.api_types import MaterialId, UnsignedInt
 
 def create_material(name: str) -> MaterialId:
-    """Creates new material.
+    """Create a material with the given name, or return the existing one.
+
+    If a material with this name already exists, its ID is returned and nothing is created. Names
+    longer than 30 characters are cut to their first 29 characters.
 
     Parameters:
-        name: The material name.
+        name: Material name.
 
     Returns:
-        The material id.
+        ID of the new or already existing material, or 0 if creation failed.
     """
 
 def set_name(material_id: MaterialId, name: str) -> None:
-    """Sets the material name.
+    """Set the name of a material.
+
+    Unknown IDs are not checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        name: The material name.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        name: New name for the material.
     """
 
 def set_group(material_id: MaterialId, group: str) -> None:
-    """Sets the material group.
+    """Set the group of a material.
+
+    Unknown IDs are not checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        group: The material group.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        group: Group name.
     """
 
 def set_code(material_id: MaterialId, code: str) -> None:
-    """Sets the material code.
+    """Set the code of a material.
+
+    Unknown IDs are not checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        code: The material code.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        code: Material code.
     """
 
 def set_modulus_elasticity_1(material_id: MaterialId, modulus_elasticity1: float) -> None:
-    """Sets the material modulus of elasticity 1.
+    """Set the modulus of elasticity 1 of a material.
+
+    Unknown IDs are not checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        modulus_elasticity1: The material modulus of elasticity 1.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        modulus_elasticity1: Modulus of elasticity 1. Unit is that of the material table (not
+            converted).
     """
 
 def set_modulus_elasticity_2(material_id: MaterialId, modulus_elasticity2: float) -> None:
-    """Sets the material modulus of elasticity 2.
+    """Set the modulus of elasticity 2 of a material.
+
+    Unknown IDs are not checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        modulus_elasticity2: The material modulus of elasticity 2.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        modulus_elasticity2: Modulus of elasticity 2. Unit is that of the material table (not
+            converted).
     """
 
 def set_modulus_elasticity_3(material_id: MaterialId, modulus_elasticity3: float) -> None:
-    """Sets the material modulus of elasticity 3.
+    """Set the modulus of elasticity 3 of a material.
+
+    Unknown IDs are not checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        modulus_elasticity3: The material modulus of elasticity 3.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        modulus_elasticity3: Modulus of elasticity 3. Unit is that of the material table (not
+            converted).
     """
 
 def set_shear_modulus_1(material_id: MaterialId, shear_modulus1: float) -> None:
-    """Sets the material shear modulus 1.
+    """Set the shear modulus 1 of a material.
+
+    Unknown IDs are not checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        shear_modulus1: The material shear modulus 1.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        shear_modulus1: Shear modulus 1. Unit is that of the material table (not converted).
     """
 
 def set_shear_modulus_2(material_id: MaterialId, shear_modulus2: float) -> None:
-    """Sets the material shear modulus 2.
+    """Set the shear modulus 2 of a material.
+
+    Unknown IDs are not checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        shear_modulus2: The material shear modulus 2.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        shear_modulus2: Shear modulus 2. Unit is that of the material table (not converted).
     """
 
 def set_price(material_id: MaterialId, price: float) -> None:
-    """Sets the material price.
+    """Set the price of a material.
+
+    Unknown IDs are not checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        price: The material price.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        price: Price per price unit; see set_price_type.
     """
 
 def set_price_type(material_id: MaterialId, price_type: str) -> None:
-    """Sets the material price type.
+    """Set the price type of a material.
+
+    Unrecognized values are silently ignored and leave the price type unchanged. Unknown IDs are not
+    checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        price_type: The material price type.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        price_type: Price unit, case-insensitive: m3, m2, m, Piece, kg, bdft, ft2, ft, ft3 or lb.
     """
 
 def set_thermal_conductivity(material_id: MaterialId, thermal_conductivity: float) -> None:
-    """Sets the material thermal conductivity.
+    """Set the thermal conductivity of a material.
+
+    Unknown IDs are not checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        thermal_conductivity: The material thermal conductivity.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        thermal_conductivity: Thermal conductivity value.
     """
 
 def set_heat_capacity(material_id: MaterialId, heat_capacity: float) -> None:
-    """Sets the material heat capacity.
+    """Set the heat capacity of a material.
+
+    Unknown IDs are not checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        heat_capacity: The material heat capacity.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        heat_capacity: Heat capacity value.
     """
 
 def set_u_min(material_id: MaterialId, u_min: float) -> None:
-    """Sets the material U min.
+    """Set the minimum U value of a material.
+
+    Unknown IDs are not checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        u_min: The material U min.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        u_min: Minimum U value.
     """
 
 def set_u_max(material_id: MaterialId, u_max: float) -> None:
-    """Sets the material U max.
+    """Set the maximum U value of a material.
+
+    Unknown IDs are not checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        u_max: The material U max.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        u_max: Maximum U value.
     """
 
 def set_fire_resistance_class(material_id: MaterialId, fire_resistance_class: str) -> None:
-    """Sets the material fire resistance class.
+    """Set the fire resistance class of a material.
+
+    Unknown IDs are not checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        fire_resistance_class: The material fire resistance class.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        fire_resistance_class: Fire resistance class text.
     """
 
 def set_smoke_class(material_id: MaterialId, smoke_class: str) -> None:
-    """Sets the material smoke class.
+    """Set the smoke class of a material.
+
+    Unknown IDs are not checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        smoke_class: The material smoke class.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        smoke_class: Smoke class text.
     """
 
 def set_drop_forming_class(material_id: MaterialId, drop_forming_class: str) -> None:
-    """Sets the material drop forming class.
+    """Set the drop forming class of a material.
+
+    Unknown IDs are not checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        drop_forming_class: The material drop forming class.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        drop_forming_class: Drop forming class text.
     """
 
 def set_burn_off_rate(material_id: MaterialId, burn_off_rate: float) -> None:
-    """Sets the material burn-off rate.
+    """Set the burn-off rate of a material.
+
+    Unknown IDs are not checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        burn_off_rate: The material burn off rate.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        burn_off_rate: Burn-off rate value.
     """
 
 def set_weight(material_id: MaterialId, weight: float) -> None:
-    """Sets the material weight.
+    """Set the weight of a material.
+
+    Unknown IDs are not checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        weight: The material weight.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        weight: Weight value; its unit depends on the weight type, see set_weight_type.
     """
 
 def set_weight_type(material_id: MaterialId, weight_type: str) -> None:
-    """Sets the material weight type.
+    """Set the weight type of a material.
+
+    Other values are silently ignored and leave the weight type unchanged. Unknown IDs are not
+    checked; no error is raised.
 
     Parameters:
-        material_id: The material id.
-        weight_type: The material weight type.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        weight_type: Weight unit, case-insensitive: None, kNperM3, kNperM2, kNperM or kNperPiece.
     """
 
 def clear_errors() -> None:
-    """Clears all errors."""
+    """Clear the stored material API error stack."""
 
 def set_grade(material_id: MaterialId, grade: str) -> None:
-    """Sets the grade of a material.
+    """Set the grade (strength) of a material.
+
+    The grade is part of the full name returned by get_name. Unknown IDs are not checked; no error
+    is raised.
 
     Parameters:
-        material_id: The material id.
-        grade: The grade to set.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        grade: Grade text, e.g. a strength class.
     """
 
 def set_quality(material_id: MaterialId, quality: str) -> None:
-    """Sets the quality of a material.
+    """Set the quality of a material.
+
+    The quality is part of the full name returned by get_name. Unknown IDs are not checked; no error
+    is raised.
 
     Parameters:
-        material_id: The material id.
-        quality: The quality to set.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        quality: Quality text.
     """
 
 def set_composition(material_id: MaterialId, composition: str) -> None:
-    """Sets the composition of a material.
+    """Set the composition of a material.
+
+    The composition is part of the full name returned by get_name. Unknown IDs are not checked; no
+    error is raised.
 
     Parameters:
-        material_id: The material id.
-        composition: The composition to set.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
+        composition: Composition text.
     """
 
 def get_material_id(material_name: str) -> MaterialId:
-    """Gets the material with a given name.
+    """Find a material ID by name.
+
+    No material is created if none matches.
 
     Parameters:
-        material_name: The material name.
+        material_name: Material name to look up (longer than 30 characters is truncated for the
+            lookup).
 
     Returns:
-        The material id.
+        Material ID, or 0 if no material with this name exists.
     """
 
 def get_name(material_id: MaterialId) -> str:
-    """Gets the material name.
+    """Get the full name of a material.
+
+    The name is composed of the base name followed by grade, composition and quality when these are
+    set, separated by spaces.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material name.
+        Empty string if the material ID does not exist.
     """
 
 def get_group(material_id: MaterialId) -> str:
-    """Gets the material group.
+    """Get the group of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material group.
+        Group name, with surrounding whitespace removed. Empty string if the material ID does not
+        exist.
     """
 
 def get_code(material_id: MaterialId) -> str:
-    """Gets the material code.
+    """Get the code of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material code.
+        Material code. Empty string if the material ID does not exist.
     """
 
 def get_modulus_elasticity_1(material_id: MaterialId) -> float:
-    """Gets the material modulus of elasticity 1.
+    """Get the modulus of elasticity 1 of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material modulus of elasticity 1.
+        Value as stored in the material table. -1.0 if the material ID does not exist.
     """
 
 def get_modulus_elasticity_2(material_id: MaterialId) -> float:
-    """Gets the material modulus of elasticity 2.
+    """Get the modulus of elasticity 2 of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material modulus of elasticity 2.
+        Value as stored in the material table. -1.0 if the material ID does not exist.
     """
 
 def get_modulus_elasticity_3(material_id: MaterialId) -> float:
-    """Gets the material modulus of elasticity 3.
+    """Get the modulus of elasticity 3 of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material modulus of elasticity 3.
+        Value as stored in the material table. -1.0 if the material ID does not exist.
     """
 
 def get_shear_modulus_1(material_id: MaterialId) -> float:
-    """Gets the material shear modulus 1.
+    """Get the shear modulus 1 of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material shear modulus 1.
+        Value as stored in the material table. -1.0 if the material ID does not exist.
     """
 
 def get_shear_modulus_2(material_id: MaterialId) -> float:
-    """Gets the material shear modulus 2.
+    """Get the shear modulus 2 of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material shear modulus 2.
+        Value as stored in the material table. -1.0 if the material ID does not exist.
     """
 
 def get_price(material_id: MaterialId) -> float:
-    """Gets the material price.
+    """Get the price of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material price.
+        Price per price unit; see get_price_type. -1.0 if the material ID does not exist.
     """
 
 def get_price_type(material_id: MaterialId) -> str:
-    """Gets the material price type.
+    """Get the price type of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material price type.
+        One of m3, m2, m, Piece, kg, bdft, ft2, ft, ft3 or lb. 'None' if no price type is set or the
+        material ID does not exist.
     """
 
 def get_thermal_conductivity(material_id: MaterialId) -> float:
-    """Gets the material thermal conductivity.
+    """Get the thermal conductivity of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material thermal conductivity.
+        Thermal conductivity value. -1.0 if the material ID does not exist.
     """
 
 def get_heat_capacity(material_id: MaterialId) -> float:
-    """Gets the material heat capacity.
+    """Get the heat capacity of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material heat capacity.
+        Heat capacity value. -1.0 if the material ID does not exist.
     """
 
 def get_u_min(material_id: MaterialId) -> float:
-    """Gets the material U min.
+    """Get the minimum U value of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material U min.
+        Minimum U value. -1.0 if the material ID does not exist.
     """
 
 def get_u_max(material_id: MaterialId) -> float:
-    """Gets the material U max.
+    """Get the maximum U value of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material U max.
+        Maximum U value. -1.0 if the material ID does not exist.
     """
 
 def get_fire_resistance_class(material_id: MaterialId) -> str:
-    """Gets the material fire resistance class.
+    """Get the fire resistance class of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material fire resistance class.
+        Fire resistance class text. Empty string if the material ID does not exist.
     """
 
 def get_smoke_class(material_id: MaterialId) -> str:
-    """Gets the material smoke class.
+    """Get the smoke class of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material smoke class.
+        Smoke class text. Empty string if the material ID does not exist.
     """
 
 def get_drop_forming_class(material_id: MaterialId) -> str:
-    """Gets the material drop forming class.
+    """Get the drop forming class of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material drop forming class.
+        Drop forming class text. Empty string if the material ID does not exist.
     """
 
 def get_burn_off_rate(material_id: MaterialId) -> float:
-    """Gets the material burn-off rate.
+    """Get the burn-off rate of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material burn off rate.
+        Burn-off rate value. -1.0 if the material ID does not exist.
     """
 
 def get_weight(material_id: MaterialId) -> float:
-    """Gets the material weight.
+    """Get the weight of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material weight.
+        Weight value; its unit depends on the weight type, see get_weight_type. -1.0 if the material
+        ID does not exist.
     """
 
 def get_weight_type(material_id: MaterialId) -> str:
-    """Gets the material weight type.
+    """Get the weight type of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The material weight type.
+        One of None, kNperM3, kNperM2, kNperM or kNperPiece. 'None' if no weight type is set or the
+        material ID does not exist.
     """
 
 def get_all_materials() -> list[MaterialId]:
-    """Retrieves a list of all materials.
+    """Get the IDs of all materials in the document.
 
     Returns:
-        A list of all material id.
+        List of material IDs; empty list if there are none.
     """
 
 def get_grade(material_id: MaterialId) -> str:
-    """Gets the grade of a material.
+    """Get the grade (strength) of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The grade of the material.
+        Grade text. Empty string if the material ID does not exist.
     """
 
 def get_quality(material_id: MaterialId) -> str:
-    """Gets the quality of a material.
+    """Get the quality of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The quality of the material.
+        Quality text. Empty string if the material ID does not exist.
     """
 
 def get_composition(material_id: MaterialId) -> str:
-    """Gets the composition of a material.
+    """Get the composition of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID, as returned by create_material, get_material_id or
+            get_all_materials.
 
     Returns:
-        The composition of the material.
+        Composition text. Empty string if the material ID does not exist.
     """
 
 def get_short_name(material_id: MaterialId) -> str:
-    """Gets the short name of a material.
+    """Get the short (internal) name of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID.
 
     Returns:
-        The short name of the material.
+        Short name of the material, or an empty string if it has none or the ID is unknown.
     """
 
 def get_all_material_groups() -> list[str]:
-    """Retrieves a list of all material groups.
+    """Get the names of all material groups.
+
+    Names are returned in the current cadwork program language.
 
     Returns:
-        A list of all material group names.
+        List of material group names.
     """
 
 def get_parent_group(group: str) -> str:
-    """Gets the parent group of a given group.
+    """Get the name of the parent of a material group.
+
+    Group names are matched in the current cadwork program language.
 
     Parameters:
-        group: The name of the group.
+        group: Name of the material group.
 
     Returns:
-        The name of the parent group.
+        Name of the parent group, or an empty string if the group is not found or has no parent.
     """
 
 def get_material_color_assignment_for_nodes(color_nb: UnsignedInt) -> MaterialId:
-    """Gets the material color assignment for nodes.
+    """Get the material assigned to a color number for nodes.
+
+    Reads the color-to-material table of the document.
 
     Parameters:
-        color_nb: The color number. [1-255]
+        color_nb: Color number (palette index, 1-255). Not range-checked.
 
     Returns:
-        The material id assigned to the color number for nodes.
+        Material ID assigned to the color number, or 0 if none is assigned.
     """
 
 def set_material_color_assignment_for_nodes(color_nb: UnsignedInt, material_id: MaterialId) -> None:
-    """Sets the material color assignment for nodes.
+    """Assign a material to a color number for nodes.
+
+    Writes the color-to-material table of the document; other assignments are unchanged. No undo
+    step is created and no validation of the IDs is done.
 
     Parameters:
-        color_nb: The color number. [1-255]
-        material_id: The material ID to assign to the color number for nodes.
+        color_nb: Color number (palette index, 1-255). Not range-checked.
+        material_id: Material ID to assign.
     """
 
 def get_material_color_assignment_for_standard_axes(color_nb: UnsignedInt) -> MaterialId:
-    """Gets the material color assignment for standard axes.
+    """Get the material assigned to a color number for standard axes.
+
+    Reads the color-to-material table of the document.
 
     Parameters:
-        color_nb: The color number. [1-255]
+        color_nb: Color number (palette index, 1-255). Not range-checked.
 
     Returns:
-        The material id assigned to the color number for standard axes.
+        Material ID assigned to the color number, or 0 if none is assigned.
     """
 
 def set_material_color_assignment_for_standard_axes(color_nb: UnsignedInt, material_id: MaterialId) -> None:
-    """Sets the material color assignment for standard axes.
+    """Assign a material to a color number for standard axes.
+
+    Writes the color-to-material table of the document; other assignments are unchanged. No undo
+    step is created and no validation of the IDs is done.
 
     Parameters:
-        color_nb: The color number. [1-255]
-        material_id: The material ID to assign to the color number for standard axes.
+        color_nb: Color number (palette index, 1-255). Not range-checked.
+        material_id: Material ID to assign.
     """
 
 def get_material_color_assignment_for_drillings(color_nb: UnsignedInt) -> MaterialId:
-    """Gets the material color assignment for drillings.
+    """Get the material assigned to a color number for drillings.
+
+    Reads the color-to-material table of the document.
 
     Parameters:
-        color_nb: The color number. [1-255]
+        color_nb: Color number (palette index, 1-255). Not range-checked.
 
     Returns:
-        The material id assigned to the color number for drillings.
+        Material ID assigned to the color number, or 0 if none is assigned.
     """
 
 def set_material_color_assignment_for_drillings(color_nb: UnsignedInt, material_id: MaterialId) -> None:
-    """Sets the material color assignment for drillings.
+    """Assign a material to a color number for drillings.
+
+    Writes the color-to-material table of the document; other assignments are unchanged. No undo
+    step is created and no validation of the IDs is done.
 
     Parameters:
-        color_nb: The color number. [1-255]
-        material_id: The material ID to assign to the color number for drillings.
+        color_nb: Color number (palette index, 1-255). Not range-checked.
+        material_id: Material ID to assign.
     """
 
 def get_material_color_assignment_for_mep_axes(color_nb: UnsignedInt) -> MaterialId:
-    """Gets the material color assignment for MEP axes.
+    """Get the material assigned to a color number for MEP axes.
+
+    Reads the color-to-material table of the document.
 
     Parameters:
-        color_nb: The color number. [1-255]
+        color_nb: Color number (palette index, 1-255). Not range-checked.
 
     Returns:
-        The material id assigned to the color number for MEP axes.
+        Material ID assigned to the color number, or 0 if none is assigned.
     """
 
 def set_material_color_assignment_for_mep_axes(color_nb: UnsignedInt, material_id: MaterialId) -> None:
-    """Sets the material color assignment for MEP axes.
+    """Assign a material to a color number for MEP axes.
+
+    Writes the color-to-material table of the document; other assignments are unchanged. No undo
+    step is created and no validation of the IDs is done.
 
     Parameters:
-        color_nb: The color number. [1-255]
-        material_id: The material ID to assign to the color number for MEP axes.
+        color_nb: Color number (palette index, 1-255). Not range-checked.
+        material_id: Material ID to assign.
     """
 
 def get_material_color_assignment_for_beams(color_nb: UnsignedInt) -> MaterialId:
-    """Gets the material color assignment for beams.
+    """Get the material assigned to a color number for beams.
+
+    Reads the color-to-material table of the document.
 
     Parameters:
-        color_nb: The color number. [1-255]
+        color_nb: Color number (palette index, 1-255). Not range-checked.
 
     Returns:
-        The material id assigned to the color number for beams.
+        Material ID assigned to the color number, or 0 if none is assigned.
     """
 
 def set_material_color_assignment_for_beams(color_nb: UnsignedInt, material_id: MaterialId) -> None:
-    """Sets the material color assignment for beams.
+    """Assign a material to a color number for beams.
+
+    Writes the color-to-material table of the document; other assignments are unchanged. No undo
+    step is created and no validation of the IDs is done.
 
     Parameters:
-        color_nb: The color number. [1-255]
-        material_id: The material ID to assign to the color number for beams.
+        color_nb: Color number (palette index, 1-255). Not range-checked.
+        material_id: Material ID to assign.
     """
 
 def get_material_color_assignment_for_panels(color_nb: UnsignedInt) -> MaterialId:
-    """Gets the material color assignment for panels.
+    """Get the material assigned to a color number for panels.
+
+    Reads the color-to-material table of the document.
 
     Parameters:
-        color_nb: The color number. [1-255]
+        color_nb: Color number (palette index, 1-255). Not range-checked.
 
     Returns:
-        The material id assigned to the color number for panels.
+        Material ID assigned to the color number, or 0 if none is assigned.
     """
 
 def set_material_color_assignment_for_panels(color_nb: UnsignedInt, material_id: MaterialId) -> None:
-    """Sets the material color assignment for panels.
+    """Assign a material to a color number for panels.
+
+    Writes the color-to-material table of the document; other assignments are unchanged. No undo
+    step is created and no validation of the IDs is done.
 
     Parameters:
-        color_nb: The color number. [1-255]
-        material_id: The material ID to assign to the color number for panels.
+        color_nb: Color number (palette index, 1-255). Not range-checked.
+        material_id: Material ID to assign.
     """
 
 def get_material_color_assignment_for_auxiliary_elements(color_nb: UnsignedInt) -> MaterialId:
-    """Gets the material color assignment for auxiliary elements.
+    """Get the material assigned to a color number for auxiliary elements.
+
+    Reads the color-to-material table of the document.
 
     Parameters:
-        color_nb: The color number. [1-255]
+        color_nb: Color number (palette index, 1-255). Not range-checked.
 
     Returns:
-        The material id assigned to the color number for auxiliary elements.
+        Material ID assigned to the color number, or 0 if none is assigned.
     """
 
 def set_material_color_assignment_for_auxiliary_elements(color_nb: UnsignedInt, material_id: MaterialId) -> None:
-    """Sets the material color assignment for auxiliary elements.
+    """Assign a material to a color number for auxiliary elements.
+
+    Writes the color-to-material table of the document; other assignments are unchanged. No undo
+    step is created and no validation of the IDs is done.
 
     Parameters:
-        color_nb: The color number. [1-255]
-        material_id: The material ID to assign to the color number for auxiliary elements.
+        color_nb: Color number (palette index, 1-255). Not range-checked.
+        material_id: Material ID to assign.
     """
 
 def get_material_color_assignment_for_surfaces(color_nb: UnsignedInt) -> MaterialId:
-    """Gets the material color assignment for surfaces.
+    """Get the material assigned to a color number for surfaces.
+
+    Reads the color-to-material table of the document.
 
     Parameters:
-        color_nb: The color number. [1-255]
+        color_nb: Color number (palette index, 1-255). Not range-checked.
 
     Returns:
-        The material id assigned to the color number for surfaces.
+        Material ID assigned to the color number, or 0 if none is assigned.
     """
 
 def set_material_color_assignment_for_surfaces(color_nb: UnsignedInt, material_id: MaterialId) -> None:
-    """Sets the material color assignment for surfaces.
+    """Assign a material to a color number for surfaces.
+
+    Writes the color-to-material table of the document; other assignments are unchanged. No undo
+    step is created and no validation of the IDs is done.
 
     Parameters:
-        color_nb: The color number. [1-255]
-        material_id: The material ID to assign to the color number for surfaces.
+        color_nb: Color number (palette index, 1-255). Not range-checked.
+        material_id: Material ID to assign.
     """
 
 def get_texture_color(material_id: MaterialId) -> int:
-    """Gets the texture color for a given material ID.
+    """Get the texture color of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID.
 
     Returns:
-        The color of the texture. [1-255]
+        Color as a packed RGB integer, not a palette number.
     """
 
 def set_texture_color(color_nb: UnsignedInt, material_id: MaterialId) -> None:
-    """Sets the texture color for a given material ID.
+    """Set the texture color of a material.
+
+    At runtime the arguments are positional only and read as (material ID, color), the reverse
+    of the order shown in the signature: call `set_texture_color(material_id, color)`.
 
     Parameters:
-        color_nb: The color to set for the texture. [1-255]
-        material_id: The material id.
+        color_nb: Color as a packed RGB integer, not a palette number.
+        material_id: Material ID.
     """
 
 def get_texture_transparency(material_id: MaterialId) -> int:
-    """Gets the texture transparency for a given material ID.
+    """Get the texture transparency of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID.
 
     Returns:
-        The transparency of the texture in percent, 0 means no transparency. [0-100]
+        Transparency in percent, 0 means opaque.
     """
 
 def set_texture_transparency(material_id: MaterialId, texture_transparency: UnsignedInt) -> None:
-    """Sets the texture transparency for a given material ID.
+    """Set the texture transparency of a material.
+
+    The value is passed on without clamping.
 
     Parameters:
-        material_id: The material id.
-        texture_transparency: The transparency to set for the texture in percent, 0 means no transparency. [0-100]
+        material_id: Material ID.
+        texture_transparency: Transparency in percent, 0 means opaque (0-100).
     """
 
 def get_texture_rotation_angle(material_id: MaterialId) -> float:
-    """Gets the texture rotation angle for a given material ID.
+    """Get the texture rotation angle of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID.
 
     Returns:
-        The rotation angle of the texture.
+        Rotation angle of the texture, as stored in the material.
     """
 
 def set_texture_rotation_angle(material_id: MaterialId, angle: float) -> None:
-    """Sets the texture rotation angle for a given material ID.
+    """Set the texture rotation angle of a material.
 
     Parameters:
-        material_id: The material id.
-        angle: The rotation angle to set for the texture.
+        material_id: Material ID.
+        angle: Rotation angle of the texture, stored unchanged.
     """
 
 def get_texture_length_alignment(material_id: MaterialId) -> bool:
-    """Gets the texture length alignment for a given material ID.
+    """Check whether random texture placement is enabled for a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID.
 
     Returns:
-        True if Texture Random Placement is enabled, false otherwise.
+        True if random placement of the texture is enabled, False otherwise.
     """
 
 def set_texture_length_alignment(material_id: MaterialId, flag: bool) -> None:
-    """Sets the texture length alignment for a given material ID.
+    """Enable or disable random texture placement for a material.
 
     Parameters:
-        material_id: The material id.
-        flag: True if Texture Random Placement is enabled, false otherwise.
+        material_id: Material ID.
+        flag: True to enable random placement of the texture, False to disable it.
     """
 
 def get_texture_zoom_x(material_id: MaterialId) -> float:
-    """Gets the texture zoom factor in the X direction for a given material ID.
+    """Get the texture zoom factor in the X direction of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID.
 
     Returns:
-        The zoom factor of the texture in the X direction.
+        Zoom factor of the texture in the X direction.
     """
 
 def set_texture_zoom_x(material_id: MaterialId, value: float) -> None:
-    """Sets the texture zoom factor in the X direction for a given material ID.
+    """Set the texture zoom factor in the X direction of a material.
 
     Parameters:
-        material_id: The material id.
-        value: The zoom factor to set in the X direction.
+        material_id: Material ID.
+        value: Zoom factor in the X direction.
     """
 
 def get_texture_zoom_y(material_id: MaterialId) -> float:
-    """Gets the texture zoom factor in the Y direction for a given material ID.
+    """Get the texture zoom factor in the Y direction of a material.
 
     Parameters:
-        material_id: The material id.
+        material_id: Material ID.
 
     Returns:
-        The zoom factor of the texture in the Y direction.
+        Zoom factor of the texture in the Y direction.
     """
 
 def set_texture_zoom_y(material_id: MaterialId, value: float) -> None:
-    """Sets the texture zoom factor in the Y direction for a given material ID.
+    """Set the texture zoom factor in the Y direction of a material.
 
     Parameters:
-        material_id: The material id.
-        value: The zoom factor to set.
+        material_id: Material ID.
+        value: Zoom factor in the Y direction.
     """
