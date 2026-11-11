@@ -10,158 +10,190 @@ visualization_controller.
 from cadwork.api_types import *
 
 def add_scene(name: str) -> bool:
-    """Adds a new scene.
+    """Create a new, empty scene.
+
+    Fails if a scene with this name already exists.
 
     Parameters:
-        name: The scene name.
+        name: Name of the new scene.
 
     Returns:
-        True if the operation succeeded, false otherwise.
+        True if the scene was created, False if a scene with this name already exists.
     """
 
 def rename_scene(old_name: str, new_name: str) -> bool:
-    """Renames a scene.
+    """Rename a scene.
+
+    Renaming a scene that does not exist changes nothing but still returns True.
 
     Parameters:
-        old_name: The old scene name.
-        new_name: The new scene name.
+        old_name: Current scene name. Must not be empty.
+        new_name: New scene name. Must not be empty.
 
     Returns:
-        True if the operation succeeded, false otherwise.
+        True normally, False if either name is empty.
     """
 
 def delete_scene(name: str) -> bool:
-    """Deletes a scene.
+    """Delete a scene.
+
+    The elements in the scene are not deleted. Deleting a scene that does not exist changes nothing
+    but still returns True.
 
     Parameters:
-        name: The scene name.
+        name: Name of the scene to delete. Must not be empty.
 
     Returns:
-        True if the operation succeeded, false otherwise.
+        True normally, False if name is empty.
     """
 
 def add_elements_to_scene(name: str, element_id_list: list[ElementId]) -> bool:
-    """Adds elements to a scene.
+    """Add elements to a scene.
+
+    Invalid or deleted element IDs are skipped. An unknown scene name adds nothing.
 
     Parameters:
-        name: The scene name.
-        element_id_list:: The element id list.
+        name: Name of an existing scene.
+        element_id_list: List of element IDs to add.
 
     Returns:
-        True if the operation succeeded, false otherwise.
+        Always True, even if the scene does not exist or no element was added.
     """
 
 def remove_elements_from_scene(name: str, element_id_list: list[ElementId]) -> bool:
-    """Removes elements from a scene.
+    """Remove elements from a scene.
+
+    The scene must exist; check with is_scene_present first. Invalid or deleted element IDs are
+    skipped. The elements themselves are not deleted.
 
     Parameters:
-        name: The scene name.
-        element_id_list:: The element id list.
+        name: Name of an existing scene.
+        element_id_list: List of element IDs to remove.
 
     Returns:
-        True if the operation succeeded, false otherwise.
+        True after the elements were removed from the scene.
     """
 
 def get_elements_from_scene(name: str) -> list[ElementId]:
-    """Gets the elements from a scene.
+    """Get the IDs of all elements in a scene.
 
     Parameters:
-        name: The scene name.
+        name: Name of the scene.
 
     Returns:
-        The element id list.
+        List of element IDs in the scene; empty list if the scene does not exist.
     """
 
 def activate_scene(name: str) -> bool:
-    """Activates a scene.
+    """Activate a scene.
 
     Parameters:
-        name: The scene name.
+        name: Name of an existing scene.
 
     Returns:
-        True if the operation succeeded, false otherwise.
+        True if the scene was found and activated, False if no scene has this name.
     """
 
 def clear_errors() -> None:
-    """Clears all errors."""
+    """Clear the stored scene error messages."""
 
 def get_scene_list() -> list[str]:
-    """Gets the list of scenes.
+    """Get the names of all scenes.
 
     Returns:
-        The list of scene names.
+        List of scene names; empty list if there are none.
     """
 
 def group_scences(scene_names: list[str]) -> UnsignedInt:
-    """Groups the scenes to a scene group.
+    """Move scenes into the same scene group as the first scene.
+
+    The first name defines the target group; the other scenes are moved into it. Names that do not
+    exist are skipped. Needs at least two names.
 
     Parameters:
-        scene_names: The scene names.
+        scene_names: List of scene names. The first scene's group is the target group.
 
     Returns:
-        The index of the new group.
+        Index (0-based) of the target group. 0 if fewer than two names are given or the first scene
+        is not found.
     """
 
 def ungroup_scences(group_index: UnsignedInt) -> None:
-    """Deletes the group of scenes.
+    """Remove all scenes from a scene group.
 
     Parameters:
-        group_index: The index of the group.
+        group_index: 0-based index of the group, as returned by get_group_index_by_name or
+            group_scences.
     """
 
 def is_scene_present(name: str) -> bool:
-    """Checks if a scene is present.
+    """Check whether a scene with the given name exists.
 
     Parameters:
-        name: The name of the scene to check.
+        name: Scene name to look up.
 
     Returns:
-        True if the scene is present, false otherwise.
+        True if the scene exists, False otherwise.
     """
 
 def set_group_tab_color(scene_group_name: str, red: int, green: int, blue: int, alpha: int) -> None:
-    """Sets the group tab color.
+    """Set the tab color of a scene group.
+
+    Does nothing if no group has this name.
 
     Parameters:
-        scene_group_name: The name of the scene group.
-        red: Red component.
-        green: Green component.
-        blue: Blue component.
+        scene_group_name: Name of the scene group.
+        red: Red component, 0-255.
+        green: Green component, 0-255.
+        blue: Blue component, 0-255.
+        alpha: Opacity, 0-255 (255 is opaque).
     """
 
 def rename_scene_group(old_name: str, new_name: str) -> None:
-    """Renames a scene group.
+    """Rename a scene group.
+
+    Does nothing if no group has the old name.
 
     Parameters:
-        old_name: The old scene group name.
-        new_name: The new scene group name.
+        old_name: Current group name.
+        new_name: New group name.
     """
 
 def get_group_index_by_name(scene_group_name: str) -> UnsignedInt:
-    """Gets the index of a scene group by its name.
+    """Get the index of a scene group by its name.
+
+    The name comparison is case-sensitive.
 
     Parameters:
-        scene_group_name: The group name.
+        scene_group_name: Name of the scene group.
 
     Returns:
-        The index of the group, or a maximum uint64_t if not found.
+        0-based group index, or the maximum unsigned 64-bit value (18446744073709551615) if no group
+        has this name.
     """
 
 def rename_scene_group_by_index(group_index: UnsignedInt, new_name: str) -> None:
-    """Renames a scene group by its index.
+    """Rename a scene group by its index.
+
+    Does nothing if the index does not exist.
 
     Parameters:
-        group_index: The index of the group.
-        new_name: The new scene group name.
+        group_index: 0-based index of the group.
+        new_name: New group name.
     """
 
 def group_scences_with_name(scene_names: list[str], group_name: str) -> UnsignedInt:
-    """Groups the scenes to a scene group and sets the name of the new group.
+    """Group scenes together and name the group.
+
+    The first name defines the target group; the other scenes are moved into it. The group is
+    renamed to group_name only if the first scene already belongs to a group. Needs at least two
+    names; names that do not exist are skipped.
 
     Parameters:
-        scene_names: The scene names to group.
-        group_name: The name of the new group.
+        scene_names: List of scene names. The first scene's group is the target group.
+        group_name: New name of the target group.
 
     Returns:
-        The index of the new group.
+        Index (0-based) of the target group. 0 if fewer than two names are given or the first scene
+        is not found.
     """

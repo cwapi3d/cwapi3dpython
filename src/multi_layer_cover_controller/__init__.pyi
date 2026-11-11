@@ -13,11 +13,14 @@ from cadwork.api_types import *
 from cadwork.multi_layer_type import multi_layer_type
 
 def set_element_multi_layer_set(element_id: ElementId, set_id: MultiLayerSetId) -> None:
-    """Sets the multi layer set id of a cover.
+    """Assign a multi layer set to a cover element.
+
+    Does nothing if the element ID or the set ID is invalid. Marks the element as modified and
+    refreshes the display if auto refresh is on.
 
     Parameters:
-        element_id: The element id of the cover.
-        set_id: The multi layer set id.
+        element_id: Element ID of the cover.
+        set_id: ID of an existing multi layer set.
 
     Examples:
         >>> cover_id = element.create_cover(points, normal_vector)
@@ -26,11 +29,14 @@ def set_element_multi_layer_set(element_id: ElementId, set_id: MultiLayerSetId) 
     """
 
 def set_multi_layer_set_name(set_id: MultiLayerSetId, set_name: str) -> None:
-    """Sets the name for a multi layer set.
+    """Rename a multi layer set.
+
+    The name is made unique: if another set already has it, a suffix like ' (1)' is appended. Does
+    nothing for an unknown set ID. Saved to the document.
 
     Parameters:
-        set_id: The multi layer set id.
-        set_name: The multi layer set name.
+        set_id: ID of the multi layer set.
+        set_name: Desired name of the set.
 
     Examples:
         >>> multi_layer_set_id = mlc.create_multi_layer_wall("Default Wall")
@@ -38,11 +44,13 @@ def set_multi_layer_set_name(set_id: MultiLayerSetId, set_name: str) -> None:
     """
 
 def set_cover_name(set_id: MultiLayerSetId, cover_name: str) -> None:
-    """Sets the cover name of the multi layer set.
+    """Set the cover name of a multi layer set.
+
+    Does nothing for an unknown set ID. Saved to the document.
 
     Parameters:
-        set_id: The multi layer set id.
-        cover_name: The cover name.
+        set_id: ID of the multi layer set.
+        cover_name: Cover name.
 
     Examples:
         >>> multi_layer_set_id = mlc.create_multi_layer_wall("Default Wall")
@@ -50,11 +58,13 @@ def set_cover_name(set_id: MultiLayerSetId, cover_name: str) -> None:
     """
 
 def set_cover_material(set_id: MultiLayerSetId, cover_material: MaterialId) -> None:
-    """Sets the cover material of the multi layer set.
+    """Set the cover material of a multi layer set.
+
+    Does nothing for an unknown set ID. Saved to the document.
 
     Parameters:
-        set_id: The multi layer set id.
-        cover_material: The cover material.
+        set_id: ID of the multi layer set.
+        cover_material: Material ID.
 
     Examples:
         >>> multi_layer_set_id = mlc.create_multi_layer_wall("Default Wall")
@@ -63,11 +73,15 @@ def set_cover_material(set_id: MultiLayerSetId, cover_material: MaterialId) -> N
     """
 
 def set_cover_thickness(set_id: MultiLayerSetId, cover_thickness: float) -> None:
-    """Sets the cover thickness of the multi layer set. Only allowed for simple walls (cover without layer).
+    """Set the cover thickness of a simple wall set.
+
+    Only applies to sets flagged as simple walls (cover without layers); for all other sets,
+    including sets created by the create functions, nothing happens. Does nothing for an unknown set
+    ID.
 
     Parameters:
-        set_id: The multi layer set id.
-        cover_thickness: The cover thickness.
+        set_id: ID of the multi layer set.
+        cover_thickness: Cover thickness in mm.
 
     Examples:
         >>> multi_layer_set_id = mlc.create_multi_layer_wall("Simple Wall")
@@ -75,30 +89,39 @@ def set_cover_thickness(set_id: MultiLayerSetId, cover_thickness: float) -> None
     """
 
 def create_multi_layer_wall(set_name: str) -> MultiLayerSetId:
-    """Creates a new multi layer wall with given name and default values.
+    """Create a new framed wall multi layer set.
+
+    The name is made unique by appending ' (1)', ' (2)' etc. if needed. The new set gets default
+    values (100 mm cover thickness, default material, no layers) and is saved to the document. Same
+    as create_multi_layer_framed_wall.
 
     Parameters:
-        set_name: The multi layer set name.
+        set_name: Name of the new set; must not be empty.
 
     Examples:
         >>> wall_set_id = mlc.create_multi_layer_wall("Exterior Insulated Wall")
         >>> print(f"Created new multi-layer wall with ID: {wall_set_id}")
 
     Returns:
-        The multi layer set id.
+        ID of the new multi layer set, or 0 if the name is empty.
     """
 
 def add_layer(
     set_id: MultiLayerSetId, layer_type: multi_layer_type, name: str, material_id: MaterialId, thickness: float
 ) -> None:
-    """Adds a new layer to the multi layer set.
+    """Append a layer to a multi layer set.
+
+    The layer is added at the end and the cover thickness becomes the sum of all layer thicknesses.
+    A simple wall set is converted to a layered set. Does nothing for an unknown set ID or a
+    thickness of 0 or less. Saved to the document.
 
     Parameters:
-        set_id: The multi layer set id.
-        layer_type: The type of the layer.
-        name: The name of the layer.
-        material_id: The material id of the layer.
-        thickness: The thickness of the layer.
+        set_id: ID of the multi layer set.
+        layer_type: Layer type as integer value (1 structure, 2 panel, 3 lathing, 4 air, 5
+            covering).
+        name: Layer name.
+        material_id: Material ID of the layer.
+        thickness: Layer thickness in mm; must be greater than 0.
 
     Examples:
         >>> material_id_1 = mc.get_material_id("material_1")
@@ -111,12 +134,14 @@ def add_layer(
     """
 
 def set_layer_name(set_id: MultiLayerSetId, layer_index: UnsignedInt, name: str) -> None:
-    """Sets the name of a layer of the multi layer set.
+    """Set the name of a layer in a multi layer set.
+
+    Does nothing for an unknown set ID or an out-of-range layer index. Saved to the document.
 
     Parameters:
-        set_id: The multi layer set id.
-        layer_index: The layer index.
-        name: The name of the layer.
+        set_id: ID of the multi layer set.
+        layer_index: Zero-based layer index.
+        name: New layer name.
 
     Examples:
         >>> multi_layer_set_id = mlc.get_element_multi_layer_set(element_id)
@@ -125,12 +150,14 @@ def set_layer_name(set_id: MultiLayerSetId, layer_index: UnsignedInt, name: str)
     """
 
 def set_layer_material(set_id: MultiLayerSetId, layer_index: UnsignedInt, material_id: MaterialId) -> None:
-    """Sets the material of a layer of the multi layer set.
+    """Set the material of a layer in a multi layer set.
+
+    Does nothing for an unknown set ID or an out-of-range layer index. Saved to the document.
 
     Parameters:
-        set_id: The multi layer set id.
-        layer_index: The layer index.
-        material_id: The material id of the layer.
+        set_id: ID of the multi layer set.
+        layer_index: Zero-based layer index.
+        material_id: Material ID.
 
     Examples:
         >>> multi_layer_set_id = mlc.get_element_multi_layer_set(element_id)
@@ -139,12 +166,15 @@ def set_layer_material(set_id: MultiLayerSetId, layer_index: UnsignedInt, materi
     """
 
 def set_layer_thickness(set_id: MultiLayerSetId, layer_index: UnsignedInt, thickness: float) -> None:
-    """Sets the thickness of a layer of the multi layer set.
+    """Set the thickness of a layer in a multi layer set.
+
+    The cover thickness is recalculated as the sum of all layer thicknesses. Does nothing for an
+    unknown set ID, an out-of-range layer index or a thickness of 0 or less. Saved to the document.
 
     Parameters:
-        set_id: The multi layer set id.
-        layer_index: The layer index.
-        thickness: The layer thickness.
+        set_id: ID of the multi layer set.
+        layer_index: Zero-based layer index.
+        thickness: Layer thickness in mm; must be greater than 0.
 
     Examples:
         >>> multi_layer_set_id = mlc.get_element_multi_layer_set(element_id)
@@ -153,12 +183,15 @@ def set_layer_thickness(set_id: MultiLayerSetId, layer_index: UnsignedInt, thick
     """
 
 def set_layer_type(set_id: MultiLayerSetId, layer_index: UnsignedInt, layer_type: multi_layer_type) -> None:
-    """Sets the type of a layer of the multi layer set.
+    """Set the type of a layer in a multi layer set.
+
+    Does nothing for an unknown set ID or an out-of-range layer index. Saved to the document.
 
     Parameters:
-        set_id: The multi layer set id.
-        layer_index: The layer index.
-        layer_type: The layer type.
+        set_id: ID of the multi layer set.
+        layer_index: Zero-based layer index.
+        layer_type: Layer type as integer value (1 structure, 2 panel, 3 lathing, 4 air, 5
+            covering).
 
     Examples:
         >>> multi_layer_set_id = mlc.get_element_multi_layer_set(element_id)
@@ -168,11 +201,13 @@ def set_layer_type(set_id: MultiLayerSetId, layer_index: UnsignedInt, layer_type
     """
 
 def set_cover_color(set_id: MultiLayerSetId, cover_color: ColorId) -> None:
-    """Sets the cover color of the multi layer set.
+    """Set the cover color of a multi layer set.
+
+    Does nothing for an unknown set ID. Saved to the document.
 
     Parameters:
-        set_id: The multi layer set id.
-        cover_color: The cover color.
+        set_id: ID of the multi layer set.
+        cover_color: Color ID.
 
     Examples:
         >>> multi_layer_set_id = mlc.create_multi_layer_wall("Default Wall")
@@ -181,7 +216,9 @@ def set_cover_color(set_id: MultiLayerSetId, cover_color: ColorId) -> None:
     """
 
 def get_multi_layer_walls() -> list[MultiLayerSetId]:
-    """Gets all multi layer wall ids.
+    """Get all multi layer sets of wall type.
+
+    Returns an empty list if there are none.
 
     Examples:
         >>> wall_ids = mlc.get_multi_layer_walls()
@@ -191,14 +228,14 @@ def get_multi_layer_walls() -> list[MultiLayerSetId]:
         ...     print(f"Wall ID: {wall_id}, Name: {name}")
 
     Returns:
-        The multi layer wall ids.
+        List of multi layer set IDs; includes framed, solid and log walls.
     """
 
 def get_multi_layer_set_name(set_id: MultiLayerSetId) -> str:
-    """Gets the name for a multi layer set.
+    """Get the name of a multi layer set.
 
     Parameters:
-        set_id: The multi layer set id.
+        set_id: ID of the multi layer set.
 
     Examples:
         >>> multi_layer_set_id = mlc.get_element_multi_layer_set(element_id)
@@ -206,14 +243,14 @@ def get_multi_layer_set_name(set_id: MultiLayerSetId) -> str:
         >>> print(f"Element uses multi-layer definition: {set_name}")
 
     Returns:
-        The multi layer set name.
+        Name of the set, or an empty string if the set ID is unknown.
     """
 
 def get_element_multi_layer_set(element_id: ElementId) -> MultiLayerSetId:
-    """Gets the multi layer set id of a cover.
+    """Get the multi layer set ID assigned to a cover element.
 
     Parameters:
-        element_id: The element id of the cover.
+        element_id: Element ID of the cover.
 
     Examples:
         >>> cover_ids = element.get_covers()
@@ -223,14 +260,14 @@ def get_element_multi_layer_set(element_id: ElementId) -> MultiLayerSetId:
         ...     print(f"Cover {cover_id} uses wall type: {set_name}")
 
     Returns:
-        The multi layer set id.
+        ID of the multi layer set, or 0 if the element ID is invalid.
     """
 
 def get_cover_name(set_id: MultiLayerSetId) -> str:
-    """Gets the cover name defined in the multi layer set.
+    """Get the cover name of a multi layer set.
 
     Parameters:
-        set_id: The multi layer set id.
+        set_id: ID of the multi layer set.
 
     Examples:
         >>> multi_layer_set_id = mlc.get_element_multi_layer_set(element_id)
@@ -238,14 +275,14 @@ def get_cover_name(set_id: MultiLayerSetId) -> str:
         >>> print(f"Cover name: {cover_name}")
 
     Returns:
-        The cover name.
+        Cover name, or an empty string if the set ID is unknown.
     """
 
 def get_cover_material(set_id: MultiLayerSetId) -> MaterialId:
-    """Gets the cover material defined in the multi layer set.
+    """Get the cover material of a multi layer set.
 
     Parameters:
-        set_id: The multi layer set id.
+        set_id: ID of the multi layer set.
 
     Examples:
         >>> multi_layer_set_id = mlc.get_element_multi_layer_set(element_id)
@@ -254,14 +291,16 @@ def get_cover_material(set_id: MultiLayerSetId) -> MaterialId:
         >>> print(f"Cover uses material: {material_name}")
 
     Returns:
-        The cover material.
+        Material ID, or 0 if the set ID is unknown.
     """
 
 def get_cover_thickness(set_id: MultiLayerSetId) -> float:
-    """Gets the cover thickness of the multi layer set.
+    """Get the cover thickness of a multi layer set.
+
+    For sets with layers this is the sum of the layer thicknesses.
 
     Parameters:
-        set_id: The multi layer set id.
+        set_id: ID of the multi layer set.
 
     Examples:
         >>> multi_layer_set_id = mlc.get_element_multi_layer_set(element_id)
@@ -269,14 +308,16 @@ def get_cover_thickness(set_id: MultiLayerSetId) -> float:
         >>> print(f"Cover thickness: {thickness}mm")
 
     Returns:
-        The cover thickness.
+        Thickness in mm, or 0 if the set ID is unknown.
     """
 
 def get_layer_count(set_id: MultiLayerSetId) -> UnsignedInt:
-    """Gets the number of layers of the multi layer set.
+    """Get the number of layers in a multi layer set.
+
+    Simple walls (cover without layers) have no layers.
 
     Parameters:
-        set_id: The multi layer set id.
+        set_id: ID of the multi layer set.
 
     Examples:
         >>> multi_layer_set_id = mlc.get_element_multi_layer_set(element_id)
@@ -284,15 +325,15 @@ def get_layer_count(set_id: MultiLayerSetId) -> UnsignedInt:
         >>> print(f"Wall has {count} layers")
 
     Returns:
-        The number of layers.
+        Number of layers; 0 if the set ID is unknown or the set is a simple wall.
     """
 
 def get_layer_name(set_id: MultiLayerSetId, layer_index: UnsignedInt) -> str:
-    """Gets the name of a layer of the multi layer set.
+    """Get the name of a layer in a multi layer set.
 
     Parameters:
-        set_id: The multi layer set id.
-        layer_index: The layer index.
+        set_id: ID of the multi layer set.
+        layer_index: Zero-based layer index.
 
     Examples:
         >>> multi_layer_set_id = mlc.get_element_multi_layer_set(element_id)
@@ -302,15 +343,15 @@ def get_layer_name(set_id: MultiLayerSetId, layer_index: UnsignedInt) -> str:
         ...     print(f"Layer {i}: {layer_name}")
 
     Returns:
-        The layer name.
+        Layer name. Empty string if the set ID is unknown or the layer index is out of range.
     """
 
 def get_layer_thickness(set_id: MultiLayerSetId, layer_index: UnsignedInt) -> float:
-    """Gets the thickness of a layer of the multi layer set.
+    """Get the thickness of a layer in a multi layer set.
 
     Parameters:
-        set_id: The multi layer set id.
-        layer_index: The layer index.
+        set_id: ID of the multi layer set.
+        layer_index: Zero-based layer index.
 
     Examples:
         >>> multi_layer_set_id = mlc.get_element_multi_layer_set(element_id)
@@ -323,15 +364,15 @@ def get_layer_thickness(set_id: MultiLayerSetId, layer_index: UnsignedInt) -> fl
         >>> print(f"Total wall thickness: {total_thickness}mm")
 
     Returns:
-        The layer thickness.
+        Layer thickness in mm, or 0 if the set ID is unknown or the layer index is out of range.
     """
 
 def get_layer_material(set_id: MultiLayerSetId, layer_index: UnsignedInt) -> MaterialId:
-    """Gets the material of a layer of the multi layer set.
+    """Get the material of a layer in a multi layer set.
 
     Parameters:
-        set_id: The multi layer set id.
-        layer_index: The layer index.
+        set_id: ID of the multi layer set.
+        layer_index: Zero-based layer index.
 
     Examples:
         >>> multi_layer_set_id = mlc.get_element_multi_layer_set(element_id)
@@ -342,15 +383,15 @@ def get_layer_material(set_id: MultiLayerSetId, layer_index: UnsignedInt) -> Mat
         ...     print(f"Layer {i} material: {material_name}")
 
     Returns:
-        The layer material.
+        Material ID, or 0 if the set ID is unknown or the layer index is out of range.
     """
 
 def get_layer_type(set_id: MultiLayerSetId, layer_index: UnsignedInt) -> multi_layer_type:
-    """Gets the type of a layer of the multi layer set.
+    """Get the type of a layer in a multi layer set.
 
     Parameters:
-        set_id: The multi layer set id.
-        layer_index: The layer index.
+        set_id: ID of the multi layer set.
+        layer_index: Zero-based layer index.
 
     Examples:
         >>> multi_layer_set_id = mlc.get_element_multi_layer_set(element_id)
@@ -362,14 +403,15 @@ def get_layer_type(set_id: MultiLayerSetId, layer_index: UnsignedInt) -> multi_l
         ...     print(f"Layer {i} ({layer_name}): Type = {type_str}")
 
     Returns:
-        The layer type.
+        Layer type as integer (1 structure, 2 panel, 3 lathing, 4 air, 5 covering); 0 if the set ID
+        is unknown or the layer index is out of range.
     """
 
 def get_cover_color(set_id: MultiLayerSetId) -> ColorId:
-    """Gets the cover color defined in the multi layer set.
+    """Get the cover color of a multi layer set.
 
     Parameters:
-        set_id: The multi layer set id.
+        set_id: ID of the multi layer set.
 
     Examples:
         >>> multi_layer_set_id = mlc.get_element_multi_layer_set(element_id)
@@ -378,11 +420,13 @@ def get_cover_color(set_id: MultiLayerSetId) -> ColorId:
         >>> print(f"Cover uses color: {color_name}")
 
     Returns:
-        The cover color.
+        Color ID, or 0 if the set ID is unknown.
     """
 
 def get_multi_layer_framed_floors() -> list[MultiLayerSetId]:
-    """Gets all framed multi layer floor ids.
+    """Get all multi layer sets of type framed floor.
+
+    Returns an empty list if there are none.
 
     Examples:
         >>> floor_ids = mlc.get_multi_layer_framed_floors()
@@ -392,25 +436,30 @@ def get_multi_layer_framed_floors() -> list[MultiLayerSetId]:
         ...     print(f"Floor ID: {floor_id}, Name: {name}")
 
     Returns:
-        The multi layer floor ids.
+        List of multi layer set IDs.
     """
 
 def create_multi_layer_framed_floor(set_name: str) -> MultiLayerSetId:
-    """Creates a new multi layer floor with given name and default values.
+    """Create a new framed floor multi layer set.
+
+    The name is made unique by appending ' (1)', ' (2)' etc. if needed. The new set gets default
+    values (100 mm cover thickness, default material, no layers) and is saved to the document.
 
     Parameters:
-        set_name: The multi layer set name.
+        set_name: Name of the new set; must not be empty.
 
     Examples:
         >>> set_id = mlc.create_multi_layer_framed_floor("Standard Floor")
         >>> print(f"Created new multi-layer floor with ID: {set_id}")
 
     Returns:
-        The multi layer set id.
+        ID of the new multi layer set, or 0 if the name is empty.
     """
 
 def get_multi_layer_framed_roofs() -> list[MultiLayerSetId]:
-    """Gets all multi layer roof ids.
+    """Get all multi layer sets of type framed roof.
+
+    Returns an empty list if there are none.
 
     Examples:
         >>> roof_ids = mlc.get_multi_layer_framed_roofs()
@@ -420,11 +469,13 @@ def get_multi_layer_framed_roofs() -> list[MultiLayerSetId]:
         ...     print(f"Roof ID: {roof_id}, Name: {name}")
 
     Returns:
-        The multi layer roof ids.
+        List of multi layer set IDs.
     """
 
 def get_multi_layer_solid_floors() -> list[MultiLayerSetId]:
-    """Gets all solid multi layer floor ids.
+    """Get all multi layer sets of type solid floor.
+
+    Returns an empty list if there are none.
 
     Examples:
         >>> floor_ids = mlc.get_multi_layer_solid_floors()
@@ -434,53 +485,65 @@ def get_multi_layer_solid_floors() -> list[MultiLayerSetId]:
         ...     print(f"Floor ID: {floor_id}, Name: {name}")
 
     Returns:
-        The multi layer floor ids.
+        List of multi layer set IDs.
     """
 
 def create_multi_layer_solid_floor(set_name: str) -> MultiLayerSetId:
-    """Creates a new multi layer solid floor with given name and default values.
+    """Create a new solid floor multi layer set.
+
+    The name is made unique by appending ' (1)', ' (2)' etc. if needed. The new set gets default
+    values (100 mm cover thickness, default material, no layers) and is saved to the document.
 
     Parameters:
-        set_name: The multi layer set name.
+        set_name: Name of the new set; must not be empty.
 
     Examples:
         >>> set_id = mlc.create_multi_layer_solid_floor("Standard Solid Floor")
         >>> print(f"Created new multi-layer solid floor with ID: {set_id}")
 
     Returns:
-        The multi layer set id.
+        ID of the new multi layer set, or 0 if the name is empty.
     """
 
 def create_multi_layer_framed_roof(set_name: str) -> MultiLayerSetId:
-    """Creates a new multi layer roof with given name and default values.
+    """Create a new framed roof multi layer set.
+
+    The name is made unique by appending ' (1)', ' (2)' etc. if needed. The new set gets default
+    values (100 mm cover thickness, default material, no layers) and is saved to the document.
 
     Parameters:
-        set_name: The multi layer set name.
+        set_name: Name of the new set; must not be empty.
 
     Examples:
         >>> set_id = mlc.create_multi_layer_framed_roof("Pitched Roof")
         >>> print(f"Created new multi-layer roof with ID: {set_id}")
 
     Returns:
-        The multi layer set id.
+        ID of the new multi layer set, or 0 if the name is empty.
     """
 
 def create_multi_layer_framed_wall(set_name: str) -> MultiLayerSetId:
-    """Creates a new multi layer wall with given name and default values.
+    """Create a new framed wall multi layer set.
+
+    The name is made unique by appending ' (1)', ' (2)' etc. if needed. The new set gets default
+    values (100 mm cover thickness, default material, no layers) and is saved to the document. Same
+    as create_multi_layer_wall.
 
     Parameters:
-        set_name: The multi layer set name.
+        set_name: Name of the new set; must not be empty.
 
     Examples:
         >>> set_id = mlc.create_multi_layer_framed_wall("Standard Wall")
         >>> print(f"Created new multi-layer wall with ID: {set_id}")
 
     Returns:
-        The multi layer set id.
+        ID of the new multi layer set, or 0 if the name is empty.
     """
 
 def get_multi_layer_sets() -> list[MultiLayerSetId]:
-    """Gets all multi layer set ids of all types.
+    """Get all multi layer sets of every cover type.
+
+    Returns an empty list if there are none.
 
     Examples:
         >>> all_ids = mlc.get_multi_layer_sets()
@@ -490,39 +553,46 @@ def get_multi_layer_sets() -> list[MultiLayerSetId]:
         ...     print(f"Set ID: {set_id}, Name: {name}")
 
     Returns:
-        The multi layer set ids.
+        List of multi layer set IDs.
     """
 
 def create_multi_layer_by_cover_type(set_name: str, cover_type: multi_layer_cover_type) -> MultiLayerSetId:
-    """Creates a new multi layer set of specified type with given name and default values.
+    """Create a new multi layer set of the given cover type.
+
+    The name is made unique by appending ' (1)', ' (2)' etc. if needed. The new set gets default
+    values (100 mm cover thickness, default material, no layers) and is saved to the document.
 
     Parameters:
-        set_name: The multi layer set name.
-        cover_type: The cover type.
+        set_name: Name of the new set; must not be empty.
+        cover_type: Cover type of the new set.
 
     Examples:
         >>> set_id = mlc.create_multi_layer_by_cover_type("Custom Solid Wall", cadwork.multi_layer_cover_type.solidWall)
         >>> print(f"Created new multi-layer set with ID: {set_id}")
 
     Returns:
-        The multi layer set id.
+        ID of the new multi layer set, or 0 if the name is empty or the cover type is not supported.
     """
 
 def get_multi_layer_sets_for_cover_type(cover_type: multi_layer_cover_type) -> list[MultiLayerSetId]:
-    """Gets all multi layer set ids of specified cover type.
+    """Get all multi layer sets of the given cover type.
+
+    Returns an empty list if there are none or the cover type is not supported.
 
     Parameters:
-        cover_type: The cover type.
+        cover_type: Cover type to filter by.
 
     Examples:
         >>> set_ids = mlc.get_multi_layer_sets_for_cover_type(cadwork.multi_layer_cover_type.solidWall)
 
     Returns:
-        The multi layer set ids.
+        List of multi layer set IDs.
     """
 
 def get_multi_layer_log_walls() -> list[MultiLayerSetId]:
-    """Gets all multi layer log wall ids.
+    """Get all multi layer sets of type log wall.
+
+    Returns an empty list if there are none.
 
     Examples:
         >>> log_wall_ids = mlc.get_multi_layer_log_walls()
@@ -532,25 +602,30 @@ def get_multi_layer_log_walls() -> list[MultiLayerSetId]:
         ...     print(f"Log Wall ID: {log_wall_id}, Name: {name}")
 
     Returns:
-        The multi layer log wall ids.
+        List of multi layer set IDs.
     """
 
 def create_multi_layer_log_wall(set_name: str) -> MultiLayerSetId:
-    """Creates a new multi layer log wall with given name and default values.
+    """Create a new log wall multi layer set.
+
+    The name is made unique by appending ' (1)', ' (2)' etc. if needed. The new set gets default
+    values (100 mm cover thickness, default material, no layers) and is saved to the document.
 
     Parameters:
-        set_name: The multi layer set name.
+        set_name: Name of the new set; must not be empty.
 
     Examples:
         >>> set_id = mlc.create_multi_layer_log_wall("Standard Log Wall")
         >>> print(f"Created new multi-layer log wall with ID: {set_id}")
 
     Returns:
-        The multi layer set id.
+        ID of the new multi layer set, or 0 if the name is empty.
     """
 
 def get_multi_layer_solid_roofs() -> list[MultiLayerSetId]:
-    """Gets all multi layer solid roof ids.
+    """Get all multi layer sets of type solid roof.
+
+    Returns an empty list if there are none.
 
     Examples:
         >>> solid_roof_ids = mlc.get_multi_layer_solid_roofs()
@@ -560,25 +635,30 @@ def get_multi_layer_solid_roofs() -> list[MultiLayerSetId]:
         ...     print(f"Solid Roof ID: {solid_roof_id}, Name: {name}")
 
     Returns:
-        The multi layer solid roof ids.
+        List of multi layer set IDs.
     """
 
 def create_multi_layer_solid_roof(set_name: str) -> MultiLayerSetId:
-    """Creates a new multi layer solid roof with given name and default values.
+    """Create a new solid roof multi layer set.
+
+    The name is made unique by appending ' (1)', ' (2)' etc. if needed. The new set gets default
+    values (100 mm cover thickness, default material, no layers) and is saved to the document.
 
     Parameters:
-        set_name: The multi layer set name.
+        set_name: Name of the new set; must not be empty.
 
     Examples:
         >>> set_id = mlc.create_multi_layer_solid_roof("Standard Solid Roof")
         >>> print(f"Created new multi-layer solid roof with ID: {set_id}")
 
     Returns:
-        The multi layer set id.
+        ID of the new multi layer set, or 0 if the name is empty.
     """
 
 def get_multi_layer_solid_walls() -> list[MultiLayerSetId]:
-    """Gets all multi layer solid wall ids.
+    """Get all multi layer sets of type solid wall.
+
+    Returns an empty list if there are none.
 
     Examples:
         >>> solid_wall_ids = mlc.get_multi_layer_solid_walls()
@@ -588,128 +668,154 @@ def get_multi_layer_solid_walls() -> list[MultiLayerSetId]:
         ...     print(f"Solid Wall ID: {solid_wall_id}, Name: {name}")
 
     Returns:
-        The multi layer solid wall ids.
+        List of multi layer set IDs.
     """
 
 def create_multi_layer_solid_wall(set_name: str) -> MultiLayerSetId:
-    """Creates a new multi layer solid wall with given name and default values.
+    """Create a new solid wall multi layer set.
+
+    The name is made unique by appending ' (1)', ' (2)' etc. if needed. The new set gets default
+    values (100 mm cover thickness, default material, no layers) and is saved to the document.
 
     Parameters:
-        set_name: The multi layer set name.
+        set_name: Name of the new set; must not be empty.
 
     Examples:
         >>> set_id = mlc.create_multi_layer_solid_wall("Standard Solid Wall")
         >>> print(f"Created new multi-layer solid wall with ID: {set_id}")
 
     Returns:
-        The multi layer set id.
+        ID of the new multi layer set, or 0 if the name is empty.
     """
 
 def get_multi_layer_set_component_type(set_id: MultiLayerSetId) -> int:
-    """Gets the multi layer set component type.
+    """Get the component type of a multi layer set.
 
     Parameters:
-        set_id: The multi layer set id.
+        set_id: ID of the multi layer set.
 
     Returns:
-        The multi layer set component type.
+        Component type as integer: 1 material, 2 standard element; 0 if the set ID is unknown.
     """
 
 def set_multi_layer_set_component_type(set_id: MultiLayerSetId, type: int) -> None:
-    """Sets the multi layer set component type.
+    """Set the component type of a multi layer set.
+
+    Does nothing for an unknown set ID. Saved to the document.
 
     Parameters:
-        set_id: The multi layer set id.
-        type: The multi layer set component type.
+        set_id: ID of the multi layer set.
+        type: Component type as integer: 1 material, 2 standard element.
     """
 
 def get_layer_sub_type(set_id: MultiLayerSetId, layer_index: UnsignedInt) -> int:
-    """Gets the layer sub type.
+    """Get the sub type of a layer in a multi layer set.
 
     Parameters:
-        set_id: The multi layer set id.
-        layer_index: The layer index.
+        set_id: ID of the multi layer set.
+        layer_index: Zero-based layer index.
 
     Returns:
-        The layer sub type.
+        Layer sub type as integer (1 load-bearing frame structure, 2 solid structure, 3 straight
+        edge, 4 bias edge, 5 vertical, 6 horizontal, 7 air, 8 non-load-bearing frame structure); 0
+        if the set ID is unknown or the layer index is out of range.
     """
 
 def set_layer_sub_type(set_id: MultiLayerSetId, layer_index: UnsignedInt, sub_type: int) -> None:
-    """Sets the layer sub type.
+    """Set the sub type of a layer in a multi layer set.
+
+    Does nothing for an unknown set ID or an out-of-range layer index. Saved to the document.
 
     Parameters:
-        set_id: The multi layer set id.
-        layer_index: The layer index.
-        sub_type: The layer sub type.
+        set_id: ID of the multi layer set.
+        layer_index: Zero-based layer index.
+        sub_type: Layer sub type as integer (1 load-bearing frame structure, 2 solid structure, 3
+            straight edge, 4 bias edge, 5 vertical, 6 horizontal, 7 air, 8 non-load-bearing frame
+            structure).
     """
 
 def get_layer_standard_panel_guid(set_id: MultiLayerSetId, layer_index: UnsignedInt) -> str:
-    """Gets the layer standard panel guid.
+    """Get the GUID of the standard panel used by a layer.
 
     Parameters:
-        set_id: The multi layer set id.
-        layer_index: The layer index.
+        set_id: ID of the multi layer set.
+        layer_index: Zero-based layer index.
 
     Returns:
-        The layer standard panel guid.
+        GUID as string. Empty string if the set ID is unknown or the layer index is out of range.
     """
 
 def set_layer_standard_panel_guid(set_id: MultiLayerSetId, layer_index: UnsignedInt, guid: str) -> None:
-    """Sets the layer standard panel guid.
+    """Set the standard panel GUID of a layer.
+
+    Does nothing for an unknown set ID or an out-of-range layer index. Saved to the document.
 
     Parameters:
-        set_id: The multi layer set id.
-        layer_index: The layer index.
-        guid: The layer standard panel guid.
+        set_id: ID of the multi layer set.
+        layer_index: Zero-based layer index.
+        guid: GUID string of the standard panel.
     """
 
 def get_layer_standard_beam_guid(set_id: MultiLayerSetId, layer_index: UnsignedInt) -> str:
-    """Gets the layer standard beam guid.
+    """Get the GUID of the standard beam used by a layer.
 
     Parameters:
-        set_id: The multi layer set id.
-        layer_index: The layer index.
+        set_id: ID of the multi layer set.
+        layer_index: Zero-based layer index.
 
     Returns:
-        The layer standard beam guid.
+        GUID as string. Empty string if the set ID is unknown or the layer index is out of range.
     """
 
 def set_layer_standard_beam_guid(set_id: MultiLayerSetId, layer_index: UnsignedInt, guid: str) -> None:
-    """Sets the layer standard beam guid.
+    """Set the standard beam GUID of a layer.
+
+    Does nothing for an unknown set ID or an out-of-range layer index. Saved to the document.
 
     Parameters:
-        set_id: The multi layer set id.
-        layer_index: The layer index.
-        guid: The layer standard beam guid.
+        set_id: ID of the multi layer set.
+        layer_index: Zero-based layer index.
+        guid: GUID string of the standard beam.
     """
 
 def add_layer_by_standard_elements(
     set_id: MultiLayerSetId, type: multi_layer_type, name: str, panel_guid: str, beam_guid: str, thickness: float
 ) -> None:
-    """Adds layer by standard element.
+    """Append a layer defined by standard panel and beam elements.
+
+    The layer is added at the end and the cover thickness becomes the sum of all layer thicknesses.
+    A simple wall set is converted to a layered set. No material is set on the layer. Does nothing
+    for an unknown set ID or a thickness of 0 or less. Saved to the document.
 
     Parameters:
-        set_id: The multi layer set id.
-        type: The multi layer set component type.
-        name: The layer name.
-        panel_guid: The layer standard panel guid.
-        beam_guid: The layer standard beam guid.
-        thickness: The layer thickness.
+        set_id: ID of the multi layer set.
+        type: Layer type as integer value (1 structure, 2 panel, 3 lathing, 4 air, 5 covering).
+        name: Layer name.
+        panel_guid: GUID string of the standard panel.
+        beam_guid: GUID string of the standard beam.
+        thickness: Layer thickness in mm; must be greater than 0.
     """
 
 def remove_layer(set_id: MultiLayerSetId, layer_index: UnsignedInt) -> None:
-    """Removes one layer from a multi layer set.
+    """Remove one layer from a multi layer set.
+
+    The cover thickness is updated to the sum of the remaining layer thicknesses (kept unchanged if
+    no layer remains). Covers using the set are queued for recreation, which only happens while auto
+    display refresh is on. Does nothing for an unknown set ID or an out-of-range index.
 
     Parameters:
-        set_id: The multi layer set id.
-        layer_index: Zero-based index of the layer to remove, must be smaller than getLayerCount().
+        set_id: ID of the multi layer set.
+        layer_index: Zero-based index of the layer to remove; must be smaller than the layer count.
     """
 
 def remove_all_layers(set_id: MultiLayerSetId) -> None:
-    """Removes all layers from a multi layer set.
+    """Remove all layers from a multi layer set.
+
+    Covers that use the set are queued for recreation, which only happens while automatic display
+    refresh is on. Does nothing for an unknown set ID or a set without layers.
 
     Parameters:
-        set_id: The multi layer set id.
+        set_id: ID of the multi layer set.
     """
 
 def insert_layer(
@@ -720,20 +826,30 @@ def insert_layer(
     material_id: MaterialId,
     thickness: float,
 ) -> None:
-    """Inserts a layer into a multi layer set at the given position.
+    """Insert a new layer into a multi layer set at the given position.
+
+    The set's cover thickness becomes the sum of all layer thicknesses, and a simple-wall set
+    becomes a regular layered set. Covers using the set are queued for recreation, which only
+    happens while automatic display refresh is on. Does nothing for an unknown set ID or a thickness
+    that is zero or negative.
 
     Parameters:
-        set_id: The multi layer set id.
-        position: Zero-based position the new layer receives; values >= getLayerCount() append the layer.
-        type: The type of the layer.
-        name: The name of the layer.
-        material_id: The material of the layer.
-        thickness: The thickness of the layer in mm, must be greater than zero.
+        set_id: ID of the multi layer set.
+        position: Zero-based position of the new layer; values at or beyond the layer count append
+            it.
+        type: Type of the layer.
+        name: Name of the layer.
+        material_id: Material ID of the layer.
+        thickness: Layer thickness in mm; must be greater than zero.
     """
 
 def unset_element_multi_layer_set(element_id: ElementId) -> None:
-    """Removes the multi layer set from an element, which then is a plain element again.
+    """Remove the multi layer set assignment from a cover element.
+
+    The element is marked as modified and the display is refreshed if automatic refresh is on. Does
+    nothing for an invalid element ID or an element without an assigned set. The set itself is not
+    deleted.
 
     Parameters:
-        element_id: The element id of the cover.
+        element_id: Element ID of the cover.
     """
