@@ -8,11 +8,16 @@ modal form.
 """
 
 def display_simple_menu(menu_items: list[str]) -> str:
-    """Displays a simple menu.
+    """Show a menu with the given entries and wait for the user to pick one.
+
+    The script blocks until the user selects an entry or presses Escape. At most 50 entries are
+    shown; further entries are dropped. In a /PLUGIN= or /RUNPROGRAM= run the menu is not shown.
 
     Parameters:
-        menu_items: The menu items.
+        menu_items: Entry labels in display order. An empty string adds a blank separator line that
+            cannot be selected.
 
     Returns:
-        The selected menu item.
+        The label of the selected entry, or an empty string when the user presses Escape or the menu
+        is not shown.
     """
