@@ -329,7 +329,7 @@ def get_section_material_name(axis_id: ElementId, section_index: UnsignedInt) ->
         Material name; empty string if the element ID or section index is invalid.
     """
 
-def get_section_contact_element(axis_id: float, section_index: UnsignedInt) -> ElementId:
+def get_section_contact_element(axis_id: ElementId, section_index: UnsignedInt) -> ElementId:
     """Get the element in contact with a section of a connector axis.
 
     Parameters:
@@ -458,14 +458,11 @@ def set_counterbore_for_end_side(
         is_conical: True for a conical counterbore, False for a non-conical one.
     """
 
-def get_intersection_count(intersection_index: UnsignedInt) -> int:
+def get_intersection_count(axis_id: ElementId) -> int:
     """Get the number of intersection points of a connector axis.
 
-    Note that the single argument is the element ID of the connector axis.
-
     Parameters:
-        intersection_index: Element ID of the connector axis (despite its name, this is not an
-            index).
+        axis_id: Element ID of the connector axis.
 
     Returns:
         Number of intersection points; 0 if the element ID is invalid.

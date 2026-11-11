@@ -656,18 +656,6 @@ def set_attribute_display_settings_for_3d(settings: attribute_display_settings) 
             value (mm) is used.
     """
 
-def set_attribute_display_settings_for_3d(settings: attribute_display_settings) -> None:
-    """Set where attribute text is placed for the 3D view.
-
-    Applies the position type (percentage or absolute) and both position values of the settings
-    object, stores them as a global setting for this target and refreshes the display if automatic
-    refresh is on.
-
-    Parameters:
-        settings: Settings object; its position type decides whether the percentage or the absolute
-            value (mm) is used.
-    """
-
 def set_attribute_display_settings_for_container(settings: attribute_display_settings) -> None:
     """Set where attribute text is placed for containers.
 
@@ -694,18 +682,6 @@ def set_attribute_display_settings_for_export_solid(settings: attribute_display_
 
 def set_attribute_display_settings_for_framed_wall_axis(settings: attribute_display_settings) -> None:
     """Set where attribute text is placed for framed wall axes.
-
-    Applies the position type (percentage or absolute) and both position values of the settings
-    object, stores them as a global setting for this target and refreshes the display if automatic
-    refresh is on.
-
-    Parameters:
-        settings: Settings object; its position type decides whether the percentage or the absolute
-            value (mm) is used.
-    """
-
-def set_attribute_display_settings_for_framed_wall_beam(settings: attribute_display_settings) -> None:
-    """Set where attribute text is placed for framed wall beams.
 
     Applies the position type (percentage or absolute) and both position values of the settings
     object, stores them as a global setting for this target and refreshes the display if automatic

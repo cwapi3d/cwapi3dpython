@@ -244,11 +244,11 @@ def create_new_endtype(endtype_name: str, end_type_id: int, folder_name: str) ->
         ID of the new endtype, or 0 if end_type_id is not supported.
     """
 
-def get_endtype_name(element_id: ElementId) -> str:
+def get_endtype_name(endtype_id: EndtypeId) -> str:
     """Return the name of an endtype.
 
     Parameters:
-        element_id: Endtype ID of the endtype to look up (not an element ID).
+        endtype_id: ID of the endtype to look up.
 
     Examples:
         >>> import endtype_controller as etc

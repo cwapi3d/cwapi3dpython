@@ -409,11 +409,11 @@ def check_autostart(api_name: str) -> bool:
         True if autostart is enabled or an error occurred, False otherwise.
     """
 
-def delete_project_data(element_id: str) -> None:
+def delete_project_data(project_data_id: str) -> None:
     """Delete an entry from the project data of the open document.
 
     Parameters:
-        element_id: ID of the project data entry, as used with set_project_data.
+        project_data_id: ID of the project data entry, as used with set_project_data.
     """
 
 def run_external_program(name: str) -> bool:
@@ -808,11 +808,11 @@ def get_3d_file_name() -> str:
         File name without folder, including extension.
     """
 
-def get_project_data(element_id: str) -> str:
+def get_project_data(project_data_id: str) -> str:
     """Get a project data value by its ID.
 
     Parameters:
-        element_id: ID (name) of the project data entry. Not an element ID.
+        project_data_id: ID (name) of the project data entry, as used with set_project_data.
 
     Returns:
         The stored value; empty string if the ID does not exist.
@@ -1050,14 +1050,20 @@ def set_global_origin(global_origin: point_3d) -> None:
         global_origin: New global origin as a point_3d in model units (mm).
     """
 
-def create_snapshot() -> str:
+def create_snapshot(image_format: str = 'PNG', quality: int = -1, white_background: bool = True, /) -> str:
     """Capture the 3D view as a Base64-encoded image string.
 
-    Captures the current 3D view with a white background and returns the PNG data encoded as Base64
-    text. Decode it with base64 to get the image bytes.
+    Captures the current 3D view and returns the encoded image as Base64 text. Decode it with base64
+    to get the image bytes. The arguments are positional only.
+
+    Parameters:
+        image_format: Image format, e.g. "PNG" or "JPEG".
+        quality: Compression quality from 0 (small, compressed) to 100 (large, uncompressed); -1
+            uses the format's default.
+        white_background: True for a white background, False for a transparent one.
 
     Returns:
-        The Base64-encoded PNG image.
+        The Base64-encoded image; empty string if the image could not be encoded in that format.
     """
 
 def get_3d_gui_upper_left_screen_coordinates() -> tuple[int, int]:
