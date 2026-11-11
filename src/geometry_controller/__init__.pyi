@@ -15,968 +15,1253 @@ from cadwork.division_zone_direction import division_zone_direction
 from typing import Any
 
 def rotate_height_axis_90(element_id_list: list[ElementId]) -> None:
-    """Rotates the element height axis 90 degrees.
+    """Rotate the local height axis of the elements by 90 degrees.
+
+    Elements without a local axis system and auxiliary elements are skipped. Axis and VBA elements
+    are also skipped. Marks the elements as modified and refreshes the display if auto-refresh is
+    on. An empty list does nothing.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs; invalid IDs are skipped.
     """
 
 def rotate_height_axis_180(element_id_list: list[ElementId]) -> None:
-    """Rotates the element height axis 180 degrees.
+    """Rotate the local height axis of the elements by 180 degrees.
+
+    Elements without a local axis system and auxiliary elements are skipped. Axis and VBA elements
+    are also skipped. Marks the elements as modified and refreshes the display if auto-refresh is
+    on. An empty list does nothing.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs; invalid IDs are skipped.
     """
 
 def set_over_width(element_id_list: list[ElementId], value: float) -> None:
-    """Sets the element overwidth.
+    """Set the overwidth (list oversize in width direction) of the elements.
+
+    Stores the value on each element; the 3D geometry is not changed. Invalid IDs and elements
+    without geometry data are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        value: The element overwidth.
+        element_id_list: List of element IDs; invalid IDs are skipped.
+        value: New overwidth, in model units (mm).
     """
 
 def set_over_height(element_id_list: list[ElementId], value: float) -> None:
-    """Sets the element overheight.
+    """Set the overheight (list oversize in height direction) of the elements.
+
+    Stores the value on each element; the 3D geometry is not changed. Invalid IDs and elements
+    without geometry data are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        value: The element overheight.
+        element_id_list: List of element IDs; invalid IDs are skipped.
+        value: New overheight, in model units (mm).
     """
 
 def set_over_length(element_id_list: list[ElementId], value: float) -> None:
-    """Sets the element overlength.
+    """Set the overlength (list oversize in length direction) of the elements.
+
+    Stores the value on each element; the 3D geometry is not changed. Invalid IDs and elements
+    without geometry data are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        value: The element overlength.
+        element_id_list: List of element IDs; invalid IDs are skipped.
+        value: New overlength, in model units (mm).
     """
 
 def set_rounding_width(element_id_list: list[ElementId], value: float) -> None:
-    """Sets the element rounding width.
+    """Set the width rounding value of the elements.
+
+    Stores the value on each element; the 3D geometry is not changed. Invalid IDs and elements
+    without geometry data are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        value: The element rounding width.
+        element_id_list: List of element IDs; invalid IDs are skipped.
+        value: New width rounding value, in model units (mm).
     """
 
 def set_rounding_height(element_id_list: list[ElementId], value: float) -> None:
-    """Sets the element rounding height.
+    """Set the height rounding value of the elements.
+
+    Stores the value on each element; the 3D geometry is not changed. Invalid IDs and elements
+    without geometry data are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        value: The element rounding height.
+        element_id_list: List of element IDs; invalid IDs are skipped.
+        value: New height rounding value, in model units (mm).
     """
 
 def set_rounding_length(element_id_list: list[ElementId], value: float) -> None:
-    """Sets the element rounding length.
+    """Set the length rounding value of the elements.
+
+    Stores the value on each element; the 3D geometry is not changed. Invalid IDs and elements
+    without geometry data are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        value: The element rounding length.
+        element_id_list: List of element IDs; invalid IDs are skipped.
+        value: New length rounding value, in model units (mm).
     """
 
 def set_cross_correction_negative_width(element_id_list: list[ElementId], value: float) -> None:
-    """Sets the element negative width cross correction.
+    """Set the negative width cross correction (blank oversize) of the elements.
+
+    Stores the value on each element; the 3D geometry is not changed. Invalid IDs and elements
+    without geometry data are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        value: The element negative width cross correction.
+        element_id_list: List of element IDs; invalid IDs are skipped.
+        value: New negative width cross correction, in model units (mm).
     """
 
 def set_cross_correction_positive_width(element_id_list: list[ElementId], value: float) -> None:
-    """Sets the element positive width cross correction.
+    """Set the positive width cross correction (blank oversize) of the elements.
+
+    Stores the value on each element; the 3D geometry is not changed. Invalid IDs and elements
+    without geometry data are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        value: The element positive width cross correction.
+        element_id_list: List of element IDs; invalid IDs are skipped.
+        value: New positive width cross correction, in model units (mm).
     """
 
 def set_cross_correction_negative_height(element_id_list: list[ElementId], value: float) -> None:
-    """Sets the element negative height cross correction.
+    """Set the negative height cross correction (blank oversize) of the elements.
+
+    Stores the value on each element; the 3D geometry is not changed. Invalid IDs and elements
+    without geometry data are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        value: The element negative height cross correction.
+        element_id_list: List of element IDs; invalid IDs are skipped.
+        value: New negative height cross correction, in model units (mm).
     """
 
 def set_cross_correction_positive_height(element_id_list: list[ElementId], value: float) -> None:
-    """Sets the element positive height cross correction.
+    """Set the positive height cross correction (blank oversize) of the elements.
+
+    Stores the value on each element; the 3D geometry is not changed. Invalid IDs and elements
+    without geometry data are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        value: The element positive height cross correction.
+        element_id_list: List of element IDs; invalid IDs are skipped.
+        value: New positive height cross correction, in model units (mm).
     """
 
 def set_cross_correction_negative_length(element_id_list: list[ElementId], value: float) -> None:
-    """Sets the element negative length cross correction.
+    """Set the negative length cross correction (blank oversize) of the elements.
+
+    Stores the value on each element; the 3D geometry is not changed. Invalid IDs and elements
+    without geometry data are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        value: The element negative length cross correction.
+        element_id_list: List of element IDs; invalid IDs are skipped.
+        value: New negative length cross correction, in model units (mm).
     """
 
 def set_cross_correction_positive_length(element_id_list: list[ElementId], value: float) -> None:
-    """Sets the element positive length cross correction.
+    """Set the positive length cross correction (blank oversize) of the elements.
+
+    Stores the value on each element; the 3D geometry is not changed. Invalid IDs and elements
+    without geometry data are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        value: The element positive length cross correction.
+        element_id_list: List of element IDs; invalid IDs are skipped.
+        value: New positive length cross correction, in model units (mm).
     """
 
 def apply_global_scale(element_id_list: list[ElementId], scale: float, origin: point_3d) -> None:
-    """Applies a global scale to element.
+    """Scale the elements around an origin point.
+
+    Applies the scale factor to each element. Marks the elements as modified and refreshes the
+    display if auto-refresh is on. Invalid IDs are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        scale: The global scale.
-        origin: The scaling origin.
+        element_id_list: List of element IDs; invalid IDs are skipped.
+        scale: Scale factor (1.0 keeps the size).
+        origin: Center of scaling, in model coordinates (mm).
     """
 
 def auto_regenerate_axes(element_id_list: list[ElementId]) -> None:
-    """Automatically regenerates axes on element.
+    """Regenerate the local axis systems of the elements.
+
+    Machine data of the elements is deleted first, which may ask the user for confirmation; if that
+    fails, no axis is regenerated. Shows a progress dialog that the user can cancel. Invalid IDs
+    are skipped. Use auto_regenerate_axes_silently to avoid the dialogs.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs; invalid IDs are skipped.
     """
 
 def rotate_length_axis_90(element_id_list: list[ElementId]) -> None:
-    """Rotates element length axis 90 degrees.
+    """Rotate the local length axis of the elements by 90 degrees.
+
+    Elements without a local axis system and auxiliary elements are skipped. Marks the elements as
+    modified and refreshes the display if auto-refresh is on. An empty list does nothing.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs; invalid IDs are skipped.
     """
 
 def rotate_length_axis_180(element_id_list: list[ElementId]) -> None:
-    """Rotates element length axis 180 degrees.
+    """Rotate the local length axis of the elements by 180 degrees.
+
+    Elements without a local axis system and auxiliary elements are skipped. Marks the elements as
+    modified and refreshes the display if auto-refresh is on. An empty list does nothing.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs; invalid IDs are skipped.
     """
 
 def invert_model(element_id_list: list[ElementId]) -> None:
-    """Inverts element model.
+    """Reverse the orientation of the element bodies.
+
+    Inverts the body of each element. Marks the elements as modified and refreshes the display if
+    auto-refresh is on. Invalid IDs are skipped.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs; invalid IDs are skipped.
     """
 
 def set_width_real(element_id_list: list[ElementId], width: float) -> None:
-    """Sets the element real width.
+    """Resize the width of the elements to a new value.
+
+    Regenerates each element with the new size and keeps the other two dimensions. The reference
+    point stays fixed unless a reference element is active, in which case the change may be applied
+    from the side nearest to it. Marks the elements as modified and refreshes the display if
+    auto-refresh is on. Invalid IDs are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        width: The element real width.
+        element_id_list: List of element IDs; invalid IDs are skipped.
+        width: New width, in model units (mm).
     """
 
 def set_height_real(element_id_list: list[ElementId], height: float) -> None:
-    """Sets the element real height.
+    """Resize the height of the elements to a new value.
+
+    Regenerates each element with the new size and keeps the other two dimensions. The reference
+    point stays fixed unless a reference element is active, in which case the change may be applied
+    from the side nearest to it. Marks the elements as modified and refreshes the display if
+    auto-refresh is on. Invalid IDs are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        height: The element real height.
+        element_id_list: List of element IDs; invalid IDs are skipped.
+        height: New height, in model units (mm).
     """
 
 def set_length_real(element_id_list: list[ElementId], length: float) -> None:
-    """Sets the element real length.
+    """Resize the length of the elements to a new value.
+
+    Regenerates each element with the new size and keeps the other two dimensions. The reference
+    point stays fixed unless a reference element is active, in which case the change may be applied
+    from the side nearest to it. Marks the elements as modified and refreshes the display if
+    auto-refresh is on. Invalid IDs are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        length: The element real length.
+        element_id_list: List of element IDs; invalid IDs are skipped.
+        length: New length, in model units (mm).
     """
 
 def rotate_height_axis_2_points(element_id_list: list[ElementId], point1: point_3d, point2: point_3d) -> None:
-    """Rotates the element height axis via 2 points.
+    """Align the local height axis (local z) of elements with the direction point1 to point2.
+
+    The local x axis is recomputed from the previous one so that it stays perpendicular to the new
+    direction. Elements without a local axis system and auxiliary elements are skipped. Marks the
+    elements as modified and refreshes the display if auto-refresh is on.
 
     Parameters:
-        element_id_list: The element id list.
-        point1: The first point.
-        point2: The second point.
+        element_id_list: List of element IDs; invalid IDs are skipped.
+        point1: Start point of the direction vector.
+        point2: End point of the direction vector; must differ from point1.
     """
 
 def clear_errors() -> None:
-    """Clears all errors."""
+    """Clear the stored error messages of the geometry controller."""
 
 def set_drilling_tolerance(element_id_list: list[ElementId], tolerance: float) -> None:
-    """Sets the drilling tolerance of the axis.
+    """Set the additional drilling tolerance of bolt elements.
+
+    Only bolt elements are changed; all other elements and invalid IDs are skipped.
 
     Parameters:
-        element_id_list: The element id list.
-        tolerance: The new drilling tolerance.
+        element_id_list: List of element IDs of bolts.
+        tolerance: Additional drilling tolerance, in model units (mm).
     """
 
 def auto_regenerate_axes_silently(element_id_list: list[ElementId]) -> None:
-    """Automatically regenerates axes on elements without any user interaction.
+    """Regenerate the local axis systems of the elements without a dialog.
+
+    Same regeneration as auto_regenerate_axes, but without progress dialog or user interaction,
+    and machine data is not deleted. Invalid IDs are skipped.
 
     Parameters:
-        element_id_list: The list of element IDs for which the axes will be regenerated.
+        element_id_list: List of element IDs; invalid IDs are skipped.
     """
 
 def rotate_length_axis_2_points(element_id_list: list[ElementId], point1: point_3d, point2: point_3d) -> None:
-    """Rotates the element length axis via 2 points.
+    """Align the local length axis (local x) of elements with the direction point1 to point2.
+
+    The local z axis is recomputed from the previous one so that it stays perpendicular to the new
+    direction. Elements without a local axis system and auxiliary elements are skipped. Marks the
+    elements as modified and refreshes the display if auto-refresh is on.
 
     Parameters:
-        element_id_list: The element id list.
-        point1: The first point.
-        point2: The second point.
+        element_id_list: List of element IDs; invalid IDs are skipped.
+        point1: Start point of the direction vector.
+        point2: End point of the direction vector; must differ from point1.
     """
 
 def get_width(element_id: ElementId) -> float:
-    """Gets the element width.
+    """Get the width of an element.
+
+    Model units (mm).
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element width.
+        The width; 0.0 if the element ID is invalid.
     """
 
 def get_height(element_id: ElementId) -> float:
-    """Gets the element height.
+    """Get the height of an element.
+
+    Model units (mm).
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element height.
+        The height; 0.0 if the element ID is invalid.
     """
 
 def get_length(element_id: ElementId) -> float:
-    """Gets the element length.
+    """Get the length of an element.
+
+    Model units (mm).
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element length.
+        The length; 0.0 if the element ID is invalid.
     """
 
 def get_p1(element_id: ElementId) -> point_3d:
-    """Gets the element P1.
+    """Get the start point (P1) of an element.
+
+    For line elements it is the start of the first body edge; otherwise the element's reference
+    point P1. Model coordinates (mm).
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element P1.
+        point_3d P1; a default point_3d (0, 0, 0) if the element ID is invalid.
     """
 
 def get_p2(element_id: ElementId) -> point_3d:
-    """Gets the element P2.
+    """Get the end point (P2) of an element.
+
+    For line elements it is the end of the first body edge; otherwise the element's reference point
+    P2. Model coordinates (mm).
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element P2.
+        point_3d P2; a default point_3d (0, 0, 0) if the element ID is invalid.
     """
 
 def get_p3(element_id: ElementId) -> point_3d:
-    """Gets the element P3.
+    """Get the third reference point (P3) of an element.
+
+    Together with P1 and P2 it defines the local orientation. Model coordinates (mm).
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element P3.
+        point_3d P3; a default point_3d (0, 0, 0) if the element ID is invalid.
     """
 
 def get_start_height_cut_angle(element_id: ElementId) -> float:
-    """Gets the element start height cut angle.
+    """Get the start height cut angle of an element.
+
+    If the end has several cut angles, the first non-zero one is returned.
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element start height cut angle.
+        The start height cut angle; 0.0 if there is no cut or the element ID is invalid.
     """
 
 def get_start_width_cut_angle(element_id: ElementId) -> float:
-    """Gets the element start width cut angle.
+    """Get the start width cut angle of an element.
+
+    If the end has several cut angles, the first non-zero one is returned.
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element start width cut angle.
+        The start width cut angle; 0.0 if there is no cut or the element ID is invalid.
     """
 
 def get_end_height_cut_angle(element_id: ElementId) -> float:
-    """Gets the element end height cut angle.
+    """Get the end height cut angle of an element.
+
+    If the end has several cut angles, the first non-zero one is returned.
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element end height cut angle.
+        The end height cut angle; 0.0 if there is no cut or the element ID is invalid.
     """
 
 def get_end_width_cut_angle(element_id: ElementId) -> float:
-    """Gets the element end width cut angle.
+    """Get the end width cut angle of an element.
+
+    If the end has several cut angles, the first non-zero one is returned.
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element end width cut angle.
+        The end width cut angle; 0.0 if there is no cut or the element ID is invalid.
     """
 
 def get_over_width(element_id: ElementId) -> float:
-    """Gets the element overwidth.
+    """Get the overwidth (list oversize in width direction) of an element.
+
+    Model units (mm).
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element overwidth.
+        The overwidth (list oversize in width direction); 0.0 if the element ID is invalid.
     """
 
 def get_over_height(element_id: ElementId) -> float:
-    """Gets the element overheight.
+    """Get the overheight (list oversize in height direction) of an element.
+
+    Model units (mm).
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element overheight.
+        The overheight (list oversize in height direction); 0.0 if the element ID is invalid.
     """
 
 def get_over_length(element_id: ElementId) -> float:
-    """Gets the element overlength.
+    """Get the overlength (list oversize in length direction) of an element.
+
+    Model units (mm).
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element overlength.
+        The overlength (list oversize in length direction); 0.0 if the element ID is invalid.
     """
 
 def get_rounding_width(element_id: ElementId) -> float:
-    """Gets the element rounding width.
+    """Get the width rounding value of an element.
+
+    Model units (mm).
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element rounding width.
+        The width rounding value; 0.0 if the element ID is invalid.
     """
 
 def get_rounding_height(element_id: ElementId) -> float:
-    """Gets the element rounding height.
+    """Get the height rounding value of an element.
+
+    Model units (mm).
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element rounding height.
+        The height rounding value; 0.0 if the element ID is invalid.
     """
 
 def get_rounding_length(element_id: ElementId) -> float:
-    """Gets the element rounding length.
+    """Get the length rounding value of an element.
+
+    Model units (mm).
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element rounding length.
+        The length rounding value; 0.0 if the element ID is invalid.
     """
 
 def get_cross_correction_negative_width(element_id: ElementId) -> float:
-    """Gets the element negative width cross correction.
+    """Get the negative width cross correction (blank oversize) of an element.
+
+    Model units (mm).
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element negative width cross correction.
+        The negative width cross correction (blank oversize); 0.0 if the element ID is invalid.
     """
 
 def get_cross_correction_positive_width(element_id: ElementId) -> float:
-    """Gets the element positive width cross correction.
+    """Get the positive width cross correction (blank oversize) of an element.
+
+    Model units (mm).
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element positive width cross correction.
+        The positive width cross correction (blank oversize); 0.0 if the element ID is invalid.
     """
 
 def get_cross_correction_negative_height(element_id: ElementId) -> float:
-    """Gets the element negative height cross correction.
+    """Get the negative height cross correction (blank oversize) of an element.
+
+    Model units (mm).
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element negative height cross correction.
+        The negative height cross correction (blank oversize); 0.0 if the element ID is invalid.
     """
 
 def get_cross_correction_positive_height(element_id: ElementId) -> float:
-    """Gets the element positive height cross correction.
+    """Get the positive height cross correction (blank oversize) of an element.
+
+    Model units (mm).
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element positive height cross correction.
+        The positive height cross correction (blank oversize); 0.0 if the element ID is invalid.
     """
 
 def get_cross_correction_negative_length(element_id: ElementId) -> float:
-    """Gets the element negative length cross correction.
+    """Get the negative length cross correction (blank oversize) of an element.
+
+    Model units (mm).
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element negative length cross correction.
+        The negative length cross correction (blank oversize); 0.0 if the element ID is invalid.
     """
 
 def get_cross_correction_positive_length(element_id: ElementId) -> float:
-    """Gets the element positive length cross correction.
+    """Get the positive length cross correction (blank oversize) of an element.
+
+    Model units (mm).
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element positive length cross correction.
+        The positive length cross correction (blank oversize); 0.0 if the element ID is invalid.
     """
 
 def get_weight(element_id: ElementId) -> float:
-    """Gets the element real weight.
+    """Get the real weight of an element in kilograms.
 
     Parameters:
-        element_id: The element Id.
+        element_id: Element ID.
 
     Returns:
-        The element real weight.
+        Weight in kg; 0.0 if the element ID is invalid.
     """
 
 def get_list_weight(element_id: ElementId) -> float:
-    """Gets the element list weight.
+    """Get the weight of the raw part of an element in kg.
+
+    Returns 0.0 for an invalid element ID.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element.
 
     Returns:
-        The element list weight.
+        Weight in kg, or 0.0 if the element is invalid.
     """
 
 def get_volume(element_id: ElementId) -> float:
-    """Gets the element rough volume (does not include negative geometry operations, such as end-types, drillings, connectors, openings, and MEP elements).
+    """Get the rough volume of an element.
+
+    Negative geometry such as end-types, drillings, connectors, openings and MEP elements is not
+    subtracted. Use get_actual_physical_volume for the net volume.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element.
 
     Returns:
-        The element rough volume.
+        Rough volume in mm3, or 0.0 if the element is invalid.
     """
 
 def get_list_volume(element_id: ElementId) -> float:
-    """Gets the element list volume.
+    """Get the list volume of an element.
+
+    Returns 0.0 for an invalid element ID.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element.
 
     Returns:
-        The element list volume.
+        List volume in mm3, or 0.0 if the element is invalid.
     """
 
 def get_xl(element_id: ElementId) -> point_3d:
-    """Gets the element length axis direction (direction from P1 to P2).
+    """Get the length axis direction (XL) of an element.
+
+    Normally the direction from P1 to P2. For a single straight line element it is the start
+    direction of that line. Returns (0, 0, 0) for an invalid element ID.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element.
 
     Returns:
-        The element XL vector.
+        XL direction vector, or (0, 0, 0) if the element is invalid.
     """
 
 def get_yl(element_id: ElementId) -> point_3d:
-    """Gets the element width axis direction (ZL cross XL).
+    """Get the width axis direction (YL) of an element.
+
+    Returns (0, 0, 0) for an invalid element ID.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element.
 
     Returns:
-        The element YL vector.
+        YL direction vector, or (0, 0, 0) if the element is invalid.
     """
 
 def get_zl(element_id: ElementId) -> point_3d:
-    """Gets the element height/thickness axis direction (direction from P1 to P3).
+    """Get the height/thickness axis direction (ZL) of an element.
+
+    Normally the direction from P1 to P3. Returns (0, 0, 0) for an invalid element ID.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element.
 
     Returns:
-        The element ZL vector.
+        ZL direction vector, or (0, 0, 0) if the element is invalid.
     """
 
 def get_center_of_gravity(element_id: ElementId) -> point_3d:
-    """Gets the element center of gravity.
+    """Get the center of gravity of an element.
+
+    Returns (0, 0, 0) for an invalid element ID.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element.
 
     Returns:
-        The element center of gravity position.
+        Center of gravity in global coordinates (mm), or (0, 0, 0) if the element is invalid.
     """
 
 def get_reference_side(element_id: ElementId) -> int:
-    """Gets the element reference side.
+    """Get the reference side of an element.
+
+    1 is the negative height side (-ZL), 2 the positive width side (+YL), 3 the positive height side
+    (+ZL), 4 the negative width side (-YL). Other values (such as -1 or 5) mean the default side
+    is used: +YL, or +ZL for panels.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element.
 
     Returns:
-        The element reference side.
+        Reference side number, or 0 if the element ID is invalid.
     """
 
 def get_element_vertices(element_id: ElementId) -> list[point_3d]:
-    """Gets the element vertices.
+    """Get all vertices of an element body.
+
+    Returns an empty list for an invalid element ID.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element.
 
     Returns:
-        The element vertice list.
+        List of vertex positions in global coordinates (mm), or an empty list if the element is
+        invalid.
     """
 
 def get_element_facets(element_id: ElementId) -> facet_list:
-    """Gets the element facet list.
+    """Get all facets of an element.
+
+    The returned facet_list also identifies which facets lie on the reference side. Returns an empty
+    facet_list for an invalid element ID.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element.
 
     Returns:
-        The element facet list.
+        Facet list of the element, empty if the element is invalid.
     """
 
 def get_list_width(element_id: ElementId) -> float:
-    """Gets the element list width.
+    """Get the list width of an element.
+
+    The width as used in element lists. Returns 0.0 for an invalid element ID.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element.
 
     Returns:
-        The element list width.
+        List width in mm, or 0.0 if the element is invalid.
     """
 
 def get_list_height(element_id: ElementId) -> float:
-    """Gets the element list height.
+    """Get the list height of an element.
+
+    The height as used in element lists. Returns 0.0 for an invalid element ID.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element.
 
     Returns:
-        The element list height.
+        List height in mm, or 0.0 if the element is invalid.
     """
 
 def get_list_length(element_id: ElementId) -> float:
-    """Gets the element list length.
+    """Get the list length of an element.
+
+    The length as used in element lists. Returns 0.0 for an invalid element ID.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element.
 
     Returns:
-        The element list length.
+        List length in mm, or 0.0 if the element is invalid.
     """
 
 def get_minimum_distance_between_elements(first_id: ElementId, second_id: ElementId) -> float:
-    """Gets the minimum distance between 2 elements.
+    """Get the minimum distance between the bodies of two elements.
+
+    If either element ID is invalid, an error is logged and infinity is returned.
 
     Parameters:
-        first_id: The first element id.
-        second_id: The second element id.
+        first_id: ID of the first element.
+        second_id: ID of the second element.
 
     Returns:
-        The minimum distance.
+        Minimum distance in mm, or infinity if either element is invalid.
     """
 
 def get_total_area_of_all_faces(element_id: ElementId) -> float:
-    """Gets the total area of all faces for element.
+    """Get the total area of all faces of an element.
+
+    Returns 0.0 for an invalid element ID.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element.
 
     Returns:
-        The element total faces area.
+        Sum of all face areas in mm2, or 0.0 if the element is invalid.
     """
 
 def get_area_of_front_face(element_id: ElementId) -> float:
-    """Gets the front face area for element.
+    """Get the area of the front face of an element.
+
+    Sums the area of all faces flagged as front face. Returns 0.0 for an invalid element ID.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element.
 
     Returns:
-        The element front face area.
+        Front face area in mm2, or 0.0 if the element is invalid.
     """
 
 def get_door_surface(element_id_list: list[ElementId]) -> float:
-    """Gets the element door surface.
+    """Get the total door opening surface of the given elements.
+
+    Each distinct opening variant found among the elements is counted once (width times height).
+    Invalid IDs are skipped; an empty list or no door openings gives 0.0.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs to search for openings.
 
     Returns:
-        The element door surface.
+        Summed opening area in mm2, 0.0 if none found.
     """
 
 def get_window_surface(element_id_list: list[ElementId]) -> float:
-    """Gets the element window surface.
+    """Get the total window opening surface of the given elements.
+
+    Each distinct opening variant found among the elements is counted once (width times height).
+    Invalid IDs are skipped; an empty list or no window openings gives 0.0.
 
     Parameters:
-        element_id_list: The element id list.
+        element_id_list: List of element IDs to search for openings.
 
     Returns:
-        The element window surface.
+        Summed opening area in mm2, 0.0 if none found.
     """
 
 def get_local_x() -> point_3d:
-    """Gets the rotated global coordinate direction (X').
+    """Get the X' axis of the current rotated coordinate system.
+
+    Describes the user-defined (turned) coordinate system of the model, not an element.
 
     Returns:
-        The local X vector.
+        X' direction vector.
     """
 
 def get_local_z() -> point_3d:
-    """Gets the rotated global coordinate direction (Z').
+    """Get the Z' axis of the current rotated coordinate system.
+
+    Describes the user-defined (turned) coordinate system of the model, not an element.
 
     Returns:
-        The local Y vector.
+        Z' direction vector.
     """
 
 def get_local_y() -> point_3d:
-    """Gets the rotated global coordinate direction (Y').
+    """Get the Y' axis of the current rotated coordinate system.
+
+    Describes the user-defined (turned) coordinate system of the model, not an element.
 
     Returns:
-        The local Z vector.
+        Y' direction vector.
     """
 
 def get_drilling_tolerance(element_id: ElementId) -> float:
-    """Gets the drilling tolerance of an axis.
+    """Get the additional drilling tolerance of a connector element.
+
+    Returns 0.0 for invalid IDs and for elements that are not connectors.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element.
 
     Returns:
-        The drilling tolerance.
+        Drilling tolerance in mm, or 0.0 if not available.
     """
 
 def get_element_reference_face_vertices(element_id: ElementId) -> list[point_3d]:
-    """Gets the vertices of the reference side.
+    """Get the vertices of the faces on the reference side of an element.
+
+    Vertices of all reference-side facets are concatenated in facet order. Returns an empty list for
+    an invalid element or if no facet lies on the reference side.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element.
 
     Returns:
-        The vertexlist of all points.
+        List of vertex positions in global coordinates (mm), possibly empty.
     """
 
 def get_element_reference_face_area(element_id: ElementId) -> float:
-    """Gets the area of the reference side.
+    """Get the area of the reference side of an element.
+
+    Sums the area of all facets whose normal equals the reference-side normal. Returns 0.0 for an
+    invalid element ID.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element.
 
     Returns:
-        The area(size) of reference face.
+        Reference face area in mm2, or 0.0 if the element is invalid.
     """
 
 def get_center_of_gravity_for_list(element_id_list: list[ElementId]) -> point_3d:
-    """Gets the center of gravity for a list of elements.
+    """Get the volume-weighted center of gravity of several elements.
+
+    Each element is weighted by its rough volume (elements with practically zero volume count with
+    weight 1). Invalid IDs are skipped. An empty list or no valid element gives (0, 0, 0).
 
     Parameters:
-        element_id_list: The list of element IDs.
+        element_id_list: List of element IDs.
 
     Returns:
-        The center of gravity as a vector3D.
+        Combined center of gravity in global coordinates (mm), or (0, 0, 0) if nothing valid was
+        given.
     """
 
 def get_center_of_gravity_for_list_considering_materials(element_id_list: list[ElementId]) -> point_3d:
-    """Gets the center of gravity for a list of elements, considering their materials.
+    """Get the weight-weighted center of gravity of several elements.
+
+    Each element is weighted by its material-based weight. Invalid IDs and elements with practically
+    zero weight are skipped. An empty list or no valid element gives (0, 0, 0).
 
     Parameters:
-        element_id_list: The list of element IDs.
+        element_id_list: List of element IDs.
 
     Returns:
-        The center of gravity as a vector3D.
+        Combined center of gravity in global coordinates (mm), or (0, 0, 0) if nothing valid was
+        given.
     """
 
 def get_element_facet_count(element_id: ElementId) -> UnsignedInt:
-    """Gets the count of facets for a specific element.
+    """Get the number of facets of an element.
+
+    Returns 0 for an invalid element ID.
 
     Parameters:
-        element_id: The ID of the element.
+        element_id: ID of the element.
 
     Returns:
-        The count of facets.
+        Number of facets, or 0 if the element is invalid.
     """
 
 def get_weight_real(element_id: ElementId) -> float:
-    """Gets the real weight of the element.
+    """Get the real weight of an element in kg.
+
+    Returns 0.0 for an invalid element ID.
 
     Parameters:
-        element_id: The ID of the element.
+        element_id: ID of the element.
 
     Returns:
-        The real weight of the element.
+        Weight in kg, or 0.0 if the element is invalid.
     """
 
 def get_actual_physical_weight(element_id: ElementId) -> float:
-    """Gets the actual physical weight.
+    """Get the real weight of an element in kg.
+
+    Identical to get_weight_real. Returns 0.0 for an invalid element ID.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element.
 
     Returns:
-        The actual physical weight.
+        Weight in kg, or 0.0 if the element is invalid.
     """
 
 def get_actual_physical_volume(element_id: ElementId) -> float:
-    """Gets actual physical volume (includes negative geometry operations, such as end-types, drillings, connectors, openings, and MEP elements; it might also take into account different drilling bodies and counterbores in a connector).
+    """Get the net volume of an element after negative geometry operations.
+
+    Subtracts end-types, drillings of connectors and axes, openings and installation/MEP bodies that
+    touch the element's bounding box. Can be slow in large models because all elements are scanned.
+    Returns 0.0 for an invalid element ID.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element.
 
     Returns:
-        The actual physical volume.
+        Net volume in mm3, or 0.0 if the element is invalid.
     """
 
 def are_facets_coplanar(first_facet: list[point_3d], second_facet: list[point_3d]) -> bool:
-    """Tests if facets are coplanar.
+    """Check whether two facets lie in the same plane.
+
+    Each plane is defined by the first three points of the facet. A facet with fewer than 3 points
+    gives False.
 
     Parameters:
-        first_facet: The first facet.
-        second_facet: The second facet.
+        first_facet: Vertices of the first facet, at least 3 points (mm).
+        second_facet: Vertices of the second facet, at least 3 points (mm).
 
     Returns:
-        True if facets are coplanar, false otherwise.
+        True if both planes are equal, False otherwise (also for invalid facets).
     """
 
 def get_round_machine_rough_part_negative_width(element_id: ElementId) -> bool:
-    """Gets the value of option RoundMachineRoughPartNegativeWidth.
+    """Get the option RoundMachineRoughPartNegativeWidth of an element.
+
+    Returns False for an invalid element ID.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element.
 
     Returns:
-        The option RoundMachineRoughPartNegativeWidth value.
+        Option value, or False if the element is invalid.
     """
 
 def set_round_machine_rough_part_negative_width(element_id_list: list[ElementId], value: bool) -> None:
-    """Sets the value of option RoundMachineRoughPartNegativeWidth.
+    """Set the option RoundMachineRoughPartNegativeWidth on elements.
+
+    Invalid IDs are skipped and an empty list does nothing. The elements are marked as modified and
+    the display is refreshed if needed.
 
     Parameters:
-        element_id_list: The element id list.
-        value: The new option RoundMachineRoughPartNegativeWidth value.
+        element_id_list: List of element IDs to modify.
+        value: New value of the option.
     """
 
 def get_round_machine_rough_part_positive_width(element_id: ElementId) -> bool:
-    """Gets the value of option RoundMachineRoughPartPositiveWidth.
+    """Get the option RoundMachineRoughPartPositiveWidth of an element.
+
+    Returns False for an invalid element ID.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element.
 
     Returns:
-        The option RoundMachineRoughPartPositiveWidth value.
+        Option value, or False if the element is invalid.
     """
 
 def set_round_machine_rough_part_positive_width(element_id_list: list[ElementId], value: bool) -> None:
-    """Sets the value of option RoundMachineRoughPartPositiveWidth.
+    """Set the option RoundMachineRoughPartPositiveWidth on elements.
+
+    Invalid IDs are skipped and an empty list does nothing. The elements are marked as modified and
+    the display is refreshed if needed.
 
     Parameters:
-        element_id_list: The element id list.
-        value: The new option RoundMachineRoughPartPositiveWidth value.
+        element_id_list: List of element IDs to modify.
+        value: New value of the option.
     """
 
 def get_round_machine_rough_part_negative_height(element_id: ElementId) -> bool:
-    """Gets the value of option RoundMachineRoughPartNegativeHeight.
+    """Get the option RoundMachineRoughPartNegativeHeight of an element.
+
+    Returns False for an invalid element ID.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element.
 
     Returns:
-        The option RoundMachineRoughPartNegativeHeight value.
+        Option value, or False if the element is invalid.
     """
 
 def set_round_machine_rough_part_negative_height(element_id_list: list[ElementId], value: bool) -> None:
-    """Sets the value of option RoundMachineRoughPartNegativeHeight.
+    """Set the option RoundMachineRoughPartNegativeHeight on elements.
+
+    Invalid IDs are skipped and an empty list does nothing. The elements are marked as modified and
+    the display is refreshed if needed.
 
     Parameters:
-        element_id_list: The element id list.
-        value: The new option RoundMachineRoughPartNegativeHeight value.
+        element_id_list: List of element IDs to modify.
+        value: New value of the option.
     """
 
 def get_round_machine_rough_part_positive_height(element_id: ElementId) -> bool:
-    """Gets the value of option RoundMachineRoughPartPositiveHeight.
+    """Get the option RoundMachineRoughPartPositiveHeight of an element.
+
+    Returns False for an invalid element ID.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element.
 
     Returns:
-        The option RoundMachineRoughPartPositiveHeight value.
+        Option value, or False if the element is invalid.
     """
 
 def set_round_machine_rough_part_positive_height(element_id_list: list[ElementId], value: bool) -> None:
-    """Sets the value of option RoundMachineRoughPartPositiveHeight.
+    """Set the option RoundMachineRoughPartPositiveHeight on elements.
+
+    Invalid IDs are skipped and an empty list does nothing. The elements are marked as modified and
+    the display is refreshed if needed.
 
     Parameters:
-        element_id_list: The element id list.
-        value: The new option RoundMachineRoughPartPositiveHeight options.
+        element_id_list: List of element IDs to modify.
+        value: New value of the option.
     """
 
 def get_round_machine_rough_part_negative_length(element_id: ElementId) -> bool:
-    """Gets the value of option RoundMachineRoughPartNegativeLength.
+    """Get the option RoundMachineRoughPartNegativeLength of an element.
+
+    Returns False for an invalid element ID.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element.
 
     Returns:
-        The option RoundMachineRoughPartNegativeLength value.
+        Option value, or False if the element is invalid.
     """
 
 def set_round_machine_rough_part_negative_length(element_id_list: list[ElementId], value: bool) -> None:
-    """Sets the value of option RoundMachineRoughPartNegativeLength.
+    """Set the option RoundMachineRoughPartNegativeLength on elements.
+
+    Invalid IDs are skipped and an empty list does nothing. The elements are marked as modified and
+    the display is refreshed if needed.
 
     Parameters:
-        element_id_list: The element id list.
-        value: The new option RoundMachineRoughPartNegativeLength value.
+        element_id_list: List of element IDs to modify.
+        value: New value of the option.
     """
 
 def get_round_machine_rough_part_positive_length(element_id: ElementId) -> bool:
-    """Gets the value of option RoundMachineRoughPartPositiveLength.
+    """Get the option RoundMachineRoughPartPositiveLength of an element.
+
+    Returns False for an invalid element ID.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element.
 
     Returns:
-        The option RoundMachineRoughPartPositiveLength value.
+        Option value, or False if the element is invalid.
     """
 
 def set_round_machine_rough_part_positive_length(element_id_list: list[ElementId], value: bool) -> None:
-    """Sets the value of option RoundMachineRoughPartPositiveLength.
+    """Set the option RoundMachineRoughPartPositiveLength on elements.
+
+    Invalid IDs are skipped and an empty list does nothing. The elements are marked as modified and
+    the display is refreshed if needed.
 
     Parameters:
-        element_id_list: The element id list.
-        value: The new option RoundMachineRoughPartPositiveLength value.
+        element_id_list: List of element IDs to modify.
+        value: New value of the option.
     """
 
 def get_standard_element_width_from_guid(standard_element_guid: str) -> float:
-    """Gets the standard element width from guid.
+    """Get the width of a standard element identified by GUID.
+
+    Returns 0.0 if the GUID is empty, malformed or unknown.
 
     Parameters:
-        standard_element_guid: The standard element guid.
+        standard_element_guid: GUID string of the standard element.
 
     Returns:
-        The standard element width.
+        Standard element width in mm, or 0.0 if not found.
     """
 
 def get_standard_element_height_from_guid(standard_element_guid: str) -> float:
-    """Gets the standard element height from guid.
+    """Get the height of a standard element identified by GUID.
+
+    Returns 0.0 if the GUID is empty, malformed or unknown.
 
     Parameters:
-        standard_element_guid: The standard element guid.
+        standard_element_guid: GUID string of the standard element.
 
     Returns:
-        The standard element height.
+        Standard element height in mm, or 0.0 if not found.
     """
 
 def get_standard_element_length_from_guid(standard_element_guid: str) -> float:
-    """Gets the standard element length from guid.
+    """Get the length of a standard element identified by GUID.
+
+    Returns 0.0 if the GUID is empty, malformed or unknown.
 
     Parameters:
-        standard_element_guid: The standard element guid.
+        standard_element_guid: GUID string of the standard element.
 
     Returns:
-        The standard element length.
+        Standard element length in mm, or 0.0 if not found.
     """
 
 def get_standard_element_width_from_name(standard_element_name: str) -> float:
-    """Gets the standard element width from name.
+    """Get the width of a standard element identified by name.
+
+    Searches beam-type standard elements by name in the current program language and uses the first
+    match. Returns 0.0 if the name is empty or not found.
 
     Parameters:
-        standard_element_name: The standard element name.
+        standard_element_name: Name of the standard element.
 
     Returns:
-        The standard element width.
+        Standard element width in mm, or 0.0 if not found.
     """
 
 def get_standard_element_height_from_name(standard_element_name: str) -> float:
-    """Gets the standard element height from name.
+    """Get the height of a standard element identified by name.
+
+    Searches beam-type standard elements by name in the current program language and uses the first
+    match. Returns 0.0 if the name is empty or not found.
 
     Parameters:
-        standard_element_name: The standard element name.
+        standard_element_name: Name of the standard element.
 
     Returns:
-        The standard element height.
+        Standard element height in mm, or 0.0 if not found.
     """
 
 def get_standard_element_length_from_name(standard_element_name: str) -> float:
-    """Gets the standard element length from name.
+    """Get the length of a standard element identified by name.
+
+    Searches beam-type standard elements by name in the current program language and uses the first
+    match. Returns 0.0 if the name is empty or not found.
 
     Parameters:
-        standard_element_name: The standard element name.
+        standard_element_name: Name of the standard element.
 
     Returns:
-        The standard element length.
+        Standard element length in mm, or 0.0 if not found.
     """
 
 def get_length_including_end_types(element_id: ElementId) -> float:
-    """Gets the length of an element including end-types.
+    """Get the length of an element including its end-types.
+
+    Returns 0.0 for an invalid element ID.
 
     Parameters:
-        element_id: The element id.
+        element_id: ID of the element.
 
     Returns:
-        The element length including end-types.
+        Full length in mm, or 0.0 if the element is invalid.
     """
 
 def create_division_zone(element_id: ElementId, point: point_3d, direction: division_zone_direction) -> None:
-    """Creates a division zone.
+    """Create a division zone on an element at a given point.
+
+    Modifies the element and refreshes the display if auto refresh is on. An invalid element ID is
+    silently ignored.
 
     Parameters:
-        element_id: The element Id.
-        point: The division zone point.
-        direction: The division zone direction.
+        element_id: ID of the element to add the division zone to.
+        point: Position of the division zone point, in model units (mm).
+        direction: Division zone direction: division_zone_direction.positive, negative or
+            no_direction.
     """
 
 def delete_division_zone(element_id: ElementId) -> None:
-    """Deletes a division zone.
+    """Delete the division zone of an element.
+
+    Recalculates the element and refreshes the display if auto refresh is on. An invalid element ID
+    is silently ignored.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element whose division zone is deleted.
     """
 
 def get_division_zone_points(element_id: ElementId) -> list[point_3d]:
-    """Gets the division zone points.
+    """Return the division zone points of an element.
+
+    Returns an empty list if the element ID is invalid or the element has no division zone points.
 
     Parameters:
-        element_id: The element Id.
+        element_id: ID of the element to query.
 
     Returns:
-        The division zone points.
+        List of point_3d positions of all division zone points of the element (all horizontal and
+        vertical variants); empty list on failure.
     """
 
 def stretch_facet(element_id: ElementId, facet_index: UnsignedInt, distance: float) -> bool:
-    """Moves one facet of an element along its own plane normal, growing or shrinking the body at that face.
+    """Move one facet of an element along its plane normal, growing or shrinking the body.
+
+    The facet index is only valid for the element's current state: after a successful stretch the
+    facet order may change, so re-read the facets (get_element_facets) before stretching another
+    facet. Curved facets, non-manifold (multi-part) bodies and out-of-range indices fail.
 
     Parameters:
-        element_id: The element to modify.
-        facet_index: Index into the element's facet list in the same order getElementFacets An element with no facets fails. The index is only valid against a facet table read from the element in its CURRENT state: a successful stretch renumbers the list, because the geometry kernel rebuilds the body's face order after every local operation. To move several facets of one element, re-read getElementFacets after each call and re-locate the next facet by its normal - carrying indices 0..count-1 across a loop will address the same facet twice and miss others.
-        distance: Signed travel in model units (mm) along the normal getElementFacets reports for this facet index: positive grows the body at that face, negative shrinks it, zero is a successful no-op that leaves the geometry untouched.
+        element_id: ID of the element to modify.
+        facet_index: Zero-based index into the element's facet list, in the order returned by
+            get_element_facets.
+        distance: Signed travel in model units (mm) along the facet normal: positive grows the body
+            at that face, negative shrinks it, zero is a successful no-op.
 
     Returns:
-        Whether the facet was moved. - true: the facet moved (or the distance was zero) and the element is marked modified - false: nothing was modified — a distinct code and message are on the error stack, readable via getLastError, and logged to the cadwork API log
+        True if the facet was moved or the distance was zero; False if nothing was modified (invalid
+        element ID, no facets, index out of range, curved facet, multi-part body or geometry kernel
+        failure). The reason is available via get_last_error.
     """
 
 def get_element_collision_type(first_element_id: ElementId, second_element_id: ElementId) -> Any:
-    """Classifies how two elements' geometry relates (touching, contained, interlocking, ...). No side effects: read-only, does not modify the document, activate, or highlight anything.
+    """Classify how the geometry of two elements relates.
+
+    Read-only: does not modify, activate or highlight anything. Axis and line elements are not
+    supported.
 
     Parameters:
-        first_element_id: The first element id.
-        second_element_id: The second element id.
+        first_element_id: ID of the first element.
+        second_element_id: ID of the second element.
 
     Returns:
-        How the two elements' geometry relates. - unknown: either element id is invalid, or one of the elements is a type not supported in v1 (Axis, Line) - none: the bodies do not collide - unclassified: the geometry kernel could not classify the relationship - contained: one body is fully contained within the other, without touching its boundary - containedAndTouching: one body is contained within the other and touches its boundary - touching: the bodies touch (share boundary) without interpenetrating volume - coincident: the bodies coincide - interlocking: the bodies genuinely interpenetrate
+        An element_collision_type: unknown (invalid element ID or axis/line element), none (no
+        collision), unclassified (kernel could not classify), contained (one body fully inside the
+        other without touching its boundary), contained_and_touching (inside and touching the
+        boundary), touching (shared boundary, no overlapping volume), coincident (bodies coincide),
+        interlocking (bodies interpenetrate).
     """
