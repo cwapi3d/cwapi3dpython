@@ -39,11 +39,11 @@ An application programming interface (API) is a defined way for one program to u
 cadwork exposes its functions to Python as a set of **controller modules**, grouped by topic:
 
 ```python
-import cadwork                         # core types: point_3d, element_type, ...
-import element_controller as ec        # create, select, modify elements
-import attribute_controller as ac      # names, groups, materials, user attributes
-import geometry_controller as gc       # lengths, axes, points, volumes
-import utility_controller as uc        # messages, dialogs, paths, version info
+import cadwork  # core types: point_3d, element_type, ...
+import element_controller as ec  # create, select, modify elements
+import attribute_controller as ac  # names, groups, materials, user attributes
+import geometry_controller as gc  # lengths, axes, points, volumes
+import utility_controller as uc  # messages, dialogs, paths, version info
 ```
 
 These modules exist **only inside cadwork**. Your plugin always runs in cadwork's own Python

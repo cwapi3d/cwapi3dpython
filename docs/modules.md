@@ -51,7 +51,7 @@ Build paths from the location of the script instead:
 ```python
 from pathlib import Path
 
-PLUGIN_DIR = Path(__file__).resolve().parent      # ...\API.x64\MyPlugin
+PLUGIN_DIR = Path(__file__).resolve().parent  # ...\API.x64\MyPlugin
 config_file = PLUGIN_DIR / 'settings.json'
 ```
 

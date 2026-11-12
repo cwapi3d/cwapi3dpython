@@ -58,9 +58,9 @@ bar at the bottom of the 3D window:
 ```python
 import utility_controller as uc
 
-uc.print_message('Export finished.', 1, 1)       # neutral message (text, row, column)
-uc.print_error('Please select a beam first.')    # shown as an error
-uc.print_to_console('Step 3 of 5 done')          # written to the cadwork API log only
+uc.print_message('Export finished.', 1, 1)  # neutral message (text, row, column)
+uc.print_error('Please select a beam first.')  # shown as an error
+uc.print_to_console('Step 3 of 5 done')  # written to the cadwork API log only
 ```
 
 `print_error()` does **not** stop the script. Use `return` or raise an exception afterwards if the
@@ -89,7 +89,7 @@ def main():
 try:
     main()
 except Exception as error:
-    traceback.print_exc()                      # full traceback in the console
+    traceback.print_exc()  # full traceback in the console
     uc.print_error(f'MyPlugin failed: {error}')  # short message for the user
 ```
 

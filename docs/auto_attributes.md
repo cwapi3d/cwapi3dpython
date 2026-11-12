@@ -62,7 +62,7 @@ import cadwork
 import attribute_controller as ac
 
 for element_id in cadwork.get_auto_attribute_elements():
-    value = ac.get_name(element_id).upper()        # calculate the value
+    value = ac.get_name(element_id).upper()  # calculate the value
     cadwork.set_auto_attribute([element_id], value)  # store it
 ```
 

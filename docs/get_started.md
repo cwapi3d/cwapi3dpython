@@ -17,6 +17,7 @@ Beginners can follow the steps in order. Developers who already know Python can 
 
     ```python
     import sys
+
     print(sys.version)
     ```
 
@@ -40,9 +41,9 @@ path depends on your installation and version (for example
     import os
     import utility_controller as uc
 
-    profile_3d = uc.get_3d_userprofil_path()        # e.g. D:\cadwork\USERPROFIL_2026\3d
-    print(os.path.join(profile_3d, 'API.x64'))      # the plugin folder
-    print(uc.get_plugin_path())                     # path of the running plugin script
+    profile_3d = uc.get_3d_userprofil_path()  # e.g. D:\cadwork\USERPROFIL_2026\3d
+    print(os.path.join(profile_3d, 'API.x64'))  # the plugin folder
+    print(uc.get_plugin_path())  # path of the running plugin script
     ```
 
 ## 2. Create your first plugin
