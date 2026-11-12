@@ -1,144 +1,179 @@
----
-hide:
-  - toc
----
+# Auto Attributes (script-filled attributes)
 
-# Auto Attributes
+## What they are
 
-## Script filled attributes
-Each component in cadwork is described geometrically and with regard to its position in the
-entire construction project. On the other hand there is an almost unlimited number
-of further attributes is available. Some of these attributes like color, material, name,
-building (building) and storey (storey) have to be set during the generation of the component.
-during the generation of the component. Others are optionally available to the user. Each of these
-attributes are explicitly defined by the user by setting them via Modify.
-Attributes are used to fully describe the part properties.
+Every element in cadwork carries attributes: name, group, subgroup, material, building, storey,
+user attributes and many more. You use them to describe the parts, to structure the project and
+to pass information to downstream systems such as an ERP.
 
-Furthermore, they are used for the creation of a suitable structure of the construction project
-and for the transfer of specific information to downstream systems such as an
-such as an ERP system.
+Often the value of an attribute **depends on other data**, for example "group + length" or
+"standard or special cross-section". Keeping such values up to date by hand is tedious and error
+prone. **Script-filled attributes** solve this: you write a short Python script, and cadwork runs it
+to **calculate the attribute value automatically**.
 
-Often, the content of an attribute is dependent on the content of other attributes or even
-geometric information. In this case, it is tedious to define the content manually.
-manually. For this reason cadwork provides in version 29 attributes which can
-which calculate their content independently with the help of a script at runtime.
-These are the so-called script-filled attributes. As script language Python
-is used. The Python script has access to various properties of the parts via the cadwork API.
-of the parts. These can be evaluated in the script and the content of the attribute
-can be calculated.
+A script-filled attribute behaves like any other attribute. It appears in Modify, the info window
+and plan outputs. You can use it to activate, show and hide elements, to compare and sort in list
+calculations, and it is exported to lists. The only difference is that a script, not the user,
+sets its content.
 
-In contrast to all previous attributes, the content of a script-filled
-attribute is not defined manually by the user. The task of the user is to create a
-Python script, which on the basis of other element properties (geometry and attributes) to calculate the content of the script-filled attribute. The
-calculated content is displayed as for all other attributes (Modify,
-info window, plan outputs), can be used for activating/deactivating as well as showing/hiding
-can be used for activating/deactivating and hiding, can be used as a comparison and sorting criterion for the
-list calculation and is exported to the different lists.
-The only difference to the known attributes is the automated generation of the
-content via a Python script.
+## Create a script-filled attribute
 
-## Creation of script-filled attributes
-These attributes are created similar to the user-defined attributes in the Attributes dialog
-(User profile -> Wood... -> Attributes) in the new Script Filled -> Configuration tab.
+1. Write the Python script (see [Examples](#examples)) and save it as a `.py` file.
+2. Open the **Attribute manager** (**Userprofile → Wood... → Attributes**).
+3. Go to **Auto populate → Configuration**, click **New** and give the attribute a name.
+4. On the **Script info** tab, click **...** and select your script. The dialog shows the script
+   so you can check it.
 
 <figure markdown="1">
-![Backup Text](img/auto.jpg "script-filled attributes"){: style="width:700px"}
+![Attribute manager, Auto populate configuration](img/auto.jpg "script-filled attributes"){: style="width:700px"}
 </figure>
 
-A created script-filled attribute is available for each element type in cadwork. In the tab "Type
-script populated" the evaluation of the script can be limited to single element types. Tjis can be useful if, for example
-different evaluations are required for plates and beams. If the evaluation is intended only for elements of the type beam, the content of this
-attribute remains empty for all other element types. If the element type is subsequently changed, a recalculation of the attributes is triggered.
+### Limit it to element types
 
-## execution status
-The execution status of the scripts can be controlled.
-The icon for configuring the script-filled attributes is visualized in the Windows menu bar to the left of the message center icon. This display hides a button that can be used to subsequently change the selected status.
+By default a script-filled attribute is calculated for **every element type**. On the
+**Type script populated** tab you can restrict it, for example to beams only, when panels need
+different logic or no value at all. Elements of other types keep an empty value. If you change an
+element's type later, cadwork recalculates the attribute.
+
+### Execution status
+
+The icon to the left of the message center in the Windows menu bar shows whether script-filled
+attributes are calculated automatically. Click it to change the status, for example to pause
+calculations while you edit a large model.
 
 <figure markdown="1">
-![Backup Text](img/auto_button.jpg "script-filled attributes settings"){: style="width:700px"}
+![Execution status button](img/auto_button.jpg "script-filled attributes settings"){: style="width:700px"}
 </figure>
 
-## available functions
-The available functions are marked in the documentation with an info description.
+## How the script works
 
-## example code
+cadwork runs your script whenever the attribute has to be recalculated. Two functions in the
+`cadwork` module connect the script with cadwork:
 
-### group and length
+- `cadwork.get_auto_attribute_elements()` returns the IDs of the
+  elements that need a value in this run.
+- `cadwork.set_auto_attribute(element_ids, value)` stores the text
+  value for those elements.
 
-In this example, the group as well as the component length is concatenated. The length is rounded to 4 decimal digits.
+Every script follows the same pattern:
+
+```python
+import cadwork
+import attribute_controller as ac
+
+for element_id in cadwork.get_auto_attribute_elements():
+    value = ac.get_name(element_id).upper()        # calculate the value
+    cadwork.set_auto_attribute([element_id], value)  # store it
+```
+
+Keep in mind:
+
+- **The value is text.** Convert numbers with `str()` or an f-string, and round them first.
+- **Every element needs a value.** Elements that don't receive one end up with an empty
+  attribute.
+- **If the script fails, nothing is written.** One error stops the update for all elements of
+  that run.
+- **Only read, don't change.** Use the script to read attributes and geometry. Don't create,
+  modify or delete elements, and don't open dialogs. The script runs automatically and often.
+- **Keep it fast.** The script runs for many elements and again after every relevant change.
+  Avoid file access or network calls in the loop.
+- **Units are millimetres**, like everywhere in the API.
+
+## Examples
+
+### Group and length
+
+Combine the group with the length, rounded to whole millimetres.
 
 ```python title="group_length.py"
 import cadwork
-import attribute_controller
-import geometry_controller
-
-element_ids = cadwork.get_auto_attribute_elements()  # gets the specified element
-
-for element_id in element_ids:
-    length = geometry_controller.get_length(element_id)
-    group = attribute_controller.get_group(element_id)
-    result = ' Group:' + group + 'Length:' + str(length)
-    cadwork.set_auto_attribute([element_id], result)  # sets the attribute
-```
-
-### dimension check
-
-This script checks whether the cross-sections are standard dimensions or not.
-
-```python title="dimension_check.py"
-import cadwork
-import element_controller as ec
 import attribute_controller as ac
 import geometry_controller as gc
 
-element_ids = cadwork.get_auto_attribute_elements()
+for element_id in cadwork.get_auto_attribute_elements():
+    group = ac.get_group(element_id)
+    length = round(gc.get_length(element_id))
+    cadwork.set_auto_attribute([element_id], f'Group: {group} Length: {length}')
+```
 
-for element_id in element_ids:
-    height = round(gc.get_height(element_id), 3)
-    width = round(gc.get_width(element_id), 3)
-    if height % 20 == 0 and width % 20 == 0:
+### Standard or special cross-section
+
+Check whether width and height are multiples of 20 mm.
+
+```python title="dimension_check.py"
+import cadwork
+import geometry_controller as gc
+
+for element_id in cadwork.get_auto_attribute_elements():
+    width = round(gc.get_width(element_id))
+    height = round(gc.get_height(element_id))
+    if width % 20 == 0 and height % 20 == 0:
         cadwork.set_auto_attribute([element_id], 'Standard cross-section')
     else:
         cadwork.set_auto_attribute([element_id], 'Special cross-section')
 ```
 
-### concatenate attributes and round dimension
+### Name, material and rounded dimensions
 
-In this example, the attributes name and material are concatenated with the geometric properties width and height.
-The width and height are rounded to the nearest 10.
+Combine name and material with width and height, rounded to the nearest 10 mm.
 
 ```python title="attributes_dimension.py"
 import cadwork
-import element_controller as ec
 import attribute_controller as ac
 import geometry_controller as gc
 
-
-element_ids = cadwork.get_auto_attribute_elements()
-
-for element_id in element_ids:
+for element_id in cadwork.get_auto_attribute_elements():
     name = ac.get_name(element_id)
     material = ac.get_element_material_name(element_id)
-    width = round(gc.get_width(element_id), -1)
-    height = round(gc.get_height(element_id), -1)
-
+    width = int(round(gc.get_width(element_id), -1))
+    height = int(round(gc.get_height(element_id), -1))
     cadwork.set_auto_attribute([element_id], f'{name};{material};{width};{height}')
 ```
 
-### material and storey
+### Material and storey
 
-Concatenation of the Building Storey with the material.
+Combine the material with the building storey.
 
 ```python title="material_storey.py"
 import cadwork
 import attribute_controller as ac
 import bim_controller as bc
 
-element_ids = cadwork.get_auto_attribute_elements()
-
-for element_id in element_ids:
+for element_id in cadwork.get_auto_attribute_elements():
     storey = bc.get_storey(element_id)
     material = ac.get_element_material_name(element_id)
-
     cadwork.set_auto_attribute([element_id], f'{material} - {storey}')
 ```
+
+## Debugging script-filled attributes
+
+A script-filled attribute script runs in the background, so errors are easy to miss.
+
+1. **Develop it as a normal plugin first.** Write the calculation as a function, test it on
+   selected elements from the plugin bar or the Python console, and only then switch to
+   `get_auto_attribute_elements()`:
+
+    ```python
+    import element_controller as ec
+    import attribute_controller as ac
+    import geometry_controller as gc
+
+
+    def calculate(element_id):
+        return f'Group: {ac.get_group(element_id)} Length: {round(gc.get_length(element_id))}'
+
+
+    for element_id in ec.get_active_identifiable_element_ids():
+        print(element_id, calculate(element_id))
+    ```
+
+2. **Turn on the console** to see tracebacks when the script runs, see
+   [Debugging → Enable the cadwork console](debug.md#enable-the-cadwork-console).
+3. **Log to a file** if the console isn't enough, see
+   [Debugging → Log to a file](debug.md#log-to-a-file).
+4. **Empty values everywhere?** The script probably failed (nothing is written then), or the
+   element type is excluded on the **Type script populated** tab.
+
+## Video
+
+[Script-filled attributes video](videos.md#auto-attributes) (German).
