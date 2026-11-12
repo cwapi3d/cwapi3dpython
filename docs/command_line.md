@@ -8,8 +8,8 @@ Combined with a PowerShell loop, this turns cadwork into a tool you can drive ov
 of files at once** (batch processing) for exports, printing or any custom Python automation.
 
 !!! note
-Exact paths (drive letter, version folder name) depend on your local installation. Replace the
-paths in the examples below with the ones on your machine.
+    Exact paths (drive letter, version folder name) depend on your local installation. Replace the
+    paths in the examples below with the ones on your machine.
 
 ## Locating `ci_start.exe`
 
@@ -31,20 +31,24 @@ Each installed version has its own program folder next to it, named `exe_<year>`
 To open a `.3d` file, pass the file path to `ci_start.exe`. Use the `/EXE=` argument to choose
 **which installed cadwork version** should open the file:
 
-```powershell
-D:\cadwork.dir\ci_start.exe "C:\Users\Me\Downloads\timber-framed-elements.3d" /EXE=D:\cadwork.dir\exe_2026
-```
+=== "ci_start.exe"
 
-You can also launch it with PowerShell's `Start-Process`, which lets the prompt return immediately
-and gives you control over the window state:
+    ```powershell
+    D:\cadwork.dir\ci_start.exe "C:\Users\Me\Downloads\timber-framed-elements.3d" /EXE=D:\cadwork.dir\exe_2026
+    ```
 
-```powershell
-Start-Process "C:\Users\Me\Downloads\timber-framed-elements_2027.3d" -ArgumentList '/EXE=D:\cadwork.dir\exe_2027'
-```
+=== "Start-Process"
+
+    PowerShell's `Start-Process` returns the prompt immediately and gives you control over the
+    window state:
+
+    ```powershell
+    Start-Process "C:\Users\Me\Downloads\timber-framed-elements_2027.3d" -ArgumentList '/EXE=D:\cadwork.dir\exe_2027'
+    ```
 
 !!! note
-`/EXE=` is especially useful when several cadwork versions are installed side by side — it
-decides whether the file opens in, for example, the 2026 or the 2027 program.
+    `/EXE=` is especially useful when several cadwork versions are installed side by side — it
+    decides whether the file opens in, for example, the 2026 or the 2027 program.
 
 ## Auto-running a Python script (`/PLUGIN=`)
 
@@ -59,9 +63,10 @@ and script name you set up for the plugin bar). See [Getting Started](get_starte
 create and place a plugin.
 
 !!! tip
-For unattended processing, let the script do its work and then save or export the result — for
-example `file_controller.save_3d_file()` or an export controller call — so each file is
-processed start to finish without any clicks.
+    For unattended processing, let the script do its work and then save or export the result — for
+    example `utility_controller.save_3d_file_silently()` or an export function — so each file is
+    processed start to finish without any clicks. When cadwork was started with `/PLUGIN=` or
+    `/RUNPROGRAM`, it closes itself once the script has finished; you don't need to close it.
 
 ## Running a plugin from any directory (`/RUNPROGRAM`)
 
@@ -81,9 +86,9 @@ ci_start.exe "C:\path\to\myFile.3d" /RUNPROGRAM="D:\tools\my_plugin.dll"   :: ru
 ```
 
 !!! note
-Because `/RUNPROGRAM` takes a full path, you can keep plugins **anywhere** — on a network share,
-in a project folder, or in a development directory — without copying them into `API.x64` first.
-This is handy for testing a plugin during development or for running project-specific scripts.
+    Because `/RUNPROGRAM` takes a full path, you can keep plugins **anywhere** — on a network share,
+    in a project folder, or in a development directory — without copying them into `API.x64` first.
+    This is handy for testing a plugin during development or for running project-specific scripts.
 
 ### Running headless (`/NO-GUI`)
 
@@ -96,9 +101,9 @@ ci_start.exe "C:\path\to\myFile.3d" /RUNPROGRAM="C:\my_plugins\export.py" /NO-GU
 ```
 
 !!! warning
-In headless mode there is no UI to interact with, so the plugin must do all of its work on its
-own and save/export the result or an export controller call. 
-Avoid any dialogs or calls that wait for user input, as there is no window to answer them.
+    In headless mode there is no UI to interact with, so the plugin must do all of its work on its
+    own and save or export its result.
+    Avoid any dialogs or calls that wait for user input, as there is no window to answer them.
 
 ## Batch printing / export
 
@@ -137,10 +142,52 @@ foreach ($file in $files) {
 ```
 
 !!! warning
-The `-Wait` flag is important: it makes PowerShell wait until cadwork closes before opening the
-next file, so the files are processed **one at a time** instead of launching dozens of cadwork
-instances at once. For a fully unattended run, the plugin should save/export its result and
-then close the file.
+    The `-Wait` flag is important: it makes PowerShell wait until cadwork closes before opening the
+    next file, so the files are processed **one at a time** instead of launching dozens of cadwork
+    instances at once. Because cadwork closes itself after a `/PLUGIN=` script, the loop moves on
+    as soon as the plugin has finished. Make sure the plugin saves or exports its result first.
+
+## Troubleshooting batch runs
+
+There is no console in a headless or unattended run, so problems are hard to see. A few habits
+make them easy to find:
+
+- **Test interactively first.** Run the plugin from the plugin bar on one file with the
+  [console turned on](debug.md#enable-the-cadwork-console) before you start a batch.
+- **Log to a file.** Write progress and errors to a log file next to the plugin, see
+  [Debugging → Log to a file](debug.md#log-to-a-file). Include the file name in every message.
+- **Never wait for input.** Dialogs, `input()` or message boxes block an unattended run forever.
+- **Save before the script ends.** cadwork closes itself after a `/PLUGIN=` or `/RUNPROGRAM`
+  script. Unsaved changes are lost, so call `save_3d_file_silently()` or an export function
+  before the end. `close_cadwork_document_saved()` is skipped in these runs.
+- **The loop hangs.** cadwork is waiting for something: a dialog, a licence prompt or an error
+  message box. Run that file interactively to see what appears.
+- **cadwork opens but the plugin doesn't run.** With `/PLUGIN=`, the value must be the exact
+  plugin folder name in `API.x64` of the userprofile that this cadwork version uses. With
+  `/RUNPROGRAM`, use the full path in quotes.
+
+```python title="End of an unattended plugin"
+import logging
+from pathlib import Path
+
+import utility_controller as uc
+
+logging.basicConfig(
+    filename=Path(__file__).resolve().parent / 'MyExportScript.log',
+    level=logging.INFO,
+    format='%(asctime)s %(levelname)s %(message)s',
+    force=True,
+)
+log = logging.getLogger('MyExportScript')
+file_name = uc.get_3d_file_name()
+
+try:
+    ...  # do the work, export, ...
+    uc.save_3d_file_silently()
+    log.info('done: %s', file_name)
+except Exception:
+    log.exception('failed: %s', file_name)  # full traceback in the log file
+```
 
 ## Other useful arguments
 
@@ -155,5 +202,6 @@ A few additional arguments that are handy for everyday use:
 
 ## See also
 
-- [Getting Started](get_started.md) — set up Python plugins in cadwork.
-- [Videos](videos.md) — example videos, including how to use Python in cadwork.
+- [Getting Started](get_started.md): set up Python plugins in cadwork.
+- [Debugging](debug.md): console, log files and IDE debuggers.
+- [Videos](videos.md): example videos, including how to use Python in cadwork.
