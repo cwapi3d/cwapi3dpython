@@ -14,7 +14,12 @@ from cadwork.api_types import *
 def set_element_multi_layer_set(element_id: ElementId, set_id: MultiLayerSetId) -> None:
     """Assign a multi layer set to a cover element.
 
-    The cover element then uses the layer build-up of that set. The element is marked as modified
+    The cover element then uses the layer build-up of that set and is resized to the set's
+    thickness: the sum of its layer thicknesses, or the set's cover thickness when the set has no
+    layers. The reference side stays in place, walls connected to the cover are adapted, and a
+    thickness of 0 or less leaves the cover unchanged, so you do not need to set the thickness
+    yourself. If the document is not the active window, only the set is assigned and a warning is
+    written to the API log. The change can be undone. The element is marked as modified
     and the display is refreshed if automatic display refresh is on. Nothing happens if the element
     ID or the set ID is invalid. Remove the assignment with
     `multi_layer_cover_controller.unset_element_multi_layer_set()`, read it with
