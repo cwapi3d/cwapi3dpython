@@ -3,78 +3,79 @@ hide:
   - toc
 ---
 
-# Cadwork Python Documentation
+# cadwork Python Documentation
 
-In front of you, you see the first version of the Cadwork Python Guide.
-This document is written in cooperation of the Cadwork branches.
-Since version 27 Cadwork offers an API connection to the script language Python.
-By scripting in Cadwork with Python you can automate and customize your operations.
+cadwork 3D has a built-in Python interpreter and an API (the **cwapi3d** controllers). With it you
+can automate and extend cadwork without changing the program itself. This guide gets you from
+"I have never scripted cadwork" to running, debugging and sharing your own plugins.
 
-The API provides a multitude of basic functions of Cadwork 3D.
-On the basis of the API external programs can be written, with which it is possible to e.g. create and manipulate parts.
+## What you can do with Python in cadwork
 
-List calculations, list outputs, various import and export functions and much more is available via the API.
-This allows the implementation of customer specific functions without changing the program code of Cadwork.
-By using the API, a wide range of helpers for various areas can be created and directly integrated into Cadwork 3D.
-Cadwork itself delivers some of these small helpers by default.
-But also the development of small and large helpers by you as a user is possible.
+- **Model:** create, modify, move and cut elements (beams, panels, axes, connectors, ...).
+- **Read and write data:** names, groups, materials, user attributes and geometry of any element.
+- **Lists and exports:** generate production lists, export IFC, BTL, STEP, DXF and more.
+- **Script-filled attributes:** let a script calculate attribute values automatically
+  ([Auto Attributes](auto_attributes.md)).
+- **Batch processing:** open many files from the command line, run a plugin on each and save or
+  export the result ([Command Line](command_line.md)).
+- **Your own tools:** small helpers on the plugin bar, up to full applications with their own UI.
 
-The Python Guide should enable you to start scripting in Cadwork 3D.
-We hope we can convince you of the great potential with Python in Cadwork.
+## Where to start
 
-## Discussions
+| I want to ...                                         | Go to                                          |
+| ----------------------------------------------------- | ---------------------------------------------- |
+| set up cadwork and run my first plugin                | [Getting Started](get_started.md)              |
+| use standard or third-party Python packages           | [Packages and Modules](modules.md)             |
+| find out why my plugin does nothing or crashes        | [Debugging](debug.md)                          |
+| run cadwork and plugins from a script or batch file   | [Command Line](command_line.md)                |
+| look up a function                                    | [Reference](documentation/element_controller.md) |
+| copy a working example                                | [Examples](examples/geometry.md)               |
+| let an AI assistant answer API questions              | [MCP](mcp.md)                                  |
+| ask a question or report a bug                        | [Community](community.md)                      |
 
-[GitHub Discussion - Ask and answer questions from the Community](https://github.com/cwapi3d/cwapi3dpython/discussions){target=_blank}
+## How it fits together
 
-## Introduction
-
-### What Is an API?
-
-An application programming interface (API) is a connection between computers or between computer programs.
-It is a type of software interface, offering a service to other pieces of software.
-A document or standard that describes how to build such a connection or interface is called an API specification.
-A computer system that meets this standard is said to implement or expose an API.
-The term API may refer either to the specification or to the implementation.
-
-<figure markdown="1">
-![Cadwork API](img/python.png){ width="500" }
-</figure>
-
-### Why Python?
-
-* Python is easy to learn. Its syntax is easy and code is very readable.
-* Python has a lot of applications. It's used for developing web applications, data science, rapid application development, and so on.
-* Python allows you to write programs in fewer lines of code than most of the programming languages.
-* The popularity of Python is growing rapidly. Now it's one of the most popular programming languages.
-
-### What Is Python?
-
-Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.
-Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together.
-Python's simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages, which encourages program modularity and code reuse. The Python interpreter and the extensive standard library are available in source or binary form without charge for all major platforms, and can be freely distributed.
-
-Often, programmers fall in love with Python because of the increased productivity it provides.
-Since there is no compilation step, the edit-test-debug cycle is incredibly fast.
-Debugging Python programs is easy: a bug or bad input will never cause a segmentation fault.
-Instead, when the interpreter discovers an error, it raises an exception.
-When the program doesn't catch the exception, the interpreter prints a stack trace.
-A source level debugger allows inspection of local and global variables, evaluation of arbitrary expressions, setting breakpoints, stepping through the code a line at a time, and so on.
-The debugger is written in Python itself, testifying to Python's introspective power.
-On the other hand, often the quickest way to debug a program is to add a few print statements to the source: the fast edit-test-debug cycle makes this simple approach very effective.[^1]
-
-[^1]: [Python](https://www.python.org/doc/essays/blurb/){target=_blank}
+An application programming interface (API) is a defined way for one program to use another.
+cadwork exposes its functions to Python as a set of **controller modules**, grouped by topic:
 
 ```python
-print("Hello Cadwork! Let's get started!")
+import cadwork  # core types: point_3d, element_type, ...
+import element_controller as ec  # create, select, modify elements
+import attribute_controller as ac  # names, groups, materials, user attributes
+import geometry_controller as gc  # lengths, axes, points, volumes
+import utility_controller as uc  # messages, dialogs, paths, version info
 ```
 
-Python provides some built-in data types, in particular, [dict](https://docs.python.org/3/library/stdtypes.html#dict){target=_blank}, [list](https://docs.python.org/3/library/stdtypes.html#list){target=_blank}, [set and frozenset](https://docs.python.org/3/library/stdtypes.html#set){target=_blank}, and [tuple](https://docs.python.org/3/library/stdtypes.html#tuple){target=_blank}.
-The [str](https://docs.python.org/3/library/stdtypes.html#str){target=_blank} class is used to hold Unicode strings, and the [bytes](https://docs.python.org/3/library/stdtypes.html#bytes){target=_blank} and [bytearray](https://docs.python.org/3/library/stdtypes.html#bytearray){target=_blank} classes are used to hold binary data.[^2]
+These modules exist **only inside cadwork**. Your plugin always runs in cadwork's own Python
+interpreter, started from the plugin bar, the Python console or the command line. The
+[`cwapi3d` package on PyPI](https://pypi.org/project/cwapi3d/){target=_blank} provides the same
+modules as type stubs, so your editor can offer autocompletion and documentation while you write
+code.
 
-[^2]: [Data Types](https://docs.python.org/3/library/datatypes.html){target=_blank}
+<figure markdown="1">
+![cadwork API](img/python.png){ width="500" }
+</figure>
 
-We recommend following a tutorial and coming back afterward if you are unfamiliar with Python. :woman_student:
+A first taste: print the subgroup of every selected element.
 
-* [The Python Tutorial](https://docs.python.org/3.4/tutorial/){target=_blank}
-* [LearnPython](https://www.learnpython.org/){target=_blank}
-* [RealPython](https://realpython.com/){target=_blank}
+```python
+import element_controller as ec
+import attribute_controller as ac
+
+for element_id in ec.get_active_identifiable_element_ids():
+    print(ac.get_subgroup(element_id))
+```
+
+## New to Python?
+
+Python is easy to read and quick to try out, which makes it a good fit for automating cadwork. If
+you have never written Python before, work through a short tutorial first and then come back:
+
+- [The official Python Tutorial](https://docs.python.org/3/tutorial/){target=_blank}
+- [LearnPython](https://www.learnpython.org/){target=_blank}
+- [Real Python](https://realpython.com/){target=_blank}
+
+## Questions?
+
+Ask in the [GitHub Discussions](https://github.com/cwapi3d/cwapi3dpython/discussions){target=_blank}.
+The posts are public, so every answer helps the next person too.

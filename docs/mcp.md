@@ -17,6 +17,12 @@ training data.
 When you connect an AI assistant to an MCP server, it gains the ability to query that server for relevant context,
 making responses more accurate and up-to-date.
 
+!!! info "What this server does and doesn't do"
+    The cadwork Python API MCP server gives your assistant **read-only access to this
+    documentation**: every controller, function signature, docstring and example. It does
+    **not** connect to cadwork 3D and cannot change a model. You don't need cadwork installed
+    to use it, and no account or API key is required.
+
 ![Screenshot](img/mcp/mcp_python_api_v1.drawio.png){width="1200" style="display: block; margin: 0 auto;"}
 
 ## Demo
@@ -42,9 +48,7 @@ You can use the Cadwork Python MCP for:
 ## Setup instructions
 
 To use the Cadwork Python API documentation as an MCP server, you need to configure your AI assistant to connect to it.
-Here are the most common ai code assistants and how to configure them:
-
-
+Here are the most common AI assistants and how to configure them:
 
 ??? note "Claude Desktop"
 
@@ -62,7 +66,7 @@ Here are the most common ai code assistants and how to configure them:
     claude mcp add --transport http cadwork-pyapi https://pyapi.mcp.cadwork.dev/mcp
     ```
 
-    [Claude Code MCP Guide](https://docs.anthropic.com/en/docs/claude-code/mcp){target=_blank}
+    [Claude Code MCP Guide](https://code.claude.com/docs/en/mcp){target=_blank}
 
 ??? note "ChatGPT"
 
@@ -119,3 +123,24 @@ Here are the most common ai code assistants and how to configure them:
     Once added, the Cadwork Python API documentation will be automatically available when you interact with Gemini CLI.
 
     [Gemini MCP Guide](https://geminicli.com/docs/tools/mcp-server){target=_blank}
+
+## Verify it works
+
+After adding the server, start a new chat and ask a question that only the documentation can
+answer, for example:
+
+> Using the cadwork Python API MCP server: which function returns the length of an element, and in
+> which unit?
+
+A working setup shows a call to the MCP server (most assistants display the tool name) and answers
+with `geometry_controller.get_length()` in millimetres. If the assistant answers without calling
+the server, mention the server by name in your question or check that it is enabled for the chat.
+
+## Troubleshooting
+
+| Problem | Fix |
+| ------- | --- |
+| The server doesn't appear in the assistant | Check the URL: `https://pyapi.mcp.cadwork.dev/mcp` (with `/mcp` at the end). Restart the assistant after changing its configuration. |
+| Connection error or timeout | Open the URL in a browser. If it doesn't load, a company proxy or firewall may block it. Ask your IT to allow `pyapi.mcp.cadwork.dev`. |
+| The assistant uses the server but invents functions | Ask it to check every function against the server, and verify the code against the [Reference](documentation/element_controller.md). |
+| Generated code fails in cadwork | Run it inside cadwork, not in the IDE (see [Getting Started](get_started.md#troubleshooting)), and follow [Debugging](debug.md). |

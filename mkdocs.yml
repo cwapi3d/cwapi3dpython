@@ -33,6 +33,9 @@ nav:
       - Getting Started: get_started.md
       - Packages and Modules: modules.md
       - Debugging: debug.md
+      - Guides:
+          - Command Line: command_line.md
+          - Auto Attributes: auto_attributes.md
       - Community: community.md
   - Reference:
       - Attribute Controller: documentation/attribute_controller.md
@@ -116,12 +119,8 @@ nav:
       - Visualization Controller: examples/visualization_example.md
       - GUI: examples/tk_gui.md
       - Compare: examples/compare.md
-  - Command Line:
-      - command_line.md
   - Videos:
       - videos.md
-  - Auto Attributes:
-      - auto_attributes.md
   - MCP:
       - mcp.md
   - About:
@@ -142,6 +141,8 @@ markdown_extensions:
   - pymdownx.highlight:
       linenums: true
   - pymdownx.keys
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
