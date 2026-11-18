@@ -444,8 +444,8 @@ def set_building_and_storey(element_id_list: list[ElementId], building: str, sto
     The building and storey are created if they do not exist yet. An element belongs to one storey
     only, so it is removed from its previous storey. Container blocks bring their contents along,
     and IFC container elements that the listed elements belong to are assigned as well. IDs of
-    non-existent elements are skipped. Requires an IFC license; without it nothing happens. Read the
-    assignment back with `bim_controller.get_building()` and `bim_controller.get_storey()`; call
+    non-existent elements are skipped. No IFC license is required. Read the assignment back with
+    `bim_controller.get_building()` and `bim_controller.get_storey()`; call
     `bim_controller.update_bmt_structure_building_storey()` to refresh the BIM structure view.
 
     Parameters:

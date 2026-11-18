@@ -49,8 +49,11 @@ def import_step_file(file_path: str, scale_factor: float) -> list[ElementId]:
     Requires a STEP license; without it a message is printed in the cadwork console and an empty
     list is returned. When the reader finishes, a message reports how many elements were imported
     and how many were faulty; use `file_controller.import_step_file_with_message_option()` to
-    suppress it. The import is one undo step, and the new elements are shown in the 3D view when
-    automatic display refresh is on.
+    suppress it. The import is one undo step. The imported elements are always marked visible. With
+    automatic display refresh on they are also built and drawn in the 3D view right away. With it
+    off (`utility_controller.disable_auto_display_refresh()`) building and drawing are deferred;
+    after `utility_controller.enable_auto_display_refresh()` pass the new element IDs to
+    `element_controller.recreate_elements()` to display them.
 
     Parameters:
         file_path: Full path of the existing STEP file to read.
@@ -76,7 +79,11 @@ def import_step_file_with_message_option(file_path: str, scale_factor: float, hi
 
     Same as `file_controller.import_step_file()`, with control over the message the reader shows
     when it is finished (number of imported and faulty elements). Requires a STEP license; without
-    it an empty list is returned. The import is one undo step.
+    it an empty list is returned. The import is one undo step. The imported elements are always
+    marked visible. With automatic display refresh on they are also built and drawn in the 3D view
+    right away. With it off (`utility_controller.disable_auto_display_refresh()`) building and
+    drawing are deferred; after `utility_controller.enable_auto_display_refresh()` pass the new
+    element IDs to `element_controller.recreate_elements()` to display them.
 
     Parameters:
         file_path: Full path of the existing STEP file to read.
@@ -156,9 +163,12 @@ def import_sat_file(file_path: str, scale_factor: float, binary: bool) -> list[E
 
     Each body in the file becomes one element. If some bodies cannot be converted, a message box
     reports the number of imported and faulty bodies (unless messages are switched off in the
-    document settings, then it is only logged). The import is one undo step, and the new elements
-    are shown when automatic display refresh is on. `file_controller.import_sat_file_silently()` is
-    the variant for scripts.
+    document settings, then it is only logged). The import is one undo step. The imported elements
+    are always marked visible. With automatic display refresh on they are also built and drawn in
+    the 3D view right away. With it off (`utility_controller.disable_auto_display_refresh()`)
+    building and drawing are deferred; after `utility_controller.enable_auto_display_refresh()` pass
+    the new element IDs to `element_controller.recreate_elements()` to display them.
+    `file_controller.import_sat_file_silently()` is the variant for scripts.
 
     Parameters:
         file_path: Full path of the existing SAT file to read.
@@ -184,7 +194,12 @@ def import_3dc_file(file_path: str) -> list[ElementId]:
     `file_controller.import_3dc_file_with_options()` to change them. The file type comes from the
     extension (.3d or .3dc). Saved scenes in the file are never imported. Additional models,
     auxiliary objects, letter objects and nesting or optimization lists in the file are dropped;
-    caddy and graphical objects are inserted but not returned. No undo step is created.
+    caddy and graphical objects are inserted but not returned. No undo step is created. The imported
+    elements are always marked visible. With automatic display refresh on they are also built and
+    drawn in the 3D view right away. With it off
+    (`utility_controller.disable_auto_display_refresh()`) building and drawing are deferred; after
+    `utility_controller.enable_auto_display_refresh()` pass the new element IDs to
+    `element_controller.recreate_elements()` to display them.
 
     Parameters:
         file_path: Full path of the existing 3D or 3DC file to read.
@@ -207,8 +222,11 @@ def import_rhino_file(file_path: str, without_dialog: bool) -> list[ElementId]:
     list is returned. With without_dialog=True the file is read directly and the Rhino settings
     dialog and information message boxes are skipped. With False the file chooser (preselected with
     the path), the Rhino settings dialog and message boxes can appear and the script waits until the
-    user closes them. The new elements are shown when automatic display refresh is on. No undo step
-    is created.
+    user closes them. No undo step is created. The imported elements are always marked visible. With
+    automatic display refresh on they are also built and drawn in the 3D view right away. With it
+    off (`utility_controller.disable_auto_display_refresh()`) building and drawing are deferred;
+    after `utility_controller.enable_auto_display_refresh()` pass the new element IDs to
+    `element_controller.recreate_elements()` to display them.
 
     Parameters:
         file_path: Full path of the existing Rhino (.3dm) file to read.
@@ -258,9 +276,12 @@ def export_step_file(
 def import_3dz_file(file_path: str) -> None:
     """Import a 3DZ file into the current model.
 
-    The file is read by the 3DZ import module. The new elements are shown when automatic display
-    refresh is on. Their IDs are not returned; elements the file replaces are not reported either.
-    No undo step is created.
+    The file is read by the 3DZ import module. The imported elements are always marked visible. With
+    automatic display refresh on they are also built and drawn in the 3D view right away. With it
+    off (`utility_controller.disable_auto_display_refresh()`) building and drawing are deferred
+    until the elements are recreated, e.g. with `element_controller.recreate_elements()` after
+    `utility_controller.enable_auto_display_refresh()`. The IDs of the new elements are not
+    returned; elements the file replaces are not reported either. No undo step is created.
 
     Parameters:
         file_path: Full path of the existing 3DZ file to read.
@@ -298,8 +319,12 @@ def import_sat_file_silently(file_path: str, scale_factor: float, binary: bool) 
     """Import an ACIS SAT file with silent body conversion and return the new element IDs.
 
     Same as `file_controller.import_sat_file()`, but the body conversion runs in silent mode so that
-    messages raised during conversion are suppressed. The import is one undo step, and the new
-    elements are shown when automatic display refresh is on.
+    messages raised during conversion are suppressed. The import is one undo step. The imported
+    elements are always marked visible. With automatic display refresh on they are also built and
+    drawn in the 3D view right away. With it off
+    (`utility_controller.disable_auto_display_refresh()`) building and drawing are deferred; after
+    `utility_controller.enable_auto_display_refresh()` pass the new element IDs to
+    `element_controller.recreate_elements()` to display them.
 
     Parameters:
         file_path: Full path of the existing SAT file to read.
@@ -497,7 +522,12 @@ def import_bxf_file(file_path: str, insert_position: point_3d) -> list[ElementId
     Reads the file with the saved Blum exchange settings (see
     `file_controller.get_blum_export_path()`) and moves all imported elements by insert_position.
     The import is one undo step and the file is recorded as an import source of the document.
-    Returns an empty list if the file cannot be read.
+    Returns an empty list if the file cannot be read. The display is built after the move, so it
+    shows the elements at the insert position. The imported elements are always marked visible. With
+    automatic display refresh on they are also built and drawn in the 3D view right away. With it
+    off (`utility_controller.disable_auto_display_refresh()`) building and drawing are deferred;
+    after `utility_controller.enable_auto_display_refresh()` pass the new element IDs to
+    `element_controller.recreate_elements()` to display them.
 
     Parameters:
         file_path: Full path of the existing BXF file to read.
@@ -611,9 +641,12 @@ def import_variant_file(file_path: str, insert_position: point_3d) -> list[Eleme
     """Import a variant (.val) file, build it and return the new element IDs.
 
     Variants are parametric element groups defined in a .val file. The variant is built with the
-    parameters stored in the file, added to the document and moved by insert_position; the new
-    elements are shown when automatic display refresh is on. Only .val files are supported: other
-    extensions and files that cannot be loaded return an empty list.
+    parameters stored in the file, added to the document and moved by insert_position. Only .val
+    files are supported: other extensions and files that cannot be loaded return an empty list. The
+    variant's elements are always marked visible; with automatic display refresh on they are also
+    shown in the 3D view right away. With it off
+    (`utility_controller.disable_auto_display_refresh()`) the redraw is deferred; call
+    `visualization_controller.refresh()` after `utility_controller.enable_auto_display_refresh()`.
 
     Parameters:
         file_path: Full path of the existing .val file to read.
@@ -704,7 +737,11 @@ def import_3dc_file_with_options(file_path: str, import_3dc_options: import_3dc_
     The file type comes from the extension (.3d or .3dc). Saved scenes in the file are never
     imported, whatever the options say. Additional models, auxiliary objects, letter objects and
     nesting or optimization lists are dropped; caddy and graphical objects are inserted but not
-    returned. No undo step is created.
+    returned. No undo step is created. The imported elements are always marked visible. With
+    automatic display refresh on they are also built and drawn in the 3D view right away. With it
+    off (`utility_controller.disable_auto_display_refresh()`) building and drawing are deferred;
+    after `utility_controller.enable_auto_display_refresh()` pass the new element IDs to
+    `element_controller.recreate_elements()` to display them.
 
     Parameters:
         file_path: Full path of the existing 3D or 3DC file to read.

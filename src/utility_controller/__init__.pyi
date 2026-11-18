@@ -176,8 +176,8 @@ def print_message(message: str, row: int, column: int) -> None:
 def get_user_int(message: str) -> int:
     """Ask the user for an integer in the command bar and wait for the input.
 
-    The script is blocked until the user answers. In unattended runs (/PLUGIN or /RUNPROGRAM) no
-    prompt is shown, a warning is logged and 0 is returned. Because 0 is also a valid answer, the
+    The script is blocked until the user answers. In a script started with /PLUGIN= or /RUNPROGRAM=
+    no query is shown, a warning is logged and 0 is returned. Because 0 is also a valid answer, the
     failure value cannot be told apart from an entered 0.
 
     Parameters:
@@ -191,14 +191,15 @@ def get_user_int(message: str) -> int:
         ...     print(f'Creating {count} copies')
 
     Returns:
-        The entered integer; 0 if the input was cancelled or the run is unattended.
+        The entered integer; 0 if the input was cancelled or the script was started with /PLUGIN= or
+        /RUNPROGRAM=.
     """
 
 def get_user_double(message: str) -> float:
     """Ask the user for a decimal number in the command bar and wait for the input.
 
-    The script is blocked until the user answers. In unattended runs (/PLUGIN or /RUNPROGRAM) no
-    prompt is shown, a warning is logged and 0.0 is returned. The returned value is not converted;
+    The script is blocked until the user answers. In a script started with /PLUGIN= or /RUNPROGRAM=
+    no query is shown, a warning is logged and 0.0 is returned. The returned value is not converted;
     if you treat it as a length, it is up to you to use model units (mm).
 
     Parameters:
@@ -212,19 +213,21 @@ def get_user_double(message: str) -> float:
         ...     print(f'Using spacing {spacing}')
 
     Returns:
-        The entered number; 0.0 if the input was cancelled or the run is unattended.
+        The entered number; 0.0 if the input was cancelled or the script was started with /PLUGIN=
+        or /RUNPROGRAM=.
     """
 
 def get_user_bool(message: str, default_yes: bool) -> bool:
     """Ask the user a yes/no question in the command bar and wait for the answer.
 
     The script is blocked until the user answers. Pressing Enter accepts the preselected answer.
-    Cancelling returns False. In unattended runs (/PLUGIN or /RUNPROGRAM) no prompt is shown and
-    False is returned, even if default_yes is True.
+    Cancelling returns False. In a script started with /PLUGIN= or /RUNPROGRAM= no question is
+    shown, a warning is logged and False is returned, even if default_yes is True.
 
     Parameters:
         message: Question text shown to the user.
-        default_yes: If True the preselected answer is yes, otherwise no.
+        default_yes: If True the preselected answer is yes, otherwise no. Has no effect in a script
+            started with /PLUGIN= or /RUNPROGRAM=, which always returns False.
 
     Examples:
         >>> import utility_controller as uc
@@ -235,15 +238,16 @@ def get_user_bool(message: str, default_yes: bool) -> bool:
         ...     print('Keeping')
 
     Returns:
-        True if the user answered yes, otherwise False (including cancel).
+        True if the user answered yes, otherwise False (including cancel and a script started with
+        /PLUGIN= or /RUNPROGRAM=).
     """
 
 def get_user_string(message: str) -> str:
     """Ask the user for a text in the command bar and wait for the input.
 
-    The script is blocked until the user answers. In unattended runs (/PLUGIN or /RUNPROGRAM) no
-    prompt is shown, a warning is logged and an empty string is returned. For a prompt with a preset
-    answer use `utility_controller.get_user_string_with_default_value()`.
+    The script is blocked until the user answers. In a script started with /PLUGIN= or /RUNPROGRAM=
+    no query is shown, a warning is logged and an empty string is returned. For a prompt with a
+    preset answer use `utility_controller.get_user_string_with_default_value()`.
 
     Parameters:
         message: Prompt text shown to the user.
@@ -256,7 +260,8 @@ def get_user_string(message: str) -> str:
         ...     print(f'Group name: {name}')
 
     Returns:
-        The entered text; empty string if the input was cancelled or the run is unattended.
+        The entered text; empty string if the input was cancelled or the script was started with
+        /PLUGIN= or /RUNPROGRAM=.
     """
 
 def set_project_name(project_name: str) -> None:
@@ -561,9 +566,9 @@ def get_user_point() -> point_3d:
     """Let the user pick a point in the 3D view and return it.
 
     The script is blocked until the user picks a point; midpoints of edges can be snapped,
-    intersections are not offered. In unattended runs (/PLUGIN or /RUNPROGRAM) no prompt is shown.
-    Cancelling cannot be told apart from picking the origin. For several points use
-    `utility_controller.get_user_points()`.
+    intersections are not offered. In a script started with /PLUGIN= or /RUNPROGRAM= no pick is
+    requested, a warning is logged and the point (0, 0, 0) is returned. Cancelling cannot be told
+    apart from picking the origin. For several points use `utility_controller.get_user_points()`.
 
     Examples:
         >>> import utility_controller as uc
@@ -572,8 +577,8 @@ def get_user_point() -> point_3d:
         >>> print(point.x, point.y, point.z)
 
     Returns:
-        The picked point in model units (mm); point (0, 0, 0) if the pick was cancelled or the run
-        is unattended.
+        The picked point in model units (mm); point (0, 0, 0) if the pick was cancelled or the
+        script was started with /PLUGIN= or /RUNPROGRAM=.
     """
 
 def disable_auto_display_refresh() -> None:
@@ -887,12 +892,13 @@ def hide_progress_bar() -> None:
 def get_user_color(initial_color: int) -> int:
     """Let the user choose a colour from the colour palette dialog.
 
-    The script is blocked until the dialog is closed. In unattended runs (/PLUGIN or /RUNPROGRAM) no
-    dialog is shown and initial_color is returned. Cancelling is not reported separately; compare
-    the result with your initial value if needed.
+    The script is blocked until the dialog is closed. In a script started with /PLUGIN= or
+    /RUNPROGRAM= no dialog is shown, a warning is logged and initial_color is returned unchanged.
+    Cancelling is not reported separately; compare the result with your initial value if needed.
 
     Parameters:
-        initial_color: cadwork colour number preselected in the dialog.
+        initial_color: cadwork colour number preselected in the dialog; also the value returned in a
+            script started with /PLUGIN= or /RUNPROGRAM=.
 
     Examples:
         >>> import utility_controller as uc
@@ -901,7 +907,8 @@ def get_user_color(initial_color: int) -> int:
         >>> print(f'Chosen colour: {color_id}')
 
     Returns:
-        The chosen cadwork colour number; initial_color in unattended runs.
+        The chosen cadwork colour number; initial_color if the script was started with /PLUGIN= or
+        /RUNPROGRAM=.
     """
 
 def get_3d_linear_units() -> str:
@@ -1472,9 +1479,10 @@ def get_user_points() -> list[point_3d]:
     """Let the user pick any number of points in the 3D view.
 
     Starts an interactive point-picking mode in the 3D view and blocks the script until the user has
-    finished. In unattended plugin runs (`/PLUGIN` or `/RUNPROGRAM` mode) no interaction takes place
-    and an empty list is returned. To pick one point use `utility_controller.get_user_point()`, for
-    a fixed maximum use `utility_controller.get_user_points_with_count()`.
+    finished. In a script started with /PLUGIN= or /RUNPROGRAM= no pick is requested, a warning is
+    logged and an empty list is returned. To pick one point use
+    `utility_controller.get_user_point()`, for a fixed maximum use
+    `utility_controller.get_user_points_with_count()`.
 
     Examples:
         >>> import utility_controller as uc
@@ -1485,16 +1493,17 @@ def get_user_points() -> list[point_3d]:
 
     Returns:
         List of picked `point_3d` in model units (mm) in picking order; empty list if nothing was
-        picked or the interaction is skipped.
+        picked or the script was started with /PLUGIN= or /RUNPROGRAM=.
     """
 
 def get_user_points_with_count(count: int) -> list[point_3d]:
     """Let the user pick a given number of points in the 3D view.
 
     Starts an interactive point-picking mode and blocks the script until the points are picked.
-    Returns an empty list for a count of 0 and in unattended plugin runs (`/PLUGIN` or `/RUNPROGRAM`
-    mode). A count of 1 uses the single-point picker of `utility_controller.get_user_point()`. Check
-    the length of the result before using it.
+    Returns an empty list for a count of 0. In a script started with /PLUGIN= or /RUNPROGRAM= no
+    pick is requested, a warning is logged and an empty list is returned. A count of 1 uses the
+    single-point picker of `utility_controller.get_user_point()`. Check the length of the result
+    before using it.
 
     Parameters:
         count: Maximum number of points to pick. 0 returns an empty list; 1 asks for a single point.
@@ -1509,17 +1518,17 @@ def get_user_points_with_count(count: int) -> list[point_3d]:
 
     Returns:
         List of picked `point_3d` in model units (mm) in picking order; empty list if count is 0 or
-        the interaction is skipped. With a count of 1 the list always holds one point, which is
-        (0, 0, 0) if the pick was cancelled.
+        the script was started with /PLUGIN= or /RUNPROGRAM=. With a count of 1 the list always
+        holds one point, which is (0, 0, 0) if the pick was cancelled.
     """
 
 def get_user_path_from_dialog() -> str:
     """Show a folder-selection dialog and return the chosen folder.
 
-    Opens a dialog that lists folders only and blocks the script until the user closes it. In
-    unattended plugin runs (`/PLUGIN` or `/RUNPROGRAM` mode) no dialog is shown and an empty string
-    is returned. Use `utility_controller.get_user_path_from_dialog_in_path()` to choose the start
-    folder.
+    Opens a dialog that lists folders only and blocks the script until the user closes it. In a
+    script started with /PLUGIN= or /RUNPROGRAM= no dialog is shown, a warning is logged and an
+    empty string is returned. Use `utility_controller.get_user_path_from_dialog_in_path()` to choose
+    the start folder.
 
     Examples:
         >>> import utility_controller as uc
@@ -1529,15 +1538,16 @@ def get_user_path_from_dialog() -> str:
         ...     print('Export to', folder)
 
     Returns:
-        Full path of the selected folder; empty string if cancelled or skipped.
+        Full path of the selected folder; empty string if cancelled or the script was started with
+        /PLUGIN= or /RUNPROGRAM=.
     """
 
 def get_user_path_from_dialog_in_path(path: str) -> str:
     """Show a folder-selection dialog starting in a folder and return the chosen folder.
 
     Opens a dialog that lists folders only, starting in the given folder, and blocks the script
-    until the user closes it. In unattended plugin runs (`/PLUGIN` or `/RUNPROGRAM` mode) no dialog
-    is shown and an empty string is returned.
+    until the user closes it. In a script started with /PLUGIN= or /RUNPROGRAM= no dialog is shown,
+    a warning is logged and an empty string is returned.
 
     Parameters:
         path: Folder in which the dialog starts.
@@ -1550,7 +1560,8 @@ def get_user_path_from_dialog_in_path(path: str) -> str:
         ...     print('Export to', folder)
 
     Returns:
-        Full path of the selected folder; empty string if cancelled or skipped.
+        Full path of the selected folder; empty string if cancelled or the script was started with
+        /PLUGIN= or /RUNPROGRAM=.
     """
 
 def execute_shortcut(shortcut_key_modifier: shortcut_key_modifier, shortcut_key: shortcut_key) -> None:
@@ -2060,9 +2071,9 @@ def close_cadwork_document_saved() -> None:
     """Save the document silently, then close cadwork.
 
     Saves the current document without any prompt and then shuts the cadwork application down, so
-    the script ends with it and nothing after this call runs. When cadwork was started unattended
-    with a plugin or program start parameter, the closing is skipped (a warning is logged) because
-    cadwork closes itself after the script. To close without saving use
+    the script ends with it and nothing after this call runs. In a script started with /PLUGIN= or
+    /RUNPROGRAM= the document is saved but cadwork is not closed by this call (a warning is logged),
+    because cadwork closes itself once the script returns. To close without saving use
     `utility_controller.close_cadwork_document_unsaved()`.
 
     Examples:
@@ -2076,9 +2087,10 @@ def close_cadwork_document_unsaved() -> None:
     """Close cadwork without saving the document.
 
     Shuts the cadwork application down immediately; unsaved changes are lost and the script ends
-    with it, so nothing after this call runs. When cadwork was started unattended with a plugin or
-    program start parameter, the call is ignored (a warning is logged) because cadwork closes itself
-    after the script. To keep the changes use `utility_controller.close_cadwork_document_saved()`.
+    with it, so nothing after this call runs. In a script started with /PLUGIN= or /RUNPROGRAM= the
+    call is ignored, a warning is logged and the script continues, because cadwork closes itself
+    once the script returns. To keep the changes use
+    `utility_controller.close_cadwork_document_saved()`.
 
     Examples:
         >>> import utility_controller as uc
@@ -2240,13 +2252,14 @@ def get_user_int_with_default_value(message: str, default_value: int) -> int:
     """Ask the user to enter an integer in the command bar, with a default.
 
     Shows the prompt in the cadwork command bar with the default pre-filled and blocks the script
-    until the user confirms or cancels. When cadwork runs unattended via a plugin or program start
-    parameter, nothing is shown and the default is returned. Use
+    until the user confirms or cancels. In a script started with /PLUGIN= or /RUNPROGRAM= no query
+    is shown, a warning is logged and default_value is returned. Use
     `utility_controller.get_user_double_with_default_value()` for decimal numbers.
 
     Parameters:
         message: Prompt text shown to the user.
-        default_value: Value pre-filled in the input field; also returned in unattended runs.
+        default_value: Value pre-filled in the input field; also the value returned in a script
+            started with /PLUGIN= or /RUNPROGRAM=.
 
     Examples:
         >>> import utility_controller as uc
@@ -2256,20 +2269,22 @@ def get_user_int_with_default_value(message: str, default_value: int) -> int:
 
     Returns:
         The value entered by the user. 0 (and an error message in cadwork) if the user cancels, so a
-        cancel cannot be told apart from an entered 0.
+        cancel cannot be told apart from an entered 0. default_value if the script was started with
+        /PLUGIN= or /RUNPROGRAM=.
     """
 
 def get_user_double_with_default_value(message: str, default_value: float) -> float:
     """Ask the user to enter a number in the command bar, with a default.
 
     Shows the prompt in the cadwork command bar with the default pre-filled and blocks the script
-    until the user confirms or cancels. When cadwork runs unattended via a plugin or program start
-    parameter, nothing is shown and the default is returned. Use
+    until the user confirms or cancels. In a script started with /PLUGIN= or /RUNPROGRAM= no query
+    is shown, a warning is logged and default_value is returned. Use
     `utility_controller.get_user_int_with_default_value()` for whole numbers.
 
     Parameters:
         message: Prompt text shown to the user.
-        default_value: Value pre-filled in the input field; also returned in unattended runs.
+        default_value: Value pre-filled in the input field; also the value returned in a script
+            started with /PLUGIN= or /RUNPROGRAM=.
 
     Examples:
         >>> import utility_controller as uc
@@ -2279,20 +2294,22 @@ def get_user_double_with_default_value(message: str, default_value: float) -> fl
 
     Returns:
         The value entered by the user. 0.0 (and an error message in cadwork) if the user cancels, so
-        a cancel cannot be told apart from an entered 0.
+        a cancel cannot be told apart from an entered 0. default_value if the script was started
+        with /PLUGIN= or /RUNPROGRAM=.
     """
 
 def get_user_string_with_default_value(message: str, default_value: str) -> str:
     """Ask the user to enter text in the command bar, with a default.
 
     Shows the prompt in the cadwork command bar with the default pre-filled and blocks the script
-    until the user confirms or cancels. When cadwork runs unattended via a plugin or program start
-    parameter, nothing is shown and the default is returned. Use
+    until the user confirms or cancels. In a script started with /PLUGIN= or /RUNPROGRAM= no query
+    is shown, a warning is logged and default_value is returned. Use
     `utility_controller.get_user_string()` when no default is needed.
 
     Parameters:
         message: Prompt text shown to the user.
-        default_value: Text pre-filled in the input field; also returned in unattended runs.
+        default_value: Text pre-filled in the input field; also the value returned in a script
+            started with /PLUGIN= or /RUNPROGRAM=.
 
     Examples:
         >>> import utility_controller as uc
@@ -2303,7 +2320,7 @@ def get_user_string_with_default_value(message: str, default_value: str) -> str:
 
     Returns:
         The text entered by the user. An empty string (and an error message in cadwork) if the user
-        cancels.
+        cancels. default_value if the script was started with /PLUGIN= or /RUNPROGRAM=.
     """
 
 def get_3d_version_name() -> str:
@@ -2444,9 +2461,9 @@ def get_user_edge() -> list[point_3d]:
     """Ask the user to pick an edge or two points in the 3D view.
 
     Prompts the user in the 3D view to click an existing edge or two points, and blocks the script
-    until they pick or abort. Returns an empty list without asking when cadwork runs unattended via
-    a plugin or program start parameter. Use `utility_controller.get_user_point()` for a single
-    point.
+    until they pick or abort. In a script started with /PLUGIN= or /RUNPROGRAM= no pick is
+    requested, a warning is logged and an empty list is returned. Use
+    `utility_controller.get_user_point()` for a single point.
 
     Examples:
         >>> import utility_controller as uc
@@ -2458,5 +2475,193 @@ def get_user_edge() -> list[point_3d]:
 
     Returns:
         List of two point_3d, the start and end of the picked edge in model units (mm). An empty
-        list if the user aborted or no valid edge was picked.
+        list if the user aborted, no valid edge was picked or the script was started with /PLUGIN=
+        or /RUNPROGRAM=.
+    """
+
+def set_rotated_origin_axes(x_axis: point_3d, y_axis: point_3d) -> bool:
+    """Save the axes of the rotated origin (the "Ref" button coordinate system).
+
+    The rotated origin is a user coordinate system that is a pure rotation: its origin stays at the
+    global origin. Only the directions of both vectors matter (any length above zero works): the X
+    axis is taken as given, the Y axis is replaced by its part perpendicular to X, and Z follows
+    from both, so the saved axes are always an orthonormal set. This call only saves the axes and
+    does not switch the rotated origin on; if it is already on, it is switched off and on again so
+    the view follows the new axes. Nothing is changed and False is returned in a 2D view, for a
+    zero-length vector, or when the vectors are parallel or anti-parallel. Switch it on with
+    `utility_controller.enable_rotated_origin()` and read the result back with
+    `utility_controller.get_rotated_origin_x_axis()` and its Y and Z siblings. Requires API version
+    406; not available in auto-attribute scripts.
+
+    Parameters:
+        x_axis: Direction of the new X axis, in global coordinates, e.g. from
+            `geometry_controller.get_xl()`. Any length above zero; it is normalised.
+        y_axis: Direction that lies in the new XY plane, e.g. from `geometry_controller.get_yl()`.
+            Only its part perpendicular to `x_axis` is used, so it need not be orthogonal to it. It
+            must not be parallel to `x_axis`.
+
+    Examples:
+        >>> import utility_controller as uc
+        >>> import geometry_controller as gc
+        >>> import element_controller as ec
+
+        >>> element_ids = ec.get_active_identifiable_element_ids()
+        >>> if element_ids:
+        ...     # align the rotated origin with the local axes of the first active element
+        ...     x_axis = gc.get_xl(element_ids[0])
+        ...     y_axis = gc.get_yl(element_ids[0])
+        ...     if uc.set_rotated_origin_axes(x_axis, y_axis):
+        ...         uc.enable_rotated_origin()
+
+    Returns:
+        True if the axes were saved. False if an axis is a zero vector, the axes are parallel, or a
+        2D view is active; nothing is changed then. Also False if the rotated origin was on and
+        could not be switched back on; the new axes are saved in that case.
+    """
+
+def enable_rotated_origin() -> bool:
+    """Switch the rotated origin ("Ref" button) on with its saved axes.
+
+    Does the same as pressing the "Ref" button. The axes must already exist, either defined by the
+    user with the button or saved with `utility_controller.set_rotated_origin_axes()`; check with
+    `utility_controller.has_rotated_origin_axes()`. Without saved axes the call fails instead of
+    opening the interactive definition, so a script never blocks. Calling it while the rotated
+    origin is already on keeps it on. Switch off with `utility_controller.disable_rotated_origin()`.
+    Requires API version 406; not available in auto-attribute scripts.
+
+    Examples:
+        >>> import utility_controller as uc
+
+        >>> if uc.has_rotated_origin_axes():
+        ...     if uc.enable_rotated_origin():
+        ...         print('Rotated origin is on')
+        ... else:
+        ...     print('Define the axes first with set_rotated_origin_axes()')
+
+    Returns:
+        True if the rotated origin is on afterwards, also when it already was. False if no axes are
+        saved or a 2D view is active.
+    """
+
+def disable_rotated_origin() -> None:
+    """Switch the rotated origin ("Ref" button) off.
+
+    Does the same as pressing the "Ref" button while it is on, so the view returns to the global
+    coordinate system. The saved axes are kept and can be switched on again with
+    `utility_controller.enable_rotated_origin()`. Does nothing if it is already off or a 2D view is
+    active. Requires API version 406; not available in auto-attribute scripts.
+
+    Examples:
+        >>> import utility_controller as uc
+
+        >>> if uc.is_rotated_origin_enabled():
+        ...     uc.disable_rotated_origin()
+        >>> print(uc.has_rotated_origin_axes())  # axes are still saved
+    """
+
+def is_rotated_origin_enabled() -> bool:
+    """Check whether the rotated origin ("Ref" button) is switched on.
+
+    Reflects the current state of the "Ref" button, whether it was switched by the user or by
+    `utility_controller.enable_rotated_origin()`. Use it to restore the previous state after a
+    script has changed it. Requires API version 406; not available in auto-attribute scripts.
+
+    Examples:
+        >>> import utility_controller as uc
+
+        >>> was_enabled = uc.is_rotated_origin_enabled()
+        >>> uc.disable_rotated_origin()  # work in the global coordinate system
+        >>> if was_enabled:
+        ...     uc.enable_rotated_origin()
+
+    Returns:
+        True if the rotated origin is on, False otherwise.
+    """
+
+def has_rotated_origin_axes() -> bool:
+    """Check whether axes for the rotated origin are saved.
+
+    Axes are saved when the user defined them with the "Ref" button or a script called
+    `utility_controller.set_rotated_origin_axes()`. Call this before
+    `utility_controller.enable_rotated_origin()`, which fails without saved axes. It does not tell
+    whether the rotated origin is currently on; use `utility_controller.is_rotated_origin_enabled()`
+    for that. Requires API version 406; not available in auto-attribute scripts.
+
+    Examples:
+        >>> import utility_controller as uc
+
+        >>> if uc.has_rotated_origin_axes():
+        ...     print('Saved Z axis:', uc.get_rotated_origin_z_axis())
+        ... else:
+        ...     print('No rotated origin axes saved yet')
+
+    Returns:
+        True if axes are saved, False otherwise.
+    """
+
+def get_rotated_origin_x_axis() -> point_3d:
+    """Get the saved X axis of the rotated origin as a unit vector.
+
+    Returns the X axis of the saved rotated origin (the "Ref" button coordinate system) in global
+    coordinates. The value is returned whether or not the rotated origin is currently switched on.
+    When no axes are saved, the global X axis is returned, so use
+    `utility_controller.has_rotated_origin_axes()` to tell the two cases apart. The three axes
+    (`utility_controller.get_rotated_origin_y_axis()` and
+    `utility_controller.get_rotated_origin_z_axis()` too) are mutually perpendicular. Set them with
+    `utility_controller.set_rotated_origin_axes()`. Requires API version 406; not available in
+    auto-attribute scripts.
+
+    Examples:
+        >>> import utility_controller as uc
+
+        >>> if uc.has_rotated_origin_axes():
+        ...     axis = uc.get_rotated_origin_x_axis()
+        ...     print(axis.x, axis.y, axis.z)
+
+    Returns:
+        Unit vector of the X axis as `point_3d`; the global X axis if no axes are saved.
+    """
+
+def get_rotated_origin_y_axis() -> point_3d:
+    """Get the saved Y axis of the rotated origin as a unit vector.
+
+    Returns the Y axis of the saved rotated origin (the "Ref" button coordinate system) in global
+    coordinates. The value is returned whether or not the rotated origin is currently switched on.
+    When no axes are saved, the global Y axis is returned, so use
+    `utility_controller.has_rotated_origin_axes()` to tell the two cases apart. The three axes
+    (`utility_controller.get_rotated_origin_x_axis()` and
+    `utility_controller.get_rotated_origin_z_axis()` too) are mutually perpendicular. Set them with
+    `utility_controller.set_rotated_origin_axes()`. Requires API version 406; not available in
+    auto-attribute scripts.
+
+    Examples:
+        >>> import utility_controller as uc
+
+        >>> axis = uc.get_rotated_origin_y_axis()
+        >>> print(axis.x, axis.y, axis.z)
+
+    Returns:
+        Unit vector of the Y axis as `point_3d`; the global Y axis if no axes are saved.
+    """
+
+def get_rotated_origin_z_axis() -> point_3d:
+    """Get the saved Z axis of the rotated origin as a unit vector.
+
+    Returns the Z axis of the saved rotated origin (the "Ref" button coordinate system) in global
+    coordinates. The value is returned whether or not the rotated origin is currently switched on.
+    When no axes are saved, the global Z axis is returned, so use
+    `utility_controller.has_rotated_origin_axes()` to tell the two cases apart. The three axes
+    (`utility_controller.get_rotated_origin_x_axis()` and
+    `utility_controller.get_rotated_origin_y_axis()` too) are mutually perpendicular. Set them with
+    `utility_controller.set_rotated_origin_axes()`. Requires API version 406; not available in
+    auto-attribute scripts.
+
+    Examples:
+        >>> import utility_controller as uc
+
+        >>> axis = uc.get_rotated_origin_z_axis()
+        >>> print(axis.x, axis.y, axis.z)
+
+    Returns:
+        Unit vector of the Z axis as `point_3d`; the global Z axis if no axes are saved.
     """
