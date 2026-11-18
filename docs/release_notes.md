@@ -6,6 +6,86 @@ Changes to the `cwapi3d` Python API, newest first. Each version is published to
 This page keeps the **last 10 releases**. Older notes are in the
 [git history](https://github.com/cwapi3d/cwapi3dpython/commits/main/docs/release_notes.md).
 
+<!-- release:33.407.2 -->
+## 33.407.2 — 2026-11-18
+
+[PR #453](https://github.com/cwapi3d/cwapi3dpython/pull/453) · `pip install cwapi3d==33.407.2`
+
+Plugins can now set, switch and read the rotated origin (the "Ref" button coordinate system). The user-input functions now document what they return in scripts started with `/PLUGIN=` or `/RUNPROGRAM=`.
+
+### Added
+
+- Rotated origin, the "Ref" button coordinate system (requires API version 406; not available in auto-attribute scripts):
+  [`utility_controller.set_rotated_origin_axes`][utility_controller.set_rotated_origin_axes] saves its axes,
+  [`utility_controller.enable_rotated_origin`][utility_controller.enable_rotated_origin] and
+  [`utility_controller.disable_rotated_origin`][utility_controller.disable_rotated_origin] switch it on and off,
+  [`utility_controller.is_rotated_origin_enabled`][utility_controller.is_rotated_origin_enabled] and
+  [`utility_controller.has_rotated_origin_axes`][utility_controller.has_rotated_origin_axes] check its state, and
+  [`utility_controller.get_rotated_origin_x_axis`][utility_controller.get_rotated_origin_x_axis],
+  [`utility_controller.get_rotated_origin_y_axis`][utility_controller.get_rotated_origin_y_axis] and
+  [`utility_controller.get_rotated_origin_z_axis`][utility_controller.get_rotated_origin_z_axis] get the saved axes as unit vectors.
+
+### Documentation
+
+- `utility_controller`: the 14 `get_user_*` input functions now state what they return in a script started with `/PLUGIN=` or `/RUNPROGRAM=`, where no query is shown. [`utility_controller.close_cadwork_document_unsaved`][utility_controller.close_cadwork_document_unsaved] is ignored in such a script, and [`utility_controller.close_cadwork_document_saved`][utility_controller.close_cadwork_document_saved] only saves.
+- [`menu_controller.display_simple_menu`][menu_controller.display_simple_menu]: returns an empty string in a `/PLUGIN=` or `/RUNPROGRAM=` script; new example.
+- `file_controller`: 10 import functions now explain that imported elements stay visible with automatic display refresh off, and how to display them afterwards.
+- [`bim_controller.set_building_and_storey`][bim_controller.set_building_and_storey]: no IFC license is required.
+<!-- /release:33.407.2 -->
+
+<!-- release:33.407.0 -->
+## 33.407.0 — 2026-11-18
+
+[PR #452](https://github.com/cwapi3d/cwapi3dpython/pull/452) · `pip install cwapi3d==33.407.0`
+
+Documentation-only release: no API changes.
+
+### Documentation
+
+- [`multi_layer_cover_controller.set_element_multi_layer_set`][multi_layer_cover_controller.set_element_multi_layer_set]: now documents that the cover takes the thickness of the assigned multi layer set.
+- Reworked guide pages for setup, debugging and troubleshooting.
+<!-- /release:33.407.0 -->
+
+<!-- release:33.397.17 -->
+## 33.397.17 — 2026-11-11
+
+[PR #450](https://github.com/cwapi3d/cwapi3dpython/pull/450) · `pip install cwapi3d==33.397.17`
+
+The docstrings of every controller were rewritten from the C++ implementation, and several stub signatures were corrected to match the bindings. Type hints and IDE hints change for the functions listed under Fixed.
+
+### Added
+
+- [`geometry_controller.element_collision_type`][geometry_controller.element_collision_type]: new enum for how the geometry of two elements relates, as returned by [`geometry_controller.get_element_collision_type`][geometry_controller.get_element_collision_type]: `none`, `touching`, `contained`, `contained_and_touching`, `interlocking`, `coincident`, `unclassified`, `unknown`.
+
+### Fixed
+
+- [`connector_axis_controller.get_intersection_count`][connector_axis_controller.get_intersection_count]: the stub declared `get_intersection_count(intersection_index: UnsignedInt) -> int`; it now matches the binding: `get_intersection_count(axis_id: ElementId) -> int`.
+- [`connector_axis_controller.get_section_contact_element`][connector_axis_controller.get_section_contact_element]: `axis_id` is an `ElementId`, not a `float`.
+- [`endtype_controller.get_endtype_name`][endtype_controller.get_endtype_name]: the stub declared `get_endtype_name(element_id: ElementId) -> str`; it now matches the binding: `get_endtype_name(endtype_id: EndtypeId) -> str`.
+- [`geometry_controller.get_element_collision_type`][geometry_controller.get_element_collision_type]: returns `element_collision_type` instead of `Any`.
+- [`material_controller.set_texture_color`][material_controller.set_texture_color]: the stub declared `set_texture_color(color_nb: UnsignedInt, material_id: MaterialId) -> None`; it now matches the binding: `set_texture_color(material_id: MaterialId, color: int) -> None`.
+- `multi_layer_cover_controller`: the layer type is an `int`, not `multi_layer_type`, in [`multi_layer_cover_controller.add_layer`][multi_layer_cover_controller.add_layer], [`multi_layer_cover_controller.add_layer_by_standard_elements`][multi_layer_cover_controller.add_layer_by_standard_elements], [`multi_layer_cover_controller.insert_layer`][multi_layer_cover_controller.insert_layer], [`multi_layer_cover_controller.set_layer_type`][multi_layer_cover_controller.set_layer_type] and the return value of [`multi_layer_cover_controller.get_layer_type`][multi_layer_cover_controller.get_layer_type].
+- [`utility_controller.create_snapshot`][utility_controller.create_snapshot]: the stub declared `create_snapshot() -> str`; it now matches the binding: `create_snapshot(image_format: str = 'PNG', quality: int = -1, white_background: bool = True) -> str`.
+- [`utility_controller.get_project_data`][utility_controller.get_project_data] and [`utility_controller.delete_project_data`][utility_controller.delete_project_data]: the parameter is `project_data_id`, not `element_id`.
+- [`attribute_controller.set_attribute_display_settings_for_3d`][attribute_controller.set_attribute_display_settings_for_3d] and [`attribute_controller.set_attribute_display_settings_for_framed_wall_beam`][attribute_controller.set_attribute_display_settings_for_framed_wall_beam]: a duplicate declaration was removed.
+
+### Documentation
+
+- Docstrings rewritten from the C++ implementation, with parameter meaning, failure values, side effects and examples: `attribute_controller` (188 functions), `element_controller` (207), `utility_controller` (134), `geometry_controller` (104), `material_controller` (80), `visualization_controller` (72), `connector_axis_controller` (50), `multi_layer_cover_controller` (48), `file_controller` (43), `bim_controller` (42), `shop_drawing_controller` (23), `dimension_controller` (22), `endtype_controller` (20), `machine_controller` (20), `scene_controller` (17), `list_controller` (16), `menu_controller` (1) and `cadwork` (2).
+<!-- /release:33.397.17 -->
+
+<!-- release:33.397.2 -->
+## 33.397.2 — 2026-11-10
+
+[PR #434](https://github.com/cwapi3d/cwapi3dpython/pull/434) · `pip install cwapi3d==33.397.2`
+
+Documentation-only release: no API changes.
+
+### Documentation
+
+- `element_controller`: docstrings of 207 functions rewritten from the C++ implementation.
+<!-- /release:33.397.2 -->
+
 <!-- release:33.397.0 -->
 ## 33.397.0 — 2026-11-04
 
@@ -34,6 +114,18 @@ The background of each render view can now be read and set from a plugin: plain 
 - [`cadwork.render_view_type`][cadwork.render_view_type]: new enum for the render views of the 3d window, each with its own background: `wireframe`, `shading1`, `shading2`, `hidden_line`, `hidden_line_dashed`, `drawing2d`.
 - [`cadwork.background_type`][cadwork.background_type]: new enum for how a render view's background is filled: `black`, `white`, `user`, `image`.
 <!-- /release:33.396.0 -->
+
+<!-- release:33.394.1 -->
+## 33.394.1 — 2026-11-03
+
+[PR #429](https://github.com/cwapi3d/cwapi3dpython/pull/429) · `pip install cwapi3d==33.394.1`
+
+Documentation-only release: no API changes.
+
+### Documentation
+
+- [`cadwork.extended_settings`][cadwork.extended_settings.extended_settings]: the class and its 29 getters and setters are now documented.
+<!-- /release:33.394.1 -->
 
 <!-- release:33.394.0 -->
 ## 33.394.0 — 2026-10-29
@@ -78,95 +170,3 @@ Spline volumes can now be created from surfaces, and shop drawing wall sections 
 - [`cadwork.spline_surface_order`][cadwork.spline_surface_order]: new enum with `linear` and `circular`.
 - [`cadwork.wall_section_type`][cadwork.wall_section_type]: new enum with `horizontal` and `vertical`.
 <!-- /release:33.384.0 -->
-
-<!-- release:33.383.0 -->
-## 33.383.0 — 2026-10-13
-
-[PR #418](https://github.com/cwapi3d/cwapi3dpython/pull/418) · `pip install cwapi3d==33.383.0`
-
-SAT, STEP and IGES exports can now be configured through typed option objects and combined with element level-of-detail settings.
-
-### Added
-
-- [`file_controller.export_file_with_options`][file_controller.export_file_with_options]: exports a file using format-specific export options decorated with element level-of-detail options.
-- [`file_controller.get_sat_export_options`][file_controller.get_sat_export_options], [`file_controller.get_step_export_options`][file_controller.get_step_export_options], [`file_controller.get_iges_export_options`][file_controller.get_iges_export_options]: create a new options instance for that format with default values.
-- [`cadwork.file_export_options`][cadwork.file_export_options]: common base for all format-specific export options, with `get_file_export_format` and `get_level_of_detail_options`.
-- [`cadwork.sat_export_options`][cadwork.sat_export_options]: SAT options: binary output, scale factor and ACIS version (`ACIS_V21_0` … `ACIS_V34_0`).
-- [`cadwork.step_export_options`][cadwork.step_export_options]: STEP options: scale factor, imperial units and version (`AP203`, `AP214`).
-- [`cadwork.iges_export_options`][cadwork.iges_export_options]: IGES options: scale factor.
-- [`cadwork.file_export_format`][cadwork.file_export_format]: new enum identifying the format of an options instance: `sat`, `step`, `iges`.
-- [`cadwork.element_level_of_detail_options`][cadwork.element_level_of_detail_options]: format-agnostic level-of-detail options: cut drillings, openings, MEP elements and end type counterparts, and materialize end types and MEP elements.
-<!-- /release:33.383.0 -->
-
-<!-- release:33.382.0 -->
-## 33.382.0 — 2026-10-13
-
-[PR #414](https://github.com/cwapi3d/cwapi3dpython/pull/414) · `pip install cwapi3d==33.382.0`
-
-Corrects the documented signature of `set_texture_transparency`.
-
-### Fixed
-
-- [`material_controller.set_texture_transparency`][material_controller.set_texture_transparency]: the stub declared the arguments in the wrong order. It now matches the binding: `set_texture_transparency(material_id: MaterialId, texture_transparency: UnsignedInt)`, with the transparency given in percent (0–100).
-
-### Documentation
-
-- `material_controller`: improved docstring of `get_texture_transparency`.
-<!-- /release:33.382.0 -->
-
-<!-- release:33.380.0 -->
-## 33.380.0 — 2026-10-09
-
-[PR #417](https://github.com/cwapi3d/cwapi3dpython/pull/417) · `pip install cwapi3d==33.380.0`
-
-New export solid cuts and wall sections in shop drawings, and many more element type checks.
-
-### Added
-
-- [`shop_drawing_controller.add_export_solid_cut`][shop_drawing_controller.add_export_solid_cut]: adds a named cut to an export solid or container, defined by a plane normal and an origin point on the plane.
-- [`shop_drawing_controller.add_export_solid_cut_at_relative_position`][shop_drawing_controller.add_export_solid_cut_at_relative_position]: adds a named cut to an export solid or container, defined by a plane normal and a relative position.
-- [`shop_drawing_controller.add_wall_section_horizontal_at_relative_position`][shop_drawing_controller.add_wall_section_horizontal_at_relative_position]: adds a horizontal section to a wall, floor or roof at a relative position across the element's width.
-- [`cadwork.element_type`][cadwork.element_type]: new type tests `is_framed_wall`, `is_framed_floor`, `is_framed_roof`, `is_solid_wood_wall`, `is_solid_wood_floor`, `is_solid_wood_roof`, `is_log_wall`, `is_roof_surface`, `is_roof_lathing_surface`, `is_circular_mep`, `is_rectangular_mep`, `is_element_light`, `is_exchange_object`, `is_pdf_object`, `is_point_cloud`, `is_point_cloud_clipping_box`, and the matching setters `set_framed_wall`, `set_framed_floor`, `set_framed_roof`, `set_solid_wood_wall`, `set_solid_wood_floor`, `set_solid_wood_roof`, `set_log_wall`, `set_roof_surface`, `set_circular_mep`, `set_rectangular_mep`.
-- [`cadwork.shortcut_key_modifier`][cadwork.shortcut_key_modifier]: new member `no_modifier`.
-
-### Documentation
-
-- More usage examples across the documentation.
-<!-- /release:33.380.0 -->
-
-<!-- release:33.378.0 -->
-## 33.378.0 — 2026-10-07
-
-[PR #412](https://github.com/cwapi3d/cwapi3dpython/pull/412) · `pip install cwapi3d==33.378.0`
-
-Line elements from arc and spline segments, prefab layer queries, multi layer set editing and navigation widget control.
-
-### Added
-
-- [`element_controller.create_line_from_segments`][element_controller.create_line_from_segments]: creates a Line element from a mixed path of straight, arc and natural-cubic-spline segments.
-- [`element_controller.get_line_segments`][element_controller.get_line_segments]: gets the defining segments of a Line element, whether straight, arc or spline.
-- [`cadwork.element_segment`][cadwork.element_segment]: a line segment with `type`, `position` and `support_position`.
-- [`cadwork.element_segment_type`][cadwork.element_segment_type]: new enum: `straight`, `arc`, `spline`.
-- [`attribute_controller.get_prefab_layer_info_all_assigned`][attribute_controller.get_prefab_layer_info_all_assigned], [`…_with_dimensions`][attribute_controller.get_prefab_layer_info_with_dimensions], [`…_without_dimensions`][attribute_controller.get_prefab_layer_info_without_dimensions]: get the prefab layers assigned to an element, either all of them or only those output with or without dimensions.
-- [`cadwork.prefab_layer_info`][cadwork.prefab_layer_info]: a prefab layer with `get_layer_number` and `get_side`.
-- [`cadwork.prefab_layer_side`][cadwork.prefab_layer_side]: new enum: `referenceSide`, `oppositeSide`, `referenceElement`.
-- [`attribute_controller.get_additional_data_keys`][attribute_controller.get_additional_data_keys]: gets the additional data keys set on an element through this API.
-- [`bim_controller.load_ifc_export_settings`][bim_controller.load_ifc_export_settings]: loads an IFC export settings file into the active document.
-- [`geometry_controller.get_element_collision_type`][geometry_controller.get_element_collision_type]: classifies how the geometry of two elements relates (touching, contained, interlocking, …).
-- Multi layer sets: [`multi_layer_cover_controller.insert_layer`][multi_layer_cover_controller.insert_layer], [`remove_layer`][multi_layer_cover_controller.remove_layer], [`remove_all_layers`][multi_layer_cover_controller.remove_all_layers], [`unset_element_multi_layer_set`][multi_layer_cover_controller.unset_element_multi_layer_set].
-- Navigation widget: [`utility_controller.set_navigation_widget_enabled`][utility_controller.set_navigation_widget_enabled], [`set_navigation_widget_axis`][utility_controller.set_navigation_widget_axis], [`set_navigation_widget_cube`][utility_controller.set_navigation_widget_cube], [`set_navigation_widget_north_arrow`][utility_controller.set_navigation_widget_north_arrow], [`set_navigation_widget_size`][utility_controller.set_navigation_widget_size].
-- [`cadwork.navigation_widget_subwindow_position`][cadwork.navigation_widget_subwindow_position]: new enum: `none`, `top_left`, `top_right`, `bottom_left`, `bottom_right`.
-- [`cadwork.event_type`][cadwork.event_type]: new enum: `on_activate`, `on_attribute`, `on_close`, `on_geometry`, `on_hide`, `on_show`.
-<!-- /release:33.378.0 -->
-
-<!-- release:33.343.2 -->
-## 33.343.2 — 2026-08-24
-
-[PR #411](https://github.com/cwapi3d/cwapi3dpython/pull/411) · `pip install cwapi3d==33.343.2`
-
-Look up a connector axis by name.
-
-### Added
-
-- [`connector_axis_controller.get_connector_axis_guid_by_name`][connector_axis_controller.get_connector_axis_guid_by_name]: gets the GUID of a connector axis by its name.
-<!-- /release:33.343.2 -->
