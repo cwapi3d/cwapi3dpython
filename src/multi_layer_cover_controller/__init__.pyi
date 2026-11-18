@@ -12,16 +12,34 @@ from cadwork import multi_layer_cover_type
 from cadwork.api_types import *
 
 def set_element_multi_layer_set(element_id: ElementId, set_id: MultiLayerSetId) -> None:
-    """Assign a multi layer set to a cover element.
+    """Assign a multi layer set to a cover element and give the cover the set's thickness.
 
-    The cover element then uses the layer build-up of that set, and its thickness is changed to the
-    total thickness of the set (the sum of the layer thicknesses, or the set's cover thickness if it
-    has no layers). The reference side of the cover stays in place; neighbouring covers joined to it
-    may be adjusted too. The thickness is left unchanged if the total is not positive, and it is
-    skipped, with a warning in the log, when the document is not the active window; the set is
-    assigned in both cases. The change is one undo step. The element is marked as modified and the
-    display is refreshed if automatic display refresh is on. Nothing happens if the element ID or
-    the set ID is invalid. Remove the assignment with
+    The cover takes over the layer build-up of the set, and its thickness is changed to match the
+    set. You do not need to set the thickness yourself.
+
+    - New thickness: the sum of the set's layer thicknesses. A set without layers uses its cover
+      thickness (`multi_layer_cover_controller.get_cover_thickness()`) instead.
+    - Position: the reference side of the cover stays where it is; the cover grows or shrinks on
+      the opposite side.
+    - Joined walls: walls that meet the cover are lengthened or shortened so the joints stay
+      closed. Only visible walls are adjusted, so show the neighbouring walls first if they should
+      follow.
+    - A resulting thickness of 0 or less is ignored; the cover keeps its thickness.
+
+    The thickness is only changed when the cover belongs to the model shown in the front cadwork
+    window. That is the normal case for a plugin. If your script works on a model that is open
+    but not in front, the set is still assigned, the thickness stays unchanged and a warning is
+    written to the API log.
+
+    The whole change, including the adjusted walls, is one undo step. With automatic display
+    refresh switched off (`utility_controller.disable_auto_display_refresh()`), the changed cover
+    and walls are not redrawn. Switch refresh on again and pass the cover and the walls next to it
+    to `element_controller.recreate_elements()`.
+
+    Each call compares the cover with every visible cover, so assigning sets to many covers in a
+    large model takes noticeably longer.
+
+    Nothing happens if the element ID or the set ID is invalid. Remove the assignment with
     `multi_layer_cover_controller.unset_element_multi_layer_set()`, read it with
     `multi_layer_cover_controller.get_element_multi_layer_set()`.
 
