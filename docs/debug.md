@@ -195,6 +195,102 @@ plugin runs **inside cadwork**, not in the IDE, you start the plugin in cadwork 
        In VS Code, start **Attach to cadwork**. Execution stops at `debugpy.breakpoint()` and at
        every breakpoint you set.
 
+    **Example: keep the debug code in a helper module**
+
+    Instead of copying the attach code into every plugin, put it in a small module next to the
+    plugin and call it from there. Switch it off with `ENABLED = False` before you hand the
+    plugin to others. This is an excerpt, adapt it to your own plugin:
+
+    ```python title="debug_attach.py"
+    import sys
+    from pathlib import Path
+
+    ENABLED = True
+    HOST = '127.0.0.1'
+    PORT = 5678
+    PYTHON_EXE = r'C:\Path\To\Python314\python.exe'  # same minor version as cadwork's Python
+
+    _LIB_DIR = Path(__file__).resolve().parent / 'lib'
+
+
+    def attach(break_immediately: bool = True) -> None:
+        if not ENABLED:
+            return
+        if str(_LIB_DIR) not in sys.path:
+            sys.path.insert(0, str(_LIB_DIR))
+
+        import debugpy
+
+        if not debugpy.is_client_connected():
+            debugpy.configure(python=PYTHON_EXE)
+            try:
+                debugpy.listen((HOST, PORT))
+            except RuntimeError:
+                # listen() may only be called once per process; cadwork keeps the
+                # interpreter alive between plugin runs, so a second run lands here.
+                pass
+            print(f'Waiting for VS Code to attach on port {PORT} ...')
+            debugpy.wait_for_client()
+
+        if break_immediately:
+            debugpy.breakpoint()
+    ```
+
+    ```python title="MyPlugin.py"
+    import importlib
+    import sys
+    from pathlib import Path
+
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+    import debug_attach
+    import element_report  # your own helper module
+
+    # cadwork caches imported modules for the whole session; reload so edits to
+    # the helper modules take effect without restarting cadwork.
+    importlib.reload(debug_attach)
+    importlib.reload(element_report)
+
+    debug_attach.attach()
+
+    import element_controller as ec
+
+
+    def main() -> None:
+        element_ids = ec.get_active_identifiable_element_ids()
+        infos = element_report.collect(element_ids)  # F11 steps into the helper module
+        summary = element_report.summarize(infos)
+        for info in infos:
+            print(info)
+        print(summary)
+
+
+    main()
+    ```
+
+    If the folder you open in VS Code is not the plugin folder cadwork runs from (for example a
+    copy under version control), tell VS Code how the two map with `pathMappings`, otherwise
+    your breakpoints are not hit:
+
+    ```json title=".vscode/launch.json"
+    "pathMappings": [
+      {
+        "localRoot": "${workspaceFolder}/MyPlugin",
+        "remoteRoot": "C:/.../API.x64/MyPlugin"
+      }
+    ]
+    ```
+
+    Once VS Code is attached, set breakpoints by clicking left of the line numbers. When
+    execution stops, the **Variables** panel shows all local values, and VS Code displays them
+    inline next to the code. Step over with ++f10++, step into a function with ++f11++, continue
+    with ++f5++.
+
+    <figure markdown="1">
+    ![VS Code stopped at a breakpoint in a cadwork plugin](img/debug_vscode.png){width=900}
+    <figcaption>VS Code attached to cadwork, stopped at a breakpoint in an example plugin</figcaption>
+    </figure>
+
 ??? example "PyCharm Professional (pydevd-pycharm)"
 
     Remote debugging needs **PyCharm Professional**. See also the
